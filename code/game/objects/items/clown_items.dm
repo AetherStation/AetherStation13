@@ -27,6 +27,7 @@
 	var/cleanspeed = 35 //slower than mop
 	force_string = "robust... against germs"
 	var/uses = 100
+	var/suds_decal = /obj/effect/decal/temporary/suds
 
 /obj/item/soap/ComponentInitialize()
 	. = ..()
@@ -111,7 +112,7 @@
 	if(prob(skillcheck*100)) //higher level = more uses assuming RNG is nice
 		uses--
 	if(uses <= 0)
-		to_chat(user, "<span class='warning'>[src] crumbles into tiny bits!</span>")
+		visible_message("<span class='warning'>[src] crumbles into tiny bits!</span>")
 		qdel(src)
 
 /obj/item/soap/afterattack(atom/target, mob/user, proximity)
@@ -130,7 +131,12 @@
 		if(do_after(user, clean_speedies, target = target))
 			to_chat(user, "<span class='notice'>You scrub \the [target.name] out.</span>")
 			var/obj/effect/decal/cleanable/cleanies = target
+<<<<<<< HEAD
 			user.mind?.adjust_experience(/datum/skill/cleaning, max(round(cleanies.beauty/CLEAN_SKILL_BEAUTY_ADJUSTMENT),0)) //again, intentional that this does NOT round but mops do.
+=======
+			user?.mind.adjust_experience(/datum/skill/cleaning, max(round(cleanies.beauty/CLEAN_SKILL_BEAUTY_ADJUSTMENT),0)) //again, intentional that this does NOT round but mops do.
+			new suds_decal(get_turf(target))
+>>>>>>> b4cd21c8bd0... Base behaviour in, codersprites.
 			qdel(target)
 			decreaseUses(user)
 
@@ -149,7 +155,12 @@
 			to_chat(user, "<span class='notice'>You clean \the [target.name].</span>")
 			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 			target.set_opacity(initial(target.opacity))
+<<<<<<< HEAD
 			user.mind?.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
+=======
+			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
+			new suds_decal(get_turf(target))
+>>>>>>> b4cd21c8bd0... Base behaviour in, codersprites.
 			decreaseUses(user)
 	else
 		user.visible_message("<span class='notice'>[user] begins to clean \the [target.name] with [src]...</span>", "<span class='notice'>You begin to clean \the [target.name] with [src]...</span>")
@@ -160,10 +171,24 @@
 					user.mind?.adjust_experience(/datum/skill/cleaning, round(cleanable_decal.beauty / CLEAN_SKILL_BEAUTY_ADJUSTMENT))
 			target.wash(CLEAN_SCRUB)
 			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+<<<<<<< HEAD
 			user.mind?.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
+=======
+			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
+			new suds_decal(get_turf(target))
+>>>>>>> b4cd21c8bd0... Base behaviour in, codersprites.
 			decreaseUses(user)
 	return
 
+/obj/item/soap/Move(atom/newloc, direct, glide_size_override)
+	. = ..()
+	if(pulledby && isturf(newloc))
+		new suds_decal(newloc)
+		if(prob(10))
+			uses--
+			if(uses <= 0)
+				visible_message("<span class='warning'>[src] crumbles into tiny bits!</span>")
+				qdel(src)
 
 /*
  * Bike Horns
