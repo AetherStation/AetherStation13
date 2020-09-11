@@ -39,7 +39,6 @@ or sprite states which will delete once there are no more states left. Fading ca
 	else if(step_time)
 		time = step_time
 	else
-		to_chat(world, "Invalid, deleting. longevity: [longevity], step_time: [step_time]")
 		qdel(src) //Invalid, clean ourselves up.
 		return
 	if(sprite_states)

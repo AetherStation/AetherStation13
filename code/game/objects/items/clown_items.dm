@@ -139,7 +139,6 @@
 >>>>>>> b4cd21c8bd0... Base behaviour in, codersprites.
 			qdel(target)
 			decreaseUses(user)
-
 	else if(ishuman(target) && user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
 		var/mob/living/carbon/human/human_user = user
 		user.visible_message("<span class='warning'>\the [user] washes \the [target]'s mouth out with [src.name]!</span>", "<span class='notice'>You wash \the [target]'s mouth out with [src.name]!</span>") //washes mouth out with soap sounds better than 'the soap' here			if(user.zone_selected == "mouth")
@@ -162,6 +161,18 @@
 			new suds_decal(get_turf(target))
 >>>>>>> b4cd21c8bd0... Base behaviour in, codersprites.
 			decreaseUses(user)
+	else if(target.reagents && target.reagents.has_reagent(/datum/reagent/water)) //Soapy water creation.
+		var/water2soapy = target.reagents.get_reagent_amount(/datum/reagent/water)
+		if(uses < water2soapy)
+			to_chat(user, "<span class='warning'>[src] won't be sufficient for this amount of water.</span>")
+			return
+		to_chat(user, "<span class='notice'>You work [src] in the water.</span>")
+		target.reagents.del_reagent(/datum/reagent/water)
+		target.reagents.add_reagent(/datum/reagent/water/soapy, water2soapy)
+		uses -= water2soapy
+		if(uses <= 0)
+			visible_message("<span class='warning'>[src] crumbles into tiny bits!</span>")
+			qdel(src)
 	else
 		user.visible_message("<span class='notice'>[user] begins to clean \the [target.name] with [src]...</span>", "<span class='notice'>You begin to clean \the [target.name] with [src]...</span>")
 		if(do_after(user, clean_speedies, target = target))
