@@ -4,7 +4,8 @@
 	icon = 'icons/effects/suds.dmi'
 	icon_state = "suds"
 
-	longevity = null
+	//longevity = 5 SECONDS
 	step_time = 3 SECONDS
-	base_icon = "suds"
-	sprite_states = 3
+	fade_rate = 51
+	//base_icon = "suds"
+	//sprite_states = 3

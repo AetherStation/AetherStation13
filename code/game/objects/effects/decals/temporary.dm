@@ -1,4 +1,4 @@
-/*!Decals that self delete after a while.
+/*! Decals that self delete after a while.
 Use the longevity var for a fixed time to delete, or step_time for a gradual change.
 step_time can be combined with fade_rate which reduces the alpha until transparent then deletes,
 or sprite states which will delete once there are no more states left. Fading can be combined with sprite states.

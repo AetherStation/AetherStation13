@@ -131,12 +131,8 @@
 		if(do_after(user, clean_speedies, target = target))
 			to_chat(user, "<span class='notice'>You scrub \the [target.name] out.</span>")
 			var/obj/effect/decal/cleanable/cleanies = target
-<<<<<<< HEAD
-			user.mind?.adjust_experience(/datum/skill/cleaning, max(round(cleanies.beauty/CLEAN_SKILL_BEAUTY_ADJUSTMENT),0)) //again, intentional that this does NOT round but mops do.
-=======
 			user?.mind.adjust_experience(/datum/skill/cleaning, max(round(cleanies.beauty/CLEAN_SKILL_BEAUTY_ADJUSTMENT),0)) //again, intentional that this does NOT round but mops do.
 			new suds_decal(get_turf(target))
->>>>>>> b4cd21c8bd0... Base behaviour in, codersprites.
 			qdel(target)
 			decreaseUses(user)
 	else if(ishuman(target) && user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
@@ -154,25 +150,9 @@
 			to_chat(user, "<span class='notice'>You clean \the [target.name].</span>")
 			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 			target.set_opacity(initial(target.opacity))
-<<<<<<< HEAD
-			user.mind?.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
-=======
 			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 			new suds_decal(get_turf(target))
->>>>>>> b4cd21c8bd0... Base behaviour in, codersprites.
 			decreaseUses(user)
-	else if(target.reagents && target.reagents.has_reagent(/datum/reagent/water)) //Soapy water creation.
-		var/water2soapy = target.reagents.get_reagent_amount(/datum/reagent/water)
-		if(uses < water2soapy)
-			to_chat(user, "<span class='warning'>[src] won't be sufficient for this amount of water.</span>")
-			return
-		to_chat(user, "<span class='notice'>You work [src] in the water.</span>")
-		target.reagents.del_reagent(/datum/reagent/water)
-		target.reagents.add_reagent(/datum/reagent/water/soapy, water2soapy)
-		uses -= water2soapy
-		if(uses <= 0)
-			visible_message("<span class='warning'>[src] crumbles into tiny bits!</span>")
-			qdel(src)
 	else
 		user.visible_message("<span class='notice'>[user] begins to clean \the [target.name] with [src]...</span>", "<span class='notice'>You begin to clean \the [target.name] with [src]...</span>")
 		if(do_after(user, clean_speedies, target = target))
@@ -182,12 +162,8 @@
 					user.mind?.adjust_experience(/datum/skill/cleaning, round(cleanable_decal.beauty / CLEAN_SKILL_BEAUTY_ADJUSTMENT))
 			target.wash(CLEAN_SCRUB)
 			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
-<<<<<<< HEAD
-			user.mind?.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
-=======
 			user?.mind.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 			new suds_decal(get_turf(target))
->>>>>>> b4cd21c8bd0... Base behaviour in, codersprites.
 			decreaseUses(user)
 	return
 
