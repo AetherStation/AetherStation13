@@ -141,7 +141,8 @@ const VendingRow = (props, context) => {
               )
             )}
             content={(free && discount)
-              ? `${redPrice} cr` : `${product.price} cr`}
+              ? (free || redPrice === 0 ? `FREE` : `${redPrice} cr`)
+              : `${product.price} cr`}
             onClick={() => act('vend', {
               'ref': product.ref,
             })} />
