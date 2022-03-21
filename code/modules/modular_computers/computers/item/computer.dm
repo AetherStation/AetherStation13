@@ -119,13 +119,6 @@
 	var/obj/item/card/id/first_id = card_slot?.GetID()
 	var/obj/item/card/id/second_id = card_slot2?.GetID()
 
-	// We have two IDs, pick the one with the most command accesses, preferring the primary slot.
-	if(first_id && second_id)
-		var/first_id_tally = SSid_access.tally_access(first_id, ACCESS_FLAG_COMMAND)
-		var/second_id_tally = SSid_access.tally_access(second_id, ACCESS_FLAG_COMMAND)
-
-		return (first_id_tally >= second_id_tally) ? first_id : second_id
-
 	// If we don't have both ID slots filled, pick the one that is filled.
 	if(first_id)
 		return first_id

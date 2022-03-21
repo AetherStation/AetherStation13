@@ -203,7 +203,7 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 				worn = null
 			qdel(id)
 
-		id = new /obj/item/card/id/advanced/debug()
+		id = new /obj/item/card/id/debug()
 
 		id.registered_name = H.real_name
 		id.update_label()

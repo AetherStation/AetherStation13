@@ -93,7 +93,7 @@
 			if(computer.obj_flags & EMAGGED)
 				to_chat(usr, span_boldwarning("Security protocol error: Unable to access locking protocols."))
 				return TRUE
-			if(ACCESS_RND in user_id_card?.access)
+			if(ACCESS_RND in user_id_card?.GetAccess())
 				locked = !locked
 			else
 				to_chat(usr, span_boldwarning("Unauthorized Access. Please insert research ID card."))

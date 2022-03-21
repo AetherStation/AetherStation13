@@ -237,7 +237,7 @@
 /datum/station_trait/wallets/proc/on_job_after_spawn(datum/source, datum/job/job, mob/living/living_mob, mob/M, joined_late)
 	SIGNAL_HANDLER
 
-	var/obj/item/card/id/advanced/id_card = living_mob.get_item_by_slot(ITEM_SLOT_ID)
+	var/obj/item/card/id/id_card = living_mob.get_item_by_slot(ITEM_SLOT_ID)
 	if(!istype(id_card))
 		return
 

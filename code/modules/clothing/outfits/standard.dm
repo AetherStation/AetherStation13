@@ -1,8 +1,8 @@
 /datum/outfit/centcom/spec_ops
 	name = "Special Ops Officer"
+	card_access = /datum/card_access/centcom/specops_officer
 
-	id = /obj/item/card/id/advanced/centcom
-	id_trim = /datum/id_trim/centcom/specops_officer
+	id = /obj/item/card/id/centcom
 	uniform = /obj/item/clothing/under/syndicate
 	suit = /obj/item/clothing/suit/space/officer
 	back = /obj/item/storage/backpack/satchel/leather
@@ -115,9 +115,9 @@
 
 /datum/outfit/pirate
 	name = "Space Pirate"
+	card_access = /datum/card_access/pirate
 
-	id = /obj/item/card/id/advanced
-	id_trim = /datum/id_trim/pirate
+	id = /obj/item/card/id/tier0
 	uniform = /obj/item/clothing/under/costume/pirate
 	suit = /obj/item/clothing/suit/pirate/armored
 	ears = /obj/item/radio/headset/syndicate
@@ -141,8 +141,8 @@
 
 /datum/outfit/pirate/captain
 	name = "Space Pirate Captain"
+	card_access = /datum/card_access/pirate/captain
 
-	id_trim = /datum/id_trim/pirate/captain
 	head = /obj/item/clothing/head/pirate/armored
 
 /datum/outfit/pirate/space
@@ -160,9 +160,9 @@
 
 /datum/outfit/pirate/silverscale
 	name = "Silver Scale Member"
+	card_access = /datum/card_access/pirate/silverscale
 
-	id = /obj/item/card/id/advanced/silver
-	id_trim = /datum/id_trim/pirate/silverscale
+	id = /obj/item/card/id/tier0
 	uniform = /obj/item/clothing/under/suit/charcoal
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	glasses = /obj/item/clothing/glasses/monocle
@@ -172,17 +172,17 @@
 
 /datum/outfit/pirate/silverscale/captain
 	name = "Silver Scale Captain"
+	card_access = /datum/card_access/pirate/captain/silverscale
 
-	id_trim = /datum/id_trim/pirate/captain/silverscale
 	head = /obj/item/clothing/head/crown
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	l_pocket = /obj/item/lighter
 
 /datum/outfit/tunnel_clown
 	name = "Tunnel Clown"
+	card_access = /datum/card_access/tunnel_clown
 
-	id = /obj/item/card/id/advanced/gold
-	id_trim = /datum/id_trim/tunnel_clown
+	id = /obj/item/card/id/tier5
 	uniform = /obj/item/clothing/under/rank/civilian/clown
 	suit = /obj/item/clothing/suit/hooded/chaplain_hoodie
 	ears = /obj/item/radio/headset
@@ -227,9 +227,9 @@
 
 /datum/outfit/assassin
 	name = "Assassin"
+	card_access = /datum/card_access/reaper_assassin
 
-	id = /obj/item/card/id/advanced/chameleon/black
-	id_trim = /datum/id_trim/reaper_assassin
+	id = /obj/item/card/id/chameleon/black
 	uniform = /obj/item/clothing/under/suit/black
 	belt = /obj/item/pda/heads
 	ears = /obj/item/radio/headset
@@ -269,9 +269,9 @@
 
 /datum/outfit/centcom/commander
 	name = "CentCom Commander"
+	card_access = /datum/card_access/centcom/commander
 
-	id = /obj/item/card/id/advanced/centcom
-	id_trim = /datum/id_trim/centcom/commander
+	id = /obj/item/card/id/centcom
 	uniform = /obj/item/clothing/under/rank/centcom/commander
 	suit = /obj/item/clothing/suit/armor/bulletproof
 	back = /obj/item/storage/backpack/satchel/leather
@@ -349,9 +349,9 @@
 
 /datum/outfit/centcom/soviet
 	name = "Soviet Admiral"
+	card_access = /datum/card_access/centcom/admiral
 
-	id = /obj/item/card/id/advanced/centcom
-	id_trim = /datum/id_trim/centcom/admiral
+	id = /obj/item/card/id/centcom
 	uniform = /obj/item/clothing/under/costume/soviet
 	suit = /obj/item/clothing/suit/pirate/captain
 	back = /obj/item/storage/backpack/satchel/leather
@@ -375,9 +375,9 @@
 
 /datum/outfit/mobster
 	name = "Mobster"
+	card_access = /datum/card_access/mobster
 
-	id = /obj/item/card/id/advanced
-	id_trim = /datum/id_trim/mobster
+	id = /obj/item/card/id
 	uniform = /obj/item/clothing/under/suit/black_really
 	ears = /obj/item/radio/headset
 	glasses = /obj/item/clothing/glasses/sunglasses
@@ -408,7 +408,7 @@
 /datum/outfit/debug //Debug objs plus hardsuit
 	name = "Debug outfit"
 
-	id = /obj/item/card/id/advanced/debug
+	id = /obj/item/card/id/debug
 	uniform = /obj/item/clothing/under/misc/patriotsuit
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/elite/debug
 	suit_store = /obj/item/tank/internals/oxygen
@@ -440,7 +440,7 @@
 /datum/outfit/admin //for admeem shenanigans and testing things that arent related to equipment, not a subtype of debug just in case debug changes things
 	name = "Admin outfit"
 
-	id = /obj/item/card/id/advanced/debug
+	id = /obj/item/card/id/debug
 	uniform = /obj/item/clothing/under/misc/patriotsuit
 	suit = /obj/item/clothing/suit/space/hardsuit/syndi/elite/admin
 	suit_store = /obj/item/tank/internals/oxygen

@@ -258,7 +258,7 @@
 	custom_premium_price = PAYCHECK_HARD * 6
 	damagetype_healed = "all"
 
-/obj/item/storage/firstaid/advanced/PopulateContents()
+/obj/item/storage/firstaid/PopulateContents()
 	if(empty)
 		return
 	var/static/items_inside = list(

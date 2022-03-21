@@ -251,7 +251,7 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
 "be" = (
-/obj/item/card/id/advanced/engioutpost,
+/obj/item/card/id/engioutpost,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
 "bf" = (

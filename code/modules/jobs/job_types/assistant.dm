@@ -35,7 +35,8 @@ Assistant
 /datum/outfit/job/assistant
 	name = "Assistant"
 	jobtype = /datum/job/assistant
-	id_trim = /datum/id_trim/job/assistant
+	id = /obj/item/card/id/tier1
+	card_access = /datum/card_access/job/assistant
 
 /datum/outfit/job/assistant/pre_equip(mob/living/carbon/human/H)
 	..()

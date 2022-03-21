@@ -19,6 +19,7 @@
 	window_name = "Honkomatic Bike Horn Unit v1.0.7"
 	data_hud_type = DATA_HUD_SECURITY_BASIC // show jobs
 	path_image_color = "#FF69B4"
+	card_access = /datum/card_access/job/clown
 
 	var/honksound = 'sound/items/bikehorn.ogg' //customizable sound
 	var/limiting_spam = FALSE
@@ -42,10 +43,6 @@
 	update_appearance()
 	auto_patrol = TRUE
 
-	// Doing this hurts my soul, but simplebot access reworks are for another day.
-	var/datum/id_trim/job/clown_trim = SSid_access.trim_singletons_by_path[/datum/id_trim/job/clown]
-	access_card.add_access(clown_trim.access + clown_trim.wildcard_access)
-	prev_access = access_card.access.Copy()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)

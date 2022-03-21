@@ -37,6 +37,8 @@
 /datum/outfit/job/virologist
 	name = "Virologist"
 	jobtype = /datum/job/virologist
+	id = /obj/item/card/id/tier3
+	card_access = /datum/card_access/job/virologist
 
 	belt = /obj/item/pda/viro
 	ears = /obj/item/radio/headset/headset_med
@@ -50,5 +52,3 @@
 	satchel = /obj/item/storage/backpack/satchel/vir
 	duffelbag = /obj/item/storage/backpack/duffelbag/virology
 	box = /obj/item/storage/box/survival/medical
-
-	id_trim = /datum/id_trim/job/virologist

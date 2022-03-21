@@ -30,6 +30,7 @@
 /datum/outfit/job/bartender
 	name = "Bartender"
 	jobtype = /datum/job/bartender
+	card_access = /datum/card_access/job/bartender
 
 	glasses = /obj/item/clothing/glasses/sunglasses/reagent
 	belt = /obj/item/pda/bar
@@ -38,7 +39,6 @@
 	suit = /obj/item/clothing/suit/armor/vest
 	backpack_contents = list(/obj/item/storage/box/beanbag=1)
 	shoes = /obj/item/clothing/shoes/laceup
-	id_trim = /datum/id_trim/job/bartender
 
 /datum/outfit/job/bartender/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()

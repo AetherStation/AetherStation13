@@ -31,6 +31,7 @@
 /datum/outfit/job/geneticist
 	name = "Geneticist"
 	jobtype = /datum/job/geneticist
+	card_access = /datum/card_access/job/geneticist
 
 	belt = /obj/item/pda/geneticist
 	ears = /obj/item/radio/headset/headset_sci
@@ -44,4 +45,3 @@
 	satchel = /obj/item/storage/backpack/satchel/gen
 	duffelbag = /obj/item/storage/backpack/duffelbag/genetics
 
-	id_trim = /datum/id_trim/job/geneticist

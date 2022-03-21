@@ -1718,7 +1718,7 @@
 	name = "Silver ID Card Crate"
 	desc = "Did we forget to hire any Heads of Staff? Recruit your own with this high value ID card capable of holding advanced levels of access in a handy wallet-sized form factor"
 	cost = CARGO_CRATE_VALUE * 7
-	contains = list(/obj/item/card/id/advanced/silver)
+	contains = list(/obj/item/card/id/tier3)
 	crate_name = "silver id card crate"
 
 /datum/supply_pack/service/emptycrate
