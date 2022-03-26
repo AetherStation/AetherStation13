@@ -3,8 +3,8 @@
 	icon_state = "spark"
 	color = "#FFFF00"
 	nodamage = FALSE
-	damage = 10
-	damage_type = STAMINA
+	damage = 5
+	damage_type = BURN
 	stutter = 5
 	jitter = 20
 	hitsound = 'sound/weapons/taserhit.ogg'
@@ -23,6 +23,8 @@
 		if(C.dna && C.dna.check_mutation(HULK))
 			C.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
 		else if (!HAS_TRAIT(C, TRAIT_STUNIMMUNE))
+			C.dropItemToGround(C.get_active_held_item())
+			C.dropItemToGround(C.get_inactive_held_item())
 			C.apply_status_effect(/datum/status_effect/tased)
 			addtimer(CALLBACK(C, /mob/living/carbon.proc/do_jitter_animation, jitter), 5)
 
