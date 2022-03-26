@@ -26,6 +26,7 @@
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/gun/energy/e_gun/mini,
 		/obj/item/gun/energy/disabler,
+		/obj/item/gun/energy/taser,
 		/obj/item/gun/energy/dueling,
 		/obj/item/food/grown/banana,
 		))
@@ -52,6 +53,7 @@
 		/obj/item/ammo_box/magazine/toy/pistol,
 		/obj/item/gun/energy/e_gun/mini,
 		/obj/item/gun/energy/disabler,
+		/obj/item/gun/energy/taser,
 		/obj/item/gun/energy/dueling,
 		))
 
@@ -124,6 +126,7 @@
 		/obj/item/gun/energy/kinetic_accelerator/crossbow,
 		/obj/item/gun/energy/e_gun/mini,
 		/obj/item/gun/energy/disabler,
+		/obj/item/gun/energy/taser,
 		/obj/item/gun/energy/dueling
 		))
 
