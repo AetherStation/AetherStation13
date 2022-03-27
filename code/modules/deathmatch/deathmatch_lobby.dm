@@ -43,6 +43,9 @@
 	loadouts = null
 
 /datum/deathmatch_lobby/proc/start_game()
+	if (playing)
+		stack_trace("Attempted to start deathmatch game twice.")
+		return
 	location = game.reserve_location(map)
 	if (!location)
 		to_chat(get_mob_by_ckey(host), span_warning("Couldn't reserve a map location (all locations used?), try again later."))
