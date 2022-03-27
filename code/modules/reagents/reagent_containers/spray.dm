@@ -17,6 +17,7 @@
 	var/stream_mode = FALSE //whether we use the more focused mode
 	var/current_range = 3 //the range of tiles the sprayer will reach.
 	var/spray_range = 3 //the range of tiles the sprayer will reach when in spray mode.
+	var/spray_move_delay = 2
 	var/stream_range = 1 //the range of tiles the sprayer will reach when in stream mode.
 	var/can_fill_from_container = TRUE
 	/// Are we able to toggle between stream and spray modes, which change the distance and amount sprayed?
@@ -68,7 +69,7 @@
 	else
 		reagents.trans_to(reagent_puff, amount_per_transfer_from_this, 1/range)
 	reagent_puff.color = mix_color_from_reagents(reagent_puff.reagents.reagent_list)
-	var/wait_step = max(round(2+3/range), 2)
+	var/wait_step = max(round(spray_move_delay+3/range), spray_move_delay)
 
 	var/puff_reagent_string = reagent_puff.reagents.log_list()
 	var/turf/src_turf = get_turf(src)
@@ -250,6 +251,7 @@
 	volume = 50
 	stream_range = 4
 	amount_per_transfer_from_this = 5
+	spray_move_delay = 1
 	list_reagents = list(/datum/reagent/consumable/condensedcapsaicin = 50)
 
 /obj/item/reagent_containers/spray/pepper/empty //for protolathe printing
