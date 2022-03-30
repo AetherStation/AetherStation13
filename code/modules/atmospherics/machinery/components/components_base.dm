@@ -32,7 +32,7 @@
 /obj/machinery/atmospherics/components/Initialize()
 	. = ..()
 
-	if(hide)
+	if (hide)
 		RegisterSignal(src, COMSIG_OBJ_HIDE, .proc/hide_pipe)
 
 // Iconnery
@@ -56,7 +56,6 @@
 
 	underlays.Cut()
 
-	color = null
 	plane = showpipe ? GAME_PLANE : FLOOR_PLANE
 
 	if(!showpipe)
@@ -64,27 +63,34 @@
 
 	var/connected = 0 //Direction bitset
 
-	var/underlay_pipe_layer = shift_underlay_only ? piping_layer : 3
-
 	for(var/i in 1 to device_type) //adds intact pieces
 		if(!nodes[i])
 			continue
 		var/obj/machinery/atmospherics/node = nodes[i]
-		var/node_dir = get_dir(src, node)
-		var/mutable_appearance/pipe_appearance = mutable_appearance('icons/obj/atmospherics/pipes/pipe_underlays.dmi', "intact_[node_dir]_[underlay_pipe_layer]")
-		pipe_appearance.color = node.pipe_color
-		underlays += pipe_appearance
-		connected |= node_dir
+		var/image/img = get_pipe_underlay("pipe_intact", get_dir(src, node), node.pipe_color)
+		underlays += img
+		connected |= img.dir
 
 	for(var/direction in GLOB.cardinals)
 		if((initialize_directions & direction) && !(connected & direction))
-			var/mutable_appearance/pipe_appearance = mutable_appearance('icons/obj/atmospherics/pipes/pipe_underlays.dmi', "exposed_[direction]_[underlay_pipe_layer]")
-			pipe_appearance.color = pipe_color
-			underlays += pipe_appearance
+			underlays += get_pipe_underlay("pipe_exposed", direction)
 
 	if(!shift_underlay_only)
 		PIPING_LAYER_SHIFT(src, piping_layer)
 	return ..()
+
+/**
+ * Called by update_icon() when showpipe is TRUE, set the image for the underlay pipe
+ * Arguments:
+ * * -state: icon_state of the selected pipe
+ * * -dir: direction of the pipe
+ * * -color: color of the pipe
+ */
+/obj/machinery/atmospherics/components/proc/get_pipe_underlay(state, dir, color = null)
+	if(color)
+		. = getpipeimage('icons/obj/atmospherics/components/binary_devices.dmi', state, dir, color, piping_layer = shift_underlay_only ? piping_layer : 3)
+	else
+		. = getpipeimage('icons/obj/atmospherics/components/binary_devices.dmi', state, dir, piping_layer = shift_underlay_only ? piping_layer : 3)
 
 // Pipenet stuff; housekeeping
 
@@ -95,7 +101,7 @@
 	return ..()
 
 /obj/machinery/atmospherics/components/on_construction()
-	. = ..()
+	..()
 	update_parents()
 
 /obj/machinery/atmospherics/components/get_rebuild_targets()
@@ -227,10 +233,3 @@
 
 /obj/machinery/atmospherics/components/return_analyzable_air()
 	return airs
-
-/obj/machinery/atmospherics/components/paint(paint_color)
-	if(paintable)
-		add_atom_colour(paint_color, FIXED_COLOUR_PRIORITY)
-		pipe_color = paint_color
-		update_node_icon()
-	return paintable

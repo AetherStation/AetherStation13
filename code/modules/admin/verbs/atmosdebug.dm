@@ -11,10 +11,13 @@
 		if(pipe.z && (!pipe.nodes || !pipe.nodes.len || (null in pipe.nodes)))
 			to_chat(usr, "Unconnected [pipe.name] located at [ADMIN_VERBOSEJMP(pipe)]", confidential = TRUE)
 
+	//Manifolds
+	for(var/obj/machinery/atmospherics/pipe/manifold/pipe in GLOB.machines)
+		if(pipe.z && (!pipe.nodes || !pipe.nodes.len || (null in pipe.nodes)))
+			to_chat(usr, "Unconnected [pipe.name] located at [ADMIN_VERBOSEJMP(pipe)]", confidential = TRUE)
+
 	//Pipes
-	for(var/obj/machinery/atmospherics/pipe/pipe in GLOB.machines)
-		if(istype(pipe, /obj/machinery/atmospherics/pipe/smart) || istype(pipe, /obj/machinery/atmospherics/pipe/layer_manifold))
-			continue
+	for(var/obj/machinery/atmospherics/pipe/simple/pipe in GLOB.machines)
 		if(pipe.z && (!pipe.nodes || !pipe.nodes.len || (null in pipe.nodes)))
 			to_chat(usr, "Unconnected [pipe.name] located at [ADMIN_VERBOSEJMP(pipe)]", confidential = TRUE)
 
