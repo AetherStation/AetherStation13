@@ -28,7 +28,7 @@
 /datum/deathmatch_map/maintenance
 	name = "Maint Mania"
 	desc = "Dark maintenance tunnels, floor pills, improvised weaponry and a bloody beatdown. Welcome to assistant utopia."
-	min_players = 4
+	min_players = 2
 	max_players = 8
 	allowed_loadouts = list(/datum/deathmatch_loadout/assistant)
 	map_path = "_maps/map_files/DM/Maint_Mania.dmm"
@@ -44,7 +44,7 @@
 /datum/deathmatch_map/the_brig
 	name = "The Brig"
 	desc = "A recreation of MetaStation Brig."
-	min_players = 4
+	min_players = 2
 	max_players = 12
 	allowed_loadouts = list(/datum/deathmatch_loadout/assistant)
 	map_path = "_maps/map_files/DM/The_Brig.dmm"
