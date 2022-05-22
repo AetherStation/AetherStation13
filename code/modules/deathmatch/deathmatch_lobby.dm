@@ -141,9 +141,9 @@
 // Players might be stinky, need to make sure they aren't cheating.
 /datum/deathmatch_lobby/proc/clean_player(mob/living/carbon/player)
 	if (player.mind)
-		var/datum/mind/M = player.mind
+		var/datum/mind/M = new (player.key)
 		M.set_assigned_role(/datum/job/deathmatch) // this SHOULD prevent players from getting brain traumas and such.
-		M.RemoveAllSpells() // fuck you REALB in particular
+		M.transfer_to(player) // fuck you REALB in particular
 
 /datum/deathmatch_lobby/proc/remove_player(ckey)
 	var/list/L = players[ckey]
