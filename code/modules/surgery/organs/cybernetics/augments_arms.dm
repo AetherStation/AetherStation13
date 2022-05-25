@@ -197,7 +197,7 @@
 	name = "arm-mounted laser implant"
 	desc = "A variant of the arm cannon implant that fires lethal laser beams. The cannon emerges from the subject's arm and remains inside when not in use."
 	icon_state = "arm_laser"
-	encode_info = AUGMENT_TG_LEVEL
+	encode_info = AUGMENT_SYNDICATE_LEVEL
 	contents = newlist(/obj/item/gun/energy/laser/mounted)
 
 /obj/item/organ/cyberimp/arm/item_set/gun/laser/l
