@@ -164,6 +164,13 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 40
 	purchasable_from = UPLINK_NUKE_OPS
 
+/datum/uplink_item/bundles_tc/mantis_kit
+	name = "A.R.A.S.A.K.A. Mantis Blades Kit"
+	desc = "Comes with 2 A.R.A.S.A.K.A. Mantis blades and a syndicate cyberlink. All packaged with autosurgeons."
+	item = /obj/item/storage/briefcase/syndie_mantis
+	cost = 20
+	purchasable_from = UPLINK_NUKE_OPS
+
 /datum/uplink_item/bundles_tc/medical
 	name = "Medical bundle"
 	desc = "The support specialist: Aid your fellow operatives with this medical bundle. Contains a tactical medkit, \
@@ -1192,6 +1199,21 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 2
 	purchasable_from = ~UPLINK_NUKE_OPS //clown ops are allowed to buy this kit, since it's basically a costume
 
+/*/datum/uplink_item/stealthy_tools/chameleon_skillchip
+	name = "Chameleon Skillchip"
+	desc = "A highly advanced skillchip that contains data on all available skillchips. \
+			This skillchip only takes up a single skillchip slot in the user's brain. \
+			Comes with a single-use Syndicate autosurgeon for immediate self-application."
+	item = /obj/item/autosurgeon/skillchip/syndicate/chameleon_chip
+	cost = 4
+	purchasable_from = ~UPLINK_NUKE_OPS*/ // it was removed from tg it seems, left here just in cases
+
+/datum/uplink_item/stealthy_tools/cyberlink
+	name = "Cybersun Cybernetics Access System"
+	desc = "Syndicate made cyberlink, allowing you access to implants manufactured by Syndicate corporation's. Doesn't work with NT made implants, due to software diffrences."
+	item = /obj/item/autosurgeon/organ/cyberlink_syndicate
+	cost = 2
+
 /datum/uplink_item/stealthy_tools/chameleon_proj
 	name = "Chameleon Projector"
 	desc = "Projects an image across a user, disguising them as an object scanned with it, as long as they don't \
@@ -1674,7 +1696,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	uplink_box.name = "Uplink Implant Box"
 	new /obj/item/implanter/uplink(uplink_box, purchaser_uplink.uplink_flag)
 	return uplink_box
-	
+
 
 /datum/uplink_item/implants/xray
 	name = "X-ray Vision Implant"
@@ -1931,7 +1953,7 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	name = "Laser Arm Implant"
 	desc = "An implant that grants you a recharging laser gun inside your arm. Weak to EMPs. Comes with a syndicate autosurgeon for immediate self-application."
 	cost = 10
-	item = /obj/item/autosurgeon/organ/syndicate/laser_arm
+	item = /obj/item/storage/briefcase/syndie_laser
 	restricted_roles = list("Roboticist", "Research Director")
 
 /datum/uplink_item/role_restricted/ocd_device

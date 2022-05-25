@@ -557,7 +557,9 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(item_flags & DROPDEL)
 		qdel(src)
 	item_flags &= ~IN_INVENTORY
-	SEND_SIGNAL(src, COMSIG_ITEM_DROPPED, user)
+	SEND_SIGNAL(src, COMSIG_ITEM_DROPPED,user)
+	if(user)
+		SEND_SIGNAL(user,COMSIG_CARBON_ITEM_DROPPED,src)
 	if(!silent)
 		playsound(src, drop_sound, DROP_SOUND_VOLUME, ignore_walls = FALSE)
 	user?.update_equipment_speed_mods()
@@ -566,6 +568,7 @@ GLOBAL_DATUM_INIT(fire_overlay, /mutable_appearance, mutable_appearance('icons/e
 /obj/item/proc/pickup(mob/user)
 	SHOULD_CALL_PARENT(TRUE)
 	SEND_SIGNAL(src, COMSIG_ITEM_PICKUP, user)
+	SEND_SIGNAL(user,COMSIG_CARBON_ITEM_PICKED_UP,src)
 	item_flags |= IN_INVENTORY
 
 /// called when "found" in pockets and storage items. Returns 1 if the search should end.

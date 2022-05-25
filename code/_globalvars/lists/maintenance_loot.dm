@@ -124,6 +124,8 @@ GLOBAL_LIST_INIT(common_loot, list( //common: basic items
 		) = 1,
 
 	list(//medical and chemicals
+		/obj/item/blackmarket_uplink = 1,
+		/obj/item/organ/cyberimp/cyberlink/nt_low = 1,
 		/obj/item/storage/fancy/cigarettes/dromedaryco = 1,
 		/obj/item/grenade/chem_grenade/cleaner = 1,
 		/obj/item/storage/box/matches = 1,
@@ -221,6 +223,21 @@ GLOBAL_LIST_INIT(uncommon_loot, list(//uncommon: useful items
 			/obj/item/watertank = 1,
 			/obj/item/watertank/janitor = 1,
 			) = 1,
+		list(//cybernetics and cyberlinks
+			/obj/item/organ/cyberimp/eyes/hud/medical = 1,
+			/obj/item/organ/cyberimp/eyes/hud/diagnostic = 1,
+			/obj/item/organ/cyberimp/arm/item_set/surgery = 1,
+			/obj/item/organ/cyberimp/arm/item_set/cook = 1,
+			/obj/item/organ/cyberimp/arm/item_set/janitor = 1,
+			/obj/item/organ/cyberimp/arm/item_set/chemical = 1,
+			/obj/item/organ/cyberimp/arm/item_set/connector = 1,
+			/obj/item/organ/cyberimp/arm/item_set/atmospherics = 1,
+			/obj/item/organ/cyberimp/arm/item_set/tablet = 1,
+			/obj/item/organ/cyberimp/chest/filtration/offbrand = 1,
+			/obj/item/organ/cyberimp/cyberlink/nt_high = 1,
+			/obj/item/organ/cyberimp/leg/shove_resist = 1,
+			/obj/item/organ/cyberimp/leg/table_glider = 1,
+			) = 1,
 		) = 8,
 
 	list(//food
@@ -308,6 +325,15 @@ GLOBAL_LIST_INIT(rarity_loot, list(//rare: really good items
 			/obj/item/reagent_containers/hypospray/medipen/salacid = 1,
 			/obj/item/reagent_containers/hypospray/medipen/oxandrolone = 1,
 			/obj/item/reagent_containers/syringe/contraband/methamphetamine = 1,
+			) = 1,
+		list(//implants
+
+			/obj/item/organ/cyberimp/arm/ammo_counter = 1,
+			/obj/item/organ/cyberimp/eyes/hud/sensor = 1,
+			/obj/item/organ/cyberimp/cyberlink/terragov = 1,
+			/obj/item/organ/cyberimp/chest/filtration = 1,
+			/obj/item/organ/cyberimp/leg/accelerator = 1,
+			/obj/item/organ/cyberimp/leg/chemplant/emergency = 1,
 			) = 1,
 		) = 1,
 
