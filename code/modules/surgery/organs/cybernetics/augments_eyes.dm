@@ -19,7 +19,13 @@
 /obj/item/organ/cyberimp/eyes/hud/update_implants()
 	. = ..()
 	if(check_compatibility())
+		if(HUD_type)
+			var/datum/atom_hud/H = GLOB.huds[HUD_type]
+			H.add_hud_to(M)
+		if(HUD_trait)
+			ADD_TRAIT(M, HUD_trait, ORGAN_TRAIT)
 		return
+
 	if(HUD_type)
 		var/datum/atom_hud/H = GLOB.huds[HUD_type]
 		H.remove_hud_from(owner)
