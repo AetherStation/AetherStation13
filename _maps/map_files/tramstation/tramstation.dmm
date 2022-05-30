@@ -60837,7 +60837,7 @@
 /turf/open/floor/plating,
 /area/maintenance/fore/secondary)
 "tyc" = (
-/obj/machinery/modular_computer/console/preset/civilian,
+/obj/machinery/computer/rdconsole,
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 1
 	},

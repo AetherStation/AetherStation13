@@ -10375,6 +10375,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
 	},
+/obj/item/kirbyplants/random,
 /turf/open/floor/iron/white,
 /area/science/lab)
 "biW" = (
@@ -11512,7 +11513,7 @@
 /turf/open/floor/iron,
 /area/hallway/primary/central)
 "bpf" = (
-/obj/machinery/modular_computer/console/preset/civilian{
+/obj/machinery/computer/rdconsole{
 	dir = 4
 	},
 /turf/open/floor/iron,
@@ -47568,6 +47569,9 @@
 	dir = 4
 	},
 /obj/machinery/bounty_board/directional/west,
+/obj/machinery/modular_computer/console/preset/civilian{
+	dir = 4
+	},
 /turf/open/floor/iron/white,
 /area/science/lab)
 "skK" = (
