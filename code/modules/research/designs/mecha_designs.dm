@@ -454,7 +454,7 @@
 
 /datum/design/mech_lmg
 	name = "Exosuit Weapon (\"Ultra AC 2\" LMG)"
-	desc = "A weapon for combat exosuits. Shoots a rapid, three shot burst."
+	desc = "A weapon for combat exosuits. Shoots an extremely rapid, fifteen shot burst of low-caliber bullets."
 	id = "mech_lmg"
 	build_type = MECHFAB
 	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
