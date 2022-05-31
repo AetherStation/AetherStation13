@@ -717,6 +717,7 @@
 	gain_text = "<span class='danger'>There's a lot on your mind right now.</span>"
 	lose_text = "<span class='notice'>Your mind finally feels calm.</span>"
 	medical_record_text = "Patient's mind is in a vulnerable state, and cannot recover from traumatic events."
+	mood_quirk = TRUE
 	hardcore_value = 9
 
 /datum/quirk/item_quirk/allergic
