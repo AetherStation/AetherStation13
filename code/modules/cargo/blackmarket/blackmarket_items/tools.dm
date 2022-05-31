@@ -97,3 +97,19 @@
 	price_max = 323
 	stock_max = 2
 	availability_prob = 50
+
+/datum/blackmarket_item/tool/toolbelt
+	name = "Utility Toolbelt"
+	desc = "An empty utility belt, capable of holding a vast amount of engineering equipment. \
+	The leather is made out of endangered space carp, making it hard to sell legally, but damn if it doesn't look fancy..."
+	item = /obj/item/storage/belt/utility
+
+	price_min = 500
+	price_max = 750
+	stock_max = 2
+	availability_prob = 35
+
+/datum/blackmarket_item/tool/toolbelt/spawn_item(loc)
+	var/obj/I = new /obj/item/storage/belt/utility(loc)
+	I.add_atom_colour("#5203fc", FIXED_COLOUR_PRIORITY)
+	return I

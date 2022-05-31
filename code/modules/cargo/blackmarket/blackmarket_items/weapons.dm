@@ -64,3 +64,45 @@
 	price_max = 400
 	stock_max = 2
 	availability_prob = 50
+
+/datum/blackmarket_item/weapon/pipegun
+	name = "Pipe Gun"
+	desc = "Homemade from scraps our gunsmith had lying around. The gun works, just don't expect it to last long."
+	item = /obj/item/gun/ballistic/rifle/boltaction/pipegun
+
+	price_min = 800
+	price_max = 1200
+	stock_max = 1
+	availability_prob = 15
+
+/datum/blackmarket_item/weapon/fireaxe
+	name = "Fire Axe"
+	desc = "For some reason, these fireaxes sell like hotcakes. We don't know why but we sure as hell are cashing in on this!"
+	item = /obj/item/fireaxe
+
+	price_min = 700
+	price_max = 900
+	stock_max = 1
+	availability_prob = 20
+
+/datum/blackmarket_item/weapon/frag_grenade
+	name = "Fragmentation Grenade"
+	desc = "A classic frag grenade. Pull the pin, count to three, don't count to two, ESPECIALLY DO NOT COUNT TO FOUR, throw and take cover!"
+	item = /obj/item/grenade/frag
+
+	price_min = 400
+	price_max = 800
+	stock_max = 2
+	availability_prob = 15
+
+/datum/blackmarket_item/weapon/gluon_grenade
+	name = "Gluon Grenade"
+	desc = "A highly advanced grenade, capable of irradiating and freezing everything it hits. \
+	It also makes struck targets extremely tired, allowing for easy cleanup! \
+	As for how we got this highly advanced grenade, you don't have to know. No refunds."
+	item = /obj/item/grenade/gluon
+
+	price_min = 600
+	price_max = 1200
+	stock_max = 2
+	availability_prob = 5
