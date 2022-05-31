@@ -301,13 +301,13 @@
 	icon_state = "mecha_uac2"
 	equip_cooldown = 10
 	projectile = /obj/projectile/bullet/lmg
-	projectiles = 300
-	projectiles_cache = 300
-	projectiles_cache_max = 1200
-	projectiles_per_shot = 3
+	projectiles = 750
+	projectiles_cache = 750
+	projectiles_cache_max = 3000
+	projectiles_per_shot = 15
 	variance = 6
 	randomspread = 1
-	projectile_delay = 2
+	projectile_delay = 0.5
 	harmful = TRUE
 	ammo_type = "lmg"
 
