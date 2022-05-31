@@ -70503,7 +70503,7 @@
 /turf/open/floor/wood,
 /area/maintenance/port/aft)
 "uZe" = (
-/obj/machinery/modular_computer/console/preset/civilian,
+/obj/machinery/computer/rdconsole,
 /obj/effect/turf_decal/siding{
 	dir = 1
 	},
