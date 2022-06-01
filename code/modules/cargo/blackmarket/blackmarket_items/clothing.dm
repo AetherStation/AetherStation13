@@ -69,7 +69,7 @@
 	price_max = 7000
 	stock_max = 1
 	availability_prob = 10
-	
+
 /datum/blackmarket_item/clothing/rocket_boots
 	name = "Rocket Boots"
 	desc = "We found a pair of jump boots and overclocked the hell out of them. No liability for grevious harm to or with a body."
@@ -79,3 +79,20 @@
 	price_max = 3000
 	stock_max = 1
 	availability_prob = 40
+
+/datum/blackmarket_item/clothing/insulated_gloves
+	name = "2381 Engineering Insulated Insulation Antishock"
+	desc = "All Color (must be yellow) \
+	No Shock Glove Anti Shock Protected \
+	Content Two (2) Gloves Assistant Friend"
+	item = /obj/item/clothing/gloves/color/yellow
+
+	price_min = 400
+	price_max = 600
+	stock_max = 4
+	availability_prob = 25
+
+/datum/blackmarket_item/clothing/insulated_gloves/spawn_item(loc)
+	if (prob(35)) //Cheap knockoffs, should have seen this coming!
+		return new /obj/item/clothing/gloves/color/fyellow(loc)
+	return ..()

@@ -77,3 +77,21 @@
 	price_max = 1000
 	stock_max = 2
 	availability_prob = 30
+
+/datum/blackmarket_item/misc/toy_esword
+	name = "2521 New Product Esword Replica Clear White Yellow Red"
+	desc = "All Color \
+	Safety Full No Heat Energy Wound \
+	Original Syndicate Crystal (replica) \
+	230 Watt TRANSLATION ERROR 100% Quality"
+	item = /obj/item/toy/sword
+
+	price_min = 100
+	price_max = 250
+	stock_max = 5
+	availability_prob = 40
+
+/datum/blackmarket_item/misc/toy_esword/spawn_item(loc)
+	if (prob(1)) //Made in China, OOPS!
+		return new /obj/item/melee/transforming/energy/sword(loc)
+	return ..()
