@@ -17349,12 +17349,6 @@
 /mob/living/simple_animal/pet/fox/renault,
 /turf/open/floor/carpet,
 /area/command/heads_quarters/captain/private)
-"dtM" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/gloves/color/fyellow,
-/obj/item/stack/cable_coil,
-/turf/open/floor/iron,
-/area/commons/storage/primary)
 "dtO" = (
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -70199,6 +70193,24 @@
 /mob/living/simple_animal/mouse/brown/tom,
 /turf/open/floor/plating,
 /area/security/prison/safe)
+"uUv" = (
+/obj/machinery/light/directional/east,
+/obj/structure/table/reinforced,
+/obj/item/storage/box/lights/mixed,
+/obj/item/stack/sheet/iron{
+	amount = 30
+	},
+/obj/item/radio{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/stack/cable_coil,
+/obj/structure/sign/poster/random{
+	pixel_x = 32
+	},
+/obj/item/clothing/gloves/color/yellow,
+/turf/open/floor/iron,
+/area/commons/storage/primary)
 "uUx" = (
 /obj/structure/chair/office,
 /obj/effect/landmark/start/hangover,
@@ -71332,6 +71344,11 @@
 /obj/item/radio/intercom/directional/west,
 /turf/open/floor/iron,
 /area/hallway/primary/central)
+"vmg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/cable_coil,
+/turf/open/floor/iron,
+/area/commons/storage/primary)
 "vmw" = (
 /obj/machinery/door/window/northright{
 	base_state = "left";
@@ -74504,23 +74521,6 @@
 "wpL" = (
 /turf/closed/wall,
 /area/commons/toilet/restrooms)
-"wpN" = (
-/obj/machinery/light/directional/east,
-/obj/structure/table/reinforced,
-/obj/item/storage/box/lights/mixed,
-/obj/item/stack/sheet/iron{
-	amount = 30
-	},
-/obj/item/radio{
-	pixel_x = -5;
-	pixel_y = 5
-	},
-/obj/item/stack/cable_coil,
-/obj/structure/sign/poster/random{
-	pixel_x = 32
-	},
-/turf/open/floor/iron,
-/area/commons/storage/primary)
 "wpP" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -102828,7 +102828,7 @@ aaa
 cvc
 pIp
 lHv
-dtM
+vmg
 kQs
 aPL
 cvc
@@ -103344,7 +103344,7 @@ eff
 xWZ
 qdX
 hDR
-wpN
+uUv
 cvc
 vDJ
 bef
