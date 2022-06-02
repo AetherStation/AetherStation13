@@ -62,4 +62,6 @@
 
 	implants = list(/obj/item/implant/mindshield)
 
+	chameleon_extras = /obj/item/gun/ballistic/shotgun/automatic/combat/compact
+
 	id_trim = /datum/id_trim/job/warden
