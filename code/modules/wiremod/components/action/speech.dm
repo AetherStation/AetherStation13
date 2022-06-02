@@ -39,7 +39,7 @@
 		var/atom/movable/shell = parent.shell
 		// Prevents appear as the individual component if there is a shell.
 		if(shell)
-			shell.say(message.input_value)
+			shell.say(trim(copytext_char(sanitize(message.input_value), 1, MAX_MESSAGE_LEN)))
 		else
-			say(message.input_value)
+			say(trim(copytext_char(sanitize(message.input_value), 1, MAX_MESSAGE_LEN)))
 		TIMER_COOLDOWN_START(parent, COOLDOWN_CIRCUIT_SPEECH, speech_cooldown)
