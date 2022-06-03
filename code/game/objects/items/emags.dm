@@ -18,13 +18,17 @@
 	slot_flags = ITEM_SLOT_ID
 	worn_icon_state = "emag"
 	var/prox_check = TRUE //If the emag requires you to be in range
-	var/consumer_types = list(
-		typesof(/obj/machinery/door/airlock),
-		typesof(/obj/machinery/door/window/))//List of types that consume a charge upon hacking
+	var/list/consumer_types //List of types that consume a charge upon hacking
 	var/charges = 3 //How many charges do we currently have
 	var/max_charges = 3 //How many charges can we hold in total
-	var/list/charge_timers = list()
 	var/charge_time = 1 MINUTES //How long does it take to gain a new charge
+	var/current_cooldown //How long until we gain our next charge
+
+/obj/item/card/emag/Initialize(mapload)
+	. = ..()
+	consumer_types = list(
+		typesof(/obj/machinery/door/airlock),
+		typesof(/obj/machinery/door/window/))
 
 /obj/item/card/emag/attack_self(mob/user) //for traitors with balls of plastitanium
 	if(Adjacent(user))
@@ -61,13 +65,6 @@
 	. = ..()
 	playsound(src, 'sound/items/bikehorn.ogg', 50, TRUE)
 
-/obj/item/card/emag/Initialize(mapload)
-	. = ..()
-	type_blacklist = list(typesof(/obj/machinery/door/airlock), typesof(/obj/machinery/door/window/)) //list of all typepaths that require a specialized emag to hack.
-
-/obj/item/card/emag/attack()
-	return
-
 /obj/item/card/emag/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	var/atom/A = target
@@ -81,7 +78,14 @@
 /obj/item/card/emag/proc/use_charge(mob/user)
 	charges --
 	to_chat(user, span_notice("You use [src]. It now has [charges] charges remaining."))
-	addtimer(CALLBACK(src, .proc/recharge), charge_time, TIMER_UNIQUE)
+	current_cooldown = addtimer(CALLBACK(src, .proc/recharge), charge_time, TIMER_UNIQUE | TIMER_STOPPABLE)
+
+/obj/item/card/emag/proc/can_emag(atom/target, mob/user)
+	for (var/list/subtypelist in consumer_types)
+		if((target.type in subtypelist) && charges <= 0)
+			to_chat(user, span_warning("[src] is out of charges, give it <b>[timeleft(current_cooldown) * 0.1] seconds </b> to recharge!"))
+			return FALSE
+	return TRUE
 
 /obj/item/card/emag/proc/recharge(mob/user)
 	charges = min(charges+1, max_charges)
@@ -90,9 +94,10 @@
 /obj/item/card/emag/examine(mob/user)
 	. = ..()
 	. += span_notice("It has [charges] charges remaining.")
-	if (length(charge_timers))
-		. += "[span_notice("<b>A small display on the back reads:")]</b>"
-	for (var/i in 1 to length(charge_timers))
-		var/timeleft = timeleft(charge_timers[i])
-		var/loadingbar = num2loadingbar(timeleft/charge_time)
-		. += span_notice("<b>CHARGE #[i]: [loadingbar] ([timeleft*0.1]s)</b>")
+	. += "[span_notice("<b>A small display on the back reads:")]</b>"
+	var/timeleft = current_cooldown != TIMER_ID_NULL ? timeleft(current_cooldown) : 0
+	var/loadingbar = num2loadingbar(timeleft/charge_time)
+	if(charges == max_charges)
+		. += span_notice("<b> All [charges] charges are ready for use!</b>")
+	else
+		. += span_notice("<b>[loadingbar] : [timeleft*0.1]s </b> Until the next charge.")

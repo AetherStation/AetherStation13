@@ -149,8 +149,8 @@
 			new /obj/item/ammo_box/magazine/m12g(src) // 2 tc
 			new /obj/item/grenade/c4 (src) // 1 tc
 			new /obj/item/grenade/c4 (src) // 1 tc
-			new /obj/item/card/emag(src) // 4 tc
-			new /obj/item/card/emag/doorjack(src) // 3 tc
+			new /obj/item/grenade/c4 (src) // 1 tc
+			new /obj/item/card/emag(src) // 6 tc
 
 /obj/item/storage/box/syndicate/bundle_b/PopulateContents()
 	switch (pickweight(list(
