@@ -16,7 +16,7 @@ Contains:
 	Blackmarket combat medic hardsuit
 */
 
-	//Death squad armored space suits, not hardsuits!
+//Death squad armored space suits, not hardsuits!
 /obj/item/clothing/head/helmet/space/hardsuit/deathsquad
 	name = "MK.III SWAT Helmet"
 	desc = "An advanced tactical space helmet."
@@ -43,9 +43,8 @@ Contains:
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/deathsquad
 	dog_fashion = /datum/dog_fashion/back/deathsquad
-	cell = /obj/item/stock_parts/cell/bluespace
 
-	//NEW SWAT suit
+//NEW SWAT suit
 /obj/item/clothing/suit/space/swat
 	name = "MK.I SWAT Suit"
 	desc = "A tactical space suit first developed in a joint effort by the defunct IS-ERI and Nanotrasen in 20XX for military space operations. A tried and true workhorse, it is very difficult to move in but offers robust protection against all threats!"
@@ -84,7 +83,7 @@ Contains:
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
-	//NASA Voidsuit
+//NASA Voidsuit
 /obj/item/clothing/head/helmet/space/nasavoid
 	name = "NASA Void Helmet"
 	desc = "An old, NASA CentCom branch designed, dark red space suit helmet."
@@ -130,7 +129,7 @@ Contains:
 	allowed = list(/obj/item) //for stuffing exta special presents
 
 
-	//Space pirate outfit
+//Space pirate outfit
 /obj/item/clothing/head/helmet/space/pirate
 	name = "modified EVA helmet"
 	desc = "A modified helmet to allow space pirates to intimidate their customers whilst staying safe from the void. Comes with some additional protection."
@@ -155,7 +154,7 @@ Contains:
 	strip_delay = 40
 	equip_delay_other = 20
 
-	//Emergency Response Team suits
+//Emergency Response Team suits
 /obj/item/clothing/head/helmet/space/hardsuit/ert
 	name = "emergency response team commander helmet"
 	desc = "The integrated helmet of an ERT hardsuit, this one has blue highlights."
@@ -184,14 +183,8 @@ Contains:
 	strip_delay = 130
 	resistance_flags = FIRE_PROOF
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	cell = /obj/item/stock_parts/cell/bluespace
 
-// ERT suit's gets EMP Protection
-/obj/item/clothing/suit/space/hardsuit/ert/Initialize()
-	. = ..()
-	AddElement(/datum/element/empprotection, EMP_PROTECT_CONTENTS)
-
-	//ERT Security
+//ERT Security
 /obj/item/clothing/head/helmet/space/hardsuit/ert/sec
 	name = "emergency response team security helmet"
 	desc = "The integrated helmet of an ERT hardsuit, this one has red highlights."
@@ -206,7 +199,7 @@ Contains:
 	inhand_icon_state = "ert_security"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/sec
 
-	//ERT Engineering
+//ERT Engineering
 /obj/item/clothing/head/helmet/space/hardsuit/ert/engi
 	name = "emergency response team engineering helmet"
 	desc = "The integrated helmet of an ERT hardsuit, this one has orange highlights."
@@ -544,7 +537,6 @@ Contains:
 	armor = list(MELEE = 60, BULLET = 40, LASER = 40, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100)
 	strip_delay = 130
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	cell = /obj/item/stock_parts/cell/hyper
 
 //We can either be alive monsters or dead monsters, you choose.
 /obj/item/clothing/head/helmet/space/hardsuit/combatmedic

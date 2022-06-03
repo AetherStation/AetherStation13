@@ -366,11 +366,6 @@
 			return
 	C.update_action_buttons_icon()
 
-/atom/movable/screen/spacesuit
-	name = "Space suit cell status"
-	icon_state = "spacesuit_0"
-	screen_loc = ui_spacesuit
-
 /atom/movable/screen/mov_intent
 	name = "run/walk toggle"
 	icon = 'icons/hud/screen_midnight.dmi'
