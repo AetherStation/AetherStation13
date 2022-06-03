@@ -556,6 +556,9 @@
 	if (isnull(shuttle_template.who_can_purchase))
 		return FALSE
 
+	if (!(obj_flags & EMAGGED) && shuttle_template.restricted)
+		return FALSE
+
 	for (var/access in authorize_access)
 		if (access in shuttle_template.who_can_purchase)
 			return TRUE

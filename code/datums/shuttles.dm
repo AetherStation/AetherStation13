@@ -8,6 +8,8 @@
 	var/description
 	var/prerequisites
 	var/admin_notes
+	///If the shuttle can only be bought if the console is emagged.
+	var/restricted = FALSE
 	/// How much does this shuttle cost the cargo budget to purchase? Put in terms of CARGO_CRATE_VALUE to properly scale the cost with the current balance of cargo's income.
 	var/credit_cost = INFINITY
 	/// What job accesses can buy this shuttle? If null, this shuttle cannot be bought.
@@ -257,10 +259,10 @@
 /datum/map_template/shuttle/emergency/discoinferno
 	suffix = "discoinferno"
 	name = "Disco Inferno"
-	description = "The glorious results of centuries of plasma research done by Nanotrasen employees. This is the reason why you are here. Get on and dance like you're on fire, burn baby burn!"
+	description = "A monopoly on plasma is the reason why those NT dogs have a stranglehold on the market. We've hijacked this shuttle and replaced the floor tiles with plasma. What's that saying again, reap what you sow?"
 	admin_notes = "Flaming hot. The main area has a dance machine as well as plasma floor tiles that will be ignited by players every single time."
 	credit_cost = CARGO_CRATE_VALUE * 20
-	who_can_purchase = null
+	restricted = TRUE
 
 /datum/map_template/shuttle/emergency/arena
 	suffix = "arena"
@@ -402,7 +404,8 @@
 	description = "How was space work today? Oh, pretty good. We got a new space station and the company will make a lot of money. What space station? I cannot tell you; it's space confidential. \
 	Aw, come space on. Why not? No, I can't. Anyway, how is your space roleplay life?"
 	admin_notes = "Tiny, with a single airlock and wooden walls. What could go wrong?"
-	who_can_purchase = null
+	credit_cost = CARGO_CRATE_VALUE * 4
+	restricted = TRUE
 	movement_force = list("KNOCKDOWN" = 3, "THROW" = 2)
 
 /datum/map_template/shuttle/emergency/goon
