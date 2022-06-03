@@ -364,6 +364,9 @@ SUBSYSTEM_DEF(ticker)
 		var/datum/job/player_assigned_role = new_player_living.mind.assigned_role
 		if(player_assigned_role.job_flags & JOB_EQUIP_RANK)
 			SSjob.EquipRank(new_player_living, player_assigned_role, new_player_mob.client)
+		if(is_captain_job(player_assigned_role))
+			captainless = FALSE
+			OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, player_assigned_role.get_captaincy_announcement(new_player_living)))
 		player_assigned_role.after_roundstart_spawn(new_player_living, new_player_mob.client)
 		if(ishuman(new_player_living) && CONFIG_GET(flag/roundstart_traits))
 			if(new_player_mob.client?.prefs?.should_be_random_hardcore(player_assigned_role, new_player_living.mind))
