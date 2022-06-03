@@ -70,36 +70,30 @@
 	else
 		explosion(target, light_impact_range = 2, flame_range = 3, flash_range = 4)
 
-/// Mech BRM-6 missile
-/obj/projectile/bullet/a84mm_br
-	name ="\improper HE missile"
-	desc = "Boom."
+/// SRM-8 mech standard rocket
+/obj/projectile/bullet/a84mm/kinetic
+	name ="\improper kinetic missile"
+	desc = "ACME is painted on the side for some reason..."
 	icon_state = "missile"
-	damage = 30
-	ricochets_max = 0 //it's a MISSILE
-	embedding = null
-	shrapnel_type = null
-	var/sturdy = list(
-	/turf/closed,
-	/obj/vehicle/sealed/mecha,
-	/obj/machinery/door,
-	/obj/structure/window,
-	/obj/structure/grille
-	)
+	damage = 75
+	dismemberment = 0
+	armour_penetration = 20
+	anti_armour_damage = 0
 
-/obj/item/broken_missile
-	name = "\improper broken missile"
-	desc = "A missile that did not detonate. The tail has snapped and it is in no way fit to be used again."
-	icon = 'icons/obj/guns/projectiles.dmi'
-	icon_state = "missile_broken"
-	w_class = WEIGHT_CLASS_TINY
-
-
-/obj/projectile/bullet/a84mm_br/on_hit(atom/target, blocked=0)
-	..()
-	for(var/i in sturdy)
-		if(istype(target, i))
-			explosion(target, heavy_impact_range = 1, light_impact_range = 1, flash_range = 2)
-			return BULLET_ACT_HIT
-	//if(istype(target, /turf/closed) || ismecha(target))
-	new /obj/item/broken_missile(get_turf(src), 1)
+/obj/projectile/bullet/a84mm/kinetic/on_hit(atom/target, blocked = 0)
+	var/datum/effect_system/smoke_spread/quick/smoke = new
+	if(iscarbon(target))
+		smoke.set_up(0, src)
+		smoke.start()
+		var/mob/living/carbon/M = target
+		M.Paralyze(20)
+		M.Knockdown(120)
+		M.emote("scream") //WEEEE!!
+		M.visible_message("<span class='warning'>[M] flies off in an arc after being hit by the [src]!</span>")
+		var/throw_target = get_edge_target_turf(M, get_dir(src, get_step_away(M, starting)))
+		M.throw_at(throw_target, rand(8,12), 14)
+		explosion(target, heavy_impact_range = 0, light_impact_range = 0, flame_range = 0, flash_range = 2, adminlog = FALSE)
+	else
+		smoke.set_up(1, src)
+		smoke.start()
+		explosion(target, heavy_impact_range = 0, light_impact_range = 2, flame_range = 0, flash_range = 2)

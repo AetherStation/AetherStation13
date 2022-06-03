@@ -1646,7 +1646,7 @@
 
 /datum/techweb_node/mech_missile_rack
 	id = "mech_missile_rack"
-	display_name = "Exosuit Weapon (BRM-6 Missile Rack)"
+	display_name = "Exosuit Weapon (SRM-8 Missile Rack)"
 	description = "An advanced piece of mech weaponry"
 	prereq_ids = list("explosive_weapons")
 	design_ids = list(

@@ -291,11 +291,11 @@
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
 /datum/design/mech_missile_rack
-	name = "Exosuit Weapon (BRM-6 Missile Rack)"
-	desc = "Allows for the construction of an BRM-6 Breaching Missile Rack."
+	name = "Exosuit Weapon (SRM-8 Missile Rack)"
+	desc = "Allows for the construction of an SRM-8 Missile Rack."
 	id = "mech_missile_rack"
 	build_type = MECHFAB
-	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/breaching
+	build_path = /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	materials = list(/datum/material/iron=22000,/datum/material/gold=6000,/datum/material/silver=8000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
@@ -305,8 +305,8 @@
 	desc = "Ammunition for the SRM-8 Missile Rack."
 	id = "mech_missile_rack_ammo"
 	build_type = PROTOLATHE | AWAY_LATHE | MECHFAB
-	build_path = /obj/item/mecha_ammo/missiles_br
-	materials = list(/datum/material/iron=8000,/datum/material/gold=500,/datum/material/iron=500)
+	build_path = /obj/item/mecha_ammo/missiles_kinetic
+	materials = list(/datum/material/iron=12000,/datum/material/gold=100,/datum/material/iron=500)
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY

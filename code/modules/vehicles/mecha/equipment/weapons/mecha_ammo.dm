@@ -61,25 +61,14 @@
 	rounds = 750
 	ammo_type = "lmg"
 
-/obj/item/mecha_ammo/missiles_br
-	name = "breaching missiles"
-	desc = "A box of large missiles, ready for loading into a BRM-6 exosuit missile rack."
-	icon_state = "missile_br"
-	rounds = 6
-	round_term = "missile"
-	direct_load = TRUE
-	load_audio = 'sound/weapons/gun/general/mag_bullet_insert.ogg'
-	ammo_type = "missiles_br"
-
-/obj/item/mecha_ammo/missiles_he
-	name = "anti-armor missiles"
-	desc = "A box of large missiles, ready for loading into an SRM-8 exosuit missile rack."
-	icon_state = "missile_he"
+/obj/item/mecha_ammo/missiles_kinetic
+	name = "kinetic missiles"
+	desc = "A box of light explosive kinetic missiles, ready for loading into an SRM-8 exosuit missile rack."
+	icon_state = "missile_kinetic"
 	rounds = 8
 	round_term = "missile"
-	direct_load = TRUE
 	load_audio = 'sound/weapons/gun/general/mag_bullet_insert.ogg'
-	ammo_type = "missiles_he"
+	ammo_type = "missiles_kinetic"
 
 
 /obj/item/mecha_ammo/flashbang
