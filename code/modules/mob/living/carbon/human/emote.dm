@@ -50,7 +50,6 @@
 	message = "screams!"
 	message_mime = "acts out a scream!"
 	emote_type = EMOTE_AUDIBLE
-	only_forced_audio = TRUE
 	vary = TRUE
 
 /datum/emote/living/carbon/human/scream/get_sound(mob/living/user)
