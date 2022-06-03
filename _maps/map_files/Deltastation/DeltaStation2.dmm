@@ -70574,13 +70574,6 @@
 	},
 /turf/open/floor/iron,
 /area/security/brig)
-"nhf" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/box/lights/mixed,
-/obj/item/clothing/gloves/color/fyellow,
-/obj/effect/turf_decal/bot,
-/turf/open/floor/iron,
-/area/commons/storage/primary)
 "nhi" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/random{
@@ -110514,6 +110507,13 @@
 /obj/machinery/airalarm/directional/east,
 /turf/open/floor/iron/dark,
 /area/engineering/transit_tube)
+"xCC" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/lights/mixed,
+/obj/effect/turf_decal/bot,
+/obj/item/clothing/gloves/color/yellow,
+/turf/open/floor/iron,
+/area/commons/storage/primary)
 "xCG" = (
 /mob/living/simple_animal/hostile/cockroach,
 /turf/open/floor/plating,
@@ -145711,7 +145711,7 @@ fxY
 mMy
 kDZ
 gXU
-nhf
+xCC
 kDZ
 ncF
 eUy

@@ -2,7 +2,7 @@
 	dying_key = DYE_REGISTRY_GLOVES
 
 /obj/item/clothing/gloves/color/yellow
-	desc = "These gloves provide protection against electric shock. The thickness of the rubber makes your fingers seem bigger."
+	desc = "These gloves provide protection against electric shock."
 	name = "insulated gloves"
 	icon_state = "yellow"
 	inhand_icon_state = "ygloves"
@@ -12,7 +12,6 @@
 	custom_price = PAYCHECK_MEDIUM * 10
 	custom_premium_price = PAYCHECK_COMMAND * 6
 	cut_type = /obj/item/clothing/gloves/cut
-	clothing_traits = list(TRAIT_CHUNKYFINGERS)
 
 /obj/item/toy/sprayoncan
 	name = "spray-on insulation applicator"

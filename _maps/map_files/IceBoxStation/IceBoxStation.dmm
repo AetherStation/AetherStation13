@@ -21068,16 +21068,6 @@
 	},
 /turf/open/floor/plating/snowed/icemoon,
 /area/icemoon/surface/outdoors)
-"dgO" = (
-/obj/structure/table,
-/obj/item/crowbar,
-/obj/item/assembly/prox_sensor{
-	pixel_x = -8;
-	pixel_y = 4
-	},
-/obj/item/clothing/gloves/color/fyellow,
-/turf/open/floor/iron,
-/area/commons/storage/primary)
 "dgQ" = (
 /obj/structure/cable,
 /turf/open/floor/iron/white,
@@ -44049,12 +44039,6 @@
 	},
 /turf/open/floor/iron/white/corner,
 /area/engineering/atmos)
-"qlL" = (
-/obj/structure/disposalpipe/segment,
-/obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/maintenance/port/aft)
 "qlY" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/firedoor,
@@ -46002,6 +45986,16 @@
 /obj/effect/spawner/lootdrop/techstorage/rnd_secure,
 /turf/open/floor/iron,
 /area/engineering/storage/tech)
+"rwM" = (
+/obj/structure/table,
+/obj/item/crowbar,
+/obj/item/assembly/prox_sensor{
+	pixel_x = -8;
+	pixel_y = 4
+	},
+/obj/item/clothing/gloves/color/yellow,
+/turf/open/floor/iron,
+/area/commons/storage/primary)
 "rxq" = (
 /obj/item/restraints/legcuffs/beartrap,
 /obj/item/restraints/legcuffs/beartrap,
@@ -76486,7 +76480,7 @@ ndn
 hOt
 dpg
 hOt
-dgO
+rwM
 usd
 aLE
 avK
@@ -82715,7 +82709,7 @@ caq
 caq
 caq
 caq
-qlL
+caq
 upD
 bCq
 bCq
