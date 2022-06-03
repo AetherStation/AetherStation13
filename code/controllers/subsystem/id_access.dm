@@ -33,9 +33,6 @@ SUBSYSTEM_DEF(id_access)
 	/// Helper list containing all station regions.
 	var/list/station_regions = list()
 
-	/// The roundstart generated code for the spare ID safe. This is given to the Captain on shift start. If there's no Captain, it's given to the HoP. If there's no HoP
-	var/spare_id_safe_code = ""
-
 /datum/controller/subsystem/id_access/Initialize(timeofday)
 	// We use this because creating the trim singletons requires the config to be loaded.
 	setup_access_flags()
@@ -44,8 +41,6 @@ SUBSYSTEM_DEF(id_access)
 	setup_wildcard_dict()
 	setup_access_descriptions()
 	setup_tgui_lists()
-
-	spare_id_safe_code = "[rand(0,9)][rand(0,9)][rand(0,9)][rand(0,9)][rand(0,9)]"
 
 	return ..()
 
