@@ -27,8 +27,10 @@
 			addtimer(CALLBACK(C, /mob/living/carbon.proc/do_jitter_animation, jitter), 5)
 
 /obj/projectile/energy/electrode/proc/stun_effect(mob/living/carbon/C)
-	C.dropItemToGround(C.get_active_held_item())
-	C.dropItemToGround(C.get_inactive_held_item())
+	if(C.getStaminaLoss() > 50)
+		to_chat(target,span_alertwarning("Your hands seize in shock!"))
+		C.dropItemToGround(C.get_active_held_item())
+		C.dropItemToGround(C.get_inactive_held_item())
 	C.apply_status_effect(/datum/status_effect/tased)
 
 /obj/projectile/energy/electrode/on_range() //to ensure the bolt sparks when it reaches the end of its range if it didn't hit a target yet
