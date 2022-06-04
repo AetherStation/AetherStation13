@@ -37,6 +37,19 @@
 	var/mob/dead/observer/G = usr
 	G.dead_tele()
 
+/atom/movable/screen/ghost/activities
+	name = "Bored?"
+	icon_state = "bored"
+
+/atom/movable/screen/ghost/activities/Click()
+	var/mob/dead/observer/G = usr
+	if(usr.hud_used.inventory_shown && G.hud_used)
+		usr.hud_used.inventory_shown = FALSE
+		usr.client.screen -= G.hud_used.toggleable_inventory
+	else
+		usr.hud_used.inventory_shown = TRUE
+		usr.client.screen += G.hud_used.toggleable_inventory
+
 /atom/movable/screen/ghost/pai
 	name = "pAI Candidate"
 	icon_state = "pai"
@@ -53,14 +66,28 @@
 	var/mob/dead/observer/G = usr
 	G.mafia_signup()
 
+/atom/movable/screen/ghost/dm
+	name = "Deathmatch Lobby"
+	icon_state = "dm"
+
+/atom/movable/screen/ghost/dm/Click()
+	var/mob/dead/observer/G = usr
+	G.deathmatch_signup()
+
+/atom/movable/screen/ghost/ctf
+	name = "Capture-The-Flag"
+	icon_state = "ctf"
+
+/atom/movable/screen/ghost/ctf/Click() // Yes, this is ugly, but I don't really care.
+	for(var/obj/machinery/capture_the_flag/CTF in GLOB.machines)
+		if(CTF.game_id != "centcom")
+			continue
+		CTF.attack_ghost()
+		return
+
 /datum/hud/ghost/New(mob/owner)
 	..()
 	var/atom/movable/screen/using
-
-	using = new /atom/movable/screen/ghost/spawners_menu()
-	using.screen_loc = ui_ghost_spawners_menu
-	using.hud = src
-	static_inventory += using
 
 	using = new /atom/movable/screen/ghost/orbit()
 	using.screen_loc = ui_ghost_orbit
@@ -77,15 +104,35 @@
 	using.hud = src
 	static_inventory += using
 
+	using = new /atom/movable/screen/ghost/activities()
+	using.screen_loc = ui_ghost_activities
+	using.hud = src
+	static_inventory += using
+
 	using = new /atom/movable/screen/ghost/pai()
 	using.screen_loc = ui_ghost_pai
 	using.hud = src
-	static_inventory += using
+	toggleable_inventory += using
 
 	using = new /atom/movable/screen/ghost/mafia()
 	using.screen_loc = ui_ghost_mafia
 	using.hud = src
-	static_inventory += using
+	toggleable_inventory += using
+
+	using = new /atom/movable/screen/ghost/dm()
+	using.screen_loc = ui_ghost_dm
+	using.hud = src
+	toggleable_inventory += using
+
+	using = new /atom/movable/screen/ghost/ctf()
+	using.screen_loc = ui_ghost_ctf
+	using.hud = src
+	toggleable_inventory += using
+
+	using = new /atom/movable/screen/ghost/spawners_menu()
+	using.screen_loc = ui_ghost_spawners_menu
+	using.hud = src
+	toggleable_inventory += using
 
 	using = new /atom/movable/screen/language_menu
 	using.screen_loc = 	ui_ghost_language_menu
