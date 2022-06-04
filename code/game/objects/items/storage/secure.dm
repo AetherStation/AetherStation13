@@ -205,35 +205,3 @@
 
 /obj/item/storage/secure/safe/hos
 	name = "head of security's safe"
-
-/**
- * This safe is meant to be damn robust. To break in, you're supposed to get creative, or use acid or an explosion.
- *
- * This makes the safe still possible to break in for someone who is prepared and capable enough, either through
- * chemistry, botany or whatever else.
- *
- * The safe is also weak to explosions, so spending some early TC could allow an antag to blow it upen if they can
- * get access to it.
- */
-/obj/item/storage/secure/safe/caps_spare
-	name = "captain's spare ID safe"
-	desc = "In case of emergency, do not break glass. All Captains and Acting Captains are provided with codes to access this safe. \
-It is made out of the same material as the station's Black Box and is designed to resist all conventional weaponry. \
-There appears to be a small amount of surface corrosion. It doesn't look like it could withstand much of an explosion."
-	can_hack_open = FALSE
-	armor = list(MELEE = 100, BULLET = 100, LASER = 100, ENERGY = 100, BOMB = 70, BIO = 100, RAD = 100, FIRE = 80, ACID = 70)
-	max_integrity = 300
-	color = "#ffdd33"
-
-/obj/item/storage/secure/safe/caps_spare/Initialize()
-	. = ..()
-
-	l_code = SSid_access.spare_id_safe_code
-	l_set = TRUE
-	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SET_LOCKSTATE, TRUE)
-
-/obj/item/storage/secure/safe/caps_spare/PopulateContents()
-	new /obj/item/card/id/advanced/gold/captains_spare(src)
-
-/obj/item/storage/secure/safe/caps_spare/rust_heretic_act()
-	take_damage(damage_amount = 100, damage_type = BRUTE, damage_flag = MELEE, armour_penetration = 100)
