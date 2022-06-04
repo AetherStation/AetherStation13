@@ -260,7 +260,6 @@
 /datum/chemical_reaction/ldm_vortex
 	required_reagents = list(/datum/reagent/liquid_dark_matter = 1)
 	required_temp = 474
-	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_EXPLOSIVE | REACTION_TAG_DANGEROUS
 
 /datum/chemical_reaction/ldm_vortex/on_reaction(datum/reagents/holder, created_volume)
 	var/turf/T = get_turf(holder.my_atom)
@@ -291,7 +290,6 @@
 /datum/chemical_reaction/flash_powder_flash
 	required_reagents = list(/datum/reagent/flash_powder = 1)
 	required_temp = 374
-	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_EXPLOSIVE | REACTION_TAG_DANGEROUS
 
 /datum/chemical_reaction/flash_powder_flash/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -346,7 +344,6 @@
 /datum/chemical_reaction/sonic_powder
 	results = list(/datum/reagent/sonic_powder = 3)
 	required_reagents = list(/datum/reagent/oxygen = 1, /datum/reagent/consumable/space_cola = 1, /datum/reagent/phosphorus = 1)
-	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_EXPLOSIVE | REACTION_TAG_DANGEROUS
 
 /datum/chemical_reaction/sonic_powder/on_reaction(datum/reagents/holder, created_volume)
 	if(holder.has_reagent(/datum/reagent/stabilizing_agent))
@@ -360,7 +357,6 @@
 /datum/chemical_reaction/sonic_powder_deafen
 	required_reagents = list(/datum/reagent/sonic_powder = 1)
 	required_temp = 374
-	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_EXPLOSIVE | REACTION_TAG_DANGEROUS
 
 /datum/chemical_reaction/sonic_powder_deafen/on_reaction(datum/reagents/holder, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -371,7 +367,6 @@
 /datum/chemical_reaction/phlogiston
 	results = list(/datum/reagent/phlogiston = 3)
 	required_reagents = list(/datum/reagent/phosphorus = 1, /datum/reagent/toxin/acid = 1, /datum/reagent/stable_plasma = 1)
-	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_EXPLOSIVE | REACTION_TAG_DANGEROUS
 
 /datum/chemical_reaction/phlogiston/on_reaction(datum/reagents/holder, created_volume)
 	if(holder.has_reagent(/datum/reagent/stabilizing_agent))
@@ -385,7 +380,6 @@
 /datum/chemical_reaction/napalm
 	results = list(/datum/reagent/napalm = 3)
 	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/fuel = 1, /datum/reagent/consumable/ethanol = 1 )
-	reaction_tags = REACTION_TAG_EASY | REACTION_TAG_EXPLOSIVE | REACTION_TAG_PLANT
 
 #define CRYOSTYLANE_UNDERHEAT_TEMP 50
 #define CRYOSTYLANE_IMPURE_TEMPERATURE_RANGE 200
