@@ -518,7 +518,10 @@
 		"smes",
 		"super_capacitor",
 		"super_cell",
+		"circulator",
+		"teg",
 		"superpacman",
+		"mrspacman",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
