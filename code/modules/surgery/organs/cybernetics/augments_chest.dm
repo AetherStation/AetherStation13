@@ -165,7 +165,12 @@
 		toggle(TRUE)
 
 /obj/item/organ/cyberimp/chest/thrusters/proc/toggle(silent = FALSE)
-	if(!on && check_compatibility())
+	if(!check_compatibility())
+		to_chat(owner, "<span class='warning'>The Neuralink beeps: ERR01 INCOMPATIBLE IMPLANT</span>")
+		if(!on)
+			return
+
+	if(!on)
 		if((organ_flags & ORGAN_FAILING))
 			if(!silent)
 				to_chat(owner, "<span class='warning'>Your thrusters set seems to be broken!</span>")
