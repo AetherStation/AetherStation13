@@ -117,13 +117,23 @@
 	var/extended = FALSE
 
 /obj/item/organ/cyberimp/cyberlink/Insert(mob/living/carbon/M, special, drop_if_replaced)
+	. = ..()
 	for(var/X in M.internal_organs)
 		var/obj/item/organ/O = X
 		if(!istype(O,/obj/item/organ/cyberimp))
 			continue
 		var/obj/item/organ/cyberimp/cyber = O
 		cyber.update_implants()
-	return ..()
+
+
+/obj/item/organ/cyberimp/cyberlink/Remove(mob/living/carbon/M, special)
+	. = ..()
+	for(var/X in M.internal_organs)
+		var/obj/item/organ/O = X
+		if(!istype(O,/obj/item/organ/cyberimp))
+			continue
+		var/obj/item/organ/cyberimp/cyber = O
+		cyber.update_implants()
 
 /obj/item/organ/cyberimp/cyberlink/nt_low
 	name = "NT Cyberlink 1.0"

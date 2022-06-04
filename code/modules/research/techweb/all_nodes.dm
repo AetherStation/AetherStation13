@@ -1147,7 +1147,7 @@
 	description = "Creation of NT-secure basic cyberlinks for low-grade cybernetic augmentation"
 	prereq_ids = list("adv_biotech","adv_biotech", "datatheory" )
 	design_ids = list("ci-nt_low")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500)
 
 /datum/techweb_node/ntlink_high
 	id = "ntlink_high"
