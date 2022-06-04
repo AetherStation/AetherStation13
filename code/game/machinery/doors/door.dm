@@ -183,6 +183,7 @@
 
 	if(density && !(obj_flags & EMAGGED))
 		if(allowed(user))
+			SEND_SIGNAL(user,COMSIG_LIVING_INTERACTED_WITH_DOOR,src,DOOR_OPEN)
 			open()
 		else
 			do_animate("deny")
@@ -212,8 +213,10 @@
 		user = null //so allowed(user) always succeeds
 	if(allowed(user))
 		if(density)
+			SEND_SIGNAL(user,COMSIG_LIVING_INTERACTED_WITH_DOOR,src,DOOR_OPEN)
 			open()
 		else
+			SEND_SIGNAL(user,COMSIG_LIVING_INTERACTED_WITH_DOOR,src,DOOR_CLOSE)
 			close()
 		return TRUE
 	if(density)
