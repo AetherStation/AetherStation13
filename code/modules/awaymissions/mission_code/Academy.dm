@@ -67,9 +67,6 @@
 /obj/singularity/academy/Initialize()
 	. = ..()
 
-	var/datum/component/singularity/singularity = singularity_component.resolve()
-	singularity?.grav_pull = 1
-
 /obj/singularity/academy/process(delta_time)
 	if(DT_PROB(0.5, delta_time))
 		mezzer()
