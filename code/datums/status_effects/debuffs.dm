@@ -1067,3 +1067,65 @@
 	desc = "You are a Ghoul! A eldritch monster reanimated to serve its master."
 	icon_state = "mind_control"
 
+/datum/status_effect/tased
+	id = "tased"
+	status_type = STATUS_EFFECT_REFRESH
+	duration = 10 SECONDS
+	alert_type = /atom/movable/screen/alert/status_effect/tased
+
+/datum/status_effect/tased/on_apply()
+	RegisterSignal(owner, COMSIG_MOB_APPLY_DAMGE, .proc/double_stamina_damage)
+	owner.add_movespeed_modifier(/datum/movespeed_modifier/tased, update = TRUE)
+	return ..()
+
+/datum/status_effect/tased/on_remove()
+	UnregisterSignal(owner, COMSIG_MOB_APPLY_DAMGE)
+	owner.remove_movespeed_modifier(/datum/movespeed_modifier/tased, update = TRUE)
+
+/datum/status_effect/tased/proc/double_stamina_damage(attacker, damage, damagetype, def_zone)
+	SIGNAL_HANDLER
+	if (damagetype != STAMINA || !damage)
+		return
+	owner.adjustStaminaLoss(damage)
+
+/datum/movespeed_modifier/tased
+	multiplicative_slowdown = 1
+
+/atom/movable/screen/alert/status_effect/tased
+	name = "Tased"
+	desc = "You have been tased! Your movement speed is reduced by half and you will take more stamina damage."
+	icon_state = "tased"
+
+/datum/status_effect/flashed
+	id = "flashed"
+	status_type = STATUS_EFFECT_REFRESH
+	duration = 1 // set in on_creation and refresh
+	alert_type = /atom/movable/screen/alert/status_effect/flashed
+
+/datum/status_effect/flashed/on_creation(mob/living/new_owner, _duration)
+	. = ..()
+	duration = world.time + _duration
+
+/datum/status_effect/flashed/refresh(effect, _duration)
+	duration = world.time + _duration
+
+/datum/status_effect/flashed/on_apply()
+	RegisterSignal(owner, COMSIG_MOVABLE_BUMP, .proc/bump)
+	RegisterSignal(owner, COMSIG_ATOM_BUMPED, .proc/bump)
+	return ..()
+
+/datum/status_effect/flashed/on_remove()
+	UnregisterSignal(owner, COMSIG_MOVABLE_BUMP)
+	UnregisterSignal(owner, COMSIG_ATOM_BUMPED)
+
+/datum/status_effect/flashed/proc/bump(datum/source, atom/A)
+	SIGNAL_HANDLER
+	if (!A.density || owner.body_position == LYING_DOWN)
+		return
+	owner.visible_message(span_danger("[owner] bumps in to [A] and falls over!"), span_danger("You walk in to something and fall over!"), span_notice("You hear a thump."))
+	owner.Paralyze(rand(2.5 SECONDS, 5 SECONDS))
+
+/atom/movable/screen/alert/status_effect/flashed
+	name = "Blinded"
+	desc = "You have been blinded! You can't see where you are going."
+	icon_state = "flashed"

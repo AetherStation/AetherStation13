@@ -544,11 +544,10 @@ Congratulations! You are now trained for invasive xenobiology research!"}
 			ProbeAttack(L,user)
 	return
 
-/obj/item/melee/baton/abductor/apply_stun_effect_end(mob/living/target)
-	StunAttack(target)
-
-/obj/item/melee/baton/abductor/proc/StunAttack(mob/living/L)
-	L.Paralyze(stun_time)
+/obj/item/melee/baton/abductor/baton_effect(mob/living/L, mob/user)
+	. = ..()
+	if (.)
+		L.Paralyze(stun_time)
 
 /obj/item/melee/baton/abductor/attack_self(mob/living/user)
 	toggle(user)
