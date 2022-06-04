@@ -559,7 +559,7 @@
 /datum/status_effect/miami/proc/bust_open(datum/source,obj/machinery/door/door,destination_state)
 	SIGNAL_HANDLER
 
-	owner.do_attack_animation(door)
+	owner.do_attack_animation(door, no_effect = TRUE)
 
 	var/direction = get_dir(owner,door)
 
