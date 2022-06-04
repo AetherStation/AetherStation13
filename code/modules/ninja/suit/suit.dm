@@ -28,7 +28,8 @@
 	var/datum/techweb/stored_research
 	///The katana registered with the suit, used for recalling and catching the katana.  Set when the ninja outfit is created.
 	var/obj/item/energy_katana/energyKatana
-
+	//The suit's cell
+	var/obj/item/stock_parts/cell/cell
 	///The space ninja's hood.
 	var/obj/item/clothing/head/helmet/space/space_ninja/n_hood
 	///The space ninja's shoes.
@@ -88,10 +89,6 @@
 	QDEL_NULL(spark_system)
 	QDEL_NULL(cell)
 	return ..()
-
-// seal the cell in the ninja outfit
-/obj/item/clothing/suit/space/space_ninja/toggle_spacesuit_cell(mob/user)
-	return
 
 // Space Suit temperature regulation and power usage
 /obj/item/clothing/suit/space/space_ninja/process(delta_time)

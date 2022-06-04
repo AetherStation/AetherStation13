@@ -36,12 +36,6 @@
 		cell = new cell(src)
 
 // Clean up the cell on destroy
-/obj/item/clothing/suit/space/Destroy()
-	if(cell)
-		QDEL_NULL(cell)
-	return ..()
-
-// Clean up the cell on destroy
 /obj/item/inspector/handle_atom_del(atom/A)
 	if(A == cell)
 		cell = null
