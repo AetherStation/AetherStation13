@@ -308,3 +308,18 @@
 
 #undef EASY_TURN_ON
 #undef EASY_TURN_OFF
+
+/obj/item/paper/guides/heavy_emitter
+	name = "Heavy Emitter Manual"
+	info = "How to setup the heavy emitter:<br>\
+	<ul>\
+	<li>Clear a 5 by 5 area, heavy emitter requires only 3 by 3 but vents need access to air to function</li>\
+	<li>Mount the core in the middle, weld it in place and insert a pyroclastic anomaly core into it.</li>\
+	<li>Mount the Kinetic Amplification Manipulation Interface adjacent to the core so that it is flush with it. weld it to the floor</li>\
+	<li>Mount and then weld the vents on any side such that they are flush with the core and have access to air in a tile opposite to them.</li>\
+	<li>Mount the cannon on the last empty side and also weld it in place.</li>\
+	<li>Install the Seismic Stabilizatiors on the corners such that they are flush with the structure, remember to weld them into place.</li>\
+	<li>Fire!</li>\
+	</ul><br>\
+	<b>If the core starts to overheat we recommend quickly disabling the cannon via the interface, otherwise it will explode</b>"
+

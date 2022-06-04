@@ -919,7 +919,8 @@
 					/obj/machinery/power/heavy_emitter/interface,
 					/obj/machinery/power/heavy_emitter/vent,
 					/obj/machinery/power/heavy_emitter/vent,
-					/obj/machinery/power/heavy_emitter/cannon)
+					/obj/machinery/power/heavy_emitter/cannon,
+					/obj/item/paper/guides/heavy_emitter)
 	//This is supposed to give you mixed signals
 	crate_name = "IWS Bashahar energy cannon"
 	crate_type = /obj/structure/closet/crate/secure/engineering
