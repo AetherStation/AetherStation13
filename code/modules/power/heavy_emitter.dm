@@ -14,8 +14,10 @@
 		return FALSE
 	I.play_tool_sound(src, 50)
 	to_chat(user, "<span class='notice'>You start to rotate [src].</span>")
-	if(do_after(user,10 SECONDS,FALSE,src))
-		setDir(turn(dir,-90))
+	if(!do_after(user,10,src))
+		return TRUE
+	setDir(turn(dir,-90))
+	update_icon()
 	return TRUE
 
 /obj/machinery/power/heavy_emitter/examine(mob/user)
@@ -27,8 +29,9 @@
 	. = ..()
 	I.play_tool_sound(src, 50)
 	to_chat(user, "<span class='notice'>You start welding [src].</span>")
-	if(do_after(user,10 SECONDS,FALSE,src))
-		anchored = !anchored
+	if(!do_after(user,5 SECONDS,src))
+		return TRUE
+	anchored = !anchored
 	return TRUE
 
 /obj/machinery/power/heavy_emitter/proc/check_part_connectivity()
@@ -43,16 +46,16 @@
 /obj/machinery/power/heavy_emitter/centre
 	name = "Heavy Emitter Core"
 	desc = "A dangerously unstable, military grade capacitor that eats power like it's candy, before releasing an incredibly potent burst of energy that can annihilate anything."
-	idle_power_usage = 500
+	idle_power_usage = 0
 	active_power_usage = 2000
 	///bool to check if the machine is fully constructed
 	var/is_fully_constructed = FALSE
 	///Current heat level
 	var/heat = T0C
 	///Max heat level
-	var/max_heat = 1000 + T0C
+	var/max_heat = 1500 + T0C
 	///List of adjacent vents
-	var/vents = list()
+	var/list/vents = list()
 	///Linked interface
 	var/obj/machinery/power/heavy_emitter/interface/linked_interface
 	///Linked cannon
@@ -79,10 +82,12 @@
 		. += "Insert a pyroclastic anomaly core to fuel the core!"
 
 /obj/machinery/power/heavy_emitter/centre/attackby(obj/item/W, mob/user, params)
-	. = ..()
 	if(istype(W,/obj/item/assembly/signaler/anomaly/pyro) && !is_fully_constructed)
+		visible_message("<span class='notice'>You insert the pyroclastic core into the core chamber!</span>")
 		is_fully_constructed = TRUE
 		qdel(W)
+		return
+	return ..()
 
 /obj/machinery/power/heavy_emitter/centre/on_set_is_operational(old_value)
 	. = ..()
@@ -158,7 +163,7 @@
 	icon_state = "centre_off"
 
 /obj/machinery/power/heavy_emitter/centre/process(delta_time)
-	if(!firing || machine_stat & BROKEN || surplus() < active_power_usage)
+	if(!firing || machine_stat & BROKEN)
 		return
 
 	if(!check_part_connectivity())
@@ -166,17 +171,22 @@
 
 	timer += delta_time
 
-	add_load(idle_power_usage)
 	if(timer >= max_timer)
+		if(!use_power_from_net(active_power_usage))
+			visible_message("<span class='notice'>Heavy Emitter Core hums lowly, not enough energy is supplied to the core...</span>")
+			return
 		timer = 0
-		add_load(active_power_usage)
 		radiation_pulse(src,500,can_contaminate=FALSE)
 		visible_message("<span class='notice'>Heavy Emitter Core is powering the cannon....</span>")
 		INVOKE_ASYNC(linked_cannon,/obj/machinery/power/heavy_emitter/cannon.proc/fire)
-		heat += 500
+		heat += 375
+
+	if(heat > max_heat*0.8 && prob(10))
+		visible_message("<span class='danger'>DANGER EMITTER CORE OVERHEATING!</span>")
 
 	if(heat > max_heat)
-		explosion(src,4,8,16)
+		visible_message("<span class='danger'>EMITTER CORE OVERHEATING, EXPLOSION EMINENT!</span>")
+		INVOKE_ASYNC(src,.proc/overheating)
 		return
 
 	for(var/V in vents)
@@ -185,6 +195,14 @@
 		var/obj/machinery/power/heavy_emitter/vent/vent = V
 		heat = vent.vent_gas(heat)
 
+/obj/machinery/power/heavy_emitter/centre/proc/overheating()
+	sleep(5 SECONDS)
+
+	for(var/i in 1 to 10)
+		visible_message("<span class='danger'>EXPLOSION IN T - [10-i] SECONDS!</span>")
+		sleep(1 SECONDS)
+
+	explosion(src,5,10,20)
 /obj/machinery/power/heavy_emitter/arm
 	name = "Seismic Stabilizer Arm"
 	desc = "Dampens the recoil from firing to virtually nothing"
@@ -209,12 +227,26 @@
 	connected_core = centre
 
 	if(connected_core.firing)
-		to_chat(user, "<span class='warning'>You power on the Heavy Emitter!</span>")
+		to_chat(user, "<span class='warning'>You disable the Heavy Emitter!</span>")
 		turn_off()
 	else
-		to_chat(user, "<span class='warning'>You disable the Heavy Emitter!</span>")
+		to_chat(user, "<span class='warning'>You power on the Heavy Emitter!</span>")
 		turn_on()
 
+/obj/machinery/power/heavy_emitter/interface/examine(mob/user)
+	. = ..()
+	if(connected_core)
+		. += "CORE HEAT LEVEL : [connected_core.heat]"
+		. += "VENTS CONNECTED : [connected_core.vents.len]"
+
+		var/working_vents = 0
+		for(var/i in connected_core.vents)
+			var/obj/machinery/power/heavy_emitter/vent/iterated_vent = i
+			if(iterated_vent.get_vent())
+				working_vents++
+		. += "VENTS FUNCTIONING : [working_vents]"
+	else
+		. += "CORE NOT DETECTED"
 
 /obj/machinery/power/heavy_emitter/interface/turn_on()
 	icon_state = "interface"
@@ -229,20 +261,29 @@
 	desc = "Circulates air around the core, preventing it from overheating. Doesn't work in low pressure or when blocked by a wall"
 	icon_state = "vent"
 
-/obj/machinery/power/heavy_emitter/vent/proc/vent_gas(heat)
-	. = heat
+/obj/machinery/power/heavy_emitter/vent/proc/get_vent()
 	var/turf/open/open_turf = get_step(src,dir)
 	//You cant cheese it with space!
 	if(!istype(open_turf) || isspaceturf(open_turf))
-		return
+		return FALSE
 
 	var/datum/gas_mixture/gases = open_turf.return_air()
 
 	if(!gases)
-		return
+		return FALSE
 
+	return TRUE
+
+/obj/machinery/power/heavy_emitter/vent/proc/vent_gas(heat)
+	if(!get_vent())
+		return heat
+
+	var/turf/open/open_turf = get_step(src,dir)
 	flick("vent_on",src)
-	return gases.temperature_share(null,0.33,heat,20000)
+	//we skip out the whole thing with gases.heat_capacity() since we assume vent has always the same heat capacity as the air around it for simplicity
+	open_turf.temperature = (2*open_turf.temperature + heat) / 3
+	open_turf.air_update_turf()
+	return open_turf.temperature
 
 /obj/machinery/power/heavy_emitter/cannon
 	name = "Energy Optic Converging Cannon"
