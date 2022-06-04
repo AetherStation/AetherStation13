@@ -3234,7 +3234,6 @@
 #include "code\modules\reagents\chemistry\recipes\medicine.dm"
 #include "code\modules\reagents\chemistry\recipes\others.dm"
 #include "code\modules\reagents\chemistry\recipes\pyrotechnics.dm"
-#include "code\modules\reagents\chemistry\recipes\reaction_agents.dm"
 #include "code\modules\reagents\chemistry\recipes\slime_extracts.dm"
 #include "code\modules\reagents\chemistry\recipes\special.dm"
 #include "code\modules\reagents\chemistry\recipes\toxins.dm"
