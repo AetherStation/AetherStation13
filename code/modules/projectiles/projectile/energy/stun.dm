@@ -23,11 +23,23 @@
 		if(C.dna && C.dna.check_mutation(HULK))
 			C.say(pick(";RAAAAAAAARGH!", ";HNNNNNNNNNGGGGGGH!", ";GWAAAAAAAARRRHHH!", "NNNNNNNNGGGGGGGGHH!", ";AAAAAAARRRGH!" ), forced = "hulk")
 		else if (!HAS_TRAIT(C, TRAIT_STUNIMMUNE))
-			C.dropItemToGround(C.get_active_held_item())
-			C.dropItemToGround(C.get_inactive_held_item())
-			C.apply_status_effect(/datum/status_effect/tased)
+			stun_effect(C)
 			addtimer(CALLBACK(C, /mob/living/carbon.proc/do_jitter_animation, jitter), 5)
+
+/obj/projectile/energy/electrode/proc/stun_effect(mob/living/carbon/C)
+	C.dropItemToGround(C.get_active_held_item())
+	C.dropItemToGround(C.get_inactive_held_item())
+	C.apply_status_effect(/datum/status_effect/tased)
 
 /obj/projectile/energy/electrode/on_range() //to ensure the bolt sparks when it reaches the end of its range if it didn't hit a target yet
 	do_sparks(1, TRUE, src)
 	..()
+
+/obj/projectile/energy/electrode/stun
+	name = "electrode"
+	paralyze = 100
+	damage = 0
+	damage_type = STAMINA
+
+/obj/projectile/energy/electrode/stun/stun_effect(mob/living/carbon/C)
+	// nuthin

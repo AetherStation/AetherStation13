@@ -738,7 +738,7 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/syndicate/energy
 	icon_state = "standard_lethal"
 	base_icon_state = "standard"
-	stun_projectile = /obj/projectile/energy/electrode
+	stun_projectile = /obj/projectile/energy/electrode/stun
 	stun_projectile_sound = 'sound/weapons/taser.ogg'
 	lethal_projectile = /obj/projectile/beam/laser
 	lethal_projectile_sound = 'sound/weapons/laser.ogg'
@@ -747,7 +747,7 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/syndicate/energy/heavy
 	icon_state = "standard_lethal"
 	base_icon_state = "standard"
-	stun_projectile = /obj/projectile/energy/electrode
+	stun_projectile = /obj/projectile/energy/electrode/stun
 	stun_projectile_sound = 'sound/weapons/taser.ogg'
 	lethal_projectile = /obj/projectile/beam/laser/heavylaser
 	lethal_projectile_sound = 'sound/weapons/lasercannonfire.ogg'
