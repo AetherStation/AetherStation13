@@ -51046,14 +51046,6 @@
 /area/hallway/primary/fore)
 "oJA" = (
 /obj/structure/rack,
-/obj/item/reagent_containers/glass/bottle/acidic_buffer{
-	pixel_x = 7;
-	pixel_y = 3
-	},
-/obj/item/reagent_containers/glass/bottle/basic_buffer{
-	pixel_x = -5;
-	pixel_y = 3
-	},
 /obj/item/reagent_containers/glass/bottle/formaldehyde{
 	pixel_x = 1
 	},

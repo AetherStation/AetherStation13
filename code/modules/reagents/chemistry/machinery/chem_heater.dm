@@ -91,49 +91,6 @@
 
 /obj/machinery/chem_heater/process(delta_time)
 	..()
-	//Tutorial logics
-	if(tutorial_active)
-		switch(tutorial_state)
-			if(TUT_NO_BUFFER)
-				if(reagents.has_reagent(/datum/reagent/reaction_agent/basic_buffer, 5) && reagents.has_reagent(/datum/reagent/reaction_agent/acidic_buffer, 5))
-					tutorial_state = TUT_START
-
-			if(TUT_START)
-				if(!reagents.has_reagent(/datum/reagent/reaction_agent/basic_buffer, 5) || !reagents.has_reagent(/datum/reagent/reaction_agent/acidic_buffer, 5))
-					tutorial_state = TUT_NO_BUFFER
-					return
-				if(beaker?.reagents.has_reagent(/datum/reagent/mercury, 10) || beaker?.reagents.has_reagent(/datum/reagent/chlorine, 10))
-					tutorial_state = TUT_HAS_REAGENTS
-			if(TUT_HAS_REAGENTS)
-				if(!(beaker?.reagents.has_reagent(/datum/reagent/mercury, 9)) || !(beaker?.reagents.has_reagent(/datum/reagent/chlorine, 9)))
-					tutorial_state = TUT_MISSING
-					return
-				if(beaker?.reagents.chem_temp > 374)//If they heated it up as asked
-					tutorial_state = TUT_IS_ACTIVE
-					target_temperature = 375
-					beaker.reagents.chem_temp = 375
-
-			if(TUT_IS_ACTIVE)
-				if(!(beaker?.reagents.has_reagent(/datum/reagent/mercury)) || !(beaker?.reagents.has_reagent(/datum/reagent/chlorine))) //Slightly concerned that people might take ages to read and it'll react anyways
-					tutorial_state = TUT_MISSING
-					return
-				if(length(beaker?.reagents.reaction_list) == 1)//Only fudge numbers for our intentful reaction
-					beaker.reagents.chem_temp = 375
-
-				if(target_temperature >= 390)
-					tutorial_state = TUT_IS_REACTING
-
-			if(TUT_IS_REACTING)
-				if(!(beaker?.reagents.has_reagent(/datum/reagent/mercury)) || !(beaker?.reagents.has_reagent(/datum/reagent/chlorine)))
-					tutorial_state = TUT_COMPLETE
-
-			if(TUT_COMPLETE)
-				if(beaker?.reagents.has_reagent(/datum/reagent/consumable/failed_reaction))
-					tutorial_state = TUT_FAIL
-					return
-				if(!beaker?.reagents.has_reagent(/datum/reagent/medicine/calomel))
-					tutorial_state = TUT_MISSING
-
 	if(machine_stat & NOPOWER)
 		return
 	if(on)
@@ -286,82 +243,8 @@
 					continue
 		active_reactions.len++
 		active_reactions[length(active_reactions)] = list("name" = reagent.name, "danger" = danger, "purityAlert" = purity_alert, "quality" = equilibrium.reaction_quality, "overheat" = overheat, "inverse" = reagent.inverse_chem_val, "minPure" = equilibrium.reaction.purity_min, "reactedVol" = equilibrium.reacted_vol, "targetVol" = round(equilibrium.target_vol, 1))//Use the first result reagent to name the reaction detected
-	data["activeReactions"] = active_reactions
-	data["isFlashing"] = flashing
-
-	data["acidicBufferVol"] = reagents.get_reagent_amount(/datum/reagent/reaction_agent/acidic_buffer)
-	data["basicBufferVol"] = reagents.get_reagent_amount(/datum/reagent/reaction_agent/basic_buffer)
-	data["dispenseVolume"] = dispense_volume
 
 	data["tutorialMessage"] = null
-	//Tutorial output
-	if(tutorial_active)
-		switch(tutorial_state)
-			if(TUT_NO_BUFFER)//missing buffer
-				data["tutorialMessage"] = {"It looks like you’re a little low on buffers, here’s how to make more:
-
-Acidic buffer: 2 parts Sodium
-			2 parts Hydrogen
-			2 parts Ethanol
-			2 parts Water
-
-Basic buffer: 3 parts Ammonia
-			2 parts Chlorine
-			2 parts Hydrogen
-			2 parts Oxygen
-
-Heat either up to speed up the reaction.
-
-When the reactions are done, refill your chamber by pressing the Draw all buttons, to the right of the respective volume indicators.
-
-To continue with the tutorial, fill both of your acidic and alkaline volumes to at least 5u."}
-			if(TUT_START)//Default start
-				data["tutorialMessage"] = {"Hello and welcome to the exciting world of chemistry! This help option will teach you the basic of reactions by guiding you through a calomel reaction.
-
-For the majority of reactions, the overheat temperature is 900K, and the pH range is 5-9, though it's always worth looking up the ranges as these are changing. Calomel is no different.
-
-To continue the tutorial, insert a beaker with at least 10u mercury and 10u chlorine added."}
-			if(TUT_HAS_REAGENTS) //10u Hg and Cl
-				data["tutorialMessage"] = {"Good job! You'll see that at present this isn't reacting. That's because this reaction needs a minimum temperature of 375K.
-
-For the most part the hotter your reaction is, the faster it will react when it’s past it’s minimum temperature. But be careful to not heat it too much! "If your reaction is slow, your temperature is too low"!
-
-When you’re ready, set your temperature to 375K and heat up the beaker to that amount."}
-			if(TUT_IS_ACTIVE) //heat 375K
-				data["tutorialMessage"] = {"Great! You should see your reaction slowly progressing.
-
-Notice the pH dial on the right; the sum pH should be slowly drifting towards the left on the dial. How pure your solution is at the end depends on how well you keep your reaction within the optimal pH range. The dial will flash if any of the present reactions are outside their optimal. "If you're getting sludge, give your pH a nudge"!
-
-In a moment, we’ll increase the temperature so that our rate is faster. It’s up to you to keep your pH within the limits, so keep an eye on that dial, and get ready to add basic buffer using the injection button to the left of the volume indicator.
-
-To continue set your target temperature to 390K."}
-			if(TUT_IS_REACTING) //Heat 390K
-				data["tutorialMessage"] = "Stay focused on the reaction! You can do it!"
-			if(TUT_FAIL) //Sludge
-				data["tutorialMessage"] = "Ah, unfortunately your purity was too low and the reaction fell apart into errant sludge. Don't worry, you can always try again! Be careful though, for some reactions, failing isn't nearly as forgiving."
-			if(TUT_COMPLETE) //Complete
-				var/datum/reagent/calo = beaker?.reagents.has_reagent(/datum/reagent/medicine/calomel)
-				if(!calo)
-					tutorial_state = TUT_COMPLETE
-					return
-				switch(calo.purity)
-					if(-INFINITY to 0.25)
-						data["tutorialMessage"] = "You did it! Congratulations! I can tell you that your final purity was [calo.purity]. That's pretty close to the fail purity of 0.15 - which can often make some reactions explode. This chem will invert into Toxic sludge when ingested by another person, and will not cause of calomel's normal effects. Sneaky, huh?"
-					if(0.25 to 0.6)
-						data["tutorialMessage"] = "You did it! Congratulations! I can tell you that your final purity was [calo.purity]. Normally, this reaction will resolve above 0.7 without intervention. Are you praticing impure reactions? The lower you go, the higher change you have of getting dangerous effects during a reaction. In some more dangerous reactions, you're riding a fine line between death and an inverse chem, don't forget you can always chill your reaction to give yourself more time to manage it!"
-					if(0.6 to 0.75)
-						data["tutorialMessage"] = "You did it! Congratulations! I can tell you that your final purity was [calo.purity]. Normally, this reaction will resolve above 0.7 without intervention. Did you maybe add too much basic buffer and go past 9? If you like - you're welcome to try again. Just double press the help button!"
-					if(0.75 to 0.85)
-						data["tutorialMessage"] = "You did it! Congratulations! I can tell you that your final purity was [calo.purity]. You got pretty close to optimal! Feel free to try again if you like by double pressing the help button."
-					if(0.75 to 0.99)
-						data["tutorialMessage"] = "You did it! Congratulations! I can tell you that your final purity was [calo.purity]. You got pretty close to optimal! Feel free to try again if you like by double pressing the help button, but this is a respectable purity."
-					if(0.99 to 1)
-						data["tutorialMessage"] = "You did it! Congratulations! I can tell you that your final purity was [calo.purity]. Your calomel is as pure as they come! You've mastered the basics of chemistry, but there's plenty more challenges on the horizon. Good luck!"
-						user.client?.give_award(/datum/award/achievement/jobs/chemistry_tut, user)
-				data["tutorialMessage"] += "\n\nDid you notice that your temperature increased past 390K while reacting too? That's because this reaction is exothermic (heat producing), so for some reactions you might have to adjust your target to compensate. Oh, and you can check your purity by researching and printing off a chemical analyzer at the medlathe (for now)!"
-			if(TUT_MISSING) //Missing
-				data["tutorialMessage"] = "Uh oh, something went wrong. Did you take the beaker out, heat it up too fast, or have other things in the beaker? Try restarting the tutorial by double pressing the help button."
-
 	return data
 
 /obj/machinery/chem_heater/ui_act(action, params)
@@ -422,11 +305,11 @@ To continue set your target temperature to 390K."}
 		return
 	if(buffer_type == "acid")
 		if(volume < 0)
-			var/datum/reagent/acid_reagent = beaker.reagents.get_reagent(/datum/reagent/reaction_agent/acidic_buffer)
+			var/datum/reagent/acid_reagent
 			if(!acid_reagent)
 				say("Unable to find acidic buffer in beaker to draw from! Please insert a beaker containing acidic buffer.")
 				return
-			var/datum/reagent/acid_reagent_heater = reagents.get_reagent(/datum/reagent/reaction_agent/acidic_buffer)
+			var/datum/reagent/acid_reagent_heater
 			var/cur_vol = 0
 			if(acid_reagent_heater)
 				cur_vol = acid_reagent_heater.volume
@@ -434,23 +317,21 @@ To continue set your target temperature to 390K."}
 			beaker.reagents.trans_id_to(src, acid_reagent.type, volume)//negative because we're going backwards
 			return
 		//We must be positive here
-		reagents.trans_id_to(beaker, /datum/reagent/reaction_agent/acidic_buffer, dispense_volume)
 		return
 
 	if(buffer_type == "basic")
 		if(volume < 0)
-			var/datum/reagent/basic_reagent = beaker.reagents.get_reagent(/datum/reagent/reaction_agent/basic_buffer)
+			var/datum/reagent/basic_reagent
 			if(!basic_reagent)
 				say("Unable to find basic buffer in beaker to draw from! Please insert a beaker containing basic buffer.")
 				return
-			var/datum/reagent/basic_reagent_heater = reagents.get_reagent(/datum/reagent/reaction_agent/basic_buffer)
+			var/datum/reagent/basic_reagent_heater
 			var/cur_vol = 0
 			if(basic_reagent_heater)
 				cur_vol = basic_reagent_heater.volume
 			volume = 100 - cur_vol
 			beaker.reagents.trans_id_to(src, basic_reagent.type, volume)//negative because we're going backwards
 			return
-		reagents.trans_id_to(beaker, /datum/reagent/reaction_agent/basic_buffer, dispense_volume)
 		return
 
 
@@ -477,18 +358,7 @@ To continue set your target temperature to 390K."}
 /obj/machinery/chem_heater/debug/Initialize()
 	. = ..()
 	reagents.maximum_volume = 2000
-	reagents.add_reagent(/datum/reagent/reaction_agent/basic_buffer, 1000)
-	reagents.add_reagent(/datum/reagent/reaction_agent/acidic_buffer, 1000)
 	heater_coefficient = 0.4 //hack way to upgrade
-
-//map load types
-/obj/machinery/chem_heater/withbuffer
-	desc = "This Reaction Chamber comes with a bit of buffer to help get you started."
-
-/obj/machinery/chem_heater/withbuffer/Initialize()
-	. = ..()
-	reagents.add_reagent(/datum/reagent/reaction_agent/basic_buffer, 20)
-	reagents.add_reagent(/datum/reagent/reaction_agent/acidic_buffer, 20)
 
 #undef TUT_NO_BUFFER
 #undef TUT_START

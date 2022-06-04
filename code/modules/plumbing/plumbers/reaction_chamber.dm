@@ -99,11 +99,6 @@
 	data["reagents"] = reagents_data
 	data["emptying"] = emptying
 	data["temperature"] = round(reagents.chem_temp, 0.1)
-	data["ph"] = round(reagents.ph, 0.01)
-	data["targetTemp"] = target_temperature
-	data["isReacting"] = reagents.is_reacting
-	data["reagentAcidic"] = acidic_limit
-	data["reagentAlkaline"] = alkaline_limit
 	return data
 
 /obj/machinery/plumbing/reaction_chamber/ui_act(action, params)
