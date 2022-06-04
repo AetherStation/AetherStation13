@@ -8,20 +8,10 @@
 
 //////////////////////////////////////////FOOD MIXTURES////////////////////////////////////
 
-/datum/chemical_reaction/food
-	optimal_temp = 400
-	temp_exponent_factor = 1
-	optimal_ph_min = 2
-	optimal_ph_max = 10
-	thermic_constant = 0
-	H_ion_release = 0
-	reaction_tags = REACTION_TAG_FOOD | REACTION_TAG_EASY
-
 /datum/chemical_reaction/food/tofu
 	required_reagents = list(/datum/reagent/consumable/soymilk = 10)
 	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
 	mob_react = FALSE
-	reaction_flags = REACTION_INSTANT
 
 /datum/chemical_reaction/food/tofu/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -39,7 +29,6 @@
 
 /datum/chemical_reaction/food/chocolate_bar
 	required_reagents = list(/datum/reagent/consumable/soymilk = 2, /datum/reagent/consumable/coco = 2, /datum/reagent/consumable/sugar = 2)
-	reaction_flags = REACTION_INSTANT
 
 /datum/chemical_reaction/food/chocolate_bar/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -50,7 +39,6 @@
 /datum/chemical_reaction/food/chocolate_bar2
 	required_reagents = list(/datum/reagent/consumable/milk/chocolate_milk = 4, /datum/reagent/consumable/sugar = 2)
 	mob_react = FALSE
-	reaction_flags = REACTION_INSTANT
 
 /datum/chemical_reaction/food/chocolate_bar2/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -60,7 +48,6 @@
 
 /datum/chemical_reaction/food/chocolate_bar3
 	required_reagents = list(/datum/reagent/consumable/milk = 2, /datum/reagent/consumable/coco = 2, /datum/reagent/consumable/sugar = 2)
-	reaction_flags = REACTION_INSTANT
 
 /datum/chemical_reaction/food/chocolate_bar3/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -81,21 +68,17 @@
 	results = list(/datum/reagent/consumable/caramel = 1)
 	required_reagents = list(/datum/reagent/consumable/sugar = 1)
 	required_temp = 413.15
-	optimal_temp = 600
 	mob_react = FALSE
 
 /datum/chemical_reaction/food/caramel_burned
 	results = list(/datum/reagent/carbon = 1)
 	required_reagents = list(/datum/reagent/consumable/caramel = 1)
 	required_temp = 483.15
-	optimal_temp = 1000
-	rate_up_lim = 10
 	mob_react = FALSE
 
 /datum/chemical_reaction/food/cheesewheel
 	required_reagents = list(/datum/reagent/consumable/milk = 40)
 	required_catalysts = list(/datum/reagent/consumable/enzyme = 5)
-	reaction_flags = REACTION_INSTANT
 
 /datum/chemical_reaction/food/cheesewheel/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -105,7 +88,6 @@
 /datum/chemical_reaction/food/synthmeat
 	required_reagents = list(/datum/reagent/blood = 5, /datum/reagent/medicine/cryoxadone = 1)
 	mob_react = FALSE
-	reaction_flags = REACTION_INSTANT
 
 /datum/chemical_reaction/food/synthmeat/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -124,7 +106,6 @@
 	required_reagents = list(/datum/reagent/toxin/carpotoxin = 5)
 	required_container = /obj/item/food/tofu
 	mix_message = "The mixture becomes similar to carp meat."
-	reaction_flags = REACTION_INSTANT
 
 /datum/chemical_reaction/food/imitationcarpmeat/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -135,7 +116,6 @@
 /datum/chemical_reaction/food/dough
 	required_reagents = list(/datum/reagent/water = 10, /datum/reagent/consumable/flour = 15)
 	mix_message = "The ingredients form a dough."
-	reaction_flags = REACTION_INSTANT
 
 /datum/chemical_reaction/food/dough/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -145,7 +125,6 @@
 /datum/chemical_reaction/food/cakebatter
 	required_reagents = list(/datum/reagent/consumable/eggyolk = 6, /datum/reagent/consumable/eggwhite = 12, /datum/reagent/consumable/flour = 15, /datum/reagent/consumable/sugar = 5)
 	mix_message = "The ingredients form a cake batter."
-	reaction_flags = REACTION_INSTANT
 
 /datum/chemical_reaction/food/cakebatter/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
 	var/location = get_turf(holder.my_atom)
@@ -163,7 +142,6 @@
 	required_reagents = list(/datum/reagent/consumable/rice = 10, /datum/reagent/water = 10)
 	required_container = /obj/item/reagent_containers/glass/bowl
 	mix_message = "The rice absorbs the water."
-	reaction_flags = REACTION_INSTANT
 
 /datum/chemical_reaction/food/ricebowl/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
 	var/location = get_turf(holder.my_atom)
