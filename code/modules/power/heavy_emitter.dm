@@ -179,7 +179,7 @@
 		radiation_pulse(src,500,can_contaminate=FALSE)
 		visible_message("<span class='notice'>Heavy Emitter Core is powering the cannon....</span>")
 		INVOKE_ASYNC(linked_cannon,/obj/machinery/power/heavy_emitter/cannon.proc/fire)
-		heat += 375
+		heat += 250
 
 	if(heat > max_heat*0.8 && prob(10))
 		visible_message("<span class='danger'>DANGER EMITTER CORE OVERHEATING!</span>")
@@ -191,7 +191,7 @@
 
 	for(var/V in vents)
 		if(heat <= T0C || !V)
-			break
+			continue
 		var/obj/machinery/power/heavy_emitter/vent/vent = V
 		heat = vent.vent_gas(heat)
 
