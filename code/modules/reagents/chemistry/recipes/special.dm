@@ -114,7 +114,7 @@ GLOBAL_LIST_INIT(medicine_reagents, build_medicine_reagents())
 
 /datum/chemical_reaction/randomized/proc/HasConflicts()
 	for(var/x in required_reagents)
-		for(var/datum/chemical_reaction/R in GLOB.chemical_reactions_list_reactant_index[x])
+		for(var/datum/chemical_reaction/R in GLOB.chemical_reactions_list[x])
 			if(chem_recipes_do_conflict(R,src))
 				return TRUE
 	return FALSE
