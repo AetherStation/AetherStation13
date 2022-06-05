@@ -12073,14 +12073,6 @@
 "cmB" = (
 /turf/open/floor/iron/white,
 /area/medical/chemistry)
-"cmC" = (
-/obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 4
-	},
-/obj/machinery/chem_mass_spec,
-/turf/open/floor/iron/white,
-/area/medical/pharmacy)
 "cmE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/siphon/atmos/nitrous_output{
 	dir = 8
@@ -106728,7 +106720,7 @@ che
 ciz
 twp
 clv
-cmC
+twp
 cnK
 coW
 wpl
