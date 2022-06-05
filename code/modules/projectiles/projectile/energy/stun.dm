@@ -28,7 +28,7 @@
 
 /obj/projectile/energy/electrode/proc/stun_effect(mob/living/carbon/C)
 	if(C.getStaminaLoss() > 50)
-		to_chat(target,span_alertwarning("Your hands seize in shock!"))
+		to_chat(C,span_alertwarning("Your hands seize in shock!"))
 		C.dropItemToGround(C.get_active_held_item())
 		C.dropItemToGround(C.get_inactive_held_item())
 	C.apply_status_effect(/datum/status_effect/tased)
