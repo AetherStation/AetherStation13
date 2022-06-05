@@ -1097,16 +1097,6 @@
 				)
 	category = CAT_CHEMISTRY
 
-/datum/crafting_recipe/ph_booklet
-	name = "pH booklet"
-	result = /obj/item/ph_booklet
-	time = 5 SECONDS
-	reqs = list(
-				/datum/reagent/universal_indicator = 5,
-				/obj/item/paper = 1
-				)
-	category = CAT_CHEMISTRY
-
 /datum/crafting_recipe/dropper //Maybe make a glass pipette icon?
 	name = "Dropper"
 	result = /obj/item/reagent_containers/dropper

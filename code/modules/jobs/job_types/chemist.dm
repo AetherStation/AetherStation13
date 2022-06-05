@@ -21,7 +21,7 @@
 	bounty_types = CIV_JOB_CHEM
 	departments = DEPARTMENT_MEDICAL
 
-	family_heirlooms = list(/obj/item/book/manual/wiki/chemistry, /obj/item/ph_booklet)
+	family_heirlooms = list(/obj/item/book/manual/wiki/chemistry)
 
 	mail_goodies = list(
 		/obj/item/reagent_containers/glass/bottle/flash_powder = 15,

@@ -573,11 +573,6 @@
 	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
 	return replacetext(name, regex, "")
 
-/datum/asset/simple/tutorial_advisors
-	assets = list(
-		"chem_help_advisor.gif" = 'icons/ui_icons/advisors/chem_help_advisor.gif',
-	)
-
 /datum/asset/spritesheet/moods
 	name = "moods"
 	var/iconinserted = 1

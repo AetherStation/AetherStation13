@@ -78,12 +78,6 @@
 	mix_message = "The solution fizzes and gives off toxic fumes."
 	required_temp = 200
 
-/datum/chemical_reaction/medicine/ephedrine/overheated(datum/reagents/holder, datum/equilibrium/equilibrium, vol_added)
-	default_explode(holder, equilibrium.reacted_vol, 0, 25)
-
-/datum/chemical_reaction/medicine/ephedrine/overly_impure(datum/reagents/holder, datum/equilibrium/equilibrium, vol_added)
-	default_explode(holder, equilibrium.reacted_vol, 0, 20)
-
 /datum/chemical_reaction/medicine/diphenhydramine
 	results = list(/datum/reagent/medicine/diphenhydramine = 4)
 	required_reagents = list(/datum/reagent/fuel/oil = 1, /datum/reagent/carbon = 1, /datum/reagent/bromine = 1, /datum/reagent/diethylamine = 1, /datum/reagent/consumable/ethanol = 1)
@@ -124,13 +118,6 @@
 	results = list(/datum/reagent/medicine/antihol = 3)
 	required_reagents = list(/datum/reagent/consumable/ethanol = 1, /datum/reagent/medicine/c2/multiver = 1, /datum/reagent/copper = 1)
 	required_temp = 1
-
-/datum/chemical_reaction/medicine/antihol/overheated(datum/reagents/holder, datum/equilibrium/equilibrium, vol_added)
-	explode_smoke(holder, equilibrium)
-
-/datum/chemical_reaction/medicine/antihol/overly_impure(datum/reagents/holder, datum/equilibrium/equilibrium, vol_added)
-	explode_smoke(holder, equilibrium)
-
 
 /datum/chemical_reaction/medicine/cryoxadone
 	results = list(/datum/reagent/medicine/cryoxadone = 3)
