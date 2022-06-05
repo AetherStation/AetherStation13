@@ -340,30 +340,6 @@
 				log_game("[key_name(usr)] enabled emergency maintenance access.")
 				message_admins("[ADMIN_LOOKUPFLW(usr)] enabled emergency maintenance access.")
 				deadchat_broadcast(" enabled emergency maintenance access at [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type = DEADCHAT_ANNOUNCEMENT)
-		// Request codes for the Captain's Spare ID safe.
-		if("requestSafeCodes")
-			if(SSjob.assigned_captain)
-				to_chat(usr, span_warning("There is already an assigned Captain or Acting Captain on deck!"))
-				return
-
-			if(SSjob.safe_code_timer_id)
-				to_chat(usr, span_warning("The safe code has already been requested and is being delivered to your station!"))
-				return
-
-			if(SSjob.safe_code_requested)
-				to_chat(usr, span_warning("The safe code has already been requested and delivered to your station!"))
-				return
-
-			if(!SSid_access.spare_id_safe_code)
-				to_chat(usr, span_warning("There is no safe code to deliver to your station!"))
-				return
-
-			var/turf/pod_location = get_turf(src)
-
-			SSjob.safe_code_request_loc = pod_location
-			SSjob.safe_code_requested = TRUE
-			SSjob.safe_code_timer_id = addtimer(CALLBACK(SSjob, /datum/controller/subsystem/job.proc/send_spare_id_safe_code, pod_location), 120 SECONDS, TIMER_UNIQUE | TIMER_STOPPABLE)
-			minor_announce("Due to staff shortages, your station has been approved for delivery of access codes to secure the Captain's Spare ID. Delivery via drop pod at [get_area(pod_location)]. ETA 120 seconds.")
 
 /obj/machinery/computer/communications/ui_data(mob/user)
 	var/list/data = list(
@@ -375,18 +351,6 @@
 
 	var/has_connection = has_communication()
 	data["hasConnection"] = has_connection
-
-	if(!SSjob.assigned_captain && !SSjob.safe_code_requested && SSid_access.spare_id_safe_code && has_connection)
-		data["canRequestSafeCode"] = TRUE
-		data["safeCodeDeliveryWait"] = 0
-	else
-		data["canRequestSafeCode"] = FALSE
-		if(SSjob.safe_code_timer_id && has_connection)
-			data["safeCodeDeliveryWait"] = timeleft(SSjob.safe_code_timer_id)
-			data["safeCodeDeliveryArea"] = get_area(SSjob.safe_code_request_loc)
-		else
-			data["safeCodeDeliveryWait"] = 0
-			data["safeCodeDeliveryArea"] = null
 
 	if (authenticated || issilicon(user))
 		data["authenticated"] = TRUE
@@ -554,6 +518,9 @@
 /// Does not handle prerequisite checks, as those should still *show*.
 /obj/machinery/computer/communications/proc/can_purchase_this_shuttle(datum/map_template/shuttle/shuttle_template)
 	if (isnull(shuttle_template.who_can_purchase))
+		return FALSE
+
+	if (!(obj_flags & EMAGGED) && shuttle_template.restricted)
 		return FALSE
 
 	for (var/access in authorize_access)

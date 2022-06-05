@@ -183,6 +183,7 @@
 						span_danger("You throw [thrown_thing][power_throw ? " really hard!" : "."]"))
 		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)
 		newtonian_move(get_dir(target, src))
+		SEND_SIGNAL(src, COMSIG_CARBON_THROW, target, thrown_thing)
 		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed + power_throw, src, null, null, null, move_force)
 
 
@@ -744,11 +745,6 @@
 /mob/living/carbon/proc/update_internals_hud_icon(internal_state = 0)
 	if(hud_used?.internals)
 		hud_used.internals.icon_state = "internal[internal_state]"
-
-/mob/living/carbon/proc/update_spacesuit_hud_icon(cell_state = "empty")
-	if(hud_used?.spacesuit)
-		hud_used.spacesuit.icon_state = "spacesuit_[cell_state]"
-
 
 /mob/living/carbon/set_health(new_value)
 	. = ..()

@@ -8,7 +8,7 @@
 	var/explosionlight = 12
 	name = "bluespace artillery control"
 	icon_state = "control_boxp1"
-	icon = 'icons/obj/machines/particle_accelerator.dmi'
+	icon = 'icons/obj/particle_accelerator.dmi'
 	density = TRUE
 
 /obj/machinery/artillerycontrol/process(delta_time)

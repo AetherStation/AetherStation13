@@ -159,6 +159,15 @@
 	},
 /turf/open/floor/iron/dark,
 /area/tdome/arena_source)
+"dO" = (
+/obj/effect/landmark/deathmatch_map_spawn{
+	height = 41;
+	width = 41;
+	x_offset = 20;
+	y_offset = 20
+	},
+/turf/open/space/basic,
+/area/space)
 "dR" = (
 /obj/machinery/computer/secure_data{
 	dir = 8
@@ -14910,6 +14919,15 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/wood,
 /area/centcom/holding)
+"Yk" = (
+/obj/effect/landmark/deathmatch_map_spawn{
+	height = 31;
+	width = 31;
+	x_offset = 15;
+	y_offset = 15
+	},
+/turf/open/space/basic,
+/area/space)
 "Ym" = (
 /obj/machinery/computer/arcade/orion_trail,
 /turf/open/floor/wood,
@@ -20497,7 +20515,7 @@ aa
 aa
 aa
 aa
-aa
+dO
 aa
 aa
 aa
@@ -30520,6 +30538,7 @@ aa
 aa
 aa
 aa
+Yk
 aa
 aa
 aa
@@ -30562,8 +30581,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+Yk
 aa
 aa
 aa
@@ -40543,6 +40561,7 @@ aa
 aa
 aa
 aa
+Yk
 aa
 aa
 aa
@@ -40585,8 +40604,7 @@ aa
 aa
 aa
 aa
-aa
-aa
+Yk
 aa
 aa
 aa

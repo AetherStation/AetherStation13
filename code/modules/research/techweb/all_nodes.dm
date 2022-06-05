@@ -517,7 +517,10 @@
 		"smes",
 		"super_capacitor",
 		"super_cell",
+		"circulator",
+		"teg",
 		"superpacman",
+		"mrspacman",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 
@@ -1146,7 +1149,7 @@
 	description = "Creation of NT-secure basic cyberlinks for low-grade cybernetic augmentation"
 	prereq_ids = list("adv_biotech","adv_biotech", "datatheory" )
 	design_ids = list("ci-nt_low")
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500)
 
 /datum/techweb_node/ntlink_high
 	id = "ntlink_high"
@@ -1645,7 +1648,7 @@
 
 /datum/techweb_node/mech_missile_rack
 	id = "mech_missile_rack"
-	display_name = "Exosuit Weapon (BRM-6 Missile Rack)"
+	display_name = "Exosuit Weapon (SRM-8 Missile Rack)"
 	description = "An advanced piece of mech weaponry"
 	prereq_ids = list("explosive_weapons")
 	design_ids = list(

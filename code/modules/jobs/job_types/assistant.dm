@@ -18,7 +18,7 @@ Assistant
 	paycheck_department = ACCOUNT_CIV
 	display_order = JOB_DISPLAY_ORDER_ASSISTANT
 
-	family_heirlooms = list(/obj/item/storage/toolbox/mechanical/old/heirloom, /obj/item/clothing/gloves/cut/heirloom)
+	family_heirlooms = list(/obj/item/storage/toolbox/mechanical/old/empty/heirloom, /obj/item/clothing/gloves/cut/heirloom)
 
 	mail_goodies = list(
 		/obj/effect/spawner/lootdrop/donkpockets = 10,

@@ -313,32 +313,16 @@
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack
 	name = "\improper SRM-8 missile rack"
-	desc = "A weapon for combat exosuits. Launches light explosive missiles."
+	desc = "A weapon for combat exosuits. Launches light explosive kinetic missiles."
 	icon_state = "mecha_missilerack"
-	projectile = /obj/projectile/bullet/a84mm/he
+	projectile = /obj/projectile/bullet/a84mm/kinetic
 	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
 	projectiles = 8
-	projectiles_cache = 0
-	projectiles_cache_max = 0
-	disabledreload = TRUE
+	projectiles_cache = 8
+	projectiles_cache_max = 32
 	equip_cooldown = 60
 	harmful = TRUE
-	ammo_type = "missiles_he"
-
-/obj/item/mecha_parts/mecha_equipment/weapon/ballistic/missile_rack/breaching
-	name = "\improper BRM-6 missile rack"
-	desc = "A weapon for combat exosuits. Launches low-explosive breaching missiles designed to explode only when striking a sturdy target."
-	icon_state = "mecha_missilerack_six"
-	projectile = /obj/projectile/bullet/a84mm_br
-	fire_sound = 'sound/weapons/gun/general/rocket_launch.ogg'
-	projectiles = 6
-	projectiles_cache = 0
-	projectiles_cache_max = 0
-	disabledreload = TRUE
-	equip_cooldown = 60
-	harmful = TRUE
-	ammo_type = "missiles_br"
-
+	ammo_type = "missiles_kinetic"
 
 /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/launcher
 	var/missile_speed = 2

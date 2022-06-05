@@ -32,6 +32,10 @@
 /obj/item/organ/cyberimp/brain/anti_drop/ui_action_click()
 	if(!check_compatibility())
 		to_chat(owner, "<span class='warning'>The Neuralink beeps: ERR01 INCOMPATIBLE IMPLANT</span>")
+		if(active)
+			active = !active
+			release_items()
+			to_chat(owner, "<span class='notice'>Your hands suddenly relax!</span>")
 		return
 
 	active = !active
@@ -53,6 +57,12 @@
 		release_items()
 		to_chat(owner, "<span class='notice'>Your hands relax...</span>")
 
+/obj/item/organ/cyberimp/brain/anti_drop/update_implants()
+	. = ..()
+	if(!check_compatibility())
+		if(active)
+			ui_action_click()
+		return
 
 /obj/item/organ/cyberimp/brain/anti_drop/emp_act(severity)
 	. = ..()
@@ -141,6 +151,7 @@
 	icon_state = "implant_mask"
 	slot = ORGAN_SLOT_BREATHING_TUBE
 	w_class = WEIGHT_CLASS_TINY
+	encode_info = AUGMENT_NO_REQ
 
 /obj/item/organ/cyberimp/mouth/breathing_tube/emp_act(severity)
 	. = ..()

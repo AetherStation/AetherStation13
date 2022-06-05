@@ -198,6 +198,10 @@
 	greyscale_colors = CIRCUIT_COLOR_ENGINEERING
 	build_path = /obj/machinery/power/port_gen/pacman/super
 
+/obj/item/circuitboard/machine/pacman/mrs
+	name = "MRSPACMAN-type Generator (Machine Board)"
+	build_path = /obj/machinery/power/port_gen/pacman/mrs
+
 /obj/item/circuitboard/machine/power_compressor
 	name = "Power Compressor (Machine Board)"
 	greyscale_colors = CIRCUIT_COLOR_ENGINEERING

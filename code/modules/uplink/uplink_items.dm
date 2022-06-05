@@ -225,6 +225,14 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	cost = 20
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
+/datum/uplink_item/bundles_tc/miami
+	name = "Old-World Rampage Kit"
+	desc = "Blood, heat and dust. The wind howls, the russians are no more, but the ones that inherited wealth from them still stand tall. Prove yourself Operative, and make sure you don't go completely mad."
+	item = /obj/item/storage/backpack/satchel/miami/prefilled
+	cost = 20
+	player_minimum = 25
+	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
+
 /datum/uplink_item/bundles_tc/surplus
 	name = "Syndicate Surplus Crate"
 	desc = "A dusty crate from the back of the Syndicate warehouse. Rumored to contain a valuable assortment of items, \
@@ -234,7 +242,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	player_minimum = 25
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 	var/starting_crate_value = 50
-
 /datum/uplink_item/bundles_tc/surplus/super
 	name = "Super Surplus Crate"
 	desc = "A dusty SUPER-SIZED from the back of the Syndicate warehouse. Rumored to contain a valuable assortment of items, \
@@ -1400,9 +1407,9 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 /datum/uplink_item/device_tools/emag
 	name = "Cryptographic Sequencer"
 	desc = "The cryptographic sequencer, electromagnetic card, or emag, is a small card that unlocks hidden functions \
-			in electronic devices, subverts intended functions, and easily breaks security mechanisms. Cannot be used to open airlocks."
+			in electronic devices, subverts intended functions, and easily breaks security mechanisms, including airlocks."
 	item = /obj/item/card/emag
-	cost = 4
+	cost = 6
 
 /datum/uplink_item/device_tools/syndie_jaws_of_life
 	name = "Syndicate Jaws of Life"
@@ -1411,13 +1418,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 	item = /obj/item/crowbar/power/syndicate
 	cost = 4
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS
-
-/datum/uplink_item/device_tools/doorjack
-	name = "Airlock Authentication Override Card"
-	desc = "A specialized cryptographic sequencer specifically designed to override station airlock access codes. \
-			After hacking a certain number of airlocks, the device will require some time to recharge."
-	item = /obj/item/card/emag/doorjack
-	cost = 3
 
 /datum/uplink_item/device_tools/fakenucleardisk
 	name = "Decoy Nuclear Authentication Disk"
