@@ -26,69 +26,30 @@
 	//Chemical Reactions - Initialises all /datum/chemical_reaction into a list
 	// It is filtered into multiple lists within a list.
 	// For example:
-	// chemical_reactions_list_reactant_index[/datum/reagent/toxin/plasma] is a list of all reactions relating to plasma
-	//For chemical reaction list product index - indexes reactions based off the product reagent type - see get_recipe_from_reagent_product() in helpers
-	//For chemical reactions list lookup list - creates a bit list of info passed to the UI. This is saved to reduce lag from new windows opening, since it's a lot of data.
+	// chemical_reaction_list[/datum/reagent/toxin/plasma] is a list of all reactions relating to plasma
 
-	//Prevent these reactions from appearing in lookup tables (UI code)
-	var/list/blacklist = (/datum/chemical_reaction/randomized)
-
-	if(GLOB.chemical_reactions_list_reactant_index)
+	if(GLOB.chemical_reactions_list)
 		return
 
 	//Randomized need to go last since they need to check against conflicts with normal recipes
 	var/paths = subtypesof(/datum/chemical_reaction) - typesof(/datum/chemical_reaction/randomized) + subtypesof(/datum/chemical_reaction/randomized)
-	GLOB.chemical_reactions_list = list() //typepath to reaction list
-	GLOB.chemical_reactions_list_reactant_index = list() //reagents to reaction list
-	GLOB.chemical_reactions_results_lookup_list = list() //UI glob
-	GLOB.chemical_reactions_list_product_index = list() //product to reaction list
+	GLOB.chemical_reactions_list = list()
 
 	for(var/path in paths)
 		var/datum/chemical_reaction/D = new path()
 		var/list/reaction_ids = list()
-		var/list/product_ids = list()
-		var/list/reagents = list()
-		var/list/product_names = list()
 
 		if(!D.required_reagents || !D.required_reagents.len) //Skip impossible reactions
 			continue
 
-		GLOB.chemical_reactions_list[path] = D
-
 		for(var/reaction in D.required_reagents)
 			reaction_ids += reaction
-			var/datum/reagent/reagent = find_reagent_object_from_type(reaction)
-			reagents += list(list("name" = reagent.name, "id" = reagent.type))
 
-		for(var/product in D.results)
-			var/datum/reagent/reagent = find_reagent_object_from_type(product)
-			product_names += reagent.name
-			product_ids += product
-
-		var/product_name
-		if(!length(product_names))
-			var/list/names = splittext("[D.type]", "/")
-			product_name = names[names.len]
-		else
-			product_name = product_names[1]
-
-		// Create filters based on each reagent id in the required reagents list - this is specifically for finding reactions from product(reagent) ids/typepaths.
-		for(var/id in product_ids)
-			if(is_type_in_list(D.type, blacklist))
-				continue
-			if(!GLOB.chemical_reactions_list_product_index[id])
-				GLOB.chemical_reactions_list_product_index[id] = list()
-			GLOB.chemical_reactions_list_product_index[id] += D
-
-		//Master list of ALL reactions that is used in the UI lookup table. This is expensive to make, and we don't want to lag the server by creating it on UI request, so it's cached to send to UIs instantly.
-		if(!(is_type_in_list(D.type, blacklist)))
-			GLOB.chemical_reactions_results_lookup_list += list(list("name" = product_name, "id" = D.type, "reactants" = reagents))
-
-		// Create filters based on each reagent id in the required reagents list - this is used to speed up handle_reactions()
+		// Create filters based on each reagent id in the required reagents list
 		for(var/id in reaction_ids)
-			if(!GLOB.chemical_reactions_list_reactant_index[id])
-				GLOB.chemical_reactions_list_reactant_index[id] = list()
-			GLOB.chemical_reactions_list_reactant_index[id] += D
+			if(!GLOB.chemical_reactions_list[id])
+				GLOB.chemical_reactions_list[id] = list()
+			GLOB.chemical_reactions_list[id] += D
 			break // Don't bother adding ourselves to other reagent ids, it is redundant
 
 ///////////////////////////////Main reagents code/////////////////////////////////////////////
@@ -401,7 +362,6 @@
 	if(amount < 0)
 		return
 
-	var/cached_amount = amount
 	var/atom/target_atom
 	var/datum/reagents/R
 	if(istype(target, /datum/reagents))

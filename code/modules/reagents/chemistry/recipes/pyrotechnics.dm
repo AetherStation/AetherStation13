@@ -397,29 +397,6 @@
 		holder.remove_reagent(/datum/reagent/oxygen, oxygen.volume) // halves the temperature - tried to bring in some of the old effects at least!
 	return
 
-//Freezes the area around you!
-/datum/chemical_reaction/cryostylane/overheated(datum/reagents/holder, datum/equilibrium/equilibrium, vol_added)
-	var/datum/reagent/cryostylane/cryostylane = holder.has_reagent(/datum/reagent/cryostylane)
-	if(!cryostylane)
-		return ..()
-	var/turf/local_turf = get_turf(holder.my_atom)
-	playsound(local_turf, 'sound/magic/ethereal_exit.ogg', 50, 1)
-	local_turf.visible_message("The reaction frosts over, releasing it's chilly contents!")
-	freeze_radius(holder, null, holder.chem_temp*2, clamp(cryostylane.volume/30, 2, 6), 120 SECONDS, 2)
-	clear_reactants(holder, 15)
-	holder.chem_temp += 100
-
-//Makes a snowman if you're too impure!
-/datum/chemical_reaction/cryostylane/overly_impure(datum/reagents/holder, datum/equilibrium/equilibrium, vol_added)
-	var/datum/reagent/cryostylane/cryostylane = holder.has_reagent(/datum/reagent/cryostylane)
-	var/turf/local_turf = get_turf(holder.my_atom)
-	playsound(local_turf, 'sound/magic/ethereal_exit.ogg', 50, 1)
-	local_turf.visible_message("The reaction furiously freezes up as a snowman suddenly rises out of the [holder.my_atom.name]!")
-	freeze_radius(holder, equilibrium, holder.chem_temp, clamp(cryostylane.volume/15, 3, 10), 180 SECONDS, 5)
-	new /obj/structure/statue/snow/snowman(local_turf)
-	clear_reactants(holder)
-	clear_products(holder)
-
 #undef CRYOSTYLANE_UNDERHEAT_TEMP
 #undef CRYOSTYLANE_IMPURE_TEMPERATURE_RANGE
 

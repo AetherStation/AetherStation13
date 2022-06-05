@@ -459,7 +459,6 @@
 			/obj/item/food/canned/peaches/maint = 6,
 		),
 		VENUE_BAR = list(
-			/datum/reagent/consumable/failed_reaction = 1,
 			/datum/reagent/spraytan = 1,
 		),
 	)

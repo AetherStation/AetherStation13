@@ -20,7 +20,7 @@
 
 /datum/reagent/medicine/c2/helbital/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	. = TRUE
-	var/death_is_coming = (M.getToxLoss() + M.getOxyLoss() + M.getFireLoss() + M.getBruteLoss())*normalise_creation_purity()
+	var/death_is_coming = M.getToxLoss() + M.getOxyLoss() + M.getFireLoss() + M.getBruteLoss()
 	var/thou_shall_heal = 0
 	var/good_kind_of_healing = FALSE
 	switch(M.stat)
@@ -90,7 +90,7 @@
 
 /datum/reagent/medicine/c2/libital/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 0.3 * REM * delta_time)
-	M.adjustBruteLoss(-3 * REM * normalise_creation_purity() * delta_time)
+	M.adjustBruteLoss(-3 * REM)
 	..()
 	return TRUE
 
@@ -103,7 +103,7 @@
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/medicine/c2/probital/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.adjustBruteLoss(-2.25 * REM * normalise_creation_purity() * delta_time, FALSE)
+	M.adjustBruteLoss(-2.25 * REM, FALSE)
 	var/ooo_youaregettingsleepy = 3.5
 	switch(round(M.getStaminaLoss()))
 		if(10 to 40)
@@ -148,7 +148,7 @@
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/medicine/c2/lenturi/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.adjustFireLoss(-3 * REM * normalise_creation_purity() * delta_time)
+	M.adjustFireLoss(-3 * REM)
 	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, 0.4 * REM * delta_time)
 	..()
 	return TRUE
@@ -163,7 +163,7 @@
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/medicine/c2/aiuri/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.adjustFireLoss(-2 * REM * normalise_creation_purity() * delta_time)
+	M.adjustFireLoss(-2 * REM)
 	M.adjustOrganLoss(ORGAN_SLOT_EYES, 0.25 * REM * delta_time)
 	..()
 	return TRUE
@@ -179,9 +179,9 @@
 
 /datum/reagent/medicine/c2/hercuri/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(M.getFireLoss() > 50)
-		M.adjustFireLoss(-2 * REM * delta_time * normalise_creation_purity(), FALSE)
+		M.adjustFireLoss(-2 * REM, FALSE)
 	else
-		M.adjustFireLoss(-1.25 * REM * delta_time * normalise_creation_purity(), FALSE)
+		M.adjustFireLoss(-1.25 * REM, FALSE)
 	M.adjust_bodytemperature(rand(-25,-5) * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, 50)
 	if(ishuman(M))
 		var/mob/living/carbon/human/humi = M
@@ -225,7 +225,7 @@
 	var/oxycalc = 2.5 * REM * current_cycle
 	if(!overdosed)
 		oxycalc = min(oxycalc, M.getOxyLoss() + 0.5) //if NOT overdosing, we lower our toxdamage to only the damage we actually healed with a minimum of 0.1*current_cycle. IE if we only heal 10 oxygen damage but we COULD have healed 20, we will only take toxdamage for the 10. We would take the toxdamage for the extra 10 if we were overdosing.
-	M.adjustOxyLoss(-oxycalc * delta_time * normalise_creation_purity(), 0)
+	M.adjustOxyLoss(-oxycalc, 0)
 	M.adjustToxLoss(oxycalc * delta_time / CONVERMOL_RATIO, 0)
 	if(DT_PROB(current_cycle / 2, delta_time) && M.losebreath)
 		M.losebreath--
@@ -249,7 +249,7 @@
 
 
 /datum/reagent/medicine/c2/tirimol/on_mob_life(mob/living/carbon/human/M, delta_time, times_fired)
-	M.adjustOxyLoss(-3 * REM * delta_time * normalise_creation_purity())
+	M.adjustOxyLoss(-3 * REM)
 	M.adjustStaminaLoss(2 * REM * delta_time)
 	if(drowsycd && COOLDOWN_FINISHED(src, drowsycd))
 		M.drowsyness += 10
@@ -283,9 +283,9 @@
 	var/healypoints = 0 //5 healypoints = 1 heart damage; 5 rads = 1 tox damage healed for the purpose of healypoints
 
 	//you're hot
-	var/toxcalc = min(round(5 + ((chemtemp-1000)/175), 0.1), 5) * REM * delta_time * normalise_creation_purity() //max 2.5 tox healing per second
+	var/toxcalc = min(round(5 + ((chemtemp-1000)/175), 0.1), 5) //max 2.5 tox healing per second
 	if(toxcalc > 0)
-		M.adjustToxLoss(-toxcalc * delta_time * normalise_creation_purity())
+		M.adjustToxLoss(-toxcalc)
 		healypoints += toxcalc
 
 	//and you're cold
@@ -296,7 +296,7 @@
 			M.radiation = round(M.radiation * (0.75**(REM * delta_time)))
 		else if(chemtemp < radbonustemp)//else if you're under the chill-zone, it takes off 10% of your current rads
 			M.radiation = round(M.radiation * (0.90**(REM * delta_time)))
-		M.radiation -= radcalc * normalise_creation_purity()
+		M.radiation -= radcalc
 		healypoints += (radcalc / 5)
 
 	//you're yes and... oh no!
@@ -311,14 +311,12 @@
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/medicine/c2/multiver/on_mob_life(mob/living/carbon/human/M, delta_time, times_fired)
-	var/medibonus = 0 //it will always have itself which makes it REALLY start @ 1
+	var/medibonus = 1
 	for(var/r in M.reagents.reagent_list)
 		var/datum/reagent/the_reagent = r
 		if(istype(the_reagent, /datum/reagent/medicine))
 			medibonus += 1
-	if(creation_purity >= 1) //Perfectly pure multivers gives a bonus of 2!
-		medibonus += 1
-	M.adjustToxLoss(-0.5 * min(medibonus, 3 * normalise_creation_purity()) * REM * delta_time) //not great at healing but if you have nothing else it will work
+	M.adjustToxLoss(-0.5 * min(medibonus, 3)) //not great at healing but if you have nothing else it will work
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 0.5 * REM * delta_time) //kills at 40u
 	for(var/r2 in M.reagents.reagent_list)
 		var/datum/reagent/the_reagent2 = r2
@@ -334,7 +332,7 @@
 // Antitoxin binds plants pretty well. So the tox goes significantly down
 /datum/reagent/medicine/c2/multiver/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
-	mytray.adjustToxic(-(round(chems.get_reagent_amount(type) * 2)*normalise_creation_purity())) //0-2.66, 2 by default (0.75 purity).
+	mytray.adjustToxic(-(round(chems.get_reagent_amount(type) * 2))) //0-2.66, 2 by default (0.75 purity).
 
 #define issyrinormusc(A) (istype(A,/datum/reagent/medicine/c2/syriniver) || istype(A,/datum/reagent/medicine/c2/musiver)) //musc is metab of syrin so let's make sure we're not purging either
 
@@ -353,11 +351,11 @@
 		return
 	var/mob/living/carbon/C = A
 	if(trans_volume >= 0.6) //prevents cheesing with ultralow doses.
-		C.adjustToxLoss((-1.5 * min(2, trans_volume) * REM) * normalise_creation_purity(), 0)	  //This is to promote iv pole use for that chemotherapy feel.
+		C.adjustToxLoss((-1.5 * min(2, trans_volume) * REM), 0)	  //This is to promote iv pole use for that chemotherapy feel.
 	var/obj/item/organ/liver/L = C.internal_organs_slot[ORGAN_SLOT_LIVER]
 	if((L.organ_flags & ORGAN_FAILING) || !L)
 		return
-	conversion_amount = (trans_volume * (min(100 -C.getOrganLoss(ORGAN_SLOT_LIVER), 80) / 100)*normalise_creation_purity()) //the more damaged the liver the worse we metabolize.
+	conversion_amount = (trans_volume * (min(100 -C.getOrganLoss(ORGAN_SLOT_LIVER), 80) / 100)) //the more damaged the liver the worse we metabolize.
 	C.reagents.remove_reagent(/datum/reagent/medicine/c2/syriniver, conversion_amount)
 	C.reagents.add_reagent(/datum/reagent/medicine/c2/musiver, conversion_amount)
 	..()
@@ -392,7 +390,7 @@
 
 /datum/reagent/medicine/c2/musiver/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 0.1 * REM * delta_time)
-	M.adjustToxLoss(-1 * REM * delta_time * normalise_creation_purity(), 0)
+	M.adjustToxLoss(-1 * REM, 0)
 	for(var/datum/reagent/R in M.reagents.reagent_list)
 		if(issyrinormusc(R))
 			continue
@@ -440,7 +438,7 @@
 	for(var/i in carbies.all_wounds)
 		var/datum/wound/iter_wound = i
 		iter_wound.on_synthflesh(reac_volume)
-	carbies.adjustToxLoss((harmies+burnies)*(0.5 + (0.25*(1-creation_purity)))) //0.5 - 0.75
+	carbies.adjustToxLoss((harmies+burnies)*(0.75)) //0.5 - 0.75
 	if(show_message)
 		to_chat(carbies, span_danger("You feel your burns and bruises healing! It stings like hell!"))
 	SEND_SIGNAL(carbies, COMSIG_ADD_MOOD_EVENT, "painful_medicine", /datum/mood_event/painful_medicine)
@@ -477,7 +475,7 @@
 
 /datum/reagent/medicine/c2/penthrite/on_mob_life(mob/living/carbon/human/H, delta_time, times_fired)
 	H.adjustOrganLoss(ORGAN_SLOT_STOMACH, 0.25 * REM * delta_time)
-	if(H.health <= HEALTH_THRESHOLD_CRIT && H.health > (H.crit_threshold + HEALTH_THRESHOLD_FULLCRIT * (2 * normalise_creation_purity()))) //we cannot save someone below our lowered crit threshold.
+	if(H.health <= HEALTH_THRESHOLD_CRIT && H.health > (H.crit_threshold + HEALTH_THRESHOLD_FULLCRIT*2)) //we cannot save someone below our lowered crit threshold.
 
 		H.adjustToxLoss(-2 * REM * delta_time, 0)
 		H.adjustBruteLoss(-2 * REM * delta_time, 0)
@@ -494,7 +492,7 @@
 		if(DT_PROB(18, delta_time))
 			to_chat(H,span_danger("Your body is trying to give up, but your heart is still beating!"))
 
-	if(H.health <= (H.crit_threshold + HEALTH_THRESHOLD_FULLCRIT*(2*normalise_creation_purity()))) //certain death below this threshold
+	if(H.health <= (H.crit_threshold + HEALTH_THRESHOLD_FULLCRIT*2)) //certain death below this threshold
 		REMOVE_TRAIT(H, TRAIT_STABLEHEART, type) //we have to remove the stable heart trait before we give them a heart attack
 		to_chat(H,span_danger("You feel something rupturing inside your chest!"))
 		H.emote("scream")

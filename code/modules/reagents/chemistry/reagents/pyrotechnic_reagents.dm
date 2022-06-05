@@ -216,15 +216,9 @@
 	name = "Cryostylane"
 	description = "Induces a cryostasis like state in a patient's organs, preventing them from decaying while dead. Slows down surgery while in a patient however. When reacted with oxygen, it will slowly consume it and reduce a container's temperature to 0K. Also damages slime simplemobs when 5u is sprayed."
 	color = "#0000DC"
-	ph = 8.6
 	metabolization_rate = 0.05 * REAGENTS_METABOLISM
 	taste_description = "icey bitterness"
-	purity = REAGENT_STANDARD_PURITY
 	self_consuming = TRUE
-	impure_chem = /datum/reagent/consumable/ice
-	inverse_chem_val = 0.5
-	inverse_chem = /datum/reagent/inverse/cryostylane
-	failed_chem = null
 	burning_volume = 0.05
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED | REAGENT_DEAD_PROCESS
 
@@ -236,7 +230,7 @@
 
 /datum/reagent/cryostylane/on_mob_add(mob/living/consumer, amount)
 	. = ..()
-	consumer.mob_surgery_speed_mod = 1-((CRYO_SPEED_PREFACTOR * (1 - creation_purity))+CRYO_SPEED_CONSTANT) //10% - 30% slower
+	consumer.mob_surgery_speed_mod = 0.5
 	consumer.color = COLOR_CYAN
 
 /datum/reagent/cryostylane/on_mob_delete(mob/living/consumer)

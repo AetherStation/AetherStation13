@@ -517,22 +517,22 @@
 			to_chat(M, span_notice("Your hands spaz out and you drop what you were holding!"))
 			M.Jitter(10)
 
-	M.AdjustAllImmobility(-20 * REM * delta_time * normalise_creation_purity())
-	M.adjustStaminaLoss(-1 * REM * delta_time * normalise_creation_purity(), FALSE)
+	M.AdjustAllImmobility(-20)
+	M.adjustStaminaLoss(-1 * REM, FALSE)
 	..()
 	return TRUE
 
 /datum/reagent/medicine/ephedrine/overdose_process(mob/living/M, delta_time, times_fired)
-	if(DT_PROB(1 * normalise_creation_purity(), delta_time) && iscarbon(M))
+	if(prob(2) && iscarbon(M))
 		var/datum/disease/D = new /datum/disease/heart_failure
 		M.ForceContractDisease(D)
 		to_chat(M, span_userdanger("You're pretty sure you just felt your heart stop for a second there.."))
 		M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
 
-	if(DT_PROB(3.5 * normalise_creation_purity(), delta_time))
+	if(prob(7))
 		to_chat(M, span_notice("[pick("Your head pounds.", "You feel a tight pain in your chest.", "You find it hard to stay still.", "You feel your heart practically beating out of your chest.")]"))
 
-	if(DT_PROB(18 * normalise_creation_purity(), delta_time))
+	if(prob(33))
 		M.adjustToxLoss(1, 0)
 		M.losebreath++
 		. = TRUE
@@ -642,13 +642,13 @@
 	restore_eyesight(prev_owner, eyes)
 
 /datum/reagent/medicine/oculine/on_mob_life(mob/living/carbon/owner, delta_time, times_fired)
-	owner.adjust_blindness(-2 * REM * delta_time * normalise_creation_purity())
-	owner.adjust_blurriness(-2 * REM * delta_time * normalise_creation_purity())
+	owner.adjust_blindness(-2)
+	owner.adjust_blurriness(-2)
 	var/obj/item/organ/eyes/eyes = owner.getorganslot(ORGAN_SLOT_EYES)
 	if (!eyes)
 		return ..()
 	var/fix_prob = 100
-	eyes.applyOrganDamage(-2 * REM * delta_time * normalise_creation_purity())
+	eyes.applyOrganDamage(-2)
 	if(HAS_TRAIT_FROM(owner, TRAIT_BLIND, EYE_DAMAGE))
 		if(DT_PROB(fix_prob, delta_time))
 			to_chat(owner, span_warning("Your vision slowly returns..."))
@@ -692,7 +692,7 @@
 	var/obj/item/organ/ears/ears = owner.getorganslot(ORGAN_SLOT_EARS)
 	if(!ears)
 		return ..()
-	ears.adjustEarDamage(-4 * REM * delta_time * normalise_creation_purity(), -4 * REM * delta_time * normalise_creation_purity())
+	ears.adjustEarDamage(-4, -4)
 	..()
 
 /datum/reagent/medicine/inacusiate/on_mob_delete(mob/living/owner)
@@ -830,7 +830,7 @@
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/medicine/mannitol/on_mob_life(mob/living/carbon/owner, delta_time, times_fired)
-	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2 * REM * delta_time * normalise_creation_purity())
+	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2 * REM)
 	..()
 
 //Having mannitol in you will pause the brain damage from brain tumor (so it heals an even 2 brain damage instead of 1.8)
@@ -886,13 +886,13 @@
 
 /datum/reagent/medicine/neurine/on_mob_life(mob/living/carbon/owner, delta_time, times_fired)
 	if(holder.has_reagent(/datum/reagent/consumable/ethanol/neurotoxin))
-		holder.remove_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 5 * REM * delta_time * normalise_creation_purity())
-	if(DT_PROB(8 * normalise_creation_purity(), delta_time))
+		holder.remove_reagent(/datum/reagent/consumable/ethanol/neurotoxin, 5)
+	if(DT_PROB(8, delta_time))
 		owner.cure_trauma_type(resilience = TRAUMA_RESILIENCE_BASIC)
 	..()
 
 /datum/reagent/medicine/neurine/on_mob_dead(mob/living/carbon/owner, delta_time)
-	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1 * REM * delta_time * normalise_creation_purity())
+	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1 * REM)
 	..()
 
 /datum/reagent/medicine/mutadone
@@ -921,11 +921,11 @@
 	M.drowsyness = 0
 	M.slurring = 0
 	M.set_confusion(0)
-	M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3 * REM * delta_time * normalise_creation_purity(), FALSE, TRUE)
+	M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3 * REM, FALSE, TRUE)
 	M.adjustToxLoss(-0.2 * REM * delta_time, 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.drunkenness = max(H.drunkenness - (10 * REM * delta_time * normalise_creation_purity()), 0)
+		H.drunkenness = max(H.drunkenness - 10, 0)
 	..()
 	. = TRUE
 
