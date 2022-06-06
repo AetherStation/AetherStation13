@@ -1279,12 +1279,6 @@
 		/obj/item/stock_parts/matter_bin = 2)
 	needs_anchored = FALSE
 
-/obj/item/circuitboard/machine/restaurant_portal
-	name = "Restaurant Portal"
-	greyscale_colors = CIRCUIT_COLOR_SERVICE
-	build_path = /obj/machinery/restaurant_portal
-	needs_anchored = TRUE
-
 /obj/item/circuitboard/machine/abductor
 	name = "alien board (Report This)"
 	icon_state = "abductor_mod"

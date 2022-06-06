@@ -40359,7 +40359,6 @@
 /turf/open/floor/iron,
 /area/commons/dorms)
 "opx" = (
-/obj/machinery/restaurant_portal/restaurant,
 /turf/open/floor/iron/white/corner{
 	dir = 1
 	},
@@ -48087,7 +48086,6 @@
 /obj/structure/closet/secure_closet/bar{
 	req_access_txt = "25"
 	},
-/obj/item/holosign_creator/robot_seat/bar,
 /turf/open/floor/wood,
 /area/service/bar)
 "sBn" = (
@@ -48804,7 +48802,6 @@
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/donkpockets,
 /obj/item/reagent_containers/glass/beaker,
-/obj/item/holosign_creator/robot_seat/restaurant,
 /turf/open/floor/iron/cafeteria,
 /area/service/kitchen)
 "sWz" = (
@@ -57064,14 +57061,6 @@
 	},
 /turf/open/floor/iron,
 /area/cargo/miningdock)
-"xzy" = (
-/obj/effect/turf_decal/tile/bar,
-/obj/effect/turf_decal/tile/bar{
-	dir = 1
-	},
-/obj/machinery/restaurant_portal/bar,
-/turf/open/floor/iron,
-/area/service/bar)
 "xzA" = (
 /obj/structure/table,
 /obj/item/folder/white,
@@ -93700,7 +93689,7 @@ oHj
 dSU
 crr
 iHa
-xzy
+dLp
 xvD
 hYS
 wwm
