@@ -86,8 +86,6 @@
 
 	drawtype = pick(all_drawables)
 
-	AddElement(/datum/element/venue_price, FOOD_PRICE_EXOTIC)
-
 	refill()
 
 /obj/item/toy/crayon/examine(mob/user)

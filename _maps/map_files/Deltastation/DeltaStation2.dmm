@@ -18136,9 +18136,8 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/restaurant_portal/restaurant,
 /turf/open/floor/iron/dark,
-/area/service/bar/atrium)
+/area)
 "cqC" = (
 /obj/structure/chair/comfy/brown{
 	buildstackamount = 0;
@@ -48959,7 +48958,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/restaurant_portal/bar,
 /turf/open/floor/iron/dark,
 /area/service/bar/atrium)
 "hzs" = (
@@ -76995,7 +76993,6 @@
 /obj/item/reagent_containers/glass/bowl,
 /obj/effect/turf_decal/bot,
 /obj/item/food/dough,
-/obj/item/holosign_creator/robot_seat/restaurant,
 /turf/open/floor/iron,
 /area/service/kitchen)
 "oJG" = (
@@ -94490,6 +94487,9 @@
 /obj/structure/extinguisher_cabinet/directional/west,
 /turf/open/floor/iron,
 /area/security/office)
+"tkq" = (
+/turf/open/floor/iron/white,
+/area)
 "tku" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -96539,7 +96539,7 @@
 	dir = 8
 	},
 /turf/open/floor/iron,
-/area/service/bar/atrium)
+/area)
 "tLy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -97892,7 +97892,6 @@
 /obj/machinery/status_display/evac/directional/north,
 /obj/item/clipboard,
 /obj/item/toy/figure/bartender,
-/obj/item/holosign_creator/robot_seat/bar,
 /turf/open/floor/iron/dark,
 /area/service/bar)
 "udg" = (
@@ -149785,7 +149784,7 @@ tLs
 taj
 jTr
 uIn
-reI
+tkq
 gXp
 reI
 ryS
@@ -153197,7 +153196,7 @@ dcM
 vwn
 dpi
 dcO
-dcO
+tkq
 dcO
 dcO
 jFk

@@ -91,8 +91,6 @@ GLOBAL_LIST_INIT(name2reagent, build_name2reagent())
 
 	if(material)
 		material = GET_MATERIAL_REF(material)
-	if(glass_price)
-		AddElement(/datum/element/venue_price, glass_price)
 	if(!mass)
 		mass = rand(10, 800)
 

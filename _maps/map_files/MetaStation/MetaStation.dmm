@@ -39962,7 +39962,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/machinery/restaurant_portal/bar,
 /turf/open/floor/wood,
 /area/service/bar)
 "lgg" = (
@@ -43343,7 +43342,6 @@
 /area/maintenance/port/aft)
 "mmg" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/restaurant_portal/restaurant,
 /turf/open/floor/wood,
 /area/service/bar)
 "mml" = (
@@ -52904,7 +52902,6 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/holosign_creator/robot_seat/bar,
 /turf/open/floor/iron,
 /area/service/bar)
 "poc" = (
@@ -71499,7 +71496,6 @@
 	id = "kitchen_counter";
 	name = "Kitchen Counter Shutters"
 	},
-/obj/item/holosign_creator/robot_seat/restaurant,
 /turf/open/floor/iron/cafeteria{
 	dir = 5
 	},
