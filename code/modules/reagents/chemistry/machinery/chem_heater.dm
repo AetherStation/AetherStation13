@@ -14,6 +14,10 @@
 	var/heater_coefficient = 0.05
 	var/on = FALSE
 
+/obj/machinery/chem_heater/Initialize()
+	. = ..()
+	create_reagents(200, NO_REACT)//Lets save some calculations here
+
 /obj/machinery/chem_heater/deconstruct(disassembled)
 	. = ..()
 	if(beaker && disassembled)

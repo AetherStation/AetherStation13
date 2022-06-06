@@ -19532,9 +19532,6 @@
 /turf/open/floor/iron,
 /area/commons/storage/tools)
 "eeY" = (
-/obj/machinery/chem_heater/withbuffer{
-	pixel_x = 4
-	},
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
@@ -19545,6 +19542,7 @@
 	name = "pharmacy shutters control";
 	req_access_txt = "5;69"
 	},
+/obj/machinery/chem_heater,
 /turf/open/floor/iron/white,
 /area/medical/pharmacy)
 "eff" = (
@@ -25374,7 +25372,6 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/chem_heater/withbuffer,
 /obj/machinery/power/apc/auto_name/west,
 /turf/open/floor/iron/white,
 /area/medical/chemistry)
@@ -62263,7 +62260,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/machinery/chem_heater/withbuffer,
+/obj/machinery/chem_heater,
 /turf/open/floor/iron/white,
 /area/medical/pharmacy)
 "sqV" = (
@@ -73011,7 +73008,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/machinery/chem_heater/withbuffer,
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple{
 	dir = 4

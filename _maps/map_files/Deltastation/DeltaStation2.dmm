@@ -24384,10 +24384,10 @@
 /turf/open/floor/iron/white,
 /area/medical/chemistry)
 "dcP" = (
-/obj/machinery/chem_heater/withbuffer,
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
+/obj/machinery/chem_heater,
 /turf/open/floor/iron,
 /area/medical/pharmacy)
 "dcQ" = (
@@ -26432,7 +26432,6 @@
 /turf/open/floor/iron,
 /area/medical/pharmacy)
 "dkh" = (
-/obj/machinery/chem_heater/withbuffer,
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
@@ -26441,6 +26440,7 @@
 	name = "Pharmacy Requests Console";
 	receive_ore_updates = 1
 	},
+/obj/machinery/chem_heater,
 /turf/open/floor/iron,
 /area/medical/pharmacy)
 "dkr" = (
@@ -27155,7 +27155,6 @@
 /turf/open/floor/iron/white,
 /area/medical/chemistry)
 "dnr" = (
-/obj/machinery/chem_heater/withbuffer,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
