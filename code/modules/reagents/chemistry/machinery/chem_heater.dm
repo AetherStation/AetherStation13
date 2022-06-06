@@ -138,3 +138,13 @@
 			on = FALSE
 			replace_beaker(usr)
 			. = TRUE
+
+//Much more efficient
+/obj/machinery/chem_heater/debug
+	name = "Debug Chemical Heater"
+	desc = "Fusion powered!"
+
+/obj/machinery/chem_heater/debug/Initialize()
+	. = ..()
+	reagents.maximum_volume = 2000
+	heater_coefficient = 0.4 //hack way to upgrade
