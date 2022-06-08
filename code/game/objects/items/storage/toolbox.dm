@@ -256,15 +256,16 @@
 /obj/item/storage/toolbox/infiltrator/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_combined_w_class = 20
 	STR.max_items = 10
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
-		/obj/item/clothing/head/helmet/infiltrator,
-		/obj/item/clothing/suit/armor/vest/infiltrator,
-		/obj/item/clothing/under/syndicate/bloodred,
-		/obj/item/clothing/gloves/color/infiltrator,
-		/obj/item/clothing/mask/infiltrator,
-		/obj/item/clothing/shoes/combat/sneakboots,
+		/obj/item/clothing/head/,
+		/obj/item/clothing/suit/,
+		/obj/item/clothing/under/,
+		/obj/item/clothing/gloves/,
+		/obj/item/clothing/mask/,
+		/obj/item/clothing/shoes/,
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/ammo_box
