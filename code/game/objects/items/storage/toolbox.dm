@@ -256,7 +256,7 @@
 /obj/item/storage/toolbox/infiltrator/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_combined_w_class = 20
+	STR.max_combined_w_class = 22
 	STR.max_items = 10
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
