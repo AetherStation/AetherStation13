@@ -146,6 +146,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 	if(.)
 		return
 	. = TRUE
+	
 	switch(action)
 		if("load_program")
 			var/program_to_load = params["id"]

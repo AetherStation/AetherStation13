@@ -114,8 +114,7 @@
 			select_sect(usr, params["path"])
 		if("perform_rite")
 			perform_rite(usr, params["path"])
-		else
-			to_chat(world, action)
+		
 
 
 /// Select the sect, called from [/datum/component/religious_tool/proc/AttemptActions]
