@@ -259,6 +259,7 @@
 	STR.max_combined_w_class = 22
 	STR.max_items = 10
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
+	STR.allow_big_nesting = TRUE //otherwise it will not hold normal sized boots/fedoras.
 	STR.set_holdable(list(
 		/obj/item/clothing/head,
 		/obj/item/clothing/suit,
