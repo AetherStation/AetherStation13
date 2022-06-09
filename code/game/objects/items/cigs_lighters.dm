@@ -158,7 +158,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	/// Should we smoke all of the chems in the cig before it runs out. Splits each puff to take a portion of the overall chems so by the end you'll always have consumed all of the chems inside.
 	var/smoke_all = FALSE
 	/// How much damage this deals to the lungs per drag.
-	var/lung_harm = 1
+	var/lung_harm = 0.8
 
 
 /obj/item/clothing/mask/cigarette/Initialize()
