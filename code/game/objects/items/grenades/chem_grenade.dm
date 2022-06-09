@@ -6,14 +6,17 @@
 	w_class = WEIGHT_CLASS_SMALL
 	force = 2
 	var/stage = GRENADE_EMPTY
-	var/list/obj/item/reagent_containers/glass/beakers = list()
-	var/list/allowed_containers = list(/obj/item/reagent_containers/glass/beaker, /obj/item/reagent_containers/glass/bottle)
+	var/list/obj/item/reagent_containers/beakers = list()
+	var/list/allowed_containers = list(/obj/item/reagent_containers/glass/beaker,
+								/obj/item/reagent_containers/glass/bottle,
+								/obj/item/reagent_containers/food/condiment,
+								/obj/item/reagent_containers/food/drinks/)
 	var/list/banned_containers = list(/obj/item/reagent_containers/glass/beaker/bluespace) //Containers to exclude from specific grenade subtypes
 	var/affected_area = 3
 	var/ignition_temp = 10 // The amount of heat added to the reagents when this grenade goes off.
 	var/threatscale = 1 // Used by advanced grenades to make them slightly more worthy.
 	var/no_splash = FALSE //If the grenade deletes even if it has no reagents to splash with. Used for slime core reactions.
-	var/casedesc = "This basic model accepts both beakers and bottles. It heats contents by 10 K upon ignition." // Appears when examining empty casings.
+	var/casedesc = "This basic model accepts both beakers and bottles, as well as more rudimentary containers if necessary. It heats contents by 10 K upon ignition." // Appears when examining empty casings.
 	var/obj/item/assembly/prox_sensor/landminemode = null
 
 /obj/item/grenade/chem_grenade/ComponentInitialize()
@@ -32,9 +35,9 @@
 	if(user.can_see_reagents())
 		if(beakers.len)
 			. += span_notice("You scan the grenade and detect the following reagents:")
-			for(var/obj/item/reagent_containers/glass/G in beakers)
-				for(var/datum/reagent/R in G.reagents.reagent_list)
-					. += span_notice("[R.volume] units of [R.name] in the [G.name].")
+			for(var/obj/item/reagent_containers/B as anything in beakers)
+				for(var/datum/reagent/R in B.reagents.reagent_list)
+					. += span_notice("[R.volume] units of [R.name] in the [B.name].")
 			if(beakers.len == 1)
 				. += span_notice("You detect no second beaker in the grenade.")
 		else
@@ -43,8 +46,8 @@
 		if(beakers.len == 2 && beakers[1].name == beakers[2].name)
 			. += span_notice("You see two [beakers[1].name]s inside the grenade.")
 		else
-			for(var/obj/item/reagent_containers/glass/G in beakers)
-				. += span_notice("You see a [G.name] inside the grenade.")
+			for(var/obj/item/reagent_containers/B as anything in beakers)
+				. += span_notice("You see a [B.name] inside the grenade.")
 
 /obj/item/grenade/chem_grenade/attack_self(mob/user)
 	if(stage == GRENADE_READY && !active)
@@ -180,8 +183,8 @@
 
 	. = ..()
 	var/list/datum/reagents/reactants = list()
-	for(var/obj/item/reagent_containers/glass/G in beakers)
-		reactants += G.reagents
+	for(var/obj/item/reagent_containers/B as anything in beakers)
+		reactants += B.reagents
 
 	var/turf/detonation_turf = get_turf(src)
 
@@ -219,8 +222,9 @@
 
 	for(var/obj/item/slime_extract/S in beakers)
 		if(S.Uses)
-			for(var/obj/item/reagent_containers/glass/G in beakers)
-				G.reagents.trans_to(S, G.reagents.total_volume)
+			for(var/obj/item/reagent_containers/B as anything in beakers)
+				if(!istype(B, /obj/item/slime_extract))
+					B.reagents.trans_to(S, B.reagents.total_volume)
 
 			//If there is still a core (sometimes it's used up)
 			//and there are reagents left, behave normally,
@@ -228,8 +232,9 @@
 
 			if(S)
 				if(S.reagents && S.reagents.total_volume)
-					for(var/obj/item/reagent_containers/glass/G in beakers)
-						S.reagents.trans_to(G, S.reagents.total_volume)
+					for(var/obj/item/reagent_containers/B as anything in beakers)
+						if(!istype(B, /obj/item/slime_extract))
+							S.reagents.trans_to(B, S.reagents.total_volume)
 				else
 					S.forceMove(get_turf(src))
 					no_splash = TRUE

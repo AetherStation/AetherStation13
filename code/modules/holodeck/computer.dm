@@ -146,6 +146,7 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 	if(.)
 		return
 	. = TRUE
+	
 	switch(action)
 		if("load_program")
 			var/program_to_load = params["id"]
@@ -166,6 +167,8 @@ and clear when youre done! if you dont i will use :newspaper2: on you
 			if(program_to_load)
 				load_program(program_to_load)
 		if("safety")
+			if (!(obj_flags & EMAGGED) || !issilicon(usr))
+				return
 			if((obj_flags & EMAGGED) && program)
 				emergency_shutdown()
 			nerf(obj_flags & EMAGGED,FALSE)
