@@ -35,7 +35,7 @@
 	if(user.can_see_reagents())
 		if(beakers.len)
 			. += span_notice("You scan the grenade and detect the following reagents:")
-			for(var/obj/item/reagent_containers/B in beakers)
+			for(var/obj/item/reagent_containers/B as anything in beakers)
 				for(var/datum/reagent/R in B.reagents.reagent_list)
 					. += span_notice("[R.volume] units of [R.name] in the [B.name].")
 			if(beakers.len == 1)
@@ -46,7 +46,7 @@
 		if(beakers.len == 2 && beakers[1].name == beakers[2].name)
 			. += span_notice("You see two [beakers[1].name]s inside the grenade.")
 		else
-			for(var/obj/item/reagent_containers/B in beakers)
+			for(var/obj/item/reagent_containers/B as anything in beakers)
 				. += span_notice("You see a [B.name] inside the grenade.")
 
 /obj/item/grenade/chem_grenade/attack_self(mob/user)
@@ -183,7 +183,7 @@
 
 	. = ..()
 	var/list/datum/reagents/reactants = list()
-	for(var/obj/item/reagent_containers/B in beakers)
+	for(var/obj/item/reagent_containers/B as anything in beakers)
 		reactants += B.reagents
 
 	var/turf/detonation_turf = get_turf(src)
@@ -222,7 +222,7 @@
 
 	for(var/obj/item/slime_extract/S in beakers)
 		if(S.Uses)
-			for(var/obj/item/reagent_containers/B in beakers)
+			for(var/obj/item/reagent_containers/B as anything in beakers)
 				if(!istype(B, /obj/item/slime_extract))
 					B.reagents.trans_to(S, B.reagents.total_volume)
 
@@ -232,7 +232,7 @@
 
 			if(S)
 				if(S.reagents && S.reagents.total_volume)
-					for(var/obj/item/reagent_containers/B in beakers)
+					for(var/obj/item/reagent_containers/B as anything in beakers)
 						if(!istype(B, /obj/item/slime_extract))
 							S.reagents.trans_to(B, S.reagents.total_volume)
 				else
