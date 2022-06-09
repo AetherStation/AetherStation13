@@ -260,12 +260,12 @@
 	STR.max_items = 10
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	STR.set_holdable(list(
-		/obj/item/clothing/head/,
-		/obj/item/clothing/suit/,
-		/obj/item/clothing/under/,
-		/obj/item/clothing/gloves/,
-		/obj/item/clothing/mask/,
-		/obj/item/clothing/shoes/,
+		/obj/item/clothing/head,
+		/obj/item/clothing/suit,
+		/obj/item/clothing/under,
+		/obj/item/clothing/gloves,
+		/obj/item/clothing/mask,
+		/obj/item/clothing/shoes,
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
 		/obj/item/ammo_box
