@@ -316,9 +316,9 @@ GLOBAL_LIST_INIT(orion_events, generate_orion_events())
 	add_fingerprint(gamer)
 
 /**
- * pickweights a new event, sets event var as it. it then preps the event if it needs it
+ * pick_weights a new event, sets event var as it. it then preps the event if it needs it
  *
- * giving a path argument will instead find that instanced datum instead of pickweighting. Used in events that follow from events.
+ * giving a path argument will instead find that instanced datum instead of pick_weighting. Used in events that follow from events.
  * Arguments:
  * * path: if we want a specific event, this is the path of the wanted one
  * * gamer: person using the arcade, used in emag effects

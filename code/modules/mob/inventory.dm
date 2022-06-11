@@ -481,7 +481,7 @@
 			hand_bodyparts[i] = BP
 	..() //Don't redraw hands until we have organs for them
 
-//GetAllContents that is reasonable and not stupid
+//get_all_contents that is reasonable and not stupid
 /mob/living/carbon/proc/get_all_gear()
 	var/list/processing_list = get_equipped_items(include_pockets = TRUE) + held_items
 	list_clear_nulls(processing_list) // handles empty hands

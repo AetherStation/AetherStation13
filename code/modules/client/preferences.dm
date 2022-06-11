@@ -178,7 +178,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			return
 	//we couldn't load character data so just randomize the character appearance + name
 	randomise_appearance_prefs() //let's create a random character then - rather than a fat, bald and naked man.
-	key_bindings = deepCopyList(GLOB.hotkey_keybinding_list_by_key) // give them default keybinds and update their movement keys
+	key_bindings = deep_copy_list(GLOB.hotkey_keybinding_list_by_key) // give them default keybinds and update their movement keys
 	C?.set_macros()
 	real_name = pref_species.random_name(gender,1)
 	if(!loaded_preferences_successfully)
@@ -910,7 +910,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		var/datum/job/lastJob
 		var/datum/job/overflow_role = SSjob.GetJobType(SSjob.overflow_role)
 
-		for(var/datum/job/job as anything in sortList(SSjob.joinable_occupations, /proc/cmp_job_display_asc))
+		for(var/datum/job/job as anything in sort_list(SSjob.joinable_occupations, /proc/cmp_job_display_asc))
 
 			index += 1
 			if(index >= limit)
@@ -1550,7 +1550,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							friendlyname += " (disabled)"
 						maplist[friendlyname] = VM.map_name
 					maplist[default] = null
-					var/pickedmap = input(user, "Choose your preferred map. This will be used to help weight random map selection.", "Character Preference")  as null|anything in sortList(maplist)
+					var/pickedmap = input(user, "Choose your preferred map. This will be used to help weight random map selection.", "Character Preference")  as null|anything in sort_list(maplist)
 					if (pickedmap)
 						preferred_map = maplist[pickedmap]
 
@@ -1560,7 +1560,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						clientfps = sanitize_integer(desiredfps, -1, 1000, clientfps)
 						parent.fps = (clientfps < 0) ? RECOMMENDED_FPS : clientfps
 				if("ui")
-					var/pickedui = input(user, "Choose your UI style.", "Character Preference", UI_style)  as null|anything in sortList(GLOB.available_ui_styles)
+					var/pickedui = input(user, "Choose your UI style.", "Character Preference", UI_style)  as null|anything in sort_list(GLOB.available_ui_styles)
 					if(pickedui)
 						UI_style = pickedui
 						if (parent && parent.mob && parent.mob.hud_used)
@@ -1665,7 +1665,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						if(!length(key_bindings[old_key]))
 							key_bindings -= old_key
 					key_bindings[full_key] += list(kb_name)
-					key_bindings[full_key] = sortList(key_bindings[full_key])
+					key_bindings[full_key] = sort_list(key_bindings[full_key])
 
 					user << browse(null, "window=capturekeypress")
 					user.client.set_macros()
@@ -1677,7 +1677,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						ShowChoices(user)
 						return
 					hotkeys = (choice == "Hotkey")
-					key_bindings = (hotkeys) ? deepCopyList(GLOB.hotkey_keybinding_list_by_key) : deepCopyList(GLOB.classic_keybinding_list_by_key)
+					key_bindings = (hotkeys) ? deep_copy_list(GLOB.hotkey_keybinding_list_by_key) : deep_copy_list(GLOB.classic_keybinding_list_by_key)
 					user.client.set_macros()
 
 				if("chat_on_map")

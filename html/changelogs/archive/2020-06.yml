@@ -283,7 +283,7 @@
   - bugfix: Fixed ghosting making your body look undefibbable to a medical HUD.
   a few Sprites from Kryson:
   - rscadd: Heretics have been spotted near your area, don't let them succed.
-  - code_imp: Added a sane version of GetAllContents called get_all_gear().
+  - code_imp: Added a sane version of get_all_contents called get_all_gear().
   bobbahbrown:
   - admin: Fixed malformed SQL queries for logging admin permission changes.
   dragomagol:

@@ -239,7 +239,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 
 //Returns a list of all items of interest with their name
 /proc/getpois(mobs_only = FALSE, skip_mindless = FALSE, specify_dead_role = TRUE)
-	var/list/mobs = sortmobs()
+	var/list/mobs = sort_mobs()
 	var/list/namecounts = list()
 	var/list/pois = list()
 	for(var/mob/M in mobs)
@@ -264,33 +264,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 			pois[avoid_assoc_duplicate_keys(A.name, namecounts)] = A
 
 	return pois
-//Orders mobs by type then by name
-/proc/sortmobs()
-	var/list/moblist = list()
-	var/list/sortmob = sortNames(GLOB.mob_list)
-	for(var/mob/living/silicon/ai/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/camera/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/silicon/pai/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/silicon/robot/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/carbon/human/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/brain/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/carbon/alien/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/dead/observer/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/dead/new_player/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/simple_animal/slime/M in sortmob)
-		moblist.Add(M)
-	for(var/mob/living/simple_animal/M in sortmob)
-		moblist.Add(M)
-	return moblist
 
 // Format a power value in W, kW, MW, or GW.
 /proc/DisplayPower(powerused)
@@ -319,14 +292,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 	// With the current configuration of wait=20 and CELLRATE=0.002, this
 	// means that one unit is 1 kJ.
 	return DisplayJoules(units * SSmachines.wait * 0.1 WATTS)
-
-/proc/get_mob_by_ckey(key)
-	if(!key)
-		return
-	var/list/mobs = sortmobs()
-	for(var/mob/M in mobs)
-		if(M.ckey == key)
-			return M
 
 //Returns the atom sitting on the turf.
 //For example, using this on a disk, which is in a bag, on a mob, will return the mob because it's on the turf.
@@ -427,7 +392,7 @@ Turf and target are separate in case you want to teleport some distance from a t
 
 
 ///Returns the src and all recursive contents as a list.
-/atom/proc/GetAllContents(ignore_flag_1)
+/atom/proc/get_all_contents(ignore_flag_1)
 	. = list(src)
 	var/i = 0
 	while(i < length(.))
@@ -446,9 +411,9 @@ Turf and target are separate in case you want to teleport some distance from a t
 		if(istype(A, type))
 			. += A
 
-/atom/proc/GetAllContentsIgnoring(list/ignore_typecache)
+/atom/proc/get_all_contents_ignoring(list/ignore_typecache)
 	if(!length(ignore_typecache))
-		return GetAllContents()
+		return get_all_contents()
 	var/list/processing = list(src)
 	. = list()
 	var/i = 0
@@ -557,26 +522,6 @@ Turf and target are separate in case you want to teleport some distance from a t
 //chances are 1:value. anyprob(1) will always return true
 /proc/anyprob(value)
 	return (rand(1,value)==value)
-
-/proc/parse_zone(zone)
-	if(zone == BODY_ZONE_PRECISE_R_HAND)
-		return "right hand"
-	else if (zone == BODY_ZONE_PRECISE_L_HAND)
-		return "left hand"
-	else if (zone == BODY_ZONE_L_ARM)
-		return "left arm"
-	else if (zone == BODY_ZONE_R_ARM)
-		return "right arm"
-	else if (zone == BODY_ZONE_L_LEG)
-		return "left leg"
-	else if (zone == BODY_ZONE_R_LEG)
-		return "right leg"
-	else if (zone == BODY_ZONE_PRECISE_L_FOOT)
-		return "left foot"
-	else if (zone == BODY_ZONE_PRECISE_R_FOOT)
-		return "right foot"
-	else
-		return zone
 
 /*
 
@@ -699,20 +644,6 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 /proc/format_text(text)
 	return replacetext(replacetext(text,"\proper ",""),"\improper ","")
 
-/proc/check_target_facings(mob/living/initator, mob/living/target)
-	/*This can be used to add additional effects on interactions between mobs depending on how the mobs are facing each other, such as adding a crit damage to blows to the back of a guy's head.
-	Given how click code currently works (Nov '13), the initiating mob will be facing the target mob most of the time
-	That said, this proc should not be used if the change facing proc of the click code is overridden at the same time*/
-	if(!isliving(target) || target.body_position == LYING_DOWN)
-	//Make sure we are not doing this for things that can't have a logical direction to the players given that the target would be on their side
-		return FALSE
-	if(initator.dir == target.dir) //mobs are facing the same direction
-		return FACING_SAME_DIR
-	if(is_A_facing_B(initator,target) && is_A_facing_B(target,initator)) //mobs are facing each other
-		return FACING_EACHOTHER
-	if(initator.dir + 2 == target.dir || initator.dir - 2 == target.dir || initator.dir + 6 == target.dir || initator.dir - 6 == target.dir) //Initating mob is looking at the target, while the target mob is looking in a direction perpendicular to the 1st
-		return FACING_INIT_FACING_TARGET_TARGET_FACING_PERPENDICULAR
-
 /proc/random_step(atom/movable/AM, steps, chance)
 	var/initial_chance = chance
 	while(steps > 0)
@@ -720,13 +651,6 @@ GLOBAL_LIST_INIT(WALLITEMS_INVERSE, typecacheof(list(
 			step(AM, pick(GLOB.alldirs))
 		chance = max(chance - (initial_chance / steps), 0)
 		steps--
-
-/proc/living_player_count()
-	var/living_player_count = 0
-	for(var/mob in GLOB.player_list)
-		if(mob in GLOB.alive_mob_list)
-			living_player_count += 1
-	return living_player_count
 
 /proc/randomColor(mode = 0) //if 1 it doesn't pick white, black or gray
 	switch(mode)
@@ -1061,7 +985,7 @@ rough example of the "cone" made by the 3 dirs checked
 	else if(random)
 		chosen = pick(matches) || null
 	else
-		chosen = input("Select a type", "Pick Type", matches[1]) as null|anything in sortList(matches)
+		chosen = input("Select a type", "Pick Type", matches[1]) as null|anything in sort_list(matches)
 	if(!chosen)
 		return
 	chosen = matches[chosen]
@@ -1158,54 +1082,6 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 		else
 			. = ""
 
-GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
-
-//Version of view() which ignores darkness, because BYOND doesn't have it (I actually suggested it but it was tagged redundant, BUT HEARERS IS A T- /rant).
-/proc/dview(range = world.view, center, invis_flags = 0)
-	if(!center)
-		return
-
-	GLOB.dview_mob.loc = center
-
-	GLOB.dview_mob.see_invisible = invis_flags
-
-	. = view(range, GLOB.dview_mob)
-	GLOB.dview_mob.loc = null
-
-/mob/dview
-	name = "INTERNAL DVIEW MOB"
-	invisibility = 101
-	density = FALSE
-	see_in_dark = 1e6
-	move_resist = INFINITY
-	var/ready_to_die = FALSE
-
-/mob/dview/Initialize() //Properly prevents this mob from gaining huds or joining any global lists
-	SHOULD_CALL_PARENT(FALSE)
-	if(flags_1 & INITIALIZED_1)
-		stack_trace("Warning: [src]([type]) initialized multiple times!")
-	flags_1 |= INITIALIZED_1
-	return INITIALIZE_HINT_NORMAL
-
-/mob/dview/Destroy(force = FALSE)
-	if(!ready_to_die)
-		stack_trace("ALRIGHT WHICH FUCKER TRIED TO DELETE *MY* DVIEW?")
-
-		if (!force)
-			return QDEL_HINT_LETMELIVE
-
-		log_world("EVACUATE THE SHITCODE IS TRYING TO STEAL MUH JOBS")
-		GLOB.dview_mob = new
-	return ..()
-
-
-#define FOR_DVIEW(type, range, center, invis_flags) \
-	GLOB.dview_mob.loc = center;           \
-	GLOB.dview_mob.see_invisible = invis_flags; \
-	for(type in view(range, GLOB.dview_mob))
-
-#define FOR_DVIEW_END GLOB.dview_mob.loc = null
-
 /**
  * Checks whether the target turf is in a valid state to accept a directional window
  * or other directional pseudo-dense object such as railings.
@@ -1243,23 +1119,6 @@ GLOBAL_DATUM_INIT(dview_mob, /mob/dview, new)
 
 /proc/pass(...)
 	return
-
-/proc/get_mob_or_brainmob(occupant)
-	var/mob/living/mob_occupant
-
-	if(isliving(occupant))
-		mob_occupant = occupant
-
-	else if(isbodypart(occupant))
-		var/obj/item/bodypart/head/head = occupant
-
-		mob_occupant = head.brainmob
-
-	else if(isorgan(occupant))
-		var/obj/item/organ/brain/brain = occupant
-		mob_occupant = brain.brainmob
-
-	return mob_occupant
 
 //counts the number of bits in Byond's 16-bit width field
 //in constant time and memory!

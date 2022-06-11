@@ -857,15 +857,15 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 	set name = "Show Line Profiling"
 	set desc = "Shows tracked profiling info from code lines that support it"
 
-	var/sortlist = list(
+	var/sort_list = list(
 		"Avg time" = /proc/cmp_profile_avg_time_dsc,
 		"Total Time" = /proc/cmp_profile_time_dsc,
 		"Call Count" = /proc/cmp_profile_count_dsc
 	)
-	var/sort = input(src, "Sort type?", "Sort Type", "Avg time") as null|anything in sortlist
+	var/sort = input(src, "Sort type?", "Sort Type", "Avg time") as null|anything in sort_list
 	if (!sort)
 		return
-	sort = sortlist[sort]
+	sort = sort_list[sort]
 	profile_show(src, sort)
 
 /client/proc/reload_configuration()

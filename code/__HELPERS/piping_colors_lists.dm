@@ -1,5 +1,5 @@
 ///All colors available to pipes and atmos components
-GLOBAL_LIST_INIT(pipe_paint_colors, sortList(list(
+GLOBAL_LIST_INIT(pipe_paint_colors, sort_list(list(
 	"grey" = COLOR_VERY_LIGHT_GRAY,
 	"blue" = COLOR_BLUE,
 	"red" = COLOR_RED,

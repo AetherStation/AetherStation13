@@ -1209,10 +1209,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 	var/choice = tgui_input_list(user, "Please select a PDA", "PDA Messenger", sort_list(plist))
 
-	if (!c)
+	if (!choice)
 		return
 
-	var/selected = plist[c]
+	var/selected = plist[choice]
 
 	if(aicamera.stored.len)
 		var/add_photo = input(user,"Do you want to attach a photo?","Photo","No") as null|anything in list("Yes","No")

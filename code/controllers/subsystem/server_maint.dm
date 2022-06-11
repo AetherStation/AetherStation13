@@ -26,23 +26,23 @@ SUBSYSTEM_DEF(server_maint)
 
 		switch (cleanup_ticker) // do only one of these at a time, once per 5 fires
 			if (0)
-				if(listclearnulls(GLOB.player_list))
+				if(list_clear_nulls(GLOB.player_list))
 					log_world("Found a null in player_list!")
 				cleanup_ticker++
 			if (5)
-				if(listclearnulls(GLOB.mob_list))
+				if(list_clear_nulls(GLOB.mob_list))
 					log_world("Found a null in mob_list!")
 				cleanup_ticker++
 			if (10)
-				if(listclearnulls(GLOB.alive_mob_list))
+				if(list_clear_nulls(GLOB.alive_mob_list))
 					log_world("Found a null in alive_mob_list!")
 				cleanup_ticker++
 			if (15)
-				if(listclearnulls(GLOB.suicided_mob_list))
+				if(list_clear_nulls(GLOB.suicided_mob_list))
 					log_world("Found a null in suicided_mob_list!")
 				cleanup_ticker++
 			if (20)
-				if(listclearnulls(GLOB.dead_mob_list))
+				if(list_clear_nulls(GLOB.dead_mob_list))
 					log_world("Found a null in dead_mob_list!")
 				cleanup_ticker++
 			if (25)
@@ -50,20 +50,8 @@ SUBSYSTEM_DEF(server_maint)
 			else
 				cleanup_ticker++
 
-		if(!(position_in_loop % 1)) //If it's a whole number
-			var/listname = lists_to_clear[position_in_loop]
-			if(list_clear_nulls(lists_to_clear[listname]))
-				log_world("Found a null in [listname]!")
-
-		cleanup_ticker++
-
-		var/amount_to_work = length(lists_to_clear)
-		if(cleanup_ticker >= amount_to_work * delay) //If we've already done a loop, reset
-			cleanup_ticker = 0
-
 	var/list/currentrun = src.currentrun
 	var/round_started = SSticker.HasRoundStarted()
-
 	var/kick_inactive = CONFIG_GET(flag/kick_inactive)
 	var/afk_period
 	if(kick_inactive)

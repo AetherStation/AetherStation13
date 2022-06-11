@@ -3,7 +3,7 @@
 /datum/orion_event
 	var/name = "this displays the events name"
 	var/text = "this displays a blurb about the event"
-	///pickweight to show up. will still be in the events pool if added to the events list but not RANDOM, only triggered.
+	///pick_weight to show up. will still be in the events pool if added to the events list but not RANDOM, only triggered.
 	var/weight = 0
 	///buttons to pick in response to the event. Don't worry, orion js will handle the rest
 	var/list/event_responses = list()

@@ -147,14 +147,6 @@ GLOBAL_LIST_INIT(ai_core_display_screens, sort_list(list(
 			return "ai-portrait" //just take this until they decide
 		return "ai-[lowertext(input)]"
 
-/proc/resolve_ai_icon(input)
-	if (input == "Portrait")
-		var/datum/portrait_picker/tgui = new(usr)//create the datum
-		tgui.ui_interact(usr)//datum has a tgui component, here we open the window
-		return "ai-portrait" //just take this until they decide
-
-	return resolve_ai_icon_sync(input)
-
 GLOBAL_LIST_INIT(security_depts_prefs, sort_list(list(
 	SEC_DEPT_NONE,
 	SEC_DEPT_ENGINEERING,
