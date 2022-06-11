@@ -85,11 +85,21 @@
 						user.mind.memory += "</ul>"
 		user.mind.memory += "<b>That's all [target] had.</b><BR>"
 		user.memory() //I can read your mind, kekeke. Output all their notes.
-		changeling.isabsorbing = 0
-		changeling.canrespec = 1
 
 		//Some of target's recent speech, so the changeling can attempt to imitate them better.
 		//Recent as opposed to all because rounds tend to have a LOT of text.
+
+		var/list/recent_speech = list()
+		var/list/say_log = list()
+		var/log_source = target.logging
+		for(var/log_type in log_source)
+			var/nlog_type = text2num(log_type)
+			if(nlog_type & LOG_SAY)
+				var/list/reversed = log_source[log_type]
+				if(islist(reversed))
+					say_log = reverse_range(reversed.Copy())
+					break
+
 		if(LAZYLEN(say_log) > LING_ABSORB_RECENT_SPEECH)
 			recent_speech = say_log.Copy(say_log.len-LING_ABSORB_RECENT_SPEECH+1,0) //0 so len-LING_ARS+1 to end of list
 		else
@@ -128,17 +138,8 @@
 
 
 	changeling.chem_charges=min(changeling.chem_charges+10, changeling.chem_storage)
-
-	var/list/recent_speech = list()
-	var/list/say_log = list()
-	var/log_source = target.logging
-	for(var/log_type in log_source)
-		var/nlog_type = text2num(log_type)
-		if(nlog_type & LOG_SAY)
-			var/list/reversed = log_source[log_type]
-			if(islist(reversed))
-				say_log = reverse_range(reversed.Copy())
-				break
+	changeling.isabsorbing = 0
+	changeling.canrespec = 1
 
 	target.death(0)
 	target.Drain()
