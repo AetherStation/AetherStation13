@@ -82,8 +82,8 @@
 		if(!available_surgeries.len)
 			return
 
-		var/pick_your_surgery = input("Begin which procedure?", "Surgery", null, null) as null|anything in sortList(available_surgeries)
-		if(pick_your_surgery && user?.Adjacent(livingtarget) && (parent in user))
+		var/pick_your_surgery = input("Begin which procedure?", "Surgery", null, null) as null|anything in sort_list(available_surgeries)
+		if(pick_your_surgery && user?.Adjacent(livingtarget) && (source in user))
 			var/datum/surgery/surgeryinstance_notonmob = available_surgeries[pick_your_surgery]
 
 			for(var/i_three in livingtarget.surgeries)

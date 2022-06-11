@@ -315,7 +315,7 @@
 	//Economy & Money
 	parts += market_report()
 
-	listclearnulls(parts)
+	list_clear_nulls(parts)
 
 	return parts.Join()
 

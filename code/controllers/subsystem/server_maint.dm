@@ -20,7 +20,7 @@ SUBSYSTEM_DEF(server_maint)
 
 /datum/controller/subsystem/server_maint/fire(resumed = FALSE)
 	if(!resumed)
-		if(listclearnulls(GLOB.clients))
+		if(list_clear_nulls(GLOB.clients))
 			log_world("Found a null in clients list!")
 		src.currentrun = GLOB.clients.Copy()
 
@@ -49,6 +49,17 @@ SUBSYSTEM_DEF(server_maint)
 				cleanup_ticker = 0
 			else
 				cleanup_ticker++
+
+		if(!(position_in_loop % 1)) //If it's a whole number
+			var/listname = lists_to_clear[position_in_loop]
+			if(list_clear_nulls(lists_to_clear[listname]))
+				log_world("Found a null in [listname]!")
+
+		cleanup_ticker++
+
+		var/amount_to_work = length(lists_to_clear)
+		if(cleanup_ticker >= amount_to_work * delay) //If we've already done a loop, reset
+			cleanup_ticker = 0
 
 	var/list/currentrun = src.currentrun
 	var/round_started = SSticker.HasRoundStarted()

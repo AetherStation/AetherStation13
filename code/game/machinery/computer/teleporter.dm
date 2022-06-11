@@ -166,8 +166,9 @@
 		if(!L.len)
 			to_chat(user, span_alert("No active connected stations located."))
 			return
-		var/desc = input("Please select a station to lock in.", "Locking Computer") as null|anything in sortList(L)
-		var/obj/machinery/teleport/station/target_station = L[desc]
+
+		var/desc = input("Please select a station to lock in.", "Locking Computer") as null|anything in sort_list(targets)
+		var/obj/machinery/teleport/station/target_station = targets[desc]
 		if(!target_station || !target_station.teleporter_hub)
 			return
 		var/turf/T = get_turf(target_station)

@@ -139,8 +139,16 @@
 
 	changeling.chem_charges=min(changeling.chem_charges+10, changeling.chem_storage)
 
-	changeling.isabsorbing = 0
-	changeling.canrespec = 1
+	var/list/recent_speech = list()
+	var/list/say_log = list()
+	var/log_source = target.logging
+	for(var/log_type in log_source)
+		var/nlog_type = text2num(log_type)
+		if(nlog_type & LOG_SAY)
+			var/list/reversed = log_source[log_type]
+			if(islist(reversed))
+				say_log = reverse_range(reversed.Copy())
+				break
 
 	target.death(0)
 	target.Drain()
