@@ -1,4 +1,4 @@
-## /tg/station codebase
+## AetherStation codebase
 
 [![Build Status](https://github.com/AetherStation/AetherStation13/workflows/CI%20Suite/badge.svg)](https://github.com/AetherStation/AetherStation13/actions?query=workflow%3A%22CI+Suite%22)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/AetherStation/AetherStation13.svg)](http://isitmaintained.com/project/AetherStation/AetherStation13 "Percentage of issues still open")
