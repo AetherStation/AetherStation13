@@ -1047,9 +1047,9 @@
 	//TODO SFX
 
 /obj/item/bodypart/proc/clear_deathdoor()
-	UnregisterSignal(owner,
+	UnregisterSignal(owner, list(
 		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
-		COMSIG_LIVING_DEATH)
+		COMSIG_LIVING_DEATH))
 	//TODO SFX
 
 ///TODO autodoc
