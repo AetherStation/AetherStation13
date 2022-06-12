@@ -19,6 +19,7 @@
 	new /obj/item/clothing/head/caphat(src)
 	new /obj/item/clothing/under/rank/captain/parade(src)
 	new /obj/item/clothing/suit/toggle/captains_parade(src)
+	new /obj/item/clothing/suit/armor/vest/capcarapace/capjacket(src)
 	new /obj/item/clothing/head/caphat/parade(src)
 	new /obj/item/clothing/suit/captunic(src)
 	new /obj/item/clothing/head/crown/fancy(src)
