@@ -147,21 +147,25 @@
 	if(severity == WOUND_SEVERITY_TRIVIAL)
 		return
 
-	if(!(silent || demoted))
-		var/msg = span_danger("[victim]'s [limb.name] [occur_text]!")
-		var/vis_dist = COMBAT_MESSAGE_RANGE
-
-		if(severity != WOUND_SEVERITY_MODERATE)
-			msg = "<b>[msg]</b>"
-			vis_dist = DEFAULT_MESSAGE_RANGE
-
-		victim.visible_message(msg, span_userdanger("Your [limb.name] [occur_text]!"), vision_distance = vis_dist)
-		if(sound_effect && !buffered)
-			playsound(L.owner, sound_effect, 70 + 20 * severity, TRUE)
+	if(!(silent || demoted) && !buffered)
+		occur_effect()
 
 	if(!demoted)
 		wound_injury(old_wound)
 		second_wind()
+
+///TODO autodoc
+/datum/wound/proc/occur_effect()
+	var/msg = span_danger("[victim]'s [limb.name] [occur_text]!")
+	var/vis_dist = COMBAT_MESSAGE_RANGE
+
+	if(severity != WOUND_SEVERITY_MODERATE)
+		msg = "<b>[msg]</b>"
+		vis_dist = DEFAULT_MESSAGE_RANGE
+
+	victim.visible_message(msg, span_userdanger("Your [limb.name] [occur_text]!"), vision_distance = vis_dist)
+	if(sound_effect)
+		playsound(limb.owner, sound_effect, 70 + 20 * severity, TRUE)
 
 /// TODO autodoc.
 /datum/wound/proc/buffer_wound(obj/item/bodypart/limb)
@@ -170,11 +174,16 @@
 		return
 	if(!length(limb.buffered_wounds)) //The first wound this limb has received, we should check for crit/death
 		limb.listen_for_deathdoor()
+
 	buffered = TRUE
 	set_victim(limb.owner)
+	set_limb(limb)
+	occur_effect()
+	if(!length(victim.all_inactive_wounds)) //The first buffered we've received, foreshadow what could happen
+		to_chat(limb.owner, span_userdanger("Adrenaline rushes throughout your body, you've been wounded!\nYour body can keep the wound at bay as long as you do not fall into critical condition!"))
+	addtimer(CALLBACK(src, .proc/remove_wound), 30 SECONDS) //severity * 3 MINUTES
 	LAZYADD(limb.buffered_wounds, src)
 	LAZYADD(limb.owner.all_inactive_wounds, src)
-	playsound(limb.owner, sound_effect, 150, TRUE)
 
 /datum/wound/proc/null_victim()
 	SIGNAL_HANDLER
