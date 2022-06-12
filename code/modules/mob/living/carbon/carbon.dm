@@ -814,6 +814,9 @@
 	for(var/thing in all_active_wounds)
 		var/datum/wound/W = thing
 		W.remove_wound()
+	for(var/thing in all_inactive_wounds)
+		var/datum/wound/W = thing
+		W.remove_wound()
 	if(admin_revive)
 		suiciding = FALSE
 		regenerate_limbs()

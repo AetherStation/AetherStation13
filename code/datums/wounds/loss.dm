@@ -10,6 +10,7 @@
 	scar_keyword = "dismember"
 	wound_flags = null
 	already_scarred = TRUE // We manually assign scars for dismembers through endround missing limbs and aheals
+	ignore_buffer = TRUE
 
 /// Our special proc for our special dismembering, the wounding type only matters for what text we have
 /datum/wound/loss/proc/apply_dismember(obj/item/bodypart/dismembered_part, wounding_type=WOUND_SLASH, outright = FALSE)

@@ -165,11 +165,13 @@
 
 /// TODO autodoc.
 /datum/wound/proc/buffer_wound(obj/item/bodypart/limb)
-	if(ignore_buffer)
+	if(ignore_buffer || limb.owner.stat >= SOFT_CRIT) //No buffering on crit/dead people
 		apply_wound(limb)
 		return
 	if(!length(limb.buffered_wounds)) //The first wound this limb has received, we should check for crit/death
 		limb.listen_for_deathdoor()
+	buffered = TRUE
+	set_victim(limb.owner)
 	LAZYADD(limb.buffered_wounds, src)
 	LAZYADD(limb.owner.all_inactive_wounds, src)
 	playsound(limb.owner, sound_effect, 150, TRUE)
@@ -410,6 +412,7 @@
 	. = "[victim.p_their(TRUE)] [limb.name] [examine_desc]"
 	. = severity <= WOUND_SEVERITY_MODERATE ? "[.]." : "<B>[.]!</B>"
 
+//TODO Fix runtime : blunt overrides this
 /datum/wound/proc/get_scanner_description(mob/user)
 	return "Type: [name]\nStatus : <b>[buffered ? "inactive" : "active"]</b>\nSeverity: [severity_text()]\nDescription: [desc]\nRecommended Treatment: [treat_text]"
 
