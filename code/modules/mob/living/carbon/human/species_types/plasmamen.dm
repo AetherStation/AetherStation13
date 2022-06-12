@@ -104,6 +104,9 @@
 		for(var/i in H.all_active_wounds)
 			var/datum/wound/iter_wound = i
 			iter_wound.on_xadone(4 * REAGENTS_EFFECT_MULTIPLIER * delta_time) // plasmamen use plasma to reform their bones or whatever
+		for(var/i in H.all_inactive_wounds)
+			var/datum/wound/iter_wound = i
+			iter_wound.on_xadone(4 * REAGENTS_EFFECT_MULTIPLIER * delta_time)
 		return TRUE
 	if(istype(chem, /datum/reagent/toxin/bonehurtingjuice))
 		H.adjustStaminaLoss(7.5 * REAGENTS_EFFECT_MULTIPLIER * delta_time, 0)

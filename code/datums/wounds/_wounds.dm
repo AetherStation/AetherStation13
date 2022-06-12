@@ -204,14 +204,17 @@
 		limb.update_wounds(replaced)
 	if(limb && !ignore_limb && buffered)
 		LAZYREMOVE(limb.buffered_wounds, src)
-		if(!length(buffer_wound))
+		if(!length(limb.buffered_wounds))
 			limb.clear_deathdoor()
 		//TODO update ?
 
 /datum/wound/proc/remove_wound_from_victim()
 	if(!victim)
 		return
-	buffured ? : LAZYREMOVE(victim.all_inactive_wounds, src) : LAZYREMOVE(victim.all_active_wounds, src)
+	if(buffered)
+		LAZYREMOVE(victim.all_inactive_wounds, src)
+	else
+		LAZYREMOVE(victim.all_active_wounds, src)
 	if(!victim.all_active_wounds)
 		victim.clear_alert("wound")
 	SEND_SIGNAL(victim, COMSIG_CARBON_LOSE_WOUND, src, limb)
@@ -408,7 +411,7 @@
 	. = severity <= WOUND_SEVERITY_MODERATE ? "[.]." : "<B>[.]!</B>"
 
 /datum/wound/proc/get_scanner_description(mob/user)
-	return "Type: [name]\nStatus : <b>[W.buffered ? "inactive" : "active"]</b>\nSeverity: [severity_text()]\nDescription: [desc]\nRecommended Treatment: [treat_text]"
+	return "Type: [name]\nStatus : <b>[buffered ? "inactive" : "active"]</b>\nSeverity: [severity_text()]\nDescription: [desc]\nRecommended Treatment: [treat_text]"
 
 /datum/wound/proc/severity_text()
 	switch(severity)

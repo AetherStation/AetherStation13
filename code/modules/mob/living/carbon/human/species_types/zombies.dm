@@ -86,6 +86,10 @@
 			var/datum/wound/iter_wound = i
 			if(DT_PROB(2-(iter_wound.severity/2), delta_time))
 				iter_wound.remove_wound()
+		for(var/i in C.all_inactive_wounds)
+			var/datum/wound/iter_wound = i
+			if(DT_PROB(2-(iter_wound.severity/2), delta_time))
+				iter_wound.remove_wound()
 	if(!HAS_TRAIT(C, TRAIT_CRITICAL_CONDITION) && DT_PROB(2, delta_time))
 		playsound(C, pick(spooks), 50, TRUE, 10)
 

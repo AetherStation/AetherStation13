@@ -20,6 +20,8 @@
 	QDEL_LIST(implants)
 	for(var/wound in all_active_wounds) // these LAZYREMOVE themselves when deleted so no need to remove the list here
 		qdel(wound)
+	for(var/wound in all_inactive_wounds) // these LAZYREMOVE themselves when deleted so no need to remove the list here
+		qdel(wound)
 	for(var/scar in all_scars)
 		qdel(scar)
 	remove_from_all_data_huds()

@@ -1057,6 +1057,6 @@
 	SIGNAL_HANDLER
 	for(var/datum/wound/inactive_wound as anything in buffered_wounds)
 		inactive_wound.apply_wound(src, buffered = TRUE)
-		LAZYREMOVE(owner.all_inactive_wound, inactive_wound)
+		LAZYREMOVE(owner.all_inactive_wounds, inactive_wound)
 	buffered_wounds.Cut()
 	clear_deathdoor()
