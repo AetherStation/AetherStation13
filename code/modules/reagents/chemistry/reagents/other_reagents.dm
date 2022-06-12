@@ -2655,7 +2655,7 @@
 /datum/reagent/determination/on_mob_end_metabolize(mob/living/carbon/M)
 	if(significant)
 		var/stam_crash = 0
-		for(var/thing in M.all_wounds)
+		for(var/thing in M.all_active_wounds)
 			var/datum/wound/W = thing
 			stam_crash += (W.severity + 1) * 3 // spike of 3 stam damage per wound severity (moderate = 6, severe = 9, critical = 12) when the determination wears off if it was a combat rush
 		M.adjustStaminaLoss(stam_crash)
@@ -2669,7 +2669,7 @@
 
 	volume = min(volume, WOUND_DETERMINATION_MAX)
 
-	for(var/thing in M.all_wounds)
+	for(var/thing in M.all_active_wounds)
 		var/datum/wound/W = thing
 		var/obj/item/bodypart/wounded_part = W.limb
 		if(wounded_part)

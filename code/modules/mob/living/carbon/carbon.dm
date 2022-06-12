@@ -18,7 +18,7 @@
 	QDEL_LIST(internal_organs)
 	QDEL_LIST(bodyparts)
 	QDEL_LIST(implants)
-	for(var/wound in all_wounds) // these LAZYREMOVE themselves when deleted so no need to remove the list here
+	for(var/wound in all_active_wounds) // these LAZYREMOVE themselves when deleted so no need to remove the list here
 		qdel(wound)
 	for(var/scar in all_scars)
 		qdel(scar)
@@ -70,10 +70,10 @@
 				if(S.next_step(user, modifiers))
 					return 1
 
-	if(!all_wounds || !(!user.combat_mode || user == src))
+	if(!all_active_wounds || !(!user.combat_mode || user == src))
 		return ..()
 
-	for(var/i in shuffle(all_wounds))
+	for(var/i in shuffle(all_active_wounds))
 		var/datum/wound/W = i
 		if(W.try_treating(I, user))
 			return 1
@@ -809,7 +809,7 @@
 		var/datum/disease/D = thing
 		if(D.severity != DISEASE_SEVERITY_POSITIVE)
 			D.cure(FALSE)
-	for(var/thing in all_wounds)
+	for(var/thing in all_active_wounds)
 		var/datum/wound/W = thing
 		W.remove_wound()
 	if(admin_revive)

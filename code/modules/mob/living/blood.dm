@@ -143,7 +143,7 @@
 		rate_of_change = ", but it's clotting up quickly!"
 	else
 		// flick through our wounds to see if there are any bleeding ones getting worse or holding flow (maybe move this to handle_blood and cache it so we don't need to cycle through the wounds so much)
-		for(var/i in all_wounds)
+		for(var/i in all_active_wounds)
 			var/datum/wound/iter_wound = i
 			if(!iter_wound.blood_flow)
 				continue

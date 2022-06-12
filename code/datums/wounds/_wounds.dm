@@ -30,11 +30,12 @@
 	var/occur_text = ""
 	/// This sound will be played upon the wound being applied
 	var/sound_effect
-
 	/// Either WOUND_SEVERITY_TRIVIAL (meme wounds like stubbed toe), WOUND_SEVERITY_MODERATE, WOUND_SEVERITY_SEVERE, or WOUND_SEVERITY_CRITICAL (or maybe WOUND_SEVERITY_LOSS)
 	var/severity = WOUND_SEVERITY_MODERATE
 	/// The list of wounds it belongs in, WOUND_LIST_BLUNT, WOUND_LIST_SLASH, or WOUND_LIST_BURN
 	var/wound_type
+	/// if the wound is currently active or is part of the buffer, used only for descriptions and has no impact on functionnality
+	var/buffered = FALSE
 	/// Should this wound type ignore the buffer and be instantly considered active ?
 	var/ignore_buffer = FALSE
 
@@ -130,7 +131,7 @@
 
 	set_victim(L.owner)
 	set_limb(L)
-	LAZYADD(victim.all_wounds, src)
+	LAZYADD(victim.all_active_wounds, src)
 	LAZYADD(limb.wounds, src)
 	limb.update_wounds()
 	if(status_effect_type)
@@ -166,11 +167,12 @@
 /datum/wound/proc/buffer_wound(obj/item/bodypart/limb)
 	if(ignore_buffer)
 		apply_wound(limb)
-	else if(!length(limb.buffered_wounds)) //The first wound this limb has received, we should check for crit/death
+		return
+	if(!length(limb.buffered_wounds)) //The first wound this limb has received, we should check for crit/death
 		limb.listen_for_deathdoor()
-		LAZYADD(limb.buffered_wounds, src)
-	else
-		LAZYADD(limb.buffered_wounds, src)
+	LAZYADD(limb.buffered_wounds, src)
+	LAZYADD(limb.owner.all_inactive_wounds, src)
+	playsound(limb.owner, sound_effect, 150, TRUE)
 
 /datum/wound/proc/null_victim()
 	SIGNAL_HANDLER
@@ -197,15 +199,20 @@
 		var/datum/scar/new_scar = new
 		new_scar.generate(limb, src)
 	remove_wound_from_victim()
-	if(limb && !ignore_limb)
+	if(limb && !ignore_limb && !buffered)
 		LAZYREMOVE(limb.wounds, src)
 		limb.update_wounds(replaced)
+	if(limb && !ignore_limb && buffered)
+		LAZYREMOVE(limb.buffered_wounds, src)
+		if(!length(buffer_wound))
+			limb.clear_deathdoor()
+		//TODO update ?
 
 /datum/wound/proc/remove_wound_from_victim()
 	if(!victim)
 		return
-	LAZYREMOVE(victim.all_wounds, src)
-	if(!victim.all_wounds)
+	buffured ? : LAZYREMOVE(victim.all_inactive_wounds, src) : LAZYREMOVE(victim.all_active_wounds, src)
+	if(!victim.all_active_wounds)
 		victim.clear_alert("wound")
 	SEND_SIGNAL(victim, COMSIG_CARBON_LOSE_WOUND, src, limb)
 
@@ -401,7 +408,7 @@
 	. = severity <= WOUND_SEVERITY_MODERATE ? "[.]." : "<B>[.]!</B>"
 
 /datum/wound/proc/get_scanner_description(mob/user)
-	return "Type: [name]\nSeverity: [severity_text()]\nDescription: [desc]\nRecommended Treatment: [treat_text]"
+	return "Type: [name]\nStatus : <b>[W.buffered ? "inactive" : "active"]</b>\nSeverity: [severity_text()]\nDescription: [desc]\nRecommended Treatment: [treat_text]"
 
 /datum/wound/proc/severity_text()
 	switch(severity)

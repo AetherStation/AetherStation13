@@ -101,7 +101,7 @@
 	. = ..()
 	if(istype(chem, /datum/reagent/toxin/plasma))
 		H.reagents.remove_reagent(chem.type, chem.metabolization_rate * delta_time)
-		for(var/i in H.all_wounds)
+		for(var/i in H.all_active_wounds)
 			var/datum/wound/iter_wound = i
 			iter_wound.on_xadone(4 * REAGENTS_EFFECT_MULTIPLIER * delta_time) // plasmamen use plasma to reform their bones or whatever
 		return TRUE

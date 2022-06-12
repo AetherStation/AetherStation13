@@ -42,7 +42,7 @@
 
 		dna.species.spec_life(src, delta_time, times_fired) // for mutantraces
 	else
-		for(var/i in all_wounds)
+		for(var/i in all_active_wounds)
 			var/datum/wound/iter_wound = i
 			iter_wound.on_stasis(delta_time, times_fired)
 

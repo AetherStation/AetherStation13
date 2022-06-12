@@ -208,7 +208,7 @@
 		WRITE_FILE(F["scar[char_index]-[scar_index]"], "")
 		return
 
-	for(var/k in all_wounds)
+	for(var/k in all_active_wounds)
 		var/datum/wound/iter_wound = k
 		iter_wound.remove_wound() // so we can get the scars for open wounds
 

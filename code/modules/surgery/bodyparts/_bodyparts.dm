@@ -1046,13 +1046,17 @@
 		.proc/apply_wound_buffer)
 	//TODO SFX
 
+/obj/item/bodypart/proc/clear_deathdoor()
+	UnregisterSignal(owner,
+		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
+		COMSIG_LIVING_DEATH)
+	//TODO SFX
+
 ///TODO autodoc
 /obj/item/bodypart/proc/apply_wound_buffer()
 	SIGNAL_HANDLER
 	for(var/datum/wound/inactive_wound as anything in buffered_wounds)
 		inactive_wound.apply_wound(src, buffered = TRUE)
+		LAZYREMOVE(owner.all_inactive_wound, inactive_wound)
 	buffered_wounds.Cut()
-	UnregisterSignal(owner,
-		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
-		COMSIG_LIVING_DEATH)
-	//TODO SFX
+	clear_deathdoor()

@@ -34,7 +34,7 @@
 			B.decoy_override = TRUE
 			B.Insert(C)
 		C.regenerate_organs()
-		for(var/i in C.all_wounds)
+		for(var/i in C.all_active_wounds)
 			var/datum/wound/iter_wound = i
 			iter_wound.remove_wound()
 	if(ishuman(user))

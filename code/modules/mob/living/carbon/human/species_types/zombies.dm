@@ -82,7 +82,7 @@
 			heal_amt *= 2
 		C.heal_overall_damage(heal_amt * delta_time, heal_amt * delta_time)
 		C.adjustToxLoss(-heal_amt * delta_time)
-		for(var/i in C.all_wounds)
+		for(var/i in C.all_active_wounds)
 			var/datum/wound/iter_wound = i
 			if(DT_PROB(2-(iter_wound.severity/2), delta_time))
 				iter_wound.remove_wound()

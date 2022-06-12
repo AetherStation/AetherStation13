@@ -184,6 +184,8 @@
 		var/obj/item/bodypart/BP = X
 		if(LAZYLEN(BP.wounds))
 			parts += BP
+		if(LAZYLEN(BP.buffered_wounds))
+			parts += BP
 	return parts
 
 /**

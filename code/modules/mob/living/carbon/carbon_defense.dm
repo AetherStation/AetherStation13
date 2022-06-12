@@ -164,7 +164,7 @@
 				if(S.next_step(user, modifiers))
 					return TRUE
 
-	for(var/i in all_wounds)
+	for(var/i in all_active_wounds)
 		var/datum/wound/W = i
 		if(W.try_handling(user))
 			return TRUE

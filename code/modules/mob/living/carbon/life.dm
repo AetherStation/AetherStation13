@@ -364,7 +364,7 @@
 			D.stage_act(delta_time, times_fired)
 
 /mob/living/carbon/handle_wounds(delta_time, times_fired)
-	for(var/thing in all_wounds)
+	for(var/thing in all_active_wounds)
 		var/datum/wound/W = thing
 		if(W.processes) // meh
 			W.handle_process(delta_time, times_fired)

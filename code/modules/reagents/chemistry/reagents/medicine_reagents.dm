@@ -170,7 +170,7 @@
 		M.adjustFireLoss(-power * REM * delta_time, 0)
 		M.adjustToxLoss(-power * REM * delta_time, 0, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-power * REM * delta_time, 0)
-		for(var/i in M.all_wounds)
+		for(var/i in M.all_active_wounds)
 			var/datum/wound/iter_wound = i
 			iter_wound.on_xadone(power * REAGENTS_EFFECT_MULTIPLIER * delta_time)
 		REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC) //fixes common causes for disfiguration
@@ -226,7 +226,7 @@
 		M.adjustFireLoss(-1.5 * power * REM * delta_time, FALSE)
 		M.adjustToxLoss(-power * REM * delta_time, FALSE, TRUE)
 		M.adjustCloneLoss(-power * REM * delta_time, FALSE)
-		for(var/i in M.all_wounds)
+		for(var/i in M.all_active_wounds)
 			var/datum/wound/iter_wound = i
 			iter_wound.on_xadone(power * REAGENTS_EFFECT_MULTIPLIER * delta_time)
 		REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
@@ -1494,12 +1494,12 @@
 
 /datum/reagent/medicine/coagulant/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	. = ..()
-	if(!M.blood_volume || !M.all_wounds)
+	if(!M.blood_volume || !M.all_active_wounds)
 		return
 
 	var/datum/wound/bloodiest_wound
 
-	for(var/i in M.all_wounds)
+	for(var/i in M.all_active_wounds)
 		var/datum/wound/iter_wound = i
 		if(iter_wound.blood_flow)
 			if(iter_wound.blood_flow > bloodiest_wound?.blood_flow)

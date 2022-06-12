@@ -220,7 +220,7 @@
 			return
 		if(iscarbon(target))
 			var/mob/living/carbon/C = target
-			for(var/i in C.all_wounds)
+			for(var/i in C.all_active_wounds)
 				var/datum/wound/W = i
 				if(W.try_treating(src, user))
 					return // another coward cured!
