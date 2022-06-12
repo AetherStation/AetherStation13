@@ -35,6 +35,8 @@
 	var/severity = WOUND_SEVERITY_MODERATE
 	/// The list of wounds it belongs in, WOUND_LIST_BLUNT, WOUND_LIST_SLASH, or WOUND_LIST_BURN
 	var/wound_type
+	/// Should this wound type ignore the buffer and be instantly considered active ?
+	var/ignore_buffer = FALSE
 
 	/// What body zones can we affect
 	var/list/viable_zones = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -105,8 +107,9 @@
  * * silent: Not actually necessary I don't think, was originally used for demoting wounds so they wouldn't make new messages, but I believe old_wound took over that, I may remove this shortly
  * * old_wound: If our new wound is a replacement for one of the same time (promotion or demotion), we can reference the old one just before it's removed to copy over necessary vars
  * * smited- If this is a smite, we don't care about this wound for stat tracking purposes (not yet implemented)
+ * * buffered: If the wound was applied through the buffer rather than directly, avoids playing the sound effect twice
  */
-/datum/wound/proc/apply_wound(obj/item/bodypart/L, silent = FALSE, datum/wound/old_wound = null, smited = FALSE)
+/datum/wound/proc/apply_wound(obj/item/bodypart/L, silent = FALSE, datum/wound/old_wound = null, smited = FALSE, buffered = FALSE)
 	if(!istype(L) || !L.owner || !(L.body_zone in viable_zones) || !L.is_organic_limb() || HAS_TRAIT(L.owner, TRAIT_NEVER_WOUNDED))
 		qdel(src)
 		return
@@ -152,12 +155,22 @@
 			vis_dist = DEFAULT_MESSAGE_RANGE
 
 		victim.visible_message(msg, span_userdanger("Your [limb.name] [occur_text]!"), vision_distance = vis_dist)
-		if(sound_effect)
+		if(sound_effect && !buffered)
 			playsound(L.owner, sound_effect, 70 + 20 * severity, TRUE)
 
 	if(!demoted)
 		wound_injury(old_wound)
 		second_wind()
+
+/// TODO autodoc.
+/datum/wound/proc/buffer_wound(obj/item/bodypart/limb)
+	if(ignore_buffer)
+		apply_wound(limb)
+	else if(!length(limb.buffered_wounds)) //The first wound this limb has received, we should check for crit/death
+		limb.listen_for_deathdoor()
+		LAZYADD(limb.buffered_wounds, src)
+	else
+		LAZYADD(limb.buffered_wounds, src)
 
 /datum/wound/proc/null_victim()
 	SIGNAL_HANDLER

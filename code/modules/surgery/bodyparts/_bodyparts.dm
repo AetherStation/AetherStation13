@@ -81,9 +81,10 @@
 	var/medium_burn_msg = "blistered"
 	var/heavy_burn_msg = "peeling away"
 
-	/// The wounds currently afflicting this body part
+	/// The list of active wounds currently afflicting this body part
 	var/list/wounds
-
+	/// The list of inactive wounds currently afflicting this body part
+	var/list/buffered_wounds
 	/// The scars currently afflicting this body part
 	var/list/scars
 	/// Our current stored wound damage multiplier
@@ -121,10 +122,12 @@
 	if(owner)
 		owner.remove_bodypart(src)
 		set_owner(null)
-	for(var/wound in wounds)
+	for(var/wound as anything in wounds)
 		qdel(wound) // wounds is a lazylist, and each wound removes itself from it on deletion.
-	if(length(wounds))
-		stack_trace("[type] qdeleted with [length(wounds)] uncleared wounds")
+	for(var/wound as anything in buffered_wounds)
+		qdel(wound)
+	if(length(wounds) || length(buffered_wounds))
+		stack_trace("[type] qdeleted with [length(wounds) ? "[length(wounds)] uncleared " : "no"] active wounds and [length(buffered_wounds) ? "[length(buffered_wounds)] uncleared " : "no"] inactive wounds")
 		wounds.Cut()
 	return ..()
 
@@ -442,7 +445,7 @@
 				new_wound = replaced_wound.replace_wound(possible_wound)
 			else
 				new_wound = new possible_wound
-				new_wound.apply_wound(src)
+				new_wound.buffer_wound(src)
 			log_wound(owner, new_wound, damage, wound_bonus, bare_wound_bonus, base_roll) // dismembering wounds are logged in the apply_wound() for loss wounds since they delete themselves immediately, these will be immediately returned
 			return new_wound
 
@@ -1034,3 +1037,22 @@
 	var/obj/item/bodypart/new_part = new new_type()
 	new_part.attach_limb(our_owner, TRUE)
 	qdel(src)
+
+///TODO autodoc, should probably have a single observer instead of having every limb listen for crit
+/obj/item/bodypart/proc/listen_for_deathdoor()
+	RegisterSignal(owner, list(
+		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
+		COMSIG_LIVING_DEATH),
+		.proc/apply_wound_buffer)
+	//TODO SFX
+
+///TODO autodoc
+/obj/item/bodypart/proc/apply_wound_buffer()
+	SIGNAL_HANDLER
+	for(var/datum/wound/inactive_wound as anything in buffered_wounds)
+		inactive_wound.apply_wound(src, buffered = TRUE)
+	buffered_wounds.Cut()
+	UnregisterSignal(owner,
+		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
+		COMSIG_LIVING_DEATH)
+	//TODO SFX
