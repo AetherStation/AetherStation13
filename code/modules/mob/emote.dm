@@ -48,7 +48,7 @@
 			if(P.can_run_emote(user, status_check = FALSE , intentional = TRUE))
 				keys += P.key
 
-	keys = sortList(keys)
+	keys = sort_list(keys)
 	message += keys.Join(", ")
 	message += "."
 	message = message.Join("")

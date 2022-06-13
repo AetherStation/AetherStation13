@@ -469,14 +469,18 @@
 /obj/machinery/attack_robot(mob/user)
 	if(!(interaction_flags_machine & INTERACT_MACHINE_ALLOW_SILICON) && !isAdminGhostAI(user))
 		return FALSE
-	if(Adjacent(user) && can_buckle && has_buckled_mobs()) //so that borgs (but not AIs, sadly (perhaps in a future PR?)) can unbuckle people from machines
-		if(buckled_mobs.len > 1)
-			var/unbuckled = input(user, "Who do you wish to unbuckle?","Unbuckle Who?") as null|mob in sortNames(buckled_mobs)
-			if(user_unbuckle_mob(unbuckled,user))
-				return TRUE
-		else
-			if(user_unbuckle_mob(buckled_mobs[1],user))
-				return TRUE
+
+	if(!Adjacent(user) || !can_buckle || !has_buckled_mobs()) //so that borgs (but not AIs, sadly (perhaps in a future PR?)) can unbuckle people from machines
+		return _try_interact(user)
+
+	if(buckled_mobs.len <= 1)
+		if(user_unbuckle_mob(buckled_mobs[1],user))
+			return TRUE
+
+	var/unbuckled = input(user, "Who do you wish to unbuckle?","Unbuckle Who?") as null|mob in sort_names(buckled_mobs)
+	if(user_unbuckle_mob(unbuckled,user))
+		return TRUE
+
 	return _try_interact(user)
 
 /obj/machinery/attack_ai(mob/user)

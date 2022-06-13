@@ -24,9 +24,9 @@
 	if(loot?.len)
 		var/loot_spawned = 0
 		while((lootcount-loot_spawned) && loot.len)
-			var/lootspawn = pickweight(loot)
+			var/lootspawn = pick_weight(loot)
 			while(islist(lootspawn))
-				lootspawn = pickweight(lootspawn)
+				lootspawn = pick_weight(lootspawn)
 			if(!lootdoubles)
 				loot.Remove(lootspawn)
 
@@ -605,9 +605,9 @@
 		stat_table[item] /= loot_count
 
 /obj/item/loot_table_maker/proc/pick_loot(lootpool) //selects path from loot table and returns it
-	var/lootspawn = pickweight(lootpool)
+	var/lootspawn = pick_weight(lootpool)
 	while(islist(lootspawn))
-		lootspawn = pickweight(lootspawn)
+		lootspawn = pick_weight(lootspawn)
 	return lootspawn
 
 /obj/effect/spawner/lootdrop/space

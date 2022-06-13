@@ -328,7 +328,7 @@
 		var/datum/mind/M = R
 		if(!considered_alive(M.current))
 			continue // dead people cant really do the objective lol
-		var/list/items_to_check = M.current.GetAllContents()
+		var/list/items_to_check = M.current.get_all_contents()
 		for(var/I in items_to_check)
 			var/obj/IT = I
 			if(istype(IT, /obj/item/reagent_containers/food/drinks/bottle))
@@ -539,7 +539,7 @@
 		var/datum/mind/M = D
 		if(!considered_alive(M.current))
 			continue // dead people cant really do the objective lol
-		var/list/items_to_check = M.current.GetAllContents()
+		var/list/items_to_check = M.current.get_all_contents()
 		for(var/I in items_to_check)
 			var/obj/IT = I
 			if(istype(IT, /obj/item/stack/sheet/mineral/gold))

@@ -1207,12 +1207,12 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 		plist[avoid_assoc_duplicate_keys(P.owner, namecounts)] = P
 
-	var/c = input(user, "Please select a PDA") as null|anything in sortList(plist)
+	var/choice = tgui_input_list(user, "Please select a PDA", "PDA Messenger", sort_list(plist))
 
-	if (!c)
+	if (!choice)
 		return
 
-	var/selected = plist[c]
+	var/selected = plist[choice]
 
 	if(aicamera.stored.len)
 		var/add_photo = input(user,"Do you want to attach a photo?","Photo","No") as null|anything in list("Yes","No")
@@ -1256,7 +1256,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	else
 		sortmode = /proc/cmp_pdaname_asc
 
-	for(var/obj/item/pda/P in sortList(GLOB.PDAs, sortmode))
+	for(var/obj/item/pda/P in sort_list(GLOB.PDAs, sortmode))
 		if(!P.owner || P.toff || P.hidden)
 			continue
 		. += P

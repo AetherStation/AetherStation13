@@ -17,7 +17,7 @@
 	if(!length(loot_table))
 		return INITIALIZE_HINT_QDEL
 
-	var/spawned_object = pickweight(loot_table)
+	var/spawned_object = pick_weight(loot_table)
 	new spawned_object(get_turf(src))
 
 	return INITIALIZE_HINT_QDEL
