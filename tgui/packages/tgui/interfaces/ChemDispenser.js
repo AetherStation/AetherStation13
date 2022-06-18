@@ -1,14 +1,12 @@
 import { toFixed } from 'common/math';
 import { toTitleCase } from 'common/string';
-import { Fragment } from 'inferno';
-import { useBackend, useLocalState } from '../backend';
+import { useBackend } from '../backend';
 import { AnimatedNumber, Box, Button, Icon, LabeledList, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
 
 export const ChemDispenser = (props, context) => {
   const { act, data } = useBackend(context);
   const recording = !!data.recordingRecipe;
-  const { recipeReagents = [] } = data;
   // TODO: Change how this piece of shit is built on server side
   // It has to be a list, not a fucking OBJECT!
   const recipes = Object.keys(data.recipes)
@@ -33,15 +31,11 @@ export const ChemDispenser = (props, context) => {
       <Window.Content scrollable>
         <Section
           title="Status"
-          buttons={(
-            <>
-              {recording && (
-                <Box inline mx={1} color="red">
-                  <Icon name="circle" mr={1} />
-                  Recording
-                </Box>
-              )}
-            </>
+          buttons={recording && (
+            <Box inline mx={1} color="red">
+              <Icon name="circle" mr={1} />
+              Recording
+            </Box>
           )}>
           <LabeledList>
             <LabeledList.Item label="Energy">

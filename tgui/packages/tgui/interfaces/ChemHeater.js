@@ -1,7 +1,6 @@
 import { round, toFixed } from 'common/math';
 import { useBackend } from '../backend';
 import { AnimatedNumber, Box, Button, LabeledList, NumberInput, Section } from '../components';
-import { COLORS } from '../constants';
 import { Window } from '../layouts';
 import { BeakerContents } from './common/BeakerContents';
 
@@ -14,7 +13,7 @@ export const ChemHeater = (props, context) => {
     currentTemp,
     beakerCurrentVolume,
     beakerMaxVolume,
-    beakerContents = []
+    beakerContents = [],
   } = data;
   return (
     <Window
@@ -22,7 +21,7 @@ export const ChemHeater = (props, context) => {
       height={320}>
       <Window.Content scrollable>
         <Section
-          title="Controls"
+          title="Thermostat"
           buttons={(
             <Button
               icon={isActive ? 'power-off' : 'times'}
@@ -50,9 +49,9 @@ export const ChemHeater = (props, context) => {
                 textAlign="right">
                 {isBeakerLoaded && (
                   <AnimatedNumber
-                   value={currentTemp}
-                   format={value => toFixed(value) + ' K'} />
-               ) || '—'}
+                    value={currentTemp}
+                    format={value => toFixed(value) + ' K'} />
+                ) || '—'}
               </Box>
             </LabeledList.Item>
           </LabeledList>
