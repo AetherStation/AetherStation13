@@ -465,11 +465,11 @@
 
 		var/integrity = obj_integrity/max_integrity*100
 		switch(integrity)
-			if(30 to 45)
+			if(35 to 50)
 				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 1)
-			if(15 to 35)
+			if(20 to 35)
 				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 2)
-			if(-INFINITY to 15)
+			if(-INFINITY to 20)
 				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 3)
 			else
 				occupant.clear_alert("mech damage")
