@@ -210,6 +210,7 @@
 		var/datum/scar/new_scar = new
 		new_scar.generate(limb, src)
 	remove_wound_from_victim()
+
 	if(limb && !ignore_limb && !buffered)
 		LAZYREMOVE(limb.wounds, src)
 		limb.update_wounds(replaced)
@@ -217,7 +218,6 @@
 		LAZYREMOVE(limb.buffered_wounds, src)
 		if(!length(limb.buffered_wounds))
 			limb.clear_deathdoor()
-		//TODO update ?
 
 /datum/wound/proc/remove_wound_from_victim()
 	if(!victim)
@@ -243,7 +243,10 @@
 	var/datum/wound/new_wound = new new_type
 	already_scarred = TRUE
 	remove_wound(replaced=TRUE)
-	new_wound.apply_wound(limb, old_wound = src, smited = smited)
+	if(buffered)
+		new_wound.buffer_wound(limb)
+	else
+		new_wound.apply_wound(limb, old_wound = src, smited = smited)
 	. = new_wound
 	qdel(src)
 

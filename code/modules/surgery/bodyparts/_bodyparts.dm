@@ -428,16 +428,17 @@
 			if(clothes_check.armor.getRating(WOUND))
 				bare_wound_bonus = 0
 				break
-
+	var/list/all_wounds = wounds + buffered_wounds
 	//cycle through the wounds of the relevant category from the most severe down
 	for(var/datum/wound/possible_wound as anything in wounds_checking)
 		var/datum/wound/replaced_wound
-		for(var/datum/wound/existing_wound as anything in wounds)
-			if(existing_wound.type in wounds_checking)
-				if(existing_wound.severity >= initial(possible_wound.severity))
-					return
-				else
-					replaced_wound = existing_wound
+		for(var/datum/wound/existing_wound as anything in all_wounds)
+			if(!(existing_wound.type in wounds_checking))
+				continue
+			if(existing_wound.severity >= initial(possible_wound.severity))
+				return
+			else
+				replaced_wound = existing_wound
 
 		if(initial(possible_wound.threshold_minimum) < injury_roll)
 			var/datum/wound/new_wound
