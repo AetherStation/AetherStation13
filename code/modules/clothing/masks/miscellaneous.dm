@@ -88,11 +88,18 @@
 	speech_args[SPEECH_MESSAGE] = trim(message)
 
 /obj/item/clothing/mask/joy
-	name = "joy mask"
-	desc = "Express your happiness or hide your sorrows with this laughing face with crying tears of joy cutout."
+	name = "emoji mask"
+	desc = "Express your happiness or hide your sorrows with this cultured cutout."
 	icon_state = "joy"
+	clothing_flags = MASKINTERNALS
 	flags_inv = HIDESNOUT
-
+	unique_reskin = list(
+			"Joy" = "joy",
+			"Flushed" = "flushed",
+			"Pensive" = "pensive",
+			"Angry" = "angry",
+			"Pleading" = "pleading"
+	)
 
 /obj/item/clothing/mask/bandana
 	name = "botany bandana"
