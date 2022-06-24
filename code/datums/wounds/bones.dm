@@ -81,7 +81,7 @@
 			regen_ticks_current += 0.5
 
 	if(DT_PROB(severity * 1.5, delta_time))
-		victim.take_bodypart_damage(rand(1, severity * 2), stamina=rand(2, severity * 2.5), wound_bonus=CANT_WOUND)
+		victim.take_bodypart_damage(rand(1, severity * 2), stamina=rand(2, severity * 2.5))
 		if(prob(33))
 			to_chat(victim, span_danger("You feel a sharp pain in your body as your bones are reforming!"))
 
@@ -114,7 +114,7 @@
 			return COMPONENT_CANCEL_ATTACK_CHAIN
 
 
-/datum/wound/blunt/receive_damage(wounding_type, wounding_dmg, wound_bonus)
+/datum/wound/blunt/receive_damage(wounding_type, wounding_dmg)
 	if(!victim || wounding_dmg < WOUND_MINIMUM_DAMAGE)
 		return
 	if(ishuman(victim))
@@ -256,12 +256,12 @@
 		user.visible_message(span_danger("[user] snaps [victim]'s dislocated [limb.name] back into place!"), span_notice("You snap [victim]'s dislocated [limb.name] back into place!"), ignored_mobs=victim)
 		to_chat(victim, span_userdanger("[user] snaps your dislocated [limb.name] back into place!"))
 		victim.emote("scream")
-		limb.receive_damage(brute=20, wound_bonus=CANT_WOUND)
+		limb.receive_damage(brute=20, should_wound=FALSE)
 		qdel(src)
 	else
 		user.visible_message(span_danger("[user] wrenches [victim]'s dislocated [limb.name] around painfully!"), span_danger("You wrench [victim]'s dislocated [limb.name] around painfully!"), ignored_mobs=victim)
 		to_chat(victim, span_userdanger("[user] wrenches your dislocated [limb.name] around painfully!"))
-		limb.receive_damage(brute=10, wound_bonus=CANT_WOUND)
+		limb.receive_damage(brute=10, should_wound = FALSE)
 		chiropractice(user)
 
 /// If someone is snapping our dislocated joint into a fracture by hand with an aggro grab and harm or disarm intent
@@ -275,11 +275,11 @@
 		user.visible_message(span_danger("[user] snaps [victim]'s dislocated [limb.name] with a sickening crack!"), span_danger("You snap [victim]'s dislocated [limb.name] with a sickening crack!"), ignored_mobs=victim)
 		to_chat(victim, span_userdanger("[user] snaps your dislocated [limb.name] with a sickening crack!"))
 		victim.emote("scream")
-		limb.receive_damage(brute=25, wound_bonus=30)
+		limb.receive_damage(brute=25)
 	else
 		user.visible_message(span_danger("[user] wrenches [victim]'s dislocated [limb.name] around painfully!"), span_danger("You wrench [victim]'s dislocated [limb.name] around painfully!"), ignored_mobs=victim)
 		to_chat(victim, span_userdanger("[user] wrenches your dislocated [limb.name] around painfully!"))
-		limb.receive_damage(brute=10, wound_bonus=CANT_WOUND)
+		limb.receive_damage(brute=10)
 		malpractice(user)
 
 
@@ -293,10 +293,10 @@
 		return
 
 	if(victim == user)
-		limb.receive_damage(brute=15, wound_bonus=CANT_WOUND)
+		limb.receive_damage(brute=15, should_wound=FALSE)
 		victim.visible_message(span_danger("[user] finishes resetting [victim.p_their()] [limb.name]!"), span_userdanger("You reset your [limb.name]!"))
 	else
-		limb.receive_damage(brute=10, wound_bonus=CANT_WOUND)
+		limb.receive_damage(brute=10, should_wound=FALSE)
 		user.visible_message(span_danger("[user] finishes resetting [victim]'s [limb.name]!"), span_nicegreen("You finish resetting [victim]'s [limb.name]!"), ignored_mobs=victim)
 		to_chat(victim, span_userdanger("[user] resets your [limb.name]!"))
 
@@ -394,7 +394,7 @@
 			return
 		victim.visible_message(span_notice("[victim] finishes applying [I] to [victim.p_their()] [limb.name], grimacing from the pain!"), span_notice("You finish applying [I] to your [limb.name], and your bones explode in pain!"))
 
-	limb.receive_damage(25, stamina=100, wound_bonus=CANT_WOUND)
+	limb.receive_damage(25, stamina=100, should_wound=FALSE)
 	if(!gelled)
 		gelled = TRUE
 

@@ -204,7 +204,7 @@
 	visible_message(span_danger("[user] [hulk_verb]ed [src]!"), \
 					span_userdanger("[user] [hulk_verb]ed [src]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), null, user)
 	to_chat(user, span_danger("You [hulk_verb] [src]!"))
-	apply_damage(15, BRUTE, wound_bonus=10)
+	apply_damage(15, BRUTE)
 
 /mob/living/carbon/human/attack_hand(mob/user, list/modifiers)
 	if(..()) //to allow surgery to return properly.
@@ -349,7 +349,7 @@
 	if(!affecting)
 		affecting = get_bodypart(BODY_ZONE_CHEST)
 	var/armor = run_armor_check(affecting, MELEE, armour_penetration = user.armour_penetration)
-	apply_damage(damage, user.melee_damage_type, affecting, armor, wound_bonus = user.wound_bonus, bare_wound_bonus = user.bare_wound_bonus, sharpness = user.sharpness)
+	apply_damage(damage, user.melee_damage_type, affecting, armor, sharpness = user.sharpness)
 
 
 /mob/living/carbon/human/attack_slime(mob/living/simple_animal/slime/M)
@@ -375,7 +375,7 @@
 	if(!affecting)
 		affecting = get_bodypart(BODY_ZONE_CHEST)
 	var/armor_block = run_armor_check(affecting, MELEE)
-	apply_damage(damage, BRUTE, affecting, armor_block, wound_bonus=wound_mod)
+	apply_damage(damage, BRUTE, affecting, armor_block)
 
 
 /mob/living/carbon/human/ex_act(severity, target, origin)

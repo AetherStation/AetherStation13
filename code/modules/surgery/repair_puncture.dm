@@ -63,7 +63,7 @@
 		span_notice("[user] successfully realigns some of the blood vessels in [target]'s [parse_zone(target_zone)] with [tool]!"),
 		span_notice("[user] successfully realigns some of the blood vessels in  [target]'s [parse_zone(target_zone)]!"))
 	log_combat(user, target, "excised infected flesh in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
-	surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
+	surgery.operated_bodypart.receive_damage(brute=3, should_wound = FALSE)
 	pierce_wound.blood_flow -= 0.25
 	return ..()
 
@@ -72,7 +72,7 @@
 	display_results(user, target, span_notice("You jerk apart some of the blood vessels in [target]'s [parse_zone(target_zone)]."),
 		span_notice("[user] jerks apart some of the blood vessels in [target]'s [parse_zone(target_zone)] with [tool]!"),
 		span_notice("[user] jerk apart some of the blood vessels in [target]'s [parse_zone(target_zone)]!"))
-	surgery.operated_bodypart.receive_damage(brute=rand(4,8), sharpness=SHARP_EDGED, wound_bonus = 10)
+	surgery.operated_bodypart.receive_damage(brute=rand(4,8), sharpness=SHARP_EDGED)
 
 ///// Sealing the vessels back together
 /datum/surgery_step/seal_veins

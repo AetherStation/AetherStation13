@@ -1643,11 +1643,9 @@
  * * victim- The guy who got wounded
  * * suffered_wound- The wound, already applied, that we're logging. It has to already be attached so we can get the limb from it
  * * dealt_damage- How much damage is associated with the attack that dealt with this wound.
- * * dealt_wound_bonus- The wound_bonus, if one was specified, of the wounding attack
- * * dealt_bare_wound_bonus- The bare_wound_bonus, if one was specified *and applied*, of the wounding attack. Not shown if armor was present
  * * base_roll- Base wounding ability of an attack is a random number from 1 to (dealt_damage ** WOUND_DAMAGE_EXPONENT). This is the number that was rolled in there, before mods
  */
-/proc/log_wound(atom/victim, datum/wound/suffered_wound, dealt_damage, dealt_wound_bonus, dealt_bare_wound_bonus, base_roll)
+/proc/log_wound(atom/victim, datum/wound/suffered_wound, dealt_damage, base_roll)
 	if(QDELETED(victim) || !suffered_wound)
 		return
 	var/message = "has suffered: [suffered_wound][suffered_wound.limb ? " to [suffered_wound.limb.name]" : null]"// maybe indicate if it's a promote/demote?
@@ -1657,12 +1655,6 @@
 		// The base roll is useful since it can show how lucky someone got with the given attack. For example, dealing a cut
 		if(base_roll)
 			message += " (rolled [base_roll]/[dealt_damage ** WOUND_DAMAGE_EXPONENT])"
-
-	if(dealt_wound_bonus)
-		message += " | WB: [dealt_wound_bonus]"
-
-	if(dealt_bare_wound_bonus)
-		message += " | BWB: [dealt_bare_wound_bonus]"
 
 	victim.log_message(message, LOG_ATTACK, color="blue")
 

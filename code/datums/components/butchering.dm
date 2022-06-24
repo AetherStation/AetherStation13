@@ -74,7 +74,7 @@
 		H.visible_message(span_danger("[user] slits [H]'s throat!"), \
 					span_userdanger("[user] slits your throat..."))
 		log_combat(user, H, "wounded via throat slitting", source)
-		H.apply_damage(source.force, BRUTE, BODY_ZONE_HEAD, wound_bonus=CANT_WOUND) // easy tiger, we'll get to that in a sec
+		H.apply_damage(source.force, BRUTE, BODY_ZONE_HEAD) // easy tiger, we'll get to that in a sec
 		var/obj/item/bodypart/slit_throat = H.get_bodypart(BODY_ZONE_HEAD)
 		if(slit_throat)
 			var/datum/wound/slash/critical/screaming_through_a_slit_throat = new

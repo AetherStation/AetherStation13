@@ -24,9 +24,9 @@
 		for(iter_test_wound in iter_test_wound_list)
 			var/threshold = initial(iter_test_wound.threshold_minimum) - threshold_penalty // just enough to guarantee the next tier of wound, given the existing wound threshold penalty
 			if(dam_types[i] == BRUTE)
-				tested_part.receive_damage(WOUND_MINIMUM_DAMAGE, 0, wound_bonus = threshold, sharpness=sharps[i])
+				tested_part.receive_damage(WOUND_MINIMUM_DAMAGE, 0, sharpness=sharps[i])
 			else if(dam_types[i] == BURN)
-				tested_part.receive_damage(0, WOUND_MINIMUM_DAMAGE, wound_bonus = threshold, sharpness=sharps[i])
+				tested_part.receive_damage(0, WOUND_MINIMUM_DAMAGE, sharpness=sharps[i])
 
 			TEST_ASSERT(length(victim.all_active_wounds), "Patient has no wounds when one wound is expected. Severity: [initial(iter_test_wound.severity)]")
 			TEST_ASSERT_EQUAL(length(victim.all_active_wounds), 1, "Patient has more than one wound when only one is expected. Severity: [initial(iter_test_wound.severity)]")
@@ -64,9 +64,9 @@
 		for(iter_test_wound in iter_test_wound_list)
 			var/threshold = initial(iter_test_wound.threshold_minimum) - threshold_penalty // just enough to guarantee the next tier of wound, given the existing wound threshold penalty
 			if(dam_types[i] == BRUTE)
-				tested_part.receive_damage(WOUND_MINIMUM_DAMAGE, 0, wound_bonus = threshold, sharpness=sharps[i])
+				tested_part.receive_damage(WOUND_MINIMUM_DAMAGE, 0, sharpness=sharps[i])
 			else if(dam_types[i] == BURN)
-				tested_part.receive_damage(0, WOUND_MINIMUM_DAMAGE, wound_bonus = threshold, sharpness=sharps[i])
+				tested_part.receive_damage(0, WOUND_MINIMUM_DAMAGE, sharpness=sharps[i])
 
 			// so if we just tried to deal a flesh wound, make sure we didn't actually suffer it. We may have suffered a bone wound instead, but we just want to make sure we don't have a flesh wound
 			if(initial(iter_test_wound.wound_flags) & FLESH_WOUND)

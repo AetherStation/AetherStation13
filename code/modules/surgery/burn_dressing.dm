@@ -78,7 +78,7 @@
 			span_notice("[user] successfully excises some of the infected flesh from [target]'s [parse_zone(target_zone)] with [tool]!"),
 			span_notice("[user] successfully excises some of the infected flesh from  [target]'s [parse_zone(target_zone)]!"))
 		log_combat(user, target, "excised infected flesh in", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
-		surgery.operated_bodypart.receive_damage(brute=3, wound_bonus=CANT_WOUND)
+		surgery.operated_bodypart.receive_damage(brute=3, should_wound = FALSE)
 		burn_wound.infestation -= infestation_removed
 		burn_wound.sanitization += sanitization_added
 		if(burn_wound.infestation <= 0)

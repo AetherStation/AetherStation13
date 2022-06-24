@@ -26,7 +26,7 @@
 /datum/wound/pierce/wound_injury(datum/wound/old_wound)
 	blood_flow = initial_flow
 
-/datum/wound/pierce/receive_damage(wounding_type, wounding_dmg, wound_bonus)
+/datum/wound/pierce/receive_damage(wounding_type, wounding_dmg)
 	if(victim.stat == DEAD || wounding_dmg < 5)
 		return
 	if(victim.blood_volume && prob(internal_bleeding_chance + wounding_dmg))
@@ -124,7 +124,7 @@
 		return
 
 	user.visible_message(span_green("[user] cauterizes some of the bleeding on [victim]."), span_green("You cauterize some of the bleeding on [victim]."))
-	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
+	limb.receive_damage(burn = 2 + severity, should_wound = FALSE)
 	if(prob(30))
 		victim.emote("scream")
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))

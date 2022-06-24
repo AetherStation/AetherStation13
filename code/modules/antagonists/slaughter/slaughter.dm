@@ -56,10 +56,8 @@
 	icon_living = "daemon"
 	minbodytemp = 0
 	obj_damage = 50
-	melee_damage_lower = 15 // reduced from 30 to 15 with wounds since they get big buffs to slicing wounds
-	melee_damage_upper = 15
-	wound_bonus = -10
-	bare_wound_bonus = 0
+	melee_damage_lower = 30
+	melee_damage_upper = 30
 	sharpness = SHARP_EDGED
 	playstyle_string = "<span class='big bold'>You are a slaughter demon,</span><B> a terrible creature from another realm. You have a single desire: To kill. \
 							You may use the \"Blood Crawl\" ability near blood pools to travel through them, appearing and disappearing from the station at will. \
@@ -80,10 +78,8 @@
 	var/slam_cooldown = 0
 	/// How many times we have hit humanoid targets since we last bloodcrawled, scaling wounding power
 	var/current_hitstreak = 0
-	/// How much both our wound_bonus and bare_wound_bonus go up per hitstreak hit
-	var/wound_bonus_per_hit = 5
-	/// How much our wound_bonus hitstreak bonus caps at (peak demonry)
-	var/wound_bonus_hitstreak_max = 12
+	/// Up to how much can our hitstreak rise
+	var/hitstreak_max = 10
 
 /mob/living/simple_animal/hostile/imp/slaughter/Initialize(mapload, obj/effect/dummy/phased_mob/bloodpool)//Bloodpool is the blood pool we spawn in
 	. = ..()
@@ -110,7 +106,7 @@
 
 	face_atom(attack_target)
 	var/mob/living/victim = attack_target
-	victim.take_bodypart_damage(brute=20, wound_bonus=wound_bonus) // don't worry, there's more punishment when they hit something
+	victim.take_bodypart_damage(brute=20 + 2 * current_hitstreak) // don't worry, there's more punishment when they hit something
 	visible_message(span_danger("[src] slams into [victim] with monstrous strength!"), span_danger("You slam into [victim] with monstrous strength!"), ignored_mobs=victim)
 	to_chat(victim, span_userdanger("[src] slams into you with monstrous strength, sending you flying like a ragdoll!"))
 	var/turf/yeet_target = get_edge_target_turf(victim, dir)
@@ -128,10 +124,8 @@
 
 	if(iscarbon(attack_target))
 		var/mob/living/carbon/target = attack_target
-		if(target.stat != DEAD && target.mind && current_hitstreak < wound_bonus_hitstreak_max)
+		if(target.stat != DEAD && target.mind && current_hitstreak < hitstreak_max)
 			current_hitstreak++
-			wound_bonus += wound_bonus_per_hit
-			bare_wound_bonus += wound_bonus_per_hit
 
 	return ..()
 

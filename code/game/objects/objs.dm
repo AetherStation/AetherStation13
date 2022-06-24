@@ -8,11 +8,6 @@
 	var/damtype = BRUTE
 	var/force = 0
 
-	/// How good a given object is at causing wounds on carbons. Higher values equal better shots at creating serious wounds.
-	var/wound_bonus = 0
-	/// If this attacks a human with no wound armor on the affected body part, add this to the wound mod. Some attacks may be significantly worse at wounding if there's even a slight layer of armor to absorb some of it vs bare flesh
-	var/bare_wound_bonus = 0
-
 	var/datum/armor/armor
 	VAR_PRIVATE/obj_integrity //defaults to max_integrity
 	var/max_integrity = 500
@@ -72,7 +67,7 @@
 				obj_flags &= ~string_to_objflag[flag]
 			else
 				obj_flags |= string_to_objflag[flag]
-				
+
 	if((obj_flags & ON_BLUEPRINTS) && isturf(loc))
 		var/turf/T = loc
 		T.add_blueprints_preround(src)

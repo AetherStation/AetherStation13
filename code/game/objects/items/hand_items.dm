@@ -363,7 +363,6 @@
 	name = "kiss of death"
 	nodamage = FALSE // okay i kinda lied about love not being able to hurt you
 	damage = 35
-	wound_bonus = 0
 	sharpness = SHARP_POINTY
 	color = COLOR_BLACK
 

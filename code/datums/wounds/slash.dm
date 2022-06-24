@@ -79,8 +79,8 @@
 
 	return "<B>[msg.Join()]</B>"
 
-/datum/wound/slash/receive_damage(wounding_type, wounding_dmg, wound_bonus)
-	if(victim.stat != DEAD && wound_bonus != CANT_WOUND && wounding_type == WOUND_SLASH) // can't stab dead bodies to make it bleed faster this way
+/datum/wound/slash/receive_damage(wounding_type, wounding_dmg)
+	if(victim.stat != DEAD && wounding_type == WOUND_SLASH) // can't stab dead bodies to make it bleed faster this way
 		blood_flow += 0.05 * wounding_dmg
 
 /datum/wound/slash/drag_bleed_amount()
@@ -214,7 +214,6 @@
 	if(!do_after(user, base_treat_time  * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
 		return
 	var/damage = lasgun.chambered.loaded_projectile.damage
-	lasgun.chambered.loaded_projectile.wound_bonus -= 30
 	lasgun.chambered.loaded_projectile.damage *= self_penalty_mult
 	if(!lasgun.process_fire(victim, victim, TRUE, null, limb.body_zone))
 		return
@@ -232,7 +231,7 @@
 		return
 
 	user.visible_message(span_green("[user] cauterizes some of the bleeding on [victim]."), span_green("You cauterize some of the bleeding on [victim]."))
-	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
+	limb.receive_damage(burn = 2 + severity, should_wound = FALSE)
 	if(prob(30))
 		victim.emote("scream")
 	var/blood_cauterized = (0.6 / (self_penalty_mult * improv_penalty_mult))
