@@ -128,6 +128,7 @@
 /datum/martial_art/krav_maga/harm_act(mob/living/A, mob/living/D)
 	if(check_streak(A,D))
 		return TRUE
+	log_combat(A, D, "punched")
 	var/picked_hit_type = pick("punch", "kick")
 	var/bonus_damage = 0
 	if(D.body_position == LYING_DOWN)
