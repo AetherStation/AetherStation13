@@ -13,7 +13,7 @@
 	treatable_tool = TOOL_CAUTERY
 	base_treat_time = 3 SECONDS
 	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE)
-
+	ignore_buffer = TRUE
 	/// How much blood we start losing when this wound is first applied
 	var/initial_flow
 	/// When we have less than this amount of flow, either from treatment or clotting, we demote to a lower cut or are healed of the wound
@@ -269,7 +269,7 @@
 	occur_text = "is cut open, slowly leaking blood"
 	sound_effect = 'sound/effects/wounds/blood1.ogg'
 	severity = WOUND_SEVERITY_MODERATE
-	initial_flow = 2
+	initial_flow = 1.5
 	minimum_flow = 0.5
 	clot_rate = 0.06
 	threshold_minimum = 20
@@ -285,8 +285,8 @@
 	occur_text = "is ripped open, veins spurting blood"
 	sound_effect = 'sound/effects/wounds/blood2.ogg'
 	severity = WOUND_SEVERITY_SEVERE
-	initial_flow = 3.25
-	minimum_flow = 2.75
+	initial_flow = 2.5
+	minimum_flow = 2
 	clot_rate = 0.03
 	threshold_minimum = 50
 	threshold_penalty = 25
@@ -302,8 +302,8 @@
 	occur_text = "is torn open, spraying blood wildly"
 	sound_effect = 'sound/effects/wounds/blood3.ogg'
 	severity = WOUND_SEVERITY_CRITICAL
-	initial_flow = 4.25
-	minimum_flow = 4
+	initial_flow = 3.25
+	minimum_flow = 3
 	clot_rate = -0.025 // critical cuts actively get worse instead of better
 	threshold_minimum = 80
 	threshold_penalty = 40

@@ -1,7 +1,7 @@
 
 // ~wound damage/rolling defines
 /// the cornerstone of the wound threshold system, your base wound roll for any attack is rand(1, damage^this), after armor reduces said damage. See [/obj/item/bodypart/proc/check_wounding]
-#define WOUND_DAMAGE_EXPONENT 1.4
+#define WOUND_DAMAGE_EXPONENT 1.45
 /// any damage dealt over this is ignored for damage rolls unless the target has the frail quirk (35^1.4=145, for reference)
 #define WOUND_MAX_CONSIDERED_DAMAGE 35
 /// an attack must do this much damage after armor in order to roll for being a wound (so pressure damage/being on fire doesn't proc it)
@@ -11,7 +11,9 @@
 /// If an attack rolls this high with their wound (including mods), we try to outright dismember the limb. Note 250 is high enough that with a perfect max roll of 145 (see max cons'd damage), you'd need +100 in mods to do this
 #define WOUND_DISMEMBER_OUTRIGHT_THRESH 250
 ///TODO
-#define BARE_WOUND_BONUS 15
+#define BARE_WOUND_BONUS 20
+///TODO
+#define BASE_WOUND_BONUS 15
 
 // ~wound severities
 /// for jokey/meme wounds like stubbed toe, no standard messages/sounds or second winds
