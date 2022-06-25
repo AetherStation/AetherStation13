@@ -21,6 +21,7 @@
 	var/desc = ""
 	/// The basic treatment suggested by health analyzers
 	var/treat_text = ""
+	var/buffered_treat_text = "Poses no threat to the patient for now, cryotherapy can accelerate the cicatrization."
 	/// What the limb looks like on a cursory examine
 	var/examine_desc = "is badly hurt"
 
@@ -108,9 +109,8 @@
  * * silent: Not actually necessary I don't think, was originally used for demoting wounds so they wouldn't make new messages, but I believe old_wound took over that, I may remove this shortly
  * * old_wound: If our new wound is a replacement for one of the same time (promotion or demotion), we can reference the old one just before it's removed to copy over necessary vars
  * * smited- If this is a smite, we don't care about this wound for stat tracking purposes (not yet implemented)
- * * buffered: If the wound was applied through the buffer rather than directly, avoids playing the sound effect twice
  */
-/datum/wound/proc/apply_wound(obj/item/bodypart/L, silent = FALSE, datum/wound/old_wound = null, smited = FALSE, buffered = FALSE)
+/datum/wound/proc/apply_wound(obj/item/bodypart/L, silent = FALSE, datum/wound/old_wound = null, smited = FALSE)
 	if(!istype(L) || !L.owner || !(L.body_zone in viable_zones) || !L.is_organic_limb() || HAS_TRAIT(L.owner, TRAIT_NEVER_WOUNDED))
 		qdel(src)
 		return
@@ -131,6 +131,7 @@
 
 	set_victim(L.owner)
 	set_limb(L)
+	buffered = FALSE
 	LAZYADD(victim.all_active_wounds, src)
 	LAZYADD(limb.wounds, src)
 	limb.update_wounds()
@@ -426,7 +427,7 @@
 
 //TODO Fix runtime : blunt overrides this
 /datum/wound/proc/get_scanner_description(mob/user)
-	return "Type: [name]\nStatus : <b>[buffered ? "inactive" : "active"]</b>\nSeverity: [severity_text()]\nDescription: [desc]\nRecommended Treatment: [treat_text]"
+	return "Type: [name]\nStatus : <b>[buffered ? "inactive" : "active"]</b>\nSeverity: [severity_text()]\nDescription: [desc]\nRecommended Treatment: [buffered ? buffered_treat_text : treat_text]"
 
 /datum/wound/proc/severity_text()
 	switch(severity)

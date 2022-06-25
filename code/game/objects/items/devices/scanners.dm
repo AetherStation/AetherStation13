@@ -376,7 +376,7 @@ GENE SCANNER
 				render_list += "<div class='ml-2'>Type: [W.name]\nStatus: Active\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n" // less lines than in woundscan() so we don't overload people trying to get basic med info
 			for(var/k in wounded_part.buffered_wounds)
 				var/datum/wound/W = k
-				render_list += "<div class='ml-2'>Type: [W.name]\nStatus: Inactive\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n"
+				render_list += "<div class='ml-2'>Type: [W.name]\nStatus: Inactive\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.buffered_treat_text]</div>\n"
 			render_list += "</span>"
 
 	for(var/thing in M.diseases)

@@ -129,6 +129,7 @@
 	if(length(wounds) || length(buffered_wounds))
 		stack_trace("[type] qdeleted with [length(wounds) ? "[length(wounds)] uncleared " : "no"] active wounds and [length(buffered_wounds) ? "[length(buffered_wounds)] uncleared " : "no"] inactive wounds")
 		wounds.Cut()
+		//buffered_wounds.Cut() //TODO
 	return ..()
 
 
@@ -417,7 +418,7 @@
 		dismembering.apply_dismember(src, woundtype, outright=TRUE)
 		return
 
-	var/list/all_wounds = wounds + buffered_wounds
+	var/list/all_wounds = SANITIZE_LIST(wounds) + SANITIZE_LIST(buffered_wounds)
 	//cycle through the wounds of the relevant category from the most severe down
 	for(var/datum/wound/possible_wound as anything in wounds_checking)
 		var/datum/wound/replaced_wound
@@ -463,7 +464,7 @@
  */
 /obj/item/bodypart/proc/check_woundings_mods(wounding_type, damage)
 	var/armor_ablation = 0
-	var/injury_mod = 0
+	var/injury_mod = BASE_WOUND_BONUS
 	var/bare_wound_bonus = BARE_WOUND_BONUS
 
 	if(owner && ishuman(owner))
@@ -1048,7 +1049,8 @@
 /obj/item/bodypart/proc/apply_wound_buffer()
 	SIGNAL_HANDLER
 	for(var/datum/wound/inactive_wound as anything in buffered_wounds)
-		inactive_wound.apply_wound(src, buffered = TRUE)
+		inactive_wound.apply_wound(src, silent = TRUE)
 		LAZYREMOVE(owner.all_inactive_wounds, inactive_wound)
-	buffered_wounds.Cut()
+	if(length(buffered_wounds))
+		buffered_wounds.Cut()
 	clear_deathdoor()
