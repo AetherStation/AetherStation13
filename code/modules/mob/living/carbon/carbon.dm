@@ -811,11 +811,8 @@
 		var/datum/disease/D = thing
 		if(D.severity != DISEASE_SEVERITY_POSITIVE)
 			D.cure(FALSE)
-	for(var/thing in all_active_wounds)
-		var/datum/wound/W = thing
-		W.remove_wound()
-	for(var/thing in all_inactive_wounds)
-		var/datum/wound/W = thing
+	var/list/all_wounds = SANITIZE_LIST(all_active_wounds) + SANITIZE_LIST(all_inactive_wounds)
+	for(var/datum/wound/W as anything in all_wounds)
 		W.remove_wound()
 	if(admin_revive)
 		suiciding = FALSE
