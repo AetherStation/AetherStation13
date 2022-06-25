@@ -182,7 +182,7 @@
 	occur_effect()
 	if(!length(victim.all_inactive_wounds)) //The first buffered we've received, foreshadow what could happen
 		to_chat(limb.owner, span_userdanger("Adrenaline rushes throughout your body, you've been wounded!\nYour body can keep the wound at bay as long as you do not fall into critical condition!"))
-	addtimer(CALLBACK(src, .proc/remove_wound), 30 SECONDS) //severity * 3 MINUTES
+	addtimer(CALLBACK(src, .proc/remove_wound), severity * 3 MINUTES)
 	LAZYADD(limb.buffered_wounds, src)
 	LAZYADD(limb.owner.all_inactive_wounds, src)
 
