@@ -81,7 +81,9 @@
 
 	if(do_mob(attacker, target, 3 SECONDS, interaction_key = weapon))
 		attacker.visible_message(span_warning("[attacker] swings [attacker.p_their()] [weapon] at [target]'s kneecaps!"), span_danger("You swing \the [weapon] at [target]'s kneecaps!"))
-		leg.receive_damage(brute = weapon.force) //TODO
+		var/datum/wound/blunt/severe/knee_capped = new
+		knee_capped.apply_wound(leg)
+		leg.receive_damage(brute = weapon.force)
 		log_combat(attacker, target, "broke the kneecaps of", weapon)
 		target.update_damage_overlays()
 		attacker.do_attack_animation(target, used_item = weapon)
