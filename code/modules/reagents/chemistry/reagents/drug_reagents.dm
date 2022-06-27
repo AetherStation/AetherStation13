@@ -143,7 +143,7 @@
 	if(current_cycle == 35)
 		if(!istype(M.dna.species, /datum/species/krokodil_addict))
 			to_chat(M, span_userdanger("Your skin falls off easily!"))
-			M.adjustBruteLoss(50*REM, 0) // holy shit your skin just FELL THE FUCK OFF
+			M.adjustBruteLoss(50 * REM * delta_time, 0) // holy shit your skin just FELL THE FUCK OFF
 			M.set_species(/datum/species/krokodil_addict)
 	..()
 
