@@ -662,14 +662,14 @@
 ////Ice and water
 
 /datum/chemical_reaction/ice
-	results = list(/datum/reagent/consumable/ice = 1.09)//density
+	results = list(/datum/reagent/consumable/ice = 1)
 	required_reagents = list(/datum/reagent/water = 1)
 	is_cold_recipe = TRUE
 	required_temp = 274 // So we can be sure that basic ghetto rigged stuff can freeze
 	mix_message = "The solution freezes up into ice!"
 
 /datum/chemical_reaction/water
-	results = list(/datum/reagent/water = 0.92)//rough density excahnge
+	results = list(/datum/reagent/water = 1)
 	required_reagents = list(/datum/reagent/consumable/ice = 1)
 	required_temp = 275
 	mix_message = "The ice melts back into water!"
