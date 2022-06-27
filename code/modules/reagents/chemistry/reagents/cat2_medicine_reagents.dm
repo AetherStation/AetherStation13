@@ -2,7 +2,6 @@
 /datum/reagent/medicine/c2
 	harmful = TRUE
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	chemical_flags = REAGENT_SPLITRETAINVOL
 
 /******BRUTE******/
 /*Suffix: -bital*/
@@ -20,7 +19,7 @@
 
 /datum/reagent/medicine/c2/helbital/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	. = TRUE
-	var/death_is_coming = M.getToxLoss() + M.getOxyLoss() + M.getFireLoss() + M.getBruteLoss()
+	var/death_is_coming = (M.getToxLoss() + M.getOxyLoss() + M.getFireLoss() + M.getBruteLoss())
 	var/thou_shall_heal = 0
 	var/good_kind_of_healing = FALSE
 	switch(M.stat)
@@ -90,7 +89,7 @@
 
 /datum/reagent/medicine/c2/libital/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 0.3 * REM * delta_time)
-	M.adjustBruteLoss(-3 * REM)
+	M.adjustBruteLoss(-3 * REM * delta_time)
 	..()
 	return TRUE
 
@@ -103,7 +102,7 @@
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/medicine/c2/probital/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.adjustBruteLoss(-2.25 * REM, FALSE)
+	M.adjustBruteLoss(-2.25 * REM * delta_time, FALSE)
 	var/ooo_youaregettingsleepy = 3.5
 	switch(round(M.getStaminaLoss()))
 		if(10 to 40)
@@ -143,12 +142,12 @@
 	description = "Used to treat burns. Makes you move slower while it is in your system. Applies stomach damage when it leaves your system."
 	reagent_state = LIQUID
 	color = "#6171FF"
-	var/resetting_probability = 0 //What are these for?? Can I remove them?
+	var/resetting_probability = 0
 	var/spammer = 0
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/medicine/c2/lenturi/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.adjustFireLoss(-3 * REM)
+	M.adjustFireLoss(-3 * REM * delta_time)
 	M.adjustOrganLoss(ORGAN_SLOT_STOMACH, 0.4 * REM * delta_time)
 	..()
 	return TRUE
@@ -158,12 +157,12 @@
 	description = "Used to treat burns. Does minor eye damage."
 	reagent_state = LIQUID
 	color = "#8C93FF"
-	var/resetting_probability = 0 //same with this? Old legacy vars that should be removed?
+	var/resetting_probability = 0
 	var/message_cd = 0
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/medicine/c2/aiuri/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.adjustFireLoss(-2 * REM)
+	M.adjustFireLoss(-2 * REM * delta_time)
 	M.adjustOrganLoss(ORGAN_SLOT_EYES, 0.25 * REM * delta_time)
 	..()
 	return TRUE
@@ -179,9 +178,9 @@
 
 /datum/reagent/medicine/c2/hercuri/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(M.getFireLoss() > 50)
-		M.adjustFireLoss(-2 * REM, FALSE)
+		M.adjustFireLoss(-2 * REM * delta_time, FALSE)
 	else
-		M.adjustFireLoss(-1.25 * REM, FALSE)
+		M.adjustFireLoss(-1.25 * REM * delta_time, FALSE)
 	M.adjust_bodytemperature(rand(-25,-5) * TEMPERATURE_DAMAGE_COEFFICIENT * REM * delta_time, 50)
 	if(ishuman(M))
 		var/mob/living/carbon/human/humi = M
@@ -225,7 +224,7 @@
 	var/oxycalc = 2.5 * REM * current_cycle
 	if(!overdosed)
 		oxycalc = min(oxycalc, M.getOxyLoss() + 0.5) //if NOT overdosing, we lower our toxdamage to only the damage we actually healed with a minimum of 0.1*current_cycle. IE if we only heal 10 oxygen damage but we COULD have healed 20, we will only take toxdamage for the 10. We would take the toxdamage for the extra 10 if we were overdosing.
-	M.adjustOxyLoss(-oxycalc, 0)
+	M.adjustOxyLoss(-oxycalc * delta_time, 0)
 	M.adjustToxLoss(oxycalc * delta_time / CONVERMOL_RATIO, 0)
 	if(DT_PROB(current_cycle / 2, delta_time) && M.losebreath)
 		M.losebreath--
@@ -247,9 +246,8 @@
 	COOLDOWN_DECLARE(drowsycd)
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
-
 /datum/reagent/medicine/c2/tirimol/on_mob_life(mob/living/carbon/human/M, delta_time, times_fired)
-	M.adjustOxyLoss(-3 * REM)
+	M.adjustOxyLoss(-3 * REM * delta_time)
 	M.adjustStaminaLoss(2 * REM * delta_time)
 	if(drowsycd && COOLDOWN_FINISHED(src, drowsycd))
 		M.drowsyness += 10
@@ -283,7 +281,7 @@
 	var/healypoints = 0 //5 healypoints = 1 heart damage; 5 rads = 1 tox damage healed for the purpose of healypoints
 
 	//you're hot
-	var/toxcalc = min(round(5 + ((chemtemp-1000)/175), 0.1), 5) //max 2.5 tox healing per second
+	var/toxcalc = min(round(5 + ((chemtemp-1000)/175), 0.1), 5) * REM * delta_time //max 2.5 tox healing per second
 	if(toxcalc > 0)
 		M.adjustToxLoss(-toxcalc)
 		healypoints += toxcalc
@@ -316,14 +314,15 @@
 		var/datum/reagent/the_reagent = r
 		if(istype(the_reagent, /datum/reagent/medicine))
 			medibonus += 1
-	M.adjustToxLoss(-0.5 * min(medibonus, 3)) //not great at healing but if you have nothing else it will work
+
+	M.adjustToxLoss(-0.5 * min(medibonus, 3) * REM * delta_time) //not great at healing but if you have nothing else it will work
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, 0.5 * REM * delta_time) //kills at 40u
 	for(var/r2 in M.reagents.reagent_list)
 		var/datum/reagent/the_reagent2 = r2
 		if(the_reagent2 == src)
 			continue
 		var/amount2purge = 3
-		if(medibonus >= 3 && istype(the_reagent2, /datum/reagent/medicine)) //3 unique meds (2+multiver) | (1 + pure multiver) will make it not purge medicines
+		if(medibonus >= 3 && istype(the_reagent2, /datum/reagent/medicine)) //3 unique meds (2+multiver) will make it not purge medicines
 			continue
 		M.reagents.remove_reagent(the_reagent2.type, amount2purge * REM * delta_time)
 	..()
@@ -332,7 +331,7 @@
 // Antitoxin binds plants pretty well. So the tox goes significantly down
 /datum/reagent/medicine/c2/multiver/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()
-	mytray.adjustToxic(-(round(chems.get_reagent_amount(type) * 2))) //0-2.66, 2 by default (0.75 purity).
+	mytray.adjustToxic(-round(chems.get_reagent_amount(type) * 2))
 
 #define issyrinormusc(A) (istype(A,/datum/reagent/medicine/c2/syriniver) || istype(A,/datum/reagent/medicine/c2/musiver)) //musc is metab of syrin so let's make sure we're not purging either
 
@@ -351,11 +350,11 @@
 		return
 	var/mob/living/carbon/C = A
 	if(trans_volume >= 0.6) //prevents cheesing with ultralow doses.
-		C.adjustToxLoss((-1.5 * min(2, trans_volume) * REM), 0)	  //This is to promote iv pole use for that chemotherapy feel.
+		C.adjustToxLoss(-1.5 * min(2, trans_volume) * REM, 0)   //This is to promote iv pole use for that chemotherapy feel.
 	var/obj/item/organ/liver/L = C.internal_organs_slot[ORGAN_SLOT_LIVER]
 	if((L.organ_flags & ORGAN_FAILING) || !L)
 		return
-	conversion_amount = (trans_volume * (min(100 -C.getOrganLoss(ORGAN_SLOT_LIVER), 80) / 100)) //the more damaged the liver the worse we metabolize.
+	conversion_amount = trans_volume * (min(100 -C.getOrganLoss(ORGAN_SLOT_LIVER), 80) / 100) //the more damaged the liver the worse we metabolize.
 	C.reagents.remove_reagent(/datum/reagent/medicine/c2/syriniver, conversion_amount)
 	C.reagents.add_reagent(/datum/reagent/medicine/c2/musiver, conversion_amount)
 	..()
@@ -390,7 +389,7 @@
 
 /datum/reagent/medicine/c2/musiver/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	M.adjustOrganLoss(ORGAN_SLOT_LIVER, 0.1 * REM * delta_time)
-	M.adjustToxLoss(-1 * REM, 0)
+	M.adjustToxLoss(-1 * REM * delta_time, 0)
 	for(var/datum/reagent/R in M.reagents.reagent_list)
 		if(issyrinormusc(R))
 			continue
