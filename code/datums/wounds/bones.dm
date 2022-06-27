@@ -433,7 +433,8 @@
 
 /datum/wound/blunt/get_scanner_description(mob/user)
 	. = ..()
-
+	if(buffered)
+		return
 	. += "<div class='ml-3'>"
 
 	if(!gelled)

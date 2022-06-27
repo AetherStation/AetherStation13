@@ -183,9 +183,9 @@
 	for(var/X in bodyparts)
 		var/obj/item/bodypart/BP = X
 		if(LAZYLEN(BP.wounds))
-			parts += BP
+			parts |= BP
 		if(LAZYLEN(BP.buffered_wounds))
-			parts += BP
+			parts |= BP
 	return parts
 
 /**

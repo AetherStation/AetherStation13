@@ -370,14 +370,16 @@ GENE SCANNER
 		var/list/wounded_parts = C.get_wounded_bodyparts()
 		for(var/i in wounded_parts)
 			var/obj/item/bodypart/wounded_part = i
-			render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
+			render_list += "[length(wounded_part.wounds) ? "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>" : ""]"
 			for(var/k in wounded_part.wounds)
 				var/datum/wound/W = k
-				render_list += "<div class='ml-2'>Type: [W.name]\nStatus: Active\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.treat_text]</div>\n" // less lines than in woundscan() so we don't overload people trying to get basic med info
+				render_list += "<div class='ml-2'>[W.get_scanner_description()]</div>\n"
+			render_list += "[length(wounded_part.wounds) ? "</span>" : ""]"
+			render_list += "[length(wounded_part.buffered_wounds) ? "<span class='alert' style='color:#ff9933'><b>Warning: Inactive trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>" : ""]"
 			for(var/k in wounded_part.buffered_wounds)
 				var/datum/wound/W = k
-				render_list += "<div class='ml-2'>Type: [W.name]\nStatus: Inactive\nSeverity: [W.severity_text()]\nRecommended Treatment: [W.buffered_treat_text]</div>\n"
-			render_list += "</span>"
+				render_list += "<div class='ml-2' style='color:#ff9933'>[W.get_scanner_description()]</div>\n"
+			render_list += "[length(wounded_part.buffered_wounds) ? "</span>" : ""]"
 
 	for(var/thing in M.diseases)
 		var/datum/disease/D = thing
@@ -494,14 +496,16 @@ GENE SCANNER
 	var/render_list = ""
 	for(var/i in patient.get_wounded_bodyparts())
 		var/obj/item/bodypart/wounded_part = i
-		render_list += "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>"
+		render_list += "[length(wounded_part.wounds) ? "<span class='alert ml-1'><b>Warning: Physical trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>" : ""]" //I call this one the ternator
 		for(var/k in wounded_part.wounds)
 			var/datum/wound/W = k
 			render_list += "<div class='ml-2'>[W.get_scanner_description()]</div>\n"
+		render_list += "[length(wounded_part.wounds) ? "</span>" : ""]"
+		render_list += "[length(wounded_part.buffered_wounds) ? "<span class='alert' style='color:#ff9933'><b>Warning: Inactive trauma[LAZYLEN(wounded_part.wounds) > 1? "s" : ""] detected in [wounded_part.name]</b>" : ""]"
 		for(var/k in wounded_part.buffered_wounds)
 			var/datum/wound/W = k
-			render_list += "<div class='ml-2'>[W.get_scanner_description()]</div>\n"
-		render_list += "</span>"
+			render_list += "<div class='ml-2' style='color:#ff9933'>[W.get_scanner_description()]</div>\n"
+		render_list += "[length(wounded_part.buffered_wounds) ? "</span>" : ""]"
 
 	if(render_list == "")
 		if(istype(scanner))
