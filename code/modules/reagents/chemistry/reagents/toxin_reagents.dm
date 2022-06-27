@@ -20,7 +20,7 @@
 
 /datum/reagent/toxin/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(toxpwr)
-		M.adjustToxLoss(toxpwr * REM, 0)
+		M.adjustToxLoss(toxpwr * REM * delta_time, 0)
 		. = TRUE
 	..()
 
@@ -156,8 +156,8 @@
 		. = FALSE
 
 	if(.)
-		C.adjustOxyLoss(5, 0)
-		C.losebreath += 2
+		C.adjustOxyLoss(5 * REM * delta_time, 0)
+		C.losebreath += 2 * REM * delta_time
 		if(DT_PROB(10, delta_time))
 			C.emote("gasp")
 	..()
@@ -415,14 +415,14 @@
 /datum/reagent/toxin/chloralhydrate/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	switch(current_cycle)
 		if(1 to 10)
-			M.add_confusion(2)
-			M.drowsyness += 2
+			M.add_confusion(2 * REM * delta_time)
+			M.drowsyness += 2 * REM * delta_time
 		if(10 to 50)
-			M.Sleeping(40)
+			M.Sleeping(40 * REM * delta_time)
 			. = TRUE
 		if(51 to INFINITY)
-			M.Sleeping(40)
-			M.adjustToxLoss((current_cycle - 50)*REM, 0)
+			M.Sleeping(40 * REM * delta_time)
+			M.adjustToxLoss(1 * (current_cycle - 50) * REM * delta_time, 0)
 			. = TRUE
 	..()
 
@@ -482,7 +482,7 @@
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/toxin/mutetoxin/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.silent = max(M.silent, 3)
+	M.silent = max(M.silent, 3 * REM * delta_time)
 	..()
 
 /datum/reagent/toxin/staminatoxin
@@ -595,13 +595,13 @@
 	addiction_types = list(/datum/addiction/opiods = 25)
 
 /datum/reagent/toxin/fentanyl/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3 * REM, 150)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3 * REM * delta_time, 150)
 	if(M.toxloss <= 60)
-		M.adjustToxLoss(1 * REM, 0)
+		M.adjustToxLoss(1 * REM * delta_time, 0)
 	if(current_cycle >= 4)
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "smacked out", /datum/mood_event/narcotic_heavy, name)
 	if(current_cycle >= 18)
-		M.Sleeping(40)
+		M.Sleeping(40 * REM * delta_time)
 	..()
 	return TRUE
 
@@ -751,7 +751,7 @@
 
 /datum/reagent/toxin/sulfonal/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(current_cycle >= 22)
-		M.Sleeping(40)
+		M.Sleeping(40 * REM * delta_time)
 	return ..()
 
 /datum/reagent/toxin/amanitin
@@ -763,16 +763,12 @@
 	toxpwr = 0
 	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-	var/delayed_toxin_damage = 0
-
-/datum/reagent/toxin/amanitin/on_mob_life(mob/living/M, delta_time, times_fired)
-	delayed_toxin_damage += (delta_time * 3)
-	. = ..()
 
 /datum/reagent/toxin/amanitin/on_mob_delete(mob/living/M)
-	M.log_message("has taken [delayed_toxin_damage] toxin damage from amanitin toxin", LOG_ATTACK)
-	M.adjustToxLoss(delayed_toxin_damage)
-	. = ..()
+	var/toxdamage = current_cycle*3*REM
+	M.log_message("has taken [toxdamage] toxin damage from amanitin toxin", LOG_ATTACK)
+	M.adjustToxLoss(toxdamage)
+	..()
 
 /datum/reagent/toxin/lipolicide
 	name = "Lipolicide"
@@ -787,8 +783,8 @@
 
 /datum/reagent/toxin/lipolicide/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(M.nutrition <= NUTRITION_LEVEL_STARVING)
-		M.adjustToxLoss(1 * REM, 0)
-	M.adjust_nutrition(-3) // making the chef more valuable, one meme trap at a time
+		M.adjustToxLoss(1 * REM * delta_time, 0)
+	M.adjust_nutrition(-3 * REM * delta_time) // making the chef more valuable, one meme trap at a time
 	M.overeatduration = 0
 	return ..()
 
@@ -909,7 +905,7 @@
 	if(holder.has_reagent(/datum/reagent/medicine/calomel) || holder.has_reagent(/datum/reagent/medicine/pen_acid))
 		remove_amt = 0.5
 	for(var/datum/reagent/medicine/R in M.reagents.reagent_list)
-		M.reagents.remove_reagent(R.type, remove_amt)
+		M.reagents.remove_reagent(R.type, remove_amt * REM * delta_time)
 	return ..()
 
 //ACID
@@ -977,7 +973,7 @@
 		mytray.adjustWeeds(-rand(1,4))
 
 /datum/reagent/toxin/acid/fluacid/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.adjustFireLoss(current_cycle/15, 0)
+	M.adjustFireLoss((current_cycle/15) * REM * delta_time, 0)
 	. = TRUE
 	..()
 
@@ -990,7 +986,7 @@
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/toxin/acid/nitracid/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
-	M.adjustFireLoss(volume/10, FALSE) //here you go nervar
+	M.adjustFireLoss((volume/10) * REM * delta_time, FALSE) //here you go nervar
 	. = TRUE
 	..()
 
