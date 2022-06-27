@@ -517,22 +517,22 @@
 			to_chat(M, span_notice("Your hands spaz out and you drop what you were holding!"))
 			M.Jitter(10)
 
-	M.AdjustAllImmobility(-20)
-	M.adjustStaminaLoss(-1 * REM, FALSE)
+	M.AdjustAllImmobility(-20 * REM * delta_time)
+	M.adjustStaminaLoss(-1 * REM * delta_time, FALSE)
 	..()
 	return TRUE
 
 /datum/reagent/medicine/ephedrine/overdose_process(mob/living/M, delta_time, times_fired)
-	if(prob(2) && iscarbon(M))
+	if(DT_PROB(1, delta_time) && iscarbon(M))
 		var/datum/disease/D = new /datum/disease/heart_failure
 		M.ForceContractDisease(D)
 		to_chat(M, span_userdanger("You're pretty sure you just felt your heart stop for a second there.."))
 		M.playsound_local(M, 'sound/effects/singlebeat.ogg', 100, 0)
 
-	if(prob(7))
+	if(DT_PROB(3.5, delta_time))
 		to_chat(M, span_notice("[pick("Your head pounds.", "You feel a tight pain in your chest.", "You find it hard to stay still.", "You feel your heart practically beating out of your chest.")]"))
 
-	if(prob(33))
+	if(DT_PROB(18, delta_time))
 		M.adjustToxLoss(1, 0)
 		M.losebreath++
 		. = TRUE
@@ -830,7 +830,7 @@
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
 /datum/reagent/medicine/mannitol/on_mob_life(mob/living/carbon/owner, delta_time, times_fired)
-	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2 * REM)
+	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -2 * REM * delta_time)
 	..()
 
 //Having mannitol in you will pause the brain damage from brain tumor (so it heals an even 2 brain damage instead of 1.8)
@@ -892,7 +892,7 @@
 	..()
 
 /datum/reagent/medicine/neurine/on_mob_dead(mob/living/carbon/owner, delta_time)
-	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1 * REM)
+	owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1 * REM * delta_time)
 	..()
 
 /datum/reagent/medicine/mutadone
@@ -921,11 +921,11 @@
 	M.drowsyness = 0
 	M.slurring = 0
 	M.set_confusion(0)
-	M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3 * REM, FALSE, TRUE)
+	M.reagents.remove_all_type(/datum/reagent/consumable/ethanol, 3 * REM * delta_time, FALSE, TRUE)
 	M.adjustToxLoss(-0.2 * REM * delta_time, 0)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		H.drunkenness = max(H.drunkenness - 10, 0)
+		H.drunkenness = max(H.drunkenness - (10 * REM * delta_time), 0)
 	..()
 	. = TRUE
 
