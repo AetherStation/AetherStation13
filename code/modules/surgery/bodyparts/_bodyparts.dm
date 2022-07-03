@@ -128,8 +128,8 @@
 		qdel(wound)
 	if(length(wounds) || length(buffered_wounds))
 		stack_trace("[type] qdeleted with [length(wounds) ? "[length(wounds)] uncleared " : "no"] active wounds and [length(buffered_wounds) ? "[length(buffered_wounds)] uncleared " : "no"] inactive wounds")
-		wounds.Cut()
-		//buffered_wounds.Cut() //TODO
+		LAZYCLEARLIST(wounds)
+		LAZYCLEARLIST(buffered_wounds)
 	return ..()
 
 
