@@ -1037,15 +1037,13 @@
 		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
 		COMSIG_LIVING_DEATH),
 		.proc/apply_wound_buffer)
-	//TODO SFX
 
 /obj/item/bodypart/proc/clear_deathdoor()
 	UnregisterSignal(owner, list(
 		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
 		COMSIG_LIVING_DEATH))
-	//TODO SFX
 
-///TODO autodoc
+///Applies the entire wound buffer to this limb, turning all the inactive wounds into active ones
 /obj/item/bodypart/proc/apply_wound_buffer()
 	SIGNAL_HANDLER
 	for(var/datum/wound/inactive_wound as anything in buffered_wounds)

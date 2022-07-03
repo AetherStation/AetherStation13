@@ -155,7 +155,7 @@
 		wound_injury(old_wound)
 		second_wind()
 
-///TODO autodoc
+///Text and sounds cue played when a new wound is gained
 /datum/wound/proc/occur_effect()
 	var/msg = span_danger("[victim]'s [limb.name] [occur_text]!")
 	var/vis_dist = COMBAT_MESSAGE_RANGE
@@ -168,7 +168,7 @@
 	if(sound_effect)
 		playsound(limb.owner, sound_effect, 70 + 20 * severity, TRUE)
 
-/// TODO autodoc.
+///Applies the wound to the limb's buffer, meaning it will have NO effect until the victim goes crit.
 /datum/wound/proc/buffer_wound(obj/item/bodypart/limb)
 	if(ignore_buffer || limb.owner.stat >= SOFT_CRIT) //No buffering on crit/dead people
 		apply_wound(limb)
@@ -202,7 +202,7 @@
 	SIGNAL_HANDLER
 	qdel(src)
 
-/// Remove the wound from whatever it's afflicting, and cleans up whateverstatus effects it had or modifiers it had on interaction times. ignore_limb is used for detachments where we only want to forget the victim
+/// Removes the wound from whatever it's afflicting regardless of if it was buffered or not, and cleans up whateverstatus effects it had or modifiers it had on interaction times. ignore_limb is used for detachments where we only want to forget the victim
 /datum/wound/proc/remove_wound(ignore_limb, replaced = FALSE)
 	//TODO: have better way to tell if we're getting removed without replacement (full heal) scar stuff
 	set_disabling(FALSE)
@@ -233,7 +233,7 @@
 
 /**
  * replace_wound() is used when you want to replace the current wound with a new wound, presumably of the same category, just of a different severity (either up or down counts)
- *
+ * works for buffered wounds too, if a buffered wound of the same type exists, it will be replaced by the new wound and it will be buffered too
  * This proc actually instantiates the new wound based off the specific type path passed, then returns the new instantiated wound datum.
  *
  * Arguments:
