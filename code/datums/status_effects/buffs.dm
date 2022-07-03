@@ -418,25 +418,22 @@
 	if(!iscarbon(owner))
 		return
 	var/mob/living/carbon/carbie = owner
+	var/list/all_wounds = SANITIZE_LIST(carbie.all_active_wounds) + SANITIZE_LIST(carbie.all_inactive_wounds)
+	for(var/datum/wound/W as anything in all_wounds)
+		var/heal_amt = 0
 
-	for(var/BP in carbie.bodyparts)
-		var/obj/item/bodypart/part = BP
-		for(var/W in part.wounds)
-			var/datum/wound/wound = W
-			var/heal_amt = 0
-
-			switch(wound.severity)
-				if(WOUND_SEVERITY_MODERATE)
-					heal_amt = 1
-				if(WOUND_SEVERITY_SEVERE)
-					heal_amt = 3
-				if(WOUND_SEVERITY_CRITICAL)
-					heal_amt = 6
-			if(wound.wound_type == WOUND_BURN)
-				carbie.adjustFireLoss(-heal_amt)
-			else
-				carbie.adjustBruteLoss(-heal_amt)
-				carbie.blood_volume += carbie.blood_volume >= BLOOD_VOLUME_NORMAL ? 0 : heal_amt*3
+		switch(W.severity)
+			if(WOUND_SEVERITY_MODERATE)
+				heal_amt = 1
+			if(WOUND_SEVERITY_SEVERE)
+				heal_amt = 3
+			if(WOUND_SEVERITY_CRITICAL)
+				heal_amt = 6
+		if(W.wound_type == WOUND_BURN)
+			carbie.adjustFireLoss(-heal_amt)
+		else
+			carbie.adjustBruteLoss(-heal_amt)
+			carbie.blood_volume += carbie.blood_volume >= BLOOD_VOLUME_NORMAL ? 0 : heal_amt*3
 
 
 /atom/movable/screen/alert/status_effect/crucible_soul
