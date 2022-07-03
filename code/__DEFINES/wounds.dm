@@ -10,9 +10,9 @@
 #define DISMEMBER_MINIMUM_DAMAGE 10
 /// If an attack rolls this high with their wound (including mods), we try to outright dismember the limb. Note 250 is high enough that with a perfect max roll of 145 (see max cons'd damage), you'd need +100 in mods to do this
 #define WOUND_DISMEMBER_OUTRIGHT_THRESH 250
-///TODO
+///if an attack is applied to an unprotected limb, it has **this** much more points for the injury_roll
 #define BARE_WOUND_BONUS 20
-///TODO
+///baseline points for the injury_roll for any attack over WOUNDS_MINIMUM_DAMAGE
 #define BASE_WOUND_BONUS 15
 
 // ~wound severities

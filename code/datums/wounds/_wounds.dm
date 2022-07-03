@@ -425,7 +425,6 @@
 	. = "[victim.p_their(TRUE)] [limb.name] [examine_desc]"
 	. = severity <= WOUND_SEVERITY_MODERATE ? "[.]." : "<B>[.]!</B>"
 
-//TODO Fix runtime : blunt overrides this
 /datum/wound/proc/get_scanner_description(mob/user)
 	return "Type: [name]\nStatus : <b>[buffered ? "inactive" : "active"]</b>\nSeverity: [severity_text()]\nDescription: [desc]\nRecommended Treatment: [buffered ? buffered_treat_text : treat_text]"
 
