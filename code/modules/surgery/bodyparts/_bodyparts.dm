@@ -1031,7 +1031,7 @@
 	new_part.attach_limb(our_owner, TRUE)
 	qdel(src)
 
-///TODO autodoc, should probably have a single observer instead of having every limb listen for crit
+///Listens for the owner falling into crit/dying
 /obj/item/bodypart/proc/listen_for_deathdoor()
 	RegisterSignal(owner, list(
 		SIGNAL_ADDTRAIT(TRAIT_CRITICAL_CONDITION),
