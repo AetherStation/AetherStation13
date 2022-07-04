@@ -285,9 +285,7 @@
 /// Called by medical scanners to get a simple summary of how healthy the organ is. Returns an empty string if things are fine.
 /obj/item/organ/proc/get_status_text()
 	var/status = ""
-	if(owner.has_reagent(/datum/reagent/inverse/technetium))
-		status = "<font color='#E42426'> organ is [round((damage/maxHealth)*100, 1)]% damaged.</font>"
-	else if(organ_flags & ORGAN_FAILING)
+	if(organ_flags & ORGAN_FAILING)
 		status = "<font color='#cc3333'>Non-Functional</font>"
 	else if(damage > high_threshold)
 		status = "<font color='#ff9933'>Severely Damaged</font>"

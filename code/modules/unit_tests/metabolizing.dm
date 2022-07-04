@@ -75,7 +75,7 @@
 		addiction_type_to_check = key //idk how to do this otherwise
 
 	// Let's start with stomach metabolism
-	pill.reagents.add_reagent(meth.type, 5)
+	pill.reagents.add_reagent(meth.type, 10)
 	pill.attack(pill_user, pill_user)
 
 	// Set the metabolism efficiency to 1.0 so it transfers all reagents to the body in one go.
@@ -87,9 +87,9 @@
 	TEST_ASSERT(pill_user.mind.addiction_points[addiction_type_to_check], "User did not gain addiction points after metabolizing meth")
 
 	// Then injected metabolism
-	syringe.volume = 5
-	syringe.amount_per_transfer_from_this = 5
-	syringe.reagents.add_reagent(meth.type, 5)
+	syringe.volume = 10
+	syringe.amount_per_transfer_from_this = 10
+	syringe.reagents.add_reagent(meth.type, 10)
 	syringe.melee_attack_chain(syringe_user, syringe_user)
 
 	syringe_user.Life()
@@ -98,12 +98,12 @@
 
 	// One half syringe
 	syringe.reagents.remove_all()
-	syringe.volume = 5
-	syringe.amount_per_transfer_from_this = 5
-	syringe.reagents.add_reagent(meth.type, (5 * 0.5) + 1)
+	syringe.volume = 10
+	syringe.amount_per_transfer_from_this = 10
+	syringe.reagents.add_reagent(meth.type, (10 * 0.5) + 1)
 
 	// One half pill
-	pill_two.reagents.add_reagent(meth.type, (5 * 0.5) + 1)
+	pill_two.reagents.add_reagent(meth.type, (10 * 0.5) + 1)
 	pill_two.attack(pill_syringe_user, pill_syringe_user)
 	syringe.melee_attack_chain(pill_syringe_user, pill_syringe_user)
 

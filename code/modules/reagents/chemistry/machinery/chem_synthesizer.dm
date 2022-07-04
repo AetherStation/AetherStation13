@@ -41,7 +41,7 @@
 					return
 				else if(!beaker.reagents && !QDELETED(beaker))
 					beaker.create_reagents(beaker.volume)
-				beaker.reagents.add_reagent(input_reagent, amount, added_purity = (purity/100))
+				beaker.reagents.add_reagent(input_reagent, amount)
 		if("makecup")
 			if(beaker)
 				return

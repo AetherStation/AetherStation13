@@ -21,7 +21,7 @@
 	bounty_types = CIV_JOB_CHEM
 	departments = DEPARTMENT_MEDICAL
 
-	family_heirlooms = list(/obj/item/book/manual/wiki/chemistry, /obj/item/ph_booklet)
+	family_heirlooms = list(/obj/item/book/manual/wiki/chemistry)
 
 	mail_goodies = list(
 		/obj/item/reagent_containers/glass/bottle/flash_powder = 15,
@@ -39,7 +39,6 @@
 
 	glasses = /obj/item/clothing/glasses/science
 	belt = /obj/item/pda/chemist
-	l_pocket = /obj/item/reagent_containers/glass/bottle/random_buffer
 	r_pocket = /obj/item/reagent_containers/dropper
 	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/rank/medical/chemist

@@ -9926,11 +9926,9 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "bgP" = (
-/obj/machinery/disposal/bin,
 /obj/effect/turf_decal/trimline/yellow/end{
 	dir = 8
 	},
-/obj/structure/disposalpipe/trunk,
 /turf/open/floor/iron/white,
 /area/medical/pharmacy)
 "bgQ" = (
@@ -10499,7 +10497,6 @@
 /turf/open/floor/iron,
 /area/security/checkpoint/medical)
 "bjO" = (
-/obj/machinery/chem_heater/withbuffer,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
@@ -10514,6 +10511,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
+/obj/machinery/chem_heater,
 /turf/open/floor/iron/white,
 /area/medical/pharmacy)
 "bjP" = (
@@ -10703,7 +10701,6 @@
 /turf/open/floor/iron/white,
 /area/medical/pharmacy)
 "bkL" = (
-/obj/machinery/chem_heater/withbuffer,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
@@ -10722,6 +10719,7 @@
 	layer = 2.9
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/chem_heater,
 /turf/open/floor/iron/white,
 /area/medical/pharmacy)
 "bkT" = (
@@ -13959,7 +13957,6 @@
 /turf/open/floor/iron/white,
 /area/medical/cryo)
 "bCP" = (
-/obj/machinery/chem_heater/withbuffer,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
 	dir = 8
@@ -32418,7 +32415,9 @@
 /turf/open/floor/engine/n2,
 /area/engineering/atmos)
 "jVL" = (
-/obj/structure/disposalpipe/segment,
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
 	dir = 8
 	},
@@ -33628,7 +33627,10 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/obj/machinery/chem_mass_spec,
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
 /turf/open/floor/iron/white,
 /area/medical/pharmacy)
 "kGK" = (
@@ -53589,6 +53591,9 @@
 /turf/open/floor/iron/white,
 /area/science/genetics)
 "vGg" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /obj/machinery/holopad,
 /turf/open/floor/iron/white,
 /area/medical/pharmacy)
