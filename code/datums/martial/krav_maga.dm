@@ -86,13 +86,11 @@
 /datum/martial_art/krav_maga/proc/leg_sweep(mob/living/A, mob/living/D)
 	if(D.stat || D.IsParalyzed())
 		return FALSE
-	var/obj/item/bodypart/affecting = D.get_bodypart(BODY_ZONE_CHEST)
-	var/armor_block = D.run_armor_check(affecting, MELEE)
 	D.visible_message(span_warning("[A] leg sweeps [D]!"), \
 					span_userdanger("Your legs are sweeped by [A]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), null, A)
 	to_chat(A, span_danger("You leg sweep [D]!"))
 	playsound(get_turf(A), 'sound/effects/hit_kick.ogg', 50, TRUE, -1)
-	D.apply_damage(rand(20,30), STAMINA, affecting, armor_block)
+	D.apply_damage(25, STAMINA)
 	D.Knockdown(60)
 	log_combat(A, D, "leg sweeped")
 	return TRUE
@@ -131,14 +129,12 @@
 	if(check_streak(A,D))
 		return TRUE
 	log_combat(A, D, "punched")
-	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
-	var/armor_block = D.run_armor_check(affecting, MELEE)
 	var/picked_hit_type = pick("punch", "kick")
 	var/bonus_damage = 0
 	if(D.body_position == LYING_DOWN)
 		bonus_damage += 5
 		picked_hit_type = "stomp"
-	D.apply_damage(rand(5,10) + bonus_damage, A.get_attack_type(), affecting, armor_block)
+	D.apply_damage(10 + bonus_damage, A.get_attack_type())
 	if(picked_hit_type == "kick" || picked_hit_type == "stomp")
 		A.do_attack_animation(D, ATTACK_EFFECT_KICK)
 		playsound(get_turf(D), 'sound/effects/hit_kick.ogg', 50, TRUE, -1)
@@ -154,28 +150,7 @@
 /datum/martial_art/krav_maga/disarm_act(mob/living/A, mob/living/D)
 	if(check_streak(A,D))
 		return TRUE
-	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
-	var/armor_block = D.run_armor_check(affecting, MELEE)
-	if(D.body_position == STANDING_UP)
-		D.visible_message(span_danger("[A] reprimands [D]!"), \
-					span_userdanger("You're slapped by [A]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
-		to_chat(A, span_danger("You jab [D]!"))
-		A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
-		playsound(D, 'sound/effects/hit_punch.ogg', 50, TRUE, -1)
-		D.apply_damage(rand(5,10), STAMINA, affecting, armor_block)
-		log_combat(A, D, "punched nonlethally")
-	if(D.body_position == LYING_DOWN)
-		D.visible_message(span_danger("[A] reprimands [D]!"), \
-					span_userdanger("You're manhandled by [A]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), COMBAT_MESSAGE_RANGE, A)
-		to_chat(A, span_danger("You stomp [D]!"))
-		A.do_attack_animation(D, ATTACK_EFFECT_KICK)
-		playsound(D, 'sound/effects/hit_punch.ogg', 50, TRUE, -1)
-		D.apply_damage(rand(10,15), STAMINA, affecting, armor_block)
-		log_combat(A, D, "stomped nonlethally")
-	if(prob(D.getStaminaLoss()))
-		D.visible_message(span_warning("[D] sputters and recoils in pain!"), span_userdanger("You recoil in pain as you are jabbed in a nerve!"))
-		D.drop_all_held_items()
-	return TRUE
+	log_combat(A, D, "shoved (Krav Maga)")
 
 //Krav Maga Gloves
 

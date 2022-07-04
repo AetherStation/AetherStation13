@@ -36,12 +36,20 @@
 
 	if(panel_open)
 		if(W.tool_behaviour == TOOL_MULTITOOL && deconstruction == BLASTDOOR_FINISHED)
+			if (density)
+				balloon_alert(user, "open the door first!")
+				return
+
 			var/change_id = input("Set the shutters/blast door/blast door controllers ID. It must be a number between 1 and 100.", "ID", id) as num|null
 			if(change_id)
 				id = clamp(round(change_id, 1), 1, 100)
 				to_chat(user, span_notice("You change the ID to [id]."))
 
 		else if(W.tool_behaviour == TOOL_CROWBAR && deconstruction == BLASTDOOR_FINISHED)
+			if (density)
+				balloon_alert(user, "open the door first!")
+				return
+
 			to_chat(user, span_notice("You start to remove the airlock electronics."))
 			if(do_after(user, 10 SECONDS, target = src))
 				new /obj/item/electronics/airlock(loc)
@@ -49,6 +57,10 @@
 				deconstruction = BLASTDOOR_NEEDS_ELECTRONICS
 
 		else if(W.tool_behaviour == TOOL_WIRECUTTER && deconstruction == BLASTDOOR_NEEDS_ELECTRONICS)
+			if (density)
+				balloon_alert(user, "open the door first!")
+				return
+
 			to_chat(user, span_notice("You start to remove the internal cables."))
 			if(do_after(user, 10 SECONDS, target = src))
 				var/datum/crafting_recipe/recipe = locate(recipe_type) in GLOB.crafting_recipes
@@ -57,6 +69,10 @@
 				deconstruction = BLASTDOOR_NEEDS_WIRES
 
 		else if(W.tool_behaviour == TOOL_WELDER && deconstruction == BLASTDOOR_NEEDS_WIRES)
+			if (density)
+				balloon_alert(user, "open the door first!")
+				return
+
 			if(!W.tool_start_check(user, amount=0))
 				return
 
@@ -148,6 +164,9 @@
 		return 0
 	else
 		return ..()
+
+/obj/machinery/door/poddoor/bumpopen()
+	return
 
 //"BLAST" doors are obviously stronger than regular doors when it comes to BLASTS.
 /obj/machinery/door/poddoor/ex_act(severity, target)

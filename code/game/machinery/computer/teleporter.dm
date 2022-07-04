@@ -130,16 +130,16 @@
 		regime_set = "Teleporter"
 
 /obj/machinery/computer/teleporter/proc/set_target(mob/user)
-	var/list/L = list()
-	var/list/areaindex = list()
+	var/list/targets = list()
+	var/list/area_index = list()
 	if(regime_set == "Teleporter")
 		for(var/obj/item/beacon/R in GLOB.teleportbeacons)
 			if(is_eligible(R))
 				if(R.renamed)
-					L[avoid_assoc_duplicate_keys("[R.name] ([get_area(R)])", areaindex)] = R
+					targets[avoid_assoc_duplicate_keys("[R.name] ([get_area(R)])", area_index)] = R
 				else
 					var/area/A = get_area(R)
-					L[avoid_assoc_duplicate_keys(A.name, areaindex)] = R
+					targets[avoid_assoc_duplicate_keys(A.name, area_index)] = R
 
 		for(var/obj/item/implant/tracking/I in GLOB.tracked_implants)
 			if(!I.imp_in || !isliving(I.loc) || !I.allow_teleport)
@@ -150,24 +150,25 @@
 					if(M.timeofdeath + I.lifespan_postmortem < world.time)
 						continue
 				if(is_eligible(I))
-					L[avoid_assoc_duplicate_keys("[M.real_name] ([get_area(M)])", areaindex)] = I
+					targets[avoid_assoc_duplicate_keys("[M.real_name] ([get_area(M)])", area_index)] = I
 
-		var/desc = input("Please select a location to lock in.", "Locking Computer") as null|anything in sortList(L)
-		set_teleport_target(L[desc])
-		var/turf/T = get_turf(L[desc])
-		log_game("[key_name(user)] has set the teleporter target to [L[desc]] at [AREACOORD(T)]")
+		var/desc = input("Please select a location to lock in.", "Locking Computer") as null|anything in sort_list(targets)
+		set_teleport_target(targets[desc])
+		var/turf/T = get_turf(targets[desc])
+		log_game("[key_name(user)] has set the teleporter target to [targets[desc]] at [AREACOORD(T)]")
 
 	else
 		var/list/S = power_station.linked_stations
 		for(var/obj/machinery/teleport/station/R in S)
 			if(is_eligible(R) && R.teleporter_hub)
 				var/area/A = get_area(R)
-				L[avoid_assoc_duplicate_keys(A.name, areaindex)] = R
-		if(!L.len)
+				targets[avoid_assoc_duplicate_keys(A.name, area_index)] = R
+		if(!targets.len)
 			to_chat(user, span_alert("No active connected stations located."))
 			return
-		var/desc = input("Please select a station to lock in.", "Locking Computer") as null|anything in sortList(L)
-		var/obj/machinery/teleport/station/target_station = L[desc]
+
+		var/desc = input("Please select a station to lock in.", "Locking Computer") as null|anything in sort_list(targets)
+		var/obj/machinery/teleport/station/target_station = targets[desc]
 		if(!target_station || !target_station.teleporter_hub)
 			return
 		var/turf/T = get_turf(target_station)

@@ -465,11 +465,11 @@
 
 		var/integrity = obj_integrity/max_integrity*100
 		switch(integrity)
-			if(30 to 45)
+			if(35 to 50)
 				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 1)
-			if(15 to 35)
+			if(20 to 35)
 				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 2)
-			if(-INFINITY to 15)
+			if(-INFINITY to 20)
 				occupant.throw_alert("mech damage", /atom/movable/screen/alert/low_mech_integrity, 3)
 			else
 				occupant.clear_alert("mech damage")
@@ -827,7 +827,7 @@
 				to_chat(user, span_warning("No AI detected in the [name] onboard computer."))
 				return
 			if(ai_pilots.len > 1) //Input box for multiple AIs, but if there's only one we'll default to them.
-				AI = input(user,"Which AI do you wish to card?", "AI Selection") as null|anything in sortList(ai_pilots)
+				AI = input(user,"Which AI do you wish to card?", "AI Selection") as null|anything in sort_list(ai_pilots)
 			else
 				AI = ai_pilots[1]
 			if(!AI)

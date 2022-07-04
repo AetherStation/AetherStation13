@@ -13,7 +13,7 @@
 	//Buckling
 	can_buckle = TRUE
 	buckle_requires_restraints = TRUE
-	buckle_lying = NO_BUCKLE_LYING
+	buckle_lying = 90
 
 	vis_flags = VIS_INHERIT_PLANE
 

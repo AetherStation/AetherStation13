@@ -16,13 +16,6 @@
 	color = "#5020F4"
 	overdose_threshold = 15
 	metabolization_rate = 1 * REAGENTS_METABOLISM
-	ph = 3.7
-	purity = 0.5
-	creation_purity = 0.5
-	impure_chem = /datum/reagent/impurity/eigenswap
-	inverse_chem = null
-	inverse_chem_val = 0
-	failed_chem = /datum/reagent/bluespace //crashes out
 	chemical_flags = REAGENT_DEAD_PROCESS //So if you die with it in your body, you still get teleported back to the location as a corpse
 	data = list("location_created" = null, "ingested" = FALSE)//So we retain the target location and creator between reagent instances
 	///The creation point assigned during the reaction
@@ -68,7 +61,7 @@
 	to_chat(living_mob, span_userdanger("You feel like part of yourself has split off!"))
 
 	//Teleports you home if it's pure enough
-	if(creation_purity > 0.9 && location_created && data["ingested"])
+	if(location_created && data["ingested"])
 		do_sparks(5,FALSE,living_mob)
 		do_teleport(living_mob, location_created, 0, asoundin = 'sound/effects/phasein.ogg')
 		do_sparks(5,FALSE,living_mob)
@@ -110,8 +103,6 @@
 ///Lets you link lockers together
 /datum/reagent/eigenstate/expose_turf(turf/exposed_turf, reac_volume)
 	. = ..()
-	if(creation_purity < 0.8)
-		return
 	var/list/lockers = list()
 	for(var/obj/structure/closet/closet in exposed_turf.contents)
 		lockers += closet

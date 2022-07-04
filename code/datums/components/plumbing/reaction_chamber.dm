@@ -7,12 +7,6 @@
 	if(!istype(parent, /obj/machinery/plumbing/reaction_chamber))
 		return COMPONENT_INCOMPATIBLE
 
-/datum/component/plumbing/reaction_chamber/can_give(amount, reagent, datum/ductnet/net)
-	. = ..()
-	var/obj/machinery/plumbing/reaction_chamber/reaction_chamber = parent
-	if(!. || !reaction_chamber.emptying || reagents.is_reacting == TRUE)
-		return FALSE
-
 /datum/component/plumbing/reaction_chamber/send_request(dir)
 	var/obj/machinery/plumbing/reaction_chamber/chamber = parent
 	if(chamber.emptying)
@@ -44,17 +38,10 @@
 
 	ducting_layer = SECOND_DUCT_LAYER
 
-/datum/component/plumbing/acidic_input/send_request(dir)
-	process_request(amount = MACHINE_REAGENT_TRANSFER, reagent = /datum/reagent/reaction_agent/acidic_buffer, dir = dir)
-
 ///Special connect that we currently use for reaction chambers. Being used so we can keep certain inputs seperate, like into a special internal base container
 /datum/component/plumbing/alkaline_input
 	demand_connects = EAST
 	demand_color = "green"
 
 	ducting_layer = FOURTH_DUCT_LAYER
-
-/datum/component/plumbing/alkaline_input/send_request(dir)
-	process_request(amount = MACHINE_REAGENT_TRANSFER, reagent = /datum/reagent/reaction_agent/basic_buffer, dir = dir)
-
 

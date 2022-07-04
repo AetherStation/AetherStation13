@@ -28,36 +28,8 @@
 
 	/// Set to TRUE if you want the recipe to only react when it's BELOW the required temp.
 	var/is_cold_recipe = FALSE
-	///FermiChem! - See fermi_readme.md
 	///Required temperature for the reaction to begin, for fermimechanics it defines the lower area of bell curve for determining heat based rate reactions, aka the minimum
 	var/required_temp = 100
-	/// Upper end for above (i.e. the end of the curve section defined by temp_exponent_factor)
-	var/optimal_temp = 500
-	/// Temperature at which reaction explodes - If any reaction is this hot, it explodes!
-	var/overheat_temp = 900
-	/// Lowest value of pH determining pH a 1 value for pH based rate reactions (Plateu phase)
-	var/optimal_ph_min = 5
-	/// Higest value for above
-	var/optimal_ph_max = 9
-	/// How far out pH wil react, giving impurity place (Exponential phase)
-	var/determin_ph_range = 4
-	/// How sharp the temperature exponential curve is (to the power of value)
-	var/temp_exponent_factor = 2
-	/// How sharp the pH exponential curve is (to the power of value)
-	var/ph_exponent_factor = 2
-	/// How much the temperature will change (with no intervention) (i.e. for 30u made the temperature will increase by 100, same with 300u. The final temp will always be start + this value, with the exception con beakers with different specific heats)
-	var/thermic_constant = 50
-	/// pH change per 1u reaction
-	var/H_ion_release = 0.01
-	/// Optimal/max rate possible if all conditions are perfect
-	var/rate_up_lim = 30
-	/// If purity is below 0.15, it calls OverlyImpure() too. Set to 0 to disable this.
-	var/purity_min = 0.15
-	/// bitflags for clear conversions; REACTION_CLEAR_IMPURE, REACTION_CLEAR_INVERSE, REACTION_CLEAR_RETAIN, REACTION_INSTANT
-	var/reaction_flags = NONE
-	///Tagging vars
-	///A bitflag var for tagging reagents for the reagent loopup functon
-	var/reaction_tags = NONE
 
 /datum/chemical_reaction/New()
 	. = ..()
@@ -88,134 +60,9 @@
  * * holder - the datum that holds this reagent, be it a beaker or anything else
  * * created_volume - volume created when this is mixed. look at 'var/list/results'.
  */
-/datum/chemical_reaction/proc/on_reaction(datum/reagents/holder, datum/equilibrium/reaction, created_volume)
+/datum/chemical_reaction/proc/on_reaction(datum/reagents/holder, created_volume)
 	return
 	//I recommend you set the result amount to the total volume of all components.
-
-/**
- * Stuff that occurs in the middle of a reaction
- * Only procs DURING a reaction
- * If reaction_flags & REACTION_INSTANT then this isn't called
- * returning END_REACTION will END the reaction
- *
- * Arguments:
- * * reaction - the equilibrium reaction holder that is reaction is processed within - use this to edit delta_t and delta
- * * holder - the datum that holds this reagent, be it a beaker or anything else
- * * created_volume - volume created per step
- * * added_purity - how pure the created volume is per step
- *
- * Outputs:
- * * returning END_REACTION will end the associated reaction - flagging it for deletion and preventing any reaction in that timestep from happening. Make sure to set the vars in the holder to one that can't start it from starting up again.
- */
-/datum/chemical_reaction/proc/reaction_step(datum/reagents/holder, datum/equilibrium/reaction, delta_t, delta_ph, step_reaction_vol)
-	return
-
-/**
- * Stuff that occurs at the end of a reaction. This will proc if the beaker is forced to stop and start again (say for sudden temperature changes).
- * Only procs at the END of reaction
- * If reaction_flags & REACTION_INSTANT then this isn't called
- * if reaction_flags REACTION_CLEAR_IMPURE then the impurity chem is handled here, producing the result in the beaker instead of in a mob
- * Likewise for REACTION_CLEAR_INVERSE the inverse chem is produced at the end of the reaction in the beaker
- * You should be calling ..() if you're writing a child function of this proc otherwise purity methods won't work correctly
- *
- * Proc where the additional magic happens.
- * You dont want to handle mob spawning in this since there is a dedicated proc for that.client
- * Arguments:
- * * holder - the datum that holds this reagent, be it a beaker or anything else
- * * react_volume - volume created across the whole reaction
- */
-/datum/chemical_reaction/proc/reaction_finish(datum/reagents/holder, datum/equilibrium/reaction, react_vol)
-	//failed_chem handler
-	var/cached_temp = holder.chem_temp
-	for(var/id in results)
-		var/datum/reagent/reagent = holder.has_reagent(id)
-		if(!reagent)
-			continue
-		//Split like this so it's easier for people to edit this function in a child
-		convert_into_failed(reagent, holder)
-		reaction_clear_check(reagent, holder)
-	holder.chem_temp = cached_temp
-
-/**
- * Converts a reagent into the type specified by the failed_chem var of the input reagent
- *
- * Arguments:
- * * reagent - the target reagent to convert
- */
-/datum/chemical_reaction/proc/convert_into_failed(datum/reagent/reagent, datum/reagents/holder)
-	if(reagent.purity < purity_min && reagent.failed_chem)
-		var/cached_volume = reagent.volume
-		holder.remove_reagent(reagent.type, cached_volume, FALSE)
-		holder.add_reagent(reagent.failed_chem, cached_volume, FALSE, added_purity = 1)
-		SSblackbox.record_feedback("tally", "chemical_reaction", 1, "[type] failed reactions")
-
-/**
- * REACTION_CLEAR handler
- * If the reaction has the REACTION_CLEAR flag, then it will split using purity methods in the beaker instead
- *
- * Arguments:
- * * reagent - the target reagent to convert
- */
-/datum/chemical_reaction/proc/reaction_clear_check(datum/reagent/reagent, datum/reagents/holder)
-	if(!reagent)//Failures can delete R
-		return
-	if(reaction_flags & (REACTION_CLEAR_IMPURE | REACTION_CLEAR_INVERSE))
-		if(reagent.purity == 1)
-			return
-
-		var/cached_volume = reagent.volume
-		var/cached_purity = reagent.purity
-		if((reaction_flags & REACTION_CLEAR_INVERSE) && reagent.inverse_chem)
-			if(reagent.inverse_chem_val > reagent.purity)
-				holder.remove_reagent(reagent.type, cached_volume, FALSE)
-				holder.add_reagent(reagent.inverse_chem, cached_volume, FALSE, added_purity = 1-cached_purity)
-				return
-
-		if((reaction_flags & REACTION_CLEAR_IMPURE) && reagent.impure_chem)
-			var/impureVol = cached_volume * (1 - reagent.purity)
-			holder.remove_reagent(reagent.type, (impureVol), FALSE)
-			holder.add_reagent(reagent.impure_chem, impureVol, FALSE, added_purity = 1-cached_purity)
-			reagent.creation_purity = cached_purity
-			reagent.chemical_flags = reagent.chemical_flags | REAGENT_DONOTSPLIT
-
-/**
- * Occurs when a reation is overheated (i.e. past it's overheatTemp)
- * Will be called every tick in the reaction that it is overheated
- * If you want this to be a once only proc (i.e. the reaction is stopped after) set reaction.toDelete = TRUE
- * The above is useful if you're writing an explosion
- * By default the parent proc will reduce the final yield slightly. If you don't want that don't add ..()
- *
- * Arguments:
- * * holder - the datum that holds this reagent, be it a beaker or anything else
- * * equilibrium - the equilibrium datum that contains the equilibrium reaction properties and methods
- * * step_volume_added - how much product (across all products) was added for this single step
- */
-/datum/chemical_reaction/proc/overheated(datum/reagents/holder, datum/equilibrium/equilibrium, step_volume_added)
-	for(var/id in results)
-		var/datum/reagent/reagent = holder.get_reagent(id)
-		if(!reagent)
-			return
-		reagent.volume =  round((reagent.volume*0.98), 0.01) //Slowly lower yield per tick
-
-/**
- * Occurs when a reation is too impure (i.e. it's below purity_min)
- * Will be called every tick in the reaction that it is too impure
- * If you want this to be a once only proc (i.e. the reaction is stopped after) set reaction.toDelete = TRUE
- * The above is useful if you're writing an explosion
- * By default the parent proc will reduce the purity of all reagents involved in the reaction in the beaker slightly. If you don't want that don't add ..()
- *
- * Arguments:
- * * holder - the datum that holds this reagent, be it a beaker or anything else
- * * equilibrium - the equilibrium datum that contains the equilibrium reaction properties and methods
- * * step_volume_added - how much product (across all products) was added for this single step
- */
-/datum/chemical_reaction/proc/overly_impure(datum/reagents/holder, datum/equilibrium/equilibrium, step_volume_added)
-	var/affected_list = results + required_reagents
-	for(var/_reagent in affected_list)
-		var/datum/reagent/reagent = holder.get_reagent(_reagent)
-		if(!reagent)
-			continue
-		reagent.purity = clamp((reagent.purity-0.01), 0, 1) //slowly reduce purity of reagents
 
 /**
  * Magical mob spawning when chemicals react
@@ -336,7 +183,7 @@
  * * range - the radius around the holder's atom that is flashed
  * * length - how long it lasts in ds
  */
-/datum/chemical_reaction/proc/explode_flash(datum/reagents/holder, datum/equilibrium/equilibrium, range = 2, length = 25)
+/datum/chemical_reaction/proc/explode_flash(datum/reagents/holder, range = 2, length = 25)
 	var/turf/location = get_turf(holder.my_atom)
 	for(var/mob/living/living_mob in viewers(range, location))
 		living_mob.flash_act(length = length)
@@ -350,52 +197,21 @@
  * * stun - How long the mob is stunned for
  * * range - the radius around the holder's atom that is banged
  */
-/datum/chemical_reaction/proc/explode_deafen(datum/reagents/holder, datum/equilibrium/equilibrium, power = 3, stun = 20, range = 2)
+/datum/chemical_reaction/proc/explode_deafen(datum/reagents/holder, power = 3, stun = 20, range = 2)
 	var/location = get_turf(holder.my_atom)
 	playsound(location, 'sound/effects/bang.ogg', 25, TRUE)
 	for(var/mob/living/carbon/carbon_mob in get_hearers_in_view(range, location))
 		carbon_mob.soundbang_act(1, stun, power)
 
-//Spews out the inverse of the chems in the beaker of the products/reactants only
-/datum/chemical_reaction/proc/explode_invert_smoke(datum/reagents/holder, datum/equilibrium/equilibrium, force_range = 0, clear_products = TRUE, clear_reactants = TRUE, accept_impure = TRUE)
-	var/datum/reagents/invert_reagents = new (2100, NO_REACT)//I think the biggest size we can get is 2100?
-	var/datum/effect_system/smoke_spread/chem/smoke = new()
-	var/sum_volume = 0
-	invert_reagents.my_atom = holder.my_atom //Give the gas a fingerprint
-	for(var/datum/reagent/reagent as anything in holder.reagent_list) //make gas for reagents, has to be done this way, otherwise it never stops Exploding
-		if(!(reagent.type in required_reagents) || !(reagent.type in results))
-			continue
-		if(reagent.inverse_chem)
-			invert_reagents.add_reagent(reagent.inverse_chem, reagent.volume, no_react = TRUE)
-			holder.remove_reagent(reagent.type, reagent.volume)
-			continue
-		else if (reagent.impure_chem && accept_impure)
-			invert_reagents.add_reagent(reagent.impure_chem, reagent.volume, no_react = TRUE)
-			holder.remove_reagent(reagent.type, reagent.volume)
-			continue
-		invert_reagents.add_reagent(reagent.type, reagent.volume, added_purity = reagent.purity, no_react = TRUE)
-		sum_volume += reagent.volume
-		holder.remove_reagent(reagent.type, reagent.volume)
-	if(!force_range)
-		force_range = (sum_volume/6) + 3
-	if(invert_reagents.reagent_list)
-		smoke.set_up(invert_reagents, force_range, holder.my_atom)
-		smoke.start()
-	holder.my_atom.audible_message("The [holder.my_atom] suddenly explodes, launching the aerosolized reagents into the air!")
-	if(clear_reactants)
-		clear_reactants(holder)
-	if(clear_products)
-		clear_products(holder)
-
 //Spews out the corrisponding reactions reagents  (products/required) of the beaker in a smokecloud. Doesn't spew catalysts
-/datum/chemical_reaction/proc/explode_smoke(datum/reagents/holder, datum/equilibrium/equilibrium, force_range = 0, clear_products = TRUE, clear_reactants = TRUE)
+/datum/chemical_reaction/proc/explode_smoke(datum/reagents/holder, force_range = 0, clear_products = TRUE, clear_reactants = TRUE)
 	var/datum/reagents/reagents = new/datum/reagents(2100, NO_REACT)//Lets be safe first
 	var/datum/effect_system/smoke_spread/chem/smoke = new()
 	reagents.my_atom = holder.my_atom //fingerprint
 	var/sum_volume = 0
 	for (var/datum/reagent/reagent as anything in holder.reagent_list)
 		if((reagent.type in required_reagents) || (reagent.type in results))
-			reagents.add_reagent(reagent.type, reagent.volume, added_purity = reagent.purity, no_react = TRUE)
+			reagents.add_reagent(reagent.type, reagent.volume, no_react = TRUE)
 			holder.remove_reagent(reagent.type, reagent.volume)
 	if(!force_range)
 		force_range = (sum_volume/6) + 3
@@ -409,7 +225,7 @@
 		clear_products(holder)
 
 //Pushes everything out, and damages mobs with 10 brute damage.
-/datum/chemical_reaction/proc/explode_shockwave(datum/reagents/holder, datum/equilibrium/equilibrium, range = 3, damage = 5, sound_and_text = TRUE, implosion = FALSE)
+/datum/chemical_reaction/proc/explode_shockwave(datum/reagents/holder, range = 3, damage = 5, sound_and_text = TRUE, implosion = FALSE)
 	var/turf/this_turf = get_turf(holder.my_atom)
 	if(sound_and_text)
 		holder.my_atom.audible_message("The [holder.my_atom] suddenly explodes, sending a shockwave rippling through the air!")
@@ -439,44 +255,9 @@
 ////////BEGIN FIRE BASED EXPLOSIONS
 
 //Calls the default explosion subsystem handiler to explode with fire (random firespots and noise)
-/datum/chemical_reaction/proc/explode_fire(datum/reagents/holder, datum/equilibrium/equilibrium, range = 3)
+/datum/chemical_reaction/proc/explode_fire(datum/reagents/holder, range = 3)
 	explosion(holder.my_atom, flame_range = range)
 	holder.my_atom.audible_message("The [holder.my_atom] suddenly errupts in flames!")
-
-//Creates a ring of fire in a set range around the beaker location
-/datum/chemical_reaction/proc/explode_fire_vortex(datum/reagents/holder, datum/equilibrium/equilibrium, x_offset = 1, y_offset = 1, reverse = FALSE, id = "f_vortex", )
-	var/increment = reverse ? -1 : 1
-	if(isnull(equilibrium.data["[id]_tar"]))
-		equilibrium.data = list("[id]_x" = x_offset, "[id]_y" = y_offset, "[id]_tar" = "[id]_y")//tar is the current movement direction the cyclone is moving in
-	if(equilibrium.data["[id]_tar"] == "[id]_x")
-		if(equilibrium.data["[id]_x"] >= x_offset)
-			equilibrium.data["[id]_tar"] = "[id]_y"
-			equilibrium.data["[id]_y"] += increment
-		else if(equilibrium.data["[id]_x"] <= -x_offset)
-			equilibrium.data["[id]_tar"] = "[id]_y"
-			equilibrium.data["[id]_y"] -= increment
-		else
-			if(equilibrium.data["[id]_y"] < 0)
-				equilibrium.data["[id]_x"] += increment
-			else if(equilibrium.data["[id]_y"] > 0)
-				equilibrium.data["[id]_x"] -= increment
-
-	else if (equilibrium.data["[id]_tar"] == "[id]_y")
-		if(equilibrium.data["[id]_y"] >= y_offset)
-			equilibrium.data["[id]_tar"] = "[id]_x"
-			equilibrium.data["[id]_x"] -= increment
-		else if(equilibrium.data["[id]_y"] <= -y_offset)
-			equilibrium.data["[id]_tar"] = "[id]_x"
-			equilibrium.data["[id]_x"] += increment
-		else
-			if(equilibrium.data["[id]_x"] < 0)
-				equilibrium.data["[id]_y"] -= increment
-			else if(equilibrium.data["[id]_x"] > 0)
-				equilibrium.data["[id]_y"] += increment
-	var/turf/holder_turf = get_turf(holder.my_atom)
-	var/turf/target = locate(holder_turf.x + equilibrium.data["[id]_x"], holder_turf.y + equilibrium.data["[id]_y"], holder_turf.z)
-	new /obj/effect/hotspot(target)
-	debug_world("X: [equilibrium.data["[id]_x"]], Y: [equilibrium.data["[id]_x"]]")
 
 /*
  * Creates a square of fire in a fire_range radius,
@@ -484,7 +265,7 @@
  * fire_range = 1 or more will be additional tiles around the holder. Every tile will be heated this way.
  * How clf3 works, you know!
  */
-/datum/chemical_reaction/proc/explode_fire_square(datum/reagents/holder, datum/equilibrium/equilibrium, fire_range = 1)
+/datum/chemical_reaction/proc/explode_fire_square(datum/reagents/holder, fire_range = 1)
 	var/turf/location = get_turf(holder.my_atom)
 	if(fire_range == 0)
 		new /obj/effect/hotspot(location)
@@ -502,7 +283,7 @@
 * * freeze_duration - how long the icey spots remain for
 * * snowball_chance - the chance to spawn a snowball on a turf
 */
-/datum/chemical_reaction/proc/freeze_radius(datum/reagents/holder, datum/equilibrium/equilibrium, temp, radius = 2, freeze_duration = 50 SECONDS, snowball_chance = 0)
+/datum/chemical_reaction/proc/freeze_radius(datum/reagents/holder, temp, radius = 2, freeze_duration = 50 SECONDS, snowball_chance = 0)
 	for(var/any_turf in circlerangeturfs(center = get_turf(holder.my_atom), radius = radius))
 		if(!istype(any_turf, /turf/open))
 			continue
@@ -546,7 +327,7 @@
 * * ignore_mask - if masks block the effect, making this true will affect someone regardless
 * * ignore_eyes - if glasses block the effect, making this true will affect someone regardless
 */
-/datum/chemical_reaction/proc/explode_attack_chem(datum/reagents/holder, datum/equilibrium/equilibrium, reagent, vol, range = 3, ignore_mask = FALSE, ignore_eyes = FALSE)
+/datum/chemical_reaction/proc/explode_attack_chem(datum/reagents/holder, reagent, vol, range = 3, ignore_mask = FALSE, ignore_eyes = FALSE)
 	if(istype(reagent, /datum/reagent))
 		var/datum/reagent/temp_reagent = reagent
 		reagent = temp_reagent.type
@@ -557,28 +338,3 @@
 			continue
 		to_chat(target, "The [holder.my_atom.name] launches some of [holder.p_their()] contents at you!")
 		target.reagents.add_reagent(reagent, vol)
-
-
-/*
-* Applys a cooldown to the reaction
-* Returns false if time is below required, true if it's above required
-* Time is kept in eqilibrium data
-*
-* Arguments:
-* * seconds - the amount of time in server seconds to delay between true returns, will ceiling to the nearest 0.25
-* * id - a string phrase so that multiple cooldowns can be applied if needed
-* * initial_delay - The number of seconds of delay to add on creation
-*/
-/datum/chemical_reaction/proc/off_cooldown(datum/reagents/holder, datum/equilibrium/equilibrium, seconds = 1, id = "default", initial_delay = 0)
-	id = "[id]_cooldown"
-	if(isnull(equilibrium.data[id]))
-		equilibrium.data[id] = 0
-		if(initial_delay)
-			equilibrium.data[id] += initial_delay
-			return FALSE
-		return TRUE//first time we know we can go
-	equilibrium.data[id] += equilibrium.time_deficit ? 0.5 : 0.25 //sync to lag compensator
-	if(equilibrium.data[id] >= seconds)
-		equilibrium.data[id] = 0
-		return TRUE
-	return FALSE

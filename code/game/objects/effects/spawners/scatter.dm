@@ -24,9 +24,9 @@
 
 	var/loot_spawned = 0
 	while((max_spawns-loot_spawned) && candidate_locations.len)
-		var/spawned_thing = pickweight(loot_table)
+		var/spawned_thing = pick_weight(loot_table)
 		while(islist(spawned_thing))
-			spawned_thing = pickweight(spawned_thing)
+			spawned_thing = pick_weight(spawned_thing)
 		new spawned_thing(pick_n_take(candidate_locations))
 		loot_spawned++
 

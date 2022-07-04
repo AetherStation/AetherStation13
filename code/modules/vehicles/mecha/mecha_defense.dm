@@ -17,8 +17,11 @@
 				check_for_internal_damage(list(MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST))
 			else
 				check_for_internal_damage(list(MECHA_INT_FIRE,MECHA_INT_TEMP_CONTROL,MECHA_INT_TANK_BREACH,MECHA_INT_CONTROL_LOST,MECHA_INT_SHORT_CIRCUIT))
-		if(. >= 5 || prob(33))
-			to_chat(occupants, "[icon2html(src, occupants)][span_userdanger("Taking damage!")]")
+		to_chat(occupants, "[icon2html(src, occupants)][span_danger("Taking damage!")]")
+		var/integrity = obj_integrity*100/max_integrity
+		if(. && integrity < 20)
+			to_chat(occupants, "[icon2html(src, occupants)][span_userdanger("HULL DAMAGE CRITICAL!")]")
+			SEND_SOUND(occupants, sound('sound/mecha/critical.ogg',volume=50))
 		log_message("Took [damage_amount] points of damage. Damage type: [damage_type]", LOG_MECHA)
 
 /obj/vehicle/sealed/mecha/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir)

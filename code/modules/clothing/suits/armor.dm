@@ -133,6 +133,14 @@
 	dog_fashion = null
 	resistance_flags = FIRE_PROOF
 
+/obj/item/clothing/suit/armor/vest/capcarapace/capjacket
+	name = "captain's jacket"
+	desc = "The middle road between utility and fashion."
+	icon_state = "capjacket"
+	inhand_icon_state = "capspacesuit"
+	body_parts_covered = CHEST|GROIN|ARMS
+	armor = list(MELEE = 45, BULLET = 35, LASER = 45, ENERGY = 45, BOMB = 20, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 10)
+
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	name = "syndicate captain's vest"
 	desc = "A sinister looking vest of advanced armor worn over a black and red fireproof jacket. The gold collar and shoulders denote that this belongs to a high ranking syndicate officer."
@@ -144,7 +152,7 @@
 	icon_state = "capformal"
 	inhand_icon_state = "capspacesuit"
 	body_parts_covered = CHEST|GROIN|ARMS
-	armor = list(MELEE = 50, BULLET = 40, LASER = 50, ENERGY = 50, BOMB = 25, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 10)
+	armor = list(MELEE = 45, BULLET = 35, LASER = 45, ENERGY = 45, BOMB = 20, BIO = 0, RAD = 0, FIRE = 100, ACID = 90, WOUND = 10)
 	togglename = "buttons"
 
 /obj/item/clothing/suit/toggle/captains_parade/Initialize()
@@ -380,3 +388,10 @@
 /obj/item/clothing/suit/toggle/armor/hos/hos_formal/Initialize()
 	. = ..()
 	allowed = GLOB.security_wintercoat_allowed
+
+/obj/item/clothing/suit/armor/vest/hop
+	name = "head of personnel's coat"
+	desc = "A stylish coat given to a Head of Personnel."
+	icon_state = "hop_coat"
+	inhand_icon_state = "b_suit"
+	body_parts_covered = CHEST|GROIN|ARMS
