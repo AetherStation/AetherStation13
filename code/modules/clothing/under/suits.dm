@@ -72,7 +72,8 @@
 	name = "executive suit"
 	desc = "A formal trouser suit for women, intended for the station's finest."
 	icon_state = "black_suit_fem"
-	inhand_icon_state = "black_suit_fem"
+	inhand_icon_state = "bl_suit"
+	can_adjust = FALSE
 
 /obj/item/clothing/under/suit/green
 	name = "green suit"

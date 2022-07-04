@@ -163,6 +163,20 @@
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	fitted = FEMALE_UNIFORM_TOP
 
+/obj/item/clothing/under/rank/civilian/lawyer/good
+	name = "good lawyer's suit"
+	desc = "A tacky suit perfect for a CRIMINAL lawyer!"
+	icon_state = "good_suit"
+	inhand_icon_state = "good_suit"
+
+/obj/item/clothing/under/rank/civilian/lawyer/good/skirt
+	name = "good lawyer's suitskirt"
+	desc = "A tacky suitskirt perfect for a CRIMINAL lawyer!"
+	icon_state = "good_suit_skirt"
+	inhand_icon_state = "good_suit"
+	dying_key = DYE_REGISTRY_JUMPSKIRT
+	fitted = FEMALE_UNIFORM_TOP
+
 /obj/item/clothing/under/rank/civilian/lawyer/red
 	name = "lawyer red suit"
 	icon_state = "lawyer_red"
