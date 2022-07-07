@@ -129,9 +129,9 @@
 			qdel(src)
 			return
 
+	buffered = FALSE
 	set_victim(L.owner)
 	set_limb(L)
-	buffered = FALSE
 	LAZYADD(victim.all_active_wounds, src)
 	LAZYADD(limb.wounds, src)
 	limb.update_wounds()
@@ -269,10 +269,9 @@
 		var/obj/item/bodypart/old_limb = .
 		REMOVE_TRAIT(old_limb, TRAIT_PARALYSIS, src)
 		REMOVE_TRAIT(old_limb, TRAIT_DISABLED_BY_WOUND, src)
-	if(limb)
-		if(disabling)
-			ADD_TRAIT(limb, TRAIT_PARALYSIS, src)
-			ADD_TRAIT(limb, TRAIT_DISABLED_BY_WOUND, src)
+	if(limb && disabling && !buffered)
+		ADD_TRAIT(limb, TRAIT_PARALYSIS, src)
+		ADD_TRAIT(limb, TRAIT_DISABLED_BY_WOUND, src)
 
 
 /// Proc called to change the variable `disabling` and react to the event.
