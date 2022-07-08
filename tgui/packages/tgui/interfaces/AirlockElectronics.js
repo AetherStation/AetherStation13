@@ -1,7 +1,6 @@
-import { useBackend, useLocalState } from '../backend';
-import { Button, Flex, Grid, LabeledList, Section, Tabs } from '../components';
+import { useBackend } from '../backend';
+import { Button, LabeledList, Section, Flex, Tabs, Grid } from '../components';
 import { Window } from '../layouts';
-import { sortBy } from 'common/collections';
 
 export const AirlockElectronics = (props, context) => {
   const { act, data } = useBackend(context);
