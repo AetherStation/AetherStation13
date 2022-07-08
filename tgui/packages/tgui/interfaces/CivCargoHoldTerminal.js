@@ -16,7 +16,7 @@ export const CivCargoHoldTerminal = (props, context) => {
   const out_text = "To begin, insert your ID into the console.";
   return (
     <Window
-      width={580}
+      width={500}
       height={375}>
       <Window.Content scrollable>
         <Flex>
@@ -113,11 +113,12 @@ const BountyPickBox = (props, context) => {
           grow={0.5}>
           <Button
             fluid
+            icon="check"
             color="green"
             content={id_bounty_names[0]}
             onClick={() => act('pick', { 'value': 1 })}>
             <Box fontSize="14px">
-              Payout: {id_bounty_values[0]} cr
+              Payout: {id_bounty_values[0]}
             </Box>
           </Button>
         </Flex.Item>
@@ -127,11 +128,12 @@ const BountyPickBox = (props, context) => {
           px={1}>
           <Button
             fluid
+            icon="check"
             color="green"
             content={id_bounty_names[1]}
             onClick={() => act('pick', { 'value': 2 })}>
             <Box fontSize="14px">
-              Payout: {id_bounty_values[1]} cr
+              Payout: {id_bounty_values[1]}
             </Box>
           </Button>
         </Flex.Item>
@@ -140,11 +142,12 @@ const BountyPickBox = (props, context) => {
           grow={0.5}>
           <Button
             fluid
+            icon="check"
             color="green"
             content={id_bounty_names[2]}
             onClick={() => act('pick', { 'value': 3 })}>
             <Box fontSize="14px">
-              Payout: {id_bounty_values[2]} cr
+              Payout: {id_bounty_values[2]}
             </Box>
           </Button>
         </Flex.Item>

@@ -4,7 +4,7 @@
  * @license MIT
  */
 
-import { Loader } from "./common/Loader";
+import { clamp01 } from 'common/math';
 import { useBackend } from '../backend';
 import { Component, createRef } from 'inferno';
 import { Box, Flex, Section } from '../components';
@@ -71,7 +71,8 @@ export class AlertModal extends Component {
       <Window
         title={title}
         width={350}
-        height={150}>
+        height={150}
+        canClose={timeout > 0}>
         {timeout && <Loader value={timeout} />}
         <Window.Content
           onFocus={focusCurrentButton}
@@ -134,3 +135,14 @@ export class AlertModal extends Component {
 
 }
 
+export const Loader = props => {
+  const { value } = props;
+
+  return (
+    <div className="AlertModal__Loader">
+      <Box
+        className="AlertModal__LoaderProgress"
+        style={{ width: clamp01(value) * 100 + '%' }} />
+    </div>
+  );
+};
