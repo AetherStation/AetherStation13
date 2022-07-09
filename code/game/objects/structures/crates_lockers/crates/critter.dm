@@ -67,13 +67,14 @@
 	close_sound_volume = 30
 	material_drop = /obj/item/stack/tile/iron
 	material_drop_amount = 6
+	//can be used as makeshift spacecraft
 	contents_pressure_protection = 1
 	contents_thermal_insulation = 1
 	divable = FALSE
 	mob_storage_capacity = 1
 	horizontal = TRUE
+	//cool the mob each process of this much
 	var/temperature = -25
-
 
 /obj/structure/closet/crate/critter/cryo/update_overlays()
 	. = ..()
@@ -100,7 +101,6 @@
 /obj/structure/closet/crate/critter/cryo/close(mob/user, list/modifiers)
 	. = ..()
 	START_PROCESSING(SSobj, src)
-
 
 /obj/structure/closet/crate/critter/cryo/maint
 	name = "abbandoned cryostasis sample crate"
