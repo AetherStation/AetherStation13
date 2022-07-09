@@ -1,6 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
+set +u
 MAP=$1
 
 echo Testing $MAP
