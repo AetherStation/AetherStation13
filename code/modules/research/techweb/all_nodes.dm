@@ -271,6 +271,7 @@
 		"soda_dispenser",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/adv_biotech
 	id = "adv_biotech"
@@ -291,6 +292,7 @@
 		"smoke_machine",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/xenoorgan_biotech
 	id = "xenoorgan_bio"
@@ -304,6 +306,7 @@
 		"limbdesign_plasmaman",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 4500)
+	channel_tag = list(RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/bio_process
 	id = "bio_process"
@@ -324,6 +327,7 @@
 		"smartfridge",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SERVICE)
 
 /////////////////////////Advanced Surgery/////////////////////////
 
@@ -337,7 +341,7 @@
 		"surgery_heal_burn_upgrade",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
-
+	channel_tag = list(RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/adv_surgery
 	id = "adv_surgery"
@@ -352,6 +356,7 @@
 		"surgery_wing_reconstruction",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	channel_tag = list(RADIO_CHANNEL_MEDICAL,RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/exp_surgery
 	id = "exp_surgery"
@@ -372,6 +377,7 @@
 		"surgery_viral_bond",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	channel_tag = list(RADIO_CHANNEL_MEDICAL,RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/alien_surgery
 	id = "alien_surgery"
@@ -384,6 +390,7 @@
 		"surgery_zombie",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	channel_tag = list(RADIO_CHANNEL_MEDICAL,RADIO_CHANNEL_SCIENCE)
 
 /////////////////////////data theory tech/////////////////////////
 
@@ -397,7 +404,7 @@
 		"bounty_pad_control",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_SUPPLY)
 
 /////////////////////////engineering tech/////////////////////////
 
@@ -473,6 +480,7 @@
 		"weldingmask",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/anomaly
 	id = "anomaly_research"
@@ -484,6 +492,7 @@
 		"reactive_armour",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/high_efficiency
 	id = "high_efficiency"
@@ -495,6 +504,7 @@
 		"super_matter_bin",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/adv_power
 	id = "adv_power"
@@ -515,6 +525,7 @@
 		"mrspacman",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /////////////////////////Bluespace tech/////////////////////////
 /datum/techweb_node/bluespace_basic //Bluespace-memery
@@ -529,6 +540,7 @@
 		"xenobioconsole",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/bluespace_travel
 	id = "bluespace_travel"
@@ -545,6 +557,7 @@
 		"teleconsole",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/micro_bluespace
 	id = "micro_bluespace"
@@ -561,6 +574,7 @@
 		"wormholeprojector",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/advanced_bluespace
 	id = "bluespace_storage"
@@ -571,6 +585,7 @@
 		"bag_holding",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/practical_bluespace
 	id = "practical_bluespace"
@@ -588,6 +603,7 @@
 		"roastingstick",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING,RADIO_CHANNEL_SUPPLY,RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/bluespace_power
 	id = "bluespace_power"
@@ -599,6 +615,7 @@
 		"quadratic_capacitor",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/regulated_bluespace
 	id = "regulated_bluespace"
@@ -609,6 +626,7 @@
 		"spaceship_navigation_beacon",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_COMMON)
 
 /datum/techweb_node/unregulated_bluespace
 	id = "unregulated_bluespace"
@@ -619,6 +637,7 @@
 		"desynchronizer",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 
 /////////////////////////plasma tech/////////////////////////
@@ -631,6 +650,7 @@
 		"mech_generator",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_SUPPLY)
 
 /datum/techweb_node/adv_plasma
 	id = "adv_plasma"
@@ -641,6 +661,7 @@
 		"mech_plasma_cutter",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_SUPPLY)
 
 /////////////////////////integrated circuits tech/////////////////////////
 
@@ -659,6 +680,7 @@
 		"scanner_shell",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/movable_shells_tech
 	id = "movable_shells"
@@ -671,6 +693,7 @@
 		"drone_shell",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/server_shell_tech
 	id = "server_shell"
@@ -681,6 +704,7 @@
 		"server_shell",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /////////////////////////robotics tech/////////////////////////
 /datum/techweb_node/robotics
@@ -692,6 +716,7 @@
 		"paicard",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/adv_robotics
 	id = "adv_robotics"
@@ -702,6 +727,7 @@
 		"mmi_posi",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/exodrone_tech
 	id = "exodrone"
@@ -715,6 +741,7 @@
 		"exoscanner_console",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SUPPLY)
 
 /datum/techweb_node/dex_robotics
 	id = "dex_robotics"
@@ -725,6 +752,7 @@
 		"maint_drone",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SUPPLY)
 
 /datum/techweb_node/neural_programming
 	id = "neural_programming"
@@ -735,6 +763,7 @@
 		"skill_station",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/cyborg_upg_util
 	id = "cyborg_upg_util"
@@ -751,6 +780,7 @@
 		"borg_upgrade_trashofholding",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/cyborg_upg_util/New()
 	. = ..()
@@ -770,6 +800,7 @@
 		"borg_upgrade_rped",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/cyborg_upg_med
 	id = "cyborg_upg_med"
@@ -785,6 +816,7 @@
 		"borg_upgrade_surgicalprocessor",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/ai
 	id = "ai"
@@ -816,6 +848,7 @@
 		"tyrant_module",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING,RADIO_CHANNEL_AI_PRIVATE)
 
 /////////////////////////EMP tech/////////////////////////
 /datum/techweb_node/emp_basic //EMP tech for some reason
@@ -834,6 +867,7 @@
 		"vendatray",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/emp_adv
 	id = "emp_adv"
@@ -844,6 +878,7 @@
 		"ultra_micro_laser",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/emp_super
 	id = "emp_super"
@@ -854,6 +889,7 @@
 		"quadultra_micro_laser",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /////////////////////////Clown tech/////////////////////////
 /datum/techweb_node/clown
@@ -881,6 +917,7 @@
 		"mech_punching_face",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_SERVICE)
 
 ////////////////////////Computer tech////////////////////////
 /datum/techweb_node/comptech
@@ -900,6 +937,7 @@
 		"seccamera",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/computer_hardware_basic //Modular computers are shitty and nearly useless so until someone makes them actually useful this can be easy to get.
 	id = "computer_hardware_basic"
@@ -936,6 +974,7 @@
 		"ssd_small",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)  //they are really shitty
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/computer_board_gaming
 	id = "computer_board_gaming"
@@ -948,6 +987,7 @@
 		"slotmachine",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_SERVICE)
 
 /datum/techweb_node/comp_recordkeeping
 	id = "comp_recordkeeping"
@@ -963,6 +1003,7 @@
 		"vendor",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/telecomms
 	id = "telecomms"
@@ -970,6 +1011,7 @@
 	description = "Subspace transmission technology for near-instant communications devices."
 	prereq_ids = list("comptech", "bluespace_basic")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 	design_ids = list(
 		"comm_monitor",
 		"comm_server",
@@ -1003,6 +1045,7 @@
 		"security_hud",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_MEDICAL,RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/nvg_tech
 	id = "NVGtech"
@@ -1017,6 +1060,7 @@
 		"security_hud_night",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING,RADIO_CHANNEL_SECURITY,RADIO_CHANNEL_SUPPLY)
 
 ////////////////////////Medical////////////////////////
 /datum/techweb_node/genetics
@@ -1030,6 +1074,7 @@
 		"scan_console",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/cryotech
 	id = "cryotech"
@@ -1043,6 +1088,7 @@
 		"stasis",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
+	channel_tag = list(RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/subdermal_implants
 	id = "subdermal_implants"
@@ -1058,6 +1104,7 @@
 		"locator",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/cyber_organs
 	id = "cyber_organs"
@@ -1073,6 +1120,7 @@
 		"cybernetic_stomach_tier2",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/cyber_organs_upgraded
 	id = "cyber_organs_upgraded"
@@ -1087,6 +1135,7 @@
 		"cybernetic_stomach_tier3",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/cyber_implants
 	id = "cyber_implants"
@@ -1103,6 +1152,7 @@
 		"ci-welding",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_MEDICAL,RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/adv_cyber_implants
 	id = "adv_cyber_implants"
@@ -1116,6 +1166,7 @@
 		"ci-toolset",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/combat_cyber_implants
 	id = "combat_cyber_implants"
@@ -1130,6 +1181,7 @@
 		"ci-xray",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/ntlink_low
 	id = "ntlink_low"
@@ -1138,6 +1190,7 @@
 	prereq_ids = list("adv_biotech","adv_biotech", "datatheory" )
 	design_ids = list("ci-nt_low")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/ntlink_high
 	id = "ntlink_high"
@@ -1146,6 +1199,7 @@
 	prereq_ids = list("ntlink_low", "adv_cyber_implants","high_efficiency")
 	design_ids = list("ci-nt_high")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_MEDICAL)
 
 
 
@@ -1169,6 +1223,7 @@
 		"triggermod",
 	)//e a r l y    g a  m e)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SUPPLY)
 
 /datum/techweb_node/adv_mining
 	id = "adv_mining"
@@ -1182,6 +1237,7 @@
 		"plasmacutter_adv",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SUPPLY)
 
 /datum/techweb_node/janitor
 	id = "janitor"
@@ -1200,6 +1256,7 @@
 		"spraybottle",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SERVICE)
 
 /datum/techweb_node/botany
 	id = "botany"
@@ -1214,6 +1271,7 @@
 		"seed_extractor",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SERVICE)
 
 /datum/techweb_node/exp_tools
 	id = "exp_tools"
@@ -1231,6 +1289,7 @@
 		"wirebrush_adv",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 /datum/techweb_node/sec_basic
 	id = "sec_basic"
 	display_name = "Basic Security Equipment"
@@ -1244,6 +1303,7 @@
 		"zipties",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/rcd_upgrade
 	id = "rcd_upgrade"
@@ -1257,6 +1317,7 @@
 		"rpd_upgrade_unwrench",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/adv_rcd_upgrade
 	id = "adv_rcd_upgrade"
@@ -1268,6 +1329,7 @@
 		"rcd_upgrade",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	channel_tag = list(RADIO_CHANNEL_ENGINEERING)
 
 /////////////////////////weaponry tech/////////////////////////
 /datum/techweb_node/weaponry
@@ -1280,6 +1342,7 @@
 		"tele_shield",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/adv_weaponry
 	id = "adv_weaponry"
@@ -1290,6 +1353,7 @@
 		"pin_loyalty",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/electric_weapons
 	id = "electronic_weapons"
@@ -1301,6 +1365,7 @@
 		"stunrevolver",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/radioactive_weapons
 	id = "radioactive_weapons"
@@ -1311,6 +1376,7 @@
 		"nuclear_gun",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/beam_weapons
 	id = "beam_weapons"
@@ -1322,6 +1388,7 @@
 		"xray_laser",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/adv_beam_weapons
 	id = "adv_beam_weapons"
@@ -1332,6 +1399,7 @@
 		"beamrifle",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/explosive_weapons
 	id = "explosive_weapons"
@@ -1344,6 +1412,7 @@
 		"pyro_Grenade",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/ballistic_weapons
 	id = "ballistic_weapons"
@@ -1356,6 +1425,7 @@
 		"mag_oldsmg_ic",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/exotic_ammo
 	id = "exotic_ammo"
@@ -1368,6 +1438,7 @@
 		"techshotshell",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/gravity_gun
 	id = "gravity_gun"
@@ -1379,6 +1450,7 @@
 		"mech_gravcatapult",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 ////////////////////////mech technology////////////////////////
 /datum/techweb_node/adv_mecha
@@ -1390,6 +1462,7 @@
 		"mech_repair_droid",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/odysseus
 	id = "mecha_odysseus"
@@ -1408,6 +1481,7 @@
 		"odysseus_torso",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/clarke
 	id = "mecha_clarke"
@@ -1424,6 +1498,7 @@
 		"clarke_torso",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/gygax
 	id = "mech_gygax"
@@ -1444,6 +1519,7 @@
 		"gygax_torso",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/durand
 	id = "mech_durand"
@@ -1464,6 +1540,7 @@
 		"durand_torso",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/phazon
 	id = "mecha_phazon"
@@ -1484,6 +1561,7 @@
 		"phazon_torso",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/savannah_ivanov
 	id = "mecha_savannah_ivanov"
@@ -1504,6 +1582,7 @@
 		"savannah_ivanov_torso",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/adv_mecha_tools
 	id = "adv_mecha_tools"
@@ -1515,6 +1594,7 @@
 		"mech_thrusters",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/med_mech_tools
 	id = "med_mech_tools"
@@ -1527,6 +1607,7 @@
 		"mech_syringe_gun",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_MEDICAL)
 
 /datum/techweb_node/mech_modules
 	id = "adv_mecha_modules"
@@ -1540,6 +1621,7 @@
 		"mech_proj_armor",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_scattershot
 	id = "mecha_tools"
@@ -1551,6 +1633,7 @@
 		"mech_scattershot_ammo",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_carbine
 	id = "mech_carbine"
@@ -1562,6 +1645,7 @@
 		"mech_carbine_ammo",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_ion
 	id = "mmech_ion"
@@ -1572,6 +1656,7 @@
 		"mech_ion",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_tesla
 	id = "mech_tesla"
@@ -1582,6 +1667,7 @@
 		"mech_tesla",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_laser
 	id = "mech_laser"
@@ -1592,6 +1678,7 @@
 		"mech_laser",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_laser_heavy
 	id = "mech_laser_heavy"
@@ -1602,6 +1689,7 @@
 		"mech_laser_heavy",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_disabler
 	id = "mech_disabler"
@@ -1612,6 +1700,7 @@
 		"mech_disabler",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_grenade_launcher
 	id = "mech_grenade_launcher"
@@ -1623,6 +1712,7 @@
 		"mech_grenade_launcher_ammo",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_missile_rack
 	id = "mech_missile_rack"
@@ -1634,6 +1724,7 @@
 		"mech_missile_rack_ammo",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/clusterbang_launcher
 	id = "clusterbang_launcher"
@@ -1645,6 +1736,7 @@
 		"clusterbang_launcher_ammo",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_teleporter
 	id = "mech_teleporter"
@@ -1655,6 +1747,7 @@
 		"mech_teleporter",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_wormhole_gen
 	id = "mech_wormhole_gen"
@@ -1665,6 +1758,7 @@
 		"mech_wormhole_gen",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_lmg
 	id = "mech_lmg"
@@ -1676,6 +1770,7 @@
 		"mech_lmg_ammo",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_diamond_drill
 	id = "mech_diamond_drill"
@@ -1686,6 +1781,7 @@
 		"mech_diamond_drill",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /////////////////////////Nanites/////////////////////////
 /datum/techweb_node/nanite_base
@@ -1714,6 +1810,7 @@
 		"sensor_nanite_volume",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/nanite_smart
 	id = "nanite_smart"
@@ -1729,6 +1826,7 @@
 		"voice_nanites",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500, TECHWEB_POINT_TYPE_NANITES = 500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/nanite_mesh
 	id = "nanite_mesh"
@@ -1746,6 +1844,7 @@
 		"temperature_nanites",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500, TECHWEB_POINT_TYPE_NANITES = 500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/nanite_bio
 	id = "nanite_bio"
@@ -1765,6 +1864,7 @@
 		"sensor_species_nanites",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 500, TECHWEB_POINT_TYPE_NANITES = 500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/nanite_neural
 	id = "nanite_neural"
@@ -1781,6 +1881,7 @@
 		"stun_nanites",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000, TECHWEB_POINT_TYPE_NANITES = 1000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/nanite_synaptic
 	id = "nanite_synaptic"
@@ -1797,6 +1898,7 @@
 		"speech_nanites",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000, TECHWEB_POINT_TYPE_NANITES = 1000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/nanite_harmonic
 	id = "nanite_harmonic"
@@ -1812,6 +1914,7 @@
 		"regenerative_plus_nanites",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000, TECHWEB_POINT_TYPE_NANITES = 3000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/nanite_combat
 	id = "nanite_military"
@@ -1826,6 +1929,7 @@
 		"viral_nanites",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500, TECHWEB_POINT_TYPE_NANITES = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/nanite_hazard
 	id = "nanite_hazard"
@@ -1838,6 +1942,7 @@
 		"spreading_nanites",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3000, TECHWEB_POINT_TYPE_NANITES = 4000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/nanite_replication_protocols
 	id = "nanite_replication_protocols"
@@ -1851,6 +1956,7 @@
 		"pyramid_nanites",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000, TECHWEB_POINT_TYPE_NANITES = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 	hidden = TRUE
 	experimental = TRUE
 
@@ -1866,6 +1972,7 @@
 		"zip_nanites",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000, TECHWEB_POINT_TYPE_NANITES = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 ////////////////////////Alien technology////////////////////////
 /datum/techweb_node/alientech //AYYYYYYYYLMAOO tech
@@ -1896,6 +2003,7 @@
 		"alienalloy",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 5000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 	hidden = TRUE
 
 /datum/techweb_node/alientech/on_research() //Unlocks the Zeta shuttle for purchase
@@ -1936,6 +2044,7 @@
 	)
 
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 	hidden = TRUE
 
 /datum/techweb_node/alien_engi
@@ -1967,6 +2076,7 @@
 	)
 
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 	hidden = TRUE
 
 /datum/techweb_node/syndicate_basic
@@ -1986,6 +2096,7 @@
 		"suppressor",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_SECURITY)
 	hidden = TRUE
 
 /datum/techweb_node/syndicate_basic/New() //Crappy way of making syndicate gear decon supported until there's another way.
@@ -2008,6 +2119,7 @@
 		"rld_mini",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_COMMON)
 	hidden = TRUE
 	experimental = TRUE
 
@@ -2021,6 +2133,7 @@
 		"rolling_table",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_COMMON)
 	hidden = TRUE
 	experimental = TRUE
 
@@ -2034,6 +2147,7 @@
 		"lava_rods",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
 	hidden = TRUE
 	experimental = TRUE
 
@@ -2047,6 +2161,7 @@
 		"stun_boomerang",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 	hidden = TRUE
 	experimental = TRUE
 
@@ -2060,6 +2175,7 @@
 		"hypnochair",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 3500)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 	hidden = TRUE
 	experimental = TRUE
 
@@ -2072,6 +2188,7 @@
 		"super_sticky_tape",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_COMMON)
 	hidden = TRUE
 	experimental = TRUE
 
@@ -2085,6 +2202,7 @@
 		"tackle_rocket",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+	channel_tag = list(RADIO_CHANNEL_SECURITY)
 	hidden = TRUE
 	experimental = TRUE
 
