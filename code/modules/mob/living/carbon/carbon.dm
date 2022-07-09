@@ -819,6 +819,10 @@
 	update_inv_handcuffed()
 	update_hud_handcuffed()
 
+/mob/living/carbon/proc/remove_wounds()
+	for(var/thing in all_wounds)
+		var/datum/wound/W = thing
+		W.remove_wound()
 
 /mob/living/carbon/fully_heal(admin_revive = FALSE)
 	if(reagents)
@@ -833,9 +837,7 @@
 		var/datum/disease/D = thing
 		if(D.severity != DISEASE_SEVERITY_POSITIVE)
 			D.cure(FALSE)
-	for(var/thing in all_wounds)
-		var/datum/wound/W = thing
-		W.remove_wound()
+	remove_wounds()
 	if(admin_revive)
 		suiciding = FALSE
 		regenerate_limbs()
