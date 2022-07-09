@@ -36,6 +36,9 @@
 	var/list/required_experiments = list()
 	/// If completed, these experiments give a specific point amount discount to the node.area
 	var/list/discount_experiments = list()
+	/// Departament channels, segregate nodes to their respective department channels
+	var/list/channel_tag
+
 
 /datum/techweb_node/error_node
 	id = "ERROR"
@@ -122,3 +125,7 @@
 
 /datum/techweb_node/proc/on_research() //new proc, not currently in file
 	return
+
+/datum/techweb_node/proc/announce_node(obj/machinery/computer/rdconsole/console)
+	for(var/channel_check in channel_tag)
+		console.console_radio.talk_into(console, "[display_name] has been researched!", channel_check)

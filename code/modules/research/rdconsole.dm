@@ -35,6 +35,8 @@ Nothing else in the console has ID requirements.
 	var/id_cache = list()
 	/// Sequence var for the id cache
 	var/id_cache_seq = 1
+	/// Console's radio, used to announce research
+	var/obj/item/radio/console_radio
 
 /proc/CallMaterialName(ID)
 	if (istype(ID, /datum/material))
@@ -49,6 +51,10 @@ Nothing else in the console has ID requirements.
 	. = ..()
 	stored_research = SSresearch.science_tech
 	stored_research.consoles_accessing[src] = TRUE
+	console_radio = new(src)
+	console_radio.keyslot = new /obj/item/encryptionkey/ai
+	console_radio.listening = FALSE
+	console_radio.recalculateChannels()
 
 /obj/machinery/computer/rdconsole/Destroy()
 	if(stored_research)
@@ -101,6 +107,7 @@ Nothing else in the console has ID requirements.
 		if(stored_research == SSresearch.science_tech)
 			SSblackbox.record_feedback("associative", "science_techweb_unlock", 1, list("id" = "[id]", "name" = TN.display_name, "price" = "[json_encode(price)]", "time" = SQLtime()))
 		if(stored_research.research_node_id(id))
+			TN.announce_node(src)
 			say("Successfully researched [TN.display_name].")
 			var/logname = "Unknown"
 			if(isAI(user))
