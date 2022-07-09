@@ -70,8 +70,8 @@ const DnaConsoleCommands = (props, context) => {
 export const DnaConsole = (props, context) => {
   const { data, act } = useBackend(context);
   const {
-    isPulsing,
-    timeToPulse,
+    isPulsingRads,
+    radPulseSeconds,
     subjectUNI,
     subjectUF,
   } = data;
@@ -81,7 +81,7 @@ export const DnaConsole = (props, context) => {
       title="DNA Console"
       width={539}
       height={710}>
-      {!!isPulsing && (
+      {!!isPulsingRads && (
         <Dimmer
           fontSize="14px"
           textAlign="center">
@@ -89,9 +89,9 @@ export const DnaConsole = (props, context) => {
             mr={1}
             name="spinner"
             spin />
-          Pulse in progress...
+          Radiation pulse in progress...
           <Box mt={1} />
-          {timeToPulse}s
+          {radPulseSeconds}s
         </Dimmer>
       )}
       <Window.Content scrollable>
