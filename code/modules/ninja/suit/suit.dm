@@ -84,8 +84,10 @@
 	cell.charge = 9000
 	cell.name = "black power cell"
 	cell.icon_state = "bscell"
+	START_PROCESSING(SSobj, src)
 
 /obj/item/clothing/suit/space/space_ninja/Destroy()
+	STOP_PROCESSING(SSobj, src)
 	QDEL_NULL(spark_system)
 	QDEL_NULL(cell)
 	return ..()
