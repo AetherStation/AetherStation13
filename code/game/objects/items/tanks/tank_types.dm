@@ -41,13 +41,6 @@
 /obj/item/tank/internals/oxygen/empty/populate_gas()
 	return
 
-/obj/item/tank/internals/oxygen/cold
-	desc = "A tank of cold oxygen, this one is light blue."
-
-/obj/item/tank/internals/oxygen/cold/populate_gas()
-	air_contents.assert_gas(/datum/gas/oxygen)
-	air_contents.gases[/datum/gas/oxygen][MOLES] = (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*150)
-
 /*
  * Anesthetic
  */
