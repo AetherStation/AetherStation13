@@ -2093,7 +2093,7 @@
 		"suppressor",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_SECURITY)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE, RADIO_CHANNEL_SECURITY, RADIO_CHANNEL_AI_PRIVATE, RADIO_CHANNEL_MEDICAL)
 	hidden = TRUE
 
 /datum/techweb_node/syndicate_basic/New() //Crappy way of making syndicate gear decon supported until there's another way.
