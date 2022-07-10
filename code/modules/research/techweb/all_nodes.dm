@@ -984,7 +984,7 @@
 		"slotmachine",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 1000)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_SERVICE)
+	channel_tag = list(RADIO_CHANNEL_SERVICE)
 
 /datum/techweb_node/comp_recordkeeping
 	id = "comp_recordkeeping"
