@@ -1,3 +1,18 @@
+#define flagC 1 // flag Carry
+#define flagZ 2 // flag Zero
+#define flagI 4 // flag Interrupt
+#define flagD 8 // flag Decimal
+#define flagB 16 // flag Break
+// ?
+#define flagV 64 // flag oVerflow
+#define flagN 128 // flag Negative (sign)
+
+#define clearflag6502(flag) status &= (~flag)
+#define setflag6502(flag) status |= flag
+
+#define read6502(address) (memory_map[(address >> 8) + 1]?.read(address))
+#define write6502(address, value) (memory_map[(address >> 8) + 1]?.write(address, value & 0xFF))
+
 #define imm 0
 #define rel 1
 #define zpg 2
@@ -50,21 +65,20 @@
 /datum/mos6502/New()
 	. = ..()
 	reset()
-	var/datum/mos6502_memory_map/memory/M = new(0, 16)
-	M.write(0, 0xC8)
-	M.write(1, 0x98)
-	M.write(2, 0x48)
-	M.write(3, 0x4C)
-	M.write(4, 0x00)
-	M.write(5, 0x00)
-	world.log << M.memory
-	add_memory_map(M)
 
-/datum/mos6502/proc/add_memory_map(datum/mos6502_memory_map/M)
-	for (var/i in (M.page_start + 1) to (M.page_start + M.page_count))
+/datum/mos6502/proc/add_memory_map(datum/mos6502_memory_map/M, page_start)
+	M.page_start = page_start // used in removing.
+	M.start_address = page_start * 256
+	for (var/i in (page_start + 1) to (page_start + M.page_count))
 		if (memory_map[i])
 			CRASH("Attempted to add memory map to used page.")
 		memory_map[i] = M
+
+/datum/mos6502/proc/remove_memory_map(datum/mos6502_memory_map/M)
+	for (var/i in (M.page_start + 1) to (M.page_start + M.page_count))
+		if (!memory_map[i])
+			CRASH("Attempted to remove memory map not added.")
+		memory_map[i] = null
 
 /datum/mos6502/proc/reset()
 	PC = read6502(0xFFFC) | read6502(0xFFFD) << 8
@@ -76,23 +90,19 @@
 	irq = nmi = 0
 
 /datum/mos6502/proc/irq() // Interrupt Request
-	if (!(status & fI))
+	if (!(status & flagI))
 		push16(PC)
 		push8(status)
-		setflag(fI)
+		setflag6502(flagI)
 		PC = read6502(0xFFFE) | (read6502(0xFFFF) << 8)
 
 /datum/mos6502/proc/nmi() // Non-Maskable Interrupt
 	push16(PC)
 	push8(status)
-	setflag(fI)
+	setflag6502(flagI)
 	PC = read6502(0xFFFA) | (read6502(0xFFFB) << 8)
 
 /datum/mos6502/proc/execute()
-	if (nmi)
-		nmi()
-	if (irq)
-		irq()
 	opcode = read6502(PC) + 1 // BYOND list index starts from 1 so that is why the + 1
 	PC++
 	switch (addressing[opcode])
@@ -155,7 +165,7 @@
 /datum/mos6502/proc/push16(value)
 	write6502(STACK_BASE + SP, (value >> 8) & 0xFF)
 	write6502(STACK_BASE + ((SP - 1) & 0xFF), value & 0xFF)
-	SP -= 2
+	SP = WRAP(SP - 2, 0, 256)
 
 /datum/mos6502/proc/pop8()
 	if (SP == 0xFF) SP = 0
