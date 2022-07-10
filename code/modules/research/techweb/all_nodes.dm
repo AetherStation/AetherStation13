@@ -845,7 +845,7 @@
 		"tyrant_module",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING,RADIO_CHANNEL_AI_PRIVATE)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_AI_PRIVATE)
 
 /////////////////////////EMP tech/////////////////////////
 /datum/techweb_node/emp_basic //EMP tech for some reason
@@ -2128,7 +2128,7 @@
 		"rolling_table",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_COMMON)
+	channel_tag = list(RADIO_CHANNEL_SERVICE)
 	hidden = TRUE
 	experimental = TRUE
 
@@ -2183,7 +2183,7 @@
 		"super_sticky_tape",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_COMMON)
+	channel_tag = list(RADIO_CHANNEL_SERVICE)
 	hidden = TRUE
 	experimental = TRUE
 
