@@ -1008,7 +1008,7 @@
 	description = "Subspace transmission technology for near-instant communications devices."
 	prereq_ids = list("comptech", "bluespace_basic")
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
+	channel_tag = list(RADIO_CHANNEL_ENGINEERING)
 	design_ids = list(
 		"comm_monitor",
 		"comm_server",
