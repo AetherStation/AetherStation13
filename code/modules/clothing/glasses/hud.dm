@@ -130,7 +130,7 @@
 		MA.icon_state = "squestion"
 		holder.appearance = MA
 		holder.loc = get_turf(A)
-	else // else if would be slower here, CTRL_CLICK below.
+	else // CTRL_CLICK
 		MA.icon_state = "salert"
 		holder.appearance = MA
 		holder.loc = get_turf(A)
