@@ -1408,7 +1408,7 @@
 		"pyro_Grenade",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_SECURITY)
+	channel_tag = list(RADIO_CHANNEL_MEDICAL, RADIO_CHANNEL_SECURITY)
 
 /datum/techweb_node/ballistic_weapons
 	id = "ballistic_weapons"
