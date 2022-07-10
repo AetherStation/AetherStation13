@@ -437,9 +437,6 @@
 	for(var/i in carbies.all_active_wounds)
 		var/datum/wound/iter_wound = i
 		iter_wound.on_synthflesh(reac_volume)
-	for(var/i in carbies.all_inactive_wounds)
-		var/datum/wound/iter_wound = i
-		iter_wound.on_synthflesh(reac_volume)
 	carbies.adjustToxLoss((harmies+burnies)*(0.75)) //0.5 - 0.75
 	if(show_message)
 		to_chat(carbies, span_danger("You feel your burns and bruises healing! It stings like hell!"))
