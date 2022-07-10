@@ -30850,15 +30850,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/disposal)
-"ibM" = (
-/obj/structure/closet,
-/obj/item/stack/sheet/metal{
-	amount = 34
-	},
-/obj/item/extinguisher/mini,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/maintenance/port/aft)
 "icp" = (
 /obj/machinery/light/directional/south,
 /obj/machinery/aug_manipulator,
@@ -48629,6 +48620,13 @@
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/iron/dark,
 /area/security/office)
+"nWf" = (
+/obj/structure/closet,
+/obj/item/extinguisher/mini,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/item/stack/sheet/iron/twenty,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "nWn" = (
 /obj/structure/cable,
 /obj/effect/landmark/start/hangover,
@@ -56665,16 +56663,6 @@
 	},
 /turf/open/floor/engine/air,
 /area/engineering/atmos)
-"qGi" = (
-/obj/effect/turf_decal/tile/green{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/green,
-/obj/machinery/vending/snack/random,
-/turf/open/floor/iron/white/side{
-	dir = 8
-	},
-/area/medical/break_room)
 "qGq" = (
 /obj/machinery/atmospherics/pipe/smart/simple/purple/visible{
 	dir = 4
@@ -57162,6 +57150,16 @@
 /obj/machinery/light_switch/directional/north,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/service/kitchen/coldroom)
+"qPD" = (
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green,
+/obj/effect/spawner/randomsnackvend,
+/turf/open/floor/iron/white/side{
+	dir = 8
+	},
+/area/medical/break_room)
 "qPM" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -99921,7 +99919,7 @@ hQT
 dux
 slf
 dux
-ibM
+nWf
 cdi
 dux
 eKh
@@ -102507,7 +102505,7 @@ bPS
 bPS
 pqM
 jDl
-qGi
+qPD
 pzF
 grl
 aOU
