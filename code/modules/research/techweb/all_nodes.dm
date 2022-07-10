@@ -1446,7 +1446,6 @@
 		"mech_gravcatapult",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 ////////////////////////mech technology////////////////////////
 /datum/techweb_node/adv_mecha
