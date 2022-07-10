@@ -626,7 +626,6 @@
 		"spaceship_navigation_beacon",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_COMMON)
 
 /datum/techweb_node/unregulated_bluespace
 	id = "unregulated_bluespace"
