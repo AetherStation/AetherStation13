@@ -797,7 +797,7 @@
 		"borg_upgrade_rped",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING,RADIO_CHANNEL_AI_PRIVATE)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_AI_PRIVATE)
 
 /datum/techweb_node/cyborg_upg_med
 	id = "cyborg_upg_med"
