@@ -2041,7 +2041,7 @@
 	)
 
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE, RADIO_CHANNEL_MEDICAL)
 	hidden = TRUE
 
 /datum/techweb_node/alien_engi
