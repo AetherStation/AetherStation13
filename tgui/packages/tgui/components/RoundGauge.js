@@ -23,7 +23,6 @@ export const RoundGauge = props => {
     maxValue = 1,
     ranges,
     alertAfter,
-    alertBefore,
     format,
     size = 1,
     className,
@@ -47,25 +46,10 @@ export const RoundGauge = props => {
     });
   }
 
-  const shouldShowAlert = () => {
-    // If both after and before alert props are set, attempt to interpret both
-    // in a helpful way.
-    if (alertAfter && alertBefore && alertAfter < alertBefore) {
-      // If alertAfter is before alertBefore, only display an alert if
-      // we're between them.
-      if (alertAfter < value && alertBefore > value) {
-        return true;
-      }
-    } else if (alertAfter < value || alertBefore > value) {
-      // Otherwise, we have distint ranges, or only one or neither are set.
-      // Either way, being on the active side of either is sufficient.
-      return true;
-    }
-    return false;
-  };
-
-  const alertColor = shouldShowAlert()
-    && keyOfMatchingRange(clampedValue, scaledRanges);
+  let alertColor = null;
+  if (alertAfter < value) {
+    alertColor = keyOfMatchingRange(clampedValue, scaledRanges);
+  }
 
   return (
     <Box inline>
@@ -84,7 +68,7 @@ export const RoundGauge = props => {
         })}>
         <svg
           viewBox="0 0 100 50">
-          {(alertAfter || alertBefore) && (
+          {alertAfter && (
             <g className={classes([
               'RoundGauge__alert',
               alertColor ? `active RoundGauge__alert--${alertColor}` : '',

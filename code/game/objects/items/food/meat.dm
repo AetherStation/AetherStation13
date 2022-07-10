@@ -644,6 +644,15 @@
 /obj/item/food/meat/slab/human/MakeProcessable()
 	AddElement(/datum/element/processable, TOOL_KNIFE,  /obj/item/food/meat/rawcutlet/plain/human, 3, 30)
 
+/obj/item/food/meat/slab/pig
+	name = "pig meat"
+	icon_state = "pig_meat"
+	tastes = list("pig" = 1, "haram" = 3)
+	foodtypes = MEAT | RAW | GROSS
+
+/obj/item/food/meat/slab/pig/MakeGrillable()
+	AddComponent(/datum/component/grillable, /obj/item/food/meat/steak/plain/pig, rand(30 SECONDS, 90 SECONDS), TRUE, TRUE)
+
 /obj/item/food/meat/slab/human/mutant/slime
 	icon_state = "slimemeat"
 	desc = "Because jello wasn't offensive enough to vegans."
@@ -974,6 +983,11 @@
 
 /obj/item/food/meat/steak/plain/human
 	tastes = list("tender meat" = 1)
+	foodtypes = MEAT | GROSS
+
+/obj/item/food/meat/steak/plain/pig
+	icon_state = "pigsteak"
+	tastes = list("pig" = 1, "haram" = 3)
 	foodtypes = MEAT | GROSS
 
 ///Make sure the steak has the correct name

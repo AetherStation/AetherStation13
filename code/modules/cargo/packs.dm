@@ -2166,6 +2166,14 @@
 	contains = list(/mob/living/simple_animal/hostile/retaliate/goat)
 	crate_name = "goat crate"
 
+/datum/supply_pack/critter/pig
+	name = "Pig Crate"
+	desc = "The pig goes oink!"
+	cost = CARGO_CRATE_VALUE * 6
+	access_view = ACCESS_KITCHEN
+	contains = list(/mob/living/simple_animal/pig)
+	crate_name = "pig crate"
+
 /datum/supply_pack/critter/monkey
 	name = "Monkey Cube Crate"
 	desc = "Stop monkeying around! Contains seven monkey cubes. Just add water!"
