@@ -1,6 +1,5 @@
-import { sortBy } from 'common/collections';
+import { ProgressBar, NumberInput, Button, Section, Box, Flex } from '../components';
 import { useBackend } from '../backend';
-import { Box, Button, Dropdown, Flex, NumberInput, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
 
 export const Photocopier = (props, context) => {
@@ -9,14 +8,13 @@ export const Photocopier = (props, context) => {
     isAI,
     has_toner,
     has_item,
-    forms_exist,
   } = data;
 
   return (
     <Window
       title="Photocopier"
-      width={320}
-      height={512}>
+      width={240}
+      height={isAI ? 309 : 234}>
       <Window.Content>
         {has_toner ? (
           <Toner />
@@ -26,15 +24,6 @@ export const Photocopier = (props, context) => {
               No inserted toner cartridge.
             </Box>
           </Section>
-        )}
-        {forms_exist ? (
-          <Blanks />
-        ) : (
-          <Section title="Blanks">
-            <Box color="average">
-              No forms found. Please contact your system administrator.
-            </Box>
-          </Section>  
         )}
         {has_item ? (
           <Options />
@@ -169,59 +158,6 @@ const Options = (props, context) => {
         onClick={() => act('remove')}>
         Remove item
       </Button>
-    </Section>
-  );
-};
-
-const Blanks = (props, context) => {
-  const { act, data } = useBackend(context);
-  const {
-    blanks,
-    category,
-    has_toner,
-  } = data;
-
-  const sortedBlanks = sortBy(
-    blank => blanks.category,
-  )(blanks || []);
-
-  const categories = [];
-  for (let blank of sortedBlanks) {
-    if (!categories.includes(blank.category)) {
-      categories.push(blank.category);
-    }
-  }
-
-  const selectedCategory = category ?? categories[0];
-  const visibleBlanks = sortedBlanks.filter(blank => (
-    blank.category === selectedCategory
-  ));
-
-  return (
-    <Section title="Blanks">
-      <Dropdown
-        width="100%"
-        options={categories}
-        selected={selectedCategory}
-        onSelected={value => act("choose_category", {
-          category: value,
-        })}
-      />
-      <Box mt={0.4}>
-        {visibleBlanks.map(blank => (
-          <Button
-            key={blank.code}
-            title={blank.name}
-            disabled={!has_toner}
-            onClick={() => act("print_blank", {
-              name: blank.name,
-              info: blank.info,
-            })}
-          >
-            {blank.code}
-          </Button>
-        ))}
-      </Box>
     </Section>
   );
 };

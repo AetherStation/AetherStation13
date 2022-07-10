@@ -1,5 +1,5 @@
-import { useBackend } from '../backend';
-import { Icon, Section, Stack } from '../components';
+import { useBackend, useLocalState } from '../backend';
+import { Blink, BlockQuote, Box, Dimmer, Icon, Section, Stack } from '../components';
 import { BooleanLike } from 'common/react';
 import { Window } from '../layouts';
 
@@ -16,7 +16,7 @@ type Info = {
   objectives: Objective[];
 };
 
-export const AntagInfoBrainwashed = () => {
+export const AntagInfoBrainwashed = (props, context) => {
   return (
     <Window
       width={400}
@@ -32,7 +32,7 @@ export const AntagInfoBrainwashed = () => {
           top="42%"
           left="26%" />
         <Section fill>
-          <Stack vertical fill textAlign="center">
+          <Stack align="baseline" vertical fill>
             <Stack.Item fontFamily="Wingdings">
               Hey, no! Stop translating this!
             </Stack.Item>
@@ -42,11 +42,11 @@ export const AntagInfoBrainwashed = () => {
             <Stack.Item mt={-0.25} fontSize="20px">
               It is focusing on a single purpose...
             </Stack.Item>
-            <Stack.Item mt={3.5} grow>
+            <Stack.Item mt={1.5} grow >
               <ObjectivePrintout />
             </Stack.Item>
-            <Stack.Item fontSize="20px" textColor="#61e4b9">
-              Follow the directives at any cost!
+            <Stack.Item fontSize="20px">
+              Follow the Directives, at any cost!
             </Stack.Item>
             <Stack.Item fontFamily="Wingdings">
               You ruined my cool font effect.
@@ -58,24 +58,24 @@ export const AntagInfoBrainwashed = () => {
   );
 };
 
-const ObjectivePrintout = (_, context) => {
+const ObjectivePrintout = (props, context) => {
   const { data } = useBackend<Info>(context);
   const {
     objectives,
   } = data;
   return (
-    <Stack fill vertical>
-      <Stack.Item bold textColor="#61e4b9">
+    <Stack vertical>
+      <Stack.Item bold>
         Your current objectives:
       </Stack.Item>
-      <Stack.Item textAlign="left">
+      <Stack.Item>
         {!objectives && "None!"
         || objectives.map(objective => (
           <>
             <Stack.Item key={objective.count}>
-              {objective.count}. {objective.explanation}
+              #{objective.count}: {objective.explanation}
             </Stack.Item>
-            <Stack.Item bold textColor="red">
+            <Stack.Item textColor="red">
               This Directive must be followed.
             </Stack.Item>
           </>

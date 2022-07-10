@@ -22,9 +22,7 @@ const damageTypes = [
 ];
 
 export const OperatingComputer = (props, context) => {
-  const { act } = useBackend(context);
   const [tab, setTab] = useSharedState(context, 'tab', 1);
-
   return (
     <Window
       width={350}
@@ -40,10 +38,6 @@ export const OperatingComputer = (props, context) => {
             selected={tab === 2}
             onClick={() => setTab(2)}>
             Surgery Procedures
-          </Tabs.Tab>
-          <Tabs.Tab
-            onClick={() => act("open_experiments")}>
-            Experiments
           </Tabs.Tab>
         </Tabs>
         {tab === 1 && (

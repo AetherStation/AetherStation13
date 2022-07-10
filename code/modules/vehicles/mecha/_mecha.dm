@@ -58,7 +58,7 @@
 	///Whether the mechs maintenance protocols are on or off
 	var/construction_state = MECHA_LOCKED
 	///Contains flags for the mecha
-	var/mecha_flags = ADDING_ACCESS_POSSIBLE | CANSTRAFE | IS_ENCLOSED | HAS_LIGHTS | MMI_COMPATIBLE
+	var/mecha_flags = ADDING_ACCESS_POSSIBLE | CANSTRAFE | IS_ENCLOSED | HAS_LIGHTS
 	///Stores the DNA enzymes of a carbon so tht only they can access the mech
 	var/dna_lock
 	///Spark effects are handled by this datum
@@ -980,9 +980,6 @@
 	return TRUE
 
 /obj/vehicle/sealed/mecha/proc/mmi_move_inside(obj/item/mmi/brain_obj, mob/user)
-	if(!(mecha_flags & MMI_COMPATIBLE))
-		to_chat(user, span_warning("This mecha is not compatible with MMIs!"))
-		return FALSE
 	if(!brain_obj.brain_check(user))
 		return FALSE
 	var/mob/living/brain/brain_mob = brain_obj.brainmob
