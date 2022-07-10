@@ -934,7 +934,7 @@
 		"seccamera",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2000)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE, RADIO_CHANNEL_SERVICE, RADIO_CHANNEL_ENGINEERING)
 
 /datum/techweb_node/computer_hardware_basic //Modular computers are shitty and nearly useless so until someone makes them actually useful this can be easy to get.
 	id = "computer_hardware_basic"
