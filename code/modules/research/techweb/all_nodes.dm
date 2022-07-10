@@ -1603,7 +1603,7 @@
 		"mech_syringe_gun",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_MEDICAL)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/mech_modules
 	id = "adv_mecha_modules"
