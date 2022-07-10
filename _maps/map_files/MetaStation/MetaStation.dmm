@@ -35831,6 +35831,16 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ai_monitored/command/storage/eva)
+"jOu" = (
+/obj/effect/turf_decal/tile/green{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/green,
+/obj/effect/spawner/randomsnackvend,
+/turf/open/floor/iron/white/side{
+	dir = 8
+	},
+/area/medical/break_room)
 "jOF" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -42969,22 +42979,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/engineering/atmos)
-"miP" = (
-/obj/effect/turf_decal/trimline/blue/filled/line{
-	dir = 4
-	},
-/obj/effect/turf_decal/trimline/blue/filled/corner{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/machinery/power/apc{
-	areastring = "/area/medical/sleeper";
-	dir = 1;
-	name = "Primary Treatment Centre APC";
-	pixel_y = 23
-	},
-/turf/open/floor/iron/white,
-/area/medical/exam_room)
 "miV" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -48620,13 +48614,6 @@
 /obj/machinery/light_switch/directional/west,
 /turf/open/floor/iron/dark,
 /area/security/office)
-"nWf" = (
-/obj/structure/closet,
-/obj/item/extinguisher/mini,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/item/stack/sheet/iron/twenty,
-/turf/open/floor/plating,
-/area/maintenance/port/aft)
 "nWn" = (
 /obj/structure/cable,
 /obj/effect/landmark/start/hangover,
@@ -57150,16 +57137,6 @@
 /obj/machinery/light_switch/directional/north,
 /turf/open/floor/iron/kitchen_coldroom/freezerfloor,
 /area/service/kitchen/coldroom)
-"qPD" = (
-/obj/effect/turf_decal/tile/green{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/green,
-/obj/effect/spawner/randomsnackvend,
-/turf/open/floor/iron/white/side{
-	dir = 8
-	},
-/area/medical/break_room)
 "qPM" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -74340,6 +74317,22 @@
 	},
 /turf/open/floor/iron/dark,
 /area/security/execution/education)
+"wlf" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/blue/filled/corner{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/power/apc{
+	areastring = "/area/medical/exam_room";
+	dir = 1;
+	name = "Primary Treatment Centre APC";
+	pixel_y = 23
+	},
+/turf/open/floor/iron/white,
+/area/medical/exam_room)
 "wlz" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -76926,6 +76919,13 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating,
 /area/hallway/secondary/entry)
+"xhj" = (
+/obj/structure/closet,
+/obj/item/extinguisher/mini,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/item/stack/sheet/iron/twenty,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
 "xht" = (
 /obj/structure/table/glass,
 /obj/machinery/light/small/directional/south,
@@ -99919,7 +99919,7 @@ hQT
 dux
 slf
 dux
-nWf
+xhj
 cdi
 dux
 eKh
@@ -101724,7 +101724,7 @@ mah
 mzU
 rNr
 mah
-miP
+wlf
 dgz
 hyT
 frX
@@ -102505,7 +102505,7 @@ bPS
 bPS
 pqM
 jDl
-qPD
+jOu
 pzF
 grl
 aOU
