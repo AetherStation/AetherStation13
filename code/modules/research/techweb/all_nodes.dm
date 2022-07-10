@@ -761,7 +761,6 @@
 		"skill_station",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/cyborg_upg_util
 	id = "cyborg_upg_util"
