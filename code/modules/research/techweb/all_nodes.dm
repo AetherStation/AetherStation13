@@ -404,7 +404,7 @@
 		"bounty_pad_control",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_SUPPLY)
+	channel_tag = list(RADIO_CHANNEL_SUPPLY)
 
 /////////////////////////engineering tech/////////////////////////
 
