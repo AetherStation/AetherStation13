@@ -1591,7 +1591,7 @@
 		"mech_thrusters",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
-	channel_tag = list(RADIO_CHANNEL_SCIENCE,RADIO_CHANNEL_ENGINEERING)
+	channel_tag = list(RADIO_CHANNEL_SCIENCE)
 
 /datum/techweb_node/med_mech_tools
 	id = "med_mech_tools"
