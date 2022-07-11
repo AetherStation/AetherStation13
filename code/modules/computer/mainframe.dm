@@ -99,6 +99,53 @@
 		return
 	return ..()
 
+/obj/machinery/rom_bank_editor
+	icon = 'icons/obj/machines/mainframe.dmi'
+	var/obj/item/mainframe_rom_bank/inserted
+
+/obj/machinery/rom_bank_editor/ui_data(mob/user)
+	var/list/data = list()
+	if (inserted)
+		data["memory"] = inserted.data.memory
+	return data
+
+/obj/machinery/rom_bank_editor/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "MOS6502PageEditor")
+		ui.open()
+
+/obj/machinery/rom_bank_editor/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	if (action == "save")
+		var/M = params["data"]
+		if (length(M) != 256)
+			return FALSE
+		inserted.data.memory = params["data"]
+
+/obj/machinery/rom_bank_editor/attackby(obj/item/weapon, mob/user, params)
+	if (istype(weapon, /obj/item/mainframe_rom_bank))
+		if (inserted)
+			to_chat(user, span_notice("There already is a disk inside \the [src]."))
+			return
+		if (!user.transferItemToLoc(weapon, src))
+			return
+		inserted = weapon
+		user.visible_message(span_notice("[user] puts \the [weapon] on \the [src]."))
+		ui_interact(user)
+		return
+	return ..()
+
+/obj/machinery/rom_bank_editor/attack_hand(mob/living/user, list/modifiers)
+	. = ..()
+	if (. || !inserted)
+		return
+	user.put_in_hands(inserted)
+	user.visible_message(span_notice("[user] takes \the [inserted] from \the [src]."))
+	inserted = null
+
 /obj/item/mainframe_rom_bank
 	name = "mainframe ROM bank"
 	desc = "A read-only memory circuit board"
