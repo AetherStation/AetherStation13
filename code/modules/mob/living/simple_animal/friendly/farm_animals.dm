@@ -393,9 +393,9 @@
 	icon_gib = "pig_gib"
 	gender = MALE
 	mob_biotypes = MOB_ORGANIC | MOB_BEAST
-	speak = list("oink","squee","squeeek")
+	speak = list("oink.","squee.","squeeek.")
 	speak_emote = list("oinks","squeeks")
-	emote_hear = list("oinks")
+	emote_hear = list("oinks.")
 	emote_see = list("oinks.")
 	speak_chance = 1
 	turns_per_move = 2
@@ -411,16 +411,66 @@
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	attack_vis_effect = ATTACK_EFFECT_KICK
-	health = 250
-	maxHealth = 250
+	health = 120
+	maxHealth = 120
 	gold_core_spawnable = FRIENDLY_SPAWN
 	blood_volume = BLOOD_VOLUME_NORMAL
 	footstep_type = FOOTSTEP_MOB_SHOE
+	//var to handle berserking boolean
+	var/berserking = FALSE
+	//step delay
+	var/step_delay = 3
+	//timer reference
+	var/timerid
 
 /mob/living/simple_animal/pig/Initialize()
 	AddElement(/datum/element/pet_bonus, "oinks!")
 	make_tameable()
 	. = ..()
+
+/mob/living/simple_animal/pig/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
+	. = ..()
+	if((amount > 5) && stat == CONSCIOUS)
+		if(prob(34) && !berserking)
+			start_berserk()
+
+/mob/living/simple_animal/pig/Bump(atom/obstacle)
+	. = ..()
+	if(berserking)
+		if(iscarbon(obstacle))
+			var/mob/living/carbon/target = obstacle
+			target.Knockdown(10, ignore_canstun = TRUE)
+			return
+		if(istype(obstacle, /obj/machinery/vending))
+			var/obj/machinery/vending/target = obstacle
+			target.tilt(src)
+			return
+		if(istype(obstacle, /obj/structure/table))
+			var/obj/structure/table/T = obstacle
+			var/turf/target = get_turf(T)
+			T.deconstruct(FALSE)
+			for(var/obj/item/I in target.contents)
+				if(!I.anchored)
+					I.throw_at(get_ranged_target_turf(I, pick(GLOB.alldirs), range = 4), range = 4, speed = 3)
+
+/mob/living/simple_animal/pig/proc/start_berserk()
+	unbuckle_all_mobs()
+	berserking = TRUE
+	addtimer(CALLBACK(src, .proc/stop_berserk), rand(7,14) SECONDS)
+	timerid = addtimer(CALLBACK(src, .proc/berserk), step_delay, TIMER_STOPPABLE | TIMER_LOOP)
+	add_overlay("red_eyes")
+
+/mob/living/simple_animal/pig/proc/berserk()
+	step(src, pick(GLOB.cardinals))
+
+/mob/living/simple_animal/pig/proc/stop_berserk()
+	deltimer(timerid)
+	berserking = FALSE
+	cut_overlay("red_eyes")
+
+/mob/living/simple_animal/pig/death(gibbed)
+	stop_berserk()
+	return ..()
 
 /mob/living/simple_animal/pig/proc/make_tameable()
 	AddComponent(/datum/component/tameable, food_types = list(/obj/item/food/grown/carrot), tame_chance = 25, bonus_tame_chance = 15, after_tame = CALLBACK(src, .proc/tamed))

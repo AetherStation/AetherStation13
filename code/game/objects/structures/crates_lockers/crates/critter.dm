@@ -109,7 +109,11 @@
 								/mob/living/simple_animal/chicken,
 								/mob/living/simple_animal/pig,
 								/mob/living/simple_animal/hostile/retaliate/snake,
-								/mob/living/simple_animal/mouse) //todo make these have a chance to turn into the thing from that movie
+								/mob/living/simple_animal/mouse,
+								/mob/living/carbon/human/species/monkey,
+								/mob/living/simple_animal/pet/dog/corgi,
+								/mob/living/simple_animal/pet/cat,
+								/mob/living/simple_animal/slime,) //todo make these have a chance to turn into the thing from that movie
 
 /obj/structure/closet/crate/critter/cryo/maint/open(mob/living/user, force = FALSE)
 	. = ..()
