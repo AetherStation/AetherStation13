@@ -416,11 +416,11 @@
 	gold_core_spawnable = FRIENDLY_SPAWN
 	blood_volume = BLOOD_VOLUME_NORMAL
 	footstep_type = FOOTSTEP_MOB_SHOE
-	//var to handle berserking boolean
+	///var to handle berserking boolean
 	var/berserking = FALSE
-	//step delay
+	///step delay when running around due to proc
 	var/step_delay = 3
-	//timer reference
+	///timer reference
 	var/timerid
 
 /mob/living/simple_animal/pig/Initialize()
@@ -436,22 +436,23 @@
 
 /mob/living/simple_animal/pig/Bump(atom/obstacle)
 	. = ..()
-	if(berserking)
-		if(iscarbon(obstacle))
-			var/mob/living/carbon/target = obstacle
-			target.Knockdown(10, ignore_canstun = TRUE)
-			return
-		if(istype(obstacle, /obj/machinery/vending))
-			var/obj/machinery/vending/target = obstacle
-			target.tilt(src)
-			return
-		if(istype(obstacle, /obj/structure/table))
-			var/obj/structure/table/T = obstacle
-			var/turf/target = get_turf(T)
-			T.deconstruct(FALSE)
-			for(var/obj/item/I in target.contents)
-				if(!I.anchored)
-					I.throw_at(get_ranged_target_turf(I, pick(GLOB.alldirs), range = 4), range = 4, speed = 3)
+	if(!berserking)
+		return
+	if(iscarbon(obstacle))
+		var/mob/living/carbon/target = obstacle
+		target.Knockdown(10, ignore_canstun = TRUE)
+		return
+	if(istype(obstacle, /obj/machinery/vending))
+		var/obj/machinery/vending/target = obstacle
+		target.tilt(src)
+		return
+	if(istype(obstacle, /obj/structure/table))
+		var/obj/structure/table/T = obstacle
+		var/turf/target = get_turf(T)
+		T.deconstruct(FALSE)
+		for(var/obj/item/I in target.contents)
+			if(!I.anchored)
+				I.throw_at(get_ranged_target_turf(I, pick(GLOB.alldirs), range = 4), range = 4, speed = 3)
 
 /mob/living/simple_animal/pig/proc/start_berserk()
 	unbuckle_all_mobs()
