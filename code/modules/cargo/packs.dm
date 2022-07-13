@@ -2169,7 +2169,7 @@
 /datum/supply_pack/critter/pig
 	name = "Pig Crate"
 	desc = "The pig goes oink! High prices due to travel cost."
-	cost = CARGO_CRATE_VALUE * 10
+	cost = CARGO_CRATE_VALUE * 30
 	access_view = ACCESS_KITCHEN
 	contains = list(/mob/living/simple_animal/pig)
 	crate_name = "pig crate"
