@@ -242,7 +242,6 @@
 	L.apply_damage(stamina_loss_amt, STAMINA, BODY_ZONE_CHEST)
 
 	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
-	addtimer(CALLBACK(src, .proc/apply_stun_effect_end, L), apply_stun_delay)
 
 	if(user)
 		L.lastattacker = user.real_name
@@ -259,17 +258,6 @@
 	addtimer(TRAIT_CALLBACK_REMOVE(L, TRAIT_IWASBATONED, STATUS_EFFECT_TRAIT), attack_cooldown)
 
 	return 1
-
-/// After the initial stun period, we check to see if the target needs to have the stun applied.
-/obj/item/melee/baton/proc/apply_stun_effect_end(mob/living/target)
-	var/trait_check = HAS_TRAIT(target, TRAIT_STUNRESISTANCE) //var since we check it in out to_chat as well as determine stun duration
-	if(!target.IsKnockdown())
-		to_chat(target, span_warning("Your muscles seize, making you collapse[trait_check ? ", but your body quickly recovers..." : "!"]"))
-
-	if(trait_check)
-		target.Knockdown(stun_time * 0.1)
-	else
-		target.Knockdown(stun_time)
 
 /obj/item/melee/baton/emp_act(severity)
 	. = ..()
