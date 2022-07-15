@@ -19,8 +19,8 @@ export const MainframeTerminal = (props, context) => {
         <Section
           height={25}
           width={50}>
-          {text.map(element => {
-            return (<span key={element}>{element}<br /></span>);
+          {text.map((x, i) => {
+            return (<span key={i}>{x}<br /></span>);
           }) }
         </Section>
         <Input
