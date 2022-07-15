@@ -126,8 +126,7 @@
 	addtimer(CALLBACK(src, .proc/remove_ping, holder), 10 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 	var/mutable_appearance/MA = new /mutable_appearance()
 	MA.icon = 'icons/effects/effects.dmi'
-	MA.layer = EMISSIVE_LAYER_UNBLOCKABLE // you are wearing glasses so.
-	MA.plane = EMISSIVE_PLANE
+	MA.plane = ABOVE_LIGHTING_PLANE // you are wearing glasses so.
 	if (LAZYACCESS(modifiers, ALT_CLICK))
 		MA.icon_state = "squestion"
 		holder.appearance = MA
