@@ -115,6 +115,8 @@
 	UnregisterSignal(user, COMSIG_MOB_MIDDLECLICKON)
 
 /obj/item/clothing/glasses/hud/security/proc/create_ping(datum/source, atom/A, params)
+	SIGNAL_HANDLER
+
 	var/list/modifiers = params2list(params)
 	var/mob/living/L = source
 	if (L.stat != CONSCIOUS || (!LAZYACCESS(modifiers, ALT_CLICK) && !LAZYACCESS(modifiers, CTRL_CLICK)))
@@ -124,8 +126,8 @@
 	addtimer(CALLBACK(src, .proc/remove_ping, holder), 10 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 	var/mutable_appearance/MA = new /mutable_appearance()
 	MA.icon = 'icons/effects/effects.dmi'
-	MA.layer = ABOVE_OPEN_TURF_LAYER
-	MA.plane = 0
+	MA.layer = EMISSIVE_LAYER_UNBLOCKABLE // you are wearing glasses so.
+	MA.plane = EMISSIVE_PLANE
 	if (LAZYACCESS(modifiers, ALT_CLICK))
 		MA.icon_state = "squestion"
 		holder.appearance = MA
@@ -134,6 +136,10 @@
 		MA.icon_state = "salert"
 		holder.appearance = MA
 		holder.loc = get_turf(A)
+	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
+	for (var/mob/M as anything in H.hudusers) // only mobs can be added to hudusers.
+		if (get_dist(M, A) <= 7)
+			SEND_SOUND(M, sound('sound/machines/ping.ogg', volume = 50))
 	return COMSIG_MOB_CANCEL_CLICKON
 
 /obj/item/clothing/glasses/hud/security/proc/remove_ping(image/holder)
