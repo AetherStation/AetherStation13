@@ -311,8 +311,7 @@
 
 			if (obj_flags & EMAGGED)
 				authenticated = TRUE
-				// TODO:
-				// authorize_access = SSid_access.get_region_access_list(list(REGION_ALL_STATION))
+				authorize_access = SSid_access.accesses_by_region[REGION_ACCESS_STATION]
 				authorize_name = "Unknown"
 				to_chat(usr, span_warning("[src] lets out a quiet alarm as its login is overridden."))
 				playsound(src, 'sound/machines/terminal_alert.ogg', 25, FALSE)

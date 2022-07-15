@@ -534,7 +534,7 @@
 				open()
 			else
 				req_access = list()
-				//TODO: req_access += pick(SSid_access.get_region_access_list(list(REGION_ALL_STATION)))
+				req_access += pick(SSid_access.accesses_by_region[REGION_ACCESS_STATION])
 
 /obj/structure/closet/contents_explosion(severity, target)
 	switch(severity)
