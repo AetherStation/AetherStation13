@@ -202,18 +202,18 @@ SUBSYSTEM_DEF(id_access)
 
 	return tally
 
-/datum/controller/subsystem/id_access/proc/apply_card_access(obj/item/card/id/id, card_access, chip = FALSE, force = FALSE)
-	var/datum/card_access/C = card_access_instances[card_access]
+/datum/controller/subsystem/id_access/proc/apply_card_access(obj/item/card/id/id, card_access_path, chip = FALSE, force = FALSE)
+	var/datum/card_access/card_access = card_access_instances[card_access_path]
 	var/list/chip_access = list()
-	id.assignment = C.assignment
-	for (var/tier in C.access)
+	id.assignment = card_access.assignment
+	for (var/tier in card_access.access)
 		if (!force && id.access_tier < text2num(tier))
 			if (chip)
-				chip_access.Add(C.access[tier])
+				chip_access.Add(card_access.access[tier])
 			continue
-		id.access.Add(C.access[tier])
+		id.access.Add(card_access.access[tier])
 
 	if (chip_access.len)
-		var/obj/item/card_access_chip/roundstart/AA = new(id, C.assignment)
+		var/obj/item/card_access_chip/roundstart/AA = new(id, card_access.assignment)
 		AA.access = chip_access
 		id.apply_access_chip(AA)
