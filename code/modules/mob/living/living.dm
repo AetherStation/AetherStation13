@@ -471,17 +471,17 @@
 	//Check hands
 	var/obj/item/held_item = get_active_held_item()
 	if(held_item) //Check active hand
-		. = held_item.GetID()
+		. = held_item.get_id()
 	if(!.) //If there is no id, check the other hand
 		held_item = get_inactive_held_item()
 		if(held_item)
-			. = held_item.GetID()
+			. = held_item.get_id()
 
 /mob/living/proc/get_id_in_hand()
 	var/obj/item/held_item = get_active_held_item()
 	if(!held_item)
 		return
-	return held_item.GetID()
+	return held_item.get_id()
 
 //Returns the bank account of an ID the user may be holding.
 /mob/living/proc/get_bank_account()

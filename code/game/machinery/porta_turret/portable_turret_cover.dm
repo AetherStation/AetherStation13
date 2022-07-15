@@ -52,7 +52,7 @@
 			qdel(src)
 		return
 
-	if(I.GetID())
+	if(I.get_id())
 		if(parent_turret.allowed(user))
 			parent_turret.locked = !parent_turret.locked
 			to_chat(user, span_notice("Controls are now [parent_turret.locked ? "locked" : "unlocked"]."))

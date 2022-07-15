@@ -149,9 +149,9 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/proc/update_label()
 	name = "PDA-[owner] ([ownjob])" //Name generalisation
 
-/obj/item/pda/GetAccess()
+/obj/item/pda/get_access()
 	if(id)
-		return id.GetAccess()
+		return id.get_access()
 	else
 		return ..()
 
@@ -161,14 +161,14 @@ GLOBAL_LIST_EMPTY(PDAs)
 		. += "\The [src] is displaying [id]."
 		. += id.get_id_examine_strings(user)
 
-/obj/item/pda/GetID()
+/obj/item/pda/get_id()
 	return id
 
-/obj/item/pda/RemoveID()
+/obj/item/pda/remove_id()
 	return do_remove_id()
 
-/obj/item/pda/InsertID(obj/item/inserting_item)
-	var/obj/item/card/inserting_id = inserting_item.RemoveID()
+/obj/item/pda/insert_id(obj/item/inserting_item)
+	var/obj/item/card/inserting_id = inserting_item.remove_id()
 	if(!inserting_id)
 		return
 	insert_id(inserting_id)

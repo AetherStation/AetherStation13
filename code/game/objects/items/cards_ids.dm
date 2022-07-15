@@ -419,13 +419,13 @@
 	return msg
 
 //XXX: Cache the result if this somehow ends up being too slow, var/list/cached_access or something like that.
-/obj/item/card/id/GetAccess()
+/obj/item/card/id/get_access()
 	return access + additional_access
 
-/obj/item/card/id/GetID()
+/obj/item/card/id/get_id()
 	return src
 
-/obj/item/card/id/RemoveID()
+/obj/item/card/id/remove_id()
 	return src
 
 /// Called on COMSIG_ATOM_UPDATED_ICON. Updates the visuals of the wallet this card is in.
@@ -695,7 +695,7 @@
 
 	if(istype(target, /obj/item/card/id))
 		var/obj/item/card/id/id = target
-		access |= id.GetAccess()
+		access |= id.get_access()
 		return
 
 	return ..()
@@ -721,7 +721,7 @@
 
 		var/obj/item/card/id/selected_id = pick(target_id_cards)
 		to_chat(user, "<span class='notice'>You successfully sync your [src] with \the [selected_id].</span>")
-		access |= selected_id.GetAccess()
+		access |= selected_id.get_access()
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 	if(istype(target, /obj/item))
@@ -737,7 +737,7 @@
 
 		var/obj/item/card/id/selected_id = pick(target_id_cards)
 		to_chat(user, "<span class='notice'>You successfully sync your [src] with \the [selected_id].</span>")
-		access |= selected_id.GetAccess()
+		access |= selected_id.get_access()
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 	return ..()

@@ -132,7 +132,7 @@
 	else if(defib && I == defib.paddles)
 		defib.paddles.snap_back()
 		return
-	var/obj/item/card/id = I.GetID()
+	var/obj/item/card/id = I.get_id()
 	if(id)
 		if(check_access(id) || SSsecurity_level.current_level >= SEC_LEVEL_RED) //anyone can toggle the clamps in red alert!
 			if(!defib)

@@ -328,7 +328,7 @@
 						span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
 						span_hear("You hear a ratchet."))
 	else if(!user.combat_mode)
-		var/item_is_id = W.GetID()
+		var/item_is_id = W.get_id()
 		if(!item_is_id)
 			return FALSE
 		if(item_is_id || !toggle(user))

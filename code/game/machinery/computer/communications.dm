@@ -125,12 +125,12 @@
 			// Check if they have
 			if (!issilicon(usr))
 				var/obj/item/held_item = usr.get_active_held_item()
-				var/obj/item/card/id/id_card = held_item?.GetID()
+				var/obj/item/card/id/id_card = held_item?.get_id()
 				if (!istype(id_card))
 					to_chat(usr, span_warning("You need to swipe your ID!"))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
-				if (!(ACCESS_CAPTAIN in id_card.GetAccess()))
+				if (!(ACCESS_CAPTAIN in id_card.get_access()))
 					to_chat(usr, span_warning("You are not authorized to do this!"))
 					playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 					return
@@ -321,7 +321,7 @@
 				var/obj/item/card/id/id_card = L.get_idcard(hand_first = TRUE)
 				if (check_access(id_card))
 					authenticated = TRUE
-					authorize_access = id_card.GetAccess()
+					authorize_access = id_card.get_access()
 					authorize_name = "[id_card.registered_name] - [id_card.assignment]"
 
 			state = STATE_MAIN

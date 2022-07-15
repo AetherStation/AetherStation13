@@ -27,7 +27,7 @@
  * * id_card - The ID card to attempt to authenticate under.
  */
 /datum/computer_file/program/card_mod/proc/authenticate(mob/user, obj/item/card/id/id_card)
-	if (!id_card || !(ACCESS_CHANGE_IDS in id_card.GetAccess()))
+	if (!id_card || !(ACCESS_CHANGE_IDS in id_card.get_access()))
 		return FALSE
 
 	return TRUE

@@ -162,7 +162,7 @@
 		C.Knockdown(20)
 
 /mob/living/simple_animal/bot/cleanbot/attackby(obj/item/W, mob/living/user, params)
-	if(W.GetID())
+	if(W.get_id())
 		if(bot_core.allowed(user) && !open && !emagged)
 			locked = !locked
 			to_chat(user, span_notice("You [ locked ? "lock" : "unlock"] \the [src] behaviour controls."))

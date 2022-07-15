@@ -106,18 +106,18 @@
 		return (card_slot2?.try_eject(user) || card_slot?.try_eject(user)) //Try the secondary one first.
 
 // Gets IDs/access levels from card slot. Would be useful when/if PDAs would become modular PCs.
-/obj/item/modular_computer/GetAccess()
+/obj/item/modular_computer/get_access()
 	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]
 	if(card_slot)
-		return card_slot.GetAccess()
+		return card_slot.get_access()
 	return ..()
 
-/obj/item/modular_computer/GetID()
+/obj/item/modular_computer/get_id()
 	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]
 	var/obj/item/computer_hardware/card_slot/card_slot2 = all_components[MC_CARD2]
 
-	var/obj/item/card/id/first_id = card_slot?.GetID()
-	var/obj/item/card/id/second_id = card_slot2?.GetID()
+	var/obj/item/card/id/first_id = card_slot?.get_id()
+	var/obj/item/card/id/second_id = card_slot2?.get_id()
 
 	// If we don't have both ID slots filled, pick the one that is filled.
 	if(first_id)
@@ -134,8 +134,8 @@
 	var/obj/item/computer_hardware/card_slot/card_slot2 = all_components[MC_CARD2]
 	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]
 
-	var/obj/item/card/id/id_card1 = card_slot?.GetID()
-	var/obj/item/card/id/id_card2 = card_slot2?.GetID()
+	var/obj/item/card/id/id_card1 = card_slot?.get_id()
+	var/obj/item/card/id/id_card2 = card_slot2?.get_id()
 
 	if(id_card1 || id_card2)
 		if(id_card1 && id_card2)
@@ -151,7 +151,7 @@
 			. += "\The [src] is displaying [id_card2]."
 			. += id_card2.get_id_examine_strings(user)
 
-/obj/item/modular_computer/RemoveID()
+/obj/item/modular_computer/remove_id()
 	var/obj/item/computer_hardware/card_slot/card_slot2 = all_components[MC_CARD2]
 	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]
 
@@ -166,13 +166,13 @@
 
 	return ..()
 
-/obj/item/modular_computer/InsertID(obj/item/inserting_item)
+/obj/item/modular_computer/insert_id(obj/item/inserting_item)
 	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]
 	var/obj/item/computer_hardware/card_slot/card_slot2 = all_components[MC_CARD2]
 	if(!(card_slot || card_slot2))
 		return FALSE
 
-	var/obj/item/card/inserting_id = inserting_item.RemoveID()
+	var/obj/item/card/inserting_id = inserting_item.remove_id()
 	if(!inserting_id)
 		return FALSE
 
@@ -503,7 +503,7 @@
 
 /obj/item/modular_computer/attackby(obj/item/W as obj, mob/user as mob)
 	// Check for ID first
-	if(istype(W, /obj/item/card/id) && InsertID(W))
+	if(istype(W, /obj/item/card/id) && insert_id(W))
 		return
 
 	// Insert items into the components
@@ -543,8 +543,8 @@
 
 	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]
 	// Check to see if we have an ID inside, and a valid input for money
-	if(card_slot?.GetID() && iscash(W))
-		var/obj/item/card/id/id = card_slot.GetID()
+	if(card_slot?.get_id() && iscash(W))
+		var/obj/item/card/id/id = card_slot.get_id()
 		id.attackby(W, user) // If we do, try and put that attacking object in
 		return
 	..()

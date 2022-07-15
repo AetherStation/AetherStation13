@@ -82,8 +82,8 @@
 	O.stored_access = list()
 	var/obj/item/id_slot = get_item_by_slot(ITEM_SLOT_ID)
 	if(id_slot)
-		O.stored_access |= id_slot.GetAccess()
-		var/obj/item/card/id/ID = id_slot.GetID()
+		O.stored_access |= id_slot.get_access()
+		var/obj/item/card/id/ID = id_slot.get_id()
 		if(ID)
 			if(ID.registered_name == real_name)
 				O.update_id_name = TRUE
@@ -143,7 +143,7 @@
 	//Apply access
 	var/obj/item/id_slot = H.get_item_by_slot(ITEM_SLOT_ID)
 	if(id_slot)
-		var/obj/item/card/id/card = id_slot.GetID()
+		var/obj/item/card/id/card = id_slot.get_id()
 		if(istype(card))
 			card.add_access(stored_access)
 		if(update_id_name)

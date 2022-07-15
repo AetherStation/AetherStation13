@@ -166,7 +166,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 			to_chat(user, span_warning("Unable to locate a radio!"))
 		return
 
-	if (W.GetID()) // trying to unlock the interface with an ID card
+	if (W.get_id()) // trying to unlock the interface with an ID card
 		if(opened)
 			to_chat(user, span_warning("You must close the cover to swipe an ID card!"))
 		else

@@ -219,7 +219,7 @@
 			return TRUE
 
 	var/obj/item/card/id/ID = user.get_idcard(FALSE)
-	if(ID && (ACCESS_CENT_BAR in ID.GetAccess()))
+	if(ID && (ACCESS_CENT_BAR in ID.get_access()))
 		return TRUE
 
 //Luxury Shuttle Blockers

@@ -62,7 +62,7 @@
 			break
 
 		LAZYINITLIST(combined_access)
-		combined_access |= id_card.GetAccess()
+		combined_access |= id_card.get_access()
 
 	// If we didn't pick a front ID - Maybe none of our cards have any command accesses? Just grab the first card (if we even have one).
 	// We could also have no ID card in the wallet at all, which will mean we end up with a null front_id and that's fine too.
@@ -120,17 +120,17 @@
 	if(front_id)
 		. += front_id.get_id_examine_strings(user)
 
-/obj/item/storage/wallet/GetID()
+/obj/item/storage/wallet/get_id()
 	return front_id
 
-/obj/item/storage/wallet/RemoveID()
+/obj/item/storage/wallet/remove_id()
 	if(!front_id)
 		return
 	. = front_id
 	front_id.forceMove(get_turf(src))
 
-/obj/item/storage/wallet/InsertID(obj/item/inserting_item)
-	var/obj/item/card/inserting_id = inserting_item.RemoveID()
+/obj/item/storage/wallet/insert_id(obj/item/inserting_item)
+	var/obj/item/card/inserting_id = inserting_item.remove_id()
 	if(!inserting_id)
 		return FALSE
 	attackby(inserting_id)
@@ -138,7 +138,7 @@
 		return TRUE
 	return FALSE
 
-/obj/item/storage/wallet/GetAccess()
+/obj/item/storage/wallet/get_access()
 	if(LAZYLEN(combined_access))
 		return combined_access
 	else

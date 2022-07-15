@@ -157,7 +157,7 @@
 	SSid_access.apply_card_access(access_card, card_access, force = TRUE)
 	// This access is so bots can be immediately set to patrol and leave Robotics, instead of having to be let out first.
 	access_card.set_access(list(ACCESS_ROBOTICS))
-	prev_access = access_card.GetAccess()
+	prev_access = access_card.get_access()
 	set_custom_texts()
 	Radio = new/obj/item/radio(src)
 	if(radio_key)
@@ -335,7 +335,7 @@
 			to_chat(user, span_notice("The maintenance panel is now [open ? "opened" : "closed"]."))
 		else
 			to_chat(user, span_warning("The maintenance panel is locked!"))
-	else if(W.GetID())
+	else if(W.get_id())
 		unlock_with_id(user)
 	else if(istype(W, /obj/item/paicard))
 		insertpai(user, W)
