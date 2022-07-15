@@ -108,14 +108,19 @@
 	switch (addressing[opcode])
 		if (imm) // immediate
 			ea = PC++
-		if (rel) // HACK: this uses the ea variable because there is no instruction that has another addressing mode with this.
-			ea = read6502(PC++)
+		if (rel) // XXX: this uses the ea variable because there is no instruction that has another addressing mode with this.
+			ea = read6502(PC)
+			ea -= ((ea & 0x80) * 2) // rel is signed.
+			PC++
 		if (zpg)
-			ea = read6502(PC++)
+			ea = read6502(PC)
+			PC++
 		if (zpx)
-			ea = (read6502(PC++) + X) & 0xFF
+			ea = (read6502(PC) + X) & 0xFF
+			PC++
 		if (zpy)
-			ea = (read6502(PC++) + Y) & 0xFF
+			ea = (read6502(PC) + Y) & 0xFF
+			PC++
 		if (abo)
 			ea = read6502(PC) | (read6502(PC + 1) << 8)
 			PC += 2
@@ -133,13 +138,15 @@
 			ea = read6502(r) | (read6502(r2) << 8)
 			PC += 2
 		if (idx)
-			var/r = read6502(PC++) + (X & 0xFF)
+			var/r = read6502(PC) + (X & 0xFF)
 			ea = read6502(r & 0xFF) | (read6502((r + 1) & 0xFF) << 8)
+			PC++
 		if (idy)
-			var/r = read6502(PC++)
+			var/r = read6502(PC)
 			var/r2 = (r & 0xFF00) | ((r + 1) & 0x00FF)
 			ea = read6502(r) | (read6502(r2) << 8)
 			ea += Y
+			PC++
 	call(src, instructions[opcode])()
 
 

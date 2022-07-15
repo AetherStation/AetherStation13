@@ -5,7 +5,7 @@
 /obj/machinery/mainframe/main_unit
 	name = "Main Unit"
 	desc = "Das komputermaschine ist nicht für der gefingerpoken und mittengraben! Zo relaxen und watschen der blinkenlichten."
-	icon_state = "main_unit"
+	icon_state = "main_unit_off"
 	subsystem_type = /datum/controller/subsystem/processing/fastprocess
 	var/on = FALSE
 	var/datum/mos6502/processor
@@ -32,6 +32,16 @@
 	processor.execute()
 	processor.execute()
 	processor.execute()
+
+/obj/machinery/mainframe/main_unit/attack_hand(mob/living/user, list/modifiers)
+	. = ..()
+	if (.)
+		return
+	if (!(machine_stat & (NOPOWER|BROKEN)))
+		on = !on
+		to_chat(user, span_notice("You turn \the [src] [on ? "on" : "off"]."))
+		icon_state = "main_unit[on ? "" : "_off"]"
+		processor.reset() // processor reset isn't expensive to run so.
 
 /obj/machinery/mainframe/main_unit/examine(mob/user)
 	. = ..()
@@ -121,8 +131,9 @@
 		return
 	if (action == "save")
 		var/M = params["data"]
-		if (length(M) != 256)
+		if (length(M) != 512) // 256 bytes as hexadecimal.
 			return FALSE
+		playsound(src, 'sound/machines/ping.ogg', 30, TRUE)
 		inserted.data.memory = params["data"]
 
 /obj/machinery/rom_bank_editor/attackby(obj/item/weapon, mob/user, params)
@@ -202,11 +213,13 @@
 	RegisterSignal(parent.peripheral_memory_page, COMSIG_MOS6502_MEMORY_READ, .proc/mem_read)
 
 /obj/machinery/mainframe/external/peripheral/proc/mem_write(source, address, value)
+	SIGNAL_HANDLER
 	if (address < peripheral_address_start || address >= peripheral_address_end)
 		return FALSE
 	return TRUE
 
 /obj/machinery/mainframe/external/peripheral/proc/mem_read(source, address)
+	SIGNAL_HANDLER
 	if (address < peripheral_address_start || address >= peripheral_address_end)
 		return FALSE
 	return TRUE
@@ -230,10 +243,23 @@
 	switch (address - peripheral_address_start)
 		if (0) display_character(value)
 
+/obj/machinery/mainframe/external/peripheral/terminal/mem_read(source, address, value)
+	if (!..())
+		return
+	switch (address - peripheral_address_start)
+		if (1)
+			if (!input_queue)
+				return 0
+			var/C = input_queue[1]
+			input_queue = copytext(input_queue, 2)
+			return text2ascii(C)
+
 /obj/machinery/mainframe/external/peripheral/terminal/proc/display_character(ascii)
 	switch (ascii)
 		if (0) return
-		if (10, 13) current_line = (current_line + 1) % 20
+		if (10, 13)
+			current_line = (current_line + 1) % 20
+			current_text[current_line + 1] = ""
 		if (8)
 			var/C = current_text[current_line + 1]
 			current_text[current_line + 1] = copytext(C, 1, length(C))
@@ -244,6 +270,29 @@
 		else current_text[current_line + 1] += ascii2text(ascii)
 	if (length(current_text[current_line + 1]) >= 40)
 		current_line = (current_line + 1) % 20
+		current_text[current_line + 1] = ""
+
+/obj/machinery/mainframe/external/peripheral/terminal/ui_data(mob/user)
+	var/list/data = list()
+	data["text"] = current_text
+	data["queue_length"] = length(input_queue)
+	return data
+
+/obj/machinery/mainframe/external/peripheral/terminal/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "MainframeTerminal")
+		ui.open()
+
+/obj/machinery/mainframe/external/peripheral/terminal/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	if (action == "send")
+		var/M = params["data"]
+		if (length(input_queue) + length(M) >= 256)
+			return FALSE
+		input_queue += M
 
 /obj/machinery/mainframe/external/peripheral/printer
 	name = "Printer"

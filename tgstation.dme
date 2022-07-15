@@ -2150,6 +2150,7 @@
 #include "code\modules\clothing\under\jobs\Plasmaman\medsci.dm"
 #include "code\modules\clothing\under\jobs\Plasmaman\security.dm"
 #include "code\modules\computer\mainframe.dm"
+#include "code\modules\computer\manual.dm"
 #include "code\modules\computer\6502\6502.dm"
 #include "code\modules\computer\6502\inst.dm"
 #include "code\modules\computer\6502\memory_map.dm"
