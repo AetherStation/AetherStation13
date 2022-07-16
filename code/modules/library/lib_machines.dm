@@ -595,6 +595,7 @@
 	user.visible_message(span_notice("[user] loads some paper into [src]."), span_notice("You load some paper into [src]."))
 	audible_message(span_hear("[src] begins to hum as it warms up its printing drums."))
 	busy = TRUE
+	flick("binder1", src)
 	sleep(rand(200,400))
 	busy = FALSE
 	if(P)
