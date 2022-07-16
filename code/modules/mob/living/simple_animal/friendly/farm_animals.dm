@@ -411,8 +411,8 @@
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/punch1.ogg'
 	attack_vis_effect = ATTACK_EFFECT_KICK
-	health = 250
-	maxHealth = 250
+	health = 50
+	maxHealth = 50
 	gold_core_spawnable = FRIENDLY_SPAWN
 	blood_volume = BLOOD_VOLUME_NORMAL
 	footstep_type = FOOTSTEP_MOB_SHOE
