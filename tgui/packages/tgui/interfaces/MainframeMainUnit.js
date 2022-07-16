@@ -1,11 +1,11 @@
 import { useBackend } from '../backend';
-import { Section, Button, NoticeBox, Box, Flex} from '../components';
+import { Section, Button, NoticeBox, Box, Flex } from '../components';
 import { Window } from '../layouts';
 
 export const MainframeMainUnit = (props, context) => {
   const { act, data } = useBackend(context);
   const {
-    on, pause, A, X, Y, SP, PC, status, opcode
+    on, pause, A, X, Y, SP, PC, status, opcode,
   } = data;
   return (
     <Window
@@ -35,64 +35,71 @@ export const MainframeMainUnit = (props, context) => {
                 onClick={() => act('power')} />
             </>
           }>
-            {!!on && (
-              <Box fontFamily='monospace'>
-                A: {A.toUpperCase()} X: {X.toUpperCase()} Y: {Y.toUpperCase()}
-                <br />SP: {SP.toUpperCase()} PC: {PC.toUpperCase()}<br />
-                <Flex
-                  textAlign="center">
+          {!!on && (
+            <Box fontFamily="monospace">
+              A: {A.toUpperCase()} X: {X.toUpperCase()} Y: {Y.toUpperCase()}
+              <br />SP: {SP.toUpperCase()} PC: {PC.toUpperCase()}<br />
+              <Flex
+                textAlign="center">
                 <Flex.Item
                   minHeight="16px" minWidth="16px"
                   style={{
-                    'border-radius': '8px'
+                    'border-radius': '8px',
                   }}
-                  backgroundColor={status & 1 ? "good" : "bad"}>C</Flex.Item>
+                  backgroundColor={status & 1 ? "good" : "bad"}>C
+                </Flex.Item>
                 <Flex.Item
                   minHeight="16px" minWidth="16px"
                   style={{
-                    'border-radius': '8px'
+                    'border-radius': '8px',
                   }}
-                  backgroundColor={status & 2 ? "good" : "bad"}>Z</Flex.Item>
+                  backgroundColor={status & 2 ? "good" : "bad"}>Z
+                </Flex.Item>
                 <Flex.Item
                   minHeight="16px" minWidth="16px"
                   style={{
-                    'border-radius': '8px'
+                    'border-radius': '8px',
                   }}
-                  backgroundColor={status & 4 ? "good" : "bad"}>I</Flex.Item>
+                  backgroundColor={status & 4 ? "good" : "bad"}>I
+                </Flex.Item>
                 <Flex.Item
                   minHeight="16px" minWidth="16px"
                   style={{
-                    'border-radius': '8px'
+                    'border-radius': '8px',
                   }}
-                  backgroundColor={status & 8 ? "good" : "bad"}>D</Flex.Item>
+                  backgroundColor={status & 8 ? "good" : "bad"}>D
+                </Flex.Item>
                 <Flex.Item
                   minHeight="16px" minWidth="16px"
                   style={{
-                    'border-radius': '8px'
+                    'border-radius': '8px',
                   }}
-                  backgroundColor={status & 16 ? "good" : "bad"}>B</Flex.Item>
+                  backgroundColor={status & 16 ? "good" : "bad"}>B
+                </Flex.Item>
                 <Flex.Item
                   minHeight="16px" minWidth="16px"
                   style={{
-                    'border-radius': '8px'
+                    'border-radius': '8px',
                   }}
-                  backgroundColor={status & 64 ? "good" : "bad"}>V</Flex.Item>
+                  backgroundColor={status & 64 ? "good" : "bad"}>V
+                </Flex.Item>
                 <Flex.Item
                   minHeight="16px" minWidth="16px"
                   style={{
-                    'border-radius': '8px'
+                    'border-radius': '8px',
                   }}
-                  backgroundColor={status & 128 ? "good" : "bad"}>N</Flex.Item>
-                </Flex>
-                {!!pause && (
-                  <>last opcode: {opcode.toUpperCase()}</>
-                )}
-              </Box>
-            ) || (
-              <NoticeBox>
-                Power Off.
-              </NoticeBox>
-            )}
+                  backgroundColor={status & 128 ? "good" : "bad"}>N
+                </Flex.Item>
+              </Flex>
+              {!!pause && (
+                <>last opcode: {opcode.toUpperCase()}</>
+              )}
+            </Box>
+          ) || (
+            <NoticeBox>
+              Power Off.
+            </NoticeBox>
+          )}
         </Section>
       </Window.Content>
     </Window>
