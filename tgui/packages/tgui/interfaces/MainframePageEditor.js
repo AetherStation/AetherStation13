@@ -2,7 +2,7 @@ import { useBackend, useLocalState } from '../backend';
 import { Box, Button, NoticeBox } from '../components';
 import { Window } from '../layouts';
 
-export const MOS6502PageEditor = (props, context) => {
+export const MainframePageEditor = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     memory,

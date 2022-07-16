@@ -34,8 +34,7 @@
 	var/PC = 0
 	var/status = 0
 
-	var/irq = 0
-	var/nmi = 0
+	var/jam = FALSE
 
 	var/ea = 0
 
@@ -87,7 +86,7 @@
 	Y = 0
 	SP = 0xFD
 	status = 0
-	irq = nmi = 0
+	jam = FALSE
 
 /datum/mos6502/proc/irq() // Interrupt Request
 	if (!(status & flagI))
@@ -103,6 +102,7 @@
 	PC = read6502(0xFFFA) | (read6502(0xFFFB) << 8)
 
 /datum/mos6502/proc/execute()
+	if (jam) return
 	opcode = read6502(PC) + 1 // BYOND list index starts from 1 so that is why the + 1
 	PC++
 	switch (addressing[opcode])
@@ -151,6 +151,7 @@
 
 
 /datum/mos6502/proc/udf()
+	jam = TRUE // while most "illegal opcodes" don't jam the processor, I am going to jam it here always.
 
 /datum/mos6502/proc/getvalue()
 	if (addressing[opcode] == acc)
