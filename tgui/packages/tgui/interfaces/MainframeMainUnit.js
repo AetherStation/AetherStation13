@@ -37,7 +37,7 @@ export const MainframeMainUnit = (props, context) => {
           }>
             {!!on && (
               <Box fontFamily='monospace'>
-                A: {A.toUpperCase()} B: {X.toUpperCase()} Y: {Y.toUpperCase()}
+                A: {A.toUpperCase()} X: {X.toUpperCase()} Y: {Y.toUpperCase()}
                 <br />SP: {SP.toUpperCase()} PC: {PC.toUpperCase()}<br />
                 <Flex
                   textAlign="center">

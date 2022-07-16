@@ -185,7 +185,7 @@
 
 /obj/structure/rom_bank_editor/attack_hand_secondary(mob/user, list/modifiers)
 	. = ..()
-	if (. || !inserted)
+	if (. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN || !inserted)
 		return
 	user.put_in_hands(inserted)
 	user.visible_message(span_notice("[user] takes \the [inserted] from \the [src]."))
@@ -219,6 +219,7 @@
 			return
 		inserted = weapon
 		parent.processor.add_memory_map(inserted.data, 16)
+		playsound(src, 'sound/items/taperecorder/taperecorder_open.ogg', 50, FALSE)
 		user.visible_message(span_notice("[user] inserts \the [weapon] into \the [src]."))
 		return
 	return ..()
@@ -230,6 +231,7 @@
 
 	user.put_in_hands(inserted)
 	parent.processor.remove_memory_map(inserted.data)
+		playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 	user.visible_message(span_notice("[user] ejects \the [inserted] from \the [src]."))
 	inserted = null
 
