@@ -711,11 +711,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 		U << browse(null, "window=pda")
 	return
 
-/obj/item/pda/proc/remove_id(mob/user)
+/obj/item/pda/proc/user_remove_id(mob/user)
 	if(issilicon(user) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 	do_remove_id(user)
-
 
 /obj/item/pda/proc/do_remove_id(mob/user)
 	if(!id)
@@ -865,7 +864,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	..()
 
 	if(id)
-		remove_id(user)
+		user_remove_id(user)
 	else
 		remove_pen(user)
 
@@ -894,7 +893,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	set src in usr
 
 	if(id)
-		remove_id(usr)
+		user_remove_id(usr)
 	else
 		to_chat(usr, span_warning("This PDA does not have an ID in it!"))
 
@@ -961,7 +960,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda/proc/id_check(mob/user, obj/item/card/id/I)
 	if(!I)
 		if(id && (src in user.contents))
-			remove_id(user)
+			user_remove_id(user)
 			return TRUE
 		else
 			var/obj/item/card/id/C = user.get_active_held_item()
@@ -977,7 +976,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 	return TRUE
 
 
-/obj/item/pda/proc/insert_id(obj/item/card/id/inserting_id, mob/user)
+/obj/item/pda/insert_id(obj/item/card/id/inserting_id, mob/user)
 	var/obj/old_id = id
 	id = inserting_id
 	if(ishuman(loc))
