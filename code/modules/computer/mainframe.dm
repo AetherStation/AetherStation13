@@ -231,7 +231,7 @@
 
 	user.put_in_hands(inserted)
 	parent.processor.remove_memory_map(inserted.data)
-		playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
+	playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 	user.visible_message(span_notice("[user] ejects \the [inserted] from \the [src]."))
 	inserted = null
 
