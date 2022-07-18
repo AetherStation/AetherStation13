@@ -23,6 +23,7 @@
 	. = ..()
 	assignment = _assignment
 	name = "[_assignment] AA-chip"
+
 /obj/item/card_access_chip/mining
 	name = "mining access chip"
 	icon_state = "aachip-cargo"
