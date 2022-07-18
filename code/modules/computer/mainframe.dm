@@ -143,8 +143,9 @@
 		ui.open()
 
 /obj/structure/rom_bank_editor
-	name = "ROM Bank Editor" // todo: better name.
+	name = "ROM Bank Programmer"
 	icon = 'icons/obj/machines/mainframe.dmi'
+	icon_state = "rom_editor"
 	var/obj/item/mainframe_rom_bank/inserted
 
 /obj/structure/rom_bank_editor/ui_data(mob/user)
@@ -173,12 +174,13 @@
 /obj/structure/rom_bank_editor/attackby(obj/item/weapon, mob/user, params)
 	if (istype(weapon, /obj/item/mainframe_rom_bank))
 		if (inserted)
-			to_chat(user, span_notice("There already is a disk inside \the [src]."))
+			to_chat(user, span_notice("There already is a ROM bank inside \the [src]."))
 			return
 		if (!user.transferItemToLoc(weapon, src))
 			return
 		inserted = weapon
 		user.visible_message(span_notice("[user] puts \the [weapon] on \the [src]."))
+		icon_state = "rom_editor_inserted"
 		ui_interact(user)
 		return
 	return ..()
@@ -189,6 +191,7 @@
 		return
 	user.put_in_hands(inserted)
 	user.visible_message(span_notice("[user] takes \the [inserted] from \the [src]."))
+	icon_state = "rom_editor"
 	ui_interact(user)
 	inserted = null
 
@@ -207,7 +210,7 @@
 
 /obj/machinery/mainframe/external/removable_storage/remove_parent()
 	if (inserted)
-		parent.processor.remove_memory_map(inserted.data)
+		parent?.processor.remove_memory_map(inserted.data)
 	..()
 
 /obj/machinery/mainframe/external/removable_storage/attackby(obj/item/weapon, mob/user, params)
@@ -218,7 +221,7 @@
 		if (!user.transferItemToLoc(weapon, src))
 			return
 		inserted = weapon
-		parent.processor.add_memory_map(inserted.data, 16)
+		parent?.processor.add_memory_map(inserted.data, 16)
 		playsound(src, 'sound/items/taperecorder/taperecorder_open.ogg', 50, FALSE)
 		user.visible_message(span_notice("[user] inserts \the [weapon] into \the [src]."))
 		return
@@ -230,14 +233,16 @@
 		return
 
 	user.put_in_hands(inserted)
-	parent.processor.remove_memory_map(inserted.data)
+	parent?.processor.remove_memory_map(inserted.data)
 	playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 	user.visible_message(span_notice("[user] ejects \the [inserted] from \the [src]."))
 	inserted = null
 
 /obj/item/mainframe_memory_cassette
 	name = "mainframe memory cassette"
-	desc = "Massive cassette disk."
+	desc = "Massive cassette."
+	icon = 'icons/obj/machines/mainframe.dmi'
+	icon_state = "cassette"
 	// Disk is after RAM in address space.
 	var/datum/mos6502_memory_map/memory/data = new(16)
 
