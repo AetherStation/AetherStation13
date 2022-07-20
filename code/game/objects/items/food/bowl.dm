@@ -21,7 +21,7 @@
 	filling.color = mix_color_from_reagents(reagents.reagent_list)
 	. += filling
 
-/obj/item/reagent_containers/glass/bowl/proc/handle_replacement(datum/source, var/datum/component/customizable_reagent_holder/CRH)
+/obj/item/reagent_containers/glass/bowl/proc/handle_replacement(datum/source, datum/component/customizable_reagent_holder/CRH)
 	SIGNAL_HANDLER
 	if (reagents.total_volume)
 		CRH.replacement = /obj/item/food/soup/empty
