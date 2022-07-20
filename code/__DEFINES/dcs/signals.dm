@@ -1072,6 +1072,8 @@
 #define COMSIG_ITEM_USED_AS_INGREDIENT "item_used_as_ingredient"
 ///called when an edible ingredient is added: (datum/component/edible/ingredient)
 #define COMSIG_EDIBLE_INGREDIENT_ADDED "edible_ingredient_added"
+///called when a custom food item replaces itself: (datum/component/customizable_reagent_holder)
+#define COMSIG_CUSTOM_FOOD_REPLACED "custom_food_replaced"
 
 //Plants / Plant Traits
 
