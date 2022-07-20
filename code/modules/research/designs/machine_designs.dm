@@ -2,8 +2,8 @@
 //////////////MISC Boards///////////////
 ////////////////////////////////////////
 /datum/design/board/electrolyzer
-	name = "Machine Design (Electrolyzer Board)"
-	desc = "The circuit board for an electrolyzer."
+	name = "Machine Design (Electrolyser Board)"
+	desc = "The circuit board for an electrolyser."
 	id = "electrolyzer"
 	build_path = /obj/item/circuitboard/machine/electrolyzer
 	category = list ("Engineering Machinery")
