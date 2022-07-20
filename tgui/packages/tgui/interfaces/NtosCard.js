@@ -44,6 +44,17 @@ export const NtosCardContent = (props, context) => {
     setSelectedRegion,
   ] = useSharedState(context, "selectedRegion", regions["General"] ? "General" : Object.keys(regions)[0]);
 
+  const button_tooltip = (access) => {
+    let ret = [];
+    if (access_on_chip.includes(access.id)) {
+      ret.push("On access chip");
+    }
+    if (access.tier > id_tier) {
+      ret.push("Requires tier " + access.tier + " ID card");
+    }
+    return ret.join(", ");
+  };
+
   return (
     <>
       <Stack>
@@ -117,15 +128,7 @@ export const NtosCardContent = (props, context) => {
                       return (
                         <Button
                           key={access.id}
-                          tooltip={
-                            [
-                              access_on_chip.includes(access.id)
-                                ? "On access chip"
-                                : "", access.tier > id_tier
-                                ? "Requires higher level ID"
-                                : "",
-                            ].join(", ")
-                          }
+                          tooltip={button_tooltip(access)}
                           disabled={
                             !access_on_chip.includes(access.id)
                             && access.tier > id_tier
