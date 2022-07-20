@@ -122,6 +122,7 @@
 	if (card_access)
 		SSid_access.apply_card_access(src, card_access, force = TRUE)
 
+	update_icon(UPDATE_OVERLAYS)
 	update_label()
 
 	RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, .proc/update_in_wallet)

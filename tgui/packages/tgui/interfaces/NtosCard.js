@@ -18,6 +18,7 @@ export const NtosCardContent = (props, context) => {
   const {
     authenticatedUser,
     access_on_card = [],
+    access_on_chip = [],
     id_tier,
     has_id,
     have_id_slot,
@@ -41,7 +42,7 @@ export const NtosCardContent = (props, context) => {
   const [
     selectedRegion,
     setSelectedRegion,
-  ] = useSharedState(context, "selectedRegion", "General");
+  ] = useSharedState(context, "selectedRegion", regions["General"] ? "General" : Object.keys(regions)[0]);
 
   return (
     <>
@@ -116,10 +117,30 @@ export const NtosCardContent = (props, context) => {
                       return (
                         <Button
                           key={access.id}
-                          disabled={access.tier > id_tier}
+                          tooltip={
+                            [
+                              access_on_chip.includes(access.id)
+                                ? "On access chip"
+                                : "", access.tier > id_tier
+                                ? "Requires higher level ID"
+                                : "",
+                            ].join(", ")
+                          }
+                          disabled={
+                            !access_on_chip.includes(access.id)
+                            && access.tier > id_tier
+                          }
+                          color={
+                            access_on_chip.includes(access.id)
+                              ? "olive"
+                              : ""
+                          }
                           content={access.name}
                           selected={access_on_card.includes(access.id)}
-                          onClick={() => act('PRG_access', { access_target: access.id })} />
+                          onClick={() => {
+                            if (access.tier > id_tier) { return; }
+                            act('PRG_access', { access_target: access.id });
+                          }} />
                       );
                     })}
                   </Stack.Item>

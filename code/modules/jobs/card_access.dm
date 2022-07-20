@@ -1,5 +1,6 @@
 /datum/card_access
 	var/assignment = ""
+	var/region = REGION_AWAY
 	var/flags = NONE
 	var/list/access = list()
 

@@ -1,5 +1,6 @@
 /datum/card_access/syndicom
 	assignment = "Syndicate Overlord"
+	region = REGION_SYNDICATE
 	access = list(ACCESS_SYNDICATE)
 
 /datum/card_access/syndicom/crew

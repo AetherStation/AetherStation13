@@ -10,9 +10,7 @@
 	tgui_id = "NtosCard"
 	program_icon = "id-card"
 
-	var/usable_regions = list(REGION_GENERAL,REGION_SECURITY, REGION_MEDBAY, REGION_RESEARCH, REGION_ENGINEERING, REGION_SUPPLY, REGION_COMMAND)
-	/// If TRUE, this program is authenticated with limited departmental access.
-	var/minor = FALSE
+	var/list/usable_regions
 	/// The name/assignment combo of the ID card used to authenticate.
 	var/authenticated_user
 
@@ -27,10 +25,21 @@
  * * id_card - The ID card to attempt to authenticate under.
  */
 /datum/computer_file/program/card_mod/proc/authenticate(mob/user, obj/item/card/id/id_card)
-	if (!id_card || !(ACCESS_CHANGE_IDS in id_card.get_access()))
+	if (!id_card)
 		return FALSE
 
-	return TRUE
+	var/accesses = id_card.get_access()
+	if (ACCESS_CHANGE_IDS in accesses)
+		usable_regions =  list(REGION_GENERAL, REGION_SECURITY, REGION_MEDBAY, REGION_RESEARCH, REGION_ENGINEERING, REGION_SUPPLY, REGION_COMMAND)
+		update_static_data(user)
+		return TRUE
+
+	usable_regions = list()
+	for (var/access in SSid_access.access_to_department_map)
+		if (text2num(access) in accesses)
+			usable_regions += SSid_access.access_to_department_map[access]
+	update_static_data(user)
+	return usable_regions.len > 0
 
 /datum/computer_file/program/card_mod/ui_act(action, params)
 	. = ..()
@@ -108,13 +117,6 @@
 				var/obj/item/I = user.get_active_held_item()
 				if(istype(I, /obj/item/card/id))
 					return card_slot2.try_insert(I, user)
-			return TRUE
-		// Used to fire someone. Wipes all access from their card and modifies their assignment.
-		if("PRG_terminate")
-			if(!computer || !authenticated_user)
-				return TRUE
-
-			playsound(computer, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 			return TRUE
 		// Change ID card assigned name.
 		if("PRG_edit")
@@ -223,10 +225,10 @@
 /datum/computer_file/program/card_mod/ui_static_data(mob/user)
 	var/list/data = list()
 	data["station_name"] = station_name()
-	data["minor"] = minor ? TRUE : FALSE
 	data["templates"] = list()
 	for (var/datum/card_access/A in SSid_access.card_access_assignable)
-		data["templates"][A.assignment] = A.type
+		if (A.region in usable_regions)
+			data["templates"][A.assignment] = A.type
 	data["regions"] = list()
 	for (var/r in usable_regions)
 		data["regions"][r] = SSid_access.tgui_access_list[r]

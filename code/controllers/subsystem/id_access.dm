@@ -14,6 +14,8 @@ SUBSYSTEM_DEF(id_access)
 	var/list/name_by_access
 	var/list/accesses_by_region
 	var/list/tgui_access_list
+	/// Maps head access to their respective department, used in the ID console.
+	var/list/access_to_department_map
 	var/list/card_access_instances
 	// this is slightly awful
 	var/list/card_access_assignable = list()
@@ -24,6 +26,7 @@ SUBSYSTEM_DEF(id_access)
 	accesses_by_region = setup_access_regions()
 	card_access_instances = setup_card_access()
 	tgui_access_list = setup_tgui_list()
+	access_to_department_map = setup_access_to_department_map()
 
 	return ..()
 
@@ -49,6 +52,15 @@ SUBSYSTEM_DEF(id_access)
 	.[REGION_SYNDICATE] = REGION_ACCESS_SYNDICATE
 	.[REGION_STATION] = REGION_ACCESS_STATION
 	.[REGION_GLOBAL] = REGION_ACCESS_GLOBAL
+
+/datum/controller/subsystem/id_access/proc/setup_access_to_department_map()
+	. = list()
+	.["[ACCESS_CE]"] = list(REGION_ENGINEERING)
+	.["[ACCESS_CMO]"] = list(REGION_MEDBAY)
+	.["[ACCESS_HOP]"] = list(REGION_GENERAL, REGION_SUPPLY)
+	.["[ACCESS_HOS]"] = list(REGION_SECURITY)
+	.["[ACCESS_RD]"] = list(REGION_RESEARCH)
+	.["[ACCESS_CAPTAIN]"] = list(REGION_COMMAND)
 
 /// Build access flag lists.
 /datum/controller/subsystem/id_access/proc/setup_access_tiers()

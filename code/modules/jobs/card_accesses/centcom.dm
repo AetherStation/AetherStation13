@@ -1,5 +1,6 @@
 /datum/card_access/centcom
 	access = list(ACCESS_CENT_GENERAL)
+	region = REGION_CENTCOM
 	assignment = "Central Command"
 
 /datum/card_access/centcom/vip
