@@ -264,7 +264,9 @@
 		if(reagents.total_volume < 1)
 			to_chat(user, span_warning("[src] is out of water!"))
 		else
-			reagents.trans_to(O, 5, transfered_by = user)
+			var/obj/item/mop/M = O
+			reagents.trans_to(M, 5, transfered_by = user)
+			M.update_speed()
 			to_chat(user, span_notice("You wet [O] in [src]."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 	else if(isprox(O)) //This works with wooden buckets for now. Somewhat unintended, but maybe someone will add sprites for it soon(TM)

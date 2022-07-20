@@ -183,6 +183,8 @@
 
 /datum/reagent/water/expose_obj(obj/exposed_obj, reac_volume)
 	. = ..()
+	if(istype(exposed_obj, /obj/effect/decal)) //Dont clean cleanable decals for instance.
+		return
 	exposed_obj.extinguish()
 	exposed_obj.wash(CLEAN_TYPE_ACID)
 	// Monkey cube
@@ -300,6 +302,24 @@
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen, but it looks kinda hollow."
 	color = "#88878777"
 	taste_description = "emptyiness"
+
+/datum/reagent/water/soapy
+	name = "Soapy water"
+	description = "Water, with soap and bubbles."
+	color = "#cfccccc5"
+	taste_description = "bubbles"
+	var/clean_types = CLEAN_WASH
+
+/datum/reagent/water/soapy/expose_turf(turf/exposed_turf, reac_volume)
+	. = ..()
+	new /obj/effect/decal/temporary/suds(exposed_turf)
+	if(prob(33)) //Worse space cleaner, basically.
+		exposed_turf.wash(clean_types)
+		for(var/am in exposed_turf)
+			var/atom/movable/movable_content = am
+			if(ismopable(movable_content)) // Mopables will be cleaned anyways by the turf wash
+				continue
+			movable_content.wash(clean_types)
 
 /datum/reagent/hydrogen_peroxide
 	name = "Hydrogen peroxide"
