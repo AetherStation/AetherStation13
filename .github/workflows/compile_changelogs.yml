@@ -2,7 +2,8 @@ name: Compile changelogs
 
 on:
   schedule:
-  - cron: "0 0 * * *"
+  - cron: "0 * * * *"
+  workflow_dispatch:
 
 jobs:
   compile:
@@ -15,8 +16,8 @@ jobs:
           ENABLER_SECRET: ${{ secrets.ACTION_ENABLER }}
         run: |
           unset SECRET_EXISTS
-          if [ -n $ENABLER_SECRET ]; then SECRET_EXISTS='true' ; fi
-          echo ::set-output name=ACTIONS_ENABLED::${SECRET_EXISTS}
+          if [ -n "$ENABLER_SECRET" ]; then SECRET_EXISTS=true ; fi
+          echo "::set-output name=ACTIONS_ENABLED::$SECRET_EXISTS"
       - name: "Setup python"
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         uses: actions/setup-python@v1
@@ -40,8 +41,8 @@ jobs:
       - name: Commit
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "Changelogs"
+          git config --local user.email "109702876+as13-actions@users.noreply.github.com"
+          git config --local user.name "as13-actions"
           git pull origin master
           git add html/changelogs
           git commit -m "Automatic changelog compile [ci skip]" -a || true
@@ -49,4 +50,4 @@ jobs:
         if: steps.value_holder.outputs.ACTIONS_ENABLED
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.CL_TOKEN }}
