@@ -1,4 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - bugfix: Selecting observe in lobby while the game is initializing now works properly.

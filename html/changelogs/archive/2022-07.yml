@@ -1,0 +1,5 @@
+2022-07-21:
+  TheChosenEvilOne:
+  - bugfix: Selecting observe in lobby while the game is initializing now works properly.
+  Thebleh:
+  - server: Will this trigger after the merge? I have no idea!
