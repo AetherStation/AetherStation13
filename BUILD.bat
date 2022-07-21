@@ -1,4 +1,4 @@
 @echo off
-rem aaaaaaaaaaaaaaaaaaabbbbbbbbbb
+rem aaaaaaaaaaaaaaaaaaabbbbbbbbbbcccccccccccccccc
 call "%~dp0\tools\build\build.bat" %*
 pause
