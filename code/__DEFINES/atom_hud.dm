@@ -45,9 +45,11 @@
 //for antag huds. these are used at the /mob level
 #define ANTAG_HUD "23"
 // for fans to identify pins
-#define FAN_HUD		"24"
+#define FAN_HUD	"24"
 // for implants to let you see sensor field
 #define SENSOR_HUD		"25"
+//sechud ping images
+#define SEC_PING "26"
 
 //by default everything in the hud_list of an atom is an image
 //a value in hud_list with one of these will change that behavior
@@ -65,7 +67,7 @@
 #define DATA_HUD_SENTIENT_DISEASE		8
 #define DATA_HUD_AI_DETECT				9
 #define DATA_HUD_FAN					10
-#define DATA_HUD_SENSORS		11
+#define DATA_HUD_SENSORS				11
 
 //antag HUD defines
 #define ANTAG_HUD_CULT			12
