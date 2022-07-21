@@ -1,0 +1,6 @@
+author: rdragan
+delete-after: true
+changes:
+  - rscdel: delete 1
+  - rscdel: delete 2
+  - bugfix: bug fix
