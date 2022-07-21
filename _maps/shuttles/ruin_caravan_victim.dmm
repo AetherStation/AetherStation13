@@ -105,7 +105,7 @@
 /area/shuttle/caravan/freighter1)
 "ec" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter1)
 "eP" = (
@@ -118,7 +118,7 @@
 /area/shuttle/caravan/freighter1)
 "fk" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/meter,
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter1)
@@ -320,7 +320,7 @@
 /area/shuttle/caravan/freighter1)
 "qp" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -770,7 +770,7 @@
 /area/shuttle/caravan/freighter1)
 "LX" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/door_assembly/door_assembly_min{
 	anchored = 1;
 	density = 0;
@@ -916,7 +916,7 @@
 /obj/machinery/light/small/directional/east,
 /obj/machinery/power/apc/auto_name/east,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter1)
@@ -935,7 +935,7 @@
 	id_tag = "caravantrade1_cabin2";
 	name = "Cabin 2"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -991,7 +991,7 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
@@ -1037,7 +1037,7 @@
 	name = "Cabin 1"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -1056,7 +1056,7 @@
 	pixel_x = -24
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/mob_spawn/human/corpse/cargo_tech,
 /obj/effect/decal/cleanable/blood,
 /obj/effect/decal/cleanable/dirt,

@@ -173,7 +173,7 @@
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/yellow,
 /area/shuttle/abandoned/engine)
 "aC" = (
@@ -221,7 +221,7 @@
 "aJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/shuttle/abandoned/cargo)
 "aK" = (
@@ -271,7 +271,7 @@
 /area/shuttle/abandoned/cargo)
 "aQ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/cargo)
 "aR" = (
@@ -325,7 +325,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "aY" = (
@@ -346,7 +346,7 @@
 	},
 /obj/structure/cable,
 /obj/structure/lattice/catwalk,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "bb" = (
@@ -407,7 +407,7 @@
 	},
 /obj/structure/cable,
 /obj/structure/lattice/catwalk,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "bk" = (
@@ -465,7 +465,7 @@
 	},
 /obj/structure/cable,
 /obj/structure/lattice/catwalk,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "bs" = (
@@ -550,7 +550,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/cargo)
 "bE" = (
@@ -649,7 +649,7 @@
 "bS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/cargo)
 "bT" = (
@@ -660,7 +660,7 @@
 "bU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/spawner/lootdrop/cigbutt,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/cargo)
@@ -891,7 +891,7 @@
 "cs" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/spawner/lootdrop/garbage_spawner,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/cargo)
@@ -1015,7 +1015,7 @@
 /obj/machinery/door/airlock/medical{
 	name = "Recovery Room"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/shuttle/abandoned/medbay)
 "cK" = (
@@ -1027,7 +1027,7 @@
 /obj/machinery/door/airlock/command{
 	name = "Bridge"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/shuttle/abandoned/bridge)
 "cM" = (
@@ -1056,7 +1056,7 @@
 "cO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/shuttle/abandoned/medbay)
 "cP" = (
@@ -1107,7 +1107,7 @@
 /area/shuttle/abandoned/medbay)
 "cX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/shuttle/abandoned/medbay)
 "cY" = (
@@ -1147,7 +1147,7 @@
 /area/shuttle/abandoned/bridge)
 "da" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/shuttle/abandoned/bridge)
 "db" = (

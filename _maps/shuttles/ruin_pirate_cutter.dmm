@@ -102,7 +102,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/caravan/pirate)
 "fU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -116,7 +116,7 @@
 /turf/open/floor/iron,
 /area/shuttle/caravan/pirate)
 "hI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/caravan/pirate)
@@ -127,7 +127,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/caravan/pirate)
 "hZ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -207,7 +207,7 @@
 /area/shuttle/caravan/pirate)
 "js" = (
 /obj/machinery/light/small/directional/east,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/caravan/pirate)
 "jU" = (
@@ -536,7 +536,7 @@
 /area/shuttle/caravan/pirate)
 "vW" = (
 /obj/machinery/light/small/directional/east,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/caravan/pirate)
@@ -700,7 +700,7 @@
 	name = "Pirate Cutter APC";
 	pixel_x = -25
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/airalarm/all_access{
 	dir = 8;
 	pixel_x = 24

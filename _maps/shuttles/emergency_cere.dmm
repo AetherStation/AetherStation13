@@ -1063,7 +1063,7 @@
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
 "cr" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
 "cs" = (

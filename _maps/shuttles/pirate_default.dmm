@@ -179,7 +179,7 @@
 	name = "Port Gun Battery"
 	},
 /obj/structure/barricade/wooden/crude,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
@@ -236,7 +236,7 @@
 	id_tag = "piratebridgebolt";
 	name = "Bridge"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -255,7 +255,7 @@
 	name = "Starboard Gun Battery"
 	},
 /obj/structure/barricade/wooden/crude,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
@@ -562,7 +562,7 @@
 /turf/open/floor/pod/light,
 /area/shuttle/pirate)
 "bm" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "bo" = (
@@ -638,7 +638,7 @@
 /turf/open/floor/iron,
 /area/shuttle/pirate)
 "by" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/piratepad,
 /turf/open/floor/pod/dark,
@@ -650,7 +650,7 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "bB" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/shuttle/pirate)
@@ -729,7 +729,7 @@
 /turf/open/floor/iron/showroomfloor,
 /area/shuttle/pirate)
 "bM" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock{
 	name = "Crew Cabin"
 	},
@@ -757,7 +757,7 @@
 /area/shuttle/pirate)
 "bP" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "bQ" = (
@@ -981,7 +981,7 @@
 /turf/open/floor/iron,
 /area/shuttle/pirate)
 "mU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock/engineering{
 	name = "Engineering"
 	},
@@ -1044,7 +1044,7 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "zw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock{
 	name = "Captain's Quarters"
 	},
@@ -1101,7 +1101,7 @@
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "Oe" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -1128,7 +1128,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "OL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{

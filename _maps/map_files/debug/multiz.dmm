@@ -116,7 +116,7 @@
 /turf/open/floor/plating,
 /area/engineering/atmos)
 "ay" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/engineering/atmos)
 "aD" = (
@@ -337,7 +337,7 @@
 /area/engineering/gravity_generator)
 "bt" = (
 /obj/machinery/door/airlock,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/engineering/atmos)
@@ -349,7 +349,7 @@
 /turf/open/floor/plating,
 /area/command/bridge)
 "bw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/r_wall,
 /area/engineering/main)
 "bx" = (
@@ -436,7 +436,7 @@
 	},
 /area/command/bridge)
 "bN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/hallway/primary/central)
 "bO" = (
@@ -543,12 +543,12 @@
 	},
 /area/command/bridge)
 "ct" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron,
 /area/hallway/primary/central)
 "cv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/r_wall,
 /area/command/bridge)
 "cw" = (
@@ -583,7 +583,7 @@
 	},
 /area/hallway/primary/central)
 "cC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron{
 	dir = 1
@@ -609,7 +609,7 @@
 	},
 /area/hallway/primary/central)
 "cF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/hallway/primary/central)
@@ -667,7 +667,7 @@
 /turf/closed/wall/r_wall,
 /area/construction)
 "cP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/r_wall,
 /area/construction)
 "cQ" = (
@@ -682,7 +682,7 @@
 /turf/closed/wall/r_wall,
 /area/commons/storage/primary)
 "cU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/r_wall,
 /area/commons/storage/primary)
 "cV" = (
@@ -1102,7 +1102,7 @@
 /area/construction)
 "hm" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/construction)
 "ho" = (
@@ -1425,7 +1425,7 @@
 /area/hallway/secondary/service)
 "zC" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/construction)
 "zZ" = (
@@ -1736,7 +1736,7 @@
 /turf/open/floor/iron,
 /area/engineering/storage)
 "VB" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/meter,
 /turf/open/floor/plating,
 /area/construction)

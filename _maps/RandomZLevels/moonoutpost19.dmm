@@ -2137,7 +2137,7 @@
 	},
 /area/awaymission/moonoutpost19/research)
 "eN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /obj/structure/chair/office/light{
 	dir = 4
 	},
@@ -2355,7 +2355,7 @@
 /turf/open/floor/iron/white,
 /area/awaymission/moonoutpost19/research)
 "fl" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/awaymission/moonoutpost19/research)

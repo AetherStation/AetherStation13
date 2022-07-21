@@ -2883,7 +2883,7 @@
 /obj/machinery/door/airlock/silver{
 	name = "Bathroom"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/white,
 /area/centcom/ferry)
 "nT" = (
@@ -3092,7 +3092,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/ferry)
 "ok" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -3323,7 +3323,7 @@
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
 "oF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/wood,
 /area/centcom/ferry)
 "oG" = (
@@ -3588,7 +3588,7 @@
 "pd" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/security/wooden_tv,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
 "pe" = (
@@ -4478,7 +4478,7 @@
 	name = "Administrative Office";
 	req_access_txt = "109"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/iron,
 /area/centcom/ferry)
@@ -4775,7 +4775,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/ferry)
 "rx" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
 "ry" = (
@@ -5263,7 +5263,7 @@
 /area/centcom/ferry)
 "sy" = (
 /obj/structure/chair/comfy/black,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
 "sz" = (
@@ -5304,7 +5304,7 @@
 /obj/structure/chair/office{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
@@ -5731,7 +5731,7 @@
 "tB" = (
 /obj/item/storage/fancy/donut_box,
 /obj/structure/table/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},

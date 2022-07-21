@@ -95,11 +95,11 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/cat_man)
 "as" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/hidden,
+/obj/effect/mapping_helpers/simple_pipes/green/hidden,
 /turf/closed/wall,
 /area/ruin/space/has_grav/powered/cat_man)
 "at" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/hidden,
+/obj/effect/mapping_helpers/simple_pipes/green/hidden,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/cat_man)
 "au" = (
@@ -701,7 +701,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/cat_man)
 "cb" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/hidden,
+/obj/effect/mapping_helpers/simple_pipes/green/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/cat_man)
@@ -783,7 +783,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/powered/cat_man)
 "co" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/hidden,
+/obj/effect/mapping_helpers/simple_pipes/dark/hidden,
 /turf/closed/wall,
 /area/ruin/space/has_grav/powered/cat_man)
 "cp" = (

@@ -42,7 +42,7 @@
 "cH" = (
 /obj/machinery/door/airlock/silver,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "de" = (
@@ -109,7 +109,7 @@
 /area/shuttle/pirate)
 "ht" = (
 /obj/machinery/door/airlock/silver,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "hu" = (
@@ -156,7 +156,7 @@
 /area/shuttle/pirate)
 "jo" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "jG" = (
@@ -324,7 +324,7 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "wa" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "xe" = (
@@ -404,7 +404,7 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "AE" = (
@@ -444,7 +444,7 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "Ch" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "CH" = (
@@ -557,7 +557,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "JV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/pirate)
 "Kq" = (
