@@ -350,11 +350,6 @@
 "bP" = (
 /turf/open/floor/iron,
 /area/mine/production)
-"bQ" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/mine/production)
 "bR" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/brown,
@@ -556,12 +551,6 @@
 	},
 /turf/open/floor/iron,
 /area/mine/production)
-"cE" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/mine/production)
 "cF" = (
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
@@ -681,10 +670,6 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/meter,
 /obj/structure/cable,
-/turf/open/floor/plating,
-/area/mine/living_quarters)
-"dq" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
 "dr" = (
@@ -970,17 +955,6 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
-"er" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/mine/living_quarters)
-"es" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/mine/living_quarters)
 "et" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
@@ -1048,15 +1022,6 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /obj/structure/cable,
-/turf/open/floor/iron,
-/area/mine/production)
-"eD" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/turf/open/floor/iron,
-/area/mine/production)
-"eE" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/production)
 "eG" = (
@@ -1676,6 +1641,7 @@
 	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "iX" = (
@@ -1789,10 +1755,8 @@
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "jM" = (
-/obj/machinery/atmospherics/pipe/multiz/supply/visible/layer4{
-	color = "#0000ff";
-	dir = 4;
-	name = "Supply multi deck pipe adapter"
+/obj/machinery/atmospherics/pipe/multiz/layer4{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
@@ -1927,11 +1891,6 @@
 	},
 /turf/open/floor/iron,
 /area/mine/production)
-"kL" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/turf/open/floor/iron,
-/area/mine/laborcamp)
 "kO" = (
 /obj/structure/chair{
 	dir = 4
@@ -2638,10 +2597,6 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp/security)
-"sc" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/turf/open/floor/iron,
-/area/mine/eva)
 "si" = (
 /obj/structure/cable,
 /obj/effect/spawner/structure/window/reinforced,
@@ -3040,11 +2995,6 @@
 	},
 /turf/open/floor/iron,
 /area/mine/production)
-"wq" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/turf/open/floor/iron,
-/area/mine/laborcamp)
 "ww" = (
 /obj/structure/closet/firecloset,
 /turf/open/floor/plating,
@@ -3539,21 +3489,10 @@
 /obj/effect/turf_decal/tile/red,
 /turf/open/floor/iron,
 /area/mine/laborcamp/security)
-"Bz" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/turf/open/floor/iron,
-/area/mine/laborcamp)
 "BD" = (
 /obj/item/screwdriver,
 /turf/open/floor/plating/snowed/icemoon,
 /area/icemoon/underground/explored)
-"BH" = (
-/obj/machinery/atmospherics/pipe/layer_manifold/scrubbers/visible{
-	dir = 4
-	},
-/turf/closed/wall/r_wall,
-/area/science/xenobiology)
 "BJ" = (
 /turf/open/floor/iron/dark,
 /area/mine/storage)
@@ -3601,12 +3540,6 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/white,
 /area/science/xenobiology)
-"Cd" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/iron,
-/area/mine/laborcamp)
 "Cf" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/public/glass{
@@ -3660,10 +3593,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
-"CQ" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/maintenance/aft)
 "CT" = (
 /obj/structure/stairs/south,
 /turf/open/floor/iron,
@@ -3729,16 +3658,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/science/xenobiology)
-"Du" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/turf/open/floor/iron/white,
-/area/mine/laborcamp)
 "Dz" = (
 /obj/structure/table,
 /obj/item/clothing/suit/hooded/wintercoat/science,
@@ -3857,11 +3776,6 @@
 	},
 /turf/open/floor/iron,
 /area/science/xenobiology)
-"EG" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/mine/living_quarters)
 "EJ" = (
 /obj/machinery/light/small/directional/south,
 /obj/machinery/camera{
@@ -3975,11 +3889,6 @@
 /obj/item/stack/rods/ten,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
-"FQ" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/turf/open/floor/iron,
-/area/mine/laborcamp)
 "FU" = (
 /obj/machinery/seed_extractor,
 /obj/effect/turf_decal/tile/green{
@@ -4178,10 +4087,6 @@
 /obj/machinery/light/directional/east,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/mine/storage)
-"Hx" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/iron,
-/area/mine/laborcamp/security)
 "Hy" = (
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -4349,12 +4254,6 @@
 /obj/structure/stairs/north,
 /turf/open/floor/iron,
 /area/cargo/warehouse)
-"Jo" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/iron,
-/area/mine/laborcamp)
 "Jv" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance/two,
@@ -4460,17 +4359,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/science/xenobiology)
-"JU" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/iron,
-/area/mine/laborcamp)
-"Kb" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/mine/living_quarters)
 "Kg" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -4734,10 +4622,8 @@
 /turf/open/floor/plating,
 /area/science/xenobiology)
 "Mv" = (
-/obj/machinery/atmospherics/pipe/multiz/scrubbers/visible/layer2{
-	color = "#ff0000";
-	dir = 4;
-	name = "Scrubbers multi deck pipe adapter"
+/obj/machinery/atmospherics/pipe/multiz/layer2{
+	dir = 4
 	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
@@ -4782,10 +4668,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron,
 /area/science/xenobiology)
-"MM" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/maintenance/aft)
 "MQ" = (
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -4876,10 +4758,6 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/freezer,
 /area/mine/living_quarters)
-"NG" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/plating,
-/area/maintenance/aft)
 "NH" = (
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/mine/storage)
@@ -4903,11 +4781,6 @@
 /obj/structure/chair/stool/directional/east,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
-"NR" = (
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/iron/white,
-/area/science/xenobiology)
 "NY" = (
 /obj/machinery/conveyor{
 	dir = 8;
@@ -5094,10 +4967,6 @@
 /obj/structure/marker_beacon/burgundy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
-"PL" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/turf/open/floor/iron,
-/area/mine/eva)
 "PV" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 8
@@ -5203,10 +5072,6 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/circuit,
 /area/mine/maintenance)
-"QN" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/iron,
-/area/mine/laborcamp/security)
 "QS" = (
 /obj/structure/sign/departments/medbay/alt{
 	pixel_x = -32
@@ -5232,10 +5097,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 8
 	},
-/turf/open/floor/iron,
-/area/mine/laborcamp)
-"Rb" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "Rj" = (
@@ -5286,12 +5147,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/science/xenobiology)
-"RO" = (
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/turf/open/floor/iron,
-/area/mine/living_quarters)
 "RQ" = (
 /obj/machinery/light/directional/east,
 /obj/machinery/button/door/directional/east{
@@ -5307,7 +5162,6 @@
 /turf/open/floor/iron,
 /area/cargo/warehouse)
 "Sd" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/closed/mineral/random/snow,
 /area/icemoon/underground/unexplored/rivers)
 "Sg" = (
@@ -5445,6 +5299,7 @@
 "Tw" = (
 /obj/structure/cable,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/white,
 /area/science/xenobiology)
 "Tx" = (
@@ -5697,17 +5552,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
-"Vg" = (
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/plating,
-/area/maintenance/aft)
-"Vi" = (
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/maintenance/aft)
 "Vr" = (
 /obj/structure/table,
 /obj/effect/turf_decal/tile/purple{
@@ -6098,14 +5942,6 @@
 /obj/structure/closet/wardrobe/mixed,
 /turf/open/floor/plating,
 /area/maintenance/aft)
-"YW" = (
-/obj/effect/turf_decal/bot,
-/obj/structure/ore_box,
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/iron,
-/area/mine/laborcamp)
 "YY" = (
 /obj/structure/rack,
 /obj/item/stack/rods/ten,
@@ -15181,18 +15017,18 @@ El
 YP
 Ee
 Ee
-FQ
-Jo
-Jo
-Jo
+XU
+zQ
+zQ
+zQ
 ks
-JU
+iG
 Iv
 jr
 bL
 cc
 bw
-Hx
+GI
 oU
 Hd
 Ym
@@ -15438,7 +15274,7 @@ mS
 aq
 bk
 Ee
-wq
+XU
 Ee
 Bl
 we
@@ -15706,7 +15542,7 @@ yr
 yr
 DW
 bh
-QN
+GI
 oW
 sM
 dZ
@@ -15952,7 +15788,7 @@ DR
 aT
 aq
 Vd
-wq
+XU
 Ee
 PE
 wZ
@@ -15970,7 +15806,7 @@ QW
 eq
 QW
 QW
-RO
+QW
 Tv
 cM
 mO
@@ -16205,11 +16041,11 @@ tL
 mZ
 aq
 Gv
-Bz
+XU
 KE
 wX
 Iv
-Jo
+zQ
 EB
 st
 Tk
@@ -16715,7 +16551,7 @@ Fp
 Fp
 Fp
 yr
-Du
+Bd
 aq
 aq
 aq
@@ -16972,7 +16808,7 @@ Fp
 Fp
 YF
 yr
-Du
+Bd
 aq
 yy
 yy
@@ -16980,10 +16816,10 @@ yy
 aq
 LI
 HX
-kL
-Jo
+XU
+zQ
 Cr
-Cd
+zQ
 je
 ap
 mO
@@ -17237,7 +17073,7 @@ Ee
 aq
 aq
 aq
-Rb
+qb
 IB
 aq
 aq
@@ -17512,7 +17348,7 @@ dj
 QL
 cQ
 ec
-er
+et
 eL
 cM
 Dp
@@ -17752,7 +17588,7 @@ Ee
 Ee
 aq
 CD
-Jo
+zQ
 Zk
 iG
 je
@@ -17769,7 +17605,7 @@ tJ
 dA
 cQ
 LE
-Kb
+eu
 ZR
 cM
 fd
@@ -18001,14 +17837,14 @@ yr
 yr
 yr
 WO
-YW
+zk
 zk
 FB
 Gp
-Jo
-Jo
+zQ
+zQ
 Ol
-Jo
+zQ
 Ee
 aq
 aq
@@ -18026,7 +17862,7 @@ cQ
 cQ
 cQ
 uK
-er
+et
 dZ
 cM
 cM
@@ -18283,7 +18119,7 @@ hl
 dB
 cM
 dZ
-EG
+et
 fp
 cM
 Pg
@@ -18523,9 +18359,9 @@ az
 nq
 aq
 XU
-Jo
+zQ
 hY
-Cd
+zQ
 je
 ap
 mO
@@ -18540,7 +18376,7 @@ dm
 dC
 dQ
 ea
-er
+et
 dZ
 cM
 Ut
@@ -18797,7 +18633,7 @@ Ho
 dD
 dR
 ef
-es
+eu
 dZ
 cM
 fg
@@ -19054,7 +18890,7 @@ dn
 dE
 dQ
 ec
-er
+et
 dZ
 eL
 fh
@@ -19568,7 +19404,7 @@ do
 dF
 cM
 xa
-EG
+et
 fp
 cM
 cM
@@ -19825,7 +19661,7 @@ cV
 cV
 cM
 ea
-er
+et
 ZR
 cM
 fj
@@ -20335,7 +20171,7 @@ mO
 mO
 cM
 cV
-dq
+dI
 dI
 cM
 ej
@@ -20596,7 +20432,7 @@ dr
 dr
 cM
 vq
-Kb
+eu
 eL
 dQ
 fk
@@ -20853,7 +20689,7 @@ cM
 cM
 cM
 dZ
-er
+et
 dZ
 cM
 ih
@@ -21110,7 +20946,7 @@ mO
 Rj
 cR
 dZ
-er
+et
 dZ
 cM
 fn
@@ -22138,7 +21974,7 @@ mO
 Rj
 mO
 cR
-er
+et
 cR
 mO
 Rj
@@ -22395,7 +22231,7 @@ mO
 Rj
 mO
 cR
-er
+et
 cR
 mO
 Rj
@@ -22652,7 +22488,7 @@ mO
 Rj
 mO
 cR
-er
+et
 cR
 mO
 Rj
@@ -22909,7 +22745,7 @@ mO
 Rj
 mO
 cR
-er
+et
 cR
 mO
 Rj
@@ -25469,9 +25305,9 @@ mO
 br
 bz
 bP
-bQ
+ez
 cm
-cE
+cm
 eC
 eC
 eC
@@ -25736,7 +25572,7 @@ bP
 bP
 br
 gd
-eD
+AB
 bP
 eU
 bq
@@ -25993,7 +25829,7 @@ ds
 Gb
 br
 bP
-eE
+dW
 bP
 dU
 br
@@ -26250,7 +26086,7 @@ br
 bq
 br
 bP
-eE
+dW
 bP
 sj
 sH
@@ -26507,7 +26343,7 @@ bP
 bP
 bP
 bP
-eE
+dW
 bP
 cH
 br
@@ -27782,7 +27618,7 @@ yS
 tu
 mX
 bK
-PL
+bV
 Ur
 bt
 Qt
@@ -28039,7 +27875,7 @@ YZ
 ZM
 PW
 oc
-sc
+bV
 bt
 bt
 XA
@@ -50915,7 +50751,7 @@ hM
 Fa
 Qv
 rS
-NR
+Tw
 JT
 ZY
 ZY
@@ -51177,7 +51013,7 @@ MA
 jq
 zv
 Qv
-BH
+Qv
 Qv
 Wb
 Wb
@@ -51686,12 +51522,12 @@ RC
 Fa
 Fa
 Ls
-Vg
+nZ
 pG
 Qv
 Qv
 Qv
-MM
+hM
 Qv
 Qv
 Qv
@@ -51943,12 +51779,12 @@ ZP
 Fa
 Fa
 Fa
-Vg
+nZ
 Xp
 Xp
 Fa
 Fa
-CQ
+Fa
 Fa
 Fa
 Fa
@@ -52200,26 +52036,26 @@ hM
 kS
 Fa
 Fa
-NG
 Lt
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
-Vi
+Lt
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
+nZ
 nZ
 DS
 Xp
