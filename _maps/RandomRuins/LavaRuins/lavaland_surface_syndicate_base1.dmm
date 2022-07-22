@@ -22,6 +22,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "ae" = (
@@ -98,10 +99,6 @@
 	},
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/chemistry)
-"aF" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/turf/open/floor/engine,
-/area/ruin/unpowered/syndicate_lava_base/testlab)
 "aL" = (
 /turf/closed/wall/mineral/plastitanium/explosive,
 /area/ruin/unpowered/syndicate_lava_base/testlab)
@@ -126,10 +123,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/simple_pipes/pink/visible{
-	dir = 6;
-	name = "N2 to Mix"
-	},
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "aW" = (
@@ -781,6 +775,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
 "ey" = (
@@ -797,6 +792,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
 "ez" = (
@@ -812,6 +808,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
 "eA" = (
@@ -833,18 +830,21 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
 "eB" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
 "eC" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
 "eD" = (
@@ -1000,6 +1000,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/testlab)
 "eQ" = (
@@ -1611,21 +1612,15 @@
 "gj" = (
 /turf/closed/wall/mineral/plastitanium/explosive,
 /area/ruin/unpowered/syndicate_lava_base/virology)
-"gn" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/unpowered/syndicate_lava_base/engineering)
 "gp" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "gq" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/iron/white,
-/area/ruin/unpowered/syndicate_lava_base/virology)
-"gr" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "gs" = (
@@ -1637,6 +1632,7 @@
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "gt" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/white/side{
 	dir = 9
 	},
@@ -1644,6 +1640,7 @@
 "gu" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/white/corner{
 	dir = 1
 	},
@@ -1652,11 +1649,13 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "gw" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/white/side{
 	dir = 4
 	},
@@ -1668,6 +1667,7 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gz" = (
@@ -1676,6 +1676,7 @@
 	},
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gA" = (
@@ -1698,6 +1699,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gB" = (
@@ -1709,6 +1711,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gF" = (
@@ -1716,17 +1719,20 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gG" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gI" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gJ" = (
@@ -1734,6 +1740,7 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gK" = (
@@ -1743,6 +1750,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gL" = (
@@ -1754,6 +1762,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gM" = (
@@ -2726,12 +2735,6 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
-"iP" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/ruin/unpowered/syndicate_lava_base/main)
 "iR" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/public/glass{
@@ -2740,6 +2743,7 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/dormitories)
 "iS" = (
@@ -2750,6 +2754,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/dormitories)
 "iT" = (
@@ -2779,6 +2784,7 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/dormitories)
 "iW" = (
@@ -2797,6 +2803,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron{
 	heat_capacity = 1e+006
 	},
@@ -3085,11 +3092,6 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
-"jE" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/structure/cable,
-/turf/open/floor/iron,
-/area/ruin/unpowered/syndicate_lava_base/main)
 "jF" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/yellow,
@@ -3103,6 +3105,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/delivery,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "jG" = (
@@ -3111,6 +3114,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "jH" = (
@@ -3119,6 +3123,7 @@
 /obj/effect/turf_decal/stripes{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "jI" = (
@@ -3132,6 +3137,7 @@
 	},
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "jL" = (
@@ -3283,36 +3289,21 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/unpowered/syndicate_lava_base/main)
-"ke" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "kf" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/unpowered/syndicate_lava_base/main)
-"kg" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "kh" = (
 /obj/machinery/door/airlock/maintenance,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/unpowered/syndicate_lava_base/main)
-"ki" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/iron,
+/turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "kj" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
@@ -3858,17 +3849,8 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
-"lt" = (
-/obj/effect/mapping_helpers/simple_pipes/pink/visible{
-	name = "O2 to Mix"
-	},
-/turf/open/floor/iron,
-/area/ruin/unpowered/syndicate_lava_base/engineering)
 "lu" = (
-/obj/effect/mapping_helpers/simple_pipes/pink/visible{
-	dir = 4;
-	name = "N2 to Mix"
-	},
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "lv" = (
@@ -4025,11 +4007,6 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/visible/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
-"lO" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/visible,
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron,
-/area/ruin/unpowered/syndicate_lava_base/engineering)
 "lR" = (
 /obj/machinery/meter/turf,
 /turf/open/floor/engine/o2,
@@ -4090,14 +4067,10 @@
 /obj/structure/cable,
 /turf/open/floor/wood,
 /area/ruin/unpowered/syndicate_lava_base/bar)
-"lY" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/structure/cable,
-/turf/open/floor/wood,
-/area/ruin/unpowered/syndicate_lava_base/bar)
 "lZ" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/wood,
 /area/ruin/unpowered/syndicate_lava_base/bar)
 "ma" = (
@@ -4107,11 +4080,13 @@
 	req_access_txt = "150"
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/bar)
 "mb" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/bar)
 "mc" = (
@@ -4131,6 +4106,7 @@
 	req_access = null
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/bar)
 "md" = (
@@ -4189,23 +4165,9 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "mk" = (
-/obj/effect/mapping_helpers/simple_pipes/pink/visible{
-	name = "O2 to Mix"
-	},
 /obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/iron,
-/area/ruin/unpowered/syndicate_lava_base/engineering)
-"ml" = (
-/obj/effect/mapping_helpers/simple_pipes/pink/visible{
-	dir = 4;
-	name = "O2 to Mix"
-	},
-/turf/open/floor/iron,
-/area/ruin/unpowered/syndicate_lava_base/engineering)
-"mm" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/obj/effect/mapping_helpers/simple_pipes/pink/visible,
-/turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "mn" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -4338,11 +4300,6 @@
 "mG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/turf/open/floor/iron,
-/area/ruin/unpowered/syndicate_lava_base/engineering)
-"mH" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "mI" = (
@@ -4661,6 +4618,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nt" = (
@@ -4678,6 +4636,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nu" = (
@@ -4689,6 +4648,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nv" = (
@@ -4697,6 +4657,7 @@
 	},
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nw" = (
@@ -4714,11 +4675,13 @@
 	name = "Medbay"
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/ruin/unpowered/syndicate_lava_base/medbay)
 "ny" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/white/side{
 	dir = 8
 	},
@@ -4726,6 +4689,7 @@
 "nz" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/medbay)
 "nA" = (
@@ -4818,6 +4782,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/telecomms)
 "nL" = (
@@ -4837,6 +4802,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/telecomms)
 "nM" = (
@@ -4845,11 +4811,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nN" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nO" = (
@@ -4857,6 +4825,7 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nP" = (
@@ -4866,6 +4835,7 @@
 	},
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nQ" = (
@@ -4875,6 +4845,7 @@
 /obj/machinery/light/small/directional/south,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nR" = (
@@ -4883,6 +4854,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nS" = (
@@ -4895,17 +4867,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/turf/open/floor/iron,
-/area/ruin/unpowered/syndicate_lava_base/arrivals)
-"nT" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
-/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nU" = (
@@ -4922,6 +4884,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nV" = (
@@ -4930,6 +4893,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nW" = (
@@ -5342,10 +5306,6 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/engine,
 /area/ruin/unpowered/syndicate_lava_base/testlab)
-"CG" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/engine,
-/area/ruin/unpowered/syndicate_lava_base/testlab)
 "DF" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/visible/layer4,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
@@ -5380,10 +5340,7 @@
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/pink/visible{
-	dir = 9;
-	name = "N2 to Mix"
-	},
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "IH" = (
@@ -5445,10 +5402,6 @@
 /obj/machinery/meter/turf,
 /turf/open/floor/engine/plasma,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
-"RE" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/unpowered/syndicate_lava_base/engineering)
 "RK" = (
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
@@ -5487,10 +5440,6 @@
 "Vd" = (
 /turf/open/floor/engine/plasma,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
-"Wt" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible/layer4,
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/unpowered/syndicate_lava_base/main)
 "Xd" = (
 /obj/structure/closet/radiation,
 /obj/machinery/light/small/directional/west,
@@ -6026,7 +5975,7 @@ eh
 eG
 fh
 eI
-gr
+gq
 eI
 hr
 hG
@@ -6467,9 +6416,9 @@ ab
 ae
 aq
 aq
-aF
+TC
 aq
-aF
+TC
 aq
 ae
 em
@@ -6567,7 +6516,7 @@ ab
 ae
 ap
 aq
-CG
+LQ
 vu
 TC
 LQ
@@ -6583,7 +6532,7 @@ hL
 hZ
 ij
 ix
-iP
+jS
 hd
 jm
 jz
@@ -6593,11 +6542,11 @@ kp
 kL
 lj
 lB
-lY
+lZ
 lA
 ai
 jP
-nT
+nu
 op
 ox
 ab
@@ -6888,7 +6837,7 @@ hz
 hz
 hz
 hz
-ke
+kc
 jQ
 jQ
 jQ
@@ -6988,7 +6937,7 @@ hz
 jq
 jA
 hz
-kg
+kc
 kt
 kQ
 kQ
@@ -7136,9 +7085,9 @@ iG
 iZ
 ji
 js
-jE
+gG
 jS
-ki
+jS
 kv
 kS
 ln
@@ -7239,7 +7188,7 @@ ha
 jF
 jT
 ju
-gn
+IJ
 IJ
 IJ
 IJ
@@ -7394,7 +7343,7 @@ kX
 lr
 lN
 mi
-mH
+mi
 ne
 nE
 of
@@ -7431,23 +7380,23 @@ hn
 gQ
 hV
 ha
-Wt
 DF
 DF
 DF
+DF
 kl
 kl
-kl
-kl
+ju
+ju
 kA
 kY
 ls
-lO
+ls
 mj
 mI
 RV
 tW
-RE
+tW
 ju
 oC
 nf
@@ -7492,7 +7441,7 @@ km
 kB
 kZ
 Ng
-lt
+lu
 mk
 mJ
 ng
@@ -7543,7 +7492,7 @@ kC
 kZ
 lu
 RK
-ml
+lu
 RK
 JB
 RK
@@ -7643,7 +7592,7 @@ ZU
 lc
 ju
 ZU
-mm
+ZU
 ju
 ta
 IH

@@ -373,26 +373,6 @@
 /obj/structure/kitchenspike,
 /turf/open/floor/iron/freezer,
 /area/awaymission/snowdin/post/kitchen)
-"bx" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/wood,
-/area/awaymission/snowdin/post/dorm)
-"bA" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/wood{
-	icon_state = "wood-broken"
-	},
-/area/awaymission/snowdin/post/dorm)
 "bE" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -445,11 +425,6 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/research)
-"bL" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/iron/freezer,
-/area/awaymission/snowdin/post/kitchen)
 "bM" = (
 /obj/effect/landmark/awaystart,
 /obj/effect/decal/cleanable/blood/old,
@@ -1029,16 +1004,6 @@
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
-/area/awaymission/snowdin/post/dorm)
-"dd" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
-	dir = 4;
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "de" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
@@ -2322,22 +2287,6 @@
 	icon_state = "platingdmg1"
 	},
 /area/awaymission/snowdin/post/hydro)
-"gM" = (
-/obj/item/stack/cable_coil{
-	amount = 1
-	},
-/obj/structure/lattice/catwalk,
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/outside)
-"gN" = (
-/obj/structure/lattice/catwalk,
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/structure/cable,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/outside)
 "gO" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
@@ -2640,10 +2589,6 @@
 /obj/item/clothing/shoes/winterboots,
 /obj/item/key/atv,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/carpet,
-/area/awaymission/snowdin/post/dorm)
-"hH" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
 "hI" = (
@@ -3492,20 +3437,6 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/hydro)
-"jC" = (
-/obj/structure/lattice/catwalk,
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/structure/cable,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/outside)
-"jD" = (
-/obj/structure/lattice/catwalk,
-/obj/effect/turf_decal/weather/snow,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/structure/cable,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/outside)
 "jE" = (
 /obj/structure/chair{
 	dir = 4
@@ -3838,17 +3769,6 @@
 /obj/machinery/door/airlock{
 	name = "Showers"
 	},
-/turf/open/floor/iron/showroomfloor,
-/area/awaymission/snowdin/post/dorm)
-"kz" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
-	dir = 4;
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/snowdin/post/dorm)
 "kA" = (
@@ -4255,17 +4175,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/messhall)
-"lA" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
-	dir = 4;
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/messhall)
 "lB" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
@@ -4281,16 +4190,6 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 1;
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/cafeteria,
-/area/awaymission/snowdin/post/messhall)
-"lD" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -5507,15 +5406,6 @@
 	},
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
-"oO" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/effect/mapping_helpers/simple_pipes/supply/visible,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/engineering)
 "oP" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
@@ -5887,16 +5777,6 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
-"pW" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/visible,
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/engineering)
-"pX" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/visible,
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
-/area/awaymission/snowdin/post/engineering)
 "pY" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/plating{
@@ -6074,19 +5954,19 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qy" = (
-/obj/effect/mapping_helpers/simple_pipes/pink/visible,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qz" = (
-/obj/effect/mapping_helpers/simple_pipes/pink/visible,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qA" = (
-/obj/effect/mapping_helpers/simple_pipes/pink/visible,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -6221,7 +6101,7 @@
 	frequency = 1442;
 	name = "Toxins Supply Control";
 	output_tag = "snowdin_toxins_out";
-	sensors = list("snowdin_toxins" = "Tank")
+	sensors = list("snowdin_toxins"="Tank")
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -6235,11 +6115,11 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qZ" = (
-/obj/effect/mapping_helpers/simple_pipes/pink/visible,
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "ra" = (
@@ -6248,7 +6128,7 @@
 	frequency = 1442;
 	name = "Oxygen Supply Control";
 	output_tag = "snowdin_oxygen_out";
-	sensors = list("snowdin_oxygen" = "Tank")
+	sensors = list("snowdin_oxygen"="Tank")
 	},
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
@@ -6262,7 +6142,7 @@
 	frequency = 1442;
 	name = "Nitrogen Supply Control";
 	output_tag = "snowdin_nitrogen_out";
-	sensors = list("snowdin_nitrogen" = "Tank")
+	sensors = list("snowdin_nitrogen"="Tank")
 	},
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
@@ -8078,11 +7958,6 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=180"
 	},
 /area/awaymission/snowdin/cave)
-"xn" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "xp" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 8
@@ -8202,10 +8077,6 @@
 	},
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
-"xE" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "xF" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -8277,10 +8148,6 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=180"
 	},
 /area/awaymission/snowdin/cave)
-"xL" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "xM" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -8344,10 +8211,6 @@
 	},
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/cave)
-"xT" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "xV" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
@@ -8393,10 +8256,6 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_dock)
-"yc" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/cave)
 "yd" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -8607,14 +8466,6 @@
 /obj/effect/turf_decal/caution/stand_clear,
 /turf/open/floor/iron/dark/snowdin,
 /area/awaymission/snowdin/outside)
-"yH" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/cave)
-"yI" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/cave)
 "yJ" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /obj/machinery/portable_atmospherics/canister,
@@ -8723,14 +8574,6 @@
 /turf/open/floor/engine/plasma,
 /area/awaymission/snowdin/cave)
 "zc" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/cave)
-"zd" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/cave)
-"ze" = (
 /obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/cave)
@@ -9601,10 +9444,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood,
 /area/awaymission/snowdin/igloo)
-"BN" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "BO" = (
 /obj/effect/turf_decal/stripes/end{
 	dir = 1
@@ -9633,10 +9472,6 @@
 	},
 /turf/open/floor/plating/snowed/cavern,
 /area/awaymission/snowdin/cave/cavern)
-"BS" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "BT" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
@@ -11006,18 +10841,10 @@
 	},
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/snowdin/outside)
-"Fu" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/outside)
 "Fw" = (
 /obj/item/shard,
 /turf/open/floor/plating/asteroid/snow/ice,
 /area/awaymission/snowdin/cave/cavern)
-"Fx" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/outside)
 "Fy" = (
 /obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/open/floor/plating/snowed,
@@ -11251,10 +11078,6 @@
 	},
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/snowdin/outside)
-"Gt" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/outside)
 "Gv" = (
 /obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /obj/effect/light_emitter{
@@ -11262,10 +11085,6 @@
 	set_cap = 3;
 	set_luminosity = 6
 	},
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/outside)
-"Gw" = (
-/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/outside)
 "Gx" = (
@@ -13939,7 +13758,7 @@
 /area/awaymission/snowdin/post/mining_main/mechbay)
 "Xh" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/simple_pipes/pink/visible,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
 "Xj" = (
@@ -19102,7 +18921,7 @@ eO
 fs
 eO
 eO
-hH
+fs
 aK
 ag
 af
@@ -19863,7 +19682,7 @@ af
 aK
 aQ
 bi
-bx
+bl
 bQ
 cp
 cV
@@ -20634,7 +20453,7 @@ af
 aK
 aT
 bi
-bx
+bl
 bR
 cs
 cY
@@ -20648,7 +20467,7 @@ aS
 iq
 jf
 aV
-kz
+kA
 lh
 lX
 OT
@@ -21405,7 +21224,7 @@ af
 aK
 aW
 bl
-bA
+bi
 bS
 cu
 db
@@ -21922,7 +21741,7 @@ aV
 aS
 aS
 cr
-dd
+hc
 dF
 ei
 eX
@@ -22176,7 +21995,7 @@ af
 aK
 aY
 bl
-bx
+bl
 bT
 cw
 cY
@@ -22947,7 +22766,7 @@ af
 aK
 ba
 bl
-bx
+bl
 bU
 cy
 df
@@ -23464,7 +23283,7 @@ aV
 aV
 aS
 cq
-dd
+hc
 dJ
 dK
 fc
@@ -26560,7 +26379,7 @@ gA
 jy
 gA
 kN
-lA
+lz
 gA
 dO
 On
@@ -26802,7 +26621,7 @@ af
 af
 be
 bu
-bL
+cH
 Lg
 Pr
 dn
@@ -27080,7 +26899,7 @@ mP
 np
 nR
 on
-oO
+pT
 pv
 pT
 qu
@@ -27588,7 +27407,7 @@ iH
 jz
 kc
 iH
-lD
+mo
 hV
 dO
 UB
@@ -28110,7 +27929,7 @@ nN
 nN
 nN
 nN
-pW
+pV
 qv
 qW
 rs
@@ -28367,7 +28186,7 @@ nV
 or
 oR
 nt
-pX
+pY
 qw
 qX
 rt
@@ -28484,7 +28303,7 @@ wS
 wS
 wS
 gy
-xL
+ys
 ys
 SL
 an
@@ -28721,9 +28540,9 @@ wQ
 wS
 tI
 tI
-yc
 zc
-yH
+zc
+zc
 zc
 an
 an
@@ -28741,8 +28560,8 @@ wS
 tI
 wS
 Bv
-BN
-BS
+ys
+ys
 BV
 an
 BZ
@@ -28980,8 +28799,8 @@ ii
 tI
 yd
 yo
-yI
-zd
+zc
+zc
 an
 ii
 ij
@@ -29238,7 +29057,7 @@ tI
 wS
 wS
 yJ
-zd
+zc
 an
 ii
 tI
@@ -29495,7 +29314,7 @@ ii
 wS
 wS
 yK
-ze
+zc
 an
 ii
 tI
@@ -30350,13 +30169,13 @@ ae
 ae
 tq
 Fn
-Gw
-Fx
+Fy
+Fy
 FE
 FI
 FI
 FE
-Fx
+Fy
 Fy
 GS
 Ho
@@ -30420,7 +30239,7 @@ fW
 fW
 fW
 fW
-jC
+iM
 oX
 pz
 qf
@@ -30607,14 +30426,14 @@ ae
 ae
 tq
 Fo
-Fx
+Fy
 te
 dX
 af
 af
 dX
 te
-Gt
+Fy
 GT
 Hp
 Ho
@@ -30669,7 +30488,7 @@ af
 af
 af
 am
-jC
+iM
 iM
 kT
 hB
@@ -30677,7 +30496,7 @@ mw
 kT
 iM
 iM
-jD
+iM
 oW
 oW
 oW
@@ -30793,11 +30612,11 @@ wS
 wS
 wS
 Bv
-xT
+ys
 an
-xE
-xL
-xT
+ys
+ys
+ys
 Az
 Am
 Am
@@ -30864,7 +30683,7 @@ ae
 ae
 tq
 Fp
-Fx
+Fy
 te
 dX
 dX
@@ -30922,11 +30741,11 @@ af
 ak
 af
 af
-gM
+kT
 hB
 hB
 iM
-jD
+iM
 ak
 am
 am
@@ -31121,7 +30940,7 @@ ae
 ae
 tq
 WA
-Fx
+Fy
 te
 te
 dX
@@ -31179,7 +30998,7 @@ af
 af
 af
 af
-gN
+iM
 ak
 af
 af
@@ -31378,7 +31197,7 @@ ae
 ae
 tq
 Fn
-Fu
+Fy
 Fy
 te
 dX
@@ -31436,7 +31255,7 @@ af
 af
 af
 af
-gN
+iM
 ag
 fY
 fY
@@ -31636,13 +31455,13 @@ ae
 tq
 tq
 Fp
-Fx
+Fy
 te
 dX
 af
 dX
 te
-Gw
+Fy
 GS
 Ho
 Ho
@@ -31894,12 +31713,12 @@ ae
 tq
 Fp
 RS
-Fx
+Fy
 FE
 FI
 FE
-Fx
-Fu
+Fy
+Fy
 GT
 Hp
 Ho
@@ -32316,11 +32135,11 @@ ae
 wQ
 wS
 wS
-xE
-xL
-xT
+ys
+ys
+ys
 an
-xE
+ys
 yL
 wS
 wS
@@ -32575,7 +32394,7 @@ wS
 wS
 xF
 xM
-xn
+Ly
 ys
 ys
 NF
