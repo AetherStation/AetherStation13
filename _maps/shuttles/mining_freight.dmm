@@ -59,9 +59,7 @@
 /area/shuttle/mining)
 "k" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining)
 "l" = (
@@ -87,9 +85,7 @@
 	port_direction = 4;
 	width = 7
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/plating,
 /area/shuttle/mining)
 "n" = (

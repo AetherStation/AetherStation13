@@ -2664,9 +2664,7 @@
 /turf/closed/indestructible/riveted,
 /area/centcom/ferry)
 "nB" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/white,
 /area/centcom/ferry)
 "nC" = (
@@ -2675,9 +2673,7 @@
 	pixel_x = 11
 	},
 /obj/structure/mirror/directional/east,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/white,
 /area/centcom/ferry)
 "nD" = (
@@ -3341,15 +3337,11 @@
 /obj/structure/chair/comfy/brown{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
 "oI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
 "oJ" = (
@@ -3357,9 +3349,7 @@
 	name = "Administrative Office";
 	req_access_txt = "109"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -3547,9 +3537,7 @@
 /obj/structure/chair/comfy/black{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
 "pa" = (
@@ -3568,9 +3556,7 @@
 /obj/item/clothing/mask/cigarette/cigar{
 	pixel_x = 4.5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
 "pb" = (
@@ -3918,15 +3904,11 @@
 /turf/open/floor/iron/dark,
 /area/centcom/ferry)
 "pI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/wood,
 /area/centcom/ferry)
 "pJ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/wood,
 /area/centcom/ferry)
 "pM" = (
@@ -5270,9 +5252,7 @@
 /obj/structure/chair/office{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/wood,
 /area/centcom/ferry)
@@ -5280,9 +5260,7 @@
 /obj/item/clipboard,
 /obj/structure/table/reinforced,
 /obj/item/detective_scanner,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -5309,9 +5287,7 @@
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
 "sC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
@@ -5320,9 +5296,7 @@
 	name = "Administrative Storage";
 	req_access_txt = "106"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
@@ -5340,9 +5314,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/machinery/meter,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
@@ -5358,9 +5330,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/centcom/ferry)
@@ -5375,16 +5345,12 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/machinery/meter,
 /turf/open/floor/iron/dark,
 /area/centcom/ferry)
 "sH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
@@ -5395,9 +5361,7 @@
 /turf/open/floor/iron,
 /area/centcom/ferry)
 "sI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},

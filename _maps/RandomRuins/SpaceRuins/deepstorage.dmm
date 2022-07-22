@@ -59,15 +59,11 @@
 /turf/open/floor/iron/freezer,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "ap" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/freezer,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "aq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/freezer,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "ar" = (
@@ -354,9 +350,7 @@
 /obj/item/reagent_containers/food/condiment/soysauce{
 	pixel_x = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
@@ -366,9 +360,7 @@
 /obj/machinery/airalarm/away{
 	pixel_y = 23
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "ba" = (
@@ -378,9 +370,7 @@
 	pixel_x = 4;
 	pixel_y = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/item/kitchen/knife,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
@@ -408,16 +398,12 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "bf" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "bg" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/machinery/door/firedoor,
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -426,16 +412,12 @@
 /obj/structure/table,
 /obj/item/storage/bag/plants/portaseeder,
 /obj/item/storage/bag/plants,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "bi" = (
 /obj/machinery/vending/hydronutrients,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
@@ -443,23 +425,17 @@
 /obj/machinery/vending/hydroseeds{
 	slogan_delay = 700
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "bk" = (
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/light,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "bl" = (
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/machinery/light/directional/north,
 /turf/open/floor/light,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
@@ -471,30 +447,22 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/storage)
 "bn" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/storage)
 "bo" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/storage)
 "bp" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/storage)
 "bq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/storage)
@@ -516,9 +484,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bt" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bu" = (
@@ -531,9 +497,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bx" = (
@@ -608,23 +572,17 @@
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
 "bM" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/deepstorage/kitchen)
@@ -820,9 +778,7 @@
 "cl" = (
 /obj/structure/table,
 /obj/item/storage/box/donkpockets,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/machinery/light/directional/north,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
@@ -835,9 +791,7 @@
 /obj/machinery/airalarm/away{
 	pixel_y = 23
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -845,9 +799,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "cn" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
@@ -858,9 +810,7 @@
 /area/ruin/space/has_grav/deepstorage)
 "co" = (
 /obj/structure/closet/crate/bin,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -889,34 +839,26 @@
 /turf/open/floor/iron/freezer,
 /area/ruin/space/has_grav/deepstorage)
 "ct" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "cu" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "cv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/machinery/door/firedoor,
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "cw" = (
 /obj/structure/table,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/machinery/light/directional/south,
 /obj/item/reagent_containers/glass/bucket{
 	pixel_x = 4;
@@ -927,31 +869,23 @@
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "cx" = (
 /obj/machinery/seed_extractor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "cy" = (
 /obj/machinery/biogenerator,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/item/reagent_containers/glass/beaker/large,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "cz" = (
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/light,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "cA" = (
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/light,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "cB" = (
@@ -985,9 +919,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/storage)
 "cC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -997,17 +929,13 @@
 	name = "Provisions Storage";
 	req_access_txt = "200"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/storage)
 "cE" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -1020,9 +948,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "cG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -1133,9 +1059,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "cV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
@@ -1205,16 +1129,12 @@
 /turf/closed/wall/mineral/iron,
 /area/ruin/space/has_grav/deepstorage/armory)
 "df" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/storage)
 "dg" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/closed/wall/mineral/iron,
 /area/ruin/space/has_grav/deepstorage/storage)
 "dh" = (
@@ -1226,26 +1146,20 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "di" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/structure/chair/stool/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "dj" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "dk" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
@@ -1366,15 +1280,11 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/storage)
 "dz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/closed/wall/mineral/iron,
 /area/ruin/space/has_grav/deepstorage/storage)
 "dA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/closed/wall/mineral/iron,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "dB" = (
@@ -1388,23 +1298,17 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "dD" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "dF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "dG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -1416,17 +1320,13 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "dI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "dK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
@@ -1436,22 +1336,16 @@
 	name = "Secure Storage";
 	req_access_txt = "200"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/deepstorage/armory)
 "dN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/deepstorage/armory)
 "dO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/deepstorage/armory)
 "dP" = (
@@ -1470,17 +1364,13 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/deepstorage/armory)
 "dR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "dS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/public/glass{
 	name = "Dorms"
@@ -1490,17 +1380,13 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "dU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "dV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/machinery/power/apc/away{
 	name = "Main Area APC";
 	pixel_y = -23
@@ -1518,17 +1404,13 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "dY" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "eb" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -1539,16 +1421,12 @@
 	name = "Secure Storage";
 	req_access_txt = "200"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/deepstorage/armory)
 "ef" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/deepstorage/armory)
@@ -1579,16 +1457,12 @@
 /area/ruin/space/has_grav/deepstorage/dorm)
 "ek" = (
 /obj/structure/bed,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/item/bedsheet,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "el" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/closed/wall/mineral/iron,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "em" = (
@@ -1646,9 +1520,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "ev" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/deepstorage/armory)
 "ew" = (
@@ -1677,25 +1549,19 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "eA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "eB" = (
 /obj/machinery/door/airlock{
 	name = "Personal Dorm"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "eC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -1719,9 +1585,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/airlock)
 "eG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/hidden,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -1729,16 +1593,12 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/airlock)
 "eH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/hidden,
 /turf/closed/wall/mineral/iron,
 /area/ruin/space/has_grav/deepstorage/airlock)
 "eI" = (
 /obj/structure/table,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/hidden,
 /obj/machinery/computer/security/telescreen{
 	dir = 1;
 	name = "Bunker Entrance monitor";
@@ -1766,18 +1626,14 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/airlock)
 "eJ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/hidden,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/airlock)
 "eK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/hidden,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/machinery/firealarm/directional/north,
 /obj/effect/decal/cleanable/dirt,
@@ -1785,9 +1641,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/airlock)
 "eL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/hidden{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/hidden,
 /obj/machinery/power/apc/away{
 	dir = 1;
 	name = "Airlock Control APC";
@@ -1912,21 +1766,15 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/power)
 "fa" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
 /turf/closed/wall/mineral/iron,
 /area/ruin/space/has_grav/deepstorage/armory)
 "fb" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
 /turf/closed/wall/mineral/iron,
 /area/ruin/space/has_grav/deepstorage/armory)
 "fc" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
 /turf/closed/wall/mineral/iron,
 /area/ruin/space/has_grav/deepstorage/power)
 "fd" = (
@@ -2008,18 +1856,14 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage)
 "fr" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/hidden{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/yellow/hidden,
 /obj/machinery/light/small/directional/east,
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/airlock)
 "ft" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/yellow/hidden,
 /obj/machinery/airalarm/away{
 	dir = 4;
 	pixel_x = -24
@@ -2028,9 +1872,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/airlock)
 "fu" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/yellow/hidden,
 /obj/machinery/light/directional/south,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
@@ -2072,24 +1914,18 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/power)
 "fz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/pink/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/pink/visible,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/bridge_pipe/green/visible,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/power)
 "fA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/pink/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/pink/visible,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/power)
 "fB" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/pink/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/pink/visible,
 /obj/machinery/door/firedoor,
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -2176,9 +2012,7 @@
 /area/ruin/space/has_grav/deepstorage/dorm)
 "fO" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/dorm)
@@ -2198,9 +2032,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "fR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/machinery/light/small/directional/north,
 /obj/structure/sign/warning/securearea{
 	pixel_y = 32
@@ -2212,9 +2044,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "fS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -2245,16 +2075,12 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "fW" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/power)
 "fX" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /obj/structure/sign/warning/electricshock{
 	pixel_y = 32
 	},
@@ -2262,9 +2088,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/power)
 "fY" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -2272,9 +2096,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/power)
 "fZ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -2287,16 +2109,12 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/power)
 "gb" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/power)
 "gc" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
 /obj/machinery/door/firedoor,
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -2312,15 +2130,11 @@
 /obj/machinery/door/airlock{
 	name = "Personal Dorm"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "gf" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/dorm)
@@ -2395,9 +2209,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/power)
 "gu" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/pink/visible{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/pink/visible,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/power)
@@ -2443,9 +2255,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage)
 "gA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -2548,9 +2358,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/power)
 "gT" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /obj/machinery/autolathe,
 /obj/structure/sign/warning/radiation{
 	pixel_x = -32
@@ -2559,16 +2367,12 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/power)
 "gU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage/power)
 "gV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /obj/structure/table,
 /obj/item/storage/toolbox/electrical{
 	pixel_x = 4;
@@ -2629,35 +2433,27 @@
 /area/ruin/space/has_grav/deepstorage/crusher)
 "hf" = (
 /obj/machinery/hydroponics/constructable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/machinery/airalarm/away{
 	pixel_y = 23
 	},
 /turf/open/floor/light,
 /area/ruin/space/has_grav/deepstorage/hydroponics)
 "hg" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/machinery/firealarm/directional/north,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "hh" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "hi" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
 	},
@@ -2666,9 +2462,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/deepstorage)
 "hj" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/machinery/firealarm/directional/east,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -2711,9 +2505,7 @@
 "hq" = (
 /obj/machinery/door/firedoor,
 /obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/power)
 "hr" = (
@@ -2774,9 +2566,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/deepstorage/crusher)
 "EP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/yellow/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/yellow/hidden,
 /turf/closed/wall/mineral/iron,
 /area/ruin/space/has_grav/deepstorage/airlock)
 "Ik" = (

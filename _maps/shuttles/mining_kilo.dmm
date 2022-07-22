@@ -228,9 +228,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /obj/structure/cable,
 /turf/open/floor/mineral/titanium/yellow,
 /area/shuttle/mining/large)

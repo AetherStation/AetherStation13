@@ -195,11 +195,7 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -546,11 +542,7 @@
 /area/mine/production)
 "bQ" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 1
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 1
 	},
 /turf/open/floor/iron,
 /area/mine/production)
@@ -560,11 +552,7 @@
 	req_access_txt = "54"
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/eva)
@@ -576,27 +564,17 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/eva)
 "bU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 9
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 9
 	},
 /turf/open/floor/iron,
 /area/mine/eva)
 "bV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/eva)
 "bW" = (
@@ -778,9 +756,7 @@
 /area/mine/production)
 "cE" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/production)
@@ -1021,15 +997,11 @@
 "dp" = (
 /obj/machinery/meter,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
 "dq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
 "dr" = (
@@ -1066,26 +1038,18 @@
 /area/mine/production)
 "dx" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/circuit,
 /area/mine/maintenance)
 "dy" = (
 /obj/structure/cable,
 /obj/machinery/bluespace_beacon,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 10
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 10
 	},
 /turf/open/floor/iron/dark,
 /area/mine/maintenance)
 "dz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/machinery/light_switch/directional/south,
 /turf/open/floor/circuit,
 /area/mine/maintenance)
@@ -1158,9 +1122,7 @@
 /turf/open/floor/plating,
 /area/mine/living_quarters)
 "dI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
 "dJ" = (
@@ -1400,20 +1362,14 @@
 /area/mine/living_quarters)
 "et" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 1
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 1
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "eu" = (
 /obj/structure/cable,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "ew" = (
@@ -1422,11 +1378,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -1435,11 +1387,7 @@
 /obj/machinery/door/airlock/glass{
 	name = "Mining Station Bridge"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -1451,21 +1399,13 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "ez" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/production)
@@ -1474,11 +1414,7 @@
 /obj/machinery/door/airlock/glass{
 	name = "Mining Station Bridge"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/production)
@@ -1490,11 +1426,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/production)
@@ -1505,28 +1437,18 @@
 /turf/open/floor/iron,
 /area/mine/production)
 "eD" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/production)
 "eE" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/production)
 "eH" = (
 /obj/effect/turf_decal/tile/purple,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/production)
@@ -1535,11 +1457,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 9
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 9
 	},
 /turf/open/floor/iron,
 /area/mine/production)
@@ -1700,9 +1618,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/machinery/button/door/directional/north{
 	id = "miningdorm1";
 	normaldoorcontrol = 1;
@@ -1715,11 +1631,7 @@
 	id_tag = "miningdorm1";
 	name = "Room 1"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -1730,20 +1642,12 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "fi" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 4
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -1850,9 +1754,7 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "fD" = (
@@ -1872,11 +1774,7 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 5
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 5
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -1888,9 +1786,7 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "fF" = (
@@ -1917,11 +1813,7 @@
 	id_tag = "miningdorm2";
 	name = "Room 2"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -1969,9 +1861,7 @@
 "fN" = (
 /obj/machinery/light/directional/east,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "fO" = (
@@ -1979,11 +1869,7 @@
 	id_tag = "miningdorm3";
 	name = "Room 3"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -2067,11 +1953,7 @@
 /area/lavaland/surface/outdoors)
 "gp" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 1
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 1
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -2199,11 +2081,7 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "hz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron/freezer,
 /area/mine/living_quarters)
@@ -2235,18 +2113,12 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 10
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 10
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "hN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -2326,11 +2198,7 @@
 /area/lavaland/surface/outdoors)
 "iM" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 10
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 10
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp/security)
@@ -2454,11 +2322,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 1
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 1
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -3336,11 +3200,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron/white,
 /area/mine/laborcamp)
@@ -3480,21 +3340,13 @@
 	id_tag = "cellblock1";
 	name = "Labor Camp Cellblock"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "qm" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 10
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 10
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -3517,9 +3369,7 @@
 "qI" = (
 /obj/effect/turf_decal/bot,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -3592,9 +3442,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/machinery/button/door/directional/south{
 	id = "miningbathroom";
 	normaldoorcontrol = 1;
@@ -3653,11 +3501,7 @@
 /area/mine/laborcamp)
 "ut" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 6
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -3680,9 +3524,7 @@
 "uJ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
 "vb" = (
@@ -3735,11 +3577,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -3786,9 +3624,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/machinery/button/door/directional/north{
 	id = "miningdorm2";
 	normaldoorcontrol = 1;
@@ -3802,9 +3638,7 @@
 /area/mine/living_quarters)
 "xW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "xX" = (
@@ -3832,17 +3666,13 @@
 /area/mine/laborcamp)
 "yi" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "yk" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "yr" = (
@@ -3916,9 +3746,7 @@
 /area/mine/living_quarters)
 "AB" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/production)
 "AH" = (
@@ -3981,19 +3809,13 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 6
 	},
 /turf/open/floor/iron/white,
 /area/mine/laborcamp)
 "BL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -4055,11 +3877,7 @@
 /area/mine/living_quarters)
 "EG" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -4140,11 +3958,7 @@
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "GI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp/security)
@@ -4181,9 +3995,7 @@
 /area/mine/laborcamp)
 "Hj" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "Ho" = (
@@ -4193,17 +4005,11 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/white,
 /area/mine/living_quarters)
 "Hx" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 5
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 5
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp/security)
@@ -4271,16 +4077,12 @@
 "Jx" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "Kb" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -4288,9 +4090,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/machinery/button/door/directional/north{
 	id = "miningdorm3";
 	normaldoorcontrol = 1;
@@ -4300,11 +4100,7 @@
 /area/mine/living_quarters)
 "Kv" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -4360,11 +4156,7 @@
 /obj/machinery/door/airlock{
 	name = "Restroom"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron/freezer,
 /area/mine/living_quarters)
@@ -4398,11 +4190,7 @@
 /obj/machinery/mineral/labor_points_checker{
 	pixel_y = 25
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -4437,11 +4225,7 @@
 /turf/open/floor/iron/white,
 /area/mine/laborcamp)
 "OX" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 1
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 1
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -4544,11 +4328,7 @@
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "QN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 1
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 1
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp/security)
@@ -4601,9 +4381,7 @@
 /area/mine/production)
 "RO" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -4651,11 +4429,7 @@
 /area/mine/laborcamp)
 "Tn" = (
 /obj/machinery/light/small/directional/south,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron/freezer,
 /area/mine/living_quarters)
@@ -4667,11 +4441,7 @@
 "TJ" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/north,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 1
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 1
 	},
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -4712,9 +4482,7 @@
 /area/mine/laborcamp)
 "UA" = (
 /obj/structure/lattice/catwalk,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/mine/living_quarters)
 "UC" = (
@@ -4760,11 +4528,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/production)
@@ -4779,11 +4543,7 @@
 /area/mine/living_quarters)
 "UV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /obj/machinery/newscaster/directional/north,
 /turf/open/floor/iron,
@@ -4795,11 +4555,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron/white,
 /area/mine/laborcamp)
@@ -4934,11 +4690,7 @@
 /area/mine/living_quarters)
 "YA" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -4981,11 +4733,7 @@
 	id_tag = "miningbathroom";
 	name = "Restroom"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2{
-	dir = 8
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
 	},
 /turf/open/floor/iron/freezer,
 /area/mine/living_quarters)

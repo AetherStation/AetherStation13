@@ -631,9 +631,7 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "oR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/ruin/powered/seedvault)
 "sv" = (
@@ -651,9 +649,7 @@
 /area/ruin/powered/seedvault)
 "Eu" = (
 /obj/machinery/light/directional/south,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/ruin/powered/seedvault)
 "GN" = (
@@ -676,9 +672,7 @@
 /turf/open/floor/vault,
 /area/ruin/powered/seedvault)
 "PH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/ruin/powered/seedvault)
 "Uz" = (

@@ -91,9 +91,7 @@
 /area/shuttle/abandoned/engine)
 "ao" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/yellow,
 /area/shuttle/abandoned/engine)
 "ap" = (
@@ -141,17 +139,13 @@
 /area/shuttle/abandoned/engine)
 "aw" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/yellow,
 /area/shuttle/abandoned/engine)
 "ax" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/yellow,
 /area/shuttle/abandoned/engine)
 "az" = (
@@ -256,17 +250,13 @@
 "aO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/spawner/lootdrop/cigbutt,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/cargo)
 "aP" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/cargo)
 "aQ" = (
@@ -277,9 +267,7 @@
 "aR" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/cargo)
 "aS" = (
@@ -702,9 +690,7 @@
 "bY" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/shuttle/abandoned/cargo)
 "bZ" = (
@@ -735,9 +721,7 @@
 /obj/effect/decal/cleanable/oil/slippery,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/white,
 /area/shuttle/abandoned/cargo)
 "cd" = (
@@ -914,9 +898,7 @@
 "cv" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/cargo)
 "cw" = (
@@ -943,9 +925,7 @@
 "cz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/cargo)
 "cA" = (
@@ -1077,17 +1057,13 @@
 "cS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/shuttle/abandoned/bridge)
 "cT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/tiled/blue,
 /area/shuttle/abandoned/bridge)
 "cU" = (
@@ -1272,9 +1248,7 @@
 /area/shuttle/abandoned/medbay)
 "do" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/medbay)
 "dp" = (
@@ -1300,9 +1274,7 @@
 /area/shuttle/abandoned/bridge)
 "ds" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/medbay)
 "dt" = (
@@ -1349,9 +1321,7 @@
 "dy" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/red/directional/south,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/mineral/titanium/tiled,
 /area/shuttle/abandoned/medbay)
 "dz" = (

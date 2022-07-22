@@ -201,7 +201,7 @@
 /area/ruin/space/has_grav/listeningstation)
 "au" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 10;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -296,7 +296,7 @@
 /area/ruin/space/has_grav/listeningstation)
 "aA" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -370,7 +370,7 @@
 	oxygentanks = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -379,7 +379,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/listeningstation)
 "aF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -442,7 +442,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -473,7 +473,7 @@
 "aM" = (
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -537,10 +537,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/listeningstation)
 "aQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -550,10 +548,8 @@
 /area/ruin/space/has_grav/listeningstation)
 "aR" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -566,10 +562,8 @@
 /area/ruin/space/has_grav/listeningstation)
 "aS" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -582,7 +576,7 @@
 /area/ruin/space/has_grav/listeningstation)
 "aT" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -600,10 +594,8 @@
 	pixel_y = 24
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -620,10 +612,8 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/listeningstation)
 "aV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -641,10 +631,8 @@
 /area/ruin/space/has_grav/listeningstation)
 "aW" = (
 /obj/machinery/firealarm/directional/north,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 1;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -661,10 +649,8 @@
 /area/ruin/space/has_grav/listeningstation)
 "aX" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -743,7 +729,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -783,7 +769,7 @@
 /area/ruin/space/has_grav/listeningstation)
 "bg" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -804,7 +790,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -834,7 +820,7 @@
 	dir = 8
 	},
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -868,7 +854,7 @@
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -886,7 +872,7 @@
 	name = "Cabin"
 	},
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -937,7 +923,7 @@
 /area/ruin/space/has_grav/listeningstation)
 "bt" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -1086,7 +1072,7 @@
 "bI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 8;
 	piping_layer = 4;
 	pixel_x = 5;
