@@ -18,6 +18,7 @@ SUBSYSTEM_DEF(persistence)
 	var/list/obj/item/storage/photo_album/photo_albums
 	var/list/obj/structure/sign/painting/painting_frames = list()
 	var/list/paintings = list()
+	var/list/mainframe_roms = list()
 
 /datum/controller/subsystem/persistence/Initialize()
 	LoadPoly()
@@ -28,6 +29,7 @@ SUBSYSTEM_DEF(persistence)
 	LoadRandomizedRecipes()
 	LoadPaintings()
 	load_custom_outfits()
+	load_mainframe_roms()
 
 	load_adventures()
 	return ..()
@@ -157,6 +159,7 @@ SUBSYSTEM_DEF(persistence)
 	SavePaintings()
 	SaveScars()
 	save_custom_outfits()
+	save_mainframe_roms()
 
 /datum/controller/subsystem/persistence/proc/GetPhotoAlbums()
 	var/album_path = file("data/photo_albums.json")
@@ -382,6 +385,18 @@ SUBSYSTEM_DEF(persistence)
 		if(!outfit.load_from(outfit_data))
 			continue
 		GLOB.custom_outfits += outfit
+
+/datum/controller/subsystem/persistence/proc/load_mainframe_roms()
+	var/file = file("data/mainframe_roms.json")
+	if (!fexists(file))
+		return
+	var/roms_json = file2text(file)
+	mainframe_roms = json_decode(roms_json)
+
+/datum/controller/subsystem/persistence/proc/save_mainframe_roms()
+	var/file = file("data/mainframe_roms.json")
+	fdel(file)
+	WRITE_FILE(file, json_encode(mainframe_roms))
 
 /datum/controller/subsystem/persistence/proc/save_custom_outfits()
 	var/file = file("data/custom_outfits.json")

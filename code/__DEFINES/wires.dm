@@ -53,3 +53,5 @@
 #define WIRE_AGELIMIT "Age Limit"
 #define WIRE_ACCEPT "Scan Success"
 #define WIRE_DENY "Scan Fail"
+#define WIRE_INTERRUPT1 "Interrupt 1"
+#define WIRE_INTERRUPT2 "Interrupt 2"

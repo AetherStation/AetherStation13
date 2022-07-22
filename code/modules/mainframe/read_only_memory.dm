@@ -15,7 +15,7 @@
 ///////////////////////////
 
 /obj/machinery/mainframe/external/read_only_memory
-	name = "ROM Unit"
+	name = "read only memory unit"
 	icon_state = "rom_unit"
 	var/obj/item/mainframe_rom_bank/banks[4]
 
@@ -70,13 +70,16 @@
 ///////////////////////////
 
 /obj/structure/rom_bank_editor
-	name = "ROM Bank Programmer"
+	name = "ROM bank programmer"
 	icon = 'icons/obj/machines/mainframe.dmi'
 	icon_state = "rom_editor"
+	anchored = TRUE
+	density = TRUE
 	var/obj/item/mainframe_rom_bank/inserted
 
 /obj/structure/rom_bank_editor/ui_data(mob/user)
 	var/list/data = list()
+	data["inserted"] = !!inserted
 	if (inserted)
 		data["memory"] = inserted.data.memory
 	return data
@@ -119,5 +122,85 @@
 	user.put_in_hands(inserted)
 	user.visible_message(span_notice("[user] takes \the [inserted] from \the [src]."))
 	icon_state = "rom_editor"
-	ui_interact(user)
 	inserted = null
+
+/obj/structure/rom_library
+	name = "ROM database"
+	desc = "Get your memory from here!"
+	icon = 'icons/obj/machines/mainframe.dmi'
+	icon_state = "rom_library"
+	anchored = TRUE
+	density = TRUE
+	var/const/maximum_count = 16
+	var/obj/item/mainframe_rom_bank/inserted
+
+/obj/structure/rom_library/attackby(obj/item/weapon, mob/user, params)
+	if (istype(weapon, /obj/item/mainframe_rom_bank))
+		if (inserted)
+			to_chat(user, span_notice("There already is a ROM bank inside \the [src]."))
+			return
+		if (!user.transferItemToLoc(weapon, src))
+			return
+		inserted = weapon
+		icon_state = "rom_library_inserted"
+		user.visible_message(span_notice("[user] puts \the [weapon] on \the [src]."))
+		return
+	return ..()
+
+/obj/structure/rom_library/attack_hand_secondary(mob/user, list/modifiers)
+	. = ..()
+	if (. == SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN || !inserted)
+		return
+	user.put_in_hands(inserted)
+	user.visible_message(span_notice("[user] takes \the [inserted] from \the [src]."))
+	icon_state = "rom_library"
+	inserted = null
+
+/obj/structure/rom_library/ui_data(mob/user)
+	var/list/data = list()
+	data["inserted"] = !!inserted
+	var/list/roms = list()
+	for (var/n in SSpersistence.mainframe_roms)
+		roms += n
+	data["roms"] = roms
+	return data
+
+/obj/structure/rom_library/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "MainframeLibrary")
+		ui.open()
+
+/obj/structure/rom_library/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	switch (action)
+		if ("save")
+			if (!inserted)
+				return
+			var/rom_name = copytext(inserted.name, 1, 16) // cut name.
+			if (SSpersistence.mainframe_roms[rom_name])
+				to_chat(usr, span_warning("This name is already taken."))
+				playsound(src, 'sound/machines/terminal_error.ogg', 30, TRUE)
+				return
+			if (SSpersistence.mainframe_roms.len >= maximum_count)
+				to_chat(usr, span_warning("There is too much stored in \the [src], make some space."))
+				playsound(src, 'sound/machines/terminal_error.ogg', 30, TRUE)
+				return
+			playsound(src, 'sound/machines/terminal_success.ogg', 30, TRUE)
+			SSpersistence.mainframe_roms[rom_name] = inserted.data.memory
+			return
+		if ("delete")
+			if (!SSpersistence.mainframe_roms[params["name"]])
+				return
+			playsound(src, 'sound/machines/terminal_success.ogg', 30, TRUE)
+			SSpersistence.mainframe_roms.Remove(params["name"])
+			return
+		if ("load")
+			if (!SSpersistence.mainframe_roms[params["name"]] || !inserted)
+				return
+			playsound(src, 'sound/machines/terminal_success.ogg', 30, TRUE)
+			inserted.name = params["name"]
+			inserted.data.memory = SSpersistence.mainframe_roms[inserted.name]
+			return

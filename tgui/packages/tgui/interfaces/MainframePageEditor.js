@@ -70,7 +70,7 @@ export const MainframePageEditor = (props, context) => {
           setCurrentNibble(currentNibble + 1);
           return;
         }}>
-        {!data.memory && (
+        {!data.inserted && (
           <NoticeBox danger>
             No ROM bank inserted.
           </NoticeBox>

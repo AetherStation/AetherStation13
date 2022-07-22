@@ -8,7 +8,7 @@
 	var/datum/mos6502_memory_map/memory/data = new(16)
 
 /obj/machinery/mainframe/external/removable_storage
-	name = "Cassette Drive"
+	name = "cassette drive"
 	icon_state = "cassette_drive"
 	var/obj/item/mainframe_memory_cassette/inserted
 
@@ -25,6 +25,7 @@
 		if (!user.transferItemToLoc(weapon, src))
 			return
 		inserted = weapon
+		icon_state = "cassette_drive_inserted"
 		parent?.processor.add_memory_map(inserted.data, 16)
 		playsound(src, 'sound/items/taperecorder/taperecorder_open.ogg', 50, FALSE)
 		user.visible_message(span_notice("[user] inserts \the [weapon] into \the [src]."))
@@ -38,6 +39,7 @@
 
 	user.put_in_hands(inserted)
 	parent?.processor.remove_memory_map(inserted.data)
+	icon_state = "cassette_drive"
 	playsound(src, 'sound/items/taperecorder/taperecorder_close.ogg', 50, FALSE)
 	user.visible_message(span_notice("[user] ejects \the [inserted] from \the [src]."))
 	inserted = null

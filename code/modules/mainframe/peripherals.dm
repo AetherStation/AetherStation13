@@ -11,7 +11,7 @@
 /obj/machinery/mainframe/external/peripheral/proc/mem_read(address)
 
 /obj/machinery/mainframe/external/peripheral/terminal
-	name = "Terminal"
+	name = "mainframe terminal"
 	desc = "Text mode only, I am afraid it is terminal."
 	icon_state = "terminal"
 	var/current_line = 0
@@ -77,8 +77,8 @@
 		input_queue += M
 
 /obj/machinery/mainframe/external/peripheral/printer
-	name = "Printer"
-	desc = "Likely the most advanced component of the entire system due to it using no ink."
+	name = "mainframe printer"
+	desc = "Likely the most advanced component of the entire system due to it not using ink."
 	icon_state = "printer"
 	peripheral_address_start = 4
 	peripheral_address_end = 8
