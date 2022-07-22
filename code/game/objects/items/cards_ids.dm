@@ -697,6 +697,7 @@
 	if(istype(target, /obj/item/card/id))
 		var/obj/item/card/id/id = target
 		access |= id.get_access()
+		to_chat(user, span_notice("You successfully sync your [src] with \the [id]."))
 		return
 
 	return ..()
@@ -706,10 +707,10 @@
 	// to sneakily steal their accesses by swiping our agent ID card near them. As a result, we
 	// return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN to cancel any part of the following the attack chain.
 	if(istype(target, /mob/living/carbon/human))
-		to_chat(user, "<span class='notice'>You covertly start to scan [target] with \the [src], hoping to pick up a wireless ID card signal...</span>")
+		to_chat(user, span_notice("You covertly start to scan [target] with \the [src], hoping to pick up a wireless ID card signal..."))
 
 		if(!do_mob(user, target, 2 SECONDS))
-			to_chat(user, "<span class='notice'>The scan was interrupted.</span>")
+			to_chat(user, span_notice("The scan was interrupted."))
 			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 		var/mob/living/carbon/human/human_target = target
@@ -717,27 +718,27 @@
 		var/list/target_id_cards = human_target.get_all_contents_type(/obj/item/card/id)
 
 		if(!length(target_id_cards))
-			to_chat(user, "<span class='notice'>The scan failed to locate any ID cards.</span>")
+			to_chat(user, span_notice("The scan failed to locate any ID cards."))
 			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 		var/obj/item/card/id/selected_id = pick(target_id_cards)
-		to_chat(user, "<span class='notice'>You successfully sync your [src] with \the [selected_id].</span>")
+		to_chat(user, span_notice("You successfully sync your [src] with \the [selected_id]."))
 		access |= selected_id.get_access()
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 	if(istype(target, /obj/item))
 		var/obj/item/target_item = target
 
-		to_chat(user, "<span class='notice'>You covertly start to scan [target] with your [src], hoping to pick up a wireless ID card signal...</span>")
+		to_chat(user, span_notice("You covertly start to scan [target] with your [src], hoping to pick up a wireless ID card signal..."))
 
 		var/list/target_id_cards = target_item.get_all_contents_type(/obj/item/card/id)
 
 		if(!length(target_id_cards))
-			to_chat(user, "<span class='notice'>The scan failed to locate any ID cards.</span>")
+			to_chat(user, span_notice("The scan failed to locate any ID cards.</span>"))
 			return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
 		var/obj/item/card/id/selected_id = pick(target_id_cards)
-		to_chat(user, "<span class='notice'>You successfully sync your [src] with \the [selected_id].</span>")
+		to_chat(user, span_notice("You successfully sync your [src] with \the [selected_id]."))
 		access |= selected_id.get_access()
 		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 
