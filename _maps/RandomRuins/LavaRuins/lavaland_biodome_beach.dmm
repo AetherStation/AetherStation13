@@ -282,8 +282,7 @@
 /turf/open/floor/plating,
 /area/ruin/powered/beach)
 "eE" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
 "fB" = (
@@ -331,8 +330,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "hk" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron{
 	icon = 'icons/misc/beach.dmi';
 	icon_state = "sand"
@@ -445,8 +443,7 @@
 /turf/open/floor/sepia,
 /area/ruin/powered/beach)
 "lL" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
 "lT" = (
@@ -503,8 +500,7 @@
 /area/ruin/powered/beach)
 "pS" = (
 /obj/machinery/light/directional/east,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/sand,
 /turf/open/floor/iron{
 	icon = 'icons/misc/beach.dmi';
@@ -698,8 +694,7 @@
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
 "xe" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/powered/beach)
 "xg" = (
@@ -724,8 +719,7 @@
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "yc" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
 "yk" = (
@@ -916,8 +910,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "Fr" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
 "FF" = (
@@ -1078,8 +1071,7 @@
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "Ky" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
 "KK" = (
@@ -1101,8 +1093,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "Mf" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
 "MO" = (
@@ -1115,8 +1106,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "MZ" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
 "ND" = (
@@ -1141,8 +1131,7 @@
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "NV" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/powered/beach)
 "OE" = (
@@ -1227,16 +1216,14 @@
 /turf/open/floor/plating/beach/sand,
 /area/ruin/powered/beach)
 "SK" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/mineral_door/wood{
 	name = "Croupier's Booth"
 	},
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "ST" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
 "SZ" = (
@@ -1389,13 +1376,11 @@
 /turf/open/floor/wood,
 /area/ruin/powered/beach)
 "XW" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/mineral/wood/nonmetal,
 /area/ruin/powered/beach)
 "Zi" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/mineral/sandstone,
 /area/ruin/powered/beach)
 "Zj" = (

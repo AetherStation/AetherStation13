@@ -1,7 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "af" = (
@@ -52,8 +51,7 @@
 	name = "\improper Private Section Notice";
 	pixel_y = 32
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "aR" = (
@@ -776,8 +774,7 @@
 /obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/sand,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/shuttle/escape)
 "jd" = (
@@ -787,8 +784,7 @@
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "jf" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/carpet,
 /area/shuttle/escape)
 "jk" = (
@@ -894,8 +890,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "kt" = (
@@ -910,8 +905,7 @@
 /area/shuttle/escape)
 "kw" = (
 /obj/structure/chair/wood,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/carpet,
 /area/shuttle/escape)
 "kI" = (
@@ -1041,8 +1035,7 @@
 	},
 /obj/effect/turf_decal/sand,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/shuttle/escape)
 "mP" = (
@@ -1050,8 +1043,7 @@
 	name = "Chapel"
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "mQ" = (
@@ -1219,8 +1211,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "pr" = (
@@ -1250,8 +1241,7 @@
 /turf/open/floor/plating/asteroid,
 /area/shuttle/escape)
 "pB" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "pD" = (
@@ -1295,8 +1285,7 @@
 /obj/machinery/door/airlock/grunge{
 	name = "Monastery Cemetary"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "qr" = (
@@ -1401,8 +1390,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "rW" = (
@@ -1461,20 +1449,17 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "sm" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/carpet,
 /area/shuttle/escape)
 "sq" = (
 /obj/effect/landmark/start/chaplain,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/carpet,
 /area/shuttle/escape)
 "sz" = (
@@ -1548,8 +1533,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "tm" = (
@@ -1584,8 +1568,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "ua" = (
@@ -1649,8 +1632,7 @@
 	icon_state = "plant-21"
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "vk" = (
@@ -1679,8 +1661,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "vJ" = (
@@ -1725,8 +1706,7 @@
 	icon_state = "plant-10"
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "wh" = (
@@ -1832,8 +1812,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "wS" = (
@@ -1848,8 +1827,7 @@
 /obj/item/kirbyplants{
 	icon_state = "plant-21"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "xl" = (
@@ -1876,8 +1854,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "xt" = (
@@ -1975,8 +1952,7 @@
 	name = "Private Exhibit";
 	req_access_txt = "37"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "yC" = (
@@ -2072,8 +2048,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "zp" = (
@@ -2166,8 +2141,7 @@
 /area/shuttle/escape/brig)
 "Ay" = (
 /obj/structure/chair/wood,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "AF" = (
@@ -2200,8 +2174,7 @@
 /turf/open/floor/grass,
 /area/shuttle/escape)
 "BA" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "BC" = (
@@ -2224,18 +2197,15 @@
 	id_tag = "Cell1";
 	name = "Cell 1"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/grimy,
 /area/shuttle/escape)
 "BR" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "BX" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Cg" = (
@@ -2324,16 +2294,14 @@
 /area/shuttle/escape)
 "DG" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/shuttle/escape)
 "DM" = (
 /obj/machinery/door/airlock{
 	name = "Dining Room"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "DS" = (
@@ -2505,8 +2473,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "FY" = (
@@ -2539,8 +2506,7 @@
 "GB" = (
 /obj/effect/turf_decal/sand,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/shuttle/escape)
 "GN" = (
@@ -2563,8 +2529,7 @@
 	id_tag = "Cell2";
 	name = "Cell 2"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/grimy,
 /area/shuttle/escape)
 "Ho" = (
@@ -2621,13 +2586,11 @@
 /obj/machinery/door/airlock{
 	name = "Kitchen"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Iw" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "IA" = (
@@ -2744,16 +2707,14 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Jz" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "JA" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Chapel Garden"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "JG" = (
@@ -2922,8 +2883,7 @@
 /turf/closed/wall/r_wall,
 /area/shuttle/escape)
 "LP" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "LQ" = (
@@ -2938,13 +2898,11 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "LU" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "LV" = (
@@ -2965,8 +2923,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Mb" = (
@@ -2992,8 +2949,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Mf" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Mi" = (
@@ -3009,8 +2965,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Ms" = (
@@ -3036,8 +2991,7 @@
 	},
 /obj/structure/cable,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "ML" = (
@@ -3052,14 +3006,12 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "MX" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "MZ" = (
@@ -3115,8 +3067,7 @@
 	},
 /obj/structure/chair/wood,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Nh" = (
@@ -3562,8 +3513,7 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Sg" = (
@@ -3667,8 +3617,7 @@
 /turf/open/floor/mineral/plastitanium/red/brig,
 /area/shuttle/escape/brig)
 "SV" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/carpet,
 /area/shuttle/escape)
 "Tc" = (
@@ -3698,8 +3647,7 @@
 /area/shuttle/escape)
 "Tk" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Tm" = (
@@ -3932,8 +3880,7 @@
 /turf/closed/wall,
 /area/shuttle/escape)
 "VV" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/shuttle/escape)
 "We" = (
@@ -3944,8 +3891,7 @@
 /obj/machinery/door/airlock/external{
 	name = "Dock Access"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "Wl" = (
@@ -4089,8 +4035,7 @@
 /area/shuttle/escape)
 "XQ" = (
 /obj/structure/chair/wood,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "XZ" = (
@@ -4225,8 +4170,7 @@
 /area/shuttle/escape)
 "ZM" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/dark,
 /area/shuttle/escape)
 "ZP" = (

@@ -570,8 +570,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/hydroponics)
 "bD" = (
@@ -770,8 +769,7 @@
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "ck" = (
@@ -779,8 +777,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "cl" = (
@@ -794,15 +791,13 @@
 "cm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/mining)
 "cp" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation)
 "cq" = (
@@ -1034,8 +1029,7 @@
 /obj/machinery/door/airlock/science,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "db" = (
@@ -1100,8 +1094,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/comm)
 "dl" = (
@@ -1293,8 +1286,7 @@
 /area/ruin/space/has_grav/ancientstation/comm)
 "dM" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "dN" = (
@@ -2258,15 +2250,13 @@
 /obj/machinery/door/airlock/maintenance_hatch,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation)
 "gr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation)
 "gs" = (
@@ -2280,8 +2270,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation)
 "gu" = (
@@ -2407,8 +2396,7 @@
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/ancientstation/rnd)
 "gO" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "gP" = (
@@ -2759,8 +2747,7 @@
 "hJ" = (
 /obj/machinery/door/firedoor/closed,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "hK" = (
@@ -2900,8 +2887,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation)
 "ib" = (
@@ -2915,8 +2901,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation)
 "ic" = (
@@ -2929,8 +2914,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation)
 "id" = (
@@ -3001,8 +2985,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation)
 "ik" = (
@@ -3052,8 +3035,7 @@
 /obj/machinery/chem_master,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/reagent_containers/glass/beaker,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/ancientstation/rnd)
 "iq" = (
@@ -3085,8 +3067,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/rnd)
 "it" = (
@@ -3134,8 +3115,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/template_noop,
 /area/template_noop)
 "iw" = (
@@ -3176,8 +3156,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/door/firedoor/closed,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/medbay)
 "iz" = (
@@ -3332,8 +3311,7 @@
 /obj/structure/transit_tube/crossing/horizontal,
 /obj/structure/lattice/catwalk,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/template_noop,
 /area/template_noop)
 "iP" = (
@@ -3460,8 +3438,7 @@
 "je" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "jf" = (
@@ -3520,23 +3497,20 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation)
 "jn" = (
 /obj/machinery/door/firedoor,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation)
 "jo" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation)
 "jp" = (
@@ -3550,8 +3524,7 @@
 	dir = 4
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "jq" = (
@@ -3559,16 +3532,14 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "jr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "js" = (
@@ -3579,8 +3550,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "jt" = (
@@ -3735,8 +3705,7 @@
 /obj/machinery/light/small/broken{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/ancientstation/atmo)
 "jP" = (
@@ -3848,15 +3817,13 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation)
 "kb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/ancientstation/medbay)
 "kc" = (
@@ -4680,15 +4647,13 @@
 /area/ruin/space/has_grav/ancientstation/mining)
 "mq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "mr" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/north,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "ms" = (
@@ -4807,8 +4772,7 @@
 /turf/closed/wall/rust,
 /area/ruin/space/has_grav/ancientstation/atmo)
 "mI" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/rnd)
 "mJ" = (
@@ -4909,8 +4873,7 @@
 "mS" = (
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "mT" = (
@@ -4938,8 +4901,7 @@
 /obj/structure/cable,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "mW" = (
@@ -4955,8 +4917,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "mZ" = (
@@ -4976,8 +4937,7 @@
 	dir = 1;
 	pixel_y = -22
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "nb" = (
@@ -4990,8 +4950,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation)
 "nc" = (
@@ -5078,8 +5037,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/glass,
-/obj/effect/mapping_helpers/simple_pipes/supply/visible/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/visible/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible/layer4,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/atmo)
 "nn" = (
@@ -5400,8 +5358,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/directional/north,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "ob" = (
@@ -5410,8 +5367,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "oc" = (
@@ -5624,8 +5580,7 @@
 "oB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/glass,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/ancientstation/medbay)
 "oC" = (
@@ -5695,8 +5650,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /obj/item/stack/rods,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "oN" = (
@@ -5934,8 +5888,7 @@
 /area/ruin/space/has_grav/ancientstation/kitchen)
 "qf" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/ancientstation/proto)
 "qh" = (
@@ -6072,8 +6025,7 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/sec)
 "vu" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/ancientstation/kitchen)
 "vM" = (
@@ -6438,8 +6390,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/betacorridor)
 "IM" = (
@@ -6453,8 +6404,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "Jo" = (
@@ -6518,8 +6468,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "Lh" = (
@@ -6626,8 +6575,7 @@
 /area/ruin/space/has_grav/ancientstation/betastorage)
 "OA" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/rnd)
 "OC" = (
@@ -6797,8 +6745,7 @@
 "ST" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "Td" = (
@@ -6925,8 +6872,7 @@
 "Xh" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/rnd)
 "Xr" = (
@@ -6979,8 +6925,7 @@
 /obj/effect/decal/cleanable/blood/tracks{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/ancientstation/deltacorridor)
 "YA" = (

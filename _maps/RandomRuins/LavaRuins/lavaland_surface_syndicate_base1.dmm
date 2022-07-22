@@ -17,8 +17,7 @@
 	name = "Virology Lab Interior Airlock";
 	req_access_txt = "150"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
@@ -770,8 +769,7 @@
 "ex" = (
 /obj/machinery/light/small/directional/west,
 /obj/machinery/firealarm/directional/west,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -786,8 +784,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
 "ey" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -803,8 +800,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
 "ez" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -820,8 +816,7 @@
 /area/ruin/unpowered/syndicate_lava_base/cargo)
 "eA" = (
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/door/airlock/mining/glass{
 	name = "Warehouse";
@@ -841,16 +836,14 @@
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
 "eB" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
 "eC" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/cargo)
@@ -996,8 +989,7 @@
 /obj/structure/chair{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -1624,19 +1616,16 @@
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "gp" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white,
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "gq" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/white,
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "gr" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/white,
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "gs" = (
@@ -1647,30 +1636,26 @@
 /turf/open/floor/iron/white,
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "gt" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/white/side{
 	dir = 9
 	},
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "gu" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/white/corner{
 	dir = 1
 	},
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "gv" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/virology)
 "gw" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/white/side{
 	dir = 4
@@ -1680,8 +1665,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -1690,8 +1674,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
@@ -1710,8 +1693,7 @@
 	pixel_y = -24;
 	req_access_txt = "150"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
 	},
@@ -1719,8 +1701,7 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gB" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -1732,37 +1713,32 @@
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gF" = (
 /obj/machinery/light/small/directional/north,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gG" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gI" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gJ" = (
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gK" = (
 /obj/machinery/light/small/directional/north,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
 	},
@@ -1770,8 +1746,7 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "gL" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
@@ -2762,15 +2737,13 @@
 /obj/machinery/door/airlock/public/glass{
 	name = "Dormitories"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/dormitories)
 "iS" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -2799,8 +2772,7 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/dormitories)
 "iV" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/power/apc/syndicate{
 	name = "Dormitories APC";
 	pixel_y = -23
@@ -2820,8 +2792,7 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/dormitories)
 "iX" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -3115,14 +3086,12 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "jE" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "jF" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
@@ -3137,8 +3106,7 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "jG" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -3146,8 +3114,7 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
 "jH" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes{
 	dir = 1
@@ -3163,8 +3130,7 @@
 	dir = 8;
 	pixel_x = 24
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/engineering)
@@ -3314,36 +3280,31 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "kc" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "ke" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "kf" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "kg" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/main)
 "kh" = (
 /obj/machinery/door/airlock/maintenance,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/unpowered/syndicate_lava_base/main)
@@ -4130,20 +4091,17 @@
 /turf/open/floor/wood,
 /area/ruin/unpowered/syndicate_lava_base/bar)
 "lY" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/wood,
 /area/ruin/unpowered/syndicate_lava_base/bar)
 "lZ" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/wood,
 /area/ruin/unpowered/syndicate_lava_base/bar)
 "ma" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock{
 	name = "Bar Storage";
 	req_access_txt = "150"
@@ -4152,8 +4110,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/bar)
 "mb" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/bar)
@@ -4168,8 +4125,7 @@
 /obj/item/storage/box/donkpockets{
 	pixel_x = 2
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/secure_closet/freezer/kitchen/maintenance{
 	req_access = null
@@ -4693,8 +4649,7 @@
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "ns" = (
 /obj/structure/closet/emcloset/anchored,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -4709,8 +4664,7 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nt" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/power/apc/syndicate{
 	dir = 1;
@@ -4727,8 +4681,7 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nu" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -4742,8 +4695,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
@@ -4757,8 +4709,7 @@
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nx" = (
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock/medical/glass{
 	name = "Medbay"
 	},
@@ -4766,16 +4717,14 @@
 /turf/open/floor/iron/white,
 /area/ruin/unpowered/syndicate_lava_base/medbay)
 "ny" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/white/side{
 	dir = 8
 	},
 /area/ruin/unpowered/syndicate_lava_base/medbay)
 "nz" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/medbay)
@@ -4857,8 +4806,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/unpowered/syndicate_lava_base/telecomms)
 "nK" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -4877,8 +4825,7 @@
 	name = "Telecommunications";
 	req_access_txt = "150"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -4894,23 +4841,20 @@
 /area/ruin/unpowered/syndicate_lava_base/telecomms)
 "nM" = (
 /obj/machinery/light/small/directional/south,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nN" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nO" = (
 /obj/effect/turf_decal/stripes/corner,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -4920,8 +4864,7 @@
 /obj/effect/turf_decal/caution/stand_clear{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
@@ -4930,14 +4873,12 @@
 	dir = 8
 	},
 /obj/machinery/light/small/directional/south,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nR" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
@@ -4945,8 +4886,7 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nS" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/firealarm/directional/north,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -4958,8 +4898,7 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nT" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -4974,8 +4913,7 @@
 /obj/machinery/airalarm/syndicate{
 	pixel_y = 24
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -4987,8 +4925,7 @@
 /turf/open/floor/iron,
 /area/ruin/unpowered/syndicate_lava_base/arrivals)
 "nV" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -5406,8 +5343,7 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/syndicate_lava_base/testlab)
 "CG" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/engine,
 /area/ruin/unpowered/syndicate_lava_base/testlab)
 "DF" = (
@@ -5539,8 +5475,7 @@
 /turf/open/floor/engine,
 /area/ruin/unpowered/syndicate_lava_base/testlab)
 "TC" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/engine,
 /area/ruin/unpowered/syndicate_lava_base/testlab)
 "TG" = (

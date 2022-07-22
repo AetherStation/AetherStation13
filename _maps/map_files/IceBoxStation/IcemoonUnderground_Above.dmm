@@ -351,8 +351,7 @@
 /turf/open/floor/iron,
 /area/mine/production)
 "bQ" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/production)
@@ -371,8 +370,7 @@
 	name = "Mining Station EVA";
 	req_access_txt = "54"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/eva)
@@ -395,8 +393,7 @@
 /turf/open/floor/iron,
 /area/mine/eva)
 "bV" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/eva)
 "bW" = (
@@ -716,8 +713,7 @@
 /turf/open/floor/circuit,
 /area/mine/maintenance)
 "dy" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /obj/machinery/bluespace_beacon,
 /turf/open/floor/iron/dark,
@@ -975,8 +971,7 @@
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "er" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -987,8 +982,7 @@
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "et" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -1003,14 +997,12 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "ex" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /obj/machinery/door/airlock/glass{
 	name = "Mining Station Bridge"
@@ -1024,20 +1016,17 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "ez" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/production)
 "eA" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /obj/machinery/door/airlock/glass{
 	name = "Mining Station Bridge"
@@ -1051,8 +1040,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/production)
@@ -1068,8 +1056,7 @@
 /turf/open/floor/iron,
 /area/mine/production)
 "eE" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/production)
 "eG" = (
@@ -1209,8 +1196,7 @@
 	id_tag = "miningdorm1";
 	name = "Room 1"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "fh" = (
@@ -1225,8 +1211,7 @@
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "fi" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "fj" = (
@@ -1339,8 +1324,7 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "fE" = (
@@ -1378,8 +1362,7 @@
 	id_tag = "miningdorm2";
 	name = "Room 2"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "fO" = (
@@ -1387,8 +1370,7 @@
 	id_tag = "miningdorm3";
 	name = "Room 3"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "fT" = (
@@ -1537,8 +1519,7 @@
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "hz" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/mine/living_quarters)
 "hB" = (
@@ -1685,8 +1666,7 @@
 /area/mine/laborcamp)
 "iM" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp/security)
 "iN" = (
@@ -1695,8 +1675,7 @@
 	req_access_txt = "55"
 	},
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "iX" = (
@@ -1950,8 +1929,7 @@
 /area/mine/production)
 "kL" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "kO" = (
@@ -2188,8 +2166,7 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "nH" = (
@@ -2275,8 +2252,7 @@
 "ox" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/newscaster/directional/north,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "oy" = (
@@ -2491,8 +2467,7 @@
 /turf/open/floor/plating,
 /area/science/xenobiology)
 "ql" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /obj/machinery/light/directional/south,
 /turf/open/floor/iron,
@@ -3067,8 +3042,7 @@
 /area/mine/production)
 "wq" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "ww" = (
@@ -3102,8 +3076,7 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "wP" = (
@@ -3353,8 +3326,7 @@
 /turf/open/floor/iron,
 /area/mine/production)
 "zr" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/eva)
 "zu" = (
@@ -3536,8 +3508,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/mine/laborcamp)
 "Be" = (
@@ -3642,8 +3613,7 @@
 	id_tag = "cellblock1";
 	name = "Labor Camp Cellblock"
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "Cr" = (
@@ -3677,8 +3647,7 @@
 /area/mine/laborcamp)
 "CD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /obj/machinery/light/directional/north,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
@@ -3767,8 +3736,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/mine/laborcamp)
 "Dz" = (
@@ -3890,8 +3858,7 @@
 /turf/open/floor/iron,
 /area/science/xenobiology)
 "EG" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
@@ -4010,8 +3977,7 @@
 /area/icemoon/underground/explored)
 "FQ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "FU" = (
@@ -4127,8 +4093,7 @@
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "GI" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/laborcamp/security)
 "GJ" = (
@@ -4214,8 +4179,7 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/mine/storage)
 "Hx" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/laborcamp/security)
 "Hy" = (
@@ -4605,8 +4569,7 @@
 /area/mine/laborcamp)
 "KF" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/cargo/warehouse)
 "KN" = (
@@ -4867,8 +4830,7 @@
 /obj/machinery/door/airlock{
 	name = "Restroom"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/mine/living_quarters)
 "Nt" = (
@@ -4915,8 +4877,7 @@
 /turf/open/floor/iron/freezer,
 /area/mine/living_quarters)
 "NG" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "NH" = (
@@ -4944,8 +4905,7 @@
 /area/mine/laborcamp)
 "NR" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/science/xenobiology)
 "NY" = (
@@ -5135,8 +5095,7 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/underground/explored)
 "PL" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/eva)
 "PV" = (
@@ -5245,8 +5204,7 @@
 /turf/open/floor/circuit,
 /area/mine/maintenance)
 "QN" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/mine/laborcamp/security)
 "QS" = (
@@ -5277,8 +5235,7 @@
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "Rb" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "Rj" = (
@@ -5487,8 +5444,7 @@
 /area/mine/living_quarters)
 "Tw" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/science/xenobiology)
 "Tx" = (
@@ -5672,8 +5628,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "UH" = (
@@ -5704,8 +5659,7 @@
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/mine/production)
@@ -5745,8 +5699,7 @@
 /area/mine/laborcamp)
 "Vg" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4ir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "Vi" = (
@@ -5843,8 +5796,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/mine/laborcamp)
 "Wb" = (
@@ -5921,8 +5873,7 @@
 	pixel_y = 32
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "WQ" = (
@@ -6016,8 +5967,7 @@
 /area/maintenance/aft)
 "XU" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/laborcamp)
 "XV" = (
@@ -6089,8 +6039,7 @@
 /area/mine/laborcamp)
 "Yy" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /obj/machinery/mineral/labor_points_checker{
 	pixel_y = 25
 	},
@@ -6098,8 +6047,7 @@
 /area/mine/laborcamp)
 "YA" = (
 /obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4ir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer4,
 /turf/open/floor/iron,
 /area/mine/living_quarters)
 "YE" = (
@@ -6191,8 +6139,7 @@
 	id_tag = "miningbathroom";
 	name = "Restroom"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,/obj/effect/mapping_helpers/simple_pipes/supply/hiddenir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/mine/living_quarters)
 "Zh" = (
