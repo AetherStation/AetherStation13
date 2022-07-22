@@ -59,9 +59,9 @@
 	SIGNAL_HANDLER
 	for (var/obj/machinery/mainframe/external/peripheral/P as anything in peripherals)
 		if (P.peripheral_address_start > address)
-			return
+			continue
 		if (P.peripheral_address_end < address)
-			return
+			continue
 		P.mem_write(address - P.peripheral_address_start, value)
 		break // overlapping peripherals aren't allowed, sowwy.
 
@@ -69,9 +69,9 @@
 	SIGNAL_HANDLER
 	for (var/obj/machinery/mainframe/external/peripheral/P as anything in peripherals)
 		if (P.peripheral_address_start > address)
-			return
+			continue
 		if (P.peripheral_address_end < address)
-			return
+			continue
 		return P.mem_read(address - P.peripheral_address_start)
 
 /obj/machinery/mainframe/main_unit/ui_data(mob/user)
