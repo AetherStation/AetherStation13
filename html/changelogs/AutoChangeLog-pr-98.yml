@@ -1,4 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - bugfix: Ghosts move up and down again after orbiting.

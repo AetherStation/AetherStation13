@@ -3,3 +3,8 @@
   - bugfix: Selecting observe in lobby while the game is initializing now works properly.
   Thebleh:
   - server: Will this trigger after the merge? I have no idea!
+2022-07-23:
+  TheChosenEvilOne:
+  - bugfix: Ghosts move up and down again after orbiting.
+  - bugfix: latejoin buckling sets your facing direction correctly.
+  - bugfix: You can use the reaction chamber again.
