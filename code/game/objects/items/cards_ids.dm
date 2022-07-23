@@ -1,12 +1,3 @@
-/**
- * x1, y1, x2, y2 - Represents the bounding box for the ID card's non-transparent portion of its various icon_states.
- * Used to crop the ID card's transparency away when chaching the icon for better use in tgui chat.
- */
-#define ID_ICON_BORDERS 1, 9, 32, 24
-
-/// Fallback time if none of the config entries are set for USE_LOW_LIVING_HOUR_INTERN
-#define INTERN_THRESHOLD_FALLBACK_HOURS 15
-
 /* Cards
  * Contains:
  * DATA CARD
@@ -154,11 +145,10 @@
 	return "[icon2html(get_cached_flat_icon(), user)] [thats? "That's ":""][get_examine_name(user)]"
 
 /**
- * Attempts to add the given accesses to the ID card as non-wildcards.
+ * Attempts to add the given accesses to the ID card.
  *
- * Depending on the mode, may add accesses as wildcards or error if it can't add them as non-wildcards.
  * Arguments:
- * * add_accesses - List of accesses to check.
+ * * add_accesses - List of accesses to add.
  */
 /obj/item/card/id/proc/add_access(list/add_accesses)
 	for (var/a in add_accesses)
@@ -179,7 +169,6 @@
 /**
  * Attempts to set the card's accesses to the given accesses, clearing all accesses not in the given list.
  *
- * Depending on the mode, may add accesses as wildcards or error if it can't add them as non-wildcards.
  * Arguments:
  * * new_access_list - List of all accesses that this card should hold exclusively.
  */
@@ -238,7 +227,7 @@
 	else if (W.tool_behaviour == TOOL_SCREWDRIVER && chips.len)
 		var/chip = chips[chips.len]
 		to_chat(user, span_notice("You remove [chip] from the card."))
-		remove_access_chip(chip) // remove last in list
+		remove_access_chip(chip, user) // remove last in list
 		update_appearance(UPDATE_OVERLAYS)
 		return
 	else
@@ -249,9 +238,10 @@
 	C.forceMove(src)
 	chips += C
 
-/obj/item/card/id/proc/remove_access_chip(obj/item/card_access_chip/C)
+/obj/item/card/id/proc/remove_access_chip(obj/item/card_access_chip/C, mob/user)
 	C.remove_access(src)
-	C.forceMove(get_turf(src))
+	if (!user?.put_in_hands(C))
+		C.forceMove(get_turf(src))
 	chips -= C
 
 /**
@@ -840,5 +830,58 @@
 	desc = "A card used to identify members of the green team for CTF"
 	icon_state = "ctf_green"
 
-#undef INTERN_THRESHOLD_FALLBACK_HOURS
-#undef ID_ICON_BORDERS
+/obj/item/card/id/chip_programmer
+	name = "additional access chip programmer"
+	desc = "A card used to program new access chips."
+	chip_slots = 1
+
+/obj/item/card/id/chip_programmer/update_label()
+	return // noope
+
+/obj/item/card/id/chip_programmer/attack_self(mob/user)
+	var/chip = chips[chips.len]
+	to_chat(user, span_notice("You remove [chip] from \the [src]."))
+	remove_access_chip(chip, user) // remove last in list
+	update_appearance(UPDATE_OVERLAYS)
+	add_fingerprint(user)
+
+/obj/item/card/id/chip_programmer/apply_access_chip(obj/item/card_access_chip/C)
+	access += C.access
+	access_tier = C.access_tier
+	C.forceMove(src)
+	chips += C
+
+/obj/item/card/id/chip_programmer/remove_access_chip(obj/item/card_access_chip/C, mob/user)
+	access = list()
+	access_tier = 0
+	if (!user?.put_in_hands(C))
+		C.forceMove(get_turf(src))
+	chips -= C
+
+/obj/item/card/id/chip_programmer/add_access(list/add_accesses)
+	var/obj/item/card_access_chip/C = chips[1]
+	if (!C.rewritable)
+		return FALSE
+
+	for (var/a in add_accesses)
+		if (text2num(SSid_access.get_access_tier(a)) > access_tier)
+			add_accesses -= a
+
+	if (add_accesses.len >= C.access_count_max - C.access.len)
+		add_accesses.len = C.access_count_max - C.access.len // make the list small enough to fit
+	access |= add_accesses
+	C.access |= add_accesses
+	return add_accesses.len
+
+/obj/item/card/id/chip_programmer/remove_access(list/rem_accesses)
+	var/obj/item/card_access_chip/C = chips[1]
+	if (!C.rewritable)
+		return FALSE
+	access -= rem_accesses
+
+/obj/item/card/id/chip_programmer/clear_access()
+	var/obj/item/card_access_chip/C = chips[1]
+	if (!C.rewritable)
+		return FALSE
+	C.access.Cut()
+	access.Cut()

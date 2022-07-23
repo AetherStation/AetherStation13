@@ -218,7 +218,7 @@
 
 			if(!template_path)
 				return TRUE
-			target_id_card.remove_access(target_id_card.access) // Note: uses access directly.
+			target_id_card.clear_access()
 			SSid_access.apply_card_access(target_id_card, text2path(template_path))
 			return TRUE
 

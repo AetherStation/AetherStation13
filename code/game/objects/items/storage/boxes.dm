@@ -567,6 +567,21 @@
 	for(var/i in 1 to 7)
 		new /obj/item/card/id/tier3(src)
 
+/obj/item/storage/box/id_chips
+	name = "box of access chips"
+	desc = "A box of rewritable additional access chips."
+
+/obj/item/storage/box/id_chips/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/card_access_chip/rewritable(src)
+
+/obj/item/storage/box/id_chips/tier4
+	name = "box of silver access chips"
+
+/obj/item/storage/box/id_chips/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/card_access_chip/rewritable/tier4(src)
+
 /obj/item/storage/box/prisoner
 	name = "box of prisoner IDs"
 	desc = "Take away their last shred of dignity, their name."
