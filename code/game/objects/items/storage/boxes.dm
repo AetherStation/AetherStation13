@@ -559,7 +559,7 @@
 	new newcart(src)
 
 /obj/item/storage/box/silver_ids
-	name = "box of spare silver IDs"
+	name = "box of spare tier 3 IDs"
 	desc = "Shiny IDs for important people."
 	illustration = "id"
 

@@ -833,6 +833,8 @@
 /obj/item/card/id/chip_programmer
 	name = "additional access chip programmer"
 	desc = "A card used to program new access chips."
+	icon = 'icons/obj/new_id.dmi'
+	icon_state = "tier1"
 	chip_slots = 1
 
 /obj/item/card/id/chip_programmer/update_label()
