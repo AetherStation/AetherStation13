@@ -122,11 +122,13 @@
 	if(!attacker.transferItemToLoc(ingredient, atom_parent))
 		return
 	if (replacement)
+		SEND_SIGNAL(parent, COMSIG_CUSTOM_FOOD_REPLACED, src)
 		var/atom/replacement_parent = new replacement(atom_parent.drop_location())
 		ingredient.forceMove(replacement_parent)
 		replacement = null
 		RemoveComponent()
 		replacement_parent.TakeComponent(src)
+		handle_reagents(atom_parent)
 		qdel(atom_parent)
 	handle_reagents(ingredient)
 	add_ingredient(ingredient)
