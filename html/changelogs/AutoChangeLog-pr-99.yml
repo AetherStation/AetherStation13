@@ -1,5 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - rscadd: Re-added custom soups.
-  - bugfix: Deep frying correctly transfers food reagents again.

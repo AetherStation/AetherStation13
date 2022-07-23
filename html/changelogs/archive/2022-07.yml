@@ -8,3 +8,5 @@
   - bugfix: Ghosts move up and down again after orbiting.
   - bugfix: latejoin buckling sets your facing direction correctly.
   - bugfix: You can use the reaction chamber again.
+  - rscadd: Re-added custom soups.
+  - bugfix: Deep frying correctly transfers food reagents again.
