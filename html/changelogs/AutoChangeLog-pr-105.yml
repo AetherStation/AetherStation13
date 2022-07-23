@@ -1,0 +1,4 @@
+author: TheChosenEvilOne
+delete-after: true
+changes:
+  - bugfix: latejoin buckling sets your facing direction correctly.
