@@ -1,24 +1,51 @@
-// You might be wondering why this isn't client level. If focus is null, we don't want you to move.
-// Only way to do that is to tie the behavior into the focus's keyLoop().
 
-/atom/movable/keyLoop(client/user)
-	var/movement_dir = NONE
-	for(var/_key in user.keys_held)
-		movement_dir = movement_dir | user.movement_keys[_key]
-	if(user.next_move_dir_add)
-		movement_dir |= user.next_move_dir_add
-	if(user.next_move_dir_sub)
-		movement_dir &= ~user.next_move_dir_sub
-	// Sanity checks in case you hold left and right and up to make sure you only go up
-	if((movement_dir & NORTH) && (movement_dir & SOUTH))
-		movement_dir &= ~(NORTH|SOUTH)
-	if((movement_dir & EAST) && (movement_dir & WEST))
-		movement_dir &= ~(EAST|WEST)
+/client
+	var/tmp/mloop = FALSE
+	var/tmp/client_move_dir = 0
+	var/tmp/true_dir = 0
+	var/tmp/key_presses = 0
 
-	if(movement_dir) //If we're not moving, don't compensate, as byond will auto-fill dir otherwise
-		movement_dir = turn(movement_dir, -dir2angle(user.dir)) //By doing this we ensure that our input direction is offset by the client (camera) direction
+/client/verb/MoveKey(Dir as num, State as num)
+	// MK because BYOND sends the name as a string, this will make the packet smaller
+	set name = "MK"
+	set hidden = TRUE
+	set instant = TRUE
 
-	if(user.movement_locked)
-		keybind_face_direction(movement_dir)
+	var/static/list/opposite_dirs = list(SOUTH,NORTH,NORTH|SOUTH,WEST,SOUTHWEST,NORTHWEST,NORTH|SOUTH|WEST,EAST,SOUTHEAST,NORTHEAST,NORTH|SOUTH|EAST,WEST|EAST,WEST|EAST|NORTH,WEST|EAST|SOUTH,WEST|EAST|NORTH|SOUTH)
+
+	if (!client_move_dir)
+		. = TRUE
+	var/opposite = opposite_dirs[Dir]
+	if (State)
+		client_move_dir |= Dir
+		key_presses |= Dir
+		if (opposite & key_presses)
+			client_move_dir &= ~opposite
 	else
-		user.Move(get_step(src, movement_dir), movement_dir)
+		client_move_dir &= ~Dir
+		key_presses &= ~Dir
+		if (opposite & key_presses)
+			client_move_dir |= opposite
+		else
+			client_move_dir |= key_presses
+
+	true_dir = client_move_dir
+	if(. && true_dir)
+		keyLoop(src)
+
+/client/keyLoop()
+	set waitfor = FALSE
+	if (mloop || !mob.focus) return
+	mloop = TRUE
+	if(movement_locked)
+		mob.focus?.keybind_face_direction(true_dir)
+	else
+		Move(get_step(src, true_dir), true_dir)
+	while (true_dir && mob.focus)
+		sleep (world.tick_lag)
+		if (true_dir && mob.focus)
+			if(movement_locked)
+				mob.focus?.keybind_face_direction(true_dir)
+			else
+				Move(get_step(mob, true_dir), true_dir)
+	mloop = FALSE

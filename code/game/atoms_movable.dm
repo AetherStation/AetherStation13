@@ -1261,5 +1261,7 @@
 *
 * Called from [/atom/movable/proc/keyLoop], this exists to be overwritten by living mobs with a check to see if we're actually alive enough to change directions
 */
-/atom/movable/proc/keybind_face_direction(direction)
+
+/datum/proc/keybind_face_direction(direction)
+/atom/movable/keybind_face_direction(direction)
 	setDir(direction)

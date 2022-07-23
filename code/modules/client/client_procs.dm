@@ -954,6 +954,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
  * Arguments:
  * * direct_prefs - the preference we're going to get keybinds from
  */
+
+#define MOVE_KEY(key, dir) \
+winset(src, "default-[REF(key)]", "parent=default;name=[key];command=\"MK [dir] 1\""); \
+winset(src, "default-[REF("[key]+UP")]", "parent=default;name=[key]+UP;command=\"MK [dir] 0\"");
 /client/proc/update_special_keybinds(datum/preferences/direct_prefs)
 	var/datum/preferences/D = prefs || direct_prefs
 	if(!D?.key_bindings)
@@ -963,19 +967,20 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		for(var/kb_name in D.key_bindings[key])
 			switch(kb_name)
 				if("North")
-					movement_keys[key] = NORTH
+					MOVE_KEY(key, NORTH)
 				if("East")
-					movement_keys[key] = EAST
+					MOVE_KEY(key, EAST)
 				if("West")
-					movement_keys[key] = WEST
+					MOVE_KEY(key, WEST)
 				if("South")
-					movement_keys[key] = SOUTH
+					MOVE_KEY(key, SOUTH)
 				if("Say")
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=say")
 				if("OOC")
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=ooc")
 				if("Me")
 					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=me")
+#undef MOVE_KEY
 
 /client/proc/change_view(new_size)
 	if (isnull(new_size))

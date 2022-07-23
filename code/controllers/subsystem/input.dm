@@ -1,8 +1,7 @@
 SUBSYSTEM_DEF(input)
 	name = "Input"
-	wait = 1 //SS_TICKER means this runs every tick
+	flags = SS_NO_FIRE
 	init_order = INIT_ORDER_INPUT
-	flags = SS_TICKER
 	priority = FIRE_PRIORITY_INPUT
 	runlevels = RUNLEVELS_DEFAULT | RUNLEVEL_LOBBY
 
@@ -33,7 +32,3 @@ SUBSYSTEM_DEF(input)
 	for(var/i in 1 to clients.len)
 		var/client/user = clients[i]
 		user.set_macros()
-
-/datum/controller/subsystem/input/fire()
-	for(var/mob/user as anything in GLOB.keyloop_list)
-		user.focus?.keyLoop(user.client)
