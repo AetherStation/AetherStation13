@@ -44,7 +44,6 @@
 
 /datum/deathmatch_lobby/proc/start_game()
 	if (playing)
-		stack_trace("Attempted to start deathmatch game twice.")
 		return
 	location = game.reserve_location(map)
 	if (!location)
