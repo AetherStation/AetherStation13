@@ -1,0 +1,12 @@
+author: TheChosenEvilOne
+delete-after: true
+changes:
+  - rscadd: ID card tiers, you can only add access to ID cards if the access' tier
+      is lower or equal to the ID card's tier.
+  - rscadd: additional access chips, every job that has a lower tier ID card than
+      some accesses they require spawn with an additional access chip in the ID card
+      which contain the access required. You can use a screwdriver to remove the chip
+      and add a chip in an ID card by clicking an ID card with it.
+  - rscdel: Removed ID trims.
+  - balance: Agent ID card no longer has a limit on how many access levels it can
+      hold.
