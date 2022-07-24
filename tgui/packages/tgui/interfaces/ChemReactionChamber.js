@@ -1,4 +1,5 @@
 import { map } from 'common/collections';
+import { toFixed } from 'common/math';
 import { classes } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Input, LabeledList, NumberInput, Section, Stack, AnimatedNumber } from '../components';
@@ -14,11 +15,6 @@ export const ChemReactionChamber = (props, context) => {
     reagentQuantity,
     setReagentQuantity,
   ] = useLocalState(context, 'reagentQuantity', 1);
-  const [
-    emptying,
-    temperature,
-    target_temperature,
-  ] = data;
   const reagents = data.reagents || [];
   return (
     <Window
@@ -33,7 +29,7 @@ export const ChemReactionChamber = (props, context) => {
               unit="K"
               step={10}
               stepPixelSize={3}
-              value={current_temperature}
+              value={data.target_temperature}
               minValue={0}
               maxValue={1000}
               onDrag={(e, value) =>
@@ -44,11 +40,11 @@ export const ChemReactionChamber = (props, context) => {
           }>
           <Stack fill>
             <Stack.Item textColor="label">
-              Current Temperature:
+              Current:
             </Stack.Item>
             <Stack.Item grow>
               <AnimatedNumber
-                value={temperature}
+                value={data.temperature}
                 format={(value) => toFixed(value) + ' K'}
               />
             </Stack.Item>
@@ -60,8 +56,8 @@ export const ChemReactionChamber = (props, context) => {
             <Box
               inline
               bold
-              color={emptying ? "bad" : "good"}>
-              {emptying ? "Emptying" : "Filling"}
+              color={data.emptying ? "bad" : "good"}>
+              {data.emptying ? "Emptying" : "Filling"}
             </Box>
           )}>
           <LabeledList>
