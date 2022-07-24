@@ -16,9 +16,9 @@
 	required_candidates = 1
 	weight = 5
 	cost = 8 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
-	scaling_cost = 9
+	scaling_cost = 6
 	requirements = list(10,10,10,10,10,10,10,10,10,10)
-	antag_cap = list("denominator" = 24)
+	antag_cap = list("denominator" = 20)
 	var/autotraitor_cooldown = (15 MINUTES)
 	COOLDOWN_DECLARE(autotraitor_cooldown_check)
 
@@ -55,7 +55,7 @@
 	required_candidates = 1
 	weight = 3
 	cost = 18
-	requirements = list(101,101,80,70,60,60,50,50,40,40)
+	requirements = list(101,101,80,70,60,60,50,40,30,20)
 	antag_cap = 1
 	flags = HIGH_IMPACT_RULESET
 
@@ -146,10 +146,10 @@
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
 	weight = 3
-	cost = 16
-	scaling_cost = 10
+	cost = 13
+	scaling_cost = 9
 	requirements = list(70,70,60,50,40,20,20,10,10,10)
-	antag_cap = list("denominator" = 29)
+	antag_cap = list("denominator" = 24)
 
 /datum/dynamic_ruleset/roundstart/changeling/pre_execute(population)
 	. = ..()
@@ -183,10 +183,10 @@
 	restricted_roles = list("AI", "Cyborg")
 	required_candidates = 1
 	weight = 3
-	cost = 15
+	cost = 11
 	scaling_cost = 9
 	requirements = list(101,101,101,40,35,20,20,15,10,10)
-	antag_cap = list("denominator" = 24)
+	antag_cap = list("denominator" = 22)
 
 
 /datum/dynamic_ruleset/roundstart/heretics/pre_execute(population)
@@ -228,7 +228,7 @@
 	restricted_roles = list("Head of Security", "Captain") // Just to be sure that a wizard getting picked won't ever imply a Captain or HoS not getting drafted
 	required_candidates = 1
 	weight = 2
-	cost = 20
+	cost = 24
 	requirements = list(90,90,90,80,60,40,30,20,10,10)
 	var/list/roundstart_wizards = list()
 
@@ -400,7 +400,7 @@
 
 //////////////////////////////////////////////
 //                                          //
-//               REVS                 //
+//               REVS                       //
 //                                          //
 //////////////////////////////////////////////
 

@@ -190,7 +190,7 @@
 	required_candidates = 1
 	weight = 7
 	cost = 10
-	requirements = list(50,40,30,20,10,10,10,10,10,10)
+	requirements = list(10,10,10,10,10,10,10,10,10,10)
 	repeatable = TRUE
 
 	/// Whether or not this instance of sleeper agent should be randomly acceptable.
@@ -323,7 +323,7 @@
 	required_enemies = list(4,4,4,4,4,4,2,2,2,0)
 	required_candidates = 1
 	weight = 3
-	cost = 35
+	cost = 30
 	requirements = list(101,101,80,70,60,60,50,50,40,40)
 	required_type = /mob/living/silicon/ai
 
@@ -549,7 +549,7 @@
 	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
 	required_candidates = 1
 	weight = 3
-	cost = 10
+	cost = 7
 	requirements = list(101,101,101,70,50,40,20,15,10,10)
 	repeatable = TRUE
 	var/list/spawn_locs = list()
@@ -595,7 +595,7 @@
 	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
 	required_candidates = 1
 	weight = 4
-	cost = 10
+	cost = 9
 	requirements = list(101,101,101,80,60,50,30,20,10,10)
 	repeatable = TRUE
 	var/list/spawn_locs = list()
@@ -640,7 +640,7 @@
 	required_candidates = 2
 	required_applicants = 2
 	weight = 4
-	cost = 10
+	cost = 6
 	requirements = list(101,101,101,80,60,50,30,20,10,10)
 	repeatable = TRUE
 	var/datum/team/abductor_team/new_team
@@ -713,7 +713,7 @@
 	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
 	required_candidates = 1
 	weight = 4
-	cost = 10
+	cost = 13
 	requirements = list(101,101,101,80,60,50,30,20,10,10)
 	repeatable = TRUE
 	var/list/spawn_locs = list()
@@ -753,7 +753,7 @@
 	required_enemies = list(2,2,1,1,1,1,1,0,0,0)
 	required_candidates = 0
 	weight = 3
-	cost = 10
+	cost = 11
 	requirements = list(101,101,101,80,60,50,30,20,10,10)
 	repeatable = TRUE
 	var/spawncount = 2
