@@ -54,7 +54,7 @@
 	data["cardholder"] = FALSE
 	if(cardholder)
 		data["cardholder"] = TRUE
-		var/obj/item/card/id/stored_card = cardholder.GetID()
+		var/obj/item/card/id/stored_card = cardholder.get_id()
 		if(stored_card)
 			var/stored_name = stored_card.registered_name
 			var/stored_title = stored_card.assignment

@@ -198,7 +198,7 @@
 		ammo_resupply(W, user)
 		return
 
-	if(W.GetID())
+	if(W.get_id())
 		if((mecha_flags & ADDING_ACCESS_POSSIBLE) || (mecha_flags & ADDING_MAINT_ACCESS_POSSIBLE))
 			if(internals_access_allowed(user))
 				var/obj/item/card/id/id_card

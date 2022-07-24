@@ -353,12 +353,12 @@
 		return TRUE
 
 	if(!istype(I, /obj/item/card/id) && isitem(I))
-		I = I.GetID()
+		I = I.get_id()
 
-	if(!I || !I.access) //not ID or no access
+	if(!I || !I.get_access()) //not ID or no access
 		return FALSE
 	for(var/req in req_access)
-		if(!(req in I.access)) //doesn't have this access
+		if(!(req in I.get_access())) //doesn't have this access
 			return FALSE
 	return TRUE
 

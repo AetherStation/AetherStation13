@@ -55,19 +55,14 @@
 	LAZYCLEARLIST(combined_access)
 
 	front_id = null
-	var/winning_tally = 0
 	for(var/obj/item/card/id/id_card in contents)
 		// Certain IDs can forcibly jump to the front so they can disguise other cards in wallets. Chameleon/Agent ID cards are an example of this.
 		if(HAS_TRAIT(id_card, TRAIT_MAGNETIC_ID_CARD))
 			front_id = id_card
 			break
 
-		var/card_tally = SSid_access.tally_access(id_card, ACCESS_FLAG_COMMAND)
-		if(card_tally > winning_tally)
-			winning_tally = card_tally
-			front_id = id_card
 		LAZYINITLIST(combined_access)
-		combined_access |= id_card.access
+		combined_access |= id_card.get_access()
 
 	// If we didn't pick a front ID - Maybe none of our cards have any command accesses? Just grab the first card (if we even have one).
 	// We could also have no ID card in the wallet at all, which will mean we end up with a null front_id and that's fine too.
@@ -125,17 +120,17 @@
 	if(front_id)
 		. += front_id.get_id_examine_strings(user)
 
-/obj/item/storage/wallet/GetID()
+/obj/item/storage/wallet/get_id()
 	return front_id
 
-/obj/item/storage/wallet/RemoveID()
+/obj/item/storage/wallet/remove_id()
 	if(!front_id)
 		return
 	. = front_id
 	front_id.forceMove(get_turf(src))
 
-/obj/item/storage/wallet/InsertID(obj/item/inserting_item)
-	var/obj/item/card/inserting_id = inserting_item.RemoveID()
+/obj/item/storage/wallet/insert_id(obj/item/inserting_item)
+	var/obj/item/card/inserting_id = inserting_item.remove_id()
 	if(!inserting_id)
 		return FALSE
 	attackby(inserting_id)
@@ -143,7 +138,7 @@
 		return TRUE
 	return FALSE
 
-/obj/item/storage/wallet/GetAccess()
+/obj/item/storage/wallet/get_access()
 	if(LAZYLEN(combined_access))
 		return combined_access
 	else

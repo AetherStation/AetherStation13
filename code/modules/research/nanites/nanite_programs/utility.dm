@@ -180,7 +180,7 @@
 
 	var/list/new_access = list()
 	for(var/obj/item/I in potential_items)
-		new_access += I.GetAccess()
+		new_access += I.get_access()
 
 	access = new_access
 

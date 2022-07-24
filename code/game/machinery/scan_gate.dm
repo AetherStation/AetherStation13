@@ -89,7 +89,7 @@
 		scanline_timer = addtimer(CALLBACK(src, .proc/set_scanline, "passive"), duration, TIMER_STOPPABLE)
 
 /obj/machinery/scanner_gate/attackby(obj/item/W, mob/user, params)
-	var/obj/item/card/id/card = W.GetID()
+	var/obj/item/card/id/card = W.get_id()
 	if(card)
 		if(locked)
 			if(allowed(user))
@@ -98,7 +98,7 @@
 				to_chat(user, span_notice("You unlock [src]."))
 		else if(!(obj_flags & EMAGGED))
 			to_chat(user, span_notice("You lock [src] with [W]."))
-			var/list/access = W.GetAccess()
+			var/list/access = W.get_access()
 			req_access = access
 			locked = TRUE
 		else

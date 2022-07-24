@@ -230,7 +230,7 @@
 			continue
 		var/crewmember_name = "Unknown"
 		if(humanoid.wear_id)
-			var/obj/item/card/id/ID = humanoid.wear_id.GetID()
+			var/obj/item/card/id/ID = humanoid.wear_id.get_id()
 			if(ID?.registered_name)
 				crewmember_name = ID.registered_name
 		var/list/crewinfo = list(

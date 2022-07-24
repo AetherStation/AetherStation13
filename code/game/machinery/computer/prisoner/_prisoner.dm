@@ -1,5 +1,5 @@
 /obj/machinery/computer/prisoner
-	var/obj/item/card/id/advanced/prisoner/contained_id
+	var/obj/item/card/id/prisoner/contained_id
 
 /obj/machinery/computer/prisoner/Destroy()
 	if(contained_id)
@@ -18,7 +18,7 @@
 	id_eject(user)
 	return ..()
 
-/obj/machinery/computer/prisoner/proc/id_insert(mob/user, obj/item/card/id/advanced/prisoner/P)
+/obj/machinery/computer/prisoner/proc/id_insert(mob/user, obj/item/card/id/prisoner/P)
 	if(istype(P))
 		if(contained_id)
 			to_chat(user, span_warning("There's already an ID card in the console!"))
@@ -46,7 +46,7 @@
 		updateUsrDialog()
 
 /obj/machinery/computer/prisoner/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/card/id/advanced/prisoner))
+	if(istype(I, /obj/item/card/id/prisoner))
 		id_insert(user, I)
 	else
 		return ..()

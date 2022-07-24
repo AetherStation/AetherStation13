@@ -179,6 +179,7 @@
 	var/neck = -1
 	var/backpack_contents = -1
 	var/suit_store = -1
+	var/datum/card_access/card_access = null
 
 	var/hairstyle
 	var/facial_hairstyle
@@ -395,8 +396,8 @@
 	suit = /obj/item/clothing/suit/armor/bulletproof
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	glasses = /obj/item/clothing/glasses/sunglasses
-	id = /obj/item/card/id/advanced/centcom
-	id_trim = /datum/id_trim/centcom/corpse/bridge_officer
+	id = /obj/item/card/id/centcom
+	card_access = /datum/card_access/centcom/corpse/bridge_officer
 
 /obj/effect/mob_spawn/human/commander
 	name = "Commander"
@@ -413,8 +414,8 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat
 	shoes = /obj/item/clothing/shoes/combat/swat
 	r_pocket = /obj/item/lighter
-	id = /obj/item/card/id/advanced/centcom
-	id_trim = /datum/id_trim/centcom/corpse/commander
+	id = /obj/item/card/id/centcom
+	card_access = /datum/card_access/centcom/corpse/commander
 
 /obj/effect/mob_spawn/human/nanotrasensoldier
 	name = "\improper Nanotrasen Private Security Officer"
@@ -429,8 +430,8 @@
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	head = /obj/item/clothing/head/helmet/swat/nanotrasen
 	back = /obj/item/storage/backpack/security
-	id = /obj/item/card/id/advanced
-	id_trim = /datum/id_trim/centcom/corpse/private_security
+	id = /obj/item/card/id
+	card_access = /datum/card_access/centcom/corpse/private_security
 
 /obj/effect/mob_spawn/human/intern //this is specifically the comms intern from the event
 	name = "CentCom Intern"

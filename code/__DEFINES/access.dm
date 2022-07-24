@@ -1,3 +1,12 @@
+// Don't use tier 0 for anything, thank you.
+#define ACCESS_TIER_0 0
+#define ACCESS_TIER_1 1
+#define ACCESS_TIER_2 2
+#define ACCESS_TIER_3 3
+#define ACCESS_TIER_4 4
+#define ACCESS_TIER_5 5
+#define ACCESS_TIER_6 6
+
 // Security equipment, security records, gulag item storage, secbots
 #define ACCESS_SECURITY 1
 /// Brig cells+timers, permabrig, gulag+gulag shuttle, prisoner management console
@@ -151,208 +160,121 @@
 	user.investigate_log("([key_name(user)]) [change_description] to an ID card [(id_card.registered_name) ? "belonging to [id_card.registered_name]." : "with no registered name."]", INVESTIGATE_ACCESSCHANGES); \
 	user.log_message("[change_description] to an ID card [(id_card.registered_name) ? "belonging to [id_card.registered_name]." : "with no registered name."]", LOG_GAME); \
 
-/// Displayed name for Common ID card accesses.
-#define ACCESS_FLAG_COMMON_NAME "Common"
-/// Bitflag for Common ID card accesses. See COMMON_ACCESS.
-#define ACCESS_FLAG_COMMON (1 << 0)
-/// Displayed name for Command ID card accesses.
-#define ACCESS_FLAG_COMMAND_NAME "Command"
-/// Bitflag for Command ID card accesses. See COMMAND_ACCESS.
-#define ACCESS_FLAG_COMMAND (1 << 1)
-/// Displayed name for Private Command ID card accesses.
-#define ACCESS_FLAG_PRV_COMMAND_NAME "Private Command"
-/// Bitflag for Private Command ID card accesses. See PRIVATE_COMMAND_ACCESS.
-#define ACCESS_FLAG_PRV_COMMAND (1 << 2)
-/// Displayed name for Captain ID card accesses.
-#define ACCESS_FLAG_CAPTAIN_NAME "Captain"
-/// Bitflag for Captain ID card accesses. See CAPTAIN_ACCESS.
-#define ACCESS_FLAG_CAPTAIN (1 << 3)
-/// Displayed name for Centcom ID card accesses.
-#define ACCESS_FLAG_CENTCOM_NAME "Centcom"
-/// Bitflag for Centcom ID card accesses. See CENTCOM_ACCESS.
-#define ACCESS_FLAG_CENTCOM (1 << 4)
-/// Displayed name for Syndicate ID card accesses.
-#define ACCESS_FLAG_SYNDICATE_NAME "Syndicate"
-/// Bitflag for Syndicate ID card accesses. See SYNDICATE_ACCESS.
-#define ACCESS_FLAG_SYNDICATE (1 << 5)
-/// Displayed name for Offstation/Ruin/Away Mission ID card accesses.
-#define ACCESS_FLAG_AWAY_NAME "Away"
-/// Bitflag for Offstation/Ruin/Away Mission ID card accesses. See AWAY_ACCESS.
-#define ACCESS_FLAG_AWAY (1 << 6)
-/// Displayed name for Special accesses that ordinaryily shouldn't be on ID cards.
-#define ACCESS_FLAG_SPECIAL_NAME "Special"
-/// Bitflag for Special accesses that ordinaryily shouldn't be on ID cards. See CULT_ACCESS.
-#define ACCESS_FLAG_SPECIAL (1 << 7)
-
-/// This wildcraft flag accepts any access level.
-#define WILDCARD_FLAG_ALL ALL
-/// Name associated with the all wildcard bitflag.
-#define WILDCARD_NAME_ALL "All"
-/// Access flags that can be applied to common wildcard slots.
-#define WILDCARD_FLAG_COMMON ACCESS_FLAG_COMMON
-/// Name associated with the common wildcard bitflag.
-#define WILDCARD_NAME_COMMON ACCESS_FLAG_COMMON_NAME
-/// Access flags that can be applied to command wildcard slots.
-#define WILDCARD_FLAG_COMMAND ACCESS_FLAG_COMMON | ACCESS_FLAG_COMMAND
-/// Name associated with the command wildcard bitflag.
-#define WILDCARD_NAME_COMMAND ACCESS_FLAG_COMMAND_NAME
-/// Access flags that can be applied to private command wildcard slots.
-#define WILDCARD_FLAG_PRV_COMMAND ACCESS_FLAG_COMMON | ACCESS_FLAG_COMMAND | ACCESS_FLAG_PRV_COMMAND
-/// Name associated with the private command wildcard bitflag.
-#define WILDCARD_NAME_PRV_COMMAND ACCESS_FLAG_PRV_COMMAND_NAME
-/// Access flags that can be applied to captain wildcard slots.
-#define WILDCARD_FLAG_CAPTAIN ACCESS_FLAG_COMMON | ACCESS_FLAG_COMMAND | ACCESS_FLAG_PRV_COMMAND | ACCESS_FLAG_CAPTAIN
-/// Name associated with the captain wildcard bitflag.
-#define WILDCARD_NAME_CAPTAIN ACCESS_FLAG_CAPTAIN_NAME
-/// Access flags that can be applied to centcom wildcard slots.
-#define WILDCARD_FLAG_CENTCOM ACCESS_FLAG_COMMON | ACCESS_FLAG_COMMAND | ACCESS_FLAG_PRV_COMMAND | ACCESS_FLAG_CAPTAIN | ACCESS_FLAG_CENTCOM
-/// Name associated with the centcom wildcard bitflag.
-#define WILDCARD_NAME_CENTCOM ACCESS_FLAG_CENTCOM_NAME
-/// Access flags that can be applied to syndicate wildcard slots.
-#define WILDCARD_FLAG_SYNDICATE ACCESS_FLAG_COMMON | ACCESS_FLAG_COMMAND | ACCESS_FLAG_PRV_COMMAND | ACCESS_FLAG_CAPTAIN | ACCESS_FLAG_SYNDICATE
-/// Name associated with the syndicate wildcard bitflag.
-#define WILDCARD_NAME_SYNDICATE ACCESS_FLAG_SYNDICATE_NAME
-/// Access flags that can be applied to offstation wildcard slots.
-#define WILDCARD_FLAG_AWAY ACCESS_FLAG_AWAY
-/// Name associated with the offstation wildcard bitflag.
-#define WILDCARD_NAME_AWAY ACCESS_FLAG_AWAY_NAME
-/// Access flags that can be applied to super special weird wildcard slots.
-#define WILDCARD_FLAG_SPECIAL ACCESS_FLAG_SPECIAL
-/// Name associated with the super special weird wildcard bitflag.
-#define WILDCARD_NAME_SPECIAL ACCESS_FLAG_SPECIAL_NAME
-/// Access flag that indicates a wildcard was forced onto an ID card.
-#define WILDCARD_FLAG_FORCED ALL
-/// Name associated with the wildcard bitflag that covers wildcards that have been forced onto an ID card that could not accept them.
-#define WILDCARD_NAME_FORCED "Hacked"
-
-/// Departmental/general/common area accesses. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_COMMON)
-#define COMMON_ACCESS list( \
-	ACCESS_MECH_MINING, \
-	ACCESS_MECH_MEDICAL, \
-	ACCESS_MECH_SECURITY, \
-	ACCESS_MECH_SCIENCE, \
-	ACCESS_MECH_ENGINE, \
-	ACCESS_AUX_BASE, \
-	ACCESS_PSYCHOLOGY, \
-	ACCESS_PHARMACY, \
-	ACCESS_NETWORK, \
-	ACCESS_WEAPONS, \
-	ACCESS_MINERAL_STOREROOM, \
-	ACCESS_SEC_DOORS, \
-	ACCESS_XENOBIOLOGY, \
-	ACCESS_MINING_STATION, \
-	ACCESS_MAILSORTING, \
-	ACCESS_MINING, \
-	ACCESS_RESEARCH, \
-	ACCESS_THEATRE, \
-	ACCESS_SURGERY, \
-	ACCESS_COURT, \
-	ACCESS_QM, \
-	ACCESS_VIROLOGY, \
-	ACCESS_LAWYER, \
-	ACCESS_LIBRARY, \
-	ACCESS_HYDROPONICS, \
-	ACCESS_CHEMISTRY, \
-	ACCESS_CONSTRUCTION, \
-	ACCESS_CARGO, \
-	ACCESS_ROBOTICS, \
-	ACCESS_KITCHEN, \
-	ACCESS_CREMATORIUM, \
-	ACCESS_JANITOR, \
-	ACCESS_BAR, \
-	ACCESS_CHAPEL_OFFICE, \
-	ACCESS_EXTERNAL_AIRLOCKS, \
-	ACCESS_MAINT_TUNNELS, \
-	ACCESS_ENGINE_EQUIP, \
-	ACCESS_ENGINE, \
-	ACCESS_GENETICS, \
-	ACCESS_RND, \
-	ACCESS_MORGUE, \
-	ACCESS_MEDICAL, \
-	ACCESS_FORENSICS_LOCKERS, \
-	ACCESS_BRIG, \
-	ACCESS_SECURITY, \
+#define TIER_1_ACCESS list(		\
+	ACCESS_AUX_BASE, 			\
+	ACCESS_BAR, 				\
+	ACCESS_CARGO, 				\
+	ACCESS_CHAPEL_OFFICE, 		\
+	ACCESS_CONSTRUCTION, 		\
+	ACCESS_COURT, 				\
+	ACCESS_ENGINE, 				\
+	ACCESS_HYDROPONICS, 		\
+	ACCESS_JANITOR, 			\
+	ACCESS_KITCHEN, 			\
+	ACCESS_LIBRARY, 			\
+	ACCESS_MAILSORTING, 		\
+	ACCESS_MAINT_TUNNELS, 		\
+	ACCESS_MECH_MINING,			\
+	ACCESS_MECH_MEDICAL,		\
+	ACCESS_MECH_SECURITY,		\
+	ACCESS_MECH_SCIENCE,		\
+	ACCESS_MECH_ENGINE,			\
+	ACCESS_MEDICAL, 			\
+	ACCESS_PSYCHOLOGY, 			\
+	ACCESS_RESEARCH, 			\
+	ACCESS_THEATRE, 			\
+	ACCESS_WEAPONS				\
 )
 
-/// Command staff/secure accesses, think bridge/armoury, AI upload, notably access to modify ID cards themselves. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_COMMAND)
-#define COMMAND_ACCESS list( \
-	ACCESS_TOXINS_STORAGE, \
-	ACCESS_MINISAT, \
-	ACCESS_TCOMSAT, \
-	ACCESS_KEYCARD_AUTH, \
-	ACCESS_RC_ANNOUNCE, \
-	ACCESS_VAULT, \
-	ACCESS_ATMOSPHERICS, \
-	ACCESS_TECH_STORAGE, \
-	ACCESS_HEADS, \
-	ACCESS_TELEPORTER, \
-	ACCESS_ARMORY, \
-	ACCESS_AI_UPLOAD, \
-	ACCESS_CHANGE_IDS, \
-	ACCESS_TOXINS, \
-	ACCESS_EVA, \
-	ACCESS_GATEWAY, \
-	ACCESS_ALL_PERSONAL_LOCKERS, \
+#define TIER_2_ACCESS list(		\
+	ACCESS_ATMOSPHERICS,		\
+	ACCESS_BRIG,				\
+	ACCESS_CHEMISTRY,			\
+	ACCESS_CREMATORIUM,			\
+	ACCESS_ENGINE_EQUIP,		\
+	ACCESS_EXTERNAL_AIRLOCKS,	\
+	ACCESS_FORENSICS_LOCKERS,	\
+	ACCESS_GENETICS,			\
+	ACCESS_LAWYER,				\
+	ACCESS_MINERAL_STOREROOM,	\
+	ACCESS_MINING,				\
+	ACCESS_MINING_STATION,		\
+	ACCESS_MORGUE,				\
+	ACCESS_PHARMACY,			\
+	ACCESS_RND,					\
+	ACCESS_ROBOTICS,			\
+	ACCESS_SECURITY,			\
+	ACCESS_SEC_DOORS,			\
+	ACCESS_SURGERY,				\
+	ACCESS_TECH_STORAGE,		\
+	ACCESS_TOXINS,				\
+	ACCESS_TOXINS_STORAGE		\
 )
 
-/// Private head of staff offices, usually only granted to most cards by trimming. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_PRV_COMMAND)
-#define PRIVATE_COMMAND_ACCESS list( \
-	ACCESS_HOS, \
-	ACCESS_HOP, \
-	ACCESS_CE, \
-	ACCESS_CMO, \
-	ACCESS_RD, \
+#define TIER_3_ACCESS list(		\
+	ACCESS_ARMORY,				\
+	ACCESS_EVA,					\
+	ACCESS_GATEWAY,				\
+	ACCESS_QM,					\
+	ACCESS_TCOMSAT,				\
+	ACCESS_TELEPORTER,			\
+	ACCESS_VIROLOGY,			\
+	ACCESS_XENOBIOLOGY			\
 )
 
-/// Captains private rooms. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_CAPTAIN)
-#define CAPTAIN_ACCESS list( \
-	ACCESS_CAPTAIN, \
-)
-/// Centcom area stuff. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_CENTCOM)
-#define CENTCOM_ACCESS list( \
-	ACCESS_CENT_BAR, \
-	ACCESS_CENT_CAPTAIN, \
-	ACCESS_CENT_TELEPORTER, \
-	ACCESS_CENT_STORAGE, \
-	ACCESS_CENT_LIVING, \
-	ACCESS_CENT_MEDICAL, \
-	ACCESS_CENT_SPECOPS, \
-	ACCESS_CENT_THUNDER, \
-	ACCESS_CENT_GENERAL, \
+#define TIER_4_ACCESS list(		\
+	ACCESS_ALL_PERSONAL_LOCKERS,\
+	ACCESS_CE,					\
+	ACCESS_CMO,					\
+	ACCESS_HEADS,				\
+	ACCESS_HOP,					\
+	ACCESS_HOS,					\
+	ACCESS_KEYCARD_AUTH,		\
+	ACCESS_MINISAT,				\
+	ACCESS_NETWORK,				\
+	ACCESS_RD,					\
+	ACCESS_RC_ANNOUNCE,			\
+	ACCESS_VAULT				\
 )
 
-/// Syndicate areas off station. Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_SYNDICATE)
-#define SYNDICATE_ACCESS list( \
-	ACCESS_SYNDICATE_LEADER, \
-	ACCESS_SYNDICATE, \
+#define TIER_5_ACCESS list(		\
+	ACCESS_AI_UPLOAD,			\
+	ACCESS_CAPTAIN,				\
+	ACCESS_CHANGE_IDS			\
 )
 
-/// Away missions/gateway/space ruins.  Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_AWAY)
-#define AWAY_ACCESS list( \
-	ACCESS_AWAY_GENERAL, \
-	ACCESS_AWAY_MAINT, \
-	ACCESS_AWAY_MED, \
-	ACCESS_AWAY_SEC, \
-	ACCESS_AWAY_ENGINE, \
-	ACCESS_AWAY_GENERIC1, \
-	ACCESS_AWAY_GENERIC2, \
-	ACCESS_AWAY_GENERIC3, \
-	ACCESS_AWAY_GENERIC4, \
+#define TIER_6_ACCESS list(		\
+	ACCESS_AWAY_ENGINE,			\
+	ACCESS_AWAY_GENERAL,		\
+	ACCESS_AWAY_GENERIC1,		\
+	ACCESS_AWAY_GENERIC2,		\
+	ACCESS_AWAY_GENERIC3,		\
+	ACCESS_AWAY_GENERIC4,		\
+	ACCESS_AWAY_MAINT,			\
+	ACCESS_AWAY_MED,			\
+	ACCESS_AWAY_SEC,			\
+	ACCESS_BLOODCULT,			\
+	ACCESS_CENT_BAR,			\
+	ACCESS_CENT_CAPTAIN,		\
+	ACCESS_CENT_GENERAL,		\
+	ACCESS_CENT_LIVING,			\
+	ACCESS_CENT_MEDICAL,		\
+	ACCESS_CENT_SPECOPS,		\
+	ACCESS_CENT_STORAGE,		\
+	ACCESS_CENT_TELEPORTER,		\
+	ACCESS_CENT_THUNDER,		\
+	ACCESS_SYNDICATE,			\
+	ACCESS_SYNDICATE_LEADER		\
 )
 
-/// Weird internal Cult access that prevents non-cult from using their doors.  Do not use direct, access via SSid_access.get_flag_access_list(ACCESS_FLAG_SPECIAL)
-#define CULT_ACCESS list( \
-	ACCESS_BLOODCULT, \
-)
-
+/// Name for the Station region.
+#define REGION_STATION "Station"
+/// A list of all station accesses.
+#define REGION_ACCESS_STATION TIER_1_ACCESS + TIER_2_ACCESS + TIER_3_ACCESS + TIER_4_ACCESS + TIER_5_ACCESS
 /// Name for the Global region.
-#define REGION_ALL_GLOBAL "All"
-/// Used to seed the accesses_by_region list in SSid_access. A list of every single access in the game.
-#define REGION_ACCESS_ALL_GLOBAL REGION_ACCESS_ALL_STATION + CENTCOM_ACCESS + SYNDICATE_ACCESS + AWAY_ACCESS + CULT_ACCESS
-/// Name for the Station All Access region.
-#define REGION_ALL_STATION "Station"
-/// Used to seed the accesses_by_region list in SSid_access. A list of all station accesses.
-#define REGION_ACCESS_ALL_STATION COMMON_ACCESS + COMMAND_ACCESS + PRIVATE_COMMAND_ACCESS + CAPTAIN_ACCESS
+#define REGION_GLOBAL "Global"
+/// A list of all accesses.
+#define REGION_ACCESS_GLOBAL REGION_ACCESS_STATION + TIER_6_ACCESS
 /// Name for the General region.
 #define REGION_GENERAL "General"
 /// Used to seed the accesses_by_region list in SSid_access. A list of general service accesses that are overseen by the HoP.
@@ -460,64 +382,43 @@
 )
 /// Name for the Centcom region.
 #define REGION_CENTCOM "Central Command"
-/// Used to seed the accesses_by_region list in SSid_access. A list of all CENTCOM_ACCESS regional accesses.
-#define REGION_ACCESS_CENTCOM CENTCOM_ACCESS
+/// Used to seed the accesses_by_region list in SSid_access. A list of all central command regional accesses.
+#define REGION_ACCESS_CENTCOM list( \
+	ACCESS_CENT_BAR, \
+	ACCESS_CENT_CAPTAIN, \
+	ACCESS_CENT_TELEPORTER, \
+	ACCESS_CENT_STORAGE, \
+	ACCESS_CENT_LIVING, \
+	ACCESS_CENT_MEDICAL, \
+	ACCESS_CENT_SPECOPS, \
+	ACCESS_CENT_THUNDER, \
+	ACCESS_CENT_GENERAL, \
+)
+/// Name for the syndicate region.
+#define REGION_SYNDICATE "Syndicate"
+/// Used to seed the accesses_by_region list in SSid_access. A list of all syndicate regional accesses.
+#define REGION_ACCESS_SYNDICATE  list( \
+	ACCESS_SYNDICATE_LEADER, \
+	ACCESS_SYNDICATE, \
+)
 
-/**
- * A list of PDA paths that can be painted as well as the regional heads which should be able to paint them.
- * If a PDA is not in this list, it cannot be painted using the PDA & ID Painter.
- * If a PDA is in this list, it can always be painted with ACCESS_CHANGE_IDS.
- * Used to see pda_region in [/datum/controller/subsystem/id_access/proc/setup_tgui_lists]
+/// Name for the away region.
+#define REGION_AWAY "Away"
+/// Used to seed the accesses_by_region list in SSid_access. A list of all away regional accesses.
+#define REGION_ACCESS_AWAY list( \
+	ACCESS_AWAY_GENERAL, \
+	ACCESS_AWAY_MAINT, \
+	ACCESS_AWAY_MED, \
+	ACCESS_AWAY_SEC, \
+	ACCESS_AWAY_ENGINE, \
+	ACCESS_AWAY_GENERIC1, \
+	ACCESS_AWAY_GENERIC2, \
+	ACCESS_AWAY_GENERIC3, \
+	ACCESS_AWAY_GENERIC4, \
+)
+
+/*
+ * card access defines
  */
-#define PDA_PAINTING_REGIONS list( \
-	/obj/item/pda = list(REGION_GENERAL), \
-	/obj/item/pda/clown = list(REGION_GENERAL), \
-	/obj/item/pda/mime = list(REGION_GENERAL), \
-	/obj/item/pda/medical = list(REGION_MEDBAY), \
-	/obj/item/pda/viro = list(REGION_MEDBAY), \
-	/obj/item/pda/engineering = list(REGION_ENGINEERING), \
-	/obj/item/pda/security = list(REGION_SECURITY), \
-	/obj/item/pda/detective = list(REGION_SECURITY), \
-	/obj/item/pda/warden = list(REGION_SECURITY), \
-	/obj/item/pda/janitor = list(REGION_GENERAL), \
-	/obj/item/pda/toxins = list(REGION_RESEARCH), \
-	/obj/item/pda/heads/hop = list(REGION_COMMAND), \
-	/obj/item/pda/heads/hos = list(REGION_COMMAND), \
-	/obj/item/pda/heads/cmo = list(REGION_COMMAND), \
-	/obj/item/pda/heads/ce = list(REGION_COMMAND), \
-	/obj/item/pda/heads/rd = list(REGION_COMMAND), \
-	/obj/item/pda/captain = list(REGION_COMMAND), \
-	/obj/item/pda/cargo = list(REGION_SUPPLY), \
-	/obj/item/pda/quartermaster = list(REGION_SUPPLY), \
-	/obj/item/pda/shaftminer = list(REGION_SUPPLY), \
-	/obj/item/pda/chaplain = list(REGION_GENERAL), \
-	/obj/item/pda/lawyer = list(REGION_GENERAL, REGION_SECURITY), \
-	/obj/item/pda/botanist = list(REGION_GENERAL), \
-	/obj/item/pda/roboticist = list(REGION_RESEARCH), \
-	/obj/item/pda/curator = list(REGION_GENERAL), \
-	/obj/item/pda/cook = list(REGION_GENERAL), \
-	/obj/item/pda/bar = list(REGION_GENERAL), \
-	/obj/item/pda/atmos = list(REGION_ENGINEERING), \
-	/obj/item/pda/chemist = list(REGION_MEDBAY), \
-	/obj/item/pda/geneticist = list(REGION_RESEARCH), \
-)
 
-/// All regions that make up the station area. Helper define to quickly designate a region as part of the station or not. Access via SSid_access.station_regions.
-#define REGION_AREA_STATION list( \
-	REGION_GENERAL, \
-	REGION_SECURITY, \
-	REGION_MEDBAY, \
-	REGION_RESEARCH, \
-	REGION_ENGINEERING, \
-	REGION_SUPPLY, \
-	REGION_COMMAND, \
-)
-
-/// Used in ID card access adding procs. Will try to add all accesses and utilises free wildcards, skipping over any accesses it can't add.
-#define TRY_ADD_ALL 0
-/// Used in ID card access adding procs. Will try to add all accesses and does not utilise wildcards, skipping anything requiring a wildcard.
-#define TRY_ADD_ALL_NO_WILDCARD 1
-/// Used in ID card access adding procs. Will forcefully add all accesses.
-#define FORCE_ADD_ALL 2
-/// Used in ID card access adding procs. Will stack trace on fail.
-#define ERROR_ON_FAIL 3
+#define CARD_ACCESS_ASSIGNABLE (1 << 0)

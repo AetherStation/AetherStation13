@@ -591,13 +591,13 @@
 
 /datum/outfit/snowsyndie
 	name = "Syndicate Snow Operative"
+	card_access = /datum/card_access/chameleon/operative
 	uniform = /obj/item/clothing/under/syndicate/coldres
 	shoes = /obj/item/clothing/shoes/combat/coldres
 	ears = /obj/item/radio/headset/syndicate/alt
 	r_pocket = /obj/item/gun/ballistic/automatic/pistol
-	id = /obj/item/card/id/advanced/chameleon
+	id = /obj/item/card/id/chameleon
 	implants = list(/obj/item/implant/exile)
-	id_trim = /datum/id_trim/chameleon/operative
 
 /obj/effect/mob_spawn/human/syndicatesoldier/coldres/alive/female
 	mob_gender = FEMALE

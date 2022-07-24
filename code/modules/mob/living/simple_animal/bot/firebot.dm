@@ -22,6 +22,7 @@
 	window_id = "autoextinguisher"
 	window_name = "Mobile Fire Extinguisher v1.0"
 	path_image_color = "#FFA500"
+	card_access = /datum/card_access/job/station_engineer
 
 	var/atom/target_fire
 	var/atom/old_target_fire
@@ -42,11 +43,6 @@
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
 	update_appearance(UPDATE_ICON)
-
-	// Doing this hurts my soul, but simplebot access reworks are for another day.
-	var/datum/id_trim/job/engi_trim = SSid_access.trim_singletons_by_path[/datum/id_trim/job/station_engineer]
-	access_card.add_access(engi_trim.access + engi_trim.wildcard_access)
-	prev_access = access_card.access.Copy()
 
 	create_extinguisher()
 	AddElement(/datum/element/atmos_sensitive, mapload)

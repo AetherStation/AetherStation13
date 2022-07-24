@@ -786,7 +786,7 @@
 	update_last_used(user)
 	switch(buildstage)
 		if(AIRALARM_BUILD_COMPLETE)
-			if(W.GetID())// trying to unlock the interface with an ID card
+			if(W.get_id())// trying to unlock the interface with an ID card
 				togglelock(user)
 				return
 			else if(panel_open && is_wire_tool(W))

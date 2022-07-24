@@ -117,7 +117,7 @@
 		return
 
 /obj/structure/displaycase/attackby(obj/item/W, mob/living/user, params)
-	if(W.GetID() && !broken && openable)
+	if(W.get_id() && !broken && openable)
 		if(allowed(user))
 			to_chat(user,  span_notice("You [open ? "close":"open"] [src]."))
 			toggle_lock(user)

@@ -23,7 +23,7 @@
 
 /obj/item/storage/lockbox/attackby(obj/item/W, mob/user, params)
 	var/locked = SEND_SIGNAL(src, COMSIG_IS_STORAGE_LOCKED)
-	if(W.GetID())
+	if(W.get_id())
 		if(broken)
 			to_chat(user, span_danger("It appears to be broken."))
 			return

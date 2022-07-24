@@ -120,7 +120,7 @@ Nothing else in the console has ID requirements.
 				var/mob/living/carbon/human/H = user
 				var/obj/item/I = H.wear_id
 				if(istype(I))
-					var/obj/item/card/id/ID = I.GetID()
+					var/obj/item/card/id/ID = I.get_id()
 					if(istype(ID))
 						logname = "User: [ID.registered_name]"
 			var/i = stored_research.research_logs.len

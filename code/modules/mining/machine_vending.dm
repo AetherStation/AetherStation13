@@ -212,7 +212,7 @@
 /obj/machinery/mineral/equipment_vendor/golem/Initialize()
 	desc += "\nIt seems a few selections have been added."
 	prize_list += list(
-		new /datum/data/mining_equipment("Extra Id", /obj/item/card/id/advanced/mining, 250),
+		new /datum/data/mining_equipment("Extra Id", /obj/item/card/id/mining, 250),
 		new /datum/data/mining_equipment("Science Goggles", /obj/item/clothing/glasses/science, 250),
 		new /datum/data/mining_equipment("Monkey Cube", /obj/item/food/monkeycube, 300),
 		new /datum/data/mining_equipment("Toolbelt", /obj/item/storage/belt/utility, 350),
@@ -270,7 +270,7 @@
 	new /obj/item/clothing/suit/hooded/explorer(src)
 	new /obj/item/encryptionkey/headset_mining(src)
 	new /obj/item/clothing/mask/gas/explorer(src)
-	new /obj/item/card/id/advanced/mining(src)
+	new /obj/item/card_access_chip/mining(src)
 	new /obj/item/gun/energy/kinetic_accelerator(src)
 	new /obj/item/kitchen/knife/combat/survival(src)
 	new /obj/item/flashlight/seclite(src)

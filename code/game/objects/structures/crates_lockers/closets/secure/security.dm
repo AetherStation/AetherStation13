@@ -32,7 +32,7 @@
 	new /obj/item/storage/belt/sabre(src)
 	new /obj/item/gun/energy/e_gun(src)
 	new /obj/item/door_remote/captain(src)
-	new /obj/item/card/id/advanced/gold/captains_spare(src)
+	new /obj/item/card/id/tier5/captains_spare(src)
 	new /obj/item/storage/photo_album/captain(src)
 
 /obj/structure/closet/secure_closet/hop
@@ -53,6 +53,10 @@
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/storage/box/ids(src)
+	new /obj/item/storage/box/id_chips(src)
+	new /obj/item/storage/box/id_chips/tier4(src)
+	new /obj/item/storage/box/id_chips/tier4(src)
+	new /obj/item/card/id/chip_programmer(src)
 	new /obj/item/megaphone/command(src)
 	new /obj/item/clothing/suit/armor/vest/alt(src)
 	new /obj/item/assembly/flash/handheld(src)

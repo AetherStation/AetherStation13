@@ -82,13 +82,11 @@
 	O.stored_access = list()
 	var/obj/item/id_slot = get_item_by_slot(ITEM_SLOT_ID)
 	if(id_slot)
-		O.stored_access |= id_slot.GetAccess()
-		var/obj/item/card/id/ID = id_slot.GetID()
+		O.stored_access |= id_slot.get_access()
+		var/obj/item/card/id/ID = id_slot.get_id()
 		if(ID)
 			if(ID.registered_name == real_name)
 				O.update_id_name = TRUE
-			if(ID.trim)
-				O.id_trim = ID.trim.type
 	//Copy hands
 	if(held_items.len >= 2) //Not in the mood to let outfits transfer amputees
 		var/obj/item/left_hand = held_items[1]
@@ -145,9 +143,9 @@
 	//Apply access
 	var/obj/item/id_slot = H.get_item_by_slot(ITEM_SLOT_ID)
 	if(id_slot)
-		var/obj/item/card/id/card = id_slot.GetID()
+		var/obj/item/card/id/card = id_slot.get_id()
 		if(istype(card))
-			card.add_access(stored_access, mode = FORCE_ADD_ALL)
+			card.add_access(stored_access)
 		if(update_id_name)
 			card.registered_name = H.real_name
 			card.update_label()
