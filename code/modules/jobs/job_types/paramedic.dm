@@ -36,6 +36,7 @@
 /datum/outfit/job/paramedic
 	name = "Paramedic"
 	jobtype = /datum/job/paramedic
+	card_access = /datum/card_access/job/paramedic
 
 	ears = /obj/item/radio/headset/headset_med
 	uniform = /obj/item/clothing/under/rank/medical/paramedic
@@ -44,7 +45,7 @@
 	suit =  /obj/item/clothing/suit/toggle/labcoat/paramedic
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile
 	belt = /obj/item/storage/belt/medical/paramedic
-	id = /obj/item/card/id/advanced
+	id = /obj/item/card/id
 	l_pocket = /obj/item/pda/medical
 	suit_store = /obj/item/flashlight/pen/paramedic
 	backpack_contents = list(/obj/item/roller=1)
@@ -56,5 +57,3 @@
 	box = /obj/item/storage/box/survival/medical
 
 	chameleon_extras = /obj/item/gun/syringe
-
-	id_trim = /datum/id_trim/job/paramedic

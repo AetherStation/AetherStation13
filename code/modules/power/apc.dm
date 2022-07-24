@@ -617,7 +617,7 @@
 				span_notice("You insert the power cell."))
 			chargecount = 0
 			update_appearance()
-	else if (W.GetID())
+	else if (W.get_id())
 		togglelock(user)
 	else if (istype(W, /obj/item/stack/cable_coil) && opened)
 		var/turf/host_turf = get_turf(src)

@@ -3112,7 +3112,7 @@
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
 "om" = (
-/obj/machinery/modular_computer/console/preset/id/centcom,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/machinery/status_display/ai/directional/north,
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
@@ -4761,7 +4761,7 @@
 /turf/open/floor/iron/grimy,
 /area/centcom/ferry)
 "ry" = (
-/obj/machinery/modular_computer/console/preset/id/centcom,
+/obj/machinery/modular_computer/console/preset/id,
 /obj/machinery/computer/security/telescreen{
 	desc = "Used for watching the RD's goons and the AI's satellite from the safety of his office.";
 	name = "Research Monitor";
@@ -6128,7 +6128,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/control)
 "ux" = (
-/obj/machinery/modular_computer/console/preset/id/centcom{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /obj/machinery/button/door/indestructible{
@@ -7272,7 +7272,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/control)
 "xn" = (
-/obj/machinery/modular_computer/console/preset/id/centcom{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral{
@@ -8720,7 +8720,7 @@
 /turf/open/floor/iron/dark,
 /area/centcom/ferry)
 "Bv" = (
-/obj/machinery/modular_computer/console/preset/id/centcom{
+/obj/machinery/modular_computer/console/preset/id{
 	dir = 1
 	},
 /turf/open/floor/iron/grimy,

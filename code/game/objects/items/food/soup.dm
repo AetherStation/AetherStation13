@@ -298,3 +298,11 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 11, /datum/reagent/consumable/milk = 10, /datum/reagent/consumable/nutriment/vitamin = 6)
 	tastes = list("oats" = 1, "milk" = 1)
 	foodtypes = DAIRY | GRAIN | BREAKFAST
+
+// empty soup for custom soups
+/obj/item/food/soup/empty
+	name = "soup"
+	icon_state = "soup"
+	foodtypes = NONE
+	tastes = list()
+	desc = "A delicious customized soup."

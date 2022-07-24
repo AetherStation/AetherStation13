@@ -127,6 +127,7 @@
 
 /datum/outfit/lavaland_syndicate
 	name = "Lavaland Syndicate Agent"
+	card_access = /datum/card_access/chameleon/operative
 	r_hand = /obj/item/gun/ballistic/automatic/sniper_rifle
 	uniform = /obj/item/clothing/under/syndicate
 	suit = /obj/item/clothing/suit/toggle/labcoat
@@ -135,9 +136,8 @@
 	ears = /obj/item/radio/headset/syndicate/alt
 	back = /obj/item/storage/backpack
 	r_pocket = /obj/item/gun/ballistic/automatic/pistol
-	id = /obj/item/card/id/advanced/chameleon
+	id = /obj/item/card/id/chameleon
 	implants = list(/obj/item/implant/weapons_auth)
-	id_trim = /datum/id_trim/chameleon/operative
 
 /datum/outfit/lavaland_syndicate/post_equip(mob/living/carbon/human/H)
 	H.faction |= ROLE_SYNDICATE

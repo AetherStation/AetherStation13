@@ -18,7 +18,6 @@
 
 /obj/item/door_remote/Initialize()
 	. = ..()
-	access_list = SSid_access.get_region_access_list(list(region_access))
 	RegisterSignal(src, COMSIG_COMPONENT_NTNET_NAK, .proc/bad_signal)
 
 /obj/item/door_remote/proc/bad_signal(datum/source, datum/netdata/data, error_code)
@@ -63,12 +62,6 @@
 	data.user = user // for responce message
 
 	ntnet_send(data)
-
-/obj/item/door_remote/omni
-	name = "omni door remote"
-	desc = "This control wand can access any door on the station."
-	icon_state = "gangtool-yellow"
-	region_access = REGION_ALL_STATION
 
 /obj/item/door_remote/captain
 	name = "command door remote"

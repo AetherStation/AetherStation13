@@ -1,8 +1,8 @@
 /datum/outfit/vr
 	name = "Basic VR"
+	card_access = /datum/card_access/vr
 
-	id = /obj/item/card/id/advanced
-	id_trim = /datum/id_trim/vr
+	id = /obj/item/card/id
 	uniform = /obj/item/clothing/under/color/random
 	ears = /obj/item/radio/headset
 	shoes = /obj/item/clothing/shoes/sneakers/black
@@ -12,9 +12,9 @@
 
 /datum/outfit/vr/syndicate
 	name = "Syndicate VR Operative - Basic"
+	card_access = /datum/card_access/vr/operative
 
-	id = /obj/item/card/id/advanced/chameleon/black
-	id_trim = /datum/id_trim/vr/operative
+	id = /obj/item/card/id/chameleon/black
 	uniform = /obj/item/clothing/under/syndicate
 	back = /obj/item/storage/backpack
 	backpack_contents = list(

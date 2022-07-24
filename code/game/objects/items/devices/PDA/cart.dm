@@ -642,7 +642,7 @@ Code:
 			if("botlist")
 				active_bot = null
 			if("summon") //Args are in the correct order, they are stated here just as an easy reminder.
-				active_bot.bot_control("summon", usr, host_pda.GetAccess())
+				active_bot.bot_control("summon", usr, host_pda.get_access())
 			else //Forward all other bot commands to the bot itself!
 				active_bot.bot_control(href_list["op"], usr)
 

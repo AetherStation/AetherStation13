@@ -10,6 +10,7 @@
 
 /datum/outfit/families_police/beatcop
 	name = "Families: Beat Cop"
+	card_access = /datum/card_access/space_police
 
 	uniform = /obj/item/clothing/under/rank/security/officer/beatcop
 	back = /obj/item/storage/backpack/duffelbag/cops
@@ -23,7 +24,7 @@
 	belt = /obj/item/gun/ballistic/automatic/pistol/m1911
 	r_pocket = /obj/item/lighter
 	l_pocket = /obj/item/restraints/handcuffs
-	id = /obj/item/card/id/advanced/black
+	id = /obj/item/card/id/black
 	r_hand = /obj/item/gun/energy/disabler
 	backpack_contents = list(/obj/item/storage/box/handcuffs = 1,
 	/obj/item/storage/box/teargas = 1,
@@ -32,8 +33,6 @@
 	/obj/item/ammo_box/magazine/m45 = 3,
 	/obj/item/ammo_box/c45 = 2,
 	/obj/item/storage/box/survival/security)
-
-	id_trim = /datum/id_trim/space_police
 
 /datum/outfit/families_police/beatcop/armored
 	name = "Families: Armored Beat Cop"

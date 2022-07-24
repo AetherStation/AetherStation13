@@ -36,7 +36,7 @@
 	new /obj/item/radio/headset( src )
 
 /obj/structure/closet/secure_closet/personal/attackby(obj/item/W, mob/user, params)
-	var/obj/item/card/id/I = W.GetID()
+	var/obj/item/card/id/I = W.get_id()
 	if(istype(I))
 		if(broken)
 			to_chat(user, span_danger("It appears to be broken."))

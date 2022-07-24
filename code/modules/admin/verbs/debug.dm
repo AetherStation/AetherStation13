@@ -197,13 +197,13 @@ But you can call procs that are of type /mob/living/carbon/human/proc/ for that 
 		var/obj/item/card/id/id = null
 
 		if(worn)
-			id = worn.GetID()
+			id = worn.get_id()
 		if(id)
 			if(id == worn)
 				worn = null
 			qdel(id)
 
-		id = new /obj/item/card/id/advanced/debug()
+		id = new /obj/item/card/id/debug()
 
 		id.registered_name = H.real_name
 		id.update_label()

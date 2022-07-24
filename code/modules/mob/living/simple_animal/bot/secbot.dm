@@ -20,6 +20,7 @@
 	allow_pai = 0
 	data_hud_type = DATA_HUD_SECURITY_ADVANCED
 	path_image_color = "#FF0000"
+	card_access = /datum/card_access/job/security/detective
 
 	combat_mode = TRUE
 
@@ -78,11 +79,6 @@
 	. = ..()
 	weapon = new baton_type()
 	update_appearance(UPDATE_ICON)
-
-	// Doing this hurts my soul, but simplebot access reworks are for another day.
-	var/datum/id_trim/job/det_trim = SSid_access.trim_singletons_by_path[/datum/id_trim/job/detective]
-	access_card.add_access(det_trim.access + det_trim.wildcard_access)
-	prev_access = access_card.access.Copy()
 
 	//SECHUD
 	var/datum/atom_hud/secsensor = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]

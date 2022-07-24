@@ -335,7 +335,7 @@ DEFINE_BITFIELD(turret_flags, list(
 			invisibility = 0
 			qdel(cover) //deletes the cover, and the turret instance itself becomes its own cover.
 
-	else if(I.GetID())
+	else if(I.get_id())
 		//Behavior lock/unlock mangement
 		if(allowed(user))
 			locked = !locked
@@ -547,7 +547,7 @@ DEFINE_BITFIELD(turret_flags, list(
 			return 10
 
 	if(turret_flags & TURRET_FLAG_AUTH_WEAPONS) //check for weapon authorization
-		if(isnull(perp.wear_id) || istype(perp.wear_id.GetID(), /obj/item/card/id/advanced/chameleon))
+		if(isnull(perp.wear_id) || istype(perp.wear_id.get_id(), /obj/item/card/id/chameleon))
 
 			if(allowed(perp)) //if the perp has security access, return 0
 				return 0

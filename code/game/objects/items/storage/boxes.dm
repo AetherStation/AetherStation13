@@ -538,7 +538,7 @@
 
 /obj/item/storage/box/ids/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/card/id/advanced(src)
+		new /obj/item/card/id/tier2(src)
 
 //Some spare PDAs in a box
 /obj/item/storage/box/pdas
@@ -559,13 +559,28 @@
 	new newcart(src)
 
 /obj/item/storage/box/silver_ids
-	name = "box of spare silver IDs"
+	name = "box of spare tier 3 IDs"
 	desc = "Shiny IDs for important people."
 	illustration = "id"
 
 /obj/item/storage/box/silver_ids/PopulateContents()
 	for(var/i in 1 to 7)
-		new /obj/item/card/id/advanced/silver(src)
+		new /obj/item/card/id/tier3(src)
+
+/obj/item/storage/box/id_chips
+	name = "box of access chips"
+	desc = "A box of rewritable additional access chips."
+
+/obj/item/storage/box/id_chips/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/card_access_chip/rewritable(src)
+
+/obj/item/storage/box/id_chips/tier4
+	name = "box of silver access chips"
+
+/obj/item/storage/box/id_chips/PopulateContents()
+	for(var/i in 1 to 7)
+		new /obj/item/card_access_chip/rewritable/tier4(src)
 
 /obj/item/storage/box/prisoner
 	name = "box of prisoner IDs"
@@ -575,13 +590,13 @@
 
 /obj/item/storage/box/prisoner/PopulateContents()
 	..()
-	new /obj/item/card/id/advanced/prisoner/one(src)
-	new /obj/item/card/id/advanced/prisoner/two(src)
-	new /obj/item/card/id/advanced/prisoner/three(src)
-	new /obj/item/card/id/advanced/prisoner/four(src)
-	new /obj/item/card/id/advanced/prisoner/five(src)
-	new /obj/item/card/id/advanced/prisoner/six(src)
-	new /obj/item/card/id/advanced/prisoner/seven(src)
+	new /obj/item/card/id/prisoner/one(src)
+	new /obj/item/card/id/prisoner/two(src)
+	new /obj/item/card/id/prisoner/three(src)
+	new /obj/item/card/id/prisoner/four(src)
+	new /obj/item/card/id/prisoner/five(src)
+	new /obj/item/card/id/prisoner/six(src)
+	new /obj/item/card/id/prisoner/seven(src)
 
 /obj/item/storage/box/seccarts
 	name = "box of PDA security cartridges"

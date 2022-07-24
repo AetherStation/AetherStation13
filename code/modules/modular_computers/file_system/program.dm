@@ -140,13 +140,13 @@
 		var/obj/item/computer_hardware/card_slot/card_slot
 		if(computer)
 			card_slot = computer.all_components[MC_CARD]
-			D = card_slot?.GetID()
+			D = card_slot?.get_id()
 
 		if(!D)
 			if(loud)
 				to_chat(user, span_danger("\The [computer] flashes an \"RFID Error - Unable to scan ID\" warning."))
 			return FALSE
-		access = D.GetAccess()
+		access = D.get_access()
 
 	if(access_to_check in access)
 		return TRUE
@@ -169,7 +169,7 @@
 			var/obj/item/card/id/ID
 			var/obj/item/computer_hardware/card_slot/card_holder = computer.all_components[MC_CARD]
 			if(card_holder)
-				ID = card_holder.GetID()
+				ID = card_holder.get_id()
 			generate_network_log("Connection opened -- Program ID: [filename] User:[ID?"[ID.registered_name]":"None"]")
 		program_state = PROGRAM_STATE_ACTIVE
 		return TRUE
@@ -196,7 +196,7 @@
 		var/obj/item/card/id/ID
 		var/obj/item/computer_hardware/card_slot/card_holder = computer.all_components[MC_CARD]
 		if(card_holder)
-			ID = card_holder.GetID()
+			ID = card_holder.get_id()
 		generate_network_log("Connection closed -- Program ID: [filename] User:[ID?"[ID.registered_name]":"None"]")
 	return 1
 

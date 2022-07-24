@@ -82,7 +82,7 @@
 	if(. && hand_first)
 		return
 	//Check inventory slots
-	return (wear_id?.GetID() || belt?.GetID())
+	return (wear_id?.get_id() || belt?.get_id())
 
 /mob/living/carbon/human/reagent_check(datum/reagent/R, delta_time, times_fired)
 	return dna.species.handle_chemicals(R, src, delta_time, times_fired)

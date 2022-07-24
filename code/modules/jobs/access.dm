@@ -29,16 +29,16 @@
 			return TRUE
 	return FALSE
 
-/obj/item/proc/GetAccess()
+/obj/item/proc/get_access()
 	return list()
 
-/obj/item/proc/GetID()
+/obj/item/proc/get_id()
 	return null
 
-/obj/item/proc/RemoveID()
+/obj/item/proc/remove_id()
 	return null
 
-/obj/item/proc/InsertID()
+/obj/item/proc/insert_id()
 	return FALSE
 
 /obj/proc/text2access(access_text)
@@ -65,7 +65,7 @@
 
 // Check if an item has access to this object
 /obj/proc/check_access(obj/item/I)
-	return check_access_list(I ? I.GetAccess() : null)
+	return check_access_list(I ? I.get_access() : null)
 
 /obj/proc/check_access_list(list/access_list)
 	gen_access()
@@ -104,24 +104,12 @@
 
 /// Returns the SecHUD job icon state for whatever this object's ID card is, if it has one.
 /obj/item/proc/get_sechud_job_icon_state()
-	var/obj/item/card/id/id_card = GetID()
+	var/obj/item/card/id/id_card = get_id()
 
 	if(!id_card)
 		return "hudno_id"
 
 	var/card_assignment
-	if(istype(id_card, /obj/item/card/id/advanced))
-		var/obj/item/card/id/advanced/advanced_id_card = id_card
-		if(advanced_id_card.trim_assignment_override)
-			card_assignment = advanced_id_card.trim_assignment_override
-		else if(ispath(advanced_id_card.trim))
-			var/datum/id_trim/trim = SSid_access.trim_singletons_by_path[advanced_id_card.trim]
-			card_assignment = trim.assignment
-		else
-			card_assignment = advanced_id_card.trim?.assignment
-	else
-		card_assignment = id_card.trim?.assignment
-
 	if(!card_assignment)
 		card_assignment = id_card.assignment
 

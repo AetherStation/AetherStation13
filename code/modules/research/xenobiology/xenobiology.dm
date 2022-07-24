@@ -735,8 +735,8 @@
 	imp.implant(SM, user)
 
 	// Ugly as sin. Simble mob accesses are for another time.
-	SM.access_card = new /obj/item/card/id/advanced/chameleon(SM)
-	SSid_access.apply_trim_to_card(SM, /datum/id_trim/chameleon)
+	SM.access_card = new /obj/item/card/id/chameleon(SM)
+	SSid_access.apply_card_access(SM.access_card, /datum/card_access/chameleon, force = TRUE)
 	ADD_TRAIT(SM.access_card, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
 
 /obj/item/slimepotion/transference

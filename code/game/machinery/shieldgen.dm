@@ -223,7 +223,7 @@
 				shields_down()
 			set_anchored(FALSE)
 
-	else if(W.GetID())
+	else if(W.get_id())
 		if(allowed(user) && !(obj_flags & EMAGGED))
 			locked = !locked
 			to_chat(user, span_notice("You [locked ? "lock" : "unlock"] the controls."))
@@ -391,7 +391,7 @@
 
 
 /obj/machinery/power/shieldwallgen/attackby(obj/item/W, mob/user, params)
-	if(W.GetID())
+	if(W.get_id())
 		if(allowed(user) && !(obj_flags & EMAGGED))
 			locked = !locked
 			to_chat(user, span_notice("You [src.locked ? "lock" : "unlock"] the controls."))

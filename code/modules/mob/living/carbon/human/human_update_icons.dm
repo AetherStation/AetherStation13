@@ -164,7 +164,7 @@ There are several things that need to be remembered:
 			id_overlay.pixel_y += dna.species.offset_features[OFFSET_ID][2]
 		overlays_standing[ID_LAYER] = id_overlay
 
-		var/obj/item/card/id/shown_id = wear_id.GetID()
+		var/obj/item/card/id/shown_id = wear_id.get_id()
 		if(shown_id)
 			var/mutable_appearance/id_card_overlay = overlays_standing[ID_CARD_LAYER]
 			id_card_overlay = shown_id.build_worn_icon(default_layer = ID_CARD_LAYER, default_icon_file = 'icons/mob/clothing/id_card.dmi')

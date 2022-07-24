@@ -58,8 +58,7 @@
 	var/obj/item/implant/radio/mining/imp = new(src)
 	imp.implant(src)
 
-	access_card = new /obj/item/card/id/advanced/gold(src)
-	SSid_access.apply_trim_to_card(access_card, /datum/id_trim/job/shaft_miner)
+	access_card = new /obj/item/card/id/tier5(src)
 
 	SetCollectBehavior()
 

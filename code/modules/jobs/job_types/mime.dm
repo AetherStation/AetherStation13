@@ -41,6 +41,7 @@
 /datum/outfit/job/mime
 	name = "Mime"
 	jobtype = /datum/job/mime
+	card_access = /datum/card_access/job/mime
 
 	belt = /obj/item/pda/mime
 	ears = /obj/item/radio/headset/headset_srv
@@ -59,8 +60,6 @@
 	satchel = /obj/item/storage/backpack/mime
 
 	chameleon_extras = /obj/item/stamp/mime
-
-	id_trim = /datum/id_trim/job/mime
 
 /datum/outfit/job/mime/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()

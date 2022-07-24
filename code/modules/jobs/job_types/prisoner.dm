@@ -26,11 +26,10 @@
 /datum/outfit/job/prisoner
 	name = "Prisoner"
 	jobtype = /datum/job/prisoner
+	card_access = /datum/card_access/job/prisoner
 
 	uniform = /obj/item/clothing/under/rank/prisoner
 	shoes = /obj/item/clothing/shoes/sneakers/orange
-	id = /obj/item/card/id/advanced/prisoner
+	id = /obj/item/card/id/prisoner
 	ears = null
 	belt = null
-
-	id_trim = /datum/id_trim/job/prisoner

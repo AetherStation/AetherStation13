@@ -108,7 +108,7 @@
 			return
 		loaded_tank = item
 		update_appearance()
-	else if(item.GetID())
+	else if(item.get_id())
 		if(!allowed(user))
 			to_chat(user, span_danger("Access denied."))
 		if(!active)

@@ -54,10 +54,10 @@
 		var/obj/item/computer_hardware/card_slot/card_slot
 		if(computer)
 			card_slot = computer.all_components[MC_CARD]
-			D = card_slot?.GetID()
+			D = card_slot?.get_id()
 		if(!D)
 			return FALSE
-		access = D.GetAccess()
+		access = D.get_access()
 
 	if(paccess_to_check in access)
 		return TRUE
@@ -70,9 +70,9 @@
 	data["location"] = SSshuttle.supply.getStatusText()
 	var/datum/bank_account/buyer = SSeconomy.get_dep_account(cargo_account)
 	var/obj/item/computer_hardware/card_slot/card_slot = computer.all_components[MC_CARD]
-	var/obj/item/card/id/id_card = card_slot?.GetID()
+	var/obj/item/card/id/id_card = card_slot?.get_id()
 	if(id_card?.registered_account)
-		if((ACCESS_HEADS in id_card.access) || (ACCESS_QM in id_card.access))
+		if((ACCESS_HEADS in id_card.get_access()) || (ACCESS_QM in id_card.get_access()))
 			requestonly = FALSE
 			buyer = SSeconomy.get_dep_account(id_card.registered_account.account_job.paycheck_department)
 			can_approve_requests = TRUE
@@ -220,7 +220,7 @@
 					return
 
 			var/reason = ""
-			if((requestonly && !self_paid) || !(card_slot?.GetID()))
+			if((requestonly && !self_paid) || !(card_slot?.get_id()))
 				reason = stripped_input("Reason:", name, "")
 				if(isnull(reason) || ..())
 					return
@@ -231,13 +231,13 @@
 				return
 
 			if(!self_paid && ishuman(usr) && !account)
-				var/obj/item/card/id/id_card = card_slot?.GetID()
+				var/obj/item/card/id/id_card = card_slot?.get_id()
 				account = SSeconomy.get_dep_account(id_card?.registered_account?.account_job.paycheck_department)
 
 			var/turf/T = get_turf(src)
 			var/datum/supply_order/SO = new(pack, name, rank, ckey, reason, account)
 			SO.generateRequisition(T)
-			if((requestonly && !self_paid) || !(card_slot?.GetID()))
+			if((requestonly && !self_paid) || !(card_slot?.get_id()))
 				SSshuttle.requestlist += SO
 			else
 				SSshuttle.shoppinglist += SO
@@ -258,7 +258,7 @@
 			var/id = text2num(params["id"])
 			for(var/datum/supply_order/SO in SSshuttle.requestlist)
 				if(SO.id == id)
-					var/obj/item/card/id/id_card = card_slot?.GetID()
+					var/obj/item/card/id/id_card = card_slot?.get_id()
 					if(id_card && id_card?.registered_account)
 						SO.paying_account = SSeconomy.get_dep_account(id_card?.registered_account?.account_job.paycheck_department)
 					SSshuttle.requestlist -= SO

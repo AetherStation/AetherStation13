@@ -33,6 +33,8 @@
 	window_name = "Automatic Medical Unit v1.1"
 	data_hud_type = DATA_HUD_MEDICAL_ADVANCED
 	path_image_color = "#DDDDFF"
+	card_access = /datum/card_access/job/paramedic
+
 	/// drop determining variable
 	var/healthanalyzer = /obj/item/healthanalyzer
 	/// drop determining variable
@@ -107,11 +109,6 @@
 
 /mob/living/simple_animal/bot/medbot/Initialize(mapload, new_skin)
 	. = ..()
-
-	// Doing this hurts my soul, but simplebot access reworks are for another day.
-	var/datum/id_trim/job/para_trim = SSid_access.trim_singletons_by_path[/datum/id_trim/job/paramedic]
-	access_card.add_access(para_trim.access + para_trim.wildcard_access)
-	prev_access = access_card.access.Copy()
 
 	skin = new_skin
 	update_appearance()

@@ -176,27 +176,27 @@ export class Changelog extends Component {
 
     const header = (
       <Section>
-        <h1>Traditional Games Space Station 13</h1>
+        <h1>Aether Space Station 13</h1>
         <p>
           <b>Thanks to: </b>
-          Baystation 12, /vg/station, NTstation, CDK Station devs,
+          tgstation, Baystation 12, /vg/station, NTstation, CDK Station devs,
           FacepunchStation, GoonStation devs, the original Space Station 13
           developers, Invisty for the title image and the countless others who
           have contributed to the game, issue tracker or wiki over the years.
         </p>
         <p>
           {'Current project maintainers can be found '}
-          <a href="https://github.com/tgstation?tab=members">
+          <a href="https://github.com/AetherStation?tab=members">
             here
           </a>
           {', recent GitHub contributors can be found '}
-          <a href="https://github.com/tgstation/tgstation/pulse/monthly">
+          <a href="https://github.com/AetherStation/AetherStation13/pulse/monthly">
             here
           </a>.
         </p>
         <p>
           {'You can also join our discord '}
-          <a href="https://tgstation13.org/phpBB/viewforum.php?f=60">
+          <a href="https://discord.gg/6SnjQjYJzV">
             here
           </a>.
         </p>
@@ -219,10 +219,10 @@ export class Changelog extends Component {
           I Said No
         </p>
         <p>
-          Traditional Games Space Station 13 is thankful to the
+          Aether Space Station 13 is thankful to the
           GoonStation 13 Development Team for its work on the game up to the
           {' r4407 release. The changelog for changes up to r4407 can be seen '}
-          <a href="https://wiki.ss13.co/Changelog#April_2010">
+          <a href="https://wiki.ss13.co/Pre-2016_Changelog#April_2010">
             here
           </a>
           .
@@ -236,10 +236,10 @@ export class Changelog extends Component {
           <a href="http://forums.somethingawful.com/">SomethingAwful Goons</a>
           {' only.'}
         </p>
-        <h3>Traditional Games Space Station 13 License</h3>
+        <h3>Aether Space Station 13 License</h3>
         <p>
           {'All code after '}
-          <a href={'https://github.com/tgstation/tgstation/commit/'
+          <a href={'https://github.com/AetherStation/AetherStation13/commit/'
             + '333c566b88108de218d882840e61928a9b759d8f'}>
             commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12
             at 4:38 PM PST
@@ -253,12 +253,12 @@ export class Changelog extends Component {
             GNU GPL v3
           </a>
           {', including tools unless their readme specifies otherwise. See '}
-          <a href="https://github.com/tgstation/tgstation/blob/master/LICENSE">
+          <a href="https://github.com/AetherStation/AetherStation13/blob/master/LICENSE">
             LICENSE
           </a>
           {' and '}
           <a
-            href="https://github.com/tgstation/tgstation/blob/master/GPLv3.txt">
+            href="https://github.com/AetherStation/AetherStation13/blob/master/GPLv3.txt">
             GPLv3.txt
           </a>
           {' for more details.'}
@@ -266,12 +266,12 @@ export class Changelog extends Component {
         <p>
           The TGS DMAPI API is licensed as a subproject under the MIT license.
           {' See the footer of '}
-          <a href={'https://github.com/tgstation/tgstation/blob/master'
+          <a href={'https://github.com/AetherStation/AetherStation13/blob/master'
             + '/code/__DEFINES/tgs.dm'}>
             code/__DEFINES/tgs.dm
           </a>
           {' and '}
-          <a href={'https://github.com/tgstation/tgstation/blob/master'
+          <a href={'https://github.com/AetherStation/AetherStation13/blob/master'
             + '/code/modules/tgs/LICENSE'}>
             code/modules/tgs/LICENSE
           </a>
