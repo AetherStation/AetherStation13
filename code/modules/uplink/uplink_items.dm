@@ -1269,7 +1269,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			They do not work on heavily lubricated surfaces."
 	item = /obj/item/clothing/shoes/chameleon/noslip
 	cost = 2
-	purchasable_from = ~(UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/stealthy_tools/jammer
 	name = "Radio Jammer"
