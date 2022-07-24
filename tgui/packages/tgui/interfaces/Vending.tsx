@@ -135,13 +135,12 @@ const VendingRow = (props, context) => {
             fluid
             disabled={(
               productStock.amount === 0
-              || !free && (
-                !user
-                || product.price > user.cash
-              )
+              || !user
+              || (!free && product.price > user.cash)
+              || (redPrice > user.cash)
             )}
             content={(free && discount)
-              ? `${redPrice} cr` : `${product.price} cr`}
+              ? (redPrice ? `${redPrice} cr` : "FREE") : `${product.price} cr`}
             onClick={() => act('vend', {
               'ref': product.ref,
             })} />
