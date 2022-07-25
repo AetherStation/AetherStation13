@@ -115,7 +115,7 @@
 	if(combined_heat_capacity > 0)
 		var/combined_energy = heat_capacity * target_temperature + air_heat_capacity * air_contents.temperature
 		air_contents.temperature = combined_energy/combined_heat_capacity
-		if(cooling ^ old_temperature > target_temperature)
+		if(cooling ^ (old_temperature > target_temperature))
 			cooling = !cooling
 			if(cooling)
 				icon_state_off = "freezer"
