@@ -22,7 +22,7 @@
 	var/target_temperature = T20C
 	var/heat_capacity = 0
 	var/interactive = TRUE // So mapmakers can disable interaction.
-	var/cooling = TRUE
+	var/cooling = TRUE // Whether the last operation was cooling or heating (for icons)
 	var/base_heating = 140
 	var/base_cooling = 170
 	var/was_on = FALSE      //checks if the machine was on before it lost power
@@ -30,20 +30,6 @@
 /obj/machinery/atmospherics/components/unary/thermomachine/Initialize()
 	. = ..()
 	initialize_directions = dir
-	RefreshParts()
-	update_appearance()
-
-/obj/machinery/atmospherics/components/unary/thermomachine/proc/swap_function()
-	cooling = !cooling
-	if(cooling)
-		icon_state_off = "freezer"
-		icon_state_on = "freezer_1"
-		icon_state_open = "freezer-o"
-	else
-		icon_state_off = "heater"
-		icon_state_on = "heater_1"
-		icon_state_open = "heater-o"
-	target_temperature = T20C
 	RefreshParts()
 	update_appearance()
 
@@ -68,16 +54,11 @@
 	heat_capacity = 5000 * ((calculated_bin_rating - 1) ** 2)
 	min_temperature = T20C
 	max_temperature = T20C
-	if(cooling)
-		var/calculated_laser_rating
-		for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
-			calculated_laser_rating += laser.rating
-		min_temperature = max(T0C - (base_cooling + calculated_laser_rating * 15), TCMB) //73.15K with T1 stock parts
-	else
-		var/calculated_laser_rating
-		for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
-			calculated_laser_rating += laser.rating
-		max_temperature = T20C + (base_heating * calculated_laser_rating) //573.15K with T1 stock parts
+	var/calculated_laser_rating
+	for(var/obj/item/stock_parts/micro_laser/laser in component_parts)
+		calculated_laser_rating += laser.rating
+	min_temperature = max(T0C - (base_cooling + calculated_laser_rating * 15), TCMB) //73.15K with T1 stock parts
+	max_temperature = T20C + (base_heating * calculated_laser_rating) //573.15K with T1 stock parts
 
 /obj/machinery/atmospherics/components/unary/thermomachine/update_icon_state()
 	if(panel_open)
@@ -108,18 +89,20 @@
 /obj/machinery/atmospherics/components/unary/thermomachine/AltClick(mob/living/user)
 	if(!can_interact(user))
 		return
-	if(cooling)
-		target_temperature = min_temperature
-		investigate_log("was set to [target_temperature] K by [key_name(user)]", INVESTIGATE_ATMOS)
-		to_chat(user, "<span class='notice'>You minimize the target temperature on [src] to [target_temperature] K.</span>")
-	else
+	if(target_temperature == min_temperature || (target_temperature > T20C && target_temperature < max_temperature))
 		target_temperature = max_temperature
-		investigate_log("was set to [target_temperature] K by [key_name(user)]", INVESTIGATE_ATMOS)
 		to_chat(user, "<span class='notice'>You maximize the target temperature on [src] to [target_temperature] K.</span>")
+	else if(target_temperature == max_temperature || target_temperature <= T20C)
+		target_temperature = min_temperature
+		to_chat(user, "<span class='notice'>You minimize the target temperature on [src] to [target_temperature] K.</span>")
+	investigate_log("was set to [target_temperature] K by [key_name(user)]", INVESTIGATE_ATMOS)	
 
 /obj/machinery/atmospherics/components/unary/thermomachine/process_atmos()
 	..()
-	if(!is_operational || !on || !nodes[1])  //if it has no power or its switched off, dont process atmos
+	if(!nodes[1]) //if it isn't plugged into a pipe, don't do process atmos
+		return
+	update_parents() //we want to share gases with pipe even if we turn it off
+	if(!is_operational || !on)  //if it has no power or its switched off, dont process atmos
 		return
 	else if(is_operational && was_on == TRUE)  //if it was switched on before it turned off due to no power, turn the machine back on
 		on = TRUE
@@ -132,11 +115,21 @@
 	if(combined_heat_capacity > 0)
 		var/combined_energy = heat_capacity * target_temperature + air_heat_capacity * air_contents.temperature
 		air_contents.temperature = combined_energy/combined_heat_capacity
+		if(cooling ^ (old_temperature > target_temperature))
+			cooling = !cooling
+			if(cooling)
+				icon_state_off = "freezer"
+				icon_state_on = "freezer_1"
+				icon_state_open = "freezer-o"
+			else
+				icon_state_off = "heater"
+				icon_state_on = "heater_1"
+				icon_state_open = "heater-o"
+			update_appearance()
 
 	var/temperature_delta = abs(old_temperature - air_contents.temperature)
 	if(temperature_delta > 1)
 		active_power_usage = (heat_capacity * temperature_delta) / 10 + idle_power_usage
-		update_parents()
 	else
 		active_power_usage = idle_power_usage
 	return TRUE //kills atmos process
@@ -185,7 +178,6 @@
 /obj/machinery/atmospherics/components/unary/thermomachine/ui_data(mob/user)
 	var/list/data = list()
 	data["on"] = on
-	data["cooling"] = cooling
 
 	data["min"] = min_temperature
 	data["max"] = max_temperature
@@ -209,10 +201,6 @@
 			investigate_log("was turned [on ? "on" : "off"] by [key_name(usr)]", INVESTIGATE_ATMOS)
 			. = TRUE
 			was_on = !was_on  //if the machine was manually turned on, ensure it remembers it
-		if("cooling")
-			swap_function()
-			investigate_log("was changed to [cooling ? "cooling" : "heating"] by [key_name(usr)]", INVESTIGATE_ATMOS)
-			. = TRUE
 		if("target")
 			var/target = params["target"]
 			var/adjust = text2num(params["adjust"])
