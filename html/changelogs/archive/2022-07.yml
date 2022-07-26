@@ -22,6 +22,10 @@
   - balance: Agent ID card no longer has a limit on how many access levels it can
       hold.
 2022-07-26:
+  Sonnicon:
+  - qol: Merged heating and cooling modes of thermomachine.
+  - qol: Made alt-clicking thermomachines more useful.
+  - bugfix: Thermomachine will now always reach target temperature.
   Sparkezel:
   - balance: Removed poplimit from noslips, reduces their price to 2 for nukies
   - code_imp: removed nukie noslip subtype

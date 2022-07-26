@@ -1,6 +1,0 @@
-author: Sonnicon
-delete-after: true
-changes:
-  - qol: Merged heating and cooling modes of thermomachine.
-  - qol: Made alt-clicking thermomachines more useful.
-  - bugfix: Thermomachine will now always reach target temperature.
