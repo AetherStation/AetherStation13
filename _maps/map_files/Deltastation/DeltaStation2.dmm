@@ -55598,7 +55598,9 @@
 "kqC" = (
 /obj/effect/turf_decal/delivery,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer2{
+	dir = 5
+	},
 /turf/open/floor/iron,
 /area/maintenance/department/electrical)
 "kqD" = (
@@ -82614,6 +82616,11 @@
 	icon_state = "wood-broken7"
 	},
 /area/service/abandoned_gambling_den/secondary)
+"shQ" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer4,
+/turf/open/floor/iron,
+/area/engineering/supermatter/room)
 "sin" = (
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/engine/n2o,
@@ -126043,7 +126050,7 @@ kFs
 loE
 jYB
 jvK
-jYB
+shQ
 eOZ
 oLa
 xPF

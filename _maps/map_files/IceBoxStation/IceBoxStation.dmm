@@ -41066,7 +41066,7 @@
 /area/medical/medbay/central)
 "ruE" = (
 /obj/effect/mapping_helpers/simple_pipes/dark/visible/layer1,
-/obj/effect/mapping_helpers/simple_pipes/yellow/visible,
+/obj/machinery/atmospherics/pipe/simple/yellow/visible,
 /turf/open/floor/iron,
 /area/engineering/atmos)
 "ruI" = (
@@ -86750,7 +86750,7 @@ tQD
 hYi
 dFW
 dzy
-bHV
+bIZ
 ohp
 gHx
 oUi
