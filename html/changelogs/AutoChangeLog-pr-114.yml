@@ -1,0 +1,5 @@
+author: Sparkezel
+delete-after: true
+changes:
+  - balance: Removed poplimit from noslips, reduces their price to 2 for nukies
+  - code_imp: removed nukie noslip subtype
