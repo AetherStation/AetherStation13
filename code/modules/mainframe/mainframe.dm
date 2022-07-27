@@ -29,8 +29,6 @@
 	processor.add_memory_map(peripheral_memory_page, 32)
 	RegisterSignal(peripheral_memory_page, COMSIG_MOS6502_MEMORY_WRITE, .proc/peripheral_write)
 	RegisterSignal(peripheral_memory_page, COMSIG_MOS6502_MEMORY_READ, .proc/peripheral_read)
-	for (var/obj/machinery/mainframe/external/E in oview(5))
-		E.set_parent(src)
 
 /obj/machinery/mainframe/main_unit/attackby(obj/item/O, mob/living/user, params)
 	if(is_wire_tool(O))
@@ -57,22 +55,22 @@
 
 /obj/machinery/mainframe/main_unit/proc/peripheral_write(source, address, value)
 	SIGNAL_HANDLER
+	var/current_address = 0
 	for (var/obj/machinery/mainframe/external/peripheral/P as anything in peripherals)
-		if (P.peripheral_address_start > address)
+		if (current_address + P.peripheral_memory_size < address)
+			current_address += P.peripheral_memory_size
 			continue
-		if (P.peripheral_address_end < address)
-			continue
-		P.mem_write(address - P.peripheral_address_start, value)
+		P.mem_write(address - current_address, value)
 		break // overlapping peripherals aren't allowed, sowwy.
 
 /obj/machinery/mainframe/main_unit/proc/peripheral_read(source, address)
 	SIGNAL_HANDLER
+	var/current_address = 0
 	for (var/obj/machinery/mainframe/external/peripheral/P as anything in peripherals)
-		if (P.peripheral_address_start > address)
+		if (current_address + P.peripheral_memory_size < address)
+			current_address += P.peripheral_memory_size
 			continue
-		if (P.peripheral_address_end < address)
-			continue
-		return P.mem_read(address - P.peripheral_address_start)
+		return P.mem_read(address - current_address)
 
 /obj/machinery/mainframe/main_unit/ui_data(mob/user)
 	var/list/data = list()

@@ -1,6 +1,5 @@
 /obj/machinery/mainframe/external/peripheral
-	var/peripheral_address_start = 0
-	var/peripheral_address_end = 4
+	var/peripheral_memory_size = 4
 
 /obj/machinery/mainframe/external/peripheral/set_parent(p)
 	. = ..()
@@ -80,10 +79,18 @@
 	name = "mainframe printer"
 	desc = "Likely the most advanced component of the entire system due to it not using ink."
 	icon_state = "printer"
-	peripheral_address_start = 4
-	peripheral_address_end = 8
 	var/paper_count = 6
 	var/current_text = ""
+
+/obj/machinery/mainframe/external/peripheral/printer/attackby(obj/item/weapon, mob/user, params)
+	if (istype(weapon, /obj/item/paper))
+		if (!user.transferItemToLoc(weapon, src))
+			return
+		user.visible_message(span_notice("[user] inserts more paper into \the [src]."))
+		paper_count++
+		qdel(weapon)
+		return
+	. = ..()
 
 /obj/machinery/mainframe/external/peripheral/printer/mem_write(address, value)
 	switch (address)
@@ -103,3 +110,59 @@
 		P.setText(html_encode(current_text))
 		paper_count--
 	current_text = ""
+
+/obj/machinery/mainframe/external/peripheral/signaler
+	name = "signaling device"
+	desc = ""
+	icon_state = "signaler"
+	var/mode = 0
+	// Radio
+	var/frequency = MIN_FREQ
+	// Nanites
+	var/relay_code = 0
+
+	var/datum/radio_frequency/radio_connection
+	var/received_code = 0
+
+/obj/machinery/mainframe/external/peripheral/signaler/Initialize()
+	. = ..()
+	radio_connection = SSradio.add_object(src, frequency, RADIO_SIGNALER)
+
+/obj/machinery/mainframe/external/peripheral/signaler/mem_read(address)
+	switch (address)
+		if (1)
+			if (mode) // nanites
+				return relay_code
+			else // radio
+				return frequency - MIN_FREQ
+		if (2) // radio and nanites doesn't have a return
+			return received_code
+
+/obj/machinery/mainframe/external/peripheral/signaler/mem_write(address, value)
+	switch (address)
+		if (0)
+			mode = value
+		if (1)
+			if (mode) // nanites
+				relay_code = value
+			else // radio
+				SSradio.remove_object(src, frequency)
+				frequency = MIN_FREQ + value
+				radio_connection = SSradio.add_object(src, frequency, RADIO_SIGNALER)
+		if (2)
+			if (mode) // nanites
+				for(var/X in SSnanites.nanite_relays)
+					var/datum/nanite_program/relay/N = X
+					N.relay_signal(value, relay_code, src)
+			else // radio
+				var/datum/signal/signal = new(list("code" = value))
+				radio_connection.post_signal(src, signal)
+
+/obj/machinery/mainframe/external/peripheral/signaler/receive_signal(datum/signal/signal)
+	. = FALSE
+	if(!signal)
+		return
+	if(isnull(signal.data["code"]))
+		return
+	received_code = signal.data["code"]
+	return TRUE
