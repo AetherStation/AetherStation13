@@ -956,8 +956,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
  */
 
 #define MOVE_KEY(key, dir) \
-winset(src, "default-[REF(key)]", "parent=default;name=[key];command=\"MK [dir] 1\""); \
-winset(src, "default-[REF("[key]+UP")]", "parent=default;name=[key]+UP;command=\"MK [dir] 0\"");
+winset(src, "default-[REF(key)]", "parent=default;name=[key];command=\"MK [dir] 0\""); \
+winset(src, "default-[REF("[key]+UP")]", "parent=default;name=[key]+UP;command=\"MK [dir] 1\"");
 /client/proc/update_special_keybinds(datum/preferences/direct_prefs)
 	var/datum/preferences/D = prefs || direct_prefs
 	if(!D?.key_bindings)
