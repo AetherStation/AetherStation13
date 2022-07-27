@@ -1,30 +1,30 @@
 //4-Way Manifold
 
-/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w
-	icon = 'icons/obj/atmospherics/pipes/he-manifold.dmi'
+/obj/machinery/atmospherics/pipe/manifold4w
+	icon = 'icons/obj/atmospherics/pipes/manifold.dmi'
 	icon_state = "manifold4w-3"
 
 	name = "4-way pipe manifold"
-	desc = "A manifold composed of heat-exchanging pipes."
+	desc = "A manifold composed of regular pipes."
 
 	initialize_directions = ALL_CARDINALS
 
 	device_type = QUATERNARY
 
 	construction_type = /obj/item/pipe/quaternary
-	pipe_state = "he_manifold4w"
+	pipe_state = "manifold4w"
 
 	///List of cached overlays of the middle part indexed by piping layer
 	var/static/list/mutable_appearance/center_cache = list()
 
-/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/New()
+/obj/machinery/atmospherics/pipe/manifold4w/New()
 	icon_state = ""
 	return ..()
 
-/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/SetInitDirections()
+/obj/machinery/atmospherics/pipe/manifold4w/SetInitDirections()
 	initialize_directions = initial(initialize_directions)
 
-/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/update_overlays()
+/obj/machinery/atmospherics/pipe/manifold4w/update_overlays()
 	. = ..()
 	var/mutable_appearance/center = center_cache["[piping_layer]"]
 	if(!center)
@@ -38,11 +38,3 @@
 		if(nodes[i])
 			. += getpipeimage(icon, "pipe-[piping_layer]", get_dir(src, nodes[i]))
 	update_layer()
-
-/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer2
-	piping_layer = 2
-	icon_state = "manifold4w-2"
-
-/obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/layer4
-	piping_layer = 4
-	icon_state = "manifold4w-4"

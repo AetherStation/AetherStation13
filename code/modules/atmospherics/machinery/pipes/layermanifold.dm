@@ -5,13 +5,13 @@
 	desc = "A special pipe to bridge pipe layers with."
 	dir = SOUTH
 	initialize_directions = NORTH|SOUTH
-	pipe_flags = PIPING_ALL_LAYER | PIPING_DEFAULT_LAYER_ONLY | PIPING_CARDINAL_AUTONORMALIZE | PIPING_BRIDGE
+	pipe_flags = PIPING_ALL_LAYER | PIPING_DEFAULT_LAYER_ONLY | PIPING_CARDINAL_AUTONORMALIZE
 	piping_layer = PIPING_LAYER_DEFAULT
 	device_type = 0
 	volume = 260
 	construction_type = /obj/item/pipe/binary
 	pipe_state = "manifoldlayer"
-	paintable = TRUE
+	paintable = FALSE
 
 	var/list/front_nodes
 	var/list/back_nodes
@@ -25,9 +25,6 @@
 /obj/machinery/atmospherics/pipe/layer_manifold/Destroy()
 	nullifyAllNodes()
 	return ..()
-
-/obj/machinery/atmospherics/pipe/layer_manifold/update_pipe_icon()
-	return
 
 /obj/machinery/atmospherics/pipe/layer_manifold/proc/nullifyAllNodes()
 	for(var/obj/machinery/atmospherics/A in nodes)
@@ -44,30 +41,26 @@
 	. = ..()
 
 	for(var/node in front_nodes)
-		var/list/front_images = get_attached_images(node)
-		if(length(front_images))
-			. += front_images
+		. += get_attached_images(node)
 	for(var/node in back_nodes)
-		var/list/back_images = get_attached_images(node)
-		if(length(back_images))
-			. += back_images
+		. += get_attached_images(node)
 
 /obj/machinery/atmospherics/pipe/layer_manifold/proc/get_attached_images(obj/machinery/atmospherics/A)
 	if(!A)
 		return
 
 	. = list()
-
 	if(istype(A, /obj/machinery/atmospherics/pipe/layer_manifold))
 		for(var/i in PIPING_LAYER_MIN to PIPING_LAYER_MAX)
-			. += get_attached_image(get_dir(src, A), i, COLOR_VERY_LIGHT_GRAY)
+			. += get_attached_image(get_dir(src, A), i)
 		return
 	. += get_attached_image(get_dir(src, A), A.piping_layer, A.pipe_color)
 
-/obj/machinery/atmospherics/pipe/layer_manifold/proc/get_attached_image(p_dir, p_layer, p_color)
-	var/mutable_appearance/muta = mutable_appearance('icons/obj/atmospherics/pipes/layer_manifold_underlays.dmi', "intact_[p_dir]_[p_layer]", layer = layer - 0.01, appearance_flags = RESET_COLOR)
-	muta.color = p_color
-	return muta
+/obj/machinery/atmospherics/pipe/layer_manifold/proc/get_attached_image(p_dir, p_layer, p_color = null)
+	// Uses pipe-3 because we don't want the vertical shifting
+	var/image/I = getpipeimage(icon, "pipe-3", p_dir, p_color, p_layer)
+	I.layer = layer - 0.01
+	return I
 
 /obj/machinery/atmospherics/pipe/layer_manifold/SetInitDirections()
 	switch(dir)
@@ -75,6 +68,11 @@
 			initialize_directions = NORTH|SOUTH
 		if(EAST, WEST)
 			initialize_directions = EAST|WEST
+
+/obj/machinery/atmospherics/pipe/layer_manifold/isConnectable(obj/machinery/atmospherics/target, given_layer)
+	if(!given_layer)
+		return TRUE
+	. = ..()
 
 /obj/machinery/atmospherics/pipe/layer_manifold/proc/findAllConnections()
 	front_nodes = list()
