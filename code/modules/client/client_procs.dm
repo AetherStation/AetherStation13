@@ -954,10 +954,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
  * Arguments:
  * * direct_prefs - the preference we're going to get keybinds from
  */
-
-#define MOVE_KEY(key, dir) \
-winset(src, "default-[REF(key)]", "parent=default;name=[key];command=\"MK [dir] 1\""); \
-winset(src, "default-[REF("[key]+UP")]", "parent=default;name=[key]+UP;command=\"MK [dir] 0\"");
 /client/proc/update_special_keybinds(datum/preferences/direct_prefs)
 	var/datum/preferences/D = prefs || direct_prefs
 	if(!D?.key_bindings)
@@ -965,22 +961,28 @@ winset(src, "default-[REF("[key]+UP")]", "parent=default;name=[key]+UP;command=\
 	movement_keys = list()
 	for(var/key in D.key_bindings)
 		for(var/kb_name in D.key_bindings[key])
-			switch(kb_name)
-				if("North")
-					MOVE_KEY(key, NORTH)
-				if("East")
-					MOVE_KEY(key, EAST)
-				if("West")
-					MOVE_KEY(key, WEST)
-				if("South")
-					MOVE_KEY(key, SOUTH)
-				if("Say")
-					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=say")
-				if("OOC")
-					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=ooc")
-				if("Me")
-					winset(src, "default-[REF(key)]", "parent=default;name=[key];command=me")
-#undef MOVE_KEY
+			// HACK: what the fuck? this proc call makes the winsets below work for some ungodly reason.
+			byond_is_a_jank_piece_of_shit(kb_name, key)
+			if (kb_name == "North")
+				winset(src, "default-[key]", "parent=default;name=[key];command=\"MK 1 1\"")
+				winset(src, "default-[key]+UP", "parent=default;name=[key]+UP;command=\"MK 1 0\"")
+			else if (kb_name == "East")
+				winset(src, "default-[key]", "parent=default;name=[key];command=\"MK 4 1\"")
+				winset(src, "default-[key]+UP", "parent=default;name=[key]+UP;command=\"MK 4 0\"")
+			else if (kb_name == "West")
+				winset(src, "default-[key]", "parent=default;name=[key];command=\"MK 8 1\"")
+				winset(src, "default-[key]+UP", "parent=default;name=[key]+UP;command=\"MK 8 0\"")
+			else if (kb_name == "South")
+				winset(src, "default-[key]", "parent=default;name=[key];command=\"MK 2 1\"")
+				winset(src, "default-[key]+UP", "parent=default;name=[key]+UP;command=\"MK 2 0\"")
+			else if (kb_name == "Say")
+				winset(src, "default-[REF(key)]", "parent=default;name=[key];command=say")
+			else if (kb_name == "OOC")
+				winset(src, "default-[REF(key)]", "parent=default;name=[key];command=ooc")
+			else if (kb_name == "Me")
+				winset(src, "default-[REF(key)]", "parent=default;name=[key];command=me")
+
+/client/proc/byond_is_a_jank_piece_of_shit(kb_name, key)
 
 /client/proc/change_view(new_size)
 	if (isnull(new_size))
