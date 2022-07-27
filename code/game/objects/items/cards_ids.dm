@@ -880,6 +880,7 @@
 	if (!C.rewritable)
 		return FALSE
 	access -= rem_accesses
+	C.access -= rem_accesses
 
 /obj/item/card/id/chip_programmer/clear_access()
 	var/obj/item/card_access_chip/C = chips[1]

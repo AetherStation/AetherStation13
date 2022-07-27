@@ -224,6 +224,7 @@ SUBSYSTEM_DEF(id_access)
 				chip_access.Add(card_access.access[tier])
 			continue
 		id.access.Add(card_access.access[tier])
+	id.update_label()
 
 	if (chip_access.len)
 		var/obj/item/card_access_chip/roundstart/AA = new(id, card_access.assignment)
