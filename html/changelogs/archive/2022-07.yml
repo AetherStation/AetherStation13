@@ -29,3 +29,6 @@
   Sparkezel:
   - balance: Removed poplimit from noslips, reduces their price to 2 for nukies
   - code_imp: removed nukie noslip subtype
+2022-07-27:
+  TheChosenEvilOne:
+  - rscdel: Smart pipes have been removed and replaced with old simple pipes.

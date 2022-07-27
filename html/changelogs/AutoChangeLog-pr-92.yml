@@ -1,4 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - rscdel: Smart pipes have been removed and replaced with old simple pipes.
