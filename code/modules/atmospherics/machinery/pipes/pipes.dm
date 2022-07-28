@@ -92,14 +92,14 @@
 
 		// Don't be already connected there
 		if(GetInitDirections() & direction)
-			to_chat(user, "<span class='warning'>There is already a connection in that direction!</span>")
+			to_chat(user, span_warning("There is already a connection in that direction!"))
 			return FALSE
 		// Don't overlap other pipes
 		for(var/obj/machinery/atmospherics/other in loc)
 			if((other.piping_layer != piping_layer) && !((other.pipe_flags | pipe_flags) & PIPING_ALL_LAYER)) // Don't continue if either pipe goes across all layers
 				continue
 			if(other.GetInitDirections() & direction) // New connection is occupied by other
-				to_chat(user, "<span class='warning'>There is already a pipe at that location!</span>")
+				to_chat(user, span_warning("There is already a pipe at that location!"))
 				return FALSE
 
 		var/turf/T = loc

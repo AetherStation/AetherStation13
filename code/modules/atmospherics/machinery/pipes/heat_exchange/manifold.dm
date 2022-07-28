@@ -50,4 +50,4 @@
 	icon_state = "manifold-4"
 
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold/createAmend(turf/T, direction)
-	return new /obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/(T) 
+	return new /obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w(T) 

@@ -47,4 +47,4 @@
 	update_layer()
 
 /obj/machinery/atmospherics/pipe/manifold/createAmend(turf/T, direction)
-	return new /obj/machinery/atmospherics/pipe/manifold4w/(T) 
+	return new /obj/machinery/atmospherics/pipe/manifold4w(T)
