@@ -113,20 +113,30 @@
 
 		var/turf/T = loc
 
-		// Remove existing pipe
+		// Remove from adjacent pipes
+		for(var/obj/machinery/atmospherics/other in nodes)
+			var/index = other.nodes.Find(src)
+			other.nodes[index] = null
+		
+		// Don't spill or lose gas
 		flags_1 |= NODECONSTRUCT_1
 		parent.air.volume -= volume
 		parent.members -= src
+		// Keep the old pipenet (bit hacky)
+		parent = null // Destroy() won't qdel the pipenet
+		device_type = 0 // Destroy() won't nullifyNodes()  (we do that manually earlier)
+
 		deconstruct()
 
 		// Create new pipe
 		var/obj/machinery/atmospherics/pipe/new_pipe = createAmend(T, direction)
 		new_pipe.name = name
-		transfer_fingerprints_to(new_pipe)
 		new_pipe.SetInitDirections()
 		new_pipe.on_construction(color, piping_layer)
+		// Let's keep spraycan and fingerprints too
 		new_pipe.atom_colours = atom_colours
 		new_pipe.update_atom_colour()
+		transfer_fingerprints_to(new_pipe)
 		
 		// Feedback
 		W.play_tool_sound(new_pipe)
@@ -137,7 +147,6 @@
 	return TRUE
 
 /obj/machinery/atmospherics/pipe/proc/createAmend(turf/T, direction)
-	say("ASSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS.")
 
 /obj/machinery/atmospherics/pipe/returnPipenet()
 	return parent
