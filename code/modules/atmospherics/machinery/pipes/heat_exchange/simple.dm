@@ -10,6 +10,7 @@
 	pipe_flags = PIPING_CARDINAL_AUTONORMALIZE
 
 	device_type = BINARY
+	amendable = TRUE
 
 	construction_type = /obj/item/pipe/binary/bendable
 	pipe_state = "he"
@@ -36,3 +37,8 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple/layer4
 	piping_layer = 4
 	icon_state = "pipe11-4"
+
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple/createAmend(turf/T, direction)
+	var/obj/machinery/atmospherics/pipe/heat_exchanging/manifold/new_pipe = new /obj/machinery/atmospherics/pipe/heat_exchanging/manifold/(T)
+	new_pipe.setDir((initialize_directions | direction) ^ 15)
+	return new_pipe

@@ -11,6 +11,7 @@
 	initialize_directions = EAST|NORTH|WEST
 
 	device_type = TRINARY
+	amendable = TRUE
 
 	construction_type = /obj/item/pipe/trinary
 	pipe_state = "he_manifold"
@@ -47,3 +48,6 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/manifold/layer4
 	piping_layer = 4
 	icon_state = "manifold-4"
+
+/obj/machinery/atmospherics/pipe/heat_exchanging/manifold/createAmend(turf/T, direction)
+	return new /obj/machinery/atmospherics/pipe/heat_exchanging/manifold4w/(T) 
