@@ -1,4 +1,4 @@
-#define ARROW_ICON(x) image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = x)
+#define ARROW_ICON(x) "[x]" = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = x)
 
 /obj/machinery/atmospherics/pipe
 	damage_deflection = 12
@@ -19,10 +19,10 @@
 
 	// Lists can't have integer keys
 	var/static/list/radial_options = list(
-		"NORTH" = ARROW_ICON(NORTH),
-		"EAST" = ARROW_ICON(EAST),
-		"SOUTH" = ARROW_ICON(SOUTH),
-		"WEST" = ARROW_ICON(WEST)
+		ARROW_ICON(NORTH),
+		ARROW_ICON(EAST),
+		ARROW_ICON(SOUTH),
+		ARROW_ICON(WEST)
 	)
 
 #undef ARROW_ICON
@@ -88,16 +88,7 @@
 	var/choice = show_radial_menu(user, src, radial_options, require_near = TRUE)
 	if(choice)
 		// Figure out which way we're adding
-		var/direction = 0
-		switch(choice)
-			if("NORTH")
-				direction = NORTH
-			if("EAST")
-				direction = EAST
-			if("SOUTH")
-				direction = SOUTH
-			if("WEST")
-				direction = WEST
+		var/direction = text2num(choice)
 
 		// Don't be already connected there
 		if(GetInitDirections() & direction)
