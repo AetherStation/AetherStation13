@@ -104,78 +104,40 @@
 	icon_state = "[base_icon_state][(current_mass == max_mass) ? null : "_empty"]"
 	return ..()
 
-/obj/structure/trap/eldritch
-	name = "elder carving"
-	desc = "Collection of unknown symbols, they remind you of days long gone..."
+/obj/item/eldritch_potion
+	name = "Brew of Day and Night"
+	desc = "You should never see this"
 	icon = 'icons/obj/eldritch.dmi'
-	charges = 1
-	/// Reference to trap owner mob
-	var/mob/owner
+	///Typepath to the status effect this is supposed to hold
+	var/status_effect
 
-/obj/structure/trap/eldritch/on_entered(datum/source, atom/movable/AM)
-	if(!isliving(AM))
-		return ..()
-	var/mob/living/living_mob = AM
-	if(living_mob == owner || IS_HERETIC(living_mob) || IS_HERETIC_MONSTER(living_mob))
-		return
-	return ..()
-
-/obj/structure/trap/eldritch/attacked_by(obj/item/I, mob/living/user)
+/obj/item/eldritch_potion/attack_self(mob/user)
 	. = ..()
-	if(istype(I,/obj/item/melee/rune_carver) || istype(I,/obj/item/nullrod))
-		qdel(src)
+	to_chat(user,span_notice("You drink the potion and with the viscous liquid, the glass dematerializes."))
+	effect(user)
+	qdel(src)
 
-///Proc that sets the owner
-/obj/structure/trap/eldritch/proc/set_owner(mob/new_owner)
-	owner = new_owner
-	RegisterSignal(owner, COMSIG_PARENT_QDELETING, .proc/unset_owner)
-
-///Unsets the owner in case of deletion
-/obj/structure/trap/eldritch/proc/unset_owner()
-	SIGNAL_HANDLER
-	owner = null
-
-/obj/structure/trap/eldritch/alert
-	name = "alert carving"
-	icon_state = "alert_rune"
-	alpha = 10
-
-/obj/structure/trap/eldritch/alert/trap_effect(mob/living/L)
-	if(owner)
-		to_chat(owner,"<span class='big boldwarning'>[L.real_name] has stepped foot on the alert rune in [get_area(src)]!</span>")
-	return ..()
-
-//this trap can only get destroyed by rune carving knife or nullrod
-/obj/structure/trap/eldritch/alert/flare()
-	return
-
-/obj/structure/trap/eldritch/tentacle
-	name = "grasping carving"
-	icon_state = "tentacle_rune"
-
-/obj/structure/trap/eldritch/tentacle/trap_effect(mob/living/L)
-	if(!iscarbon(L))
+///The effect of the potion if it has any special one, in general try not to override this and utilize the status_effect var to make custom effects.
+/obj/item/eldritch_potion/proc/effect(mob/user)
+	if(!iscarbon(user))
 		return
-	var/mob/living/carbon/carbon_victim = L
-	carbon_victim.Paralyze(5 SECONDS)
-	carbon_victim.apply_damage(20,BRUTE,BODY_ZONE_R_LEG)
-	carbon_victim.apply_damage(20,BRUTE,BODY_ZONE_L_LEG)
-	playsound(src, 'sound/magic/demon_attack1.ogg', 75, TRUE)
-	return ..()
+	var/mob/living/carbon/carbie = user
+	carbie.apply_status_effect(status_effect)
 
-/obj/structure/trap/eldritch/mad
-	name = "mad carving"
-	icon_state = "madness_rune"
+/obj/item/eldritch_potion/crucible_soul
+	name = "Brew of Crucible Soul"
+	desc = "Allows you to phase through walls for 15 seconds, after the time runs out, you get teleported to your original location."
+	icon_state = "crucible_soul"
+	status_effect = /datum/status_effect/crucible_soul
 
-/obj/structure/trap/eldritch/mad/trap_effect(mob/living/L)
-	if(!iscarbon(L))
-		return
-	var/mob/living/carbon/carbon_victim = L
-	carbon_victim.adjustStaminaLoss(80)
-	carbon_victim.silent += 10
-	carbon_victim.add_confusion(5)
-	carbon_victim.Jitter(10)
-	carbon_victim.Dizzy(20)
-	carbon_victim.blind_eyes(2)
-	SEND_SIGNAL(carbon_victim, COMSIG_ADD_MOOD_EVENT, "gates_of_mansus", /datum/mood_event/gates_of_mansus)
-	return ..()
+/obj/item/eldritch_potion/duskndawn
+	name = "Brew of Dusk and Dawn"
+	desc = "Allows you to see clearly through walls and objects for 60 seconds."
+	icon_state = "clarity"
+	status_effect = /datum/status_effect/duskndawn
+
+/obj/item/eldritch_potion/wounded
+	name = "Brew of Wounded Soldier"
+	desc = "For the next 60 seconds each wound will heal you, minor wounds heal 1 of it's damage type per second, moderate heal 3 and critical heal 6. You also become immune to damage slowdon."
+	icon_state = "marshal"
+	status_effect = /datum/status_effect/marshal
