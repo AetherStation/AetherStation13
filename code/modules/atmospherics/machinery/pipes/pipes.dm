@@ -1,5 +1,3 @@
-#define ARROW_ICON(x) "[x]" = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = x)
-
 /obj/machinery/atmospherics/pipe
 	damage_deflection = 12
 	var/datum/gas_mixture/air_temporary //used when reconstructing a pipeline that broke
@@ -16,16 +14,6 @@
 	can_buckle = TRUE
 	buckle_requires_restraints = TRUE
 	buckle_lying = 90
-
-	// Lists can't have integer keys
-	var/static/list/radial_options = list(
-		ARROW_ICON(NORTH),
-		ARROW_ICON(EAST),
-		ARROW_ICON(SOUTH),
-		ARROW_ICON(WEST)
-	)
-
-#undef ARROW_ICON
 
 /obj/machinery/atmospherics/pipe/New()
 	add_atom_colour(pipe_color, FIXED_COLOUR_PRIORITY)
@@ -80,62 +68,6 @@
 		meter.setAttachLayer(piping_layer)
 	else
 		return ..()
-
-/obj/machinery/atmospherics/pipe/wrench_act_secondary(mob/living/user, obj/item/wrench/W)
-	if(!amendable)
-		return ..()
-
-	var/choice = show_radial_menu(user, src, radial_options, require_near = TRUE)
-	if(choice)
-		// Figure out which way we're adding
-		var/direction = text2num(choice)
-
-		// Don't be already connected there
-		if(GetInitDirections() & direction)
-			to_chat(user, span_warning("There is already a connection in that direction!"))
-			return FALSE
-		// Don't overlap other pipes
-		for(var/obj/machinery/atmospherics/other in loc)
-			if((other.piping_layer != piping_layer) && !((other.pipe_flags | pipe_flags) & PIPING_ALL_LAYER)) // Don't continue if either pipe goes across all layers
-				continue
-			if(other.GetInitDirections() & direction) // New connection is occupied by other
-				to_chat(user, span_warning("There is already a pipe at that location!"))
-				return FALSE
-
-		var/turf/T = loc
-
-		// Remove from adjacent pipes
-		for(var/obj/machinery/atmospherics/other in nodes)
-			var/index = other.nodes.Find(src)
-			other.nodes[index] = null
-		
-		// Don't spill or lose gas
-		flags_1 |= NODECONSTRUCT_1
-		parent.air.volume -= volume
-		parent.members -= src
-		// Keep the old pipenet (bit hacky)
-		parent = null // Destroy() won't qdel the pipenet
-		device_type = 0 // Destroy() won't nullifyNodes()  (we do that manually earlier)
-
-		deconstruct()
-
-		// Create new pipe
-		var/obj/machinery/atmospherics/pipe/new_pipe = createAmend(T, direction)
-		new_pipe.name = name
-		new_pipe.SetInitDirections()
-		new_pipe.on_construction(color, piping_layer)
-		// Let's keep spraycan and fingerprints too
-		new_pipe.atom_colours = atom_colours
-		new_pipe.update_atom_colour()
-		transfer_fingerprints_to(new_pipe)
-		
-		// Feedback
-		W.play_tool_sound(new_pipe)
-		user.visible_message( \
-			"[user] amends \the [src].", \
-			span_notice("You amend \the [src]."), \
-			span_hear("You hear ratcheting."))
-	return TRUE
 
 /obj/machinery/atmospherics/pipe/proc/createAmend(turf/T, direction)
 
