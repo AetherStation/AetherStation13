@@ -84,8 +84,8 @@
 		if(ztraits == "Yes")
 			var/trait = ""
 			VM.traits = list(list())
-			while ((trait = input(usr, "Enter the Z-trait.", "Map Z-traits") as text|null))
-				var/value = input(usr, "Enter a value for the Z-trait.", "Map Z-traits") as text|null
+			while ((trait = input(usr, "Enter Z-trait name. (press cancel to continue)", "Map Z-traits") as text|null))
+				var/value = input(usr, "Enter a value for the Z-trait. (empty value taken as true)", "Map Z-traits") as text|null
 				if (text2num(value))
 					value = text2num(value)
 				VM.traits[1][trait] = value ? value : TRUE
