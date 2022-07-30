@@ -3259,6 +3259,7 @@
 #include "code\modules\reagents\chemistry\machinery\chem_assembler\_instruction.dm"
 #include "code\modules\reagents\chemistry\machinery\chem_assembler\chem_assembler.dm"
 #include "code\modules\reagents\chemistry\machinery\chem_assembler\chem_assembly_parser.dm"
+#include "code\modules\reagents\chemistry\machinery\chem_assembler\guide.dm"
 #include "code\modules\reagents\chemistry\machinery\chem_assembler\instructions\flt.dm"
 #include "code\modules\reagents\chemistry\machinery\chem_assembler\instructions\get.dm"
 #include "code\modules\reagents\chemistry\machinery\chem_assembler\instructions\int.dm"

@@ -1,5 +1,5 @@
 /obj/machinery/chem_assembler
-	name = "Chem Assembler"
+	name = "Chemical Assembler"
 	desc = "Chemist-in-a-Box"
 	density = TRUE
 	icon = 'icons/obj/chemical.dmi'
@@ -47,6 +47,7 @@
 
 	var/program_text = ""
 	var/error
+	var/manual_count = 3
 	var/datum/chem_assembly_parser/parser
 	var/datum/chem_assembly_instruction/program
 	var/datum/chem_assembly_instruction/current
@@ -213,4 +214,11 @@
 				playsound(src, 'sound/machines/terminal_error.ogg', 50, TRUE)
 				return
 			start()
+			playsound(src, 'sound/machines/ping.ogg', 50, TRUE)
+		if ("manual")
+			if (!manual_count)
+				playsound(src, 'sound/machines/terminal_error.ogg', 50, TRUE)
+				return
+			manual_count--
+			new /obj/item/paper/guides/chem_assembler(get_turf(src))
 			playsound(src, 'sound/machines/ping.ogg', 50, TRUE)

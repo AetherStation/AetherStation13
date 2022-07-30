@@ -632,7 +632,7 @@
 
 //Medical
 /obj/item/circuitboard/machine/chem_assembler
-	name = "Chem Assembler (Machine Board)"
+	name = "Chemical Assembler (Machine Board)"
 	greyscale_colors = CIRCUIT_COLOR_MEDICAL
 	build_path = /obj/machinery/chem_assembler
 	req_components = list(

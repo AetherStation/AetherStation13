@@ -27,7 +27,23 @@ export const ChemAssembler = (props, context) => {
             onClick={() => setTab(2)}>
             Programming
           </Tabs.Tab>
-          <Button position="absolute" right="10px" color={data.running ? "green" : "red"} icon="power-off" mt="2px" mb="2px" onClick={() => act("run")} />
+          <Button
+            position="absolute"
+            right="10px"
+            color={data.running ? "green" : "red"}
+            icon="power-off"
+            mt="2px"
+            mb="2px"
+            onClick={() => act("run")} />
+          <Button
+            position="absolute"
+            right="40px"
+            color="green"
+            icon="print"
+            mt="2px"
+            mb="2px"
+            tooltip="Print manual"
+            onClick={() => act("manual")} />
         </Tabs>
         {tab === 1 && (
           <Flex direction="column">
