@@ -316,6 +316,8 @@ GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
 /datum/game_mode/dynamic/proc/generate_budgets()
 	var/relative_round_start_budget_scale = LORENTZ_DISTRIBUTION(roundstart_split_curve_centre, roundstart_split_curve_width)
 	round_start_budget = round((lorentz_to_amount(relative_round_start_budget_scale) / 100) * threat_level, 0.1)
+	if(round_start_budget < 20)
+		round_start_budget = 20
 	initial_round_start_budget = round_start_budget
 	mid_round_budget = threat_level - round_start_budget
 
