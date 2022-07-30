@@ -93,7 +93,7 @@
 			if (include_default == "Yes")
 				VM.traits[1] += ZTRAITS_STATION
 
-		VM.minetype = input(usr, "What minetype do you want?", "Map Minetype", "minetype") as text
+		VM.minetype = input(usr, "What minetype do you want?", "Map Minetype", VM.minetype) as text
 		VM.space_ruin_levels = input(usr, "How many space ruin Z-levels?", "Map Space Ruin Levels", VM.space_ruin_levels) as num
 		VM.space_empty_levels = input(usr, "How many empty space Z-levels?", "Map Empty Space Levels", VM.space_empty_levels) as num
 		VM.map_path = "custom"
