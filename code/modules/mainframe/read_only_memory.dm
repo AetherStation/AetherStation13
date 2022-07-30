@@ -8,7 +8,7 @@
 	icon = 'icons/obj/machines/mainframe.dmi'
 	icon_state = "rom_bank"
 	obj_flags = UNIQUE_RENAME
-	var/datum/mos6502_memory_map/memory/data = new(1)
+	var/datum/mos6502_memory_map/memory/read_only/data = new(1)
 
 ///////////////////////////
 // Read Only Memory Unit //

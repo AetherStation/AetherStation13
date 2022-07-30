@@ -27,6 +27,11 @@
 	address = (address - start_address) << 1
 	return text2num(copytext(memory, address + 1, address + 3), 16)
 
+/datum/mos6502_memory_map/memory/read_only
+
+/datum/mos6502_memory_map/memory/read_only/write(address, value)
+	return
+
 /datum/mos6502_memory_map/signal
 
 /datum/mos6502_memory_map/signal/write(address, value)

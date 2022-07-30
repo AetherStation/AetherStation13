@@ -6083,6 +6083,10 @@
 	pixel_y = 5;
 	pixel_x = 12
 	},
+/obj/item/paper/guides/mainframe_reference{
+	pixel_y = 5;
+	pixel_x = 7
+	},
 /turf/open/floor/iron/white,
 /area/science/misc_lab)
 "aSY" = (
