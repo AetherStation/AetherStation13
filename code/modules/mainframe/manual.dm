@@ -4,7 +4,7 @@
 <H1>Quick Reference to Mainframe Programming<H1>
 
 <H3>Getting Started</H3>
-First you should get the linking tool and make sure all devices are linked to the main unit.
+First you should get the linking tool and make sure all devices are linked to the main unit.<BR>
 When programming you should check the instruction reference sheet.
 
 <H3>Booting</H3>
