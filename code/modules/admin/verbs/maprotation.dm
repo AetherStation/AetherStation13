@@ -93,19 +93,6 @@
 			if (include_default == "Yes")
 				VM.traits[1] += ZTRAITS_STATION
 
-		var/ztraits = tgui_alert(usr,"Do you want to modify Z-traits?", "Map Z-Traits", list("Yes", "No"))
-		if(ztraits == "Yes")
-			var/trait = ""
-			VM.traits = list(list())
-			while ((trait = input(usr, "Enter the Z-trait.", "Map Z-traits") as text|null))
-				var/value = input(usr, "Enter a value for the Z-trait.", "Map Z-traits") as text|null
-				if (text2num(value))
-					value = text2num(value)
-				VM.traits[1][trait] = value ? value : TRUE
-			var/include_default = tgui_alert(usr,"Do you want to include default Z-traits?", "Map Z-Traits", list("Yes", "No"))
-			if (include_default == "Yes")
-				VM.traits[1] += ZTRAITS_STATION
-
 		VM.minetype = input(usr, "What minetype do you want?", "Map Minetype", "minetype") as text
 		VM.space_ruin_levels = input(usr, "How many space ruin Z-levels?", "Map Space Ruin Levels", VM.space_ruin_levels) as num
 		VM.space_empty_levels = input(usr, "How many empty space Z-levels?", "Map Empty Space Levels", VM.space_empty_levels) as num
