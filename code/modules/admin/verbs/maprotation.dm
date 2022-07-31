@@ -80,6 +80,22 @@
 					continue
 				VM.shuttles[s] = shuttle
 
+		var/ztraits = tgui_alert(usr,"Do you want to modify Z-traits?", "Map Z-Traits", list("Yes", "No"))
+		if(ztraits == "Yes")
+			var/trait = ""
+			VM.traits = list(list())
+			while ((trait = input(usr, "Enter Z-trait name. (press cancel to continue)", "Map Z-traits") as text|null))
+				var/value = input(usr, "Enter a value for the Z-trait. (empty value taken as true)", "Map Z-traits") as text|null
+				if (text2num(value))
+					value = text2num(value)
+				VM.traits[1][trait] = value ? value : TRUE
+			var/include_default = tgui_alert(usr,"Do you want to include default Z-traits?", "Map Z-Traits", list("Yes", "No"))
+			if (include_default == "Yes")
+				VM.traits[1] += ZTRAITS_STATION
+
+		VM.minetype = input(usr, "What minetype do you want?", "Map Minetype", VM.minetype) as text
+		VM.space_ruin_levels = input(usr, "How many space ruin Z-levels?", "Map Space Ruin Levels", VM.space_ruin_levels) as num
+		VM.space_empty_levels = input(usr, "How many empty space Z-levels?", "Map Empty Space Levels", VM.space_empty_levels) as num
 		VM.map_path = "custom"
 		VM.map_file = "[map_file]"
 		VM.config_filename = "data/next_map.json"
@@ -88,7 +104,11 @@
 			"map_name" = VM.map_name,
 			"map_path" = VM.map_path,
 			"map_file" = VM.map_file,
-			"shuttles" = VM.shuttles
+			"shuttles" = VM.shuttles,
+			"traits" = VM.traits,
+			"minetype" = VM.minetype,
+			"space_ruin_levels" = VM.space_ruin_levels,
+			"space_empty_levels" = VM.space_empty_levels
 		)
 
 		// If the file isn't removed text2file will just append.
