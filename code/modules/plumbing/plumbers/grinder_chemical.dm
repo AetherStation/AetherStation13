@@ -11,7 +11,7 @@
 
 /obj/machinery/plumbing/grinder_chemical/Initialize(mapload, bolt, layer)
 	. = ..()
-	AddComponent(/datum/component/plumbing/simple_supply, bolt, layer)
+	AddComponent(/datum/component/plumbing/supply/south, bolt, layer)
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)

@@ -30,7 +30,7 @@
 	create_reagents(100, OPENCONTAINER)
 	stored_research = new /datum/techweb/specialized/autounlocking/limbgrower
 	. = ..()
-	AddComponent(/datum/component/plumbing/simple_demand)
+	AddComponent(/datum/component/plumbing/demand/south)
 
 /obj/machinery/limbgrower/ui_interact(mob/user, datum/tgui/ui)
 	. = ..()

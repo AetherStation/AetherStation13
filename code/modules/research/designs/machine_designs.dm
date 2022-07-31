@@ -151,6 +151,14 @@
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL
 	category = list ("Medical Machinery")
 
+/datum/design/board/chem_assembler
+	name = "Machine Design (Chem Assembler Board)"
+	desc = "The circuit board for a chem assembler."
+	id = "chem_assembler"
+	build_path = /obj/item/circuitboard/machine/chem_assembler
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING | DEPARTMENTAL_FLAG_MEDICAL
+	category = list ("Medical Machinery")
+
 /datum/design/board/chem_dispenser
 	name = "Machine Design (Portable Chem Dispenser Board)"
 	desc = "The circuit board for a portable chem dispenser."

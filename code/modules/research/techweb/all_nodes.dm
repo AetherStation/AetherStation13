@@ -290,6 +290,7 @@
 		"piercesyringe",
 		"plasmarefiller",
 		"smoke_machine",
+		"chem_assembler",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
 	channel_tag = list(RADIO_CHANNEL_MEDICAL)
