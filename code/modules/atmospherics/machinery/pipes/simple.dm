@@ -13,6 +13,7 @@
 	pipe_flags = PIPING_CARDINAL_AUTONORMALIZE
 
 	device_type = BINARY
+	amendable = TRUE
 
 	construction_type = /obj/item/pipe/binary/bendable
 	pipe_state = "simple"
@@ -30,3 +31,8 @@
 /obj/machinery/atmospherics/pipe/simple/update_icon_state()
 	icon_state = "pipe[nodes[1] ? "1" : "0"][nodes[2] ? "1" : "0"]-[piping_layer]"
 	return ..()
+
+/obj/machinery/atmospherics/pipe/simple/createAmend(turf/T, direction)
+	var/obj/machinery/atmospherics/pipe/manifold/new_pipe = new /obj/machinery/atmospherics/pipe/manifold/(T)
+	new_pipe.setDir((initialize_directions | direction) ^ 15)
+	return new_pipe

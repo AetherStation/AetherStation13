@@ -8,6 +8,7 @@
 	var/datum/pipeline/parent = null
 
 	paintable = TRUE
+	var/amendable = FALSE
 
 	//Buckling
 	can_buckle = TRUE
@@ -67,6 +68,8 @@
 		meter.setAttachLayer(piping_layer)
 	else
 		return ..()
+
+/obj/machinery/atmospherics/pipe/proc/createAmend(turf/T, direction)
 
 /obj/machinery/atmospherics/pipe/returnPipenet()
 	return parent

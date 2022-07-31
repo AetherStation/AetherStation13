@@ -167,7 +167,9 @@
 	return
 
 /obj/machinery/atmospherics/pipe/addMember(obj/machinery/atmospherics/considered_device)
-	parent.addMember(considered_device, src)
+	// This will be added when rebuild creates a pipeline if not available
+	if(parent)
+		parent.addMember(considered_device, src)
 
 /obj/machinery/atmospherics/components/addMember(obj/machinery/atmospherics/considered_device)
 	var/datum/pipeline/device_pipeline = returnPipenet(considered_device)
