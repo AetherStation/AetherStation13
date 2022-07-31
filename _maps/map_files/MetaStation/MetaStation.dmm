@@ -11148,10 +11148,10 @@
 /turf/open/floor/iron/white,
 /area/medical/medbay/central)
 "cik" = (
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/structure/disposalpipe/junction/yjunction{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "cim" = (
@@ -12372,16 +12372,9 @@
 /turf/open/floor/iron,
 /area/commons/toilet/auxiliary)
 "cvC" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/plating,
-/area/maintenance/aft)
+/obj/structure/disposalpipe/segment,
+/turf/closed/wall,
+/area/medical/medbay/central)
 "cvH" = (
 /turf/closed/wall,
 /area/science/robotics/mechbay)
@@ -23387,7 +23380,6 @@
 	name = "Abandoned Space Bridge";
 	req_access_txt = "55"
 	},
-/obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
@@ -29251,12 +29243,12 @@
 /turf/open/floor/iron,
 /area/commons/fitness/recreation)
 "ihF" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
 /obj/structure/cable,
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
 /turf/open/floor/wood/parquet,
 /area/medical/psychology)
 "ihQ" = (
@@ -49034,9 +49026,6 @@
 /turf/open/floor/iron/white,
 /area/science/xenobiology)
 "pug" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/structure/cable,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/plating{
@@ -53032,6 +53021,7 @@
 /area/command/heads_quarters/cmo)
 "qUf" = (
 /obj/effect/landmark/start/medical_doctor,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/medical/medbay/central)
 "qUk" = (
@@ -54761,8 +54751,8 @@
 /turf/open/floor/iron,
 /area/engineering/break_room)
 "rxC" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
+/obj/structure/disposalpipe/junction{
+	dir = 2
 	},
 /turf/open/floor/iron/white,
 /area/medical/medbay/central)
@@ -56761,10 +56751,10 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
-/obj/structure/disposalpipe/junction{
-	dir = 8
-	},
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "sjZ" = (
@@ -58619,6 +58609,7 @@
 "sUd" = (
 /obj/structure/cable,
 /obj/effect/loot_site_spawner,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "sUf" = (
@@ -59790,10 +59781,10 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
@@ -70173,6 +70164,7 @@
 /obj/item/pen,
 /obj/item/pen,
 /obj/structure/table/glass,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/white,
 /area/medical/medbay/central)
 "xdS" = (
@@ -96389,7 +96381,7 @@ cEP
 rxC
 qUf
 xdN
-tay
+cvC
 sUd
 cik
 cLd
@@ -97677,7 +97669,7 @@ smi
 rwt
 kUo
 nDJ
-mhN
+hPw
 wRK
 fZo
 nMX
@@ -98191,7 +98183,7 @@ hPw
 hPw
 hPw
 hPw
-cvC
+kUL
 wRK
 wRK
 ldn
