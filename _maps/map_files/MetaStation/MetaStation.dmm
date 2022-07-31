@@ -23380,7 +23380,6 @@
 	name = "Abandoned Space Bridge";
 	req_access_txt = "55"
 	},
-/obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
