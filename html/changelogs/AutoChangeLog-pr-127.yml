@@ -1,0 +1,4 @@
+author: Twaticus
+delete-after: true
+changes:
+  - bugfix: fixes drink icons updating properly for real this time
