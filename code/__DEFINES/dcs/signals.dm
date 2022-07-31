@@ -1449,3 +1449,7 @@
 #define COMSIG_MIAMI_CURED_DISORDER "miami_cured"
 #define COMSIG_MIAMI_START_SPREE "miami_start_spree"
 #define COMSIG_MIAMI_END_SPREE "miami_end_spree"
+
+// MOS6502 signals, used with signal memory map.
+#define COMSIG_MOS6502_MEMORY_WRITE "comsig_mos6502_memory_write"
+#define COMSIG_MOS6502_MEMORY_READ "comsig_mos6502_memory_read"
