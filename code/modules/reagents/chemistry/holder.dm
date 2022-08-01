@@ -439,28 +439,33 @@
 	var/list/cached_reagents = reagent_list
 	if (!target)
 		return
-	if (!target.reagents || src.total_volume<=0 || !src.get_reagent_amount(reagent))
+
+	var/datum/reagents/holder
+	if(istype(target, /datum/reagents))
+		holder = target
+	else if(target.reagents && total_volume > 0 && get_reagent_amount(reagent))
+		holder = target.reagents
+	else
 		return
 	if(amount < 0)
 		return
 
-	var/datum/reagents/R = target.reagents
-	if(src.get_reagent_amount(reagent)<amount)
-		amount = src.get_reagent_amount(reagent)
-	amount = min(amount, R.maximum_volume-R.total_volume)
+	if(get_reagent_amount(reagent) < amount)
+		amount = get_reagent_amount(reagent)
+	amount = min(round(amount, CHEMICAL_VOLUME_ROUNDING), holder.maximum_volume - holder.total_volume)
 	var/trans_data = null
-	for (var/CR in cached_reagents)
-		var/datum/reagent/current_reagent = CR
+	for (var/looping_through_reagents in cached_reagents)
+		var/datum/reagent/current_reagent = looping_through_reagents
 		if(current_reagent.type == reagent)
 			if(preserve_data)
 				trans_data = current_reagent.data
-			R.add_reagent(current_reagent.type, amount, trans_data, src.chem_temp)
+			holder.add_reagent(current_reagent.type, amount, trans_data, src.chem_temp)
 			remove_reagent(current_reagent.type, amount, 1)
 			break
 
-	src.update_total()
-	R.update_total()
-	R.handle_reactions()
+	update_total()
+	holder.update_total()
+	holder.handle_reactions()
 	return amount
 
 /// Copies the reagents to the target object
