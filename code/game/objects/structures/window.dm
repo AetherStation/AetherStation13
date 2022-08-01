@@ -161,7 +161,7 @@
 		return
 	user.changeNext_move(CLICK_CD_MELEE)
 
-	if(!user.combat_mode)
+	if(!user.istate.harm)
 		user.visible_message(span_notice("[user] knocks on [src]."), \
 			span_notice("You knock on [src]."))
 		playsound(src, knocksound, 50, TRUE)
@@ -550,7 +550,7 @@
 /obj/structure/window/plasma/reinforced/attackby(obj/item/I, mob/living/user, params)
 	switch(state)
 		if(RWINDOW_SECURE)
-			if(I.tool_behaviour == TOOL_WELDER && user.combat_mode)
+			if(I.tool_behaviour == TOOL_WELDER && user.istate.harm)
 				user.visible_message(span_notice("[user] holds \the [I] to the security screws on \the [src]..."),
 										span_notice("You begin heating the security screws on \the [src]..."))
 				if(I.use_tool(src, user, 180, volume = 100))
@@ -812,7 +812,7 @@
 	. = ..()
 	if(.)
 		return
-	if(user.combat_mode)
+	if(user.istate.harm)
 		take_damage(4, BRUTE, MELEE, 0)
 		if(!QDELETED(src))
 			update_appearance()
@@ -834,7 +834,7 @@
 	if(W.get_temperature())
 		fire_act(W.get_temperature())
 		return
-	if(user.combat_mode)
+	if(user.istate.harm)
 		return ..()
 	if(istype(W, /obj/item/paper) && obj_integrity < max_integrity)
 		user.visible_message(span_notice("[user] starts to patch the holes in \the [src]."))

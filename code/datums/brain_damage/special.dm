@@ -17,7 +17,7 @@
 			speak("unstun", TRUE)
 		else if(prob(60) && owner.health <= owner.crit_threshold)
 			speak("heal", TRUE)
-		else if(prob(30) && owner.combat_mode)
+		else if(prob(30) && owner.istate.harm)
 			speak("aggressive")
 		else
 			speak("neutral", prob(25))
@@ -109,7 +109,7 @@
 	QDEL_IN(src, 300)
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/effect/hallucination/simple/bluespace_stream/attack_hand(mob/user, list/modifiers)
+/obj/effect/hallucination/simple/bluespace_stream/attack_hand(mob/user)
 	if(user != seer || !linked_to)
 		return
 	var/slip_in_message = pick("slides sideways in an odd way, and disappears", "jumps into an unseen dimension",\

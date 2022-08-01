@@ -265,22 +265,26 @@
 	icon = 'icons/hud/screen_midnight.dmi'
 	icon_state = "combat_off"
 	screen_loc = ui_combat_toggle
+	var/datum/interaction_mode/combat_mode/combat_mode
 
 /atom/movable/screen/combattoggle/Initialize()
 	. = ..()
 	update_appearance()
 
+/atom/movable/screen/combattoggle/Destroy()
+	. = ..()
+	combat_mode = null
+
 /atom/movable/screen/combattoggle/Click()
 	if(isliving(usr))
-		var/mob/living/owner = usr
-		owner.set_combat_mode(!owner.combat_mode, FALSE)
+		combat_mode.combat_mode = !combat_mode.combat_mode
 		update_appearance()
 
 /atom/movable/screen/combattoggle/update_icon_state()
 	var/mob/living/user = hud?.mymob
 	if(!istype(user) || !user.client)
 		return ..()
-	icon_state = user.combat_mode ? "combat" : "combat_off" //Treats the combat_mode
+	icon_state = combat_mode.combat_mode ? "combat" : "combat_off" //Treats the combat_mode
 	return ..()
 
 //Version of the combat toggle with the flashy overlay
@@ -294,7 +298,7 @@
 	if(!istype(user) || !user.client)
 		return
 
-	if(!user.combat_mode)
+	if(!combat_mode.combat_mode)
 		return
 
 	if(!flashy)
@@ -305,6 +309,28 @@
 /atom/movable/screen/combattoggle/robot
 	icon = 'icons/hud/screen_cyborg.dmi'
 	screen_loc = ui_borg_intents
+
+/atom/movable/screen/act_intent
+	name = "intent"
+	icon_state = "help"
+	screen_loc = ui_acti
+	var/datum/interaction_mode/intents/intents
+
+/atom/movable/screen/act_intent/Click(location, control, params)
+//	usr.a_intent_change(INTENT_HOTKEY_RIGHT)
+
+/atom/movable/screen/act_intent/segmented/Click(location, control, params)
+	var/_x = text2num(params2list(params)["icon-x"])
+	var/_y = text2num(params2list(params)["icon-y"])
+	if(_x<=16 && _y<=16)
+		intents.intent = INTENT_HARM
+	else if(_x<=16 && _y>=17)
+		intents.intent = INTENT_HELP
+	else if(_x>=17 && _y<=16)
+		intents.intent = INTENT_GRAB
+	if(_x>=17 && _y>=17)
+		intents.intent = INTENT_DISARM
+	icon_state = intents.intent
 
 /atom/movable/screen/internals
 	name = "toggle internals"

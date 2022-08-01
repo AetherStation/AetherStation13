@@ -114,12 +114,12 @@
 /turf/open/floor/attack_paw(mob/user, list/modifiers)
 	return attack_hand(user, modifiers)
 
-/turf/open/floor/attack_hand(mob/user, list/modifiers)
+/turf/open/floor/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
 
-	SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_HAND, user, modifiers)
+	SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_HAND, user)
 
 /turf/open/floor/proc/break_tile_to_plating()
 	var/turf/open/floor/plating/T = make_plating()
@@ -169,7 +169,7 @@
 	if(intact && istype(object, /obj/item/stack/tile))
 		try_replace_tile(object, user, params)
 		return TRUE
-	if(user.combat_mode && istype(object, /obj/item/stack/sheet))
+	if(user.istate.harm && istype(object, /obj/item/stack/sheet))
 		var/obj/item/stack/sheet/sheets = object
 		return sheets.on_attack_floor(user, params)
 	return FALSE

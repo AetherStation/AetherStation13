@@ -74,9 +74,9 @@
 		overlay.icon_state = "janicart_upgrade"
 		. += overlay
 
-/obj/vehicle/ridden/janicart/attack_hand(mob/user, list/modifiers)
+/obj/vehicle/ridden/janicart/attack_hand(mob/user)
 	// right click removes bag without unbuckling when possible
-	. = (LAZYACCESS(modifiers, RIGHT_CLICK) && try_remove_bag(user)) || ..()
+	. = (user.istate.secondary && try_remove_bag(user)) || ..()
 	if (!.)
 		try_remove_bag(user)
 

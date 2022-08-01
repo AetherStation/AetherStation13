@@ -47,7 +47,7 @@
 	M.Turn(90)
 	transform = M
 
-/obj/structure/sign/attack_hand(mob/user, list/modifiers)
+/obj/structure/sign/attack_hand(mob/user)
 	. = ..()
 	if(. || user.is_blind())
 		return
@@ -95,7 +95,7 @@
 
 /obj/structure/sign/welder_act(mob/living/user, obj/item/I)
 	. = ..()
-	if(user.combat_mode)
+	if(user.istate.harm)
 		return FALSE
 	if(obj_integrity == max_integrity)
 		to_chat(user, span_warning("This sign is already in perfect condition."))
@@ -113,7 +113,7 @@
 
 /obj/item/sign/welder_act(mob/living/user, obj/item/I)
 	. = ..()
-	if(user.combat_mode)
+	if(user.istate.harm)
 		return FALSE
 	if(obj_integrity == max_integrity)
 		to_chat(user, span_warning("This sign is already in perfect condition."))

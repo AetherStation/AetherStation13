@@ -8,7 +8,8 @@
 	icon_living = "human_male"
 	icon_dead = "human_male"
 	gender = NEUTER
-	combat_mode = TRUE
+	// TODO: allow setting harm automatically.
+//	combat_mode = TRUE
 	mob_biotypes = MOB_HUMANOID
 
 	response_help_continuous = "touches"

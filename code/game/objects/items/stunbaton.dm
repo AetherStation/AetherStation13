@@ -198,8 +198,7 @@
 		if(check_martial_counter(L, user))
 			return
 
-	var/list/modifiers = params2list(params)
-	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(user.istate.secondary)
 		if(turned_on)
 			if(attack_cooldown_check <= world.time)
 				baton_effect(M, user)
@@ -213,7 +212,7 @@
 		else
 			to_chat(user, span_danger("The baton is still charging!"))
 			return
-	else if(user.combat_mode && !turned_on)
+	else if(user.istate.harm && !turned_on)
 		..()
 		return
 	else

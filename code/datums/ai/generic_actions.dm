@@ -91,7 +91,8 @@
 		finish_action(controller, FALSE)
 		return
 
-	pawn.set_combat_mode(FALSE)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	pawn.istate.harm = FALSE
 	if(held_item)
 		held_item.melee_attack_chain(pawn, target)
 	else

@@ -98,7 +98,7 @@
 			move_speed = clamp(range_input, MIN_SPEED, MAX_SPEED)
 			. = TRUE
 
-/obj/structure/training_machine/attack_hand(mob/user, list/modifiers)
+/obj/structure/training_machine/attack_hand(mob/user)
 	ui_interact(user)
 
 /**
@@ -108,7 +108,7 @@
  * machine will gain an auto-attached syndicate toolbox, so in that case we shouldn't be able to swap it out
  */
 /obj/structure/training_machine/attackby(obj/item/target, mob/living/user)
-	if (user.combat_mode)
+	if (user.istate.harm)
 		return ..()
 	if (!istype(target, /obj/item/training_toolbox) && !istype(target, /obj/item/target))
 		return ..()
@@ -361,7 +361,7 @@
 
 /obj/item/training_toolbox/afterattack(atom/target, mob/living/user, proximity)
 	. = ..()
-	if (!proximity || target == user || !user.combat_mode)
+	if (!proximity || target == user || !user.istate.harm)
 		return
 	if (check_hit(target))
 		user.changeNext_move(CLICK_CD_MELEE)

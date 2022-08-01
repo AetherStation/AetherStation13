@@ -312,7 +312,7 @@
 		update_appearance()
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/gun/ballistic/automatic/l6_saw/attack_hand(mob/user, list/modifiers)
+/obj/item/gun/ballistic/automatic/l6_saw/attack_hand(mob/user)
 	if (loc != user)
 		..()
 		return

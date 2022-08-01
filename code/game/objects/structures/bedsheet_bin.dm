@@ -368,7 +368,7 @@ LINEN BINS
 /obj/structure/bedsheetbin/attack_paw(mob/user, list/modifiers)
 	return attack_hand(user, modifiers)
 
-/obj/structure/bedsheetbin/attack_hand(mob/user, list/modifiers)
+/obj/structure/bedsheetbin/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

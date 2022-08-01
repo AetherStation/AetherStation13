@@ -12,7 +12,7 @@
 /obj/item/stack/circuit_stack/attack_self(mob/user)// Prevents the crafting menu, and tells you how to use it.
 	to_chat(user, span_warning("You can't use [src] by itself, you'll have to try and remove one of these circuits by hand... carefully."))
 
-/obj/item/stack/circuit_stack/attack_hand(mob/user, list/modifiers)
+/obj/item/stack/circuit_stack/attack_hand(mob/user)
 	var/mob/living/carbon/human/H = user
 	if(user.get_inactive_held_item() != src)
 		return ..()

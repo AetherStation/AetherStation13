@@ -15,7 +15,8 @@
 	speak_emote = list("screams")
 	speak_chance = 1
 	speed = 0
-	combat_mode = TRUE
+	// TODO: allow setting harm automatically.
+//	combat_mode = TRUE
 	stop_automated_movement = TRUE
 	AIStatus = AI_OFF
 	see_in_dark = 7

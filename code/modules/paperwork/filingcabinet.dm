@@ -45,9 +45,8 @@
 			I.forceMove(loc)
 	qdel(src)
 
-/obj/structure/filingcabinet/attackby(obj/item/P, mob/living/user, params)
-	var/list/modifiers = params2list(params)
-	if(P.tool_behaviour == TOOL_WRENCH && LAZYACCESS(modifiers, RIGHT_CLICK))
+/obj/structure/filingcabinet/attackby(obj/item/P, mob/living/user)
+	if(P.tool_behaviour == TOOL_WRENCH && user.istate.secondary)
 		to_chat(user, span_notice("You begin to [anchored ? "unwrench" : "wrench"] [src]."))
 		if(P.use_tool(src, user, 20, volume=50))
 			to_chat(user, span_notice("You successfully [anchored ? "unwrench" : "wrench"] [src]."))
@@ -60,7 +59,7 @@
 		sleep(5)
 		icon_state = initial(icon_state)
 		updateUsrDialog()
-	else if(!user.combat_mode)
+	else if(!user.istate.harm)
 		to_chat(user, span_warning("You can't put [P] in [src]!"))
 	else
 		return ..()
@@ -139,7 +138,7 @@
 			virgin = FALSE //tabbing here is correct- it's possible for people to try and use it
 						//before the records have been generated, so we do this inside the loop.
 
-/obj/structure/filingcabinet/security/attack_hand(mob/user, list/modifiers)
+/obj/structure/filingcabinet/security/attack_hand(mob/user)
 	populate()
 	return ..()
 
@@ -174,7 +173,7 @@
 						//before the records have been generated, so we do this inside the loop.
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/structure/filingcabinet/medical/attack_hand(mob/user, list/modifiers)
+/obj/structure/filingcabinet/medical/attack_hand(mob/user)
 	populate()
 	return ..()
 

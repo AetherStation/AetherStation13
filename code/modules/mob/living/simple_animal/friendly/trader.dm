@@ -24,7 +24,8 @@
 	casingtype = /obj/item/ammo_casing/shotgun/buckshot
 	wander = FALSE
 	ranged = TRUE
-	combat_mode = TRUE
+	// TODO: allow setting harm automatically.
+//	combat_mode = TRUE
 	move_resist = MOVE_FORCE_STRONG
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	sentience_type = SENTIENCE_HUMANOID

@@ -250,6 +250,8 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	prefs.last_ip = address //these are gonna be used for banning
 	prefs.last_id = computer_id //these are gonna be used for banning
 	fps = (prefs.clientfps < 0) ? RECOMMENDED_FPS : prefs.clientfps
+	var/datum/interaction_mode/IM = GLOB.available_interaction_modes[prefs.interaction_mode]
+	imode = new IM (src)
 
 	if(fexists(roundend_report_file()))
 		add_verb(src, /client/proc/show_previous_roundend_report)

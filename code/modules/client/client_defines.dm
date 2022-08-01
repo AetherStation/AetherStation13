@@ -37,13 +37,15 @@
 		/////////
 		//OTHER//
 		/////////
-	///Player preferences datum for the client
+	/// Player preferences datum for the client
 	var/datum/preferences/prefs = null
-	///last turn of the controlled mob, I think this is only used by mechs?
+	/// Player interaction mode, set by preferences.
+	var/datum/interaction_mode/imode
+	/// last turn of the controlled mob, I think this is only used by mechs?
 	var/last_turn = 0
-	///Move delay of controlled mob, related to input handling
+	/// Move delay of controlled mob, related to input handling
 	var/move_delay = 0
-	///Current area of the controlled mob
+	/// Current area of the controlled mob
 	var/area = null
 
 		///////////////

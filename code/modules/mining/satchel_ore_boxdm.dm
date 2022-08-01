@@ -35,7 +35,7 @@
 		ui_interact(user)
 	. = ..()
 
-/obj/structure/ore_box/attack_hand(mob/user, list/modifiers)
+/obj/structure/ore_box/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

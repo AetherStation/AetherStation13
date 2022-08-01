@@ -88,7 +88,7 @@
 		attached_device.on_found(finder)
 
 //Triggers mousetraps
-/obj/item/transfer_valve/attack_hand(mob/user, list/modifiers)
+/obj/item/transfer_valve/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

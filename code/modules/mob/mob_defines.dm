@@ -227,3 +227,6 @@
 
 	/// A mock client, provided by tests and friends
 	var/datum/client_interface/mock_client
+
+	/// The interaction state of this mob, istate for short because typing interaction_state is annoying.
+	var/datum/interaction_state/istate = new

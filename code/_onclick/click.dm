@@ -78,6 +78,7 @@
 	if(SEND_SIGNAL(src, COMSIG_MOB_CLICKON, A, params) & COMSIG_MOB_CANCEL_CLICKON)
 		return
 	var/list/modifiers = params2list(params)
+	client.imode.update_istate(src, modifiers)
 	if(LAZYACCESS(modifiers, SHIFT_CLICK))
 		if(LAZYACCESS(modifiers, MIDDLE_CLICK))
 			ShiftMiddleClickOn(A)
@@ -96,7 +97,7 @@
 		else
 			AltClickOn(A)
 		return
-	if(LAZYACCESS(modifiers, CTRL_CLICK))
+	if(istate.control || LAZYACCESS(modifiers, CTRL_CLICK))
 		CtrlClickOn(A)
 		return
 
@@ -124,7 +125,7 @@
 	var/obj/item/W = get_active_held_item()
 
 	if(W == A)
-		if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		if(istate.secondary)
 			W.attack_self_secondary(src, modifiers)
 			update_inv_hands()
 			return
