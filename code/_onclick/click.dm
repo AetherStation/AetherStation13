@@ -97,7 +97,7 @@
 		else
 			AltClickOn(A)
 		return
-	if(istate.control || LAZYACCESS(modifiers, CTRL_CLICK))
+	if(LAZYACCESS(modifiers, CTRL_CLICK))
 		CtrlClickOn(A)
 		return
 
