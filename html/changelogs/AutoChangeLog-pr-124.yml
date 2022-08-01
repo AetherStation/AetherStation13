@@ -1,0 +1,6 @@
+author: Sonnicon
+delete-after: true
+changes:
+  - rscadd: RPD Amend upgrade disk, allows an RPD to rightclick atmos pipes to add
+      nodes.
+  - bugfix: Placing pipes quickly won't runtime.
