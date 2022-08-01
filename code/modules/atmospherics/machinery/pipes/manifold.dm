@@ -11,6 +11,7 @@
 	initialize_directions = EAST|NORTH|WEST
 
 	device_type = TRINARY
+	amendable = TRUE
 
 	construction_type = /obj/item/pipe/trinary
 	pipe_state = "manifold"
@@ -44,3 +45,6 @@
 		if(nodes[i])
 			. += getpipeimage(icon, "pipe-[piping_layer]", get_dir(src, nodes[i]))
 	update_layer()
+
+/obj/machinery/atmospherics/pipe/manifold/createAmend(turf/T, direction)
+	return new /obj/machinery/atmospherics/pipe/manifold4w(T)

@@ -181,6 +181,8 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 	if(dt == PIPE_UNARY_FLIPPABLE)
 		icon_state = "[icon_state]_preview"
 
+#define ARROW_ICON(x) "[x]" = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = x)
+
 /obj/item/pipe_dispenser
 	name = "Rapid Pipe Dispenser (RPD)"
 	desc = "A device used to rapidly pipe things."
@@ -220,6 +222,15 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 	/// Bitflags for upgrades
 	var/upgrade_flags
 
+	var/static/list/amend_radial_options = list(
+		ARROW_ICON(NORTH),
+		ARROW_ICON(EAST),
+		ARROW_ICON(SOUTH),
+		ARROW_ICON(WEST)
+	)
+
+#undef ARROW_ICON
+
 /obj/item/pipe_dispenser/Initialize()
 	. = ..()
 	spark_system = new
@@ -242,7 +253,6 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 /obj/item/pipe_dispenser/examine(mob/user)
 	. = ..()
 	. += "You can scroll your mouse wheel to change the piping layer."
-	. += "You can right click a pipe to set the RPD to its color and layer."
 
 /obj/item/pipe_dispenser/equipped(mob/user, slot, initial)
 	. = ..()
@@ -263,19 +273,68 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 	ui_interact(user)
 
 /obj/item/pipe_dispenser/pre_attack(atom/target, mob/user, params)
-	if(istype(target, /obj/item/rpd_upgrade/unwrench))
+	if(istype(target, /obj/item/rpd_upgrade))
 		install_upgrade(target, user)
 		return TRUE
 	return ..()
 
 /obj/item/pipe_dispenser/pre_attack_secondary(obj/machinery/atmospherics/target, mob/user, params)
-	if(!istype(target, /obj/machinery/atmospherics))
-		return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
-	if(target.pipe_color && target.piping_layer)
-		paint_color = GLOB.pipe_paint_colors[target.pipe_color]
-		piping_layer = target.piping_layer
-		to_chat(user, span_notice("You change [src] to [paint_color] color and layer [piping_layer] pipes."))
-	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	. = SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
+	if((upgrade_flags & RPD_UPGRADE_AMEND) && istype(target, /obj/machinery/atmospherics/pipe))
+		var/obj/machinery/atmospherics/pipe/target_pipe = target
+		if(!target_pipe.amendable)
+			return
+		var/choice = show_radial_menu(user, src, amend_radial_options, require_near = TRUE)
+		if(!choice)
+			return
+		// Figure out which way we're adding
+		var/direction = text2num(choice)
+
+		// Don't be already connected there
+		if(target.GetInitDirections() & direction)
+			to_chat(user, span_warning("There is already a connection in that direction!"))
+			return
+		// Don't overlap other pipes
+		var/turf/T = target_pipe.loc
+		for(var/obj/machinery/atmospherics/other in T)
+			if((other.piping_layer != target_pipe.piping_layer) && !((other.pipe_flags | target_pipe.pipe_flags) & PIPING_ALL_LAYER)) // Don't continue if either pipe goes across all layers
+				continue
+			if(other.GetInitDirections() & direction) // New connection is occupied by other
+				to_chat(user, span_warning("There is already a pipe at that location!"))
+				return
+
+		// Remove from adjacent pipes
+		for(var/obj/machinery/atmospherics/other in target_pipe.nodes)
+			var/index = other.nodes.Find(target_pipe)
+			other.nodes[index] = null
+		
+		// Don't spill or lose gas
+		target_pipe.flags_1 |= NODECONSTRUCT_1
+		target_pipe.parent.air.volume -= target_pipe.volume
+		target_pipe.parent.members -= target_pipe
+		// Keep the old pipenet (bit hacky)
+		target_pipe.parent = null // Destroy() won't qdel the pipenet
+		target_pipe.device_type = 0 // Destroy() won't nullifyNodes()  (we do that manually earlier)
+
+		target_pipe.deconstruct()
+
+		// Create new pipe
+		var/obj/machinery/atmospherics/pipe/new_pipe = target_pipe.createAmend(T, direction)
+		new_pipe.name = target_pipe.name
+		new_pipe.SetInitDirections()
+		new_pipe.on_construction(target_pipe.color, target_pipe.piping_layer)
+		// Let's keep spraycan and fingerprints too
+		new_pipe.atom_colours = target_pipe.atom_colours
+		new_pipe.update_atom_colour()
+		target_pipe.transfer_fingerprints_to(new_pipe)
+		
+		// Feedback
+		play_tool_sound(new_pipe)
+		user.visible_message( \
+			"[user] amends \the [target_pipe].", \
+			span_notice("You amend \the [target_pipe]."), \
+			span_hear("You hear ratcheting."))
+	return
 
 /obj/item/pipe_dispenser/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/rpd_upgrade))
@@ -292,7 +351,7 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
  * * user - mob that use upgrade on RPD
  */
 /obj/item/pipe_dispenser/proc/install_upgrade(obj/item/rpd_upgrade/rpd_up, mob/user)
-	if(rpd_up.upgrade_flags& upgrade_flags)
+	if(rpd_up.upgrade_flags & upgrade_flags)
 		to_chat(user, span_warning("[src] has already installed this upgrade!"))
 		return
 	upgrade_flags |= rpd_up.upgrade_flags
@@ -580,5 +639,11 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 	var/upgrade_flags
 
 /obj/item/rpd_upgrade/unwrench
+	name = "RPD advanced design disk (unwrench)"
 	desc = "Adds reverse wrench mode to the RPD. Attention, due to budget cuts, the mode is hard linked to the destroy mode control button."
 	upgrade_flags = RPD_UPGRADE_UNWRENCH
+
+/obj/item/rpd_upgrade/amend
+	name = "RPD advanced design disk (amend)"
+	desc = "Adds pipe amending functionality to the RPD. Right-click a pipe with the RPD to activate."
+	upgrade_flags = RPD_UPGRADE_AMEND
