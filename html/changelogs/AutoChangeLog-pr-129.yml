@@ -1,0 +1,4 @@
+author: Sparkezel
+delete-after: true
+changes:
+  - bugfix: Disposals in medical on meta now work
