@@ -1,3 +1,7 @@
 2022-08-01:
+  Sonnicon:
+  - rscadd: RPD Amend upgrade disk, allows an RPD to rightclick atmos pipes to add
+      nodes.
+  - bugfix: Placing pipes quickly won't runtime.
   Sparkezel:
   - bugfix: Disposals in medical on meta now work
