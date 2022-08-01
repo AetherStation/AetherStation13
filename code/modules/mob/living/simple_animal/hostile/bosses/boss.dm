@@ -4,7 +4,8 @@
 	robust_searching = 1
 	stat_attack = HARD_CRIT
 	status_flags = 0
-	combat_mode = TRUE
+	// TODO: allow setting harm automatically.
+//	combat_mode = TRUE
 	sentience_type = SENTIENCE_BOSS
 	gender = NEUTER
 	var/list/boss_abilities = list() //list of /datum/action/boss

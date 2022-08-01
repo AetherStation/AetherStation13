@@ -17,7 +17,8 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 5
 	attack_verb_continuous = "staves"
-	combat_mode = TRUE
+	// TODO: allow setting harm automatically.
+//	combat_mode = TRUE
 	speak_emote = list("chants")
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	aggro_vision_range = 9

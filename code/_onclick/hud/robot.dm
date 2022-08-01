@@ -141,12 +141,8 @@
 	using.hud = src
 	static_inventory += using
 
-	//Combat Mode
-	action_intent = new /atom/movable/screen/combattoggle/robot()
-	action_intent.hud = src
-	action_intent.icon = ui_style
-	action_intent.screen_loc = ui_combat_toggle
-	static_inventory += action_intent
+//Interaction mode
+	static_inventory += owner.client.imode.procure_hud(owner, src, robot = TRUE)
 
 //Health
 	healths = new /atom/movable/screen/healths/robot()

@@ -448,7 +448,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/machinery/attack_paw(mob/living/user, list/modifiers)
-	if(!user.combat_mode)
+	if(!user.istate.harm)
 		return attack_hand(user)
 	else
 		user.changeNext_move(CLICK_CD_MELEE)

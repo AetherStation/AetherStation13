@@ -46,7 +46,7 @@
 		filtered_modules[AG.category][AG] = AG
 	return filtered_modules
 
-/obj/machinery/abductor/console/attack_hand(mob/user, list/modifiers)
+/obj/machinery/abductor/console/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

@@ -60,7 +60,7 @@
 /obj/effect/portal/Bumped(atom/movable/bumper)
 	teleport(bumper)
 
-/obj/effect/portal/attack_hand(mob/user, list/modifiers)
+/obj/effect/portal/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

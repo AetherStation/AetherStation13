@@ -83,11 +83,11 @@
 		return TRUE
 
 	var/they_can_move = TRUE
-	var/their_combat_mode = FALSE
+	var/their_blocking = FALSE
 
 	if(isliving(M))
 		var/mob/living/L = M
-		their_combat_mode = L.combat_mode
+		their_blocking = L.istate.blocking
 		they_can_move = L.mobility_flags & MOBILITY_MOVE
 		//Also spread diseases
 		for(var/thing in diseases)
@@ -129,8 +129,8 @@
 				mob_swap = TRUE
 			else if(
 				!(HAS_TRAIT(M, TRAIT_NOMOBSWAP) || HAS_TRAIT(src, TRAIT_NOMOBSWAP))&&\
-				((HAS_TRAIT(M, TRAIT_RESTRAINED) && !too_strong) || !their_combat_mode) &&\
-				(HAS_TRAIT(src, TRAIT_RESTRAINED) || !combat_mode)
+				((HAS_TRAIT(M, TRAIT_RESTRAINED) && !too_strong) || !their_blocking) &&\
+				(HAS_TRAIT(src, TRAIT_RESTRAINED) || !istate.blocking)
 			)
 				mob_swap = TRUE
 		if(mob_swap)
@@ -170,15 +170,15 @@
 		var/mob/living/L = M
 		if(HAS_TRAIT(L, TRAIT_PUSHIMMUNE))
 			return TRUE
-	//If they're a human, and they're not in help intent, block pushing
+	//If they're a human, and they're blocking, block pushing
 	if(ishuman(M))
 		var/mob/living/carbon/human/human = M
-		if(human.combat_mode)
+		if(human.istate.blocking)
 			return TRUE
-	//if they are a cyborg, and they're alive and in combat mode, block pushing
+	//if they are a cyborg, and they're alive and blocking, block pushing
 	if(iscyborg(M))
 		var/mob/living/silicon/robot/borg = M
-		if(borg.combat_mode && borg.stat != DEAD)
+		if(borg.istate.blocking && borg.stat != DEAD)
 			return TRUE
 	//anti-riot equipment is also anti-push
 	for(var/obj/item/I in M.held_items)
@@ -383,7 +383,7 @@
 
 	if(istype(AM) && Adjacent(AM))
 		start_pulling(AM)
-	else if(!combat_mode) //Don;'t cancel pulls if misclicking in combat mode.
+	else
 		stop_pulling()
 
 /mob/living/stop_pulling()
@@ -1960,9 +1960,9 @@
 	// will return boolean below since it's not invalid
 	if (is_grab)
 		return style.grab_act(src, target)
-	if (LAZYACCESS(modifiers, RIGHT_CLICK))
+	if (istate.secondary)
 		return style.disarm_act(src, target)
-	if(combat_mode)
+	if(istate.harm)
 		if (HAS_TRAIT(src, TRAIT_PACIFISM))
 			return FALSE
 		return style.harm_act(src, target)

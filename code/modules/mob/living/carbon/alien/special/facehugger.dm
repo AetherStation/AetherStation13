@@ -66,7 +66,7 @@
 	return O.attack_obj(src, user, params)
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/clothing/mask/facehugger/attack_hand(mob/user, list/modifiers)
+/obj/item/clothing/mask/facehugger/attack_hand(mob/user)
 	if((stat == CONSCIOUS && !sterile) && !isalien(user))
 		if(Leap(user))
 			return

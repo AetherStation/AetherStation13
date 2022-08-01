@@ -3,7 +3,8 @@
 	desc = "Attack the weak point for massive damage."
 	health = 1000
 	maxHealth = 1000
-	combat_mode = TRUE
+	// TODO: allow setting harm automatically.
+//	combat_mode = TRUE
 	sentience_type = SENTIENCE_BOSS
 	environment_smash = ENVIRONMENT_SMASH_RWALLS
 	mob_biotypes = MOB_ORGANIC|MOB_EPIC

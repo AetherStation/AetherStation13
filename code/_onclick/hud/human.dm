@@ -73,12 +73,7 @@
 	using.hud = src
 	static_inventory += using
 
-	action_intent = new /atom/movable/screen/combattoggle/flashy()
-	action_intent.hud = src
-	action_intent.icon = ui_style
-	action_intent.screen_loc = ui_combat_toggle
-	static_inventory += action_intent
-
+	static_inventory += owner.client.imode.procure_hud(owner, src)
 
 	using = new /atom/movable/screen/mov_intent
 	using.icon = ui_style

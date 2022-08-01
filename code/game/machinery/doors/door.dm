@@ -188,7 +188,7 @@
 		else
 			do_animate("deny")
 
-/obj/machinery/door/attack_hand(mob/user, list/modifiers)
+/obj/machinery/door/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
@@ -248,7 +248,7 @@
 	return
 
 /obj/machinery/door/attackby(obj/item/I, mob/living/user, params)
-	if(!user.combat_mode && (I.tool_behaviour == TOOL_CROWBAR || istype(I, /obj/item/fireaxe)))
+	if(!user.istate.harm && (I.tool_behaviour == TOOL_CROWBAR || istype(I, /obj/item/fireaxe)))
 		var/forced_open = FALSE
 		if(istype(I, /obj/item/crowbar))
 			var/obj/item/crowbar/C = I
@@ -258,7 +258,7 @@
 	else if(I.tool_behaviour == TOOL_WELDER)
 		try_to_weld(I, user, params)
 		return TRUE
-	else if(!(I.item_flags & NOBLUDGEON) && !user.combat_mode)
+	else if(!(I.item_flags & NOBLUDGEON) && !user.istate.harm)
 		try_to_activate_door(user)
 		return TRUE
 	return ..()

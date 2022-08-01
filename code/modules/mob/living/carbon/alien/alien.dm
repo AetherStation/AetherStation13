@@ -76,7 +76,8 @@
 
 /mob/living/carbon/alien/get_status_tab_items()
 	. = ..()
-	. += "Combat mode: [combat_mode ? "On" : "Off"]"
+	// TODO: ISTATE status
+//	. += "Combat mode: [combat_mode ? "On" : "Off"]"
 
 /mob/living/carbon/alien/getTrail()
 	if(getBruteLoss() < 200)

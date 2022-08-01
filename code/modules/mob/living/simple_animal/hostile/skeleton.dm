@@ -10,7 +10,8 @@
 	turns_per_move = 5
 	speak_emote = list("rattles")
 	emote_see = list("rattles")
-	combat_mode = TRUE
+	// TODO: allow setting harm automatically.
+//	combat_mode = TRUE
 	maxHealth = 40
 	health = 40
 	speed = 1
