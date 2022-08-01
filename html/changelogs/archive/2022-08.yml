@@ -1,7 +1,12 @@
 2022-08-01:
+  Pugie:
+  - bugfix: reaction chamber works again??
   Sonnicon:
   - rscadd: RPD Amend upgrade disk, allows an RPD to rightclick atmos pipes to add
       nodes.
   - bugfix: Placing pipes quickly won't runtime.
   Sparkezel:
   - bugfix: Disposals in medical on meta now work
+  TheChosenEvilOne:
+  - admin: Admins can now set Z-Traits, space Z-level count, and minetype on custom
+      map loading.

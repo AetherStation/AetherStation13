@@ -1,5 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - admin: Admins can now set Z-Traits, space Z-level count, and minetype on custom
-      map loading.
