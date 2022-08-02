@@ -22,8 +22,7 @@
 	path_image_color = "#FF0000"
 	card_access = /datum/card_access/job/security/detective
 
-	// TODO: allow setting harm automatically.
-//	combat_mode = TRUE
+	istate = new /datum/interaction_state/harm
 
 	var/baton_type = /obj/item/melee/baton
 	var/obj/item/weapon

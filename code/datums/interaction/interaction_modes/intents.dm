@@ -31,6 +31,7 @@
 		intent = INTENT_GRAB
 	else
 		intent = INTENT_HELP
+	update_istate(owner.mob, null)
 	UI.icon_state = intent
 
 /datum/interaction_mode/intents/keybind(type)
@@ -43,4 +44,8 @@
 			intent = INTENT_GRAB
 		if (3)
 			intent = INTENT_HARM
+	update_istate(owner.mob, null)
 	UI.icon_state = intent
+
+/datum/interaction_mode/intents/status()
+	return "Intent: [intent]"

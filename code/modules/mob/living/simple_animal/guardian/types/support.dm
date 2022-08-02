@@ -1,7 +1,6 @@
 //Healer
 /mob/living/simple_animal/hostile/guardian/healer
-	// TODO: allow setting harm automatically.
-//	combat_mode = TRUE
+	istate = new /datum/interaction_state/harm
 	friendly_verb_continuous = "heals"
 	friendly_verb_simple = "heal"
 	speed = 0

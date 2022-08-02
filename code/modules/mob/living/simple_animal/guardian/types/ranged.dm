@@ -7,8 +7,7 @@
 	armour_penetration = 100
 
 /mob/living/simple_animal/hostile/guardian/ranged
-	// TODO: allow setting harm automatically.
-//	combat_mode = FALSE
+	istate = new /datum/interaction_state
 	friendly_verb_continuous = "quietly assesses"
 	friendly_verb_simple = "quietly assess"
 	melee_damage_lower = 10

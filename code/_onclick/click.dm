@@ -78,7 +78,8 @@
 	if(SEND_SIGNAL(src, COMSIG_MOB_CLICKON, A, params) & COMSIG_MOB_CANCEL_CLICKON)
 		return
 	var/list/modifiers = params2list(params)
-	client.imode.update_istate(src, modifiers)
+	if (client)
+		client.imode.update_istate(src, modifiers)
 	if(LAZYACCESS(modifiers, SHIFT_CLICK))
 		if(LAZYACCESS(modifiers, MIDDLE_CLICK))
 			ShiftMiddleClickOn(A)
