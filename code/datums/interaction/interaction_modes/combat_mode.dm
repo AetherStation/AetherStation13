@@ -33,9 +33,9 @@
 	switch (type)
 		if (0)
 			combat_mode = TRUE
-		if (1)
-			combat_mode = FALSE
 		if (3)
+			combat_mode = FALSE
+		if (4)
 			combat_mode = !combat_mode
 	update_istate(owner.mob, null)
 	UI.update_icon_state()
