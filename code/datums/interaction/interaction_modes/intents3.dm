@@ -33,6 +33,10 @@
 	UI.icon_state = "[intent]3"
 
 /datum/interaction_mode/intents3/keybind(type)
+	var/static/next_intent = list(
+		INTENT_HELP = INTENT_GRAB,
+		INTENT_GRAB = INTENT_HARM,
+		INTENT_HARM = INTENT_HELP)
 	switch (type)
 		if (0)
 			intent = INTENT_HELP
@@ -40,6 +44,8 @@
 			intent = INTENT_GRAB
 		if (3)
 			intent = INTENT_HARM
+		if (4)
+			intent = next_intent[INTENT_HARM]
 	update_istate(owner.mob, null)
 	UI.icon_state = "[intent]3"
 

@@ -47,6 +47,7 @@
 #define COMSIG_KB_LIVING_INTERACT_ACTION_2 "keybinding_living_interact_2"
 #define COMSIG_KB_LIVING_INTERACT_ACTION_3 "keybinding_living_interact_3"
 #define COMSIG_KB_LIVING_INTERACT_ACTION_4 "keybinding_living_interact_4"
+#define COMSIG_KB_LIVING_INTERACT_ACTION_5 "keybinding_living_interact_5"
 
 //Mob
 #define COMSIG_KB_MOB_FACENORTH_DOWN "keybinding_mob_facenorth_down"
