@@ -1,7 +1,6 @@
 //Fire
 /mob/living/simple_animal/hostile/guardian/fire
-	// TODO: allow setting harm automatically.
-//	combat_mode = FALSE
+	istate = new /datum/interaction_state
 	melee_damage_lower = 7
 	melee_damage_upper = 7
 	attack_sound = 'sound/items/welder.ogg'

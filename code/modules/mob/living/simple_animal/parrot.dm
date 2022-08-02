@@ -57,8 +57,7 @@
 	response_harm_continuous = "swats"
 	response_harm_simple = "swat"
 	stop_automated_movement = 1
-	// TODO: allow setting harm automatically.
-//	combat_mode = TRUE //parrots now start "aggressive" since only player parrots will nuzzle.
+	istate = new /datum/interaction_state/harm //parrots now start "aggressive" since only player parrots will nuzzle.
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
 	attack_vis_effect = ATTACK_EFFECT_BITE
@@ -155,8 +154,7 @@
 	. = ..()
 	. += ""
 	. += "Held Item: [held_item]"
-	// TODO: ISTATE status
-//	. += "Combat mode: [combat_mode ? "On" : "Off"]"
+	. += client.imode.status()
 
 /mob/living/simple_animal/parrot/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()

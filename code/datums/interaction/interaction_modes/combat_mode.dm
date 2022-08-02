@@ -26,6 +26,7 @@
 		combat_mode = TRUE
 	else
 		combat_mode = FALSE
+	update_istate(owner.mob, null)
 	UI.update_icon_state()
 
 /datum/interaction_mode/combat_mode/keybind(type)
@@ -36,4 +37,8 @@
 			combat_mode = FALSE
 		if (3)
 			combat_mode = !combat_mode
+	update_istate(owner.mob, null)
 	UI.update_icon_state()
+
+/datum/interaction_mode/combat_mode/status()
+	return "Combat Mode: [combat_mode ? "On" : "Off"]"

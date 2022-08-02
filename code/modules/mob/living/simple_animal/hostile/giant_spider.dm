@@ -34,8 +34,7 @@
 	obj_damage = 30
 	melee_damage_lower = 20
 	melee_damage_upper = 25
-	// TODO: allow setting harm automatically.
-//	combat_mode = TRUE
+	istate = new /datum/interaction_state/harm
 	faction = list("spiders")
 	pass_flags = PASSTABLE
 	move_to_delay = 6

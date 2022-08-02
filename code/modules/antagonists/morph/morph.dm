@@ -8,8 +8,7 @@
 	icon_state = "morph"
 	icon_living = "morph"
 	icon_dead = "morph_dead"
-	// TODO: allow setting harm automatically.
-//	combat_mode = TRUE
+	istate = new /datum/interaction_state/harm
 	stop_automated_movement = 1
 	status_flags = CANPUSH
 	pass_flags = PASSTABLE

@@ -12,8 +12,7 @@
 	response_harm_continuous = "strikes"
 	response_harm_simple = "strike"
 	status_flags = 0
-	// TODO: allow setting harm automatically.
-//	combat_mode = TRUE
+	istate = new /datum/interaction_state/harm
 	var/crusher_loot
 	var/throw_message = "bounces off of"
 	var/fromtendril = FALSE
