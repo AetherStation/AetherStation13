@@ -45,7 +45,7 @@
 		if (3)
 			intent = INTENT_HARM
 		if (4)
-			intent = next_intent[INTENT_HARM]
+			intent = next_intent[intent]
 	update_istate(owner.mob, null)
 	UI.icon_state = "[intent]3"
 
