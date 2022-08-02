@@ -1,6 +1,6 @@
 /datum/interaction_mode/combat_mode
-	var/combat_mode = FALSE
 	shift_to_open_context_menu = TRUE
+	var/combat_mode = FALSE
 
 /datum/interaction_mode/combat_mode/update_istate(mob/M, modifiers)
 	M.istate.harm = combat_mode
