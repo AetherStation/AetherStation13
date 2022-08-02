@@ -1,6 +1,7 @@
 GLOBAL_LIST_INIT(available_interaction_modes, list(
 	"Combat Mode" = /datum/interaction_mode/combat_mode,
-	"Intents" = /datum/interaction_mode/intents
+	"Intents" = /datum/interaction_mode/intents,
+	"Three Intents" = /datum/interaction_mode/intents3
 ))
 
 /datum/interaction_mode
