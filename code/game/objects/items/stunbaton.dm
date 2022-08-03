@@ -198,23 +198,19 @@
 		if(check_martial_counter(L, user))
 			return
 
-	if(user.istate.secondary)
-		if(turned_on)
+	if (turned_on)
+		if (user.istate.harm && !user.istate.secondary)
 			if(attack_cooldown_check <= world.time)
 				baton_effect(M, user)
-		..()
-		return
-	else if(turned_on)
-		if(attack_cooldown_check <= world.time)
-			if(baton_effect(M, user))
-				user.do_attack_animation(M)
-				return
-		else
+			return ..()
+		if(attack_cooldown_check > world.time)
 			to_chat(user, span_danger("The baton is still charging!"))
 			return
-	else if(user.istate.harm && !turned_on)
-		..()
-		return
+		if(baton_effect(M, user))
+			user.do_attack_animation(M)
+			return
+	else if (user.istate.harm)
+		return ..()
 	else
 		M.visible_message(span_warning("[user] prods [M] with [src]. Luckily it was off."), \
 					span_warning("[user] prods you with [src]. Luckily it was off."))

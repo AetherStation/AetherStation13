@@ -299,7 +299,7 @@
 	if(!isliving(target))
 		return
 
-	if(user.istate.secondary)
+	if(user.istate.harm && !user.istate.secondary)
 		..()
 		return
 	if(cooldown_check > world.time)
