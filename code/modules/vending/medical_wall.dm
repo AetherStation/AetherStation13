@@ -39,6 +39,12 @@
 	dir = EAST
 	pixel_x = -32
 
+/obj/machinery/vending/wallmed/pubby
+	products = list(/obj/item/reagent_containers/syringe = 3,
+					/obj/item/reagent_containers/pill/patch/libital = 1,
+					/obj/item/reagent_containers/pill/patch/aiuri = 1,
+					/obj/item/reagent_containers/medigel/sterilizine = 1)
+
 /obj/item/vending_refill/wallmed
 	machine_name = "NanoMed"
 	icon_state = "refill_medical"
