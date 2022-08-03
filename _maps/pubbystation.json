@@ -11,15 +11,12 @@
 	},
 	"job_changes": {
 		"hos": {
-			"added_access": 27,
 			"added_minimal_access": 27
 		},
 		"warden": {
-			"added_access": 27,
 			"added_minimal_access": 27
 		},
 		"officer": {
-			"added_access": 27,
 			"added_minimal_access": 27
 		}
 	}
