@@ -28911,7 +28911,6 @@
 	},
 /obj/structure/table/glass,
 /obj/machinery/airalarm{
-	acted_explosions = 4;
 	dir = 4;
 	pixel_x = -24
 	},
@@ -49113,7 +49112,6 @@
 /area/engineering/lobby)
 "ioj" = (
 /obj/machinery/power/apc{
-	acted_explosions = 2;
 	areastring = "/area/crew_quarters/heads/cmo";
 	name = "Chief Medical Officer's Office APC";
 	pixel_y = -23
@@ -58376,7 +58374,6 @@
 /area/medical/storage)
 "vmo" = (
 /obj/machinery/airalarm{
-	acted_explosions = 4;
 	dir = 4;
 	pixel_x = -24
 	},
