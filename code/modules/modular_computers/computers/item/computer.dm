@@ -68,13 +68,7 @@
 	kill_program(forced = TRUE)
 	STOP_PROCESSING(SSobj, src)
 	QDEL_NULL(soundloop)
-	for(var/H in all_components)
-		var/obj/item/computer_hardware/CH = all_components[H]
-		if(CH.holder == src)
-			CH.on_remove(src)
-			CH.holder = null
-			all_components.Remove(CH.device_type)
-			qdel(CH)
+	QDEL_LIST(all_components)
 	physical = null
 	return ..()
 
@@ -438,7 +432,7 @@
 		idle_threads.Remove(P)
 	if(looping_sound)
 		soundloop.stop()
-	if(loud)
+	if(loud && !QDELETED(physical))
 		physical.visible_message(span_notice("\The [src] shuts down."))
 	enabled = 0
 	update_appearance()
