@@ -50,18 +50,16 @@
 
 	return TRUE
 
-/obj/item/computer_hardware/battery/try_eject(mob/living/user, forced = FALSE)
+/obj/item/computer_hardware/battery/try_eject(mob/living/user, forced = FALSE, deleting = FALSE)
 	if(!battery)
 		to_chat(user, span_warning("There is no power cell connected to \the [src]."))
 		return FALSE
-	else
-		if(user)
-			user.put_in_hands(battery)
-			to_chat(user, span_notice("You detach \the [battery] from \the [src]."))
-		else
-			battery.forceMove(drop_location())
-		battery = null
-		return TRUE
+	if(deleting)
+		QDEL_NULL(battery)
+		return FALSE
+	battery.forceMove(drop_location())
+	battery = null
+	return TRUE
 
 /obj/item/stock_parts/cell/computer
 	name = "standard battery"
