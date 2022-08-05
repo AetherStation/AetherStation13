@@ -154,7 +154,7 @@
 			decreaseUses(user)
 	else if(istype(target, /obj/item/reagent_containers)) //Makes soapy water, if able.
 		var/obj/item/reagent_containers/container = target
-		var/datum/reagents/current_reagents = container.reagentsdae
+		var/datum/reagents/current_reagents = container.reagents
 		var/datum/reagent/ourwater
 		for(var/datum/reagent/R in current_reagents.reagent_list)
 			if(istype(R, /datum/reagent/water))

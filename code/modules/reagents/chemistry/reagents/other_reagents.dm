@@ -183,7 +183,7 @@
 
 /datum/reagent/water/expose_obj(obj/exposed_obj, reac_volume)
 	. = ..()
-	if(istype(exposed_obj, /obj/effect/decal)) //Dont clean cleanable decals for instance.
+	if(istype(exposed_obj, /obj/effect/decal)) //Water doesnt clean decals.
 		return
 	exposed_obj.extinguish()
 	exposed_obj.wash(CLEAN_TYPE_ACID)
@@ -311,10 +311,18 @@
 	taste_description = "bubbles"
 	var/clean_types = CLEAN_WASH
 
+/datum/reagent/water/soapy/expose_obj(obj/exposed_obj, reac_volume)
+	. = ..()
+	if(prob(60)) //Worse than space cleaner
+		exposed_obj?.wash(clean_types)
+
 /datum/reagent/water/soapy/expose_turf(turf/exposed_turf, reac_volume)
 	. = ..()
+	if(reac_volume < 1)
+		return
+
 	new /obj/effect/decal/temporary/suds(exposed_turf)
-	if(prob(60)) //Worse space cleaner, basically.
+	if(prob(60)) //Worse than space cleaner
 		exposed_turf.wash(clean_types)
 		for(var/AM in exposed_turf)
 			var/atom/movable/movable_content = AM

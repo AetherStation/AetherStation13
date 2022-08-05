@@ -7,4 +7,3 @@
 
 	step_time = 8 SECONDS
 	fade_rate = 128
-
