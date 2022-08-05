@@ -1,3 +1,6 @@
+/datum/hud/dextrous
+	has_interaction_ui = TRUE
+
 //Used for normal mobs that have hands.
 /datum/hud/dextrous/New(mob/living/owner)
 	..()
@@ -31,8 +34,6 @@
 	using.screen_loc = ui_swaphand_position(owner,2)
 	using.hud = src
 	static_inventory += using
-
-	static_inventory += owner.client.imode.procure_hud(owner, src)
 
 	zone_select = new /atom/movable/screen/zone_sel()
 	zone_select.icon = ui_style

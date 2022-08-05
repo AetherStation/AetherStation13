@@ -38,6 +38,7 @@
 	if(!hud_used)
 		create_mob_hud()
 	if(hud_used)
+		client?.imode.reload_hud(src)
 		hud_used.show_hud(hud_used.hud_version)
 		hud_used.update_ui_style(ui_style2icon(client.prefs.UI_style))
 

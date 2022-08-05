@@ -10,6 +10,8 @@
 	M.istate.control = LAZYACCESS(modifiers, CTRL_CLICK)
 
 /datum/interaction_mode/combat_mode/procure_hud(mob/M, datum/hud/H, robot = FALSE)
+	if (!M.hud_used.has_interaction_ui)
+		return
 	var/atom/movable/screen/combattoggle/CT
 	if (robot)
 		CT = new /atom/movable/screen/combattoggle/robot()
@@ -33,9 +35,9 @@
 	switch (type)
 		if (0)
 			combat_mode = TRUE
-		if (3)
+		if (2)
 			combat_mode = FALSE
-		if (4)
+		if (3)
 			combat_mode = !combat_mode
 	update_istate(owner.mob, null)
 	UI.update_icon_state()

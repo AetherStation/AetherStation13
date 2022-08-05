@@ -310,25 +310,6 @@
 	icon = 'icons/hud/screen_cyborg.dmi'
 	screen_loc = ui_borg_intents
 
-/atom/movable/screen/act_intent
-	name = "intent"
-	icon_state = "help"
-	screen_loc = ui_acti
-	var/datum/interaction_mode/intents/intents
-
-/atom/movable/screen/act_intent/Click(location, control, params)
-	var/_x = text2num(params2list(params)["icon-x"])
-	var/_y = text2num(params2list(params)["icon-y"])
-	if(_x<=16 && _y<=16)
-		intents.intent = INTENT_HARM
-	else if(_x<=16 && _y>=17)
-		intents.intent = INTENT_HELP
-	else if(_x>=17 && _y<=16)
-		intents.intent = INTENT_GRAB
-	if(_x>=17 && _y>=17)
-		intents.intent = INTENT_DISARM
-	icon_state = intents.intent
-
 /atom/movable/screen/act_intent3
 	name = "intent"
 	icon_state = "help3"

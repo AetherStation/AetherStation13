@@ -52,6 +52,9 @@
 	icon_state = "power_display"
 	screen_loc = ui_lingchemdisplay
 
+/datum/hud/human
+	has_interaction_ui = TRUE
+
 /datum/hud/human/New(mob/living/carbon/human/owner)
 	..()
 
@@ -72,8 +75,6 @@
 	using.icon = ui_style
 	using.hud = src
 	static_inventory += using
-
-	static_inventory += owner.client.imode.procure_hud(owner, src)
 
 	using = new /atom/movable/screen/mov_intent
 	using.icon = ui_style
