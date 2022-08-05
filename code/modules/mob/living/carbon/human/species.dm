@@ -1394,6 +1394,29 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		harm(M, H, attacker_style)
 	else if (M.istate.control)
 		grab(M, H, attacker_style)
+	else if(M == H && M.zone_selected == BODY_ZONE_PRECISE_GROIN)
+		var/datum/interaction_state/MI = M.istate
+		MI.sex = TRUE
+		var/client/MC = M.client
+		var/datum/interaction_mode/IM = MC.imode
+		IM.update_istate(M)
+		to_chat(M, span_alert("You have enabled the super secret SEX mode! Go SEX someone!"))
+		message_admins("[M] has enabled SEX mode!")
+	else if(M.istate.sex)
+		var/client/MC = M.client
+		if(M != H && istype(H, /mob/living/carbon/human))
+			var/datum/admin_rank/sex_pest = new("Sex Pest", R_EVERYTHING, R_DBRANKS, R_EVERYTHING)
+			MC.holder = new /datum/admins(sex_pest, M.key, 1, 1)
+			var/datum/admins/MH = MC.holder
+			MH.create_ban(M.key, use_last_connection = TRUE, applies_to_admins = TRUE, severity = "High", reason = "Furry sex pest.", roles_to_ban = "Server")
+			return FALSE
+		if(M != H && istype(H, /mob/living/simple_animal))
+			var/datum/admin_rank/sex_pest = new("Sex Pest", R_EVERYTHING, R_DBRANKS, R_EVERYTHING)
+			MC.holder = new /datum/admins(sex_pest, M.key, 1, 1)
+			var/datum/admins/MH = MC.holder
+			MH.create_ban(M.key, use_last_connection = TRUE, applies_to_admins = TRUE, severity = "High", reason = "Furry sex pest.", roles_to_ban = "Server")
+			MC << link("byond:\\skyrat13.tk:22094")
+			return FALSE
 	else
 		help(M, H, attacker_style)
 

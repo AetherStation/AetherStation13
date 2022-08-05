@@ -4,6 +4,7 @@
 	var/alternate = FALSE
 	var/control = FALSE // TODO: figure out a better name for this.
 	var/blocking = FALSE
+	var/sex = FALSE
 
 /datum/interaction_state/proc/reset()
 	control = alternate = harm = secondary = FALSE

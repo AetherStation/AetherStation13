@@ -13,6 +13,8 @@
 			M.istate.control = TRUE
 		if (INTENT_HARM)
 			M.istate.harm = TRUE
+		if (INTENT_SEX)
+			M.istate.sex = TRUE
 
 /datum/interaction_mode/intents3/procure_hud(mob/M, datum/hud/H, robot = FALSE)
 	if (!M.hud_used.has_interaction_ui)
@@ -29,6 +31,8 @@
 		intent = INTENT_HARM
 	else if (state.control)
 		intent = INTENT_GRAB
+	else if(state.sex)
+		intent = INTENT_SEX
 	else
 		intent = INTENT_HELP
 	update_istate(owner.mob, null)
