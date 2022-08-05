@@ -15,7 +15,9 @@
 			M.istate.harm = TRUE
 
 /datum/interaction_mode/intents3/procure_hud(mob/M, datum/hud/H, robot = FALSE)
-	var/atom/movable/screen/act_intent/AI
+	if (!M.hud_used.has_interaction_ui)
+		return
+	var/atom/movable/screen/act_intent3/AI
 	AI = new /atom/movable/screen/act_intent3()
 	AI.hud = H
 	AI.intents = src
@@ -40,11 +42,11 @@
 	switch (type)
 		if (0)
 			intent = INTENT_HELP
-		if (2)
+		if (1)
 			intent = INTENT_GRAB
-		if (3)
+		if (2)
 			intent = INTENT_HARM
-		if (4)
+		if (3)
 			intent = next_intent[intent]
 	update_istate(owner.mob, null)
 	UI.icon_state = "[intent]3"

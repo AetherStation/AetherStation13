@@ -1,10 +1,10 @@
 /datum/hud/larva
+	has_interaction_ui = TRUE
 	ui_style = 'icons/hud/screen_alien.dmi'
 
 /datum/hud/larva/New(mob/owner)
 	..()
 	var/atom/movable/screen/using
-	static_inventory += owner.client.imode.procure_hud(owner, src)
 
 	healths = new /atom/movable/screen/healths/alien()
 	healths.hud = src

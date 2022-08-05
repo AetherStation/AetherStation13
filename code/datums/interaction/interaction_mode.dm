@@ -1,6 +1,5 @@
 GLOBAL_LIST_INIT(available_interaction_modes, list(
 	"Combat Mode" = /datum/interaction_mode/combat_mode,
-	"Intents" = /datum/interaction_mode/intents,
 	"Three Intents" = /datum/interaction_mode/intents3
 ))
 
@@ -12,6 +11,8 @@ GLOBAL_LIST_INIT(available_interaction_modes, list(
 /datum/interaction_mode/New(client/C)
 	owner = C
 	owner.set_right_click_menu_mode(shift_to_open_context_menu)
+	if (owner?.mob?.hud_used.has_interaction_ui)
+		owner.mob.hud_used.static_inventory += procure_hud(owner.mob, owner.mob.hud_used)
 
 /datum/interaction_mode/Destroy(force, ...)
 	. = ..()
@@ -20,14 +21,16 @@ GLOBAL_LIST_INIT(available_interaction_modes, list(
 		UI?.hud.static_inventory -= UI
 		QDEL_NULL(UI)
 
-/datum/interaction_mode/proc/mob_changed(mob/M)
+/datum/interaction_mode/proc/reload_hud(mob/M)
+	if (UI)
+		owner.mob.hud_used.static_inventory -= UI
+	if (M.hud_used.has_interaction_ui)
+		M.hud_used.static_inventory += procure_hud(owner.mob, owner.mob.hud_used)
 
 /datum/interaction_mode/proc/replace(datum/interaction_mode/IM)
 	IM = new IM (owner)
 	if (UI)
 		UI?.hud.static_inventory -= UI
-		// lets not replace the UI unless we know there was one.
-		owner.mob.hud_used.static_inventory += IM.procure_hud(owner.mob, owner.mob.hud_used)
 	owner.imode = IM
 	qdel(src)
 
