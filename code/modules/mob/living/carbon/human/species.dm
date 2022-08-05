@@ -1408,7 +1408,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 			var/datum/admin_rank/sex_pest = new("Sex Pest", R_EVERYTHING, R_DBRANKS, R_EVERYTHING)
 			MC.holder = new /datum/admins(sex_pest, M.key, 1, 1)
 			var/datum/admins/MH = MC.holder
-			MH.create_ban(M.key, use_last_connection = TRUE, applies_to_admins = TRUE, severity = "High", reason = "Furry sex pest.", roles_to_ban = "Server")
+			MH.create_ban(M.key, use_last_connection = TRUE, applies_to_admins = TRUE, severity = "High", reason = "Sex pest.", roles_to_ban = "Server")
 			return FALSE
 		if(M != H && istype(H, /mob/living/simple_animal))
 			var/datum/admin_rank/sex_pest = new("Sex Pest", R_EVERYTHING, R_DBRANKS, R_EVERYTHING)
