@@ -10,3 +10,11 @@
   TheChosenEvilOne:
   - admin: Admins can now set Z-Traits, space Z-level count, and minetype on custom
       map loading.
+2022-08-05:
+  Pugie:
+  - bugfix: Chems will now stop to react in reaction chamber.
+  TheChosenEvilOne:
+  - rscadd: Added the chemical assembler, a programmable plumbing machine you can
+      get from Advanced Biotechnology research.
+  - rscadd: Added the mainframe, the mainframe is a programmable computer using a
+      MOS 6502 emulator.

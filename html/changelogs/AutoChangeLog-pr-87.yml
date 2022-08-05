@@ -1,5 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - rscadd: Added the mainframe, the mainframe is a programmable computer using a
-      MOS 6502 emulator.

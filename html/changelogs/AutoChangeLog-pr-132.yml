@@ -1,4 +1,0 @@
-author: Pugie
-delete-after: true
-changes:
-  - bugfix: Chems will now stop to react in reaction chamber.
