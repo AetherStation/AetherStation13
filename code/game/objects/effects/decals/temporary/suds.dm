@@ -3,9 +3,8 @@
 	desc = "Bubbly, soapy, suds."
 	icon = 'icons/effects/suds.dmi'
 	icon_state = "suds"
+	layer = HIGH_OBJ_LAYER //Bubbles covering everything on the floor.
 
-	//longevity = 5 SECONDS
-	step_time = 3 SECONDS
-	fade_rate = 51
-	//base_icon = "suds"
-	//sprite_states = 3
+	step_time = 8 SECONDS
+	fade_rate = 128
+

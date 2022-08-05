@@ -115,23 +115,6 @@
 		to_chat(user, span_warning("[src] crumbles into tiny bits!"))
 		qdel(src)
 
-/obj/item/soap/attack_obj(obj/O, mob/living/user, params) //Not attackable. obj_flags.
-	if(istype(O, /obj/item/reagent_containers))
-		var/obj/item/reagent_containers/container = O
-		var/datum/reagents/current_reagents = container.reagents
-		if(current_reagents.reagent_list.len == 1 && istype(current_reagents.reagent_list[1], /datum/reagent/water)) //Soapy water doesnt count, cant make with remains in bucket.
-			var/datum/reagent/ourwater = current_reagents.reagent_list[1]
-			to_chat(user, span_notice("You slosh [src] around in the water, making it bubblier."))
-			playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
-			var/amount = ourwater.volume
-			current_reagents.remove_all() // Doesnt work, needs amount
-			current_reagents.add_reagent(/datum/reagent/water/soapy, amount)
-			decreaseUses(user, CEILING(amount/4, 1))
-		else
-			to_chat(user, span_warning("The water must be clean to make soapy water."))
-		return
-	..()
-
 /obj/item/soap/afterattack(atom/target, mob/user, proximity)
 	. = ..()
 	if(!proximity || !check_allowed_items(target))
@@ -169,6 +152,29 @@
 			user.mind?.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
 			new suds_decal(get_turf(target))
 			decreaseUses(user)
+	else if(istype(target, /obj/item/reagent_containers)) //Makes soapy water, if able.
+		var/obj/item/reagent_containers/container = target
+		var/datum/reagents/current_reagents = container.reagentsdae
+		var/datum/reagent/ourwater
+		for(var/datum/reagent/R in current_reagents.reagent_list)
+			if(istype(R, /datum/reagent/water))
+				ourwater = R
+		if(ourwater)
+			to_chat(user, span_notice("You slosh [src] around in the [target], making the contents bubbly."))
+			playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
+			var/amount = ourwater.volume
+			current_reagents.remove_all_type(/datum/reagent/water, amount, strict = 1)
+			current_reagents.add_reagent(/datum/reagent/water/soapy, amount)
+			decreaseUses(user, CEILING(amount/4, 1))
+		else
+			user.visible_message(span_notice("[user] begins to clean \the [target.name] with [src]..."), span_notice("You begin to clean \the [target.name] with [src]..."))
+			if(do_after(user, clean_speedies, target = target))
+				to_chat(user, span_notice("You clean \the [target.name]."))
+				target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+				target.set_opacity(initial(target.opacity))
+				user.mind?.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
+				new suds_decal(get_turf(target))
+				decreaseUses(user)
 	else
 		user.visible_message(span_notice("[user] begins to clean \the [target.name] with [src]..."), span_notice("You begin to clean \the [target.name] with [src]..."))
 		if(do_after(user, clean_speedies, target = target))

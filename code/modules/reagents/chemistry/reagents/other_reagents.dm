@@ -303,6 +303,7 @@
 	color = "#88878777"
 	taste_description = "emptyiness"
 
+///Made by using soap on a reagent container containing water. Faster clean speed than regular water, and will some times clean when sprayed.
 /datum/reagent/water/soapy
 	name = "Soapy water"
 	description = "Water, with soap and bubbles."
@@ -313,10 +314,10 @@
 /datum/reagent/water/soapy/expose_turf(turf/exposed_turf, reac_volume)
 	. = ..()
 	new /obj/effect/decal/temporary/suds(exposed_turf)
-	if(prob(33)) //Worse space cleaner, basically.
+	if(prob(60)) //Worse space cleaner, basically.
 		exposed_turf.wash(clean_types)
-		for(var/am in exposed_turf)
-			var/atom/movable/movable_content = am
+		for(var/AM in exposed_turf)
+			var/atom/movable/movable_content = AM
 			if(ismopable(movable_content)) // Mopables will be cleaned anyways by the turf wash
 				continue
 			movable_content.wash(clean_types)

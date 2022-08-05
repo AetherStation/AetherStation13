@@ -9,6 +9,7 @@ or sprite states which will delete once there are no more states left. Fading ca
 	desc = "You shouldn't be seeing this."
 	icon = 'icons/obj/objects.dmi'
 	icon_state = ""
+	layer = TURF_DECAL_LAYER
 
 	///Can more than one exist on a turf at a time.
 	var/unique = TRUE
@@ -22,7 +23,7 @@ or sprite states which will delete once there are no more states left. Fading ca
 	var/fade_rate
 	///Base icon state, fill this in for sprite_states to work. If the desired icon states are base_1, base_2, base_3 etc, this should be base.
 	var/base_icon
-	///Alternative sprite states, used instead of or together with fade_rate. i.e. 2, leading to sprite _1 and _2.
+	///Optional sprite states. If 3, will go through base_icon_1, base_icon_2, base_icon_3.
 	var/sprite_states
 	///Current sprite state
 	var/current_sprite_state = 0
