@@ -82,7 +82,7 @@
 	for(var/obj/machinery/capture_the_flag/CTF in GLOB.machines)
 		if(CTF.game_id != "centcom")
 			continue
-		CTF.attack_ghost()
+		CTF.attack_ghost(usr)
 		return
 
 /datum/hud/ghost/New(mob/owner)

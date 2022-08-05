@@ -668,8 +668,11 @@
 /turf/open/indestructible,
 /area/deathmatch)
 "DY" = (
-/obj/machinery/power/smes/magical,
 /obj/structure/cable,
+/obj/machinery/power/rtg{
+	irradiate = 0;
+	power_gen = 50000
+	},
 /turf/open/indestructible,
 /area/deathmatch)
 "Eb" = (
@@ -1109,13 +1112,6 @@
 "YU" = (
 /obj/structure/cable,
 /obj/structure/extinguisher_cabinet/directional/east,
-/turf/open/indestructible,
-/area/deathmatch)
-"YW" = (
-/obj/structure/cable,
-/obj/machinery/power/terminal{
-	dir = 8
-	},
 /turf/open/indestructible,
 /area/deathmatch)
 "YY" = (
@@ -2006,9 +2002,9 @@ ai
 rz
 rz
 ai
-cA
-cA
+gN
 DY
+gN
 gN
 Mp
 NJ
@@ -2032,8 +2028,8 @@ ai
 GV
 ai
 gN
-gN
-YW
+cA
+cA
 gN
 ai
 ai

@@ -2,10 +2,6 @@
 "a" = (
 /turf/template_noop,
 /area/template_noop)
-"b" = (
-/obj/machinery/power/terminal,
-/turf/open/floor/plating/airless,
-/area/deathmatch/fullbright)
 "c" = (
 /obj/structure/cable,
 /obj/structure/grille,
@@ -15,8 +11,9 @@
 /area/deathmatch/fullbright)
 "d" = (
 /obj/structure/cable,
-/obj/machinery/power/smes/magical{
-	output_level = 200000
+/obj/machinery/power/rtg{
+	irradiate = 0;
+	power_gen = 50000
 	},
 /turf/open/floor/plating,
 /area/deathmatch/fullbright)
@@ -99,7 +96,7 @@
 /turf/open/floor/plating,
 /area/deathmatch/fullbright)
 "T" = (
-/turf/open/floor/plating/airless,
+/turf/open/space/basic,
 /area/deathmatch/fullbright)
 "V" = (
 /obj/structure/cable,
@@ -217,8 +214,8 @@ m
 m
 "}
 (6,1,1) = {"
-m
-m
+a
+a
 m
 m
 l
@@ -236,7 +233,7 @@ m
 m
 "}
 (7,1,1) = {"
-m
+a
 m
 m
 m
@@ -255,7 +252,7 @@ m
 m
 "}
 (8,1,1) = {"
-m
+a
 m
 T
 T
@@ -274,9 +271,9 @@ m
 m
 "}
 (9,1,1) = {"
+a
 m
-m
-b
+T
 d
 k
 A
@@ -293,7 +290,7 @@ m
 m
 "}
 (10,1,1) = {"
-m
+a
 m
 T
 T
@@ -312,7 +309,7 @@ m
 m
 "}
 (11,1,1) = {"
-m
+a
 m
 m
 m
@@ -331,8 +328,8 @@ m
 m
 "}
 (12,1,1) = {"
-m
-m
+a
+a
 m
 m
 o
