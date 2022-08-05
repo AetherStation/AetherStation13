@@ -29,6 +29,8 @@ In all, this is a lot like the monkey code. /N
 		AdjustUnconscious(-60)
 		AdjustSleeping(-100)
 		visible_message(span_notice("[user.name] nuzzles [src] trying to wake [p_them()] up!"))
+	else if (user.istate.control)
+		grabbedby(user)
 	else if(health > 0)
 		user.do_attack_animation(src, ATTACK_EFFECT_BITE)
 		playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
@@ -62,6 +64,8 @@ In all, this is a lot like the monkey code. /N
 	else if(user.istate.harm)
 		user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 		return TRUE
+	else if (user.istate.control)
+		grabbedby(user)
 	else
 		help_shake_act(user)
 

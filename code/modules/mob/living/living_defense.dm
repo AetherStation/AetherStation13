@@ -242,6 +242,8 @@
 		if (user != src)
 			user.disarm(src)
 			return TRUE
+	else if (user.istate.control)
+		grabbedby(user)
 	if (!user.istate.harm)
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
@@ -301,6 +303,8 @@
 			return FALSE
 		user.do_attack_animation(src)
 		return TRUE
+	else if (user.istate.control)
+		grabbedby(user)
 	else
 		visible_message(span_notice("[user] caresses [src] with its scythe-like arm."), \
 						span_notice("[user] caresses you with its scythe-like arm."), null, null, user)

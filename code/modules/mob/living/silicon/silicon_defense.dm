@@ -73,6 +73,8 @@
 			visible_message(span_danger("[user] punches [src], but doesn't leave a dent!"), \
 							span_warning("[user] punches you, but doesn't leave a dent!"), null, COMBAT_MESSAGE_RANGE, user)
 			to_chat(user, span_danger("You punch [src], but don't leave a dent!"))
+		else if (user.istate.control)
+			grabbedby(user)
 		else
 			visible_message(span_notice("[user] pets [src]."), \
 							span_notice("[user] pets you."), null, null, user)

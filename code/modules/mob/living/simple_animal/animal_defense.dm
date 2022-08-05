@@ -19,7 +19,9 @@
 		to_chat(src, span_userdanger("You're pushed by [user.name]!"))
 		return TRUE
 
-	if(!user.istate.harm)
+	if (user.istate.control)
+		grabbedby(user)
+	else if(!user.istate.harm)
 		if (stat == DEAD)
 			return
 		visible_message(span_notice("[user] [response_help_continuous] [src]."), \
