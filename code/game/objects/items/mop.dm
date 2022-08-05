@@ -1,8 +1,8 @@
 #define REAGENT_SPEED_WATER 1
 #define REAGENT_SPEED_HOLY 0.95
-#define REAGENT_SPEED_SOAPY 0.9
-#define REAGENT_SPEED_VODKA 0.9
-#define REAGENT_SPEED_CLEANER 0.8
+#define REAGENT_SPEED_SOAPY 0.8
+#define REAGENT_SPEED_VODKA 0.7
+#define REAGENT_SPEED_CLEANER 0.6
 
 
 /obj/item/mop
@@ -153,6 +153,7 @@
 
 /obj/item/mop/advanced/cyborg
 	insertable = FALSE
+
 
 #undef REAGENT_SPEED_WATER
 #undef REAGENT_SPEED_HOLY
