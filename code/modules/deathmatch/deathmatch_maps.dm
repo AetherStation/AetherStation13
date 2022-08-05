@@ -77,8 +77,8 @@
 	map_path = "_maps/map_files/DM/instagib.dmm"
 
 /datum/deathmatch_map/mech_madness
-	name = "Mech Maddness"
-	desc = "EVERYONE GETS AN INSTAKILL RIFLE!"
+	name = "Mech Madness"
+	desc = "Write Me"
 	min_players = 2
 	max_players = 8
 	allowed_loadouts = list(/datum/deathmatch_loadout/operative)
