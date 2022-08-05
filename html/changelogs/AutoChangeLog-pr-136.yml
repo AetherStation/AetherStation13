@@ -1,6 +1,0 @@
-author: Skoglol
-delete-after: true
-changes:
-  - bugfix: Firelocks no longer trigger at -3C, lowered to -63C. Still safe temperature
-      and pressure levels, but will make breaches vent significantly more atmos before
-      the firelocks engage.

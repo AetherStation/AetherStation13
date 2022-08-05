@@ -13,6 +13,10 @@
 2022-08-05:
   Pugie:
   - bugfix: Chems will now stop to react in reaction chamber.
+  Skoglol:
+  - bugfix: Firelocks no longer trigger at -3C, lowered to -63C. Still safe temperature
+      and pressure levels, but will make breaches vent significantly more atmos before
+      the firelocks engage.
   TheChosenEvilOne:
   - rscadd: Added the chemical assembler, a programmable plumbing machine you can
       get from Advanced Biotechnology research.
