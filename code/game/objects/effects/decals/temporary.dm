@@ -27,13 +27,19 @@ or sprite states which will delete once there are no more states left. Fading ca
 	var/sprite_states
 	///Current sprite state
 	var/current_sprite_state = 0
+	///Current change count, to avoid creating a lot of new decals.
+	var/counter = 0
 
 /obj/effect/decal/temporary/Initialize()
 	. = ..()
-	if(unique && loc && isturf(loc)) //Replaces old decals when new ones are added
+	if(unique && loc && isturf(loc)) //Replaces old decals when new ones are added, but only if its at least one step old.
 		for(var/obj/effect/decal/temporary/T in loc)
 			if(T != src && T.type == type && !QDELETED(T))
-				qdel(T)
+				if(T.counter)
+					qdel(T)
+				else
+					qdel(src)
+					return
 	var/time
 	if(longevity)
 		time = longevity
@@ -56,6 +62,7 @@ or sprite states which will delete once there are no more states left. Fading ca
 	if(longevity)
 		qdel(src)
 		return
+	counter += 1
 	if(fade_rate)
 		if(alpha >= fade_rate)
 			alpha -= fade_rate

@@ -4,6 +4,7 @@
 	icon = 'icons/effects/suds.dmi'
 	icon_state = "suds"
 	layer = HIGH_OBJ_LAYER //Bubbles covering everything on the floor.
+	plane = GAME_PLANE
+	mouse_opacity = 0
 
-	step_time = 8 SECONDS
-	fade_rate = 128
+	longevity = 15 SECONDS
