@@ -6,7 +6,7 @@
 	var/blocking = FALSE
 
 /datum/interaction_state/proc/reset()
-	control = alternate = harm = secondary = FALSE
+	control = alternate = harm = secondary = blocking = FALSE
 
 /datum/interaction_state/proc/logging()
 	// This is pretty awful

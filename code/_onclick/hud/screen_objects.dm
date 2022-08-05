@@ -278,6 +278,7 @@
 /atom/movable/screen/combattoggle/Click()
 	if(isliving(usr))
 		combat_mode.combat_mode = !combat_mode.combat_mode
+		combat_mode.update_istate(usr, null)
 		update_appearance()
 
 /atom/movable/screen/combattoggle/update_icon_state()
@@ -325,6 +326,7 @@
 		intents.intent = INTENT_HELP
 	else if(_x>=17 && _y>=16)
 		intents.intent = INTENT_GRAB
+	intent.update_istate(usr, null)
 	icon_state = "[intents.intent]3"
 
 /atom/movable/screen/internals
