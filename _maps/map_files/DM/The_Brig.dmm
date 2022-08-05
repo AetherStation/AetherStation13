@@ -244,8 +244,7 @@
 /area/deathmatch)
 "cX" = (
 /obj/structure/cable,
-/obj/machinery/power/rtg{
-	irradiate = 0;
+/obj/machinery/power/rtg/mapping{
 	power_gen = 50000
 	},
 /turf/open/floor/iron/dark,

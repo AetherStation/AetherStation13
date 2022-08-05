@@ -1,7 +1,4 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
-"a" = (
-/turf/template_noop,
-/area/template_noop)
 "c" = (
 /obj/structure/cable,
 /obj/structure/grille,
@@ -11,8 +8,7 @@
 /area/deathmatch/fullbright)
 "d" = (
 /obj/structure/cable,
-/obj/machinery/power/rtg{
-	irradiate = 0;
+/obj/machinery/power/rtg/mapping{
 	power_gen = 50000
 	},
 /turf/open/floor/plating,
@@ -119,8 +115,6 @@
 /area/deathmatch/fullbright)
 
 (1,1,1) = {"
-a
-a
 m
 m
 m
@@ -138,8 +132,6 @@ m
 m
 "}
 (2,1,1) = {"
-a
-a
 m
 m
 m
@@ -157,8 +149,6 @@ m
 m
 "}
 (3,1,1) = {"
-a
-a
 m
 m
 f
@@ -176,8 +166,6 @@ m
 m
 "}
 (4,1,1) = {"
-a
-a
 m
 m
 c
@@ -195,8 +183,6 @@ m
 m
 "}
 (5,1,1) = {"
-a
-a
 m
 m
 l
@@ -214,8 +200,6 @@ m
 m
 "}
 (6,1,1) = {"
-a
-a
 m
 m
 l
@@ -233,8 +217,6 @@ m
 m
 "}
 (7,1,1) = {"
-a
-m
 m
 m
 l
@@ -252,8 +234,6 @@ m
 m
 "}
 (8,1,1) = {"
-a
-m
 T
 T
 l
@@ -271,8 +251,6 @@ m
 m
 "}
 (9,1,1) = {"
-a
-m
 T
 d
 k
@@ -290,8 +268,6 @@ m
 m
 "}
 (10,1,1) = {"
-a
-m
 T
 T
 l
@@ -309,8 +285,6 @@ m
 m
 "}
 (11,1,1) = {"
-a
-m
 m
 m
 k
@@ -328,8 +302,6 @@ m
 m
 "}
 (12,1,1) = {"
-a
-a
 m
 m
 o
@@ -347,8 +319,6 @@ m
 m
 "}
 (13,1,1) = {"
-a
-a
 m
 m
 o
@@ -366,8 +336,6 @@ m
 m
 "}
 (14,1,1) = {"
-a
-a
 m
 m
 q
@@ -385,8 +353,6 @@ m
 m
 "}
 (15,1,1) = {"
-a
-a
 m
 m
 K
@@ -404,8 +370,6 @@ m
 m
 "}
 (16,1,1) = {"
-a
-a
 m
 m
 m
@@ -423,8 +387,6 @@ m
 m
 "}
 (17,1,1) = {"
-a
-a
 m
 m
 m
