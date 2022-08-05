@@ -125,7 +125,7 @@
 	playsound(src, "sparks", 50, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 
 /obj/machinery/firealarm/should_atmos_process(datum/gas_mixture/air, exposed_temperature)
-	return (exposed_temperature > T0C + 200 || exposed_temperature < BODYTEMP_COLD_DAMAGE_LIMIT) && !(obj_flags & EMAGGED) && !machine_stat
+	return (exposed_temperature > T0C + 200 || exposed_temperature < BODYTEMP_COLD_DAMAGE_LIMIT - 60) && !(obj_flags & EMAGGED) && !machine_stat
 
 /obj/machinery/firealarm/atmos_expose(datum/gas_mixture/air, exposed_temperature)
 	if(!detecting)
