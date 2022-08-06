@@ -86,9 +86,13 @@
 	return TRUE
 
 
-/obj/item/computer_hardware/card_slot/try_eject(mob/living/user = null, forced = FALSE)
+/obj/item/computer_hardware/card_slot/try_eject(mob/living/user = null, forced = FALSE, deleting = FALSE)
 	if(!stored_card)
 		to_chat(user, span_warning("There are no cards in \the [src]."))
+		return FALSE
+
+	if(deleting)
+		QDEL_NULL(stored_card)
 		return FALSE
 
 	if(user && !issilicon(user) && in_range(src, user))
