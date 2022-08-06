@@ -866,7 +866,7 @@
 		C.forceMove(get_turf(src))
 	chips -= C
 
-/obj/item/card/id/chip_programmer/add_access(list/add_accesses, ignore_access = FALSE)
+/obj/item/card/id/chip_programmer/add_access(list/add_accesses, ignore_tier = FALSE)
 	var/obj/item/card_access_chip/C = chips[1]
 	if (!C.rewritable)
 		return FALSE
