@@ -116,6 +116,7 @@
 	M.set_glide_size(glide_size)
 
 	M.Move(loc)
+	M.setDir(dir)
 
 	post_buckle_mob(M)
 
