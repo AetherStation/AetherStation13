@@ -434,30 +434,25 @@
 	name = "[name_string] ([assignment])"
 
 /obj/item/card/id/tier0
-	icon = 'icons/obj/card.dmi'
 	icon_state = "tier0"
 	access_tier = 0
 
 /obj/item/card/id/tier1
-	icon = 'icons/obj/card.dmi'
 	icon_state = "tier1"
 	chip_slots = 2
 	access_tier = 1
 
 /obj/item/card/id/tier2
-	icon = 'icons/obj/card.dmi'
 	icon_state = "tier2"
 	chip_slots = 2
 	access_tier = 2
 
 /obj/item/card/id/tier3
-	icon = 'icons/obj/card.dmi'
 	icon_state = "tier3"
 	chip_slots = 2
 	access_tier = 3
 
 /obj/item/card/id/tier4
-	icon = 'icons/obj/card.dmi'
 	icon_state = "tier4"
 	chip_slots = 2
 	access_tier = 4
@@ -465,7 +460,6 @@
 /obj/item/card/id/tier5
 	name = "gold identification card"
 	desc = "A golden card which shows power and might."
-	icon = 'icons/obj/card.dmi'
 	icon_state = "tier5"
 	chip_slots = 2
 	access_tier = 5
@@ -825,7 +819,6 @@
 /obj/item/card/id/chip_programmer
 	name = "additional access chip programmer"
 	desc = "A card used to program new access chips."
-	icon = 'icons/obj/card.dmi'
 	icon_state = "tier1"
 	chip_slots = 1
 
