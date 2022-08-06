@@ -348,6 +348,7 @@
 /obj/machinery/computer/bookmanagement/emag_act(mob/user)
 	if(density && !(obj_flags & EMAGGED))
 		obj_flags |= EMAGGED
+		to_chat(user, span_warning("Restrictions on printer has been deactivated!"))
 
 /obj/machinery/computer/bookmanagement/Topic(href, href_list)
 	if(!COOLDOWN_FINISHED(src, library_console_topic_cooldown))
