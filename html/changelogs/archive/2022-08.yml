@@ -22,3 +22,7 @@
       get from Advanced Biotechnology research.
   - rscadd: Added the mainframe, the mainframe is a programmable computer using a
       MOS 6502 emulator.
+2022-08-06:
+  Twaticus:
+  - imageadd: Resprites ID cards & chips
+  - imagedel: Removes on-mob ID sprites
