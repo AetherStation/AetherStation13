@@ -95,7 +95,7 @@
 	description = "Does interaction mode specific action."
 	keybind_signal = COMSIG_KB_LIVING_INTERACT_ACTION_2
 
-/datum/keybinding/living/interaction_action3/down(client/user)
+/datum/keybinding/living/interaction_action2/down(client/user)
 	. = ..()
 	if(.)
 		return
@@ -108,7 +108,7 @@
 	description = "Does interaction mode specific action."
 	keybind_signal = COMSIG_KB_LIVING_INTERACT_ACTION_3
 
-/datum/keybinding/living/interaction_action4/down(client/user)
+/datum/keybinding/living/interaction_action3/down(client/user)
 	. = ..()
 	if(.)
 		return
@@ -121,7 +121,7 @@
 	description = "Does interaction mode specific action."
 	keybind_signal = COMSIG_KB_LIVING_INTERACT_ACTION_4
 
-/datum/keybinding/living/interaction_action5/down(client/user)
+/datum/keybinding/living/interaction_action4/down(client/user)
 	. = ..()
 	if(.)
 		return
