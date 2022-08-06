@@ -1,0 +1,5 @@
+author: Twaticus
+delete-after: true
+changes:
+  - imageadd: Resprites ID cards & chips
+  - imagedel: Removes on-mob ID sprites
