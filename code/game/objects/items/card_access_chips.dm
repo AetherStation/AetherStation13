@@ -1,7 +1,7 @@
 /obj/item/card_access_chip
 	name = "\improper AA-chip"
 	desc = "Additional Access chip, used to add access to ID cards."
-	icon = 'icons/obj/new_id.dmi'
+	icon = 'icons/obj/card.dmi'
 	icon_state = "aachip"
 
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 100)

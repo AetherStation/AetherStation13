@@ -64,8 +64,7 @@
 /obj/item/card/id
 	name = "identification card"
 	desc = "A card used to provide ID and determine access across the station."
-	icon_state = "card_grey"
-	worn_icon_state = "card_retro"
+	icon_state = "tier1"
 	inhand_icon_state = "card-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
@@ -435,30 +434,25 @@
 	name = "[name_string] ([assignment])"
 
 /obj/item/card/id/tier0
-	icon = 'icons/obj/new_id.dmi'
 	icon_state = "tier0"
 	access_tier = 0
 
 /obj/item/card/id/tier1
-	icon = 'icons/obj/new_id.dmi'
 	icon_state = "tier1"
 	chip_slots = 2
 	access_tier = 1
 
 /obj/item/card/id/tier2
-	icon = 'icons/obj/new_id.dmi'
 	icon_state = "tier2"
 	chip_slots = 2
 	access_tier = 2
 
 /obj/item/card/id/tier3
-	icon = 'icons/obj/new_id.dmi'
 	icon_state = "tier3"
 	chip_slots = 2
 	access_tier = 3
 
 /obj/item/card/id/tier4
-	icon = 'icons/obj/new_id.dmi'
 	icon_state = "tier4"
 	chip_slots = 2
 	access_tier = 4
@@ -466,7 +460,6 @@
 /obj/item/card/id/tier5
 	name = "gold identification card"
 	desc = "A golden card which shows power and might."
-	icon = 'icons/obj/new_id.dmi'
 	icon_state = "tier5"
 	chip_slots = 2
 	access_tier = 5
@@ -474,7 +467,7 @@
 /obj/item/card/id/away
 	name = "\proper a perfectly generic identification card"
 	desc = "A perfectly generic identification card. Looks like it could use some flavor."
-	icon_state = "retro"
+	icon_state = "card_retro"
 	registered_age = null
 
 /obj/item/card/id/away/hotel
@@ -546,8 +539,7 @@
 /obj/item/card/id/reaper
 	name = "Thirteen's ID Card (Reaper)"
 	registered_name = "Thirteen"
-	icon_state = "card_silver"
-	worn_icon_state = "card_silver"
+	icon_state = "tier4"
 	inhand_icon_state = "silver_id"
 
 /obj/item/card/id/tier5/captains_spare
@@ -567,7 +559,6 @@
 	name = "\improper CentCom ID"
 	desc = "An ID straight from Central Command."
 	icon_state = "card_centcom"
-	worn_icon_state = "card_centcom"
 	registered_name = "Central Command"
 	registered_age = null
 
@@ -579,7 +570,6 @@
 	name = "black identification card"
 	desc = "This card is telling you one thing and one thing alone. The person holding this card is an utter badass."
 	icon_state = "card_black"
-	worn_icon_state = "card_black"
 
 /obj/item/card/id/black/deathsquad
 	name = "\improper Death Squad ID"
@@ -596,7 +586,6 @@
 	name = "\improper Debug ID"
 	desc = "A debug ID card. Has ALL the all access, you really shouldn't have this."
 	icon_state = "card_centcom"
-	worn_icon_state = "card_centcom"
 	card_access = /datum/card_access/admin
 	access_tier = 6
 
@@ -608,7 +597,6 @@
 	name = "prisoner ID card"
 	desc = "You are a number, you are not a free man."
 	icon_state = "card_prisoner"
-	worn_icon_state = "card_prisoner"
 	inhand_icon_state = "orange-id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
@@ -661,7 +649,6 @@
 	registered_name = "Highlander"
 	desc = "There can be only one!"
 	icon_state = "card_black"
-	worn_icon_state = "card_black"
 	card_access = /datum/card_access/highlander
 
 /obj/item/card/id/chameleon
@@ -799,7 +786,6 @@
 
 /obj/item/card/id/chameleon/black
 	icon_state = "card_black"
-	worn_icon_state = "card_black"
 
 /obj/item/card/id/engioutpost
 	registered_name = "George 'Plastic' Miller"
@@ -833,7 +819,6 @@
 /obj/item/card/id/chip_programmer
 	name = "additional access chip programmer"
 	desc = "A card used to program new access chips."
-	icon = 'icons/obj/new_id.dmi'
 	icon_state = "tier1"
 	chip_slots = 1
 
