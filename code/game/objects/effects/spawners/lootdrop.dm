@@ -535,7 +535,8 @@
 				/obj/item/circuitboard/computer/med_data,
 				/obj/item/circuitboard/machine/smoke_machine,
 				/obj/item/circuitboard/machine/chem_master,
-				/obj/item/circuitboard/computer/pandemic
+				/obj/item/circuitboard/computer/pandemic,
+				/obj/item/circuitboard/machine/chem_assembler
 				)
 
 /obj/effect/spawner/lootdrop/techstorage/ai
