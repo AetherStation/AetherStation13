@@ -1,4 +1,0 @@
-author: Skoglol
-delete-after: true
-changes:
-  - bugfix: Tablet batteries and ID's now properly delete.

@@ -26,3 +26,6 @@
   Twaticus:
   - imageadd: Resprites ID cards & chips
   - imagedel: Removes on-mob ID sprites
+2022-08-07:
+  Skoglol:
+  - bugfix: Tablet batteries and ID's now properly delete.
