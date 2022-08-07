@@ -1,0 +1,4 @@
+author: Skog
+delete-after: true
+changes:
+  - config: Added configs for forced map rotation.
