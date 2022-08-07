@@ -397,6 +397,10 @@ MAPROTATION
 ## When it's set to zero, the map will be randomly picked each round
 PREFERENCE_MAP_VOTING 1
 
+## Forced map rotation. pool (default 3) + 2 rounds can have repetitions (default 2) entries of the same map. 0 pool disables banning maps.
+MAP_ROTATION_POOL 3
+MAP_ROTATION_REPETITIONS 2
+
 ## AUTOADMIN
 ## The default admin rank
 AUTOADMIN_RANK Game Master
