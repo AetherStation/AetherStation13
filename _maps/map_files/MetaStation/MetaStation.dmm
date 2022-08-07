@@ -11382,10 +11382,6 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/effect/spawner/lootdrop/maintenance/two,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
-/obj/machinery/door/airlock/maintenance{
-	name = "Research Maintenance";
-	req_access_txt = "47"
-	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/secondary)
 "ckw" = (
@@ -11409,10 +11405,6 @@
 	pixel_y = 28
 	},
 /obj/effect/spawner/lootdrop/gross_decal_spawner,
-/obj/machinery/door/airlock/maintenance{
-	name = "Research Maintenance";
-	req_access_txt = "47"
-	},
 /turf/open/floor/iron/showroomfloor,
 /area/maintenance/starboard/secondary)
 "ckz" = (
@@ -11422,10 +11414,6 @@
 	name = "Hal's Custom";
 	pixel_x = 7;
 	pixel_y = 14
-	},
-/obj/machinery/door/airlock/maintenance{
-	name = "Research Maintenance";
-	req_access_txt = "47"
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/secondary)
@@ -21500,13 +21488,13 @@
 "fen" = (
 /obj/structure/table,
 /obj/item/paper/guides/mos6502_reference_sheet{
-	pixel_y = 5;
-	pixel_x = 12
+	pixel_x = 12;
+	pixel_y = 5
 	},
 /obj/effect/turf_decal/trimline/purple/filled/line,
 /obj/item/paper/guides/mainframe_reference{
-	pixel_y = 5;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 5
 	},
 /turf/open/floor/iron/dark,
 /area/science/misc_lab)
@@ -23147,8 +23135,8 @@
 "fIw" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/item/cigbutt{
-	pixel_y = -1;
-	pixel_x = -13
+	pixel_x = -13;
+	pixel_y = -1
 	},
 /obj/item/cigbutt{
 	pixel_x = 4;
@@ -52599,13 +52587,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood,
 /area/service/bar)
-"qIV" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Research Maintenance";
-	req_access_txt = "47"
-	},
-/turf/open/floor/plating,
-/area/maintenance/starboard/secondary)
 "qJm" = (
 /obj/effect/mapping_helpers/simple_pipes/cyan/visible/layer4,
 /obj/effect/spawner/structure/window/reinforced,
@@ -111964,7 +111945,7 @@ lBp
 thq
 ozE
 ckz
-qIV
+nbv
 dwY
 mhf
 nbv
