@@ -112,7 +112,12 @@ SUBSYSTEM_DEF(persistence)
 		return
 	saved_maps = json["data"]
 
+	//Forced rotation is off.
+	if(!CONFIG_GET(number/map_rotation_pool))
+		return
+
 	//Convert the mapping data to a shared blocking list, saves us doing this in several places later.
+	var/runsallowed = CONFIG_GET(number/map_rotation_repetitions)
 	for(var/map in config.maplist)
 		var/datum/map_config/VM = config.maplist[map]
 		var/run = 0
@@ -121,7 +126,7 @@ SUBSYSTEM_DEF(persistence)
 		for(var/name in SSpersistence.saved_maps)
 			if(VM.map_name == name)
 				run++
-		if(run >= 2) //If run twice in the last KEEP_ROUNDS_MAP + 1 (including current) rounds, disable map for voting and rotation.
+		if(run >= runsallowed) //If run twice in the last KEEP_ROUNDS_MAP + 1 (including current) rounds, disable map for voting and rotation.
 			blocked_maps += VM.map_name
 
 /datum/controller/subsystem/persistence/proc/SetUpTrophies(list/trophy_items)
