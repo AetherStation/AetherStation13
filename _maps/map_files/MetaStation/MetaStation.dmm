@@ -46728,6 +46728,10 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/white,
 /area/medical/surgery/room_c)
+"oCn" = (
+/obj/effect/mapping_helpers/simple_pipes/yellow/visible,
+/turf/open/floor/iron/dark,
+/area/engineering/atmos)
 "oCr" = (
 /obj/structure/sign/poster/official/cleanliness{
 	pixel_x = 32
@@ -116821,7 +116825,7 @@ sWh
 bWK
 bWX
 xVU
-wkj
+oCn
 xFh
 aaf
 deP
