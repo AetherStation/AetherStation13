@@ -398,7 +398,7 @@ MAPROTATION
 PREFERENCE_MAP_VOTING 1
 
 ## Forced map rotation. pool (default 3) + 2 rounds can have repetitions (default 2) entries of the same map. 0 pool disables banning maps.
-MAP_ROTATION_POOL 0
+MAP_ROTATION_POOL 3
 MAP_ROTATION_REPETITIONS 2
 
 ## AUTOADMIN
