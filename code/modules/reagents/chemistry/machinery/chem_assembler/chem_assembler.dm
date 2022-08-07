@@ -42,7 +42,8 @@
 		/datum/reagent/sulfur,
 		/datum/reagent/toxin/acid,
 		/datum/reagent/water,
-		/datum/reagent/fuel
+		/datum/reagent/fuel,
+		/datum/reagent/silver,
 	)
 
 	var/program_text = ""
