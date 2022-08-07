@@ -3,7 +3,7 @@
 	desc = "A basic energy-based laser gun that fires concentrated beams of light which pass through glass and thin metal."
 	icon_state = "laser"
 	inhand_icon_state = "laser"
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	custom_materials = list(/datum/material/iron=2000)
 	ammo_type = list(/obj/item/ammo_casing/energy/lasergun)
 	ammo_x_offset = 1
@@ -50,7 +50,6 @@
 /obj/item/gun/energy/laser/captain/scattershot
 	name = "scatter shot laser rifle"
 	icon_state = "lasercannon"
-	w_class = WEIGHT_CLASS_BULKY
 	inhand_icon_state = "laser"
 	desc = "An industrial-grade heavy-duty laser rifle with a modified laser lens to scatter its shot into multiple smaller lasers. The inner-core can self-charge for theoretically infinite use."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser)
@@ -118,7 +117,6 @@
 	name = "\improper X-ray laser gun"
 	desc = "A high-power laser gun capable of expelling concentrated X-ray blasts that pass through multiple soft targets and heavier materials."
 	icon_state = "xray"
-	w_class = WEIGHT_CLASS_BULKY
 	inhand_icon_state = null
 	ammo_type = list(/obj/item/ammo_casing/energy/xray)
 	pin = null
