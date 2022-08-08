@@ -94,7 +94,7 @@
 	if(istype(I, /obj/item/extinguisher))
 		var/obj/item/extinguisher/extinguisher = I
 		if(extinguisher.safety)
-			to_chat(user, span_warning("\The [extinguisher] safety is on!"))
+			to_chat(user, span_warning("\The [extinguisher]'s safety is on!"))
 		else if (extinguisher.reagents.total_volume < 1)
 			to_chat(user, span_warning("\The [extinguisher] is empty!"))
 		else
@@ -106,7 +106,7 @@
 	if(expose_temp)
 		reagents.expose_temperature(expose_temp)
 		if(expose_temp > reagents.chem_temp)
-			to_chat(user, span_notice("You heat the [name] with [I]!"))
+			to_chat(user, span_notice("You heat the [name] with the [I]!"))
 		else
 			to_chat(user, span_notice("You cool the [name] with the [I]!"))
 
@@ -114,9 +114,9 @@
 	if(istype(I, /obj/item/food/egg))
 		var/obj/item/food/egg/E = I
 		if(reagents.total_volume >= reagents.maximum_volume)
-			to_chat(user, span_notice("[src] is full."))
+			to_chat(user, span_notice("The [src] is full."))
 		else
-			to_chat(user, span_notice("You break [E] in [src]."))
+			to_chat(user, span_notice("You break the [E] in the [src]."))
 			E.reagents.trans_to(src, E.reagents.total_volume, transfered_by = user)
 			qdel(E)
 
