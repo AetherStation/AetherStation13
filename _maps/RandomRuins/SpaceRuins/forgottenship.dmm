@@ -1,342 +1,106 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
-/turf/template_noop,
-/area/template_noop)
+/obj/structure/window/reinforced/spawner/east,
+/obj/item/shard,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
 "ab" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/cable,
-/turf/template_noop,
-/area/ruin/unpowered/no_grav)
+/obj/machinery/light/directional/west,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
 "ac" = (
 /obj/machinery/porta_turret/syndicate/energy{
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 60, "energy" = 60, "bomb" = 60, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100);
+	armor = list("melee"=40,"bullet"=40,"laser"=60,"energy"=60,"bomb"=60,"bio"=0,"rad"=0,"fire"=100,"acid"=100);
+	dir = 4;
+	name = "Syndicate Ship Turret";
+	on = 0;
+	shot_delay = 10
+	},
+/turf/closed/wall/r_wall/syndicate,
+/area/space/dontyoufuckingdareteleporthere)
+"ad" = (
+/obj/structure/table/reinforced,
+/obj/item/toy/plush/nukeplushie,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"ae" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	armor = list("melee"=40,"bullet"=40,"laser"=60,"energy"=60,"bomb"=60,"bio"=0,"rad"=0,"fire"=100,"acid"=100);
 	dir = 4;
 	name = "Syndicate Ship Turret";
 	on = 0;
 	shot_delay = 10
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ad" = (
-/obj/machinery/computer/operating,
-/turf/open/floor/plastic,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ae" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/airlock/external{
-	name = "Syndicate ship airlock";
-	req_one_access_txt = "150"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
+/area/space/dontyoufuckingdareteleporthere)
 "af" = (
-/obj/structure/shuttle/engine/propulsion{
-	dir = 8
-	},
-/turf/template_noop,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ag" = (
-/obj/effect/mob_spawn/human/syndicatespace/captain,
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ah" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ai" = (
-/obj/machinery/light/directional/north,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aj" = (
-/obj/structure/table/optable,
-/turf/open/floor/plastic,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ak" = (
-/obj/item/storage/backpack/duffelbag/syndie/surgery,
-/obj/structure/table/reinforced,
-/turf/open/floor/plastic,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"al" = (
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"am" = (
-/turf/open/floor/plastic,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"an" = (
-/obj/structure/sign/warning/vacuum/external,
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ao" = (
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ap" = (
-/turf/template_noop,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aq" = (
-/obj/structure/sign/poster/contraband/syndicate_recruitment,
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ar" = (
-/obj/machinery/camera/xray{
-	c_tag = "Medbay";
-	dir = 9;
-	network = list("fsci");
-	screen_loc = ""
-	},
-/turf/open/floor/plastic,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"as" = (
-/obj/structure/shuttle/engine/huge{
-	dir = 8
-	},
-/turf/template_noop,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"at" = (
-/obj/structure/chair/comfy/shuttle,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"au" = (
-/obj/structure/window/plasma/reinforced/plastitanium,
-/obj/machinery/door/poddoor{
-	id = "fslockdown";
-	name = "Ship blast door";
-	state_open = 1
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"av" = (
-/obj/machinery/power/smes,
-/obj/structure/cable,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aw" = (
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ax" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ay" = (
-/obj/structure/closet/syndicate{
-	anchored = 1;
-	armor = list("melee" = 70, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60);
-	desc = "A basic closet for all your villainous needs.";
-	locked = 1;
-	name = "Closet";
-	req_one_access_txt = "150";
-	secure = 1
-	},
-/obj/item/coin/antagtoken,
-/obj/item/encryptionkey/syndicate,
-/obj/item/encryptionkey/syndicate,
-/obj/item/encryptionkey/syndicate,
-/obj/item/dnainjector/thermal,
-/obj/item/storage/box/firingpins/syndicate,
-/obj/item/storage/box/firingpins/syndicate,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"az" = (
-/obj/machinery/power/port_gen/pacman/super{
-	anchored = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aA" = (
-/obj/machinery/light/directional/north,
-/obj/structure/table/reinforced,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aB" = (
-/obj/structure/chair/comfy/black,
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aC" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aD" = (
-/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2,
-/obj/machinery/portable_atmospherics/scrubber{
-	anchored = 1
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aE" = (
-/obj/structure/closet/syndicate{
-	anchored = 1;
-	armor = list("melee" = 70, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60);
-	desc = "A basic closet for all your villainous needs.";
-	locked = 1;
-	name = "Closet";
-	req_one_access_txt = "150";
-	secure = 1
-	},
-/obj/effect/spawner/lootdrop/armory_contraband/metastation,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aF" = (
 /obj/machinery/light/directional/east,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aG" = (
-/obj/machinery/turretid{
-	control_area = "/area/ruin/space/has_grav/syndicate_forgotten_ship";
-	enabled = 0;
-	icon_state = "control_kill";
-	lethal = 1;
-	name = "Ship turret control panel";
-	pixel_y = 32;
-	req_access = null;
-	req_one_access_txt = "150"
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aH" = (
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aI" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/door{
-	id = "fscaproom";
-	name = "Room shutters control";
-	req_one_access_txt = "150"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aJ" = (
+/area/space/dontyoufuckingdareteleporthere)
+"ag" = (
 /obj/machinery/light/directional/north,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aK" = (
-/obj/machinery/light/directional/west,
-/obj/structure/cable,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aL" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
+/mob/living/simple_animal/bot/secbot{
+	faction = list("Syndicate");
+	desc = "A tactical security robot, beefier than normal models.";
+	radio_channel = "Syndicate";
+	radio_key = /obj/item/encryptionkey/syndicate;
+	name = "Tactical Securitron";
+	window_name = "Automated Defence Unit 3.11"
 	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aM" = (
-/obj/structure/table/reinforced,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aN" = (
-/obj/item/stack/sheet/mineral/uranium{
-	amount = 15
-	},
-/obj/structure/cable,
-/obj/machinery/light/directional/north,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aO" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aP" = (
-/obj/structure/cable,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aQ" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Syndicate Ship Airlock";
-	req_one_access_txt = "150"
-	},
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aR" = (
-/obj/machinery/power/terminal{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/item/paper/fluff/ruins/forgottenship/powerissues,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aS" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aT" = (
-/obj/machinery/computer/camera_advanced/syndie{
-	dir = 8
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aU" = (
-/obj/machinery/door/airlock/external{
-	name = "Syndicate ship airlock";
-	req_one_access_txt = "150"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aV" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aW" = (
-/obj/structure/table/reinforced,
-/obj/item/toy/plush/nukeplushie,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"aX" = (
-/obj/machinery/light/directional/north,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"aY" = (
-/turf/template_noop,
-/area/ruin/unpowered/no_grav)
-"aZ" = (
-/turf/closed/indestructible/syndicate,
-/area/ruin/space/has_grav/powered/syndicate_forgotten_vault)
-"ba" = (
-/turf/closed/mineral/random,
-/area/ruin/unpowered/no_grav)
-"bb" = (
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bc" = (
-/obj/machinery/light/directional/south,
-/mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bd" = (
+/area/space/dontyoufuckingdareteleporthere)
+"ah" = (
 /obj/structure/closet/crate/secure/gear{
 	req_one_access_txt = "150"
 	},
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/plasteel/twenty,
-/obj/item/stack/sheet/mineral/plastitanium{
-	amount = 50
-	},
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/rods/fifty,
+/obj/item/language_manual/codespeak_manual/unlimited,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/syndicate_forgotten_vault)
-"be" = (
+/area/space/dontyoufuckingdareteleporthere)
+"ai" = (
+/obj/structure/table/reinforced,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/spawner/lootdrop/donkpockets,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"aj" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/structure/cable,
-/obj/machinery/door/airlock/external{
-	name = "Syndicate ship airlock";
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"ak" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Bridge";
 	req_one_access_txt = "150"
 	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bf" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"al" = (
+/obj/structure/closet/crate/secure/gear{
+	req_one_access_txt = "150"
+	},
+/obj/item/disk/surgery/forgottenship,
+/turf/open/floor/pod/dark,
+/area/space/dontyoufuckingdareteleporthere)
+"am" = (
+/obj/structure/window/reinforced/spawner/west,
+/obj/structure/shuttle/engine/heater{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"an" = (
 /obj/machinery/power/apc/syndicate{
 	dir = 1;
 	name = "Syndicate Cargo Pod APC";
-	pixel_y = 32;
+	pixel_y = 24;
 	start_charge = 0
 	},
 /obj/structure/cable,
@@ -355,16 +119,61 @@
 /obj/item/storage/box/stockparts/deluxe,
 /obj/item/storage/box/beakers,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bg" = (
-/obj/structure/sign/poster/contraband/syndicate_pistol,
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bh" = (
+/area/space/dontyoufuckingdareteleporthere)
+"ao" = (
 /obj/structure/cable,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bi" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/machinery/door/window{
+	dir = 4;
+	name = "Engineering";
+	req_one_access_txt = "150"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"ap" = (
+/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"aq" = (
+/obj/machinery/computer/camera_advanced/syndie{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"ar" = (
+/obj/structure/window/reinforced/spawner/north,
+/mob/living/simple_animal/hostile/nanotrasen{
+	name = "Nanotrasen Security Engineer";
+	desc = "An engineer working under Nanotrasen's private security corps. They are pissed off to meet you."
+	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"as" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible/layer2,
+/turf/closed/wall/r_wall/syndicate,
+/area/space/dontyoufuckingdareteleporthere)
+"at" = (
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"au" = (
+/mob/living/simple_animal/bot/medbot/derelict{
+	name = "Syndicate Medibot";
+	window_name = "Tactical Medical Unit 3.11";
+	health = 60;
+	faction = list("Syndicate");
+	desc = "A reinforced medibot designed for the tough rigors of combat."
+	},
+/turf/open/floor/plastic,
+/area/space/dontyoufuckingdareteleporthere)
+"av" = (
+/obj/machinery/sleeper,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"aw" = (
 /obj/machinery/light/directional/north,
 /obj/item/storage/toolbox/mechanical,
 /obj/item/storage/toolbox/mechanical,
@@ -376,145 +185,86 @@
 	req_one_access_txt = "150"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bj" = (
+/area/space/dontyoufuckingdareteleporthere)
+"ax" = (
+/obj/structure/closet/crate/secure/gear{
+	req_one_access_txt = "150"
+	},
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/plasteel/twenty,
+/obj/item/stack/sheet/mineral/plastitanium{
+	amount = 50
+	},
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/rods/fifty,
+/turf/open/floor/pod/dark,
+/area/space/dontyoufuckingdareteleporthere)
+"ay" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Crew Quarters";
+	req_one_access_txt = "150"
+	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bk" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/door{
-	id = "fslockdown";
-	name = "Window shutters";
+/area/space/dontyoufuckingdareteleporthere)
+"az" = (
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"aA" = (
+/obj/machinery/turretid{
+	control_area = "/area/ruin/space/has_grav/syndicate_forgotten_ship";
+	enabled = 0;
+	icon_state = "control_kill";
+	lethal = 1;
+	name = "Ship turret control panel";
+	pixel_y = 32;
+	req_access = null;
 	req_one_access_txt = "150"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bl" = (
-/obj/machinery/ore_silo,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bm" = (
-/obj/machinery/mineral/ore_redemption{
-	name = "Syndicate ore redemption machine";
-	ore_multiplier = 4;
-	req_access = list(150)
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bn" = (
+/area/space/dontyoufuckingdareteleporthere)
+"aB" = (
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"aC" = (
+/obj/item/stack/rods,
+/obj/item/reagent_containers/food/drinks/waterbottle/large/empty,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"aD" = (
 /obj/structure/table/reinforced,
 /obj/item/paper,
 /obj/item/pen,
 /obj/machinery/light/directional/south,
 /turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bo" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bp" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
+/area/space/dontyoufuckingdareteleporthere)
+"aE" = (
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
 	},
-/obj/item/mining_scanner,
-/obj/item/pickaxe/drill,
-/obj/item/storage/bag/ore,
-/obj/item/storage/bag/ore,
-/obj/item/pickaxe/drill,
-/obj/item/mining_scanner,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bq" = (
-/turf/closed/mineral/random/high_chance,
-/area/ruin/unpowered/no_grav)
-"br" = (
-/obj/machinery/light/directional/north,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bs" = (
-/turf/closed/mineral,
-/area/ruin/unpowered/no_grav)
-"bt" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bu" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"aF" = (
+/turf/closed/mineral/random,
+/area/space/dontyoufuckingdareteleporthere)
+"aG" = (
+/turf/open/floor/engine/air,
+/area/space/dontyoufuckingdareteleporthere)
+"aH" = (
+/obj/item/shard,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"aI" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
 	},
-/obj/item/toy/nuke,
-/obj/item/clothing/under/chameleon,
-/obj/item/pda/chameleon,
-/obj/item/clothing/mask/chameleon,
-/obj/item/card/id/chameleon,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bv" = (
-/obj/machinery/power/apc/syndicate{
-	dir = 1;
-	name = "Syndicate Forgotten Ship APC";
-	pixel_y = 32;
-	start_charge = 0
-	},
-/obj/structure/cable,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bw" = (
-/obj/structure/closet/syndicate{
-	anchored = 1;
-	armor = list("melee" = 70, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60);
-	desc = "A basic closet for all your villainous needs.";
-	locked = 1;
-	name = "Closet";
-	req_one_access_txt = "150";
-	secure = 1
-	},
-/obj/item/crowbar/red,
-/obj/item/ammo_box/magazine/m9mm_aps,
-/obj/item/ammo_box/magazine/m9mm_aps,
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bx" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Captain's room";
-	req_one_access_txt = "150"
-	},
-/obj/machinery/door/poddoor{
-	id = "fscaproom";
-	name = "Captain's blast door";
-	state_open = 1
-	},
-/turf/open/floor/carpet/royalblack,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"by" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Syndicate Ship Airlock";
-	req_one_access_txt = "150"
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bz" = (
-/obj/structure/table/reinforced,
-/obj/item/assembly/prox_sensor,
-/obj/item/assembly/prox_sensor,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bA" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
-	},
-/obj/item/clothing/suit/space/hardsuit/cybersun,
-/turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/syndicate_forgotten_vault)
-"bB" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
-	},
-/obj/item/melee/transforming/energy/sword/saber/red,
-/obj/machinery/light/directional/north,
-/turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/syndicate_forgotten_vault)
-"bC" = (
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"aJ" = (
 /obj/structure/closet/crate/medical,
 /obj/item/stack/medical/bruise_pack{
 	amount = 12
@@ -524,136 +274,545 @@
 	},
 /obj/item/healthanalyzer/advanced,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bD" = (
-/obj/structure/chair/comfy{
+/area/space/dontyoufuckingdareteleporthere)
+"aK" = (
+/obj/effect/mob_spawn/human/syndicatespace/captain{
+	important_info = "Protect the ship and your documents. Do not allow it to be declared compromised unless the worst occurs.";
+	desc = "A Syndicate model of sleeper. Looks a bit more regal."
+	},
+/turf/open/floor/carpet/royalblack,
+/area/space/dontyoufuckingdareteleporthere)
+"aL" = (
+/obj/machinery/light/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_pump{
 	dir = 1
 	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bE" = (
-/obj/effect/mob_spawn/human/syndicatespace,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bF" = (
-/obj/machinery/door/airlock/external{
-	name = "Syndicate ship airlock";
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"aM" = (
+/obj/machinery/light/directional/north,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/item/wrench,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"aN" = (
+/obj/machinery/computer/atmos_alert{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"aO" = (
+/mob/living/simple_animal/hostile/nanotrasen/elite{
+	desc = "The boss of the team pestering the SCSBC-12, taking an extremely casual spacewalk with a high-power laser rifle. Run. Now.";
+	name = "Nanotrasen Squadron Commander";
+	projectiletype = /obj/projectile/beam/laser/heavy
+	},
+/turf/open/space{
+	desc = "There is an omninous aura here. Something hates teleportation here with a passion."
+	},
+/area/space/dontyoufuckingdareteleporthere)
+"aP" = (
+/obj/structure/closet/crate/secure/gear{
 	req_one_access_txt = "150"
 	},
-/obj/structure/cable,
-/obj/structure/fans/tiny,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bG" = (
-/obj/structure/sink{
-	pixel_y = 32
-	},
-/obj/structure/mirror/directional/west,
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bH" = (
-/obj/structure/sink{
-	pixel_y = 32
-	},
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bI" = (
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bJ" = (
-/obj/machinery/suit_storage_unit/syndicate{
-	helmet_type = /obj/item/clothing/head/helmet/space/syndicate/black;
-	suit_type = /obj/item/clothing/suit/space/syndicate/black
+/obj/item/clothing/suit/space/hardsuit/cybersun,
+/turf/open/floor/pod/dark,
+/area/space/dontyoufuckingdareteleporthere)
+"aQ" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"aR" = (
+/obj/structure/table/reinforced,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"aS" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"aT" = (
+/obj/machinery/light/directional/north,
+/obj/item/ai_module/core/full/cybersun,
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"aU" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Syndicate Ship Airlock";
+	req_one_access_txt = "150"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bK" = (
-/obj/machinery/suit_storage_unit/syndicate{
-	helmet_type = /obj/item/clothing/head/helmet/space/syndicate/black;
-	suit_type = /obj/item/clothing/suit/space/syndicate/black
+/area/space/dontyoufuckingdareteleporthere)
+"aV" = (
+/obj/structure/cable,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"aW" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"aX" = (
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"aY" = (
+/turf/open/space/basic,
+/area/space/dontyoufuckingdareteleporthere)
+"aZ" = (
+/obj/machinery/power/rtg/advanced,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"ba" = (
+/turf/closed/indestructible/opshuttle{
+	name = "alright you assholes don't get this ruin removed again";
+	desc = "Some sort of wall keeping beings where they should stay."
+	},
+/area/space/dontyoufuckingdareteleporthere)
+"bb" = (
+/obj/structure/shuttle/engine/propulsion{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"bc" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"bd" = (
+/obj/machinery/porta_turret/syndicate/energy/raven{
+	dir = 10;
+	faction = list("Deathsquad")
+	},
+/turf/closed/wall/mineral/titanium,
+/area/space/dontyoufuckingdareteleporthere)
+"be" = (
+/turf/closed/indestructible/syndicate,
+/area/space/dontyoufuckingdareteleporthere)
+"bf" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"bg" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/item/food/rationpack,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"bh" = (
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"bi" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Armoury";
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"bj" = (
+/obj/machinery/atmospherics/components/unary/portables_connector/visible/layer2,
+/obj/machinery/portable_atmospherics/scrubber{
+	anchored = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"bk" = (
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/window/plasma/reinforced/spawner/east,
+/obj/structure/window/plasma/reinforced/spawner/west,
+/obj/machinery/atmospherics/components/unary/vent_scrubber{
+	name = "Air Tank Siphon"
+	},
+/turf/open/floor/engine/air,
+/area/space/dontyoufuckingdareteleporthere)
+"bl" = (
+/obj/item/stack/cable_coil/cut,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"bm" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"bn" = (
+/obj/machinery/power/smes/engineering{
+	output_level = 10000
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"bo" = (
+/obj/effect/mob_spawn/human/syndicatespace{
+	dir = 1;
+	desc = "A Syndicate long-term stasis sleeper."
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bL" = (
-/obj/structure/tank_dispenser/oxygen,
+/area/space/dontyoufuckingdareteleporthere)
+"bp" = (
+/obj/structure/window/reinforced/spawner/north,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"bq" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bM" = (
+/area/space/dontyoufuckingdareteleporthere)
+"br" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/cable,
+/turf/open/space{
+	desc = "There is an omninous aura here. Something hates teleportation here with a passion."
+	},
+/area/space/dontyoufuckingdareteleporthere)
+"bs" = (
+/obj/structure/sink{
+	pixel_y = 32
+	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2,
+/turf/open/floor/iron/dark,
+/area/space/dontyoufuckingdareteleporthere)
+"bt" = (
+/mob/living/simple_animal/hostile/nanotrasen/ranged{
+	name = "Nanotrasen Bridge Officer";
+	desc = "A displeased bridge officer serving under Nanotrasen. They intend on brutally murdering you. Their revolver is pretty intimidating.";
+	projectiletype = /obj/projectile/bullet/c45
+	},
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"bu" = (
+/obj/structure/table/reinforced,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"bv" = (
+/obj/machinery/computer/operating,
+/turf/open/floor/plastic,
+/area/space/dontyoufuckingdareteleporthere)
+"bw" = (
+/obj/structure/closet/crate/secure/gear{
+	req_one_access_txt = "150"
+	},
+/obj/effect/spawner/lootdrop/costume,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"bx" = (
+/turf/open/space{
+	desc = "There is an omninous aura here. Something hates teleportation here with a passion."
+	},
+/area/space/dontyoufuckingdareteleporthere)
+"by" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"bz" = (
 /obj/structure/cable,
 /obj/structure/fans/tiny,
 /obj/machinery/door/airlock/external{
 	name = "Syndicate ship airlock";
 	req_one_access_txt = "150"
 	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bN" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/cable,
-/turf/template_noop,
-/area/template_noop)
-"bO" = (
-/obj/structure/bodycontainer/crematorium{
-	id = "fscremate"
+/obj/machinery/door/poddoor{
+	id = "fslockdown";
+	name = "Ship blast door";
+	state_open = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
+/area/space/dontyoufuckingdareteleporthere)
+"bA" = (
+/obj/structure/closet/crate/secure/gear{
+	req_one_access_txt = "150"
+	},
+/obj/item/stack/ore/plasma{
+	amount = 19
+	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"bB" = (
+/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible/layer2,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"bC" = (
+/obj/structure/sign/poster/contraband/syndicate_pistol,
+/turf/closed/wall/r_wall/syndicate,
+/area/space/dontyoufuckingdareteleporthere)
+"bD" = (
+/mob/living/simple_animal/hostile/nanotrasen/elite{
+	desc = "Pray for your life, syndicate. Get back on your fucking ship you absolute fucking cowardly shithead."
+	},
+/turf/closed/mineral/random/high_chance,
+/area/space/dontyoufuckingdareteleporthere)
+"bE" = (
+/obj/structure/sign/poster/contraband/syndicate_recruitment,
+/turf/closed/wall/r_wall/syndicate,
+/area/space/dontyoufuckingdareteleporthere)
+"bF" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	id = "fslockdown";
+	name = "Window shutters";
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"bG" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"bH" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"bI" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"bJ" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
+	dir = 8
+	},
+/obj/item/storage/toolbox/electrical,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"bK" = (
+/obj/structure/closet/crate/secure/gear{
+	req_one_access_txt = "150"
+	},
+/obj/item/melee/transforming/energy/sword/saber/red,
+/obj/machinery/light/directional/north,
+/turf/open/floor/pod/dark,
+/area/space/dontyoufuckingdareteleporthere)
+"bL" = (
+/obj/machinery/recharge_station,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"bM" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"bN" = (
+/obj/structure/sign/warning/vacuum/external,
+/turf/closed/wall/r_wall/syndicate,
+/area/space/dontyoufuckingdareteleporthere)
+"bO" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark,
+/area/space/dontyoufuckingdareteleporthere)
 "bP" = (
+/obj/item/storage/backpack/duffelbag/syndie/surgery,
+/obj/structure/table/reinforced,
+/turf/open/floor/plastic,
+/area/space/dontyoufuckingdareteleporthere)
+"bQ" = (
+/turf/open/floor/pod/dark,
+/area/space/dontyoufuckingdareteleporthere)
+"bR" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"bS" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"bT" = (
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"bU" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/mob/living/simple_animal/hostile/nanotrasen/elite{
+	desc = "Pray for your life, syndicate. Get back on your fucking ship you absolute fucking cowardly shithead."
+	},
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"bV" = (
+/turf/closed/mineral,
+/area/space/dontyoufuckingdareteleporthere)
+"bW" = (
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
+	},
+/obj/machinery/suit_storage_unit/syndicate{
+	helmet_type = /obj/item/clothing/head/helmet/space/syndicate/black;
+	suit_type = /obj/item/clothing/suit/space/syndicate/black
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"bX" = (
+/obj/machinery/sleeper/syndie/fullupgrade{
+	dir = 1
+	},
+/turf/open/floor/plastic,
+/area/space/dontyoufuckingdareteleporthere)
+"bY" = (
+/obj/structure/table/reinforced,
+/obj/machinery/atmospherics/components/unary/vent_pump,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"bZ" = (
+/obj/machinery/atmospherics/components/unary/passive_vent/layer2{
+	dir = 1
+	},
+/turf/open/space{
+	desc = "There is an omninous aura here. Something hates teleportation here with a passion."
+	},
+/area/space/dontyoufuckingdareteleporthere)
+"ca" = (
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"cb" = (
+/obj/structure/chair/comfy/black,
+/turf/open/floor/carpet/royalblack,
+/area/space/dontyoufuckingdareteleporthere)
+"cc" = (
+/obj/structure/window/reinforced/spawner,
+/obj/item/stack/rods,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"cd" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/recharge_station,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"ce" = (
+/obj/structure/closet/crate/solarpanel_small,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"cf" = (
+/obj/structure/window/reinforced/spawner,
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"cg" = (
+/obj/machinery/mineral/ore_redemption{
+	name = "Syndicate ore redemption machine";
+	ore_multiplier = 4;
+	req_access = list(150)
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"ch" = (
+/obj/machinery/airalarm/directional/north,
+/obj/item/storage/toolbox/electrical,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"ci" = (
+/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"cj" = (
+/obj/structure/window/reinforced/spawner/north,
+/obj/item/shard,
+/obj/item/stack/rods,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"ck" = (
+/obj/machinery/power/rtg/advanced,
+/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible/layer2,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cl" = (
 /obj/machinery/airalarm/syndicate{
 	pixel_y = 24
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bQ" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 1
+/area/space/dontyoufuckingdareteleporthere)
+"cm" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"cn" = (
+/obj/machinery/ore_silo,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"co" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/obj/machinery/door/poddoor{
+	id = "fslockdown";
+	name = "Ship blast door";
+	state_open = 1
 	},
-/obj/structure/cable,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bR" = (
-/obj/structure/sign/poster/contraband/tools,
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bS" = (
-/obj/machinery/button/crematorium{
-	id = "fscremate";
-	pixel_x = -32
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cp" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/external{
+	name = "Syndicate ship airlock";
+	req_one_access_txt = "150"
+	},
+/obj/machinery/door/poddoor{
+	id = "fslockdown";
+	name = "Ship blast door";
+	state_open = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bT" = (
-/obj/structure/table/reinforced,
-/obj/machinery/computer/security/telescreen/interrogation{
-	name = "Cameras monitor";
-	network = list("fsci");
-	req_one_access_txt = "150";
-	screen_loc = ""
-	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bU" = (
-/obj/machinery/light/directional/south,
-/obj/structure/closet/crate/solarpanel_small,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bV" = (
-/obj/structure/table/reinforced,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bW" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bX" = (
+/area/space/dontyoufuckingdareteleporthere)
+"cq" = (
 /obj/structure/sign/poster/contraband/c20r,
 /turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"bY" = (
+/area/space/dontyoufuckingdareteleporthere)
+"cr" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cs" = (
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"ct" = (
+/obj/item/stack/cable_coil/cut,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"cu" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cv" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cw" = (
+/obj/structure/frame/computer{
+	dir = 8
+	},
+/obj/item/stack/cable_coil/cut,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"cx" = (
 /obj/structure/closet/syndicate{
 	anchored = 1;
-	armor = list("melee" = 70, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60);
+	armor = list("melee"=70,"bullet"=40,"laser"=40,"energy"=30,"bomb"=30,"bio"=0,"rad"=0,"fire"=70,"acid"=60);
 	desc = "A basic closet for all your villainous needs.";
 	locked = 1;
 	name = "Closet";
@@ -663,36 +822,136 @@
 /obj/item/crowbar/red,
 /obj/item/ammo_box/magazine/m9mm,
 /obj/item/ammo_box/magazine/m9mm,
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
+	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"bZ" = (
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ca" = (
-/obj/machinery/computer/crew/syndie{
-	dir = 8
+/area/space/dontyoufuckingdareteleporthere)
+"cy" = (
+/obj/machinery/power/smes,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cz" = (
+/obj/structure/closet/crate/secure/gear{
+	req_one_access_txt = "150"
+	},
+/obj/item/toy/sword,
+/obj/item/toy/balloon/syndicate,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"cA" = (
+/obj/structure/displaycase{
+	req_one_access_txt = "150";
+	start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/camo
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cb" = (
-/obj/machinery/computer/atmos_alert{
-	dir = 8
+/area/space/dontyoufuckingdareteleporthere)
+"cB" = (
+/obj/effect/mob_spawn/human/syndicatespace{
+	important_info = "Obey your Captain and do not head near any Nanotrasen outposts unless the ship is compromised.";
+	desc = "A Syndicate long-term stasis sleeper."
 	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cc" = (
-/obj/structure/chair/comfy,
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
+	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cd" = (
-/obj/machinery/light/directional/south,
-/mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
+/area/space/dontyoufuckingdareteleporthere)
+"cC" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"cD" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ce" = (
+/area/space/dontyoufuckingdareteleporthere)
+"cE" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"cF" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+	dir = 8
+	},
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
+	},
+/turf/open/floor/carpet/royalblack,
+/area/space/dontyoufuckingdareteleporthere)
+"cG" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	id = "fscaproom";
+	name = "Room shutters control";
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"cH" = (
+/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible/layer2,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cI" = (
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cJ" = (
+/mob/living/simple_animal/hostile/nanotrasen/elite{
+	desc = "Pray for your life, syndicate. Get back on your fucking ship you absolute fucking cowardly shithead."
+	},
+/turf/open/space{
+	desc = "There is an omninous aura here. Something hates teleportation here with a passion."
+	},
+/area/space/dontyoufuckingdareteleporthere)
+"cK" = (
+/obj/machinery/light/directional/north,
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"cL" = (
+/obj/machinery/door/airlock/external{
+	name = "Syndicate ship airlock";
+	req_one_access_txt = "150"
+	},
+/obj/structure/cable,
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cM" = (
+/mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"cN" = (
+/obj/machinery/light/directional/south,
+/obj/structure/closet/crate/solarpanel_small,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"cO" = (
 /obj/structure/closet/syndicate{
 	anchored = 1;
-	armor = list("melee" = 70, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60);
+	armor = list("melee"=70,"bullet"=40,"laser"=40,"energy"=30,"bomb"=30,"bio"=0,"rad"=0,"fire"=70,"acid"=60);
+	desc = "A basic closet for all your villainous needs.";
+	locked = 1;
+	name = "Closet";
+	req_one_access_txt = "150";
+	secure = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"cP" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible/layer2,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cQ" = (
+/obj/structure/closet/syndicate{
+	anchored = 1;
+	armor = list("melee"=70,"bullet"=40,"laser"=40,"energy"=30,"bomb"=30,"bio"=0,"rad"=0,"fire"=70,"acid"=60);
 	desc = "A basic closet for all your villainous needs.";
 	locked = 1;
 	name = "Closet";
@@ -700,151 +959,45 @@
 	secure = 1
 	},
 /obj/item/ammo_box/c9mm,
+/obj/item/ammo_box/c9mm,
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cf" = (
-/obj/structure/displaycase{
-	req_one_access_txt = "150";
-	start_showpiece_type = /obj/item/gun/ballistic/automatic/pistol/deagle/camo
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cg" = (
-/obj/structure/closet/syndicate{
-	anchored = 1;
-	armor = list("melee" = 70, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60);
-	desc = "A basic closet for all your villainous needs.";
-	locked = 1;
-	name = "Closet";
-	req_one_access_txt = "150";
-	secure = 1
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ch" = (
+/area/space/dontyoufuckingdareteleporthere)
+"cR" = (
 /obj/machinery/door/airlock/grunge{
-	name = "Captain's room";
+	name = "Central Hall";
 	req_one_access_txt = "150"
 	},
-/obj/machinery/door/poddoor{
-	id = "fscaproom";
-	name = "Captain's blast door";
-	state_open = 1
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ci" = (
-/obj/machinery/porta_turret/syndicate/energy{
-	armor = list("melee" = 40, "bullet" = 40, "laser" = 60, "energy" = 60, "bomb" = 60, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100);
-	dir = 4;
-	name = "Syndicate Ship Turret";
-	on = 0;
-	shot_delay = 10
-	},
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cj" = (
-/obj/machinery/stasis,
-/turf/open/floor/plastic,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ck" = (
-/obj/structure/sign/departments/cargo,
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"cl" = (
-/obj/machinery/light/directional/north,
-/obj/item/ai_module/core/full/cybersun,
-/obj/structure/table/reinforced,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cm" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Syndicate Ship Airlock";
-	req_one_access_txt = "150"
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cn" = (
-/obj/machinery/recharge_station,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"co" = (
-/obj/structure/filingcabinet,
-/obj/machinery/door/window{
-	dir = 8;
-	name = "Syndicate interior door";
-	req_one_access_txt = "150"
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cp" = (
-/obj/machinery/door/window{
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 70, "acid" = 100);
-	name = "Control room";
-	req_one_access_txt = "150"
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cq" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Bridge";
-	req_one_access_txt = "150"
-	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cr" = (
-/obj/machinery/vending/cigarette/syndicate,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cs" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
-	},
-/obj/item/toy/sword,
-/obj/item/toy/balloon/syndicate,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"ct" = (
-/obj/machinery/vending/medical/syndicate_access/cybersun,
-/turf/open/floor/plastic,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cu" = (
-/obj/machinery/computer/security{
-	desc = "Used to access interrogation room camera.";
-	dir = 8;
-	name = "Ship cameras console";
-	network = list("fsc","fsci");
-	screen_loc = ""
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cv" = (
-/obj/machinery/atmospherics/components/unary/vent_pump,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cw" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
-	},
-/obj/item/switchblade,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"cx" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
-	dir = 4
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cy" = (
-/obj/machinery/light/directional/north,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/obj/item/wrench,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"cS" = (
+/obj/machinery/light/directional/south,
 /mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cz" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible/layer2,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cT" = (
+/obj/structure/sign/poster/contraband/tools,
+/turf/closed/wall/r_wall/syndicate,
+/area/space/dontyoufuckingdareteleporthere)
+"cU" = (
+/obj/structure/cable,
+/obj/machinery/power/rtg/advanced,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cV" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"cW" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"cX" = (
 /obj/structure/closet/crate/secure/gear{
 	req_one_access_txt = "150"
 	},
@@ -855,142 +1008,197 @@
 	amount = 15
 	},
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/syndicate_forgotten_vault)
-"cA" = (
-/obj/structure/table/reinforced,
-/obj/machinery/atmospherics/components/unary/vent_pump,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cB" = (
-/obj/machinery/atmospherics/components/unary/vent_pump,
+/area/space/dontyoufuckingdareteleporthere)
+"cY" = (
+/obj/structure/cable,
+/obj/machinery/door/airlock/engineering/glass{
+	name = "SMES Storage"
+	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"cZ" = (
+/obj/item/shard,
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cC" = (
-/obj/machinery/atmospherics/components/unary/vent_pump{
+/area/space/dontyoufuckingdareteleporthere)
+"da" = (
+/obj/structure/chair/comfy/shuttle{
 	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cD" = (
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cE" = (
-/obj/structure/cable,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cF" = (
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cG" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Syndicate Ship Airlock";
-	req_one_access_txt = "150"
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"db" = (
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge"
 	},
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cH" = (
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cI" = (
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cJ" = (
-/obj/machinery/door/window{
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"dc" = (
+/obj/machinery/power/apc/syndicate{
 	dir = 1;
-	name = "Spare equipment";
-	req_one_access_txt = "150"
+	name = "Syndicate Forgotten Ship APC";
+	pixel_y = 24;
+	start_charge = 0
 	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cK" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Syndicate Ship Airlock";
-	req_one_access_txt = "150"
+/obj/structure/cable,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"dd" = (
+/obj/structure/window/plasma/reinforced/spawner/north,
+/obj/structure/window/plasma/reinforced/spawner/west,
+/obj/structure/window/plasma/reinforced/spawner/east,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 4;
+	name = "Connector to Tank"
 	},
+/turf/open/floor/engine/air,
+/area/space/dontyoufuckingdareteleporthere)
+"de" = (
 /obj/structure/cable,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cL" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
-	dir = 8
+/area/space/dontyoufuckingdareteleporthere)
+"df" = (
+/turf/closed/mineral/random/high_chance,
+/area/space/dontyoufuckingdareteleporthere)
+"dg" = (
+/obj/machinery/suit_storage_unit/syndicate{
+	helmet_type = /obj/item/clothing/head/helmet/space/syndicate/black;
+	suit_type = /obj/item/clothing/suit/space/syndicate/black
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cM" = (
-/obj/machinery/atmospherics/components/tank/air{
+/area/space/dontyoufuckingdareteleporthere)
+"dh" = (
+/obj/machinery/power/terminal{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/item/paper/fluff/ruins/forgottenship/powerissues{
+	info = "Welcome to the SCSBC-12. As you may already be aware, there is an RTG bank in the Engine Room used to maintain the ship's power. Should this RTG bank be brought offline, use the uranium fuel stored in the crate to recharge the SMES to bring the ship back online."
+	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"di" = (
+/obj/structure/cable,
+/obj/machinery/airalarm/directional/north,
+/obj/item/food/rationpack,
+/obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"dj" = (
+/turf/closed/wall/r_wall/syndicate,
+/area/space/dontyoufuckingdareteleporthere)
+"dk" = (
+/obj/machinery/light/directional/south,
+/mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
+/obj/machinery/atmospherics/components/unary/vent_pump{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark,
+/area/space/dontyoufuckingdareteleporthere)
+"dl" = (
+/obj/structure/closet/syndicate{
+	anchored = 1;
+	armor = list("melee"=70,"bullet"=40,"laser"=40,"energy"=30,"bomb"=30,"bio"=0,"rad"=0,"fire"=70,"acid"=60);
+	desc = "A basic closet for all your villainous needs.";
+	locked = 1;
+	name = "Closet";
+	req_one_access_txt = "150";
+	secure = 1
+	},
+/obj/item/coin/antagtoken,
+/obj/item/encryptionkey/syndicate,
+/obj/item/encryptionkey/syndicate,
+/obj/item/encryptionkey/syndicate,
+/obj/item/dnainjector/thermal,
+/obj/item/storage/box/firingpins/syndicate,
+/obj/item/storage/box/firingpins/syndicate,
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cN" = (
-/obj/structure/chair/comfy/shuttle{
+/area/space/dontyoufuckingdareteleporthere)
+"dm" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"dn" = (
+/obj/structure/table/optable,
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
+	},
+/turf/open/floor/plastic,
+/area/space/dontyoufuckingdareteleporthere)
+"do" = (
+/obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"dp" = (
+/obj/machinery/camera/xray{
+	c_tag = "Medbay";
+	dir = 9;
+	network = list("fsci");
+	screen_loc = ""
+	},
+/turf/open/floor/plastic,
+/area/space/dontyoufuckingdareteleporthere)
+"dq" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/carpet/royalblack,
+/area/space/dontyoufuckingdareteleporthere)
+"dr" = (
+/obj/structure/lattice,
+/turf/open/space{
+	desc = "There is an omninous aura here. Something hates teleportation here with a passion."
+	},
+/area/space/dontyoufuckingdareteleporthere)
+"ds" = (
+/obj/structure/cable,
+/obj/machinery/door/airlock/external{
+	name = "Syndicate ship airlock";
+	req_one_access_txt = "150"
+	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cO" = (
-/obj/structure/table/reinforced,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cP" = (
-/obj/structure/table/reinforced,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cQ" = (
-/obj/structure/chair/comfy/shuttle{
+/area/space/dontyoufuckingdareteleporthere)
+"dt" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 1
+	},
+/obj/item/food/rationpack,
+/obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"dD" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/mob/living/simple_animal/hostile/nanotrasen/elite,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cR" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cS" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/machinery/atmospherics/components/unary/vent_pump{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cT" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cU" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cV" = (
-/obj/machinery/light/directional/south,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cW" = (
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cX" = (
+/area/space/dontyoufuckingdareteleporthere)
+"ef" = (
+/obj/structure/closet/syndicate{
+	anchored = 1;
+	armor = list("melee"=70,"bullet"=40,"laser"=40,"energy"=30,"bomb"=30,"bio"=0,"rad"=0,"fire"=70,"acid"=60);
+	desc = "A basic closet for all your villainous needs.";
+	locked = 1;
+	name = "Closet";
+	req_one_access_txt = "150";
+	secure = 1
+	},
+/obj/item/crowbar/red,
+/obj/item/ammo_box/magazine/m9mm_aps,
+/obj/item/ammo_box/magazine/m9mm_aps,
+/turf/open/floor/carpet/royalblack,
+/area/space/dontyoufuckingdareteleporthere)
+"en" = (
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"ez" = (
 /obj/machinery/camera/xray{
 	c_tag = "Conference room";
 	dir = 8;
@@ -998,142 +1206,93 @@
 	screen_loc = ""
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cY" = (
-/obj/effect/mob_spawn/human/syndicatespace,
-/obj/machinery/light/directional/south,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"cZ" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Syndicate Ship Airlock";
-	req_one_access_txt = "150"
+/area/space/dontyoufuckingdareteleporthere)
+"eJ" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
 	},
-/turf/open/floor/iron/dark/side{
-	dir = 1
-	},
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"da" = (
-/obj/structure/table/reinforced,
-/obj/item/ammo_box/c9mm,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"db" = (
-/obj/structure/toilet{
-	dir = 1
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"dc" = (
-/obj/machinery/shower{
-	dir = 1
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"dd" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
-	},
-/obj/item/language_manual/codespeak_manual/unlimited,
-/turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/syndicate_forgotten_vault)
-"de" = (
-/turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/syndicate_forgotten_vault)
-"df" = (
-/obj/structure/closet/syndicate{
-	anchored = 1;
-	armor = list("melee" = 70, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60);
-	desc = "A basic closet for all your villainous needs.";
-	locked = 1;
-	name = "Closet";
-	req_one_access_txt = "150";
-	secure = 1
-	},
-/obj/item/clothing/under/syndicate/combat,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/under/syndicate/skirt,
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"dg" = (
-/obj/structure/closet/syndicate{
-	anchored = 1;
-	armor = list("melee" = 70, "bullet" = 40, "laser" = 40, "energy" = 30, "bomb" = 30, "bio" = 0, "rad" = 0, "fire" = 70, "acid" = 60);
-	desc = "A basic closet for all your villainous needs.";
-	locked = 1;
-	name = "Closet";
-	req_one_access_txt = "150";
-	secure = 1
-	},
-/obj/item/clothing/head/hos/beret/syndicate,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
-/obj/item/clothing/mask/gas/syndicate,
-/obj/item/clothing/under/syndicate,
-/obj/item/clothing/under/syndicate/skirt,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/shoes/combat,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"dh" = (
-/obj/machinery/camera/xray{
-	c_tag = "Cargo pod";
-	dir = 6;
-	network = list("fsci");
+/area/space/dontyoufuckingdareteleporthere)
+"eP" = (
+/obj/machinery/computer/security{
+	desc = "Used to access interrogation room camera.";
+	dir = 8;
+	name = "Ship cameras console";
+	network = list("fsc","fsci");
 	screen_loc = ""
 	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"fI" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/mob/living/simple_animal/hostile/nanotrasen/elite,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_cargopod)
-"di" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
-	},
-/obj/item/disk/surgery/forgottenship,
-/turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/syndicate_forgotten_vault)
-"dj" = (
-/turf/closed/mineral/random/high_chance,
-/area/template_noop)
-"dk" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
-	},
-/obj/effect/spawner/lootdrop/donkpockets,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"dl" = (
-/obj/machinery/door/password/voice/sfc{
-	password = null
-	},
-/obj/structure/fans/tiny,
+/area/space/dontyoufuckingdareteleporthere)
+"fY" = (
+/obj/machinery/portable_atmospherics/pump,
+/obj/machinery/atmospherics/components/unary/portables_connector,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"hr" = (
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"hv" = (
 /obj/machinery/door/airlock/grunge{
-	armor = list("melee" = 50, "bullet" = 50, "laser" = 50, "energy" = 50, "bomb" = 50, "bio" = 100, "rad" = 100, "fire" = 90, "acid" = 90);
-	desc = "Vault airlock preventing air from going out.";
-	name = "Syndicate Vault Airlock";
+	name = "E.V.A Storage";
 	req_one_access_txt = "150"
 	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"ij" = (
+/obj/structure/fluff/fokoff_sign,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/syndicate_forgotten_vault)
-"dm" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
+/area/space/dontyoufuckingdareteleporthere)
+"ir" = (
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
 	},
-/obj/item/stack/ore/diamond{
-	amount = 3
+/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible/layer2,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"iJ" = (
+/obj/structure/window/reinforced/spawner,
+/obj/machinery/computer{
+	desc = "An old gunnery computer, spitting out error messages.";
+	name = "Gunnery Control Computer";
+	dir = 4
 	},
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"dn" = (
-/obj/machinery/door/airlock/grunge{
-	name = "Syndicate Ship Airlock";
-	req_one_access_txt = "150"
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"do" = (
+/area/space/dontyoufuckingdareteleporthere)
+"iK" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"iW" = (
+/obj/machinery/light/directional/south,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"iY" = (
+/obj/machinery/door/airlock/maintenance/external/glass{
+	name = "Gunnery Access"
+	},
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"je" = (
 /obj/structure/closet/crate/secure/gear{
 	req_one_access_txt = "150"
 	},
@@ -1145,2200 +1304,5712 @@
 	},
 /obj/machinery/light/directional/south,
 /turf/open/floor/pod/dark,
-/area/ruin/space/has_grav/powered/syndicate_forgotten_vault)
-"dp" = (
-/obj/structure/closet/crate/secure/gear{
-	req_one_access_txt = "150"
-	},
-/obj/item/stack/ore/plasma{
-	amount = 19
+/area/space/dontyoufuckingdareteleporthere)
+"ji" = (
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"kg" = (
+/obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"kq" = (
+/obj/machinery/camera/xray{
+	c_tag = "Cargo pod";
+	dir = 6;
+	network = list("fsci");
+	screen_loc = ""
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"dq" = (
-/obj/structure/closet/crate/secure/gear{
+/area/space/dontyoufuckingdareteleporthere)
+"kw" = (
+/obj/structure/cable,
+/obj/item/storage/toolbox/mechanical,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"kY" = (
+/turf/closed/indestructible/fakedoor{
+	name = "godly containment seal cause ya'll are assholes";
+	desc = "A godly door only permitting holy beings to head through. Chaplains be damned."
+	},
+/area/space/dontyoufuckingdareteleporthere)
+"ma" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/item/food/rationpack,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"mD" = (
+/obj/machinery/door/airlock/external{
+	name = "Syndicate ship airlock";
 	req_one_access_txt = "150"
 	},
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"dr" = (
+/area/space/dontyoufuckingdareteleporthere)
+"mT" = (
+/obj/machinery/atmospherics/components/unary/vent_pump{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"mX" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/carpet/royalblack,
+/area/space/dontyoufuckingdareteleporthere)
+"nd" = (
 /obj/structure/table/reinforced,
-/obj/item/paper/fluff/ruins/forgottenship/missionobj,
+/obj/machinery/microwave,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"ds" = (
+/area/space/dontyoufuckingdareteleporthere)
+"nk" = (
+/obj/structure/table/reinforced,
+/obj/machinery/computer/security/telescreen/interrogation{
+	name = "Cameras monitor";
+	network = list("fsci");
+	req_one_access_txt = "150";
+	screen_loc = ""
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"pp" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Syndicate Ship Airlock";
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"ps" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/turf/closed/wall/mineral/titanium,
+/area/space/dontyoufuckingdareteleporthere)
+"so" = (
+/obj/effect/mob_spawn/human/syndicatespace{
+	important_info = "Obey your Captain and do not head near any Nanotrasen outposts unless the ship is compromised.";
+	desc = "A Syndicate long-term stasis sleeper."
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"sW" = (
+/obj/effect/mob_spawn/human/syndicatespace{
+	dir = 1;
+	important_info = "Obey your Captain and do not head near any Nanotrasen outposts unless the ship is compromised.";
+	desc = "A Syndicate long-term stasis sleeper."
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"sX" = (
+/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"ti" = (
+/turf/open/floor/plastic,
+/area/space/dontyoufuckingdareteleporthere)
+"tu" = (
+/obj/machinery/atmospherics/components/unary/vent_pump{
+	dir = 4
+	},
+/turf/open/floor/carpet/royalblack,
+/area/space/dontyoufuckingdareteleporthere)
+"ty" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Captain's room";
+	req_one_access_txt = "150"
+	},
+/obj/machinery/door/poddoor{
+	id = "fscaproom";
+	name = "Captain's blast door";
+	state_open = 1
+	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/carpet/royalblack,
+/area/space/dontyoufuckingdareteleporthere)
+"ug" = (
+/obj/item/food/rationpack,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"up" = (
+/obj/structure/closet/emcloset/anchored,
+/obj/item/clothing/suit/space/syndicate/black/engie{
+	name = "emergency space suit"
+	},
+/obj/item/clothing/suit/space/syndicate/black/engie{
+	name = "emergency space suit"
+	},
+/obj/item/clothing/suit/space/syndicate/black/engie{
+	name = "emergency space suit"
+	},
+/obj/item/clothing/suit/space/syndicate/black/engie{
+	name = "emergency space suit"
+	},
+/obj/item/clothing/suit/space/syndicate/black/engie{
+	name = "emergency space suit"
+	},
+/obj/item/clothing/head/helmet/space/syndicate/black/orange{
+	name = "emergency space helmet"
+	},
+/obj/item/clothing/head/helmet/space/syndicate/black/orange{
+	name = "emergency space helmet"
+	},
+/obj/item/clothing/head/helmet/space/syndicate/black/orange{
+	name = "emergency space helmet"
+	},
+/obj/item/clothing/head/helmet/space/syndicate/black/orange{
+	name = "emergency space helmet"
+	},
+/obj/item/clothing/head/helmet/space/syndicate/black/orange{
+	name = "emergency space helmet"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"vf" = (
+/obj/structure/cable,
+/obj/machinery/atmospherics/components/binary/pump/layer2,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"vn" = (
+/obj/structure/closet/syndicate{
+	anchored = 1;
+	armor = list("melee"=100,"bullet"=80,"laser"=70,"energy"=70,"bomb"=100,"bio"=0,"rad"=0,"fire"=100,"acid"=60);
+	desc = "An extremely reinforced closet used for stowing guns on Syndicate cruisers.";
+	locked = 1;
+	name = "tactical gun closet";
+	req_one_access_txt = "150";
+	secure = 1;
+	max_integrity = 1000
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"vq" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"vR" = (
+/obj/structure/cable,
+/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
+/obj/item/food/rationpack,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"vY" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"wn" = (
+/obj/structure/window/reinforced/spawner,
+/obj/item/shard,
+/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,
+/obj/item/food/rationpack,
+/obj/item/food/rationpack,
+/obj/item/food/rationpack,
+/obj/item/food/rationpack,
+/obj/item/reagent_containers/food/drinks/waterbottle/large/empty,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"ws" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"xL" = (
+/obj/machinery/vending/medical/syndicate_access/cybersun,
+/turf/open/floor/plastic,
+/area/space/dontyoufuckingdareteleporthere)
+"xM" = (
+/obj/machinery/light/directional/west,
+/obj/structure/cable,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"xV" = (
+/obj/structure/table/reinforced,
+/obj/effect/spawner/lootdrop/donkpockets,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"yi" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/structure/window/reinforced/spawner/east,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"yZ" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/mob/living/simple_animal/hostile/nanotrasen{
+	name = "Nanotrasen Security Engineer";
+	desc = "An engineer clutching a toolbox. They're staring right at you.";
+	loot = list(/obj/effect/mob_spawn/human/corpse/nanotrasensoldier,/obj/item/storage/toolbox/mechanical);
+	melee_damage_lower = 15;
+	melee_damage_upper = 20
+	},
+/obj/item/food/rationpack,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"zt" = (
+/obj/structure/closet/syndicate{
+	anchored = 1;
+	armor = list("melee"=70,"bullet"=40,"laser"=40,"energy"=30,"bomb"=30,"bio"=0,"rad"=0,"fire"=70,"acid"=60);
+	desc = "A basic closet for all your villainous needs.";
+	locked = 1;
+	name = "Closet";
+	req_one_access_txt = "150";
+	secure = 1
+	},
+/obj/effect/spawner/lootdrop/armory_contraband/metastation,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"zG" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"zQ" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"AA" = (
+/obj/structure/window/reinforced/spawner,
+/obj/item/shard,
+/obj/item/stack/rods,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"AS" = (
+/obj/machinery/button/crematorium{
+	id = "fscremate";
+	pixel_x = -32
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"AT" = (
+/obj/machinery/computer{
+	desc = "Looks like it got completely locked-up.";
+	name = "Shuttle Console";
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"Bt" = (
+/obj/machinery/airalarm/directional/north,
+/mob/living/simple_animal/hostile/nanotrasen/ranged{
+	name = "Nanotrasen Bridge Officer";
+	desc = "A displeased bridge officer serving under Nanotrasen. They intend on brutally murdering you. Their revolver is pretty intimidating.";
+	projectiletype = /obj/projectile/bullet/c45
+	},
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"CD" = (
 /obj/structure/closet/crate/secure/gear{
 	req_one_access_txt = "150"
 	},
-/obj/effect/spawner/lootdrop/costume,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/effect/spawner/lootdrop/maintenance,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"CT" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "Air Tank to Distro"
+	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"DG" = (
+/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/structure/window/reinforced/spawner/east,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"Ee" = (
+/obj/machinery/vending/cigarette/syndicate,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
-"dt" = (
-/obj/machinery/portable_atmospherics/canister/oxygen,
+/area/space/dontyoufuckingdareteleporthere)
+"Eg" = (
+/obj/structure/window/reinforced/spawner/east,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"El" = (
+/obj/machinery/telecomms/relay/preset/mining{
+	on = 0;
+	name = "tactical relay";
+	desc = "A mighty piece of hardware used to send massive amounts of data far away for military purposes. You could probably turn it on."
+	},
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"EX" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"Fw" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/syndicate_forgotten_ship)
+/area/space/dontyoufuckingdareteleporthere)
+"Fy" = (
+/obj/item/storage/toolbox/mechanical,
+/obj/item/food/rationpack,
+/obj/item/reagent_containers/food/drinks/waterbottle/large,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"FU" = (
+/obj/machinery/porta_turret/syndicate/energy/raven{
+	dir = 9;
+	faction = list("Deathsquad")
+	},
+/turf/closed/wall/mineral/titanium,
+/area/space/dontyoufuckingdareteleporthere)
+"FV" = (
+/obj/structure/filingcabinet,
+/obj/machinery/door/window{
+	dir = 8;
+	name = "Syndicate interior door";
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"Gh" = (
+/obj/item/stack/sheet/mineral/uranium{
+	amount = 15
+	},
+/obj/structure/cable,
+/obj/machinery/light/directional/north,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"Gw" = (
+/obj/machinery/autolathe/hacked{
+	name = "tactical Nanotrasen-brand autolathe";
+	desc = "It produces items with iron and glass. Some of the restrictions have been removed."
+	},
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"GU" = (
+/obj/structure/window/reinforced/spawner/west,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"GW" = (
+/obj/structure/window/reinforced/spawner/north,
+/obj/machinery/computer{
+	desc = "An old gunnery computer, spitting out error messages.";
+	name = "Gunnery Control Computer";
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"Ha" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+	dir = 1
+	},
+/turf/open/floor/engine/air,
+/area/space/dontyoufuckingdareteleporthere)
+"Hk" = (
+/turf/closed/wall/mineral/titanium,
+/area/space/dontyoufuckingdareteleporthere)
+"HW" = (
+/obj/structure/closet/syndicate{
+	anchored = 1;
+	armor = list("melee"=70,"bullet"=40,"laser"=40,"energy"=30,"bomb"=30,"bio"=0,"rad"=0,"fire"=70,"acid"=60);
+	desc = "A basic closet for all your villainous needs.";
+	locked = 1;
+	name = "Closet";
+	req_one_access_txt = "150";
+	secure = 1
+	},
+/obj/item/crowbar/red,
+/obj/item/ammo_box/magazine/m9mm,
+/obj/item/ammo_box/magazine/m9mm,
+/obj/machinery/light/directional/south,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"Ic" = (
+/obj/structure/bodycontainer/crematorium{
+	id = "fscremate"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"Ip" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/item/shard,
+/obj/item/stack/rods,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"IJ" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"IV" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/mob/living/simple_animal/hostile/nanotrasen/ranged/smg,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"Jh" = (
+/mob/living/simple_animal/hostile/nanotrasen/elite{
+	desc = "Pray for your life, syndicate. Get back on your fucking ship you absolute fucking cowardly shithead."
+	},
+/turf/open/floor/pod/dark,
+/area/space/dontyoufuckingdareteleporthere)
+"Kb" = (
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"Kj" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/closed/wall/mineral/titanium,
+/area/space/dontyoufuckingdareteleporthere)
+"KS" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Syndicate Ship Airlock";
+	req_one_access_txt = "150"
+	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark,
+/area/space/dontyoufuckingdareteleporthere)
+"LJ" = (
+/mob/living/simple_animal/hostile/nanotrasen{
+	name = "Nanotrasen Security Engineer";
+	desc = "An engineer working under Nanotrasen's private security corps. They are pissed off to meet you."
+	},
+/obj/item/food/rationpack,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"MN" = (
+/obj/structure/sign/departments/cargo,
+/turf/closed/wall/r_wall/syndicate,
+/area/space/dontyoufuckingdareteleporthere)
+"MQ" = (
+/obj/structure/window/reinforced/spawner/north,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"Nj" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Captain's room";
+	req_one_access_txt = "150"
+	},
+/obj/machinery/door/poddoor{
+	id = "fscaproom";
+	name = "Captain's blast door";
+	state_open = 1
+	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"NC" = (
+/obj/structure/mirror/directional/west,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
+	},
+/turf/open/floor/iron/dark,
+/area/space/dontyoufuckingdareteleporthere)
+"NK" = (
+/obj/machinery/shower{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"Oh" = (
+/obj/item/stack/cable_coil/cut,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible/layer2,
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"OZ" = (
+/obj/structure/closet/crate/secure/gear{
+	req_one_access_txt = "150"
+	},
+/obj/item/mining_scanner,
+/obj/item/pickaxe/drill,
+/obj/item/storage/bag/ore,
+/obj/item/storage/bag/ore,
+/obj/item/pickaxe/drill,
+/obj/item/mining_scanner,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"QT" = (
+/obj/machinery/door/password/voice/sfc{
+	password = null
+	},
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/grunge{
+	armor = list("melee"=50,"bullet"=50,"laser"=50,"energy"=50,"bomb"=50,"bio"=100,"rad"=100,"fire"=90,"acid"=90);
+	desc = "Vault airlock preventing air from going out.";
+	name = "Syndicate Vault Airlock";
+	req_one_access_txt = "150"
+	},
+/turf/open/floor/pod/dark,
+/area/space/dontyoufuckingdareteleporthere)
+"RC" = (
+/obj/machinery/door/airlock/grunge{
+	name = "Syndicate Ship Airlock";
+	req_one_access_txt = "150"
+	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/iron/dark/side{
+	dir = 1
+	},
+/area/space/dontyoufuckingdareteleporthere)
+"Sm" = (
+/turf/open/floor/plating,
+/area/space/dontyoufuckingdareteleporthere)
+"Sn" = (
+/obj/structure/toilet{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2{
+	dir = 1
+	},
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"SB" = (
+/obj/machinery/computer/crew/syndie{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"TL" = (
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/regular,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/toxin,
+/obj/structure/closet,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"Vr" = (
+/obj/item/storage/toolbox/mechanical,
+/obj/item/food/rationpack,
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"Wl" = (
+/obj/structure/closet/crate/secure/gear{
+	req_one_access_txt = "150"
+	},
+/obj/item/switchblade,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"Wx" = (
+/obj/structure/closet/crate/secure/gear{
+	req_one_access_txt = "150"
+	},
+/obj/item/toy/nuke,
+/obj/item/clothing/under/chameleon,
+/obj/item/pda/chameleon,
+/obj/item/clothing/mask/chameleon,
+/obj/item/card/id/chameleon,
+/turf/open/floor/mineral/plastitanium,
+/area/space/dontyoufuckingdareteleporthere)
+"Xe" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/space/dontyoufuckingdareteleporthere)
+"Xr" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/layer2,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"XJ" = (
+/obj/structure/window/reinforced/spawner,
+/turf/open/floor/plating/airless,
+/area/space/dontyoufuckingdareteleporthere)
+"Yg" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/space/dontyoufuckingdareteleporthere)
+"YI" = (
+/obj/structure/closet/syndicate{
+	anchored = 1;
+	armor = list("melee"=70,"bullet"=40,"laser"=40,"energy"=30,"bomb"=30,"bio"=0,"rad"=0,"fire"=70,"acid"=60);
+	desc = "A basic closet for all your villainous needs.";
+	locked = 1;
+	name = "Closet";
+	req_one_access_txt = "150";
+	secure = 1
+	},
+/obj/item/ammo_box/c9mm,
+/turf/open/floor/mineral/plastitanium/red,
+/area/space/dontyoufuckingdareteleporthere)
+"Zl" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/space/dontyoufuckingdareteleporthere)
+"Zt" = (
+/obj/machinery/atmospherics/components/unary/passive_vent/layer2,
+/turf/open/space{
+	desc = "There is an omninous aura here. Something hates teleportation here with a passion."
+	},
+/area/space/dontyoufuckingdareteleporthere)
 
 (1,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (2,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (3,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (4,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-dj
-dj
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (5,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-dj
-dj
-dj
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (6,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-dj
-dj
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (7,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ap
-ap
-as
-aa
-aa
-ap
-ap
-as
-aa
-aa
-ap
-ap
-as
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (8,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ap
-ap
-ap
-aa
-aa
-ap
-ap
-ap
-aa
-aa
-ap
-ap
-ap
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (9,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-af
-ap
-ap
-ap
-af
-af
-ap
-ap
-ap
-af
-af
-ap
-ap
-ap
-af
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-dj
-dj
-dj
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (10,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-dj
-dj
-dj
-aa
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (11,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-ci
-bZ
-dk
-dt
-al
-al
-dm
-dt
-al
-dp
-dq
-al
-al
-dt
-ds
-bZ
-ci
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+bD
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (12,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-al
-bZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (13,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-dn
-bZ
-bZ
-bZ
-dn
-bZ
-bZ
-bZ
-bZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 aY
 aY
 aY
 aY
 aY
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (14,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-bZ
-bV
-bZ
-ag
-bw
-bZ
-av
-aR
-az
-bZ
-bz
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
 bD
-al
-bY
-al
-bZ
-aa
-aa
-aa
-aa
-aa
-aa
-aY
-aY
-aY
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 ba
-bq
-ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 aY
 aY
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+aY
 "}
 (15,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-aA
-aw
-bZ
-ao
-aO
-bZ
-aN
-cC
-bc
-bZ
-bY
-bE
-al
-al
-cY
-bZ
-aa
-aa
-aa
-aa
-aa
 aY
 aY
-ba
-ba
-ba
-ba
-ba
-ba
 aY
 aY
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (16,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-cf
-aw
-ch
-ao
-ao
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+ba
+df
+df
+df
+df
 bx
-aH
-cD
-cU
-by
-al
-al
-al
-cc
-dr
-bZ
-aa
-aa
-aa
-aa
+bx
+dj
+bb
+bb
+bb
+bb
+bb
+bb
+bb
+bb
+bb
+bb
+bb
+bb
+bb
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 aY
 aY
-ba
-ba
-aZ
-aZ
-aZ
-aZ
-ba
-ba
 aY
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
 "}
 (17,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-ay
-aw
-bZ
-ao
-ao
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+ba
+df
+df
+df
+df
 bx
-aS
-cx
-aS
-by
-al
-al
-al
-cc
-da
-bZ
-aa
-aa
-aa
+bx
+Zl
+cV
+cV
+cV
+cV
+cV
+cV
+cV
+cV
+cV
+cV
+cV
+cV
+cV
+Zl
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 aY
 aY
-ba
-ba
-aZ
-aZ
-bA
-bA
-aZ
-aZ
-ba
 aY
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
 "}
 (18,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-cl
-aw
-bZ
-aB
-bn
-bZ
-cy
-cE
-cV
-bZ
-bY
-bE
-al
-al
-cY
-bZ
-aa
-aa
-aa
-aY
-ba
-ba
-ba
-aZ
-bd
-de
-de
-cz
-aZ
-ba
 aY
 aY
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+df
+df
+df
+df
+ba
+df
+df
+bx
+bx
+bx
+bx
+dj
+co
+co
+co
+co
+co
+co
+co
+co
+co
+co
+co
+co
+co
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
 "}
 (19,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-ac
-bZ
-co
-bZ
-aI
-bT
-bg
-aD
-cF
-cM
-bZ
-ah
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+ba
 bD
-al
-bY
-bZ
+df
+df
+bx
+bx
 ac
-aa
-aa
-aa
-aY
-ba
-bq
-ba
+dj
 aZ
-bB
-de
-de
-do
-aZ
-ba
-bq
-aY
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(20,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-cG
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-aa
-aa
-aa
-aa
-aY
-aY
-ba
-ba
 aZ
 dd
-de
-de
-di
+bk
+CT
+cv
+cU
+bA
+CD
+bH
+bw
 aZ
+aZ
+dj
+ac
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 ba
-ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 aY
 aY
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+"}
+(20,1,1) = {"
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+ba
+df
+df
+df
+bx
+bx
+dj
+aZ
+ji
+ji
+cr
+ji
+bl
+sX
+sX
+bB
+Oh
+cH
+cH
+vf
+cH
+ck
+as
+bZ
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
 "}
 (21,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-ad
-am
-am
-ct
-bZ
-al
-cH
-al
-bZ
-bG
-bI
-cZ
-db
-bZ
-aa
-aa
-aa
-aa
-aY
-ba
-ba
-ba
-aZ
-aZ
-dl
-aZ
-aZ
-aZ
-ba
-ba
-ba
 aY
 aY
-aa
-aa
-aa
-aa
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+bx
+bx
+dj
+dj
+dj
+dj
+dj
+dj
+Zl
+aE
+bl
+cP
+Zl
+Zl
+Zl
+Zl
+dj
+dj
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
 "}
 (22,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-aj
-am
-am
-cj
-bZ
-aJ
-cI
-aC
-bZ
-bH
-cd
-bZ
-bZ
-bZ
-aa
-aa
-aa
-aa
 aY
-ba
-ba
-bq
-bb
-bb
-bj
-bl
-bb
-bb
-ba
-ba
-ba
-ba
 aY
-aa
-aa
-aa
-aa
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+bx
+bx
+dj
+aX
+bM
+dj
+aK
+ef
+Zl
+cy
+dh
+ir
+Zl
+HW
+Zl
+ca
+Zl
+cx
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+aF
+df
+aF
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
 "}
 (23,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-ak
-ar
-am
-am
-cm
-cv
-cW
-al
-aQ
-bI
-bI
-cZ
-dc
-bZ
-aa
-aa
-aa
-aa
 aY
 aY
+aY
+aY
+df
+df
+df
+df
+df
 ba
-ba
-bX
-aX
-bj
-bj
+df
+df
+df
+bx
+bx
+dj
+cK
+mT
+dj
+tu
+dq
+Zl
+Gh
+mT
+cS
+Zl
+cB
+aU
+ca
+aU
 bo
-bb
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+aF
+aF
+aF
+aF
+aF
+aF
+df
+df
+df
+df
+df
+df
+df
+df
 ba
-ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 aY
 aY
 aY
-aa
-aa
-aa
-aa
+aY
+aY
 "}
 (24,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-ci
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-cK
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-ci
-aa
-aa
-aa
-aa
 aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
 ba
+df
+df
+df
+bx
+bx
+dj
+cA
+ws
+Nj
+mX
+mX
+Zl
+DG
+ao
+yi
+Zl
+Zl
+Zl
+ca
+Zl
+Zl
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+aF
+aF
+be
+be
+be
+be
+aF
+df
+df
+df
+df
+df
+df
+df
+df
 ba
-bb
-dh
-bj
-bm
-bj
-bb
-ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 aY
 aY
 aY
 aY
-aa
-aa
-aa
-aa
+aY
 "}
 (25,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-bO
-bS
-bZ
-bv
-aP
-aK
-aP
-cH
-aP
-aK
-aP
-al
-bZ
-al
-bJ
-bZ
-aa
-aa
-aa
-aa
 aY
 aY
+aY
+aY
+df
+df
+df
+df
+df
 ba
-bb
-bf
-bh
-bj
-bj
-bb
-bs
-ba
-ba
-ba
-aY
-aa
-aa
-aa
-aa
-"}
-(26,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-ai
-al
-bZ
-bP
-al
-ax
-ax
-cN
-ax
-ax
-aP
-al
-bZ
-al
-bK
-bZ
-aa
-aa
-aa
-aa
-aa
-aY
-aY
-bR
-bp
-bh
-bj
-bC
-bb
-bq
-ba
-ba
-aY
-aY
-aa
-aa
-aa
-aa
-"}
-(27,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-ae
-al
-al
+df
+df
+df
+bx
+bx
+dj
+dl
+bI
+dj
+cF
+mX
+ty
+ws
+iK
+ws
+ay
+ca
+ca
+ca
 aU
-al
-at
-ah
-aM
-cO
-ah
-ah
-bQ
-aP
+sW
+dj
+bx
+bx
+bx
+bx
+bx
+aF
+aF
+be
 be
 aP
 aP
+be
+be
+aF
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+"}
+(26,1,1) = {"
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+bx
+bx
+dj
+aT
 bM
-bN
-bN
-bN
-bN
-bN
-ab
-ab
-bF
-bh
-bh
+dj
+cb
+aD
+dj
+aM
+ap
+iW
+Zl
+Zl
+Zl
+aU
+Zl
+cx
+dj
+bx
+bx
+bx
+bx
+aF
+aF
+aF
+be
+ax
+bQ
+bQ
+cX
+be
+aF
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+"}
+(27,1,1) = {"
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+bx
+bx
+ae
+Zl
+FV
+dj
+cG
+nk
+bC
 bj
-bu
-bb
+ci
+zQ
+Zl
+cx
+so
+aQ
+Zl
+dj
+ae
+bx
+bx
+bx
+bx
+aF
+df
+aF
+be
+bK
+bQ
+bQ
+je
+be
+aF
+df
+df
+df
+df
+df
+df
+df
 ba
-ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 aY
 aY
-aa
-aa
-aa
-aa
-aa
+aY
+aY
 "}
 (28,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-ai
-al
-an
-al
-at
-ah
-cA
-cP
-ah
-ah
-aL
-al
-an
-al
-bK
-bZ
-aa
-aa
-aa
-aa
-aa
 aY
 aY
-ck
-bi
-bj
-bj
-bU
-bb
+aY
+aY
+df
+df
+df
+df
+df
 ba
+df
+df
+df
+bx
+bx
+bx
+dj
+dj
+dj
+dj
+dj
+dj
+fY
+ci
+bM
+dj
+dj
+dj
+dj
+dj
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+aF
+aF
+be
+ah
+bQ
+bQ
+al
+be
+aF
+aF
+df
+df
+df
+df
+df
+df
 ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 aY
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
 "}
 (29,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-cn
-al
-bZ
-al
-al
-al
-ah
-cQ
-ah
-al
-al
-al
-bZ
-al
-bL
-bZ
-aa
-aa
-aa
-aa
 aY
 aY
-ba
-bb
-bb
-cs
-cw
-bb
-bb
-ba
-ba
 aY
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+bx
+bx
+bx
+dj
+bv
+ti
+ti
+xL
+dj
+aX
+ci
+bM
+dj
+NC
+cD
+RC
+Sn
+dj
+bx
+bx
+bx
+bx
+bx
+aF
+aF
+aF
+be
+be
+QT
+be
+be
+be
+aF
+aF
+aF
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
 "}
 (30,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-ac
-bZ
-ah
-bZ
-cr
-al
-aF
-al
-cR
-cX
-aF
-al
-al
-bZ
-ah
-bZ
-ac
-aa
-aa
-aa
-aa
 aY
-ba
-ba
-ba
-bb
-bb
-bb
-bb
-ba
-ba
-bq
 aY
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+bx
+bx
+bx
+bx
+dj
+dn
+ti
+au
+bX
+dj
+Xr
+ci
+aL
+dj
+bs
+dk
+dj
+dj
+dj
+bx
+bx
+bx
+bx
+bx
+aF
+aF
+df
+dj
+dj
+ca
+cn
+dj
+dj
+aF
+aF
+aF
+aF
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
 "}
 (31,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+bx
+bx
+bx
+bx
+dj
+bP
+dp
+ti
+ti
+pp
+bM
+ci
+ws
+KS
+bO
+cD
+RC
+NK
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+aF
+aF
 cq
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-bZ
-aa
-aa
-aa
-aa
-aa
+cW
+ca
+ca
+aQ
+dj
+aF
+aF
+bx
+bx
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 aY
 aY
-ba
-ba
-ba
-ba
-bq
-ba
-ba
-ba
 aY
 aY
-aa
-aa
-aa
-aa
-aa
-aa
 "}
 (32,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aq
-aE
-ce
-bW
-aw
-cS
-aw
-bW
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+bx
+bx
+bx
+ac
+dj
+dj
+dj
+dj
+dj
+dj
+dj
+cR
+dj
+dj
+dj
+dj
+dj
+dj
+dj
+ac
+bx
+bx
+bx
+bx
+bx
+aF
+aF
+dj
+kq
+ca
 cg
 ce
-bZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+dj
+aF
+bx
+bx
+bx
+bx
+bx
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
 aY
 aY
-bq
-ba
-ba
-ba
-ba
-ba
 aY
 aY
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 "}
 (33,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-bZ
-bZ
-bZ
-aw
-aw
-aw
-aw
-cS
-aw
-aw
-aw
-aw
-bZ
-bZ
-bZ
-bZ
-aa
-aa
-aa
-aa
-aa
-aa
 aY
 aY
 aY
 aY
+df
+df
+df
+df
+df
+ba
+df
+df
+bx
+bx
+bx
+co
+Ic
+AS
+dj
+dc
+aV
+xM
+aV
+de
+aV
+xM
+aV
+ca
+dj
+ca
+up
+co
+bx
+bx
+bx
+bx
+bx
+bx
+aF
+dj
+an
+aV
+ca
+ce
+dj
+bV
+aF
+aF
+aF
+bx
+bx
+bx
+df
+ba
+ij
+bQ
+bQ
+df
+df
+df
+df
+df
+df
+df
+df
+df
 aY
 aY
 aY
 aY
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 "}
 (34,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-aG
-aw
-bZ
-aw
-aw
-aw
-cB
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+bx
+dj
+vq
+ca
+dj
+cl
+ca
+vY
+vY
+da
+vY
+vY
+aV
+ca
+dj
+ca
+aQ
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+bx
 cT
-aw
-aw
-aw
-aw
-bZ
+OZ
+aV
+ca
+aJ
+dj
+df
+aF
+aF
+bx
+bx
+bx
+bx
+bx
+ba
+ij
+Jh
+bQ
 df
 df
-bZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
 "}
 (35,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-br
-aw
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+bx
 cp
-aw
+ca
+ca
+mD
+ca
+cm
+xV
+aR
+bu
+xV
+xV
+cC
 aV
-aw
+ds
 aV
+aV
+bz
+br
+br
+br
+br
+br
+br
+br
 cL
 aV
-aw
 aV
-aw
-cJ
-aw
-bt
-bZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ca
+Wx
+dj
+aF
+aF
+bx
+bx
+bx
+bx
+bx
+bx
+kY
+bQ
+bQ
+bQ
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
 "}
 (36,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-ac
-bZ
-aw
-bZ
-aw
-cu
-aw
-aT
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+dj
+cd
+ca
+bN
+ca
+cm
+bm
+bY
+ai
+bm
+bm
+bq
+ca
+bN
+ca
+aQ
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+MN
 aw
 ca
-aw
-cb
-aw
-bZ
-dg
-bZ
-ac
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+ca
+cN
+dj
+aF
+aF
+bx
+bx
+bx
+bx
+bx
+bx
+ba
+ij
+Jh
+bQ
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
 "}
 (37,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-bZ
-bZ
-aw
-aw
-aw
-aw
-aw
-aw
-aw
-aw
-aw
-bZ
-bZ
-bZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+co
+bL
+ca
+dj
+ca
+ca
+ca
+nd
+fI
+bm
+ca
+ca
+ca
+dj
+cl
+bR
+co
+bx
+bx
+bx
+bx
+bx
+bx
+aF
+dj
+dj
+cz
+Wl
+dj
+dj
+aF
+aF
+bx
+bx
+bx
+bx
+cJ
+df
+ba
+ij
+bQ
+bQ
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
 "}
 (38,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-bZ
-bZ
-bV
-bV
-aW
-bV
-bk
-bV
-bV
-bV
-bV
-bZ
-bZ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+ae
 dj
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+bm
+dj
+Ee
+ca
+af
+ca
+Fw
+ez
+af
+ca
+ca
+dj
+bm
+dj
+ae
+bx
+bx
+bx
+bx
+bx
+aF
+aF
+aF
+dj
+dj
+dj
+dj
+aF
+aF
+df
+bx
+bx
+bx
+bx
+bx
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
 "}
 (39,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-ac
-au
-au
-au
-au
-au
-au
-au
-au
-au
-ac
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+bx
+bx
 dj
 dj
 dj
 dj
-aa
-aa
-aa
-aa
-aa
-aa
+dj
+dj
+dj
+ak
+dj
+dj
+dj
+dj
+dj
+dj
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+aF
+aF
+aF
+aF
+df
+aF
+aF
+aF
+bx
+bx
+bx
+bx
+bx
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
 "}
 (40,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bE
+zt
+cQ
+ab
+bM
+EX
+bM
+ab
+cO
+YI
 dj
-dj
-dj
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+aF
+aF
+aF
+aF
+aF
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
 "}
 (41,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+bx
 dj
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+co
+dj
+dj
+aX
+bM
+bM
+bM
+EX
+bM
+ct
+bM
+bM
+dj
+dj
+co
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
 "}
 (42,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+bx
 dj
+aA
+bM
 dj
+bM
+bM
+bM
+ct
+dD
+cZ
+bM
+bM
+bM
 dj
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+dg
+dg
+dj
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
 "}
 (43,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+bx
 dj
+ag
+bM
+bi
+bM
+eJ
+eJ
+bM
+bI
+bM
+eJ
+eJ
+bM
+hv
+bM
+bS
 dj
-dj
-dj
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
 "}
 (44,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+bx
+bx
+ae
 dj
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+vn
+dj
+bM
+eP
+aq
+bM
+eJ
+bM
+SB
+aN
+bM
+dj
+bW
+dj
+ae
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (45,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+bx
+bx
+bx
+bx
+dj
+dj
+dj
+bM
+bM
+bM
+cZ
+cw
+bM
+bM
+bM
+cM
+dj
+dj
+dj
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
 "}
 (46,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+bx
+bx
+bx
+bx
+dj
+dj
+dm
+dm
+ad
+dm
+dm
+dm
+bF
+dm
+dm
+dj
+dj
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(47,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+ae
+co
+co
+co
+FU
+bd
+co
+co
+co
+co
+ae
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(48,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+Xe
+Xe
+bx
+bx
+bx
+hr
+hr
+hr
+hr
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(49,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+GW
+iJ
+bx
+bx
+hr
+hr
+AT
+AT
+hr
+hr
+df
+df
+bx
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(50,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+ar
+cs
+bx
+bx
+hr
+AT
+by
+Yg
+AT
+hr
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(51,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+MQ
+cs
+bx
+bx
+Hk
+Bt
+bU
+aS
+bt
+Hk
+df
+df
+aC
+XJ
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(52,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+MQ
+cs
+bx
+bx
+Hk
+at
+Kb
+aS
+at
+Hk
+df
+df
+cj
+wn
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(53,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+MQ
+cs
+bx
+Hk
+Hk
+db
+ps
+Kj
+db
+Hk
+Hk
+df
+en
+cc
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(54,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+MQ
+Sm
+az
+az
+iY
+bT
+Kb
+aS
+bT
+iY
+GU
+GU
+aH
+AA
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(55,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bp
+Eg
+Eg
+Eg
+iY
+Yg
+Kb
+bf
+Yg
+iY
+aB
+Ip
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+cf
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(56,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+dr
+Zt
+Kj
+Kj
+TL
+IV
+ma
+cE
+Hk
+Hk
+bx
+dr
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(57,1,1) = {"
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+bx
+bx
+bx
+Hk
+Hk
+dr
+bx
+Hk
+av
+bJ
+ug
+IJ
+bg
+El
+Hk
+bx
+dr
+Hk
+Hk
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+cJ
+bx
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(58,1,1) = {"
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+bx
+bx
+Hk
+Hk
+Hk
+Hk
+Hk
+Hk
+av
+LJ
+Fy
+IJ
+Vr
+Gw
+Hk
+Hk
+Hk
+Hk
+Hk
+Hk
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(59,1,1) = {"
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+bx
+Hk
+ch
+zG
+ji
+cY
+ji
+bh
+vR
+bc
+aj
+bc
+bc
+Kb
+cI
+cu
+Ha
+aG
+Hk
+df
+df
+bx
+bx
+aO
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(60,1,1) = {"
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+bD
+df
+df
+df
+df
+df
+df
+df
+Hk
+kg
+bn
+Hk
+Hk
+Hk
+di
+bG
+yZ
+aI
+dt
+kw
+Hk
+Hk
+Hk
+aG
+aG
+Hk
+df
+df
+df
+bx
+bx
+bx
+bx
+bx
+bx
+bx
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(61,1,1) = {"
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+Hk
+am
+am
+Hk
+bx
+Hk
+aZ
+aZ
+aZ
+aZ
+aZ
+aZ
+Hk
+bx
+Hk
+am
+am
+Hk
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(62,1,1) = {"
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+Hk
+do
+do
+Hk
+bx
+Hk
+Hk
+aW
+aW
+aW
+aW
+Hk
+Hk
+bx
+Hk
+do
+do
+Hk
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(63,1,1) = {"
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+Hk
+do
+do
+do
+do
+Hk
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+ba
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(64,1,1) = {"
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+ba
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(65,1,1) = {"
+aY
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(66,1,1) = {"
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(67,1,1) = {"
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(68,1,1) = {"
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+df
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(69,1,1) = {"
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+"}
+(70,1,1) = {"
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
+aY
 "}
