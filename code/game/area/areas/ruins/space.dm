@@ -415,6 +415,13 @@
 	icon_state = "red"
 	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA | NOTELEPORT
 
+//FORGOTTEN SHIP CRASHED VESSEL BECAUSE I HATE THIS FUCKING CODE
+
 /area/ruin/space/has_grav/nanotrasen_patrol_ship
 	name = "Nanotrasen Patrol Ship"
 	icon_state = "yellow"
+
+/area/space/dontyoufuckingdareteleporthere
+	area_flags = NOTELEPORT
+
+//fuck you. fuck you all. i can't trust any of you rat bastards
