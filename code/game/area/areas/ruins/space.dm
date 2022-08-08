@@ -414,3 +414,7 @@
 	name = "Hell Factory Office"
 	icon_state = "red"
 	area_flags = VALID_TERRITORY | BLOBS_ALLOWED | UNIQUE_AREA | NOTELEPORT
+
+/area/ruin/space/has_grav/nanotrasen_patrol_ship
+	name = "Nanotrasen Patrol Ship"
+	icon_state = "yellow"
