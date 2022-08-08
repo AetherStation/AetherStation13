@@ -277,6 +277,8 @@ SUBSYSTEM_DEF(persistence)
 
 /datum/controller/subsystem/persistence/proc/CollectMaps()
 	var/numberofmaps = CONFIG_GET(number/map_rotation_pool)
+	if(numberofmaps < 1)	// Config is disabled or someone fucked up.
+		return
 	if(length(saved_maps) > numberofmaps) //Get rid of extras from old configs.
 		saved_maps.Cut(numberofmaps+1)
 	var/mapstosave = min(length(saved_maps)+1, numberofmaps)

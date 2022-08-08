@@ -27,5 +27,7 @@
   - imageadd: Resprites ID cards & chips
   - imagedel: Removes on-mob ID sprites
 2022-08-07:
+  Skog:
+  - config: Added configs for forced map rotation.
   Skoglol:
   - bugfix: Tablet batteries and ID's now properly delete.
