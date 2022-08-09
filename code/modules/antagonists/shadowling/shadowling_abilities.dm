@@ -117,12 +117,14 @@
 					return
 			if(is_type_in_list(I, blacklisted_lights))
 				I.visible_message("<span class='danger'>[I] dims slightly before scattering the shadows around it.</span>")
-				return F.brightness_on //Necessary because flashlights become 0-luminosity when held.  I don't make the rules of lightcode.
+				return F.on //Necessary because flashlights become 0-luminosity when held.  I don't make the rules of lightcode.
 			F.on = FALSE
 			F.update_brightness()
 	else if(istype(I, /obj/item/pda))
 		var/obj/item/pda/P = I
-		P.fon = FALSE
+		P.set_light_on(FALSE)
+		P.update_appearance()
+		P.update_action_buttons(force = TRUE)
 	I.set_light(0)
 	return I.luminosity
 
@@ -139,41 +141,46 @@
 		return
 	to_chat(user, "<span class='shadowling'>You silently disable all nearby lights.</span>")
 	var/turf/T = get_turf(user)
-	for(var/datum/light_source/LS in T.affecting_lights)
-		var/atom/LO = LS.source_atom
-		if(isitem(LO))
-			extinguishItem(LO)
-			continue
-		if(istype(LO, /obj/machinery/light))
-			var/obj/machinery/light/L = LO
-			L.on = FALSE
-			L.visible_message("<span class='warning'>[L] flickers and falls dark.</span>")
-			L.update(0)
-			L.set_light(0)
-			continue
-		if(istype(LO, /obj/machinery/computer) || istype(LO, /obj/machinery/power/apc))
-			LO.set_light(0)
-			LO.visible_message("<span class='warning'>[LO] grows dim, its screen barely readable.</span>")
-			continue
-		if(ismob(LO))
-			extinguishMob(LO)
-		if(istype(LO, /mob/living/silicon/robot))
-			var/mob/living/silicon/robot/borg = LO
-			if(!borg.lamp_cooldown)
-				borg.update_headlamp(TRUE, INFINITY)
-				to_chat(borg, "<span class='userdanger'>The lightbulb in your headlamp is fried! You'll need a human to help replace it.</span>")
-		if(istype(LO, /obj/machinery/camera))
-			LO.set_light(0)
-			if(prob(10))
-				LO.emp_act(2)
-			continue
-		if(istype(LO, /obj/mecha))
-			var/obj/mecha/M = LO
-			M.set_light(0)
-			M.lights = FALSE
-		if(istype(LO, /obj/machinery/power/floodlight))
-			var/obj/machinery/power/floodlight/FL = LO
-			FL.change_setting(2) // Set floodlight to lowest setting
+	var/list/light_corners = list(T.lighting_corner_NE, T.lighting_corner_SE, T.lighting_corner_SW, T.lighting_corner_NW) //Idk how to do this another way
+	for(var/datum/lighting_corner/LC in light_corners)
+		for(var/datum/light_source/LS in LC.affecting)
+			var/atom/LO = LS.source_atom
+			if(isitem(LO))
+				extinguishItem(LO)
+				continue
+			if(istype(LO, /obj/machinery/light))
+				var/obj/machinery/light/L = LO
+				L.on = FALSE
+				L.visible_message("<span class='warning'>[L] flickers and falls dark.</span>")
+				L.update(0)
+				L.set_light(0)
+				continue
+			if(istype(LO, /obj/machinery/computer) || istype(LO, /obj/machinery/power/apc))
+				LO.set_light(0)
+				LO.visible_message("<span class='warning'>[LO] grows dim, its screen barely readable.</span>")
+				continue
+			if(ismob(LO))
+				extinguishMob(LO)
+			if(istype(LO, /mob/living/silicon/robot))
+				var/mob/living/silicon/robot/borg = LO
+				if(borg.lamp_enabled)
+					borg.smash_headlamp()
+					to_chat(borg, "<span class='userdanger'>The lightbulb in your headlamp is fried! You'll need a human to help replace it.</span>")
+			if(istype(LO, /obj/machinery/camera))
+				LO.set_light(0)
+				if(prob(10))
+					LO.emp_act(2)
+				continue
+			if(istype(LO, /obj/vehicle/sealed/mecha))
+				var/obj/vehicle/sealed/mecha/M = LO
+				M.mecha_flags &= ~HAS_LIGHTS
+				M.visible_message(span_danger("[M]'s lights burn out!"))
+				M.set_light_on(FALSE)
+				for(var/occupant in M.occupants)
+					remove_action_type_from_mob(/datum/action/vehicle/sealed/mecha/mech_toggle_lights, occupant)
+			if(istype(LO, /obj/machinery/power/floodlight))
+				var/obj/machinery/power/floodlight/FL = LO
+				FL.change_setting(2) // Set floodlight to lowest setting
 			
 	for(var/obj/structure/glowshroom/G in orange(7, user)) //High radius because glowshroom spam wrecks shadowlings
 		if(!istype(G, /obj/structure/glowshroom/shadowshroom))
@@ -526,8 +533,9 @@
 				var/mob/living/carbon/M = target
 				to_chat(M, "<span class='danger'><b>A spike of pain drives into your head and scrambles your thoughts!</b></span>")
 				M.add_confusion(15)
-				if(M.getorganslot(ORGAN_SLOT_EARS))
-					M.adjustEarDamage(0, 30)//as bad as a changeling shriek
+				var/obj/item/organ/ears/ears = C.getorganslot(ORGAN_SLOT_EARS)
+				if(ears)
+					ears.adjustEarDamage(0, 30)//as bad as a changeling shriek
 			else if(issilicon(target))
 				var/mob/living/silicon/S = target
 				to_chat(S, "<span class='warning'><b>ERROR $!(@ ERROR )#^! SENSORY OVERLOAD \[$(!@#</b></span>")

@@ -99,13 +99,11 @@
 	var/last_charge = 0
 
 /datum/species/shadow/ling/on_species_gain(mob/living/carbon/human/C)
-	C.draw_yogs_parts(TRUE)
 	eyes_overlay = mutable_appearance('icons/mob/sling.dmi', "eyes", 25)
 	C.add_overlay(eyes_overlay)
 	. = ..()
 
 /datum/species/shadow/ling/on_species_loss(mob/living/carbon/human/C)
-	C.draw_yogs_parts(FALSE)
 	if(eyes_overlay)
 		C.cut_overlay(eyes_overlay)
 		QDEL_NULL(eyes_overlay)
@@ -124,7 +122,7 @@
 		else if (light_amount < LIGHT_HEAL_THRESHOLD  && !istype(H.loc, /obj/effect/dummy/phased_mob/shadowling)) //Can't heal while jaunting
 			H.heal_overall_damage(5,5)
 			H.adjustToxLoss(-5)
-			H.adjustBrainLoss(-25) //Shad O. Ling gibbers, "CAN U BE MY THRALL?!!"
+			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, -25) //Shad O. Ling gibbers, "CAN U BE MY THRALL?!!"
 			H.adjustCloneLoss(-1)
 			H.SetKnockdown(0)
 			H.SetStun(0)
@@ -163,7 +161,7 @@
 		else if (light_amount < LIGHT_HEAL_THRESHOLD)
 			H.heal_overall_damage(2,2)
 			H.adjustToxLoss(-5)
-			H.adjustBrainLoss(-25)
+			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, -25)
 			H.adjustCloneLoss(-1)
 
 /datum/game_mode/proc/update_shadow_icons_added(datum/mind/shadow_mind)
@@ -195,3 +193,10 @@
 	if(!istype(mind))
 		return FALSE
 	return mind.remove_antag_datum(ANTAG_DATUM_SLING) 
+
+/datum/game_mode
+	var/list/datum/mind/shadows = list()
+	var/list/datum/mind/thralls = list()
+	var/required_thralls = 15 //How many thralls are needed (this is changed in pre_setup, so it scales based on pop)
+	var/shadowling_ascended = FALSE //If at least one shadowling has ascended
+	var/thrall_ratio = 1
