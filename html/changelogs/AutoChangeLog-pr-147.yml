@@ -1,0 +1,4 @@
+author: Sparkezel
+delete-after: true
+changes:
+  - bugfix: removed abundant airlocks from maintbay
