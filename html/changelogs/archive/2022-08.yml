@@ -37,9 +37,15 @@
 2022-08-09:
   ? ''
   : - bugfix: fixes missing pipe in atmos oxygen mix line
+    - balance: you can make chem silver in chem assembler and synthesizer
   AcapitalA:
   - balance: Buckshot now does 60 damage if all pellets land.
   - balance: Shotgun slugs now do 35 damage, but have an armor piercing value of 30.
+  CursedBirb:
+  - bugfix: Library book printer now has emag message
+  Sonnicon:
+  - bugfix: Fixed condenser cooling message.
+  - refactor: Refactored /obj/item/reagent_containers/glass/attackby()
   Sparkezel:
   - bugfix: removed abundant airlocks from maintbay
   TheChosenEvilOne:
