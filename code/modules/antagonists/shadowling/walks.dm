@@ -8,7 +8,7 @@
 /datum/component/walk/Initialize()
 	if(!istype(parent, /mob/living))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, COMSIG_PROCESS_MOVE, .proc/handle_move)
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED .proc/handle_move)
 	GET_COMPONENT_FROM(footsteps, /datum/component/footstep, parent)
 	if(footsteps)
 		footsteps.signal_enabled = FALSE
@@ -19,7 +19,7 @@
 		footsteps.signal_enabled = TRUE
 	return ..()
 
-/datum/component/walk/proc/handle_move(direction)
+/datum/component/walk/proc/handle_move(atom/source, old_loc, direction)
 	var/mob/living/L = parent
 	var/turf/T = get_step(L, direction)
 	L.setDir(direction)
