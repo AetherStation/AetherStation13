@@ -266,9 +266,7 @@
 	if(!target.IsKnockdown())
 		to_chat(target, span_warning("Your muscles seize, making you collapse[trait_check ? ", but your body quickly recovers..." : "!"]"))
 
-	if(trait_check)
-		target.Knockdown(stun_time * 0.1)
-	else
+	if(!trait_check)
 		target.Knockdown(stun_time)
 
 /obj/item/melee/baton/emp_act(severity)
