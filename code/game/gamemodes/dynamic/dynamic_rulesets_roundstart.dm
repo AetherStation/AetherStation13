@@ -685,3 +685,44 @@
 	var/ramp_up_final = clamp(round(meteorminutes/rampupdelta), 1, 10)
 
 	spawn_meteors(ramp_up_final, wavetype)
+
+//////////////////////////////////////////////
+//                                          //
+//               SHADOWLINGS                //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/roundstart/shadowling
+	name = "Shadowling"
+	antag_flag = ROLE_SHADOWLING
+	antag_datum = /datum/antagonist/shadowling
+	protected_roles = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Engineer", "Chief Medical Officer", "Brig Physician")
+	restricted_roles = list("Cyborg", "AI")
+	required_candidates = 3
+	weight = 3
+	cost = 30
+	requirements = list(90,80,80,70,60,40,30,30,20,10)
+	flags = HIGH_IMPACT_RULESET
+	minimum_players = 30
+	antag_cap = list(3,3,3,3,3,3,3,3,3,3)
+	var/datum/team/shadowling/shadowling
+
+/datum/dynamic_ruleset/roundstart/shadowling/ready(population, forced = FALSE)
+	required_candidates = get_antag_cap(population)
+	. = ..()
+
+/datum/dynamic_ruleset/roundstart/shadowling/pre_execute(population)
+	. = ..()
+	var/shadowlings = get_antag_cap(population)
+	for(var/shadowling_number = 1 to shadowlings)
+		if(candidates.len <= 0)
+			break
+		var/mob/M = pick_n_take(candidates)
+		assigned += M.mind
+		M.mind.special_role = ROLE_SHADOWLING
+		M.mind.restricted_roles = restricted_roles
+		log_game("[key_name(M)] has been selected as a Shadowling")
+	return TRUE
+
+/datum/dynamic_ruleset/roundstart/shadowling/proc/check_shadow_death()
+	return FALSE
