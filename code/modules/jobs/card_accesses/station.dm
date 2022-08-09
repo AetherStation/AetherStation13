@@ -15,9 +15,10 @@
 		job_id = splits[splits.len]
 
 	var/list/job_changes = SSmapping.config.job_changes?[job_id]
-	if(job_changes)
-		full_access += job_changes?["added_access"]
-		minimal_access += job_changes?["added_minimal_access"]
+	if(job_changes?["added_access"])
+		full_access += job_changes["added_access"]
+	if(job_changes?["added_minimal_access"])
+		minimal_access += job_changes["added_minimal_access"]
 	. = ..()
 
 /datum/card_access/job/get_access()
