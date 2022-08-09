@@ -62,7 +62,7 @@ or sprite states which will delete once there are no more states left. Fading ca
 	if(longevity)
 		qdel(src)
 		return
-	counter += 1
+	counter++
 	if(fade_rate)
 		if(alpha >= fade_rate)
 			alpha -= fade_rate
@@ -71,7 +71,7 @@ or sprite states which will delete once there are no more states left. Fading ca
 			return
 	if(base_icon && sprite_states)
 		if(current_sprite_state < sprite_states)
-			current_sprite_state += 1
+			current_sprite_state++
 			icon_state = "[base_icon]_[current_sprite_state]"
 		else
 			qdel(src)

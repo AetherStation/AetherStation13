@@ -160,7 +160,7 @@
 			if(istype(R, /datum/reagent/water))
 				ourwater = R
 		if(ourwater)
-			to_chat(user, span_notice("You slosh [src] around in the [target], making the contents bubbly."))
+			to_chat(user, span_notice("You slosh [src] around in \the [target], making the contents bubbly."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 			var/amount = ourwater.volume
 			current_reagents.remove_all_type(/datum/reagent/water, amount, strict = 1)
@@ -196,7 +196,7 @@
 		if(prob(10))
 			uses--
 			if(uses <= 0)
-				visible_message(span_warning("[src] crumbles into tiny bits!"))
+				visible_message(span_warning("\The [src] crumbles into tiny bits!"))
 				qdel(src)
 
 /*
