@@ -5,7 +5,7 @@
  */
 /obj/item/gun/blastcannon
 	name = "blast cannon"
-	desc = "A makeshift device used to concentrate a bomb's blast energy to a narrow wave. Small enough to stow in a bag."
+	desc = "A makeshift device used to concentrate a bomb's blast energy to a narrow wave."
 	icon_state = "empty_blastcannon"
 	inhand_icon_state = "blastcannon_empty"
 	base_icon_state = "blastcannon"
