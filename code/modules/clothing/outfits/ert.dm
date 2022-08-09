@@ -96,10 +96,10 @@
 /datum/outfit/centcom/ert/security/alert
 	name = "ERT Security - High Alert"
 
-	belt = /obj/item/gun/energy/pulse/carbine/loyalpin
+	belt = /obj/item/storage/belt/security/full
 	backpack_contents = list(
 		/obj/item/melee/baton/loaded = 1,
-		/obj/item/storage/belt/security/full = 1,
+		/obj/item/gun/energy/pulse/carbine/loyalpin,
 		/obj/item/storage/box/handcuffs = 1,
 		/obj/item/storage/box/survival/engineer = 1,
 )
