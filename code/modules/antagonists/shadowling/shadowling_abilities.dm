@@ -232,7 +232,6 @@
 	var/enthralling = FALSE
 
 /obj/effect/proc_holder/spell/targeted/enthrall/cast(list/targets,mob/living/carbon/human/user = usr)
-	listclearnulls(SSticker.mode.thralls)
 	if(!(user.mind in SSticker.mode.shadows)) return
 	if(user.dna.species.id != "shadowling")
 		if(SSticker.mode.thralls.len >= 5)
@@ -357,8 +356,8 @@
 	user.visible_message("<span class='warning'>[user]'s skin suddenly bubbles and shifts around their body!</span>", \
 						 "<span class='shadowling'>You regenerate your protective armor and cleanse your form of defects.</span>")
 	user.setCloneLoss(0)
-	user.equip_to_slot_or_del(new /obj/item/clothing/suit/space/shadowling(user), SLOT_WEAR_SUIT)
-	user.equip_to_slot_or_del(new /obj/item/clothing/head/shadowling(user), SLOT_HEAD)
+	user.equip_to_slot_or_del(new /obj/item/clothing/suit/space/shadowling(user), ITEM_SLOT_OCLOTHING)
+	user.equip_to_slot_or_del(new /obj/item/clothing/head/shadowling(user), ITEM_SLOT_HEAD)
 	user.set_species(/datum/species/shadow/ling)
 
 /obj/effect/proc_holder/spell/self/collective_mind //Lets a shadowling bring together their thralls' strength, granting new abilities and a headcount
@@ -526,8 +525,9 @@
 			if(iscarbon(target))
 				var/mob/living/carbon/M = target
 				to_chat(M, "<span class='danger'><b>A spike of pain drives into your head and scrambles your thoughts!</b></span>")
-				M.confused += 10
-				M.adjustEarDamage(0, 30)//as bad as a changeling shriek
+				M.add_confusion(15)
+				if(M.getorganslot(ORGAN_SLOT_EARS))
+					M.adjustEarDamage(0, 30)//as bad as a changeling shriek
 			else if(issilicon(target))
 				var/mob/living/silicon/S = target
 				to_chat(S, "<span class='warning'><b>ERROR $!(@ ERROR )#^! SENSORY OVERLOAD \[$(!@#</b></span>")
