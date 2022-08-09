@@ -152,6 +152,9 @@
 	modifier = 5
 	mix_message = "<span class='boldannounce'>Sparks start flying around the gunpowder!</span>"
 
+/datum/chemical_reaction/reagent_explosion/gunpowder_explosion/on_reaction(datum/reagents/holder, created_volume)
+	addtimer(CALLBACK(src, .proc/default_explode, holder, created_volume), rand(5,10) SECONDS)
+
 /datum/chemical_reaction/anfo
 	results = list(/datum/reagent/anfo = 3)
 	required_reagents = list(/datum/reagent/plantnutriment/eznutriment = 1, /datum/reagent/plantnutriment/left4zednutriment = 1, /datum/reagent/plantnutriment/robustharvestnutriment = 1, /datum/reagent/fuel = 1)
@@ -161,9 +164,6 @@
 	required_temp = 474
 	strengthdiv = 5
 	modifier = 10
-
-/datum/chemical_reaction/reagent_explosion/gunpowder_explosion/on_reaction(datum/reagents/holder, created_volume)
-	addtimer(CALLBACK(src, .proc/default_explode, holder, created_volume), rand(5,10) SECONDS)
 
 /datum/chemical_reaction/thermite
 	results = list(/datum/reagent/thermite = 3)

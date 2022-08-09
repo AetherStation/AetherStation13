@@ -119,15 +119,6 @@
 	e.start()
 	holder.clear_reagents()
 
-/datum/reagent/anfo
-	name = "Ammonium Nitrate"
-	description = "High explosive fertilizer"
-	reagent_state = LIQUID
-	color = "#db5a5a"
-	metabolization_rate = 0.125 * REAGENTS_METABOLISM
-	taste_description = "salt"
-	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
-
 /datum/reagent/rdx
 	name = "RDX"
 	description = "Military grade explosive"
