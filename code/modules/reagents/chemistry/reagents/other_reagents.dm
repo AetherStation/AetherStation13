@@ -310,10 +310,11 @@
 	color = "#cfccccc5"
 	taste_description = "bubbles"
 	var/clean_types = CLEAN_WASH
+	var/clean_chance = 60
 
 /datum/reagent/water/soapy/expose_obj(obj/exposed_obj, reac_volume)
 	. = ..()
-	if(prob(60)) //Worse than space cleaner
+	if(prob(clean_chance)) //Worse than space cleaner
 		exposed_obj?.wash(clean_types)
 
 /datum/reagent/water/soapy/expose_turf(turf/exposed_turf, reac_volume)
@@ -322,7 +323,7 @@
 		return
 
 	new /obj/effect/decal/temporary/suds(exposed_turf)
-	if(prob(60)) //Worse than space cleaner
+	if(prob(clean_chance)) //Worse than space cleaner
 		exposed_turf.wash(clean_types)
 		for(var/AM in exposed_turf)
 			var/atom/movable/movable_content = AM

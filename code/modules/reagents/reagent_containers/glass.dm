@@ -265,7 +265,7 @@
 			to_chat(user, span_warning("[src] is out of water!"))
 		else
 			var/obj/item/mop/M = O
-			reagents.trans_to(M, 5, transfered_by = user)
+			reagents.trans_to(M, M.transfer, transfered_by = user)
 			M.update_speed()
 			to_chat(user, span_notice("You wet [O] in [src]."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)

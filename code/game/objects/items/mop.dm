@@ -22,6 +22,7 @@
 	resistance_flags = FLAMMABLE
 	var/mopcount = 0
 	var/mopcap = 15
+	var/transfer = 5
 	var/mopspeed = 15
 	var/reagentspeed = 1
 	force_string = "robust... against germs"
