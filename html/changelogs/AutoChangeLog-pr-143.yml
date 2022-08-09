@@ -1,5 +1,0 @@
-author: AcapitalA
-delete-after: true
-changes:
-  - balance: Buckshot now does 60 damage if all pellets land.
-  - balance: Shotgun slugs now do 35 damage, but have an armor piercing value of 30.

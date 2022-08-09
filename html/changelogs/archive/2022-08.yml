@@ -34,3 +34,13 @@
 2022-08-08:
   TheChosenEvilOne:
   - rscadd: PubbyStation is back.
+2022-08-09:
+  ? ''
+  : - bugfix: fixes missing pipe in atmos oxygen mix line
+  AcapitalA:
+  - balance: Buckshot now does 60 damage if all pellets land.
+  - balance: Shotgun slugs now do 35 damage, but have an armor piercing value of 30.
+  Sparkezel:
+  - bugfix: removed abundant airlocks from maintbay
+  TheChosenEvilOne:
+  - bugfix: Space ruin ID cards have the correct access again.
