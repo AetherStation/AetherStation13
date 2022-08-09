@@ -9,7 +9,7 @@
 /datum/component/walk/Initialize()
 	if(!istype(parent, /mob/living))
 		return COMPONENT_INCOMPATIBLE
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED .proc/handle_move)
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/handle_move)
 	GET_COMPONENT_FROM(footsteps, /datum/component/footstep, parent)
 
 /datum/component/walk/RemoveComponent()
