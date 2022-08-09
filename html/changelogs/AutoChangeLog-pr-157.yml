@@ -1,0 +1,5 @@
+author: Sonnicon
+delete-after: true
+changes:
+  - bugfix: Fixed condenser cooling message.
+  - refactor: Refactored /obj/item/reagent_containers/glass/attackby()
