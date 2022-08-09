@@ -602,10 +602,6 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/closed/wall,
 /area/ruin/space/has_grav/hotel/guestroom/room_6)
-"ct" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel)
 "cu" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
@@ -618,16 +614,6 @@
 "cw" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/closed/wall,
-/area/ruin/space/has_grav/hotel)
-"cx" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/carpet,
-/area/ruin/space/has_grav/hotel)
-"cy" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel)
 "cz" = (
 /obj/structure/sign/warning/fire{
@@ -652,9 +638,18 @@
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel)
 "cB" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/carpet,
-/area/ruin/space/has_grav/hotel)
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/structure/cable,
+/obj/machinery/telecomms/relay/preset/mining{
+	name = "Hotel Relay";
+	desc = "A mighty piece of hardware that automatically connects to the telecomms network of nearby stations.";
+	id = "Hotel Relay"
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/hotel/power)
 "cC" = (
 /obj/structure/sign/warning/fire{
 	desc = "A sign that states the labeled room's number.";
@@ -690,20 +685,6 @@
 /obj/machinery/door/firedoor,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hotel)
-"cH" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel)
-"cI" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hotel)
-"cJ" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hotel)
 "cK" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Hotel Maintenance";
@@ -724,23 +705,8 @@
 /obj/structure/cable,
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel)
-"cO" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/carpet,
-/area/ruin/space/has_grav/hotel)
-"cP" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/carpet,
-/area/ruin/space/has_grav/hotel)
 "cR" = (
 /obj/machinery/light/directional/south,
-/turf/open/floor/carpet,
-/area/ruin/space/has_grav/hotel)
-"cS" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/structure/cable,
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel)
 "cT" = (
@@ -766,10 +732,6 @@
 	pixel_y = -24
 	},
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/carpet,
-/area/ruin/space/has_grav/hotel)
-"cW" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel)
 "cX" = (
@@ -1051,11 +1013,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/hotel/workroom)
-"dY" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/iron/white,
-/area/ruin/space/has_grav/hotel/workroom)
 "ea" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/white,
@@ -1134,15 +1091,10 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/hotel/workroom)
-"ep" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/iron/white,
-/area/ruin/space/has_grav/hotel/workroom)
 "eq" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/iron/white,
-/area/ruin/space/has_grav/hotel/workroom)
+/obj/structure/reagent_dispensers/cooking_oil,
+/turf/open/floor/iron/freezer,
+/area/ruin/space/has_grav/hotel/bar)
 "er" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer4{
 	dir = 8
@@ -1229,9 +1181,9 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/hotel/dock)
 "eH" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel)
+/obj/machinery/griddle,
+/turf/open/floor/iron/cafeteria,
+/area/ruin/space/has_grav/hotel/bar)
 "eJ" = (
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -1322,11 +1274,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hotel)
-"fe" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hotel)
 "ff" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/head/papersack/smiley,
@@ -1359,10 +1306,6 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel)
-"fl" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/hotel)
 "fm" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/grass,
@@ -1386,10 +1329,6 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hotel)
-"fr" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel/dock)
 "fs" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
@@ -1421,6 +1360,7 @@
 /obj/structure/sink/kitchen{
 	pixel_y = 28
 	},
+/obj/machinery/deepfryer,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/hotel/bar)
 "fz" = (
@@ -1509,14 +1449,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hotel)
-"fK" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/carpet,
-/area/ruin/space/has_grav/hotel)
-"fM" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/hotel)
 "fN" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/wood,
@@ -1589,17 +1521,9 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/hotel/bar)
-"fV" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/carpet,
-/area/ruin/space/has_grav/hotel)
 "fW" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/carpet,
-/area/ruin/space/has_grav/hotel/dock)
-"fX" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel/dock)
@@ -1611,6 +1535,10 @@
 /area/ruin/space/has_grav/hotel/bar)
 "fZ" = (
 /obj/structure/table,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
 /turf/open/floor/iron/freezer,
 /area/ruin/space/has_grav/hotel/bar)
 "ga" = (
@@ -1677,10 +1605,6 @@
 /area/ruin/space/has_grav/hotel/bar)
 "gl" = (
 /obj/effect/decal/cleanable/blood/old,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/iron/freezer,
-/area/ruin/space/has_grav/hotel/bar)
-"gm" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/freezer,
 /area/ruin/space/has_grav/hotel/bar)
@@ -1819,6 +1743,11 @@
 /area/ruin/space/has_grav/hotel/workroom)
 "gJ" = (
 /obj/structure/closet/secure_closet/freezer/kitchen/mining,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/hotel/workroom)
 "gK" = (
@@ -1872,10 +1801,6 @@
 /obj/structure/closet/secure_closet/freezer/fridge{
 	req_access_txt = "200"
 	},
-/turf/open/floor/iron/cafeteria,
-/area/ruin/space/has_grav/hotel/bar)
-"gU" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/hotel/bar)
 "gV" = (
@@ -1948,19 +1873,12 @@
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel/dock)
 "he" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel)
-"hf" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hotel)
+/turf/open/floor/plating/airless,
+/area/ruin/unpowered/no_grav)
 "hg" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel/bar)
+/obj/structure/cable,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/hotel/power)
 "hh" = (
 /obj/structure/kitchenspike,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
@@ -1999,8 +1917,8 @@
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/hotel/bar)
 "hn" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/iron/cafeteria,
+/obj/structure/tank_holder/extinguisher,
+/turf/open/floor/iron/freezer,
 /area/ruin/space/has_grav/hotel/bar)
 "ho" = (
 /obj/structure/table/reinforced,
@@ -2187,16 +2105,11 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/hotel/dock)
 "hP" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hotel)
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/hotel/power)
 "hQ" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hotel)
-"hR" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/structure/cable,
 /turf/open/floor/plating,
@@ -2254,18 +2167,15 @@
 /obj/machinery/light/directional/north,
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel)
-"ia" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel)
-"ib" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel/power)
 "ic" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel/power)
+/obj/machinery/door/airlock/external/glass{
+	name = "Arrivals Airlock"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/ruin/space/has_grav/hotel/dock)
 "id" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Power Storage";
@@ -2298,10 +2208,6 @@
 	},
 /turf/open/floor/iron/grimy,
 /area/ruin/space/has_grav/hotel/bar)
-"ij" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/carpet,
-/area/ruin/space/has_grav/hotel)
 "il" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor,
@@ -2314,18 +2220,10 @@
 /obj/structure/cable,
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel/dock)
-"in" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/carpet,
-/area/ruin/space/has_grav/hotel/dock)
 "io" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel/dock)
-"ir" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel/power)
 "is" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/electrical,
@@ -2446,7 +2344,12 @@
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel/dock)
 "iG" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/machinery/door/airlock/external/glass{
+	name = "Arrivals Airlock"
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel/dock)
 "iH" = (
@@ -2463,9 +2366,9 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/hotel/power)
 "iI" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/hotel/power)
+/obj/machinery/deepfryer,
+/turf/open/floor/iron/cafeteria,
+/area/ruin/space/has_grav/hotel/bar)
 "iJ" = (
 /obj/structure/closet/crate,
 /obj/item/clothing/mask/breath,
@@ -2606,14 +2509,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/hotel/dock)
-"jj" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/hotel/power)
-"jk" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/hotel/power)
 "jl" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
@@ -2629,18 +2524,6 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/hotel/power)
-"jn" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel/power)
-"jo" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel/security)
-"jp" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel/security)
 "jq" = (
 /obj/machinery/door/airlock/security/glass{
 	name = "Hotel Security Checkpoint";
@@ -2678,14 +2561,6 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/carpet,
 /area/ruin/space/has_grav/hotel/pool)
-"jx" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel/pool)
-"jy" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel/pool)
 "jz" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/closed/wall,
@@ -2706,10 +2581,6 @@
 	dir = 8
 	},
 /obj/structure/cable,
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/hotel/power)
-"jC" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/hotel/power)
 "jD" = (
@@ -2885,12 +2756,10 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/hotel/pool)
-"kb" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/ruin/space/has_grav/hotel/power)
 "kf" = (
-/obj/machinery/atmospherics/components/binary/valve/on/layer4,
+/obj/machinery/atmospherics/components/binary/valve/on/layer4{
+	name = "Air Tank to Distro"
+	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/hotel/power)
 "kg" = (
@@ -3124,7 +2993,7 @@
 	name = "Air Supply";
 	req_access_txt = "200,201"
 	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/layer_manifold/visible,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hotel/power)
 "kJ" = (
@@ -3200,20 +3069,6 @@
 /obj/machinery/light/directional/west,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/hotel/pool)
-"kR" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/hotel/pool)
 "kS" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/turf_decal/tile/neutral{
@@ -3239,26 +3094,22 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/hotel/pool)
 "kV" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hotel/power)
-"kW" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold/supply/visible{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hotel/power)
 "kX" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/structure/plaque/static_plaque/atmos{
 	pixel_y = 32
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/visible{
+	dir = 1
 	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hotel/power)
 "kY" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/hotel/power)
-"kZ" = (
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/visible,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/hotel/power)
 "la" = (
@@ -3432,7 +3283,7 @@
 "lv" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer2,
 /turf/open/floor/plating/airless,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space/has_grav/hotel/power)
 "lw" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -3480,22 +3331,18 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/hotel/security)
-"lB" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/plating/airless,
-/area/ruin/unpowered/no_grav)
 "lC" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating/airless,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space/has_grav/hotel/power)
 "lD" = (
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/structure/cable,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/no_grav)
 "lE" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/structure/cable,
+/obj/machinery/power/rtg/advanced,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/no_grav)
 "lF" = (
@@ -4097,7 +3944,9 @@
 /turf/closed/wall,
 /area/ruin/space/has_grav/hotel/pool)
 "sN" = (
-/obj/machinery/door/airlock/external/glass,
+/obj/machinery/door/airlock/external/glass{
+	name = "Arrivals Airlock"
+	},
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
@@ -4445,7 +4294,7 @@ ab
 ab
 aa
 lv
-lB
+lC
 ac
 aa
 aa
@@ -4561,19 +4410,19 @@ aa
 ac
 ac
 af
-ct
-cH
-cH
-cH
-cH
-cH
-cH
-cH
-he
-cH
-cH
-cH
-ia
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
 af
 af
 af
@@ -4584,8 +4433,8 @@ af
 af
 af
 af
-af
-lD
+hg
+hP
 ac
 aa
 aa
@@ -4633,29 +4482,29 @@ af
 af
 cw
 fd
-hR
-hR
-hR
+hQ
+hQ
+hQ
 gj
-hR
-hR
-hf
-hR
-hR
-hP
-ib
-ir
-ir
-ir
-ir
-ir
-kb
-ir
-ir
-ir
-ir
-ir
-lE
+hQ
+hQ
+iW
+hQ
+hQ
+hQ
+ie
+ie
+ie
+ie
+ie
+ie
+ie
+ie
+ie
+ie
+ie
+ie
+lD
 af
 af
 af
@@ -4692,28 +4541,28 @@ am
 am
 am
 am
-ct
-cH
-cH
-cH
-cH
-cH
-cH
-cH
-cH
-eH
-cJ
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+cw
+hQ
 fi
 fi
 fi
 fi
 fi
 fi
-hg
+hU
 fi
 fi
-cJ
-ic
+hQ
+ie
 is
 iH
 iR
@@ -4725,7 +4574,7 @@ kH
 kV
 lp
 kH
-aa
+he
 af
 aa
 aa
@@ -4763,16 +4612,16 @@ bC
 bL
 ck
 cu
-cI
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-fe
+hQ
+hQ
+hQ
+hQ
+hQ
+hQ
+hQ
+hQ
+hQ
+hQ
 fi
 fP
 fY
@@ -4785,17 +4634,17 @@ fi
 hQ
 id
 it
-iI
-iI
-jj
+jl
+jl
+jl
 jB
 jB
 kr
 kH
-kW
+kV
 lp
 kH
-aa
+lE
 af
 aa
 aa
@@ -4833,7 +4682,7 @@ aw
 aw
 aw
 cv
-cJ
+hQ
 aw
 aw
 bC
@@ -4852,20 +4701,20 @@ gz
 hi
 gz
 hI
-hR
-ic
+hQ
+ie
 iu
 iJ
 iS
-jk
+jl
 iK
 iK
-kr
+cB
 kH
 kX
 lq
 kH
-aa
+lE
 af
 aa
 aa
@@ -4916,26 +4765,26 @@ ck
 fi
 fR
 fQ
-gm
+gz
 gA
 fQ
 hj
 hu
 fi
-cJ
-ic
+hQ
+ie
 iv
 iJ
 iS
 jl
-jC
+jl
 kf
 kt
 kI
 kY
 lp
 kH
-aa
+lE
 af
 aa
 aa
@@ -4972,7 +4821,7 @@ az
 az
 az
 an
-cx
+cX
 cL
 cF
 cZ
@@ -4988,12 +4837,12 @@ fR
 fQ
 gn
 gB
-fQ
+eq
 hk
 hv
 fi
-cJ
-ic
+hQ
+ie
 iw
 iK
 iK
@@ -5002,10 +4851,10 @@ jD
 iK
 ku
 kH
-kZ
+kV
 lp
 kH
-aa
+lE
 af
 aa
 aa
@@ -5042,7 +4891,7 @@ be
 be
 az
 an
-cx
+cX
 cL
 cF
 cZ
@@ -5060,10 +4909,10 @@ fQ
 fQ
 fQ
 fQ
-fQ
+hn
 fi
-cJ
-ic
+hQ
+ie
 ix
 iL
 iT
@@ -5075,7 +4924,7 @@ kH
 kH
 kH
 kH
-aa
+he
 af
 aa
 aa
@@ -5112,7 +4961,7 @@ bf
 az
 bM
 an
-cx
+cX
 cL
 cF
 cZ
@@ -5132,12 +4981,12 @@ fQ
 gA
 fQ
 fi
-cJ
+hQ
 ie
-ir
-ir
-ir
-jn
+ie
+ie
+ie
+ie
 jF
 kg
 kw
@@ -5182,7 +5031,7 @@ an
 an
 an
 an
-cx
+cX
 cL
 cR
 cZ
@@ -5203,11 +5052,11 @@ hl
 hw
 fi
 hS
-hR
-hR
-hR
-hP
-jo
+hQ
+hQ
+hQ
+hQ
+jP
 jG
 jG
 jG
@@ -5252,7 +5101,7 @@ bg
 bD
 bN
 an
-cx
+cX
 cL
 cF
 cZ
@@ -5276,8 +5125,8 @@ fi
 fi
 fi
 fi
-cJ
-jo
+hQ
+jP
 jH
 kh
 kx
@@ -5322,9 +5171,9 @@ bh
 bE
 bO
 cl
-cy
-cS
-cS
+cN
+cL
+cL
 da
 do
 dK
@@ -5347,7 +5196,7 @@ if
 iy
 fi
 iU
-jp
+jP
 jI
 ki
 ky
@@ -5408,15 +5257,15 @@ fx
 fx
 fx
 fx
-gU
-hn
-hn
-hn
-hn
-hn
-hn
+gV
+gV
+gV
+gV
+gV
+gV
+gV
 hI
-hR
+hQ
 jq
 jJ
 kj
@@ -5462,7 +5311,7 @@ aB
 aB
 bQ
 an
-cx
+cX
 cL
 cF
 cZ
@@ -5473,11 +5322,11 @@ dM
 cZ
 eL
 fi
-fx
+iI
 fx
 gb
-gp
 gD
+eH
 gV
 fx
 hx
@@ -5486,8 +5335,8 @@ gp
 fx
 fx
 fi
-cJ
-jo
+hQ
+jP
 jK
 kk
 kA
@@ -5532,7 +5381,7 @@ bj
 bj
 bR
 an
-cx
+cX
 cL
 cF
 cZ
@@ -5556,8 +5405,8 @@ gp
 fx
 iz
 fi
-cJ
-jo
+hQ
+jP
 jL
 kl
 kl
@@ -5602,7 +5451,7 @@ an
 an
 an
 an
-cx
+cX
 cL
 cU
 cZ
@@ -5626,8 +5475,8 @@ fx
 fx
 fx
 fi
-cJ
-jo
+hQ
+jP
 jG
 km
 kB
@@ -5672,7 +5521,7 @@ aH
 aH
 aH
 ap
-cx
+cX
 cL
 cF
 dc
@@ -5742,7 +5591,7 @@ bk
 bk
 aH
 ap
-cx
+cX
 cL
 cR
 dc
@@ -5766,8 +5615,8 @@ hV
 ig
 ih
 fi
-cJ
-jo
+hQ
+jP
 jN
 kn
 kn
@@ -5812,7 +5661,7 @@ bl
 aH
 bS
 ap
-cx
+cX
 cL
 cF
 dc
@@ -5836,8 +5685,8 @@ hW
 ih
 ih
 fi
-cJ
-jo
+hQ
+jP
 jO
 kn
 kC
@@ -5882,7 +5731,7 @@ ap
 ap
 ap
 ap
-cx
+cX
 cL
 cF
 dc
@@ -5906,8 +5755,8 @@ hW
 ih
 ih
 fi
-cJ
-jp
+hQ
+jP
 jP
 jP
 jP
@@ -5952,7 +5801,7 @@ bm
 bF
 bT
 ap
-cx
+cX
 cL
 cF
 dc
@@ -5976,7 +5825,7 @@ hW
 ih
 iB
 fi
-cJ
+hQ
 js
 ck
 bL
@@ -5988,11 +5837,11 @@ aw
 aw
 aw
 aw
-cI
-hR
-hR
-hf
-hR
+hQ
+hQ
+hQ
+iW
+hQ
 aw
 aw
 am
@@ -6022,9 +5871,9 @@ bn
 bG
 bU
 cn
-cy
-cS
-cS
+cN
+cL
+cL
 dd
 dw
 dR
@@ -6047,18 +5896,18 @@ ih
 ih
 fi
 hQ
-hf
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-hR
-fe
+iW
+hQ
+hQ
+hQ
+hQ
+hQ
+hQ
+hQ
+hQ
+hQ
+hQ
+hQ
 ma
 ck
 cv
@@ -6116,7 +5965,7 @@ hX
 ih
 ih
 fi
-cJ
+hQ
 jt
 mW
 jQ
@@ -6162,7 +6011,7 @@ aJ
 aJ
 bW
 ap
-cx
+cX
 cL
 cF
 dc
@@ -6186,7 +6035,7 @@ hY
 ii
 ii
 fi
-cJ
+hQ
 jt
 jR
 jR
@@ -6232,7 +6081,7 @@ bp
 bp
 bX
 ap
-cx
+cX
 cL
 cF
 dc
@@ -6242,7 +6091,7 @@ dU
 ex
 dc
 eM
-ct
+cw
 fI
 cF
 cF
@@ -6256,7 +6105,7 @@ cF
 cF
 eT
 am
-cJ
+hQ
 jt
 jS
 ko
@@ -6302,7 +6151,7 @@ ap
 ap
 ap
 ap
-cx
+cX
 cL
 cR
 dc
@@ -6326,7 +6175,7 @@ cF
 cF
 eT
 am
-cJ
+hQ
 jt
 jS
 ko
@@ -6372,7 +6221,7 @@ aP
 aP
 aP
 ar
-cx
+cX
 cL
 cF
 df
@@ -6382,8 +6231,8 @@ em
 cF
 df
 cF
-cx
-fK
+cX
+iD
 cF
 cF
 di
@@ -6442,7 +6291,7 @@ bq
 bq
 aP
 ar
-cx
+cX
 cL
 cF
 am
@@ -6452,8 +6301,8 @@ cF
 cF
 am
 cF
-cx
-fK
+cX
+iD
 cF
 cR
 di
@@ -6512,18 +6361,18 @@ br
 aP
 bY
 ar
-cx
-cO
-cW
+cX
+cL
+iD
 dg
-cW
-cW
-cW
-cW
+iD
+iD
+iD
+iD
 dg
-cW
+iD
 fk
-cW
+iD
 cF
 cF
 gs
@@ -6536,7 +6385,7 @@ mR
 cF
 eT
 am
-cJ
+hQ
 jt
 jT
 jR
@@ -6582,7 +6431,7 @@ ar
 ar
 ar
 ar
-cB
+cX
 cN
 cX
 dh
@@ -6592,8 +6441,8 @@ dh
 dh
 dh
 eO
-fl
-fM
+fp
+fN
 cF
 ge
 di
@@ -6606,7 +6455,7 @@ mR
 cF
 eT
 am
-cJ
+hQ
 jt
 jU
 jR
@@ -6652,7 +6501,7 @@ bs
 bH
 bZ
 ar
-cx
+cX
 cL
 cF
 di
@@ -6663,7 +6512,7 @@ ey
 di
 eP
 fm
-fM
+fN
 cF
 cF
 di
@@ -6722,9 +6571,9 @@ bt
 bI
 ca
 cp
-cy
-cS
-cS
+cN
+cL
+cL
 dj
 dB
 dB
@@ -6733,7 +6582,7 @@ ey
 di
 eQ
 fn
-fM
+fN
 cF
 cF
 di
@@ -6798,12 +6647,12 @@ cY
 dh
 dC
 dX
-ep
+eo
 ey
 di
 eQ
 fn
-fM
+fN
 cF
 cF
 di
@@ -6862,18 +6711,18 @@ aR
 aR
 cc
 ar
-cx
+cX
 cL
 cF
 di
 dD
-dY
-ep
+dX
+eo
 ez
 di
 eR
 fo
-fM
+fN
 cF
 cF
 di
@@ -6932,18 +6781,18 @@ bv
 bv
 cd
 ar
-cx
+cX
 cL
 cF
 di
 dE
-dY
-eq
+dX
+dB
 eA
 di
 eS
 fm
-fM
+fN
 cF
 cF
 di
@@ -6953,15 +6802,15 @@ gG
 hG
 di
 cF
-ij
 iD
-cW
+iD
+iD
 cL
 jw
 jX
 jX
 kF
-kR
+kS
 lj
 lj
 lj
@@ -7002,19 +6851,19 @@ ar
 ar
 ar
 ar
-cx
+cX
 cL
 cF
 di
 di
 ea
-ep
+eo
 dV
 di
 eT
 fp
 fN
-fV
+iD
 cF
 di
 gM
@@ -7027,7 +6876,7 @@ cL
 iE
 iN
 jc
-jx
+jt
 jY
 jY
 jY
@@ -7078,13 +6927,13 @@ cF
 di
 dF
 ea
-ep
+eo
 dF
 di
 eU
 fq
 am
-fK
+iD
 cF
 di
 gM
@@ -7142,7 +6991,7 @@ bw
 bw
 aX
 at
-cx
+cX
 cL
 cF
 di
@@ -7152,7 +7001,7 @@ er
 dG
 di
 eG
-fr
+jz
 eG
 fW
 gf
@@ -7212,7 +7061,7 @@ bx
 aX
 ce
 at
-cx
+cX
 cL
 cF
 di
@@ -7224,7 +7073,7 @@ di
 eV
 fs
 fO
-fX
+io
 fu
 gt
 gN
@@ -7282,7 +7131,7 @@ at
 at
 at
 at
-cx
+cX
 cL
 cF
 di
@@ -7303,7 +7152,7 @@ hb
 gO
 hM
 fu
-in
+io
 fu
 eW
 eW
@@ -7352,7 +7201,7 @@ by
 bJ
 cf
 at
-cx
+cX
 cL
 cR
 am
@@ -7373,7 +7222,7 @@ hc
 gP
 hN
 fu
-in
+io
 fu
 fu
 eX
@@ -7422,8 +7271,8 @@ bz
 bK
 cg
 cr
-cy
-cP
+cN
+cL
 cF
 cG
 ac
@@ -7443,7 +7292,7 @@ fu
 fu
 fu
 fu
-in
+io
 fu
 fu
 eY
@@ -7513,11 +7362,11 @@ eW
 eW
 eW
 gg
-in
+io
 fu
 fu
 eZ
-jy
+jt
 ka
 kp
 kG
@@ -7583,7 +7432,7 @@ gw
 gw
 eW
 gh
-in
+io
 fu
 fu
 eW
@@ -7653,7 +7502,7 @@ gw
 gw
 gw
 eG
-in
+io
 fu
 fu
 eW
@@ -7723,11 +7572,11 @@ hr
 gw
 hO
 eG
-in
+io
 fu
 fu
 jf
-fr
+jz
 aa
 aa
 aa
@@ -7793,11 +7642,11 @@ gw
 gw
 gw
 eG
-in
+io
 fu
 fu
 eW
-fr
+jz
 aa
 aa
 aa
@@ -7863,11 +7712,11 @@ gw
 gw
 eW
 gh
-in
+io
 fu
 fu
 eX
-fr
+jz
 aa
 aa
 aa
@@ -7933,11 +7782,11 @@ eW
 eW
 eW
 gg
-in
+io
 fu
 fu
 eY
-fr
+jz
 aa
 aa
 aa
@@ -8003,7 +7852,7 @@ fu
 fu
 fu
 fu
-in
+io
 fu
 fu
 jg
@@ -8074,7 +7923,7 @@ gy
 gy
 gi
 io
-iG
+io
 iQ
 jh
 eG
@@ -8132,9 +7981,9 @@ ac
 ac
 eG
 eG
-fv
-fv
-fv
+eG
+ic
+eG
 eG
 fv
 fv
@@ -8143,9 +7992,9 @@ fv
 fv
 fv
 eG
-fv
-fv
-fv
+eG
+ic
+eG
 eG
 eG
 aa
@@ -8202,20 +8051,20 @@ aa
 aa
 aa
 aa
+fv
+fu
+fv
 aa
 aa
 aa
-ac
 aa
 aa
 aa
 aa
 aa
-aa
-ac
-aa
-aa
-aa
+fv
+fu
+fv
 aa
 aa
 aa
@@ -8272,20 +8121,20 @@ aa
 aa
 aa
 aa
+fv
+fu
+fv
 aa
 aa
 aa
-ac
 aa
 aa
 aa
 aa
 aa
-aa
-ac
-aa
-aa
-aa
+fv
+fu
+fv
 aa
 aa
 aa
@@ -8342,20 +8191,20 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+eG
+iG
+eG
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+eG
+iG
+eG
 ab
 ab
 ab
