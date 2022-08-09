@@ -440,7 +440,8 @@
 	charge_max = 600
 	human_req = TRUE
 	clothes_req = FALSE
-	//todo: sounds here
+	action_icon = 'cons/mob/actions.dmi'
+	action_icon_state = "null_charge"
 
 /obj/effect/proc_holder/spell/self/null_charge/cast(mob/living/carbon/human/user)
 	if(!shadowling_check(user))
