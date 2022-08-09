@@ -149,10 +149,11 @@
  * Arguments:
  * * add_accesses - List of accesses to add.
  */
-/obj/item/card/id/proc/add_access(list/add_accesses)
-	for (var/a in add_accesses)
-		if (text2num(SSid_access.get_access_tier(a)) > access_tier)
-			add_accesses -= a
+/obj/item/card/id/proc/add_access(list/add_accesses, ignore_tier = FALSE)
+	if (!ignore_tier)
+		for (var/a in add_accesses)
+			if (text2num(SSid_access.get_access_tier(a)) > access_tier)
+				add_accesses -= a
 	access |= add_accesses
 	return add_accesses.len
 
@@ -469,6 +470,7 @@
 	desc = "A perfectly generic identification card. Looks like it could use some flavor."
 	icon_state = "card_retro"
 	registered_age = null
+	card_access = /datum/card_access/away
 
 /obj/item/card/id/away/hotel
 	name = "Staff ID"
@@ -486,18 +488,22 @@
 /obj/item/card/id/away/old/sec
 	name = "Charlie Station Security Officer's ID card"
 	desc = "A faded Charlie Station ID card. You can make out the rank \"Security Officer\"."
+	card_access = /datum/card_access/away/old/sec
 
 /obj/item/card/id/away/old/sci
 	name = "Charlie Station Scientist's ID card"
 	desc = "A faded Charlie Station ID card. You can make out the rank \"Scientist\"."
+	card_access = /datum/card_access/away/old/sci
 
 /obj/item/card/id/away/old/eng
 	name = "Charlie Station Engineer's ID card"
 	desc = "A faded Charlie Station ID card. You can make out the rank \"Station Engineer\"."
+	card_access = /datum/card_access/away/old/eng
 
 /obj/item/card/id/away/old/apc
 	name = "APC Access ID"
 	desc = "A special ID card that allows access to APC terminals."
+	card_access = /datum/card_access/away/old/apc
 
 /obj/item/card/id/away/deep_storage //deepstorage.dmm space ruin
 	name = "bunker access ID"
@@ -845,14 +851,15 @@
 		C.forceMove(get_turf(src))
 	chips -= C
 
-/obj/item/card/id/chip_programmer/add_access(list/add_accesses)
+/obj/item/card/id/chip_programmer/add_access(list/add_accesses, ignore_tier = FALSE)
 	var/obj/item/card_access_chip/C = chips[1]
 	if (!C.rewritable)
 		return FALSE
 
-	for (var/a in add_accesses)
-		if (text2num(SSid_access.get_access_tier(a)) > access_tier)
-			add_accesses -= a
+	if (!ignore_tier)
+		for (var/a in add_accesses)
+			if (text2num(SSid_access.get_access_tier(a)) > access_tier)
+				add_accesses -= a
 
 	if (add_accesses.len >= C.access_count_max - C.access.len)
 		add_accesses.len = C.access_count_max - C.access.len // make the list small enough to fit

@@ -223,7 +223,7 @@ SUBSYSTEM_DEF(id_access)
 			if (chip)
 				chip_access.Add(card_access.access[tier])
 			continue
-		id.access.Add(card_access.access[tier])
+		id.add_access(card_access.access[tier], ignore_tier = TRUE)
 	id.update_label()
 
 	if (chip_access.len)
