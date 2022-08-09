@@ -1,8 +1,24 @@
 /datum/card_access/job
 	flags = CARD_ACCESS_ASSIGNABLE
 	region = REGION_STATION
+	var/job_change_id_override
 	var/list/minimal_access = list()
 	var/list/full_access = list()
+
+/datum/card_access/job/New()
+	var/job_id
+	if (job_change_id_override)
+		job_id = job_change_id_override
+	else
+		var/string_type = "[type]"
+		var/list/splits = splittext(string_type, "/")
+		job_id = splits[splits.len]
+
+	var/list/job_changes = SSmapping.config.job_changes?[job_id]
+	if(job_changes)
+		full_access += job_changes?["added_access"]
+		minimal_access += job_changes?["added_minimal_access"]
+	. = ..()
 
 /datum/card_access/job/get_access()
 	. = ..()
@@ -201,6 +217,7 @@
 	assignment = "Security Officer"
 	full_access = list(ACCESS_MAINT_TUNNELS, ACCESS_MORGUE, ACCESS_FORENSICS_LOCKERS)
 	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MECH_SECURITY, ACCESS_MINERAL_STOREROOM)
+	job_change_id_override = "officer"
 	var/department_access = list()
 
 /datum/card_access/job/security/officer/get_access()
