@@ -8,7 +8,7 @@
 	desc = "A tiny black mass with red tendrils trailing from it. It seems to shrivel in the light."
 	icon_state = "blacktumor"
 	w_class = 1
-	zone = "head"
+	zone = BODY_ZONE_HEAD
 	slot = "brain_tumor"
 	var/organ_health = 3
 
