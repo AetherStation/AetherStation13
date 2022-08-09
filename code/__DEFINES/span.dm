@@ -95,6 +95,7 @@
 #define span_sciradio(str) ("<span class='sciradio'>" + str + "</span>")
 #define span_secradio(str) ("<span class='secradio'>" + str + "</span>")
 #define span_servradio(str) ("<span class='servradio'>" + str + "</span>")
+#define span_shadowling(str) ("<span class='shadowling'>" + str + "</span>")
 #define span_singing(str) ("<span class='singing'>" + str + "</span>")
 #define span_slime(str) ("<span class='slime'>" + str + "</span>")
 #define span_small(str) ("<span class='small'>" + str + "</span>")
