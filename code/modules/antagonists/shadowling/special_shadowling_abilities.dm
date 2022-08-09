@@ -15,13 +15,13 @@
 	max_integrity = INFINITY
 
 /obj/effect/proc_holder/spell/self/shadowling_hatch/cast(list/targets,mob/user = usr)
-	if(user.stat || !ishuman(user) || !user || !is_shadow(user || isinspace(user)))
+	if(user.stat || !ishuman(user) || !user || !is_shadow(user) || isinspace(user))
 		return
 	var/mob/living/carbon/human/H = user
 	var/hatch_or_no = alert(H,"Are you sure you want to hatch? You cannot undo this!",,"Yes","No")
 	switch(hatch_or_no)
 		if("No")
-			to_chat(H, "<span class='warning'>You decide against hatching for now.")
+			to_chat(H, "<span class='warning'>You decide against hatching for now.</span>")
 			charge_counter = charge_max
 			return
 		if("Yes")
@@ -102,6 +102,8 @@
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/enthrall(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/sling/glare(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/veil(null))
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/void_jaunt(null))
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/shadowwalk(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/flashfreeze(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/collective_mind(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/shadowling_regenarmor(null))
@@ -123,7 +125,7 @@
 	var/hatch_or_no = alert(H,"It is time to ascend. Are you sure about this?",,"Yes","No")
 	switch(hatch_or_no)
 		if("No")
-			to_chat(H, "<span class='warning'>You decide against ascending for now.")
+			to_chat(H, "<span class='warning'>You decide against ascending for now.</span>")
 			charge_counter = charge_max
 			return
 		if("Yes")
@@ -170,8 +172,8 @@
 				H.mind.RemoveSpell(S)
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/sling/annihilate(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/sling/hypnosis(null))
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/shadowling_phase_shift(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/ascendant_storm(null))
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/void_jaunt/ascendant(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/shadowling_hivemind_ascendant(null))
 			H.mind.transfer_to(A)
 			A.name = H.real_name

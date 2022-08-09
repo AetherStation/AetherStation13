@@ -11,7 +11,6 @@
 	SSticker.mode.update_shadow_icons_added(owner)
 	SSticker.mode.shadows += owner
 	owner.special_role = "Shadowling"
-	message_admins("[key_name_admin(owner.current)] was made into a shadowling!")
 	log_game("[key_name(owner.current)] was made into a shadowling!")
 	var/mob/living/carbon/human/S = owner.current
 	owner.AddSpell(new /obj/effect/proc_holder/spell/self/shadowling_hatch(null))
@@ -26,8 +25,6 @@
 	owner.announce_objectives()
 
 /datum/antagonist/shadowling/on_removal()
-	for(var/O in objectives_given)
-		owner.objectives -= O
 	SSticker.mode.update_shadow_icons_removed(owner)
 	SSticker.mode.shadows -= owner
 	message_admins("[key_name_admin(owner.current)] was de-shadowlinged!")
@@ -38,18 +35,19 @@
 		owner.RemoveSpell(S)
 	var/mob/living/M = owner.current
 	if(issilicon(M))
-		M.audible_message("<span class='notice'>[M] lets out a short blip.</span>", \
-						  "<span class='userdanger'>You have been turned into a robot! You are no longer a shadowling! Though you try, you cannot remember anything about your time as one...</span>")
+		M.audible_message("<span class='notice'>[M] lets out a short blip.</span>")
+		to_chat(M,"<span class='userdanger'>You have been turned into a[ iscyborg(M) ? " cyborg" : "n AI" ]! You are no longer a shadowling! Though you try, you cannot remember anything about your time as one...</span>")
 	else
-		M.visible_message("<span class='big'>[M] screams and contorts!</span>", \
-						  "<span class='userdanger'>THE LIGHT-- YOUR MIND-- <i>BURNS--</i></span>")
+		M.visible_message("<span class='big'>[M] screams and contorts!</span>")
+		to_chat(M,"<span class='userdanger'>THE LIGHT-- YOUR MIND-- <i>BURNS--</i></span>")
 		spawn(30)
 			if(QDELETED(M))
 				return
-			M.visible_message("<span class='warning'>[M] suddenly bloats and explodes!</span>", \
-							  "<span class='warning bold'>AAAAAAAAA<font size=3>AAAAAAAAAAAAA</font><font size=4>AAAAAAAAAAAA----</font></span>")
+			M.visible_message("<span class='warning'>[M] suddenly bloats and explodes!</span>")
+			to_chat(M,"<span class='warning bold'>AAAAAAAAA<font size=3>AAAAAAAAAAAAA</font><font size=4>AAAAAAAAAAAA----</font></span>")
 			playsound(M, 'sound/magic/Disintegrate.ogg', 100, 1)
 			M.gib()
+	return ..()
 
 /datum/antagonist/shadowling/greet()
 	to_chat(owner, "<br> <span class='shadowling bold big'>You are a shadowling!</span>")
@@ -68,29 +66,6 @@
 				return FALSE
 	return TRUE
 
-/datum/antagonist/shadowling/roundend_report()
-	var/list/parts = list()
-	if(SSticker.mode.shadowling_ascended) //Doesn't end instantly - this is hacky and I don't know of a better way ~X
-		parts += "<span class='greentext big'>The shadowlings have ascended and taken over the station!</span>"
-	else if(!SSticker.mode.shadowling_ascended && check_shadow_death()) //If the shadowlings have ascended, they can not lose the round
-		parts += "<span class='redtext big'>The shadowlings have been killed by the crew!</span>"
-	else if(!SSticker.mode.shadowling_ascended && SSshuttle.emergency.mode >= SHUTTLE_ESCAPE)
-		parts += "<span class='redtext big'>The crew escaped the station before the shadowlings could ascend!</span>"
-	else
-		parts += "<span class='redtext big'>The shadowlings have failed!</span>"
-	if(objectives.len)
-		parts += "<b>The shadowlings' objectives were:</b>"
-		var/count = 1
-		for(var/datum/objective/objective in objectives)
-			if(objective.check_completion())
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='greentext'>Success!</span>"
-			else
-				parts += "<b>Objective #[count]</b>: [objective.explanation_text] <span class='redtext'>Fail.</span>"
-			count++
-	if(LAZYLEN(SSticker.mode.shadows))
-		parts += printplayerlist(SSticker.mode.shadows)
-	return "<div class='panel redborder'>[parts.Join("<br>")]</div>"
-
 /datum/objective/ascend
 	explanation_text = "Ascend to your true form by use of the Ascendance ability. This may only be used with 15 or more collective thralls, while hatched, and is unlocked with the Collective Mind ability."
 
@@ -107,3 +82,117 @@
 		stat("Shadowy Shield Charges", SL.shadow_charges) 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/datum/species/shadow/ling
+	//Normal shadowpeople but with enhanced effects
+	name = "Shadowling"
+	id = "shadowling"
+	say_mod = "chitters"
+	species_traits = list(NOBLOOD,NO_UNDERWEAR,NO_DNA_COPY,NOTRANSSTING,NOEYES)
+	inherent_traits = list(TRAIT_NOGUNS, TRAIT_RESISTCOLD, TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE, TRAIT_NOBREATH, TRAIT_RADIMMUNE, TRAIT_VIRUSIMMUNE, TRAIT_PIERCEIMMUNE)
+	no_equip = list(SLOT_WEAR_MASK, SLOT_GLASSES, SLOT_GLOVES, SLOT_SHOES, SLOT_W_UNIFORM, SLOT_S_STORE)
+	nojumpsuit = TRUE
+	mutanteyes = /obj/item/organ/eyes/night_vision/alien/sling
+	burnmod = 1.5 //1.5x burn damage, 2x is excessive
+	heatmod = 1.5
+	var/mutable_appearance/eyes_overlay
+	var/shadow_charges = 3
+	var/last_charge = 0
+
+/datum/species/shadow/ling/on_species_gain(mob/living/carbon/human/C)
+	C.draw_yogs_parts(TRUE)
+	eyes_overlay = mutable_appearance('yogstation/icons/mob/sling.dmi', "eyes", 25)
+	C.add_overlay(eyes_overlay)
+	. = ..()
+
+/datum/species/shadow/ling/on_species_loss(mob/living/carbon/human/C)
+	C.draw_yogs_parts(FALSE)
+	if(eyes_overlay)
+		C.cut_overlay(eyes_overlay)
+		QDEL_NULL(eyes_overlay)
+	. = ..()
+
+/datum/species/shadow/ling/spec_life(mob/living/carbon/human/H)
+	H.nutrition = NUTRITION_LEVEL_WELL_FED //i aint never get hongry
+	if(isturf(H.loc))
+		var/turf/T = H.loc
+		var/light_amount = T.get_lumcount()
+		if(light_amount > LIGHT_DAM_THRESHOLD) //Can survive in very small light levels. Also doesn't take damage while incorporeal, for shadow walk purposes
+			H.take_overall_damage(0, LIGHT_DAMAGE_TAKEN)
+			if(H.stat != DEAD)
+				to_chat(H, "<span class='userdanger'>The light burns you!</span>") //Message spam to say "GET THE FUCK OUT"
+				H.playsound_local(get_turf(H), 'sound/weapons/sear.ogg', 150, 1, pressure_affected = FALSE)
+		else if (light_amount < LIGHT_HEAL_THRESHOLD  && !istype(H.loc, /obj/effect/dummy/phased_mob/shadowling)) //Can't heal while jaunting
+			H.heal_overall_damage(5,5)
+			H.adjustToxLoss(-5)
+			H.adjustBrainLoss(-25) //Shad O. Ling gibbers, "CAN U BE MY THRALL?!!"
+			H.adjustCloneLoss(-1)
+			H.SetKnockdown(0)
+			H.SetStun(0)
+	var/charge_time = 400 - ((SSticker.mode.thralls && SSticker.mode.thralls.len) || 0)*10
+	if(world.time >= charge_time+last_charge)
+		shadow_charges = min(shadow_charges + 1, 3)
+		last_charge = world.time
+
+/datum/species/shadow/ling/bullet_act(obj/item/projectile/P, mob/living/carbon/human/H)
+	var/turf/T = H.loc
+	if(istype(T) && shadow_charges > 0)
+		var/light_amount = T.get_lumcount()
+		if(light_amount < LIGHT_DAM_THRESHOLD)
+			H.visible_message("<span class='danger'>The shadows around [H] ripple as they absorb \the [P]!</span>")
+			playsound(T, "bullet_miss", 75, 1)
+			shadow_charges = min(shadow_charges - 1, 0)
+			return -1
+	return 0
+
+/datum/species/shadow/ling/lesser //Empowered thralls. Obvious, but powerful
+	name = "Lesser Shadowling"
+	id = "l_shadowling"
+	say_mod = "chitters"
+	species_traits = list(NOBLOOD,NO_DNA_COPY,NOTRANSSTING,NOEYES)
+	inherent_traits = list(TRAIT_NOBREATH, TRAIT_RADIMMUNE)
+	burnmod = 1.1
+	heatmod = 1.1
+
+/datum/species/shadow/ling/lesser/spec_life(mob/living/carbon/human/H)
+	H.nutrition = NUTRITION_LEVEL_WELL_FED //i aint never get hongry
+	if(isturf(H.loc))
+		var/turf/T = H.loc
+		var/light_amount = T.get_lumcount()
+		if(light_amount > LIGHT_DAM_THRESHOLD && !H.incorporeal_move)
+			H.take_overall_damage(0, LIGHT_DAMAGE_TAKEN/2)
+		else if (light_amount < LIGHT_HEAL_THRESHOLD)
+			H.heal_overall_damage(2,2)
+			H.adjustToxLoss(-5)
+			H.adjustBrainLoss(-25)
+			H.adjustCloneLoss(-1)
+
+/datum/game_mode/proc/update_shadow_icons_added(datum/mind/shadow_mind)
+	var/datum/atom_hud/antag/shadow_hud = GLOB.huds[ANTAG_HUD_SHADOW]
+	shadow_hud.join_hud(shadow_mind.current)
+	set_antag_hud(shadow_mind.current, ((is_shadow(shadow_mind.current)) ? "shadowling" : "thrall"))
+
+/datum/game_mode/proc/update_shadow_icons_removed(datum/mind/shadow_mind)
+	var/datum/atom_hud/antag/shadow_hud = GLOB.huds[ANTAG_HUD_SHADOW]
+	shadow_hud.leave_hud(shadow_mind.current)
+	set_antag_hud(shadow_mind.current, null)
+
+/mob/living/proc/add_thrall()
+	if(!istype(mind))
+		return FALSE
+	return mind.add_antag_datum(ANTAG_DATUM_THRALL)
+
+/mob/living/proc/add_sling()
+	if(!istype(mind))
+		return FALSE
+	return mind.add_antag_datum(ANTAG_DATUM_SLING)
+
+/mob/living/proc/remove_thrall()
+	if(!istype(mind))
+		return FALSE
+	return mind.remove_antag_datum(ANTAG_DATUM_THRALL)
+
+/mob/living/proc/remove_sling()
+	if(!istype(mind))
+		return FALSE
+	return mind.remove_antag_datum(ANTAG_DATUM_SLING) 

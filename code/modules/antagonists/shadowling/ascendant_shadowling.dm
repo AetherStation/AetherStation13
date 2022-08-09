@@ -18,20 +18,18 @@
 	response_disarm = "flails at"
 	response_harm   = "flails at"
 	harm_intent_damage = 0
-	melee_damage_lower = 60 //Was 35, buffed
-	melee_damage_upper = 60
+	melee_damage_lower = 160 //Was 60, buffed
+	melee_damage_upper = 160
 	attacktext = "rends"
 	attack_sound = 'sound/weapons/slash.ogg'
 	minbodytemp = 0
 	maxbodytemp = INFINITY
 	environment_smash = 3
 	faction = list("faithless")
+	speech_span = SPAN_REALLYBIG //screw it someone else can figure out how to put both SPAN_YELL and SPAN_REALLYBIG on a speech_span later
 
 /mob/living/simple_animal/ascendant_shadowling/Process_Spacemove(movement_dir = 0)
 	return TRUE //copypasta from carp code
-
-/mob/living/simple_animal/ascendant_shadowling/get_spans()
-	return ..() | list(SPAN_REALLYBIG, SPAN_YELL) //MAKES THEM SHOUT WHEN THEY TALK
 
 /mob/living/simple_animal/ascendant_shadowling/ex_act(severity)
 	return FALSE //You think an ascendant can be hurt by bombs? HA
@@ -44,3 +42,7 @@
 		to_chat(M, "<span class='notice'><i><b>You feel a woosh as newly released energy temporarily distorts space itself...</b></i></span>")
 		SEND_SOUND(M, sound('sound/hallucinations/wail.ogg'))
 	. = ..()
+
+/mob/living/simple_animal/ascendant_shadowling/Initialize()
+	. = ..()
+	LoadComponent(/datum/component/walk)
