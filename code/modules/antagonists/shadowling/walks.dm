@@ -5,18 +5,15 @@
 #define SHADOWWALK_THRESHOLD 0.02
 
 /datum/component/walk
+
 /datum/component/walk/Initialize()
 	if(!istype(parent, /mob/living))
 		return COMPONENT_INCOMPATIBLE
 	RegisterSignal(parent, COMSIG_MOVABLE_MOVED .proc/handle_move)
 	GET_COMPONENT_FROM(footsteps, /datum/component/footstep, parent)
-	if(footsteps)
-		footsteps.signal_enabled = FALSE
 
 /datum/component/walk/RemoveComponent()
 	GET_COMPONENT_FROM(footsteps, /datum/component/footstep, parent)
-	if(footsteps)
-		footsteps.signal_enabled = TRUE
 	return ..()
 
 /datum/component/walk/proc/handle_move(atom/source, old_loc, direction)
@@ -63,7 +60,7 @@
 			if(L.buckled && L.buckled.buckle_prevents_pull)
 				user.stop_pulling()
 				return
-            L.face_atom(user)
+			L.face_atom(user)
 		pulled = user.pulling
 		user.pulling.forceMove(get_turf(user))
 
