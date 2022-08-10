@@ -1,0 +1,4 @@
+author: Skog
+delete-after: true
+changes:
+  - config: map rotation configs now work properly
