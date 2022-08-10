@@ -696,7 +696,7 @@
 	name = "Shadowling"
 	antag_flag = ROLE_SHADOWLING
 	antag_datum = /datum/antagonist/shadowling
-	protected_roles = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Engineer", "Chief Medical Officer", "Brig Physician")
+	protected_roles = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Research Director", "Chief Engineer", "Chief Medical Officer")
 	restricted_roles = list("Cyborg", "AI")
 	required_candidates = 3
 	weight = 3
