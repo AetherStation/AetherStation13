@@ -15,7 +15,7 @@
 	owner.AddSpell(new /obj/effect/proc_holder/spell/self/shadowling_hatch(null))
 	owner.AddSpell(new /obj/effect/proc_holder/spell/self/shadowling_hivemind(null))
 	if(owner.assigned_role == "Clown")
-		to_chat(S, "<span class='notice'>Your alien nature has allowed you to overcome your clownishness.</span>")
+		to_chat(S, span_notice("Your alien nature has allowed you to overcome your clownishness."))
 		S.dna.remove_mutation(CLOWNMUT)
 	var/datum/objective/ascend/O = new
 	O.update_explanation_text()
@@ -29,21 +29,20 @@
 	message_admins("[key_name_admin(owner.current)] was de-shadowlinged!")
 	log_game("[key_name(owner.current)] was de-shadowlinged!")
 	owner.special_role = null
-	for(var/X in owner.spell_list)
-		var/obj/effect/proc_holder/spell/S = X
+	for(var/obj/effect/proc_holder/spell/S as anything in owner.spell_list)
 		owner.RemoveSpell(S)
 	var/mob/living/M = owner.current
 	if(issilicon(M))
-		M.audible_message("<span class='notice'>[M] lets out a short blip.</span>")
-		to_chat(M,"<span class='userdanger'>You have been turned into a[ iscyborg(M) ? " cyborg" : "n AI" ]! You are no longer a shadowling! Though you try, you cannot remember anything about your time as one...</span>")
+		M.audible_message(span_notice("[M] lets out a short blip."))
+		to_chat(M,span_userdanger("You have been turned into a[ iscyborg(M) ? " cyborg" : "n AI" ]! You are no longer a shadowling! Though you try, you cannot remember anything about your time as one..."))
 	else
-		M.visible_message("<span class='big'>[M] screams and contorts!</span>")
-		to_chat(M,"<span class='userdanger'>THE LIGHT-- YOUR MIND-- <i>BURNS--</i></span>")
+		M.visible_message(span_big("[M] screams and contorts!"))
+		to_chat(M,span_userdanger("THE LIGHT-- YOUR MIND-- <i>BURNS--</i>"))
 		spawn(30)
 			if(QDELETED(M))
 				return
-			M.visible_message("<span class='warning'>[M] suddenly bloats and explodes!</span>")
-			to_chat(M,"<span class='warning bold'>AAAAAAAAA<font size=3>AAAAAAAAAAAAA</font><font size=4>AAAAAAAAAAAA----</font></span>")
+			M.visible_message(span_warning("[M] suddenly bloats and explodes!"))
+			to_chat(M,span_warningbold("AAAAAAAAA<font size=3>AAAAAAAAAAAAA</font><font size=4>AAAAAAAAAAAA----</font>"))
 			playsound(M, 'sound/magic/Disintegrate.ogg', 100, 1)
 			M.gib()
 	return ..()
@@ -57,26 +56,25 @@
 	SEND_SOUND(owner.current, sound('sound/ambience/antag/sling.ogg'))
 
 /datum/antagonist/shadowling/proc/check_shadow_death()
-	for(var/SM in get_antag_minds(/datum/antagonist/shadowling))
-		var/datum/mind/shadow_mind = SM
+	for(var/datum/mind/shadow_mind as anything in get_antag_minds(/datum/antagonist/shadowling))
 		if(istype(shadow_mind))
 			var/turf/T = get_turf(shadow_mind.current)
-			if((shadow_mind) && (shadow_mind.current.stat != DEAD) && T && is_station_level(T.z) && ishuman(shadow_mind.current))
+			if(shadow_mind.current.stat != DEAD && T && is_station_level(T.z) && ishuman(shadow_mind.current))
 				return FALSE
 	return TRUE
 
 /datum/objective/ascend
-	explanation_text = "Ascend to your true form by use of the Ascendance ability. This may only be used with 15 or more collective thralls, while hatched, and is unlocked with the Collective Mind ability."
+	explanation_text = "Ascend to your true form by using the Ascendance ability. This may only be used with 15 or more collective thralls, while hatched, and is unlocked with the Collective Mind ability."
 
 /datum/objective/ascend/check_completion()
 	return (SSticker && SSticker.mode && SSticker.mode.shadowling_ascended)
 
 /datum/objective/ascend/update_explanation_text()
-	explanation_text = "Ascend to your true form by use of the Ascendance ability. This may only be used with [SSticker.mode.required_thralls] or more collective thralls, while hatched, and is unlocked with the Collective Mind ability."
+	explanation_text = "Ascend to your true form by using the Ascendance ability. This may only be used with [SSticker.mode.required_thralls] or more collective thralls, while hatched, and is unlocked with the Collective Mind ability."
 
 /mob/living/carbon/human/Stat()
 	. = ..()
-	if(statpanel("Status") && (dna && dna.species) && istype(dna.species, /datum/species/shadow/ling))
+	if(statpanel("Status") && dna && dna.species && istype(dna.species, /datum/species/shadow/ling))
 		var/datum/species/shadow/ling/SL = dna.species
 		stat("Shadowy Shield Charges", SL.shadow_charges) 
 
@@ -117,7 +115,7 @@
 		if(light_amount > LIGHT_DAM_THRESHOLD) //Can survive in very small light levels. Also doesn't take damage while incorporeal, for shadow walk purposes
 			H.take_overall_damage(0, LIGHT_DAMAGE_TAKEN)
 			if(H.stat != DEAD)
-				to_chat(H, "<span class='userdanger'>The light burns you!</span>") //Message spam to say "GET THE FUCK OUT"
+				to_chat(H, span_userdanger("The light burns you!")) //Message spam to say "GET THE FUCK OUT"
 				H.playsound_local(get_turf(H), 'sound/weapons/sear.ogg', 150, 1, pressure_affected = FALSE)
 		else if (light_amount < LIGHT_HEAL_THRESHOLD  && !istype(H.loc, /obj/effect/dummy/phased_mob/shadowling)) //Can't heal while jaunting
 			H.heal_overall_damage(5,5)
@@ -136,7 +134,7 @@
 	if(istype(T) && shadow_charges > 0)
 		var/light_amount = T.get_lumcount()
 		if(light_amount < LIGHT_DAM_THRESHOLD)
-			H.visible_message("<span class='danger'>The shadows around [H] ripple as they absorb \the [P]!</span>")
+			H.visible_message(span_danger("The shadows around [H] ripple as they absorb \the [P]!"))
 			playsound(T, "bullet_miss", 75, 1)
 			shadow_charges = min(shadow_charges - 1, 0)
 			return -1

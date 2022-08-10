@@ -2538,10 +2538,8 @@
 		if(DT_PROB(25, delta_time))
 			M.visible_message("<b>[M]</b> claws at their eyes!")
 			M.Stun(3, 0)
-			. = 1
 	else
 		to_chat(M, span_notice("<b>You breathe in the black smoke, and you feel revitalized!</b>"))
 		M.adjustOxyLoss(-2, 0)
 		M.adjustToxLoss(-2, 0)
-		. = 1
-	return ..() || .
+	return ..()

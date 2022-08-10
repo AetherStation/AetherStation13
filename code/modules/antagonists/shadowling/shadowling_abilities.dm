@@ -4,10 +4,10 @@
 	if(!H || !istype(H)) return
 	if(H.dna && H.dna.species && H.dna.species.id == "shadowling" && is_shadow(H)) return TRUE
 	if(H.dna && H.dna.species && H.dna.species.id == "l_shadowling" && is_thrall(H)) return TRUE
-	if(!is_shadow_or_thrall(usr)) to_chat(usr, "<span class='warning'>You can't wrap your head around how to do this.</span>")
-	else if(is_thrall(usr)) to_chat(usr, "<span class='warning'>You aren't powerful enough to do this.</span>")
-	else if(is_shadow(usr)) to_chat(usr, "<span class='warning'>Your telepathic ability is suppressed. Hatch or use Rapid Re-Hatch first.</span>")
-	return 0
+	if(!is_shadow_or_thrall(usr)) to_chat(usr, span_warning("You can't wrap your head around how to do this."))
+	else if(is_thrall(usr)) to_chat(usr, span_warning("You aren't powerful enough to do this."))
+	else if(is_shadow(usr)) to_chat(usr, span_warning("Your telepathic ability is suppressed. Hatch or use Rapid Re-Hatch first."))
+	return FALSE
 
 /obj/effect/proc_holder/spell/targeted/sling //Stuns and mutes a human target for 10 seconds
 	ranged_mousepointer = 'icons/effects/cult_target.dmi'
@@ -78,7 +78,7 @@
 	if (distance <= 2)
 		target.visible_message("<span class='danger'>[target] suddendly collapses...</span>")
 		to_chat(target, "<span class='userdanger'>A purple light flashes across your vision, and you lose control of your movements!</span>")
-		target.Paralyze(100)
+		target.Paralyze(10 SECONDS)
 		M.silent += 10
 	else //Distant glare
 		var/loss = 100 - (distance * 10)
