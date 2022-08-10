@@ -27,15 +27,15 @@ GLOBAL_LIST_INIT(thrall_spell_types, typecacheof(list(/obj/effect/proc_holder/sp
 	for(var/obj/effect/proc_holder/spell/S as anything in owner.spell_list)
 		if(is_type_in_typecache(S, GLOB.thrall_spell_types)) //only remove thrall spells!
 			owner.RemoveSpell(S)
-	var/mob/living/M = owner.current
-	if(issilicon(M))
-		M.audible_message(span_notice("[M] lets out a short blip, followed by a low-pitched beep."), \
+	var/mob/living/thrall = owner.current
+	if(issilicon(thrall))
+		thrall.audible_message(span_notice("[thrall] lets out a short blip, followed by a low-pitched beep."), \
 						  span_userdanger("You have been turned into a robot! You are no longer a thrall! Though you try, you cannot remember anything about your servitude...</span>"))
 	else
-		M.visible_message(span_big("[M] looks like their mind is their own again!"), \
+		thrall.visible_message(span_big("[thrall] looks like their mind is their own again!"), \
 						  span_userdanger("A piercing white light floods your eyes. Your mind is your own again! Though you try, you cannot remember anything about the shadowlings or your time \
 						  under their command..."))
-	M.update_sight()
+	thrall.update_sight()
 	return ..()
 
 /datum/antagonist/thrall/greet()
