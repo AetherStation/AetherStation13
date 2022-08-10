@@ -400,6 +400,10 @@
 					uplink_loc = P
 			if(UPLINK_PEN)
 				uplink_loc = P
+				if(!uplink_loc)
+					uplink_loc = PDA
+				if(!uplink_loc)
+					uplink_loc = R
 			if(UPLINK_IMPLANT)
 				implant = TRUE
 				uplink_loc = implant
