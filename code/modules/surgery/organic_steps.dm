@@ -9,6 +9,8 @@
 		/obj/item/shard = 45,
 		/obj/item = 30) // 30% success with any sharp item.
 	time = 16
+	preop_sound = 'sound/surgery/scalpel1.ogg'
+	success_sound = 'sound/surgery/scalpel2.ogg'
 
 /datum/surgery_step/incise/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to make an incision in [target]'s [parse_zone(target_zone)]..."),
@@ -47,6 +49,7 @@
 		/obj/item/stack/package_wrap = 35,
 		/obj/item/stack/cable_coil = 15)
 	time = 24
+	preop_sound = 'sound/surgery/hemostat1.ogg'
 
 /datum/surgery_step/clamp_bleeders/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to clamp bleeders in [target]'s [parse_zone(target_zone)]..."),
@@ -72,6 +75,8 @@
 		TOOL_WIRECUTTER = 35,
 		/obj/item/stack/rods = 35)
 	time = 24
+	preop_sound = 'sound/surgery/retractor1.ogg'
+	success_sound = 'sound/surgery/retractor2.ogg'
 
 /datum/surgery_step/retract_skin/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to retract the skin in [target]'s [parse_zone(target_zone)]..."),
@@ -89,6 +94,8 @@
 		TOOL_WELDER = 70,
 		/obj/item = 30) // 30% success with any hot item.
 	time = 24
+	preop_sound = 'sound/surgery/cautery1.ogg'
+	success_sound = 'sound/surgery/cautery2.ogg'
 
 /datum/surgery_step/close/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to mend the incision in [target]'s [parse_zone(target_zone)]..."),
@@ -124,6 +131,8 @@
 		/obj/item/kitchen/knife/butcher = 25,
 		/obj/item = 20) //20% success (sort of) with any sharp item with a force>=10
 	time = 54
+	preop_sound = 'sound/surgery/saw.ogg'
+	success_sound = 'sound/surgery/organ2.ogg'
 
 /datum/surgery_step/saw/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	display_results(user, target, span_notice("You begin to saw through the bone in [target]'s [parse_zone(target_zone)]..."),
