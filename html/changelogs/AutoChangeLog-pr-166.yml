@@ -1,0 +1,4 @@
+author: Thebleh
+delete-after: true
+changes:
+  - admin: Admins can now ping each other in asay
