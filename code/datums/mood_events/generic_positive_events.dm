@@ -258,9 +258,9 @@
 	timeout = 5 MINUTES
 
 /datum/mood_event/thrall
-	description = "<span class='shadowling'><i>The darkness is true. I love them. I love the masters.</i></span>\n"
+	description = span_shadowling("The darkness is true. I love them. I love the masters.")
 	mood_change = 40
 
-/datum/mood_event/sling
-	description = "<span class='shadowling'><b>The keys to reality are within my grasp.</b></span>\n"
+/datum/mood_event/shadowling
+	description = span_shadowling("The keys to reality are within my grasp.")
 	mood_change = 20 

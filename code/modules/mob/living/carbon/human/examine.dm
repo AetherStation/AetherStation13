@@ -320,7 +320,7 @@
 				if(91.01 to INFINITY)
 					msg += "[t_He] [t_is] a shitfaced, slobbering wreck.\n"
 
-	if(!skipface && mind && mind.has_antag_datum(ANTAG_DATUM_THRALL))
+	if(!skipface && mind && IS_THRALL(src))
 		msg += "[t_His] features seem unnaturally tight and drawn.\n"
 
 		if(src != user)

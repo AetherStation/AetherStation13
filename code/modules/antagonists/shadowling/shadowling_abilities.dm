@@ -4,23 +4,24 @@
 	if(!H || !istype(H)) return
 	if(H.dna && H.dna.species && H.dna.species.id == "shadowling" && is_shadow(H)) return TRUE
 	if(H.dna && H.dna.species && H.dna.species.id == "l_shadowling" && is_thrall(H)) return TRUE
-	if(!is_shadow_or_thrall(usr)) to_chat(usr, span_warning("You can't wrap your head around how to do this."))
+
+	if(!IS_SHADOW_OR_THRALL(usr)) to_chat(usr, span_warning("You can't wrap your head around how to do this."))
 	else if(is_thrall(usr)) to_chat(usr, span_warning("You aren't powerful enough to do this."))
 	else if(is_shadow(usr)) to_chat(usr, span_warning("Your telepathic ability is suppressed. Hatch or use Rapid Re-Hatch first."))
 	return FALSE
-
-/obj/effect/proc_holder/spell/targeted/sling //Stuns and mutes a human target for 10 seconds
+	
+/obj/effect/proc_holder/spell/targeted/shadowling //Stuns and mutes a human target for 10 seconds
 	ranged_mousepointer = 'icons/effects/cult_target.dmi'
 	var/mob/living/user
 	var/mob/living/target
 
-/obj/effect/proc_holder/spell/targeted/sling/Click()
+/obj/effect/proc_holder/spell/targeted/shadowling/Click()
 	var/mob/living/user = usr
 	if(!istype(user))
 		return
 	var/msg
 	if(!can_cast(user))
-		msg = "<span class='warning'>You can no longer cast [name]!</span>"
+		msg = span_warning("You can no longer cast [name]!")
 		remove_ranged_ability(msg)
 		return
 	if(active)
@@ -30,9 +31,9 @@
 	if(action)
 		action.UpdateButtonIcon()
 
-/obj/effect/proc_holder/spell/targeted/sling/InterceptClickOn(mob/living/caller, params, atom/t)
+/obj/effect/proc_holder/spell/targeted/shadowling/InterceptClickOn(mob/living/caller, params, atom/t)
 	if(!isliving(t))
-		to_chat(caller, "<span class='warning'>You may only use this ability on living things!</span>")
+		to_chat(caller, span_warning("You may only use this ability on living things!"))
 		revert_cast()
 		return
 	user = caller
@@ -41,16 +42,16 @@
 		revert_cast()
 		return
 
-/obj/effect/proc_holder/spell/targeted/sling/revert_cast()
+/obj/effect/proc_holder/spell/targeted/shadowling/revert_cast()
 	. = ..()
 	remove_ranged_ability()
 
-/obj/effect/proc_holder/spell/targeted/sling/start_recharge()
+/obj/effect/proc_holder/spell/targeted/shadowling/start_recharge()
 	. = ..()
 	if(action)
 		action.UpdateButtonIcon()
 
-/obj/effect/proc_holder/spell/targeted/sling/glare //Stuns and mutes a human target for 10 seconds
+/obj/effect/proc_holder/spell/targeted/shadowling/glare //Stuns and mutes a human target for 10 seconds
 	name = "Glare"
 	desc = "Disrupts the target's motor and speech abilities."
 	panel = "Shadowling Abilities"
@@ -60,32 +61,38 @@
 	action_icon_state = "glare"
 	action_icon = 'icons/mob/actions.dmi'
 
-/obj/effect/proc_holder/spell/targeted/sling/glare/InterceptClickOn(mob/living/caller, params, atom/t)
+/obj/effect/proc_holder/spell/targeted/shadowling/glare/InterceptClickOn(mob/living/caller, params, atom/t)
 	. = ..()
 	if(!target)
 		return
 	if(target.stat)
-		to_chat(usr, "<span class='warning'>[target] must be conscious!</span>")
+		to_chat(usr, span_warning("[target] must be conscious!"))
 		revert_cast()
 		return
 	if(is_shadow_or_thrall(target))
-		to_chat(usr, "<span class='warning'>You cannot glare at allies!</span>")
+		to_chat(usr, span_warning("You cannot glare at allies!"))
 		revert_cast()
 		return
 	var/mob/living/carbon/human/M = target
-	usr.visible_message("<span class='warning'><b>[usr]'s eyes flash a purpleish-red!</b></span>")
+	usr.visible_message(span_warning("<b>[usr]'s eyes flash a purpleish-red!"))
 	var/distance = get_dist(target, usr)
 	if (distance <= 2)
+<<<<<<< HEAD
+		target.visible_message(span_danger("[target] suddendly collapses..."))
+		to_chat(target, span_userdanger("A purple light flashes across your vision, and you lose control of your movements!"))
+		target.Paralyze(100)
+=======
 		target.visible_message("<span class='danger'>[target] suddendly collapses...</span>")
 		to_chat(target, "<span class='userdanger'>A purple light flashes across your vision, and you lose control of your movements!</span>")
 		target.Paralyze(10 SECONDS)
+>>>>>>> 90ed1a9e0c0ae150c1f45602e7012b3a119bd75b
 		M.silent += 10
 	else //Distant glare
 		var/loss = 100 - (distance * 10)
 		target.adjustStaminaLoss(loss)
 		target.stuttering = loss
-		to_chat(target, "<span class='userdanger'>A purple light flashes across your vision, and exhaustion floods your body...</span>")
-		target.visible_message("<span class='danger'>[target] looks very tired...</span>")
+		to_chat(target, span_userdanger("A purple light flashes across your vision, and exhaustion floods your body..."))
+		target.visible_message(span_danger("[target] looks very tired..."))
 	charge_counter = 0
 	start_recharge()
 	remove_ranged_ability()
@@ -102,21 +109,20 @@
 	range = 5
 	action_icon_state = "veil"
 	action_icon = 'icons/mob/actions.dmi'
-	var/admin_override = FALSE //Requested by Shadowlight213. Allows anyone to cast the spell, not just shadowlings.
+	var/admin_override = FALSE ///Requested by Shadowlight213. Allows anyone to cast the spell, not just shadowlings.
 
 /obj/effect/proc_holder/spell/aoe_turf/proc/extinguishItem(obj/item/I, cold = FALSE) //Does not darken items held by mobs due to mobs having separate luminosity, use extinguishMob() or write your own proc.
 	var/blacklisted_lights = list(/obj/item/flashlight/flare, /obj/item/flashlight/slime)
 	if(istype(I, /obj/item/flashlight))
 		var/obj/item/flashlight/F = I
 		if(F.on)
-			if(cold)
-				if(is_type_in_list(F, blacklisted_lights))
-					F.visible_message("<span class='warning'>The sheer cold shatters [F]!</span>")
-					qdel(F)
-				else
-					return
+			if(!cold)
+				return
+			if(is_type_in_list(F, blacklisted_lights))
+				F.visible_message(span_warning("The sheer cold shatters [F]!"))
+				qdel(F)
 			if(is_type_in_list(I, blacklisted_lights))
-				I.visible_message("<span class='danger'>[I] dims slightly before scattering the shadows around it.</span>")
+				I.visible_message(span_userdanger("[I] dims slightly before scattering the shadows around it."))
 				return F.on //Necessary because flashlights become 0-luminosity when held.  I don't make the rules of lightcode.
 			F.on = FALSE
 			F.update_brightness()
@@ -235,7 +241,7 @@
 	range = 1 //Adjacent to user
 	action_icon_state = "enthrall"
 	action_icon = 'icons/mob/actions.dmi'
-	var/enthralling = FALSE
+	var/enthralling = FALSE ///Are we already enthralling someone
 
 /obj/effect/proc_holder/spell/targeted/enthrall/cast(list/targets,mob/living/carbon/human/user = usr)
 	if(!(user.mind in SSticker.mode.shadows)) return
@@ -314,8 +320,8 @@
 		var/obj/item/organ/internal/shadowtumor/ST = new
 		ST.Insert(target, FALSE, FALSE)
 		target.add_thrall()
-		if(target.reagents.has_reagent("frostoil")) //Stabilize body temp incase the sling froze them earlier
-			target.reagents.remove_reagent("frostoil")
+		if(target.reagents.has_reagent(/datum/reagent/consumable/frostoil)) //Stabilize body temp incase the shadowling froze them earlier
+			target.reagents.remove_reagent(/datum/reagent/consumable/frostoil)
 			to_chat(target, "<span class='notice'>You feel warmer... It feels good.</span>")
 			target.bodytemperature = 310
 
@@ -377,7 +383,7 @@
 	action_icon = 'icons/mob/actions.dmi'
 	var/blind_smoke_acquired = FALSE
 	var/screech_acquired = FALSE
-	var/reviveThrallAcquired = FALSE
+	var/revive_thrall_acquired = FALSE
 	var/null_charge_acquired = FALSE
 
 /obj/effect/proc_holder/spell/self/collective_mind/cast(mob/living/carbon/human/user)
@@ -409,8 +415,8 @@
 		to_chat(user, "<span class='shadowling'><i>The power of your thralls has granted you the <b>Null Charge</b> ability. This ability will drain an APC's contents to the void, preventing it from recharging \
 		or sending power until repaired.</i></span>")
 		user.mind.AddSpell(new /obj/effect/proc_holder/spell/self/null_charge(null))
-	if(thralls >= CEILING(9 * SSticker.mode.thrall_ratio, 1) && !reviveThrallAcquired)
-		reviveThrallAcquired = TRUE
+	if(thralls >= CEILING(9 * SSticker.mode.thrall_ratio, 1) && !revive_thrall_acquired)
+		revive_thrall_acquired = TRUE
 		to_chat(user, "<span class='shadowling'><i>The power of your thralls has granted you the <b>Black Recuperation</b> ability. This will, after a short time, bring a dead thrall completely back to life \
 		with no bodily defects.</i></span>")
 		user.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/revive_thrall(null))
@@ -527,8 +533,6 @@
 			if(is_shadow_or_thrall(target))
 				if(target == user) //No message for the user, of course
 					continue
-				else
-					continue
 			if(iscarbon(target))
 				var/mob/living/carbon/M = target
 				to_chat(M, "<span class='danger'><b>A spike of pain drives into your head and scrambles your thoughts!</b></span>")
@@ -616,7 +620,7 @@
 				thrallToRevive.set_species(/datum/species/shadow/ling/lesser)
 				thrallToRevive.mind.RemoveSpell(/obj/effect/proc_holder/spell/targeted/lesser_glare)
 				thrallToRevive.mind.RemoveSpell(/obj/effect/proc_holder/spell/self/lesser_shadow_walk)
-				thrallToRevive.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/sling/glare(null))
+				thrallToRevive.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/shadowling/glare(null))
 				thrallToRevive.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/veil(null))
 			if("Revive")
 				if(!is_thrall(thrallToRevive))
@@ -661,7 +665,7 @@
 
 /obj/effect/proc_holder/spell/targeted/shadowling_extend_shuttle
 	name = "Destroy Engines"
-	desc = "Sacrifice a thrall to extend the time of the emergency shuttle's arrival by fifteen minutes. This can only be used once."
+	desc = "Sacrifice a thrall to extend the time of the emergency shuttle's arrival by ten minutes. This can only be used once."
 	panel = "Shadowling Abilities"
 	range = 1
 	human_req = TRUE
@@ -700,7 +704,7 @@
 						  "<span class='warning'><b>...speeding by... ...pretty blue glow... ...touch it... ...no glow now... ...no light... ...nothing at all...</span>")
 		M.dust()
 		if(SSshuttle.emergency.mode == SHUTTLE_CALL)
-			var/more_minutes = 9000
+			var/more_minutes = 10 MINUTES
 			var/timer = SSshuttle.emergency.timeLeft()
 			timer += more_minutes
 			priority_announce("Major system failure aboard the emergency shuttle. This will extend its arrival time by approximately 15 minutes...", "System Failure", 'sound/misc/notice1.ogg')
@@ -755,7 +759,7 @@
 		S2.jaunter = user
 		charge_counter = charge_max //Don't have to wait for cooldown to exit
 
-//Both have to be high to cancel out natural regeneration
+///Amount of stamina damage dealed to shadowling when they exit this. Both have to be high to cancel out natural regeneration
 #define VOIDJAUNT_STAM_PENALTY_DARK 10
 #define VOIDJAUNT_STAM_PENALTY_LIGHT 35
 
@@ -955,7 +959,7 @@
 
 // ASCENDANT ABILITIES BEYOND THIS POINT //
 // YES THEY'RE OP, BUT THEY'VE WON AT THE POINT WHERE THEY HAVE THIS, SO WHATEVER. //
-/obj/effect/proc_holder/spell/targeted/sling/annihilate //Gibs someone instantly.
+/obj/effect/proc_holder/spell/targeted/shadowling/annihilate //Gibs someone instantly.
 	name = "Annihilate"
 	desc = "Gibs someone instantly."
 	panel = "Ascendant"
@@ -966,7 +970,7 @@
 	action_icon = 'icons/mob/actions.dmi'
 	sound = 'sound/magic/Staff_Chaos.ogg'
 
-/obj/effect/proc_holder/spell/targeted/sling/annihilate/InterceptClickOn(mob/living/caller, params, atom/t)
+/obj/effect/proc_holder/spell/targeted/shadowling/annihilate/InterceptClickOn(mob/living/caller, params, atom/t)
 	. = ..()
 	var/mob/living/boom = target
 	if(user.incorporeal_move)
@@ -981,7 +985,7 @@
 		to_chat(user, "<span class='warning'>Not even we are that bad of monsters..<span>")
 		revert_cast()
 		return
-	if (!boom.is_holding(/obj/item/storage/backpack/holding)) //so people actually have a chance to kill ascended slings without being insta-sploded
+	if (!boom.is_holding(/obj/item/storage/backpack/holding)) //so people actually have a chance to kill ascended shadowlings without being insta-sploded
 		user.visible_message("<span class='warning'>[user]'s markings flare as they gesture at [boom]!</span>", \
 							"<span class='shadowling'>You direct a lance of telekinetic energy into [boom].</span>")
 		if(iscarbon(boom))
@@ -992,7 +996,7 @@
 		to_chat(user, "<span class='warning'>The telekinetic energy is absorbed by the bluespace portal in [boom]'s hand!<span>")
 		to_chat(boom, "<span class='userdanger'>You feel a slight recoil from the bag of holding!<span>")
 
-/obj/effect/proc_holder/spell/targeted/sling/hypnosis //Enthralls someone instantly. Nonlethal alternative to Annihilate
+/obj/effect/proc_holder/spell/targeted/shadowling/hypnosis //Enthralls someone instantly. Nonlethal alternative to Annihilate
 	name = "Hypnosis"
 	desc = "Instantly enthralls a human."
 	panel = "Ascendant"
@@ -1002,7 +1006,7 @@
 	action_icon = 'icons/mob/actions.dmi'
 	action_icon_state = "enthrall"
 
-/obj/effect/proc_holder/spell/targeted/sling/hypnosis/InterceptClickOn(mob/living/caller, params, atom/t)
+/obj/effect/proc_holder/spell/targeted/shadowling/hypnosis/InterceptClickOn(mob/living/caller, params, atom/t)
 	. = ..()
 	if(user.incorporeal_move)
 		revert_cast()
@@ -1077,7 +1081,7 @@
 			to_chat(M, "<a href='?src=[REF(M)];follow=[REF(user)]'>(F)</a> [text]")
 	log_say("[user.real_name]/[user.key] : [text]")
 
-/obj/effect/proc_holder/spell/targeted/sling/instant_enthrall //Enthralls someone instantly. Nonlethal alternative to Annihilate
+/obj/effect/proc_holder/spell/targeted/shadowling/instant_enthrall //Enthralls someone instantly. Nonlethal alternative to Annihilate
 	name = "Subjugate"
 	desc = "Instantly enthrall a weakling."
 	panel = "Ascendant"

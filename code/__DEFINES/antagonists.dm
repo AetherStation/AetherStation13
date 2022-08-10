@@ -209,10 +209,11 @@ GLOBAL_LIST_INIT(normal_employers, list(
 #define ANTAG_DATUM_THRALL		/datum/antagonist/thrall
 #define ANTAG_DATUM_SLING		/datum/antagonist/shadowling
 
-#define is_thrall(M) (istype(M, /mob/living) && M.mind && M.mind.has_antag_datum(/datum/antagonist/thrall))
-#define is_shadow(M) (istype(M, /mob/living) && M.mind && M.mind.has_antag_datum(/datum/antagonist/shadowling))
-#define is_shadow_or_thrall(M) (is_thrall(M) || is_shadow(M))
+#define IS_THRALL(M) (istype(M, /mob/living) && M.mind && M.mind.has_antag_datum(/datum/antagonist/thrall))
+#define IS_SHADOW(M) (istype(M, /mob/living) && M.mind && M.mind.has_antag_datum(/datum/antagonist/shadowling))
+#define IS_SHADOW_OR_THRALL(M) (is_thrall(M) || is_shadow(M))
 
+//Light heal/damage tresholds and light damage for shadowlings
 #define LIGHT_HEAL_THRESHOLD 2
 #define LIGHT_DAMAGE_TAKEN 7
 #define LIGHT_DAM_THRESHOLD 0.25

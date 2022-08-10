@@ -2,7 +2,7 @@
 	name = "Shadowling"
 	roundend_category = "shadowlings"
 	antagpanel_category = "Shadowlings"
-	antag_moodlet = /datum/mood_event/sling
+	antag_moodlet = /datum/mood_event/shadowling
 	var/list/objectives_given = list()
 
 /datum/antagonist/shadowling/on_gain()
@@ -31,24 +31,37 @@
 	owner.special_role = null
 	for(var/obj/effect/proc_holder/spell/S as anything in owner.spell_list)
 		owner.RemoveSpell(S)
+<<<<<<< HEAD
+	var/mob/living/shadowling = owner.current
+	if(issilicon(shadowling))
+		shadowling.audible_message("<span class='notice'>[shadowling] lets out a short blip.</span>")
+		to_chat(shadowling,"<span class='userdanger'>You have been turned into a[ iscyborg(shadowling) ? " cyborg" : "n AI" ]! You are no longer a shadowling! Though you try, you cannot remember anything about your time as one...</span>")
+=======
 	var/mob/living/M = owner.current
 	if(issilicon(M))
 		M.audible_message(span_notice("[M] lets out a short blip."))
 		to_chat(M,span_userdanger("You have been turned into a[ iscyborg(M) ? " cyborg" : "n AI" ]! You are no longer a shadowling! Though you try, you cannot remember anything about your time as one..."))
+>>>>>>> 90ed1a9e0c0ae150c1f45602e7012b3a119bd75b
 	else
+<<<<<<< HEAD
+		shadowling.visible_message("<span class='big'>[shadowling] screams and contorts!</span>")
+		to_chat(shadowling,"<span class='userdanger'>THE LIGHT-- YOUR MIND-- <i>BURNS--</i></span>")
+=======
 		M.visible_message(span_big("[M] screams and contorts!"))
 		to_chat(M,span_userdanger("THE LIGHT-- YOUR MIND-- <i>BURNS--</i>"))
+>>>>>>> 90ed1a9e0c0ae150c1f45602e7012b3a119bd75b
 		spawn(30)
 			if(QDELETED(M))
 				return
-			M.visible_message(span_warning("[M] suddenly bloats and explodes!"))
-			to_chat(M,span_warningbold("AAAAAAAAA<font size=3>AAAAAAAAAAAAA</font><font size=4>AAAAAAAAAAAA----</font>"))
-			playsound(M, 'sound/magic/Disintegrate.ogg', 100, 1)
-			M.gib()
+
+			shadowling.visible_message(span_warning("[shadowling] suddenly bloats and explodes!"))
+			to_chat(shadowling,span_warningbold("AAAAAAAAA<font size=3>AAAAAAAAAAAAA</font><font size=4>AAAAAAAAAAAA----</font>"))
+			playsound(shadowling, 'sound/magic/Disintegrate.ogg', 100, 1)
+			shadowling.gib()
 	return ..()
 
 /datum/antagonist/shadowling/greet()
-	to_chat(owner, "<br> <span class='shadowling bold big'>You are a shadowling!</span>")
+	to_chat(owner, "<br> <span class='shadowling'>You are a shadowling!")
 	to_chat(owner, "<b>Currently, you are disguised as an employee aboard [station_name()].</b>")
 	to_chat(owner, "<b>In your limited state, you have three abilities: Enthrall, Hatch, and Hivemind Commune.</b>")
 	to_chat(owner, "<b>Any other shadowlings are your allies. You must assist them as they shall assist you.</b>")
@@ -94,7 +107,7 @@
 	heatmod = 1.5
 	var/mutable_appearance/eyes_overlay
 	var/shadow_charges = 3
-	var/last_charge = 0
+	var/last_charge = 0 //Last time shadow charge was used
 
 /datum/species/shadow/ling/on_species_gain(mob/living/carbon/human/C)
 	eyes_overlay = mutable_appearance('icons/mob/sling.dmi', "eyes", 25)
@@ -197,4 +210,4 @@
 	var/list/datum/mind/thralls = list()
 	var/required_thralls = 15 //How many thralls are needed (this is changed in pre_setup, so it scales based on pop)
 	var/shadowling_ascended = FALSE //If at least one shadowling has ascended
-	var/thrall_ratio = 1
+	var/thrall_ratio = 1 //Is used when calculating the number of thralls needed for shadowlings to gain certain spells
