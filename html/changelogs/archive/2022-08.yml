@@ -51,6 +51,8 @@
   TheChosenEvilOne:
   - bugfix: Space ruin ID cards have the correct access again.
 2022-08-10:
+  Skog:
+  - config: map rotation configs now work properly
   Skoglol:
   - rscadd: Added soapy water, and a visual effect when cleaning with soapy water
       or soap. Make soapy water by putting soap in water. Water, holy water, soapy
