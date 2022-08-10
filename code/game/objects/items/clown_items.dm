@@ -27,6 +27,7 @@
 	var/cleanspeed = 35 //slower than mop
 	force_string = "robust... against germs"
 	var/uses = 100
+	var/suds_decal = /obj/effect/decal/temporary/suds
 
 /obj/item/soap/ComponentInitialize()
 	. = ..()
@@ -104,12 +105,12 @@
  * Arguments
  * * user - The mob that is using the soap to clean.
  */
-/obj/item/soap/proc/decreaseUses(mob/user)
+/obj/item/soap/proc/decreaseUses(mob/user, amount = 1)
 	var/skillcheck = 1
 	if(user?.mind)
 		skillcheck = user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)
 	if(prob(skillcheck*100)) //higher level = more uses assuming RNG is nice
-		uses--
+		uses -= amount
 	if(uses <= 0)
 		to_chat(user, span_warning("[src] crumbles into tiny bits!"))
 		qdel(src)
@@ -131,9 +132,9 @@
 			to_chat(user, span_notice("You scrub \the [target.name] out."))
 			var/obj/effect/decal/cleanable/cleanies = target
 			user.mind?.adjust_experience(/datum/skill/cleaning, max(round(cleanies.beauty/CLEAN_SKILL_BEAUTY_ADJUSTMENT),0)) //again, intentional that this does NOT round but mops do.
+			new suds_decal(get_turf(target))
 			qdel(target)
 			decreaseUses(user)
-
 	else if(ishuman(target) && user.zone_selected == BODY_ZONE_PRECISE_MOUTH)
 		var/mob/living/carbon/human/human_user = user
 		user.visible_message(span_warning("\the [user] washes \the [target]'s mouth out with [src.name]!"), span_notice("You wash \the [target]'s mouth out with [src.name]!")) //washes mouth out with soap sounds better than 'the soap' here if(user.zone_selected == "mouth")
@@ -149,7 +150,31 @@
 			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 			target.set_opacity(initial(target.opacity))
 			user.mind?.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
+			new suds_decal(get_turf(target))
 			decreaseUses(user)
+	else if(istype(target, /obj/item/reagent_containers)) //Makes soapy water, if able.
+		var/obj/item/reagent_containers/container = target
+		var/datum/reagents/current_reagents = container.reagents
+		var/datum/reagent/ourwater
+		for(var/datum/reagent/R in current_reagents.reagent_list)
+			if(istype(R, /datum/reagent/water))
+				ourwater = R
+		if(ourwater)
+			to_chat(user, span_notice("You slosh [src] around in \the [target], making the contents bubbly."))
+			playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
+			var/amount = ourwater.volume
+			current_reagents.remove_all_type(/datum/reagent/water, amount, strict = 1)
+			current_reagents.add_reagent(/datum/reagent/water/soapy, amount)
+			decreaseUses(user, CEILING(amount/4, 1))
+		else
+			user.visible_message(span_notice("[user] begins to clean \the [target.name] with [src]..."), span_notice("You begin to clean \the [target.name] with [src]..."))
+			if(do_after(user, clean_speedies, target = target))
+				to_chat(user, span_notice("You clean \the [target.name]."))
+				target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+				target.set_opacity(initial(target.opacity))
+				user.mind?.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
+				new suds_decal(get_turf(target))
+				decreaseUses(user)
 	else
 		user.visible_message(span_notice("[user] begins to clean \the [target.name] with [src]..."), span_notice("You begin to clean \the [target.name] with [src]..."))
 		if(do_after(user, clean_speedies, target = target))
@@ -160,9 +185,19 @@
 			target.wash(CLEAN_SCRUB)
 			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
 			user.mind?.adjust_experience(/datum/skill/cleaning, CLEAN_SKILL_GENERIC_WASH_XP)
+			new suds_decal(get_turf(target))
 			decreaseUses(user)
 	return
 
+/obj/item/soap/Move(atom/newloc, direct, glide_size_override)
+	. = ..()
+	if(pulledby && isturf(newloc))
+		new suds_decal(newloc)
+		if(prob(10))
+			uses--
+			if(uses <= 0)
+				visible_message(span_warning("\The [src] crumbles into tiny bits!"))
+				qdel(src)
 
 /*
  * Bike Horns
