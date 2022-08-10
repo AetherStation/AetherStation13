@@ -131,7 +131,7 @@
 		shadow_charges = min(shadow_charges + 1, 3)
 		last_charge = world.time
 
-/datum/species/shadow/ling/bullet_act(obj/item/projectile/P, mob/living/carbon/human/H)
+/datum/species/shadow/ling/bullet_act(obj/projectile/P, mob/living/carbon/human/H)
 	var/turf/T = H.loc
 	if(istype(T) && shadow_charges > 0)
 		var/light_amount = T.get_lumcount()
@@ -146,7 +146,7 @@
 	name = "Lesser Shadowling"
 	id = "l_shadowling"
 	say_mod = "chitters"
-	species_traits = list(NOBLOOD,NO_DNA_COPY,NOTRANSSTING,NOEYES)
+	species_traits = list(NOBLOOD,NO_DNA_COPY,NOTRANSSTING)
 	inherent_traits = list(TRAIT_NOBREATH, TRAIT_RADIMMUNE)
 	burnmod = 1.1
 	heatmod = 1.1

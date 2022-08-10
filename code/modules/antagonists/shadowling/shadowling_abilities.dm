@@ -129,7 +129,6 @@
 	return I.luminosity
 
 /obj/effect/proc_holder/spell/aoe_turf/proc/extinguishMob(mob/living/H, cold = FALSE)
-	var/blacklistLuminosity = 0
 	for(var/obj/item/F in H)
 		if(cold)
 			extinguishItem(F, TRUE)
@@ -177,7 +176,7 @@
 				M.visible_message(span_danger("[M]'s lights burn out!"))
 				M.set_light_on(FALSE)
 				for(var/occupant in M.occupants)
-					remove_action_type_from_mob(/datum/action/vehicle/sealed/mecha/mech_toggle_lights, occupant)
+					M.remove_action_type_from_mob(/datum/action/vehicle/sealed/mecha/mech_toggle_lights, occupant)
 			if(istype(LO, /obj/machinery/power/floodlight))
 				var/obj/machinery/power/floodlight/FL = LO
 				FL.change_setting(2) // Set floodlight to lowest setting
@@ -440,7 +439,7 @@
 	charge_max = 600
 	human_req = TRUE
 	clothes_req = FALSE
-	action_icon = 'cons/mob/actions.dmi'
+	action_icon = 'icons/mob/actions.dmi'
 	action_icon_state = "null_charge"
 
 /obj/effect/proc_holder/spell/self/null_charge/cast(mob/living/carbon/human/user)
@@ -534,7 +533,7 @@
 				var/mob/living/carbon/M = target
 				to_chat(M, "<span class='danger'><b>A spike of pain drives into your head and scrambles your thoughts!</b></span>")
 				M.add_confusion(15)
-				var/obj/item/organ/ears/ears = C.getorganslot(ORGAN_SLOT_EARS)
+				var/obj/item/organ/ears/ears = M.getorganslot(ORGAN_SLOT_EARS)
 				if(ears)
 					ears.adjustEarDamage(0, 30)//as bad as a changeling shriek
 			else if(issilicon(target))
@@ -871,7 +870,7 @@
 			to_chat(target, "<span class='userdanger'>Your gaze is forcibly drawn into [user]'s eyes, and you suddendly feel dizzy and nauseous...</span>")
 		else //Only alludes to the thrall if the target is close by
 			to_chat(target, "<span class='userdanger'>Red lights suddenly dance in your vision, and you suddendly feel dizzy and nauseous...</span>")
-		M.confused += 25
+		M.add_confusion(25)
 		M.Jitter(50)
 		if(prob(25))
 			M.vomit(10)
