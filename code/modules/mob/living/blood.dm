@@ -7,6 +7,9 @@
 // Takes care blood loss and regeneration
 /mob/living/carbon/human/handle_blood(delta_time, times_fired)
 
+	if(HAS_TRAIT(src, TRAIT_NOPULSE))
+		return
+
 	if(NOBLOOD in dna.species.species_traits || HAS_TRAIT(src, TRAIT_NOBLEED) || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		return
 
