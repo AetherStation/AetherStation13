@@ -1,6 +1,6 @@
 /mob/living/simple_animal/ascendant_shadowling
 	name = "ascendant shadowling"
-	desc = "HOLY SHIT RUN THE FUCK AWAY- [span_shadowling(RAAAAAAA!)]"
+	desc = "HOLY SHIT RUN THE FUCK AWAY"
 	icon = 'icons/mob/mob.dmi'
 	icon_state = "shadowling_ascended"
 	icon_living = "shadowling_ascended"
