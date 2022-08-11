@@ -40,6 +40,10 @@
 #define ROLE_LAVALAND "Lavaland"
 #define ROLE_INTERNAL_AFFAIRS "Internal Affairs Agent"
 #define ROLE_FAMILIES "Familes Antagonists"
+#define ROLE_BLOODSUCKER		"Bloodsucker"
+#define ROLE_VAMPIRICACCIDENT	"Vampiric Accident"
+#define ROLE_BLOODSUCKERBREAKOUT	"Bloodsucker Breakout"
+#define ROLE_MONSTERHUNTER		"Monster Hunter"
 
 #define ROLE_POSITRONIC_BRAIN "Positronic Brain"
 #define ROLE_FREE_GOLEM "Free Golem"
@@ -106,6 +110,8 @@ GLOBAL_LIST_INIT(special_roles, list(
 	ROLE_SENTIENCE = 0,
 	ROLE_FAMILIES = 0,
 	ROLE_HERETIC = 0,
+	ROLE_BLOODSUCKER = 0,
+	ROLE_MONSTERHUNTER = 0,
 ))
 
 //Job defines for what happens when you fail to qualify for any job during job selection
