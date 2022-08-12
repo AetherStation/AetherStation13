@@ -1,0 +1,4 @@
+author: Sparkezel
+delete-after: true
+changes:
+  - bugfix: Fixes meta atmos for real
