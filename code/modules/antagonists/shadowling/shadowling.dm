@@ -58,10 +58,9 @@
 
 /datum/antagonist/shadowling/proc/check_shadow_death()
 	for(var/datum/mind/shadow_mind as anything in get_antag_minds(/datum/antagonist/shadowling))
-		if(istype(shadow_mind))
-			var/turf/T = get_turf(shadow_mind.current)
-			if(shadow_mind.current.stat != DEAD && T && is_station_level(T.z) && ishuman(shadow_mind.current))
-				return FALSE
+		var/turf/T = get_turf(shadow_mind.current)
+		if(shadow_mind.current.stat != DEAD && T && is_station_level(T.z) && ishuman(shadow_mind.current))
+			return FALSE
 	return TRUE
 
 /datum/objective/ascend
@@ -181,7 +180,7 @@
 /mob/living/proc/add_sling()
 	if(!istype(mind))
 		return FALSE
-	return mind.add_antag_datum(ANTAG_DATUM_SLING)
+	return mind.add_antag_datum(ANTAG_DATUM_SHADOWLING)
 
 /mob/living/proc/remove_thrall()
 	if(!istype(mind))
@@ -191,7 +190,7 @@
 /mob/living/proc/remove_sling()
 	if(!istype(mind))
 		return FALSE
-	return mind.remove_antag_datum(ANTAG_DATUM_SLING) 
+	return mind.remove_antag_datum(ANTAG_DATUM_SHADOWLING) 
 
 /datum/game_mode
 	var/list/datum/mind/shadows = list()

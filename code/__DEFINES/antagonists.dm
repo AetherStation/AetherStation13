@@ -207,7 +207,7 @@ GLOBAL_LIST_INIT(normal_employers, list(
 
 ///Shadowlings
 #define ANTAG_DATUM_THRALL		/datum/antagonist/thrall
-#define ANTAG_DATUM_SLING		/datum/antagonist/shadowling
+#define ANTAG_DATUM_SHADOWLING	/datum/antagonist/shadowling
 
 #define IS_THRALL(M) (istype(M, /mob/living) && M.mind && M.mind.has_antag_datum(/datum/antagonist/thrall))
 #define IS_SHADOW(M) (istype(M, /mob/living) && M.mind && M.mind.has_antag_datum(/datum/antagonist/shadowling))
