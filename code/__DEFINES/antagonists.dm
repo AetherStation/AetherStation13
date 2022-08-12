@@ -213,7 +213,7 @@ GLOBAL_LIST_INIT(normal_employers, list(
 #define IS_SHADOW(M) (istype(M, /mob/living) && M.mind && M.mind.has_antag_datum(/datum/antagonist/shadowling))
 #define IS_SHADOW_OR_THRALL(M) (is_thrall(M) || is_shadow(M))
 
-//Light heal/damage tresholds and light damage for shadowlings
-#define LIGHT_HEAL_THRESHOLD 2
+///How many damage shadowlings take from light
 #define LIGHT_DAMAGE_TAKEN 7
+///If the lumcout of a shadowling's location is more then this - it takes damage
 #define LIGHT_DAM_THRESHOLD 0.25

@@ -31,27 +31,15 @@
 	owner.special_role = null
 	for(var/obj/effect/proc_holder/spell/S as anything in owner.spell_list)
 		owner.RemoveSpell(S)
-<<<<<<< HEAD
 	var/mob/living/shadowling = owner.current
 	if(issilicon(shadowling))
-		shadowling.audible_message("<span class='notice'>[shadowling] lets out a short blip.</span>")
-		to_chat(shadowling,"<span class='userdanger'>You have been turned into a[ iscyborg(shadowling) ? " cyborg" : "n AI" ]! You are no longer a shadowling! Though you try, you cannot remember anything about your time as one...</span>")
-=======
-	var/mob/living/M = owner.current
-	if(issilicon(M))
-		M.audible_message(span_notice("[M] lets out a short blip."))
-		to_chat(M,span_userdanger("You have been turned into a[ iscyborg(M) ? " cyborg" : "n AI" ]! You are no longer a shadowling! Though you try, you cannot remember anything about your time as one..."))
->>>>>>> 90ed1a9e0c0ae150c1f45602e7012b3a119bd75b
+		shadowling.audible_message(span_notice("[shadowling] lets out a short blip."))
+		to_chat(shadowling,span_userdanger("You have been turned into a[ iscyborg(shadowling) ? " cyborg" : "n AI" ]! You are no longer a shadowling! Though you try, you cannot remember anything about your time as one..."))
 	else
-<<<<<<< HEAD
-		shadowling.visible_message("<span class='big'>[shadowling] screams and contorts!</span>")
-		to_chat(shadowling,"<span class='userdanger'>THE LIGHT-- YOUR MIND-- <i>BURNS--</i></span>")
-=======
-		M.visible_message(span_big("[M] screams and contorts!"))
-		to_chat(M,span_userdanger("THE LIGHT-- YOUR MIND-- <i>BURNS--</i>"))
->>>>>>> 90ed1a9e0c0ae150c1f45602e7012b3a119bd75b
+		shadowling.visible_message(span_big("[shadowling] screams and contorts!"))
+		to_chat(shadowling,span_userdanger("THE LIGHT-- YOUR MIND-- <i>BURNS--</i>"))
 		spawn(30)
-			if(QDELETED(M))
+			if(QDELETED(shadowling))
 				return
 
 			shadowling.visible_message(span_warning("[shadowling] suddenly bloats and explodes!"))
@@ -130,7 +118,7 @@
 			if(H.stat != DEAD)
 				to_chat(H, span_userdanger("The light burns you!")) //Message spam to say "GET THE FUCK OUT"
 				H.playsound_local(get_turf(H), 'sound/weapons/sear.ogg', 150, 1, pressure_affected = FALSE)
-		else if (light_amount < LIGHT_HEAL_THRESHOLD  && !istype(H.loc, /obj/effect/dummy/phased_mob/shadowling)) //Can't heal while jaunting
+		else if (light_amount < LIGHT_DAM_THRESHOLD && !istype(H.loc, /obj/effect/dummy/phased_mob/shadowling)) //Heal if the amount of light is less then light damage treshold and not jaunting
 			H.heal_overall_damage(5,5)
 			H.adjustToxLoss(-5)
 			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, -25) //Shad O. Ling gibbers, "CAN U BE MY THRALL?!!"
@@ -150,8 +138,8 @@
 			H.visible_message(span_danger("The shadows around [H] ripple as they absorb \the [P]!"))
 			playsound(T, "bullet_miss", 75, 1)
 			shadow_charges = min(shadow_charges - 1, 0)
-			return -1
-	return 0
+			return BULLET_ACT_BLOCK
+	return ..()
 
 /datum/species/shadow/ling/lesser //Empowered thralls. Obvious, but powerful
 	name = "Lesser Shadowling"
@@ -208,6 +196,6 @@
 /datum/game_mode
 	var/list/datum/mind/shadows = list()
 	var/list/datum/mind/thralls = list()
-	var/required_thralls = 15 //How many thralls are needed (this is changed in pre_setup, so it scales based on pop)
-	var/shadowling_ascended = FALSE //If at least one shadowling has ascended
-	var/thrall_ratio = 1 //Is used when calculating the number of thralls needed for shadowlings to gain certain spells
+	var/required_thralls = 15 ///How many thralls are needed (this is changed in pre_setup, so it scales based on pop)
+	var/shadowling_ascended = FALSE ///If at least one shadowling has ascended
+	var/thrall_ratio = 1 ///Is used when calculating the number of thralls needed for shadowlings to gain certain spells
