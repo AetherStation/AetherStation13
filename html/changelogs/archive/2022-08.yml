@@ -63,3 +63,7 @@
   - bugfix: Water no longer cleans floors when sprayed.
   Thebleh:
   - admin: Admins can now ping each other in asay
+2022-08-12:
+  Sparkezel:
+  - code_imp: removed gbp
+  - bugfix: Fixes meta atmos for real
