@@ -1789,6 +1789,7 @@
 #include "code\modules\antagonists\heretic\knowledge\blade_lore.dm"
 #include "code\modules\antagonists\heretic\knowledge\flesh_lore.dm"
 #include "code\modules\antagonists\heretic\knowledge\rust_lore.dm"
+#include "code\modules\antagonists\heretic\knowledge\sacrifice_knowledge.dm"
 #include "code\modules\antagonists\heretic\knowledge\starting_lore.dm"
 #include "code\modules\antagonists\heretic\knowledge\void_lore.dm"
 #include "code\modules\antagonists\heretic\magic\mansus_grasp.dm"

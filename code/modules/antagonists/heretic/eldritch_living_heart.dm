@@ -77,6 +77,7 @@
 	desc = "LMB: Chose one of your sacrifice targets to track. RMB: Repeats last target you chose to track."
 	check_flags = AB_CHECK_CONSCIOUS
 	background_icon_state = "bg_ecult"
+	action_icon = 'icons/mob/actions/actions_ecult.dmi'
 	/// The real name of the last mob we tracked
 	var/last_tracked_name
 	/// Whether the target radial is currently opened.
