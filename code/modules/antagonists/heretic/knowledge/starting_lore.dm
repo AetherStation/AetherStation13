@@ -13,100 +13,12 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 		if(initial(knowledge.route) == PATH_START)
 			. += knowledge
 
-/datum/eldritch_knowledge/spell/basic
-	name = "Break of Dawn"
-	desc = "Starts your journey in the Mansus. Allows you to select a target using a living heart on a transmutation rune."
-	gain_text = "Another day at a meaningless job. You feel a shimmer around you, as a realization of something strange in your backpack unfolds. You look at it, unknowingly opening a new chapter in your life."
-	next_knowledge = list(
-		/datum/eldritch_knowledge/starting/base_ash,
-		/datum/eldritch_knowledge/starting/base_blade,
-		/datum/eldritch_knowledge/starting/base_flesh,
-		/datum/eldritch_knowledge/starting/base_rust,
-		/datum/eldritch_knowledge/starting/base_void,
-		)
-	cost = 0
-	priority = MAX_KNOWLEDGE_PRIORITY - 1 // Sacrifice will be the most important
-	spell_to_add = /obj/effect/proc_holder/spell/targeted/touch/mansus_grasp
-	required_atoms = list(/obj/item/living_heart)
-	route = PATH_START
-
-/datum/eldritch_knowledge/spell/basic/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
-	. = ..()
-	for(var/obj/item/living_heart/heart in atoms)
-		if(!heart.target)
-			selected_atoms += heart
-			return TRUE
-		if(heart.target in atoms)
-			selected_atoms += heart
-			return TRUE
-	return FALSE
-
-/datum/eldritch_knowledge/spell/basic/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
-	. = TRUE
-	var/mob/living/carbon/carbon_user = user
-	for(var/obj/item/living_heart/heart in selected_atoms)
-
-		if(heart.target && heart.target.stat == DEAD)
-			user.balloon_alert(user, "Your patrons accepts your offer..")
-			var/mob/living/carbon/human/current_target = heart.target
-			current_target.gib()
-			heart.target = null
-			var/datum/antagonist/heretic/heretic_datum = carbon_user.mind.has_antag_datum(/datum/antagonist/heretic)
-
-			heretic_datum.total_sacrifices++
-			for(var/obj/item/forbidden_book/book as anything in carbon_user.get_all_gear())
-				if(!istype(book))
-					continue
-				book.charge += 2
-				break
-
-		if(!heart.target)
-			var/datum/objective/temp_objective = new
-			temp_objective.owner = user.mind
-			var/list/datum/team/teams = list()
-			for(var/datum/antagonist/antag as anything in user.mind.antag_datums)
-				var/datum/team/team = antag.get_team()
-				if(team)
-					teams |= team
-			var/list/targets = list()
-			for(var/i in 0 to 3)
-				var/datum/mind/targeted =  temp_objective.find_target()//easy way, i dont feel like copy pasting that entire block of code
-				var/is_teammate = FALSE
-				for(var/datum/team/team as anything in teams)
-					if(targeted in team.members)
-						is_teammate = TRUE
-						break
-				if(!targeted)
-					break
-				targets["[targeted.current.real_name] the [targeted.assigned_role.title][is_teammate ? " (ally)" : ""]"] = targeted.current
-			heart.target = targets[input(user,"Choose your next target","Target") in targets]
-			qdel(temp_objective)
-			if(heart.target)
-				user.balloon_alert(user, "Your new target has been selected, go and sacrifice [heart.target.real_name]!")
-			else
-				user.balloon_alert(user, "Target could not be found for living heart.")
-				return FALSE
-
-/datum/eldritch_knowledge/living_heart
-	name = "Living Heart"
-	desc = "Allows you to create additional living hearts, using a heart, a pool of blood and a poppy. Living hearts when used on a transmutation rune will grant you a person to hunt and sacrifice on the rune. Every sacrifice gives you an additional charge in the book."
-	gain_text = "The Gates of Mansus open up to your mind."
-	cost = 0
-	priority = MAX_KNOWLEDGE_PRIORITY - 2 // Knowing how to remake your heart is important
-	required_atoms = list(
-		/obj/item/organ/heart = 1,
-		/obj/effect/decal/cleanable/blood = 1,
-		/obj/item/food/grown/poppy = 1
-		)
-	result_atoms = list(/obj/item/living_heart)
-	route = PATH_START
-
 /datum/eldritch_knowledge/codex_cicatrix
 	name = "Codex Cicatrix"
 	desc = "Allows you to create a spare Codex Cicatrix if you have lost one, using a bible, human skin, a pen and a pair of eyes."
 	gain_text = "Their hand is at your throat, yet you see Them not."
 	cost = 0
-	priority = MAX_KNOWLEDGE_PRIORITY - 3 // Not as important as making a heart or sacrificing, but important enough.
+	priority = MAX_KNOWLEDGE_PRIORITY - 3 // Not as important as sacrificing, but important enough.
 	required_atoms = list(
 		/obj/item/organ/eyes = 1,
 		/obj/item/stack/sheet/animalhide/human = 1,
@@ -115,3 +27,115 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 		)
 	result_atoms = list(/obj/item/forbidden_book/ritual)
 	route = PATH_START
+
+/datum/heretic_knowledge/reroll_targets
+	name = "The Relentless Heartbeat"
+	desc = "Allows you transmute a harebell, a book, and a jumpsuit while standing over a rune \
+		to reroll your sacrifice targets."
+	gain_text = "The heart is the principle that continues and preserves."
+	required_atoms = list(
+		/obj/item/food/grown/harebell = 1,
+		/obj/item/book = 1,
+		/obj/item/clothing/under = 1,
+		/mob/living/carbon/human = 1,
+	)
+	cost = 1
+	route = PATH_START
+
+/datum/heretic_knowledge/reroll_targets/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
+	var/obj/item/organ/heart/our_heart = user.getorganslot(ORGAN_SLOT_HEART)
+	if(!our_heart || !HAS_TRAIT(our_heart, TRAIT_LIVING_HEART))
+		return FALSE
+
+	var/datum/antagonist/heretic/heretic_datum = IS_HERETIC(user)
+	if(!LAZYLEN(heretic_datum.sac_targets))
+		return FALSE
+
+	atoms += user
+	return (user in range(1, loc))
+
+/datum/heretic_knowledge/reroll_targets/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
+	var/datum/antagonist/heretic/heretic_datum = IS_HERETIC(user)
+	LAZYCLEARLIST(heretic_datum.sac_targets)
+
+	var/datum/heretic_knowledge/hunt_and_sacrifice/target_finder = heretic_datum.get_knowledge(/datum/heretic_knowledge/hunt_and_sacrifice)
+	if(!target_finder)
+		CRASH("Heretic datum didn't have a hunt_and_sacrifice knowledge learned, what?")
+
+	if(!target_finder.obtain_targets(user))
+		return FALSE
+
+	return TRUE
+
+/**
+ * The Living Heart heretic knowledge.
+ *
+ * Gives the heretic a living heart.
+ * Also includes a ritual to turn their heart into a living heart.
+ */
+/datum/heretic_knowledge/living_heart
+	name = "The Living Heart"
+	desc = "Grants you a Living Heart, allowing you to track sacrifice targets. \
+		Should you lose your heart, you can transmute a poppy and a pool of blood \
+		to awaken your heart into a Living Heart. If your heart is cybernetic, \
+		you will additionally require a usable organic heart in the transmutation."
+	required_atoms = list(
+		/obj/effect/decal/cleanable/blood = 1,
+		/obj/item/food/grown/poppy = 1,
+	)
+	cost = 0
+	route = PATH_START
+
+/datum/heretic_knowledge/living_heart/on_research(mob/user)
+	. = ..()
+
+	var/obj/item/organ/heart/our_heart = user.getorganslot(ORGAN_SLOT_HEART)
+	if(our_heart)
+		our_heart.AddComponent(/datum/component/living_heart)
+
+/datum/heretic_knowledge/living_heart/on_lose(mob/user)
+	var/obj/item/organ/heart/our_heart = user.getorganslot(ORGAN_SLOT_HEART)
+	if(our_heart)
+		qdel(our_heart.GetComponent(/datum/component/living_heart))
+
+/datum/heretic_knowledge/living_heart/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
+	var/obj/item/organ/heart/our_heart = user.getorganslot(ORGAN_SLOT_HEART)
+	if(!our_heart || HAS_TRAIT(our_heart, TRAIT_LIVING_HEART))
+		return FALSE
+
+	if(our_heart.status == ORGAN_ORGANIC)
+		return TRUE
+
+	else
+		for(var/obj/item/organ/heart/nearby_heart in atoms)
+			if(nearby_heart.status == ORGAN_ORGANIC && nearby_heart.useable)
+				selected_atoms += nearby_heart
+				return TRUE
+
+		return FALSE
+
+
+/datum/heretic_knowledge/living_heart/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
+
+	var/obj/item/organ/heart/our_heart = user.getorganslot(ORGAN_SLOT_HEART)
+
+	if(our_heart.status != ORGAN_ORGANIC)
+		var/obj/item/organ/heart/our_replacement_heart = locate() in selected_atoms
+		if(our_replacement_heart)
+			user.visible_message("[user]'s [our_replacement_heart.name] bursts suddenly out of [user.p_their()] chest!")
+			INVOKE_ASYNC(user, /mob/proc/emote, "scream")
+			user.apply_damage(20, BRUTE, BODY_ZONE_CHEST)
+
+			our_replacement_heart.Insert(user, special = TRUE, drop_if_replaced = TRUE)
+			our_heart.throw_at(get_edge_target_turf(user, pick(GLOB.alldirs)), 2, 2)
+			our_heart = our_replacement_heart
+
+	if(!our_heart)
+		CRASH("[type] somehow made it to on_finished_recipe without a heart. What?")
+
+	if(our_heart in selected_atoms)
+		selected_atoms -= our_heart
+	our_heart.AddComponent(/datum/component/living_heart)
+	to_chat(user, span_warning("You feel your [our_heart.name] begin pulse faster and faster as it awakens!"))
+	playsound(user, 'sound/magic/demon_consume.ogg', 50, TRUE)
+	return TRUE

@@ -24,6 +24,8 @@
 	var/list/researched_knowledge = list()
 	var/total_sacrifices = 0
 	var/ascended = FALSE
+	/// Lazy assoc list of [weakrefs to humans] to [image previews of the human]. Humans that we have as sacrifice targets.
+	var/list/datum/weakref/sac_targets
 
 /datum/antagonist/heretic/ui_static_data(mob/user)
 	var/list/data = list()
@@ -282,7 +284,13 @@
 /datum/antagonist/heretic/get_admin_commands()
 	. = ..()
 	.["Equip Cultist"] = CALLBACK(src, .proc/equip_cultist)
-	.["Add Heart Target (Marked Mob)"] = CALLBACK(src, .proc/equip_target_as_sacrifice)
+	var/obj/item/organ/heart/our_heart = owner.current?.getorganslot(ORGAN_SLOT_HEART)
+	if(our_heart)
+		if(HAS_TRAIT(our_heart, TRAIT_LIVING_HEART))
+			.["Add Heart Target (Marked Mob)"] = CALLBACK(src, .proc/add_marked_as_target)
+			.["Remove Heart Target"] = CALLBACK(src, .proc/remove_target)
+		else
+			.["Give Living Heart"] = CALLBACK(src, .proc/give_living_heart)
 	.["Give Knowledge Points"] = CALLBACK(src, .proc/add_points)
 
 
@@ -295,15 +303,12 @@
 	if(!istype(heretic))
 		return
 	. += ecult_give_item(/obj/item/forbidden_book, heretic)
-	. += ecult_give_item(/obj/item/living_heart, heretic)
 
-/datum/antagonist/heretic/proc/equip_target_as_sacrifice(mob/admin)
-	var/mob/living/carbon/heretic = owner.current
-	if(!istype(heretic))
-		return
+/datum/antagonist/heretic/proc/add_marked_as_target(mob/admin)
 	if(!admin.client?.holder)
 		to_chat(admin, span_warning("You shouldn't be using this!"))
 		return
+
 	var/mob/living/carbon/human/new_target = admin.client?.holder.marked_datum
 	if(!istype(new_target))
 		to_chat(admin, span_warning("You need to mark a human to do this!"))
@@ -311,8 +316,9 @@
 
 	if(tgui_alert(admin, "Let them know their targets have been updated?", "Whispers of the Mansus", list("Yes", "No")) == "Yes")
 		to_chat(owner.current, span_danger("The Mansus has modified your targets. Go find them!"))
-		to_chat(owner.current, span_danger("[new_target.real_name], the [new_target.mind?.assigned_role || "human"]."))
-	. += ecult_give_item(/obj/item/living_heart, heretic, new_target)
+		to_chat(owner.current, span_danger("[new_target.real_name], the [new_target.mind?.assigned_role?.title || "human"]."))
+
+	add_sacrifice_target(new_target)
 
 /datum/antagonist/heretic/proc/add_points(mob/admin)
 	var/mob/living/carbon/heretic = owner.current
@@ -336,11 +342,7 @@
 	var/T = new item_path(heretic)
 	var/item_name = initial(item_path.name)
 	var/where
-	if(possible_target)
-		var/obj/item/living_heart/heart = new()
-		heart.target = possible_target
-		where = heretic.equip_in_one_of_slots(heart, slots)
-	else if(add_points)
+	if(add_points)
 		var/obj/item/forbidden_book/ritual/book = new()
 		book.charge += add_points
 		where = heretic.equip_in_one_of_slots(book, slots)
@@ -355,3 +357,43 @@
 		if(where == "backpack")
 			SEND_SIGNAL(heretic.back, COMSIG_TRY_STORAGE_SHOW, heretic)
 		return TRUE
+
+/datum/antagonist/heretic/proc/give_living_heart(mob/admin)
+	if(!admin.client?.holder)
+		to_chat(admin, span_warning("You shouldn't be using this!"))
+		return
+
+	var/datum/heretic_knowledge/living_heart/heart_knowledge = get_knowledge(/datum/heretic_knowledge/living_heart)
+	if(!heart_knowledge)
+		to_chat(admin, span_warning("The heretic doesn't have a living heart knowledge for some reason. What?"))
+		return
+
+	heart_knowledge.on_research(owner.current)
+
+/*
+ * Admin proc for removing a mob from a heretic's sac list.
+ */
+/datum/antagonist/heretic/proc/remove_target(mob/admin)
+	if(!admin.client?.holder)
+		to_chat(admin, span_warning("You shouldn't be using this!"))
+		return
+
+	var/list/removable = list()
+	for(var/datum/weakref/ref as anything in sac_targets)
+		var/mob/living/carbon/human/old_target = ref.resolve()
+		if(!QDELETED(old_target))
+			removable[old_target.name] = old_target
+
+	var/name_of_removed = tgui_input_list(admin, "Choose a human to remove", "Who to Spare", removable)
+	if(QDELETED(src) || !admin.client?.holder || isnull(name_of_removed))
+		return
+	var/mob/living/carbon/human/chosen_target = removable[name_of_removed]
+	if(QDELETED(chosen_target) || !ishuman(chosen_target))
+		return
+	if(!(WEAKREF(chosen_target) in sac_targets))
+		return
+
+	LAZYREMOVE(sac_targets, WEAKREF(chosen_target))
+
+	if(tgui_alert(admin, "Let them know their targets have been updated?", "Whispers of the Mansus", list("Yes", "No")) == "Yes")
+		to_chat(owner.current, span_danger("The Mansus has modified your targets."))

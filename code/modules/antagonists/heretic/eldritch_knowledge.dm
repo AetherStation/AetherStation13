@@ -143,8 +143,6 @@
 	for(var/atom/sacrificed as anything in selected_atoms)
 		if(isliving(sacrificed))
 			continue
-		if(istype(sacrificed, /obj/item/living_heart))
-			continue
 		if(isstack(sacrificed))
 			var/obj/item/stack/sac_stack = sacrificed
 			var/how_much_to_use = 0
