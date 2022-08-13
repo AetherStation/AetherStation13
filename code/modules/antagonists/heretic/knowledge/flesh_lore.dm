@@ -192,8 +192,8 @@
 	mob_to_summon = /mob/living/simple_animal/hostile/eldritch/raw_prophet
 	next_knowledge = list(
 		/datum/eldritch_knowledge/blade_upgrade/flesh,
-		/datum/eldritch_knowledge/curse_item/paralysis
-		/datum/eldritch_knowledge/spell/blood_siphon,
+		/datum/eldritch_knowledge/curse_item/paralysis,
+		/datum/eldritch_knowledge/spell/blood_siphon
 	)
 	route = PATH_FLESH
 	
