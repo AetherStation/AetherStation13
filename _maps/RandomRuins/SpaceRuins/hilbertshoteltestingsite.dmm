@@ -228,7 +228,7 @@
 /area/ruin/unpowered/no_grav)
 "Q" = (
 /obj/structure/table/glass,
-/obj/item/bag_of_holding_inert{
+/obj/item/storage/backpack/holding{
 	pixel_y = 4
 	},
 /turf/open/floor/iron/grimy{
