@@ -710,6 +710,7 @@
 #include "code\datums\elements\dryable.dm"
 #include "code\datums\elements\earhealing.dm"
 #include "code\datums\elements\easily_fragmented.dm"
+#include "code\datums\elements\eldritch_curse.dm"
 #include "code\datums\elements\embed.dm"
 #include "code\datums\elements\empprotection.dm"
 #include "code\datums\elements\eyestab.dm"

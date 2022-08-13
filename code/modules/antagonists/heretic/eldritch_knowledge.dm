@@ -383,6 +383,36 @@
 /datum/eldritch_knowledge/curse/proc/uncurse(mob/living/chosen_mob)
 	return
 
+/datum/eldritch_knowledge/curse_item
+	var/timer = 5 MINUTES
+
+/datum/eldritch_knowledge/curse_item/on_finished_recipe(mob/living/user,list/atoms,loc)
+
+	var/list/compiled_list = list()
+
+	for(var/obj/item/requirements as anything in atoms)
+		compiled_list |= requirements.name
+		compiled_list[requirements.name] = requirements
+
+	if(compiled_list.len == 0)
+		to_chat(user, span_warning("There are no valid items."))
+		return FALSE
+
+	var/obj/item/chosen_item = pick(compiled_list)
+	if(!chosen_item)
+		return FALSE
+
+	chosen_item.AddElement(/datum/element/eldritch_curse, timer, CALLBACK(src, .proc/curse), CALLBACK(src, .proc/uncurse))
+	to_chat(user, span_warning("[chosen_item] has been cursed with [name]"))
+
+	return TRUE
+
+/datum/eldritch_knowledge/curse_item/proc/curse(mob/living/chosen_mob)
+	return
+
+/datum/eldritch_knowledge/curse_item/proc/uncurse(mob/living/chosen_mob)
+	return
+
 /*
  * A knowledge subtype lets the heretic summon a monster with the ritual.
  */

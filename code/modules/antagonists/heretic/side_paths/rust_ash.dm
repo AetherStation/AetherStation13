@@ -11,10 +11,10 @@
 	result_atoms = list(/obj/item/reagent_containers/glass/beaker/eldritch)
 	route = PATH_SIDE
 
-/datum/eldritch_knowledge/curse/corrosion
+/datum/eldritch_knowledge/curse_item/corrosion
 	name = "Curse of Corrosion"
 	gain_text = "Cursed land, cursed man, cursed mind."
-	desc = "Curse someone for 2 minutes of vomiting and major organ damage. Using a wirecutter, a pool of vomit, a heart and an item that the victim touched  with their bare hands."
+	desc = "Curse an item to inflict the curse of corrosion to whoever it touches it. The curse will inflict vomiting and major organ damage for 2 minutes. Using a wirecutter, a pool of blood, a heart and the item you want to curse."
 	cost = 1
 	required_atoms = list(
 		/obj/item/wirecutters = 1,
@@ -28,11 +28,11 @@
 	timer = 2 MINUTES
 	route = PATH_SIDE
 
-/datum/eldritch_knowledge/curse/corrosion/curse(mob/living/chosen_mob)
+/datum/eldritch_knowledge/curse_item/corrosion/curse(mob/living/chosen_mob)
 	. = ..()
 	chosen_mob.apply_status_effect(/datum/status_effect/corrosion_curse)
 
-/datum/eldritch_knowledge/curse/corrosion/uncurse(mob/living/chosen_mob)
+/datum/eldritch_knowledge/curse_item/corrosion/uncurse(mob/living/chosen_mob)
 	. = ..()
 	chosen_mob.remove_status_effect(/datum/status_effect/corrosion_curse)
 

@@ -91,9 +91,9 @@
 		/obj/item/candle = 1
 		)
 	next_knowledge = list(
-		/datum/eldritch_knowledge/curse/corrosion,
+		/datum/eldritch_knowledge/curse_item/corrosion,
 		/datum/eldritch_knowledge/blade_upgrade/ash,
-		/datum/eldritch_knowledge/curse/paralysis
+		/datum/eldritch_knowledge/curse_item/paralysis
 	)
 	route = PATH_ASH
 

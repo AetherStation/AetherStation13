@@ -13,10 +13,10 @@
 	result_atoms = list(/obj/item/clothing/neck/eldritch_amulet)
 	route = PATH_SIDE
 
-/datum/eldritch_knowledge/curse/paralysis
+/datum/eldritch_knowledge/curse_item/paralysis
 	name = "Curse of Paralysis"
 	gain_text = "Corrupt their flesh, make them bleed."
-	desc = "Curse someone for 5 minutes of inability to walk. Sacrifice a knife, a pool of blood, a pair of legs, a hatchet and an item that the victim touched with their bare hands. "
+	desc = "Curse an item to inflict the curse of paralysis to whoever it touches it. The curse will make its victim unable to walk for 5 minutes. Sacrifice a pair of legs, a hatchet and the item you want to curse."
 	cost = 1
 	required_atoms = list(
 		/obj/item/bodypart/l_leg = 1,
@@ -27,13 +27,13 @@
 	timer = 5 MINUTES
 	route = PATH_SIDE
 
-/datum/eldritch_knowledge/curse/paralysis/curse(mob/living/chosen_mob)
+/datum/eldritch_knowledge/curse_item/paralysis/curse(mob/living/chosen_mob)
 	. = ..()
 	ADD_TRAIT(chosen_mob,TRAIT_PARALYSIS_L_LEG,MAGIC_TRAIT)
 	ADD_TRAIT(chosen_mob,TRAIT_PARALYSIS_R_LEG,MAGIC_TRAIT)
 
 
-/datum/eldritch_knowledge/curse/paralysis/uncurse(mob/living/chosen_mob)
+/datum/eldritch_knowledge/curse_item/paralysis/uncurse(mob/living/chosen_mob)
 	. = ..()
 	REMOVE_TRAIT(chosen_mob,TRAIT_PARALYSIS_L_LEG,MAGIC_TRAIT)
 	REMOVE_TRAIT(chosen_mob,TRAIT_PARALYSIS_R_LEG,MAGIC_TRAIT)

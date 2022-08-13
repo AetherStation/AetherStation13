@@ -123,7 +123,7 @@
 	spell_to_add = /obj/effect/proc_holder/spell/aoe_turf/rust_conversion
 	next_knowledge = list(
 		/datum/eldritch_knowledge/blade_upgrade/rust,
-		/datum/eldritch_knowledge/curse/corrosion,
+		/datum/eldritch_knowledge/curse_item/corrosion,
 		/datum/eldritch_knowledge/crucible
 	)
 	route = PATH_RUST
