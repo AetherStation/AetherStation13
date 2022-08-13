@@ -1453,3 +1453,10 @@
 // MOS6502 signals, used with signal memory map.
 #define COMSIG_MOS6502_MEMORY_WRITE "comsig_mos6502_memory_write"
 #define COMSIG_MOS6502_MEMORY_READ "comsig_mos6502_memory_read"
+
+
+///Called when the ticker enters the pre-game phase
+#define COMSIG_TICKER_ENTER_PREGAME "comsig_ticker_enter_pregame"
+
+///Called when the ticker sets up the game for start
+#define COMSIG_TICKER_ENTER_SETTING_UP "comsig_ticker_enter_setting_up"
