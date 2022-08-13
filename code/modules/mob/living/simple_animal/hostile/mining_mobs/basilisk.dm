@@ -210,3 +210,9 @@
 
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/tendril
 	fromtendril = TRUE
+
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/icewing/death(gibbed)
+	if(prob(10))
+		new /obj/item/gem/fdiamond(loc)
+		deathmessage = "spits out an enormous diamond as it dies!"
+	. = ..()

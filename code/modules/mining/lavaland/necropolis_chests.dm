@@ -836,6 +836,7 @@
 /obj/structure/closet/crate/necropolis/dragon/crusher/PopulateContents()
 	..()
 	new /obj/item/crusher_trophy/tail_spike(src)
+	new /obj/item/gem/bloodstone(src)
 
 /obj/item/melee/ghost_sword
 	name = "\improper spectral blade"
@@ -1055,6 +1056,7 @@
 /obj/structure/closet/crate/necropolis/bubblegum/PopulateContents()
 	new /obj/item/clothing/suit/space/hostile_environment(src)
 	new /obj/item/clothing/head/helmet/space/hostile_environment(src)
+	new /obj/item/gem/bloodstone(src)
 	var/loot = rand(1,2)
 	switch(loot)
 		if(1)
@@ -1098,6 +1100,7 @@
 	var/random_crystal = pick(choices)
 	new random_crystal(src)
 	new /obj/item/organ/vocal_cords/colossus(src)
+	new /obj/item/gem/void(src)
 
 /obj/structure/closet/crate/necropolis/colossus/crusher
 	name = "angelic colossus chest"
