@@ -945,15 +945,6 @@
 	result = /obj/item/clothing/gloves/tackler/offbrand
 	category = CAT_CLOTHING
 
-/datum/crafting_recipe/boh
-	name = "Bag of Holding"
-	reqs = list(
-		/obj/item/bag_of_holding_inert = 1,
-		/obj/item/assembly/signaler/anomaly/bluespace = 1,
-	)
-	result = /obj/item/storage/backpack/holding
-	category = CAT_CLOTHING
-
 /datum/crafting_recipe/ipickaxe
 	name = "Improvised Pickaxe"
 	reqs = list(
