@@ -36,7 +36,7 @@ GLOBAL_LIST_INIT(available_interaction_modes, list(
 
 /datum/interaction_mode/proc/update_istate(mob/M, modifiers)
 
-/datum/interaction_mode/proc/procure_hud(mob/M, datum/hud/H, robot = FALSE)
+/datum/interaction_mode/proc/procure_hud(mob/M, datum/hud/H)
 	return list()
 
 /datum/interaction_mode/proc/state_changed(datum/interaction_state/state)

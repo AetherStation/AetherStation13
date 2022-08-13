@@ -769,6 +769,7 @@
 #include "code\datums\interaction\interaction_mode.dm"
 #include "code\datums\interaction\interaction_state.dm"
 #include "code\datums\interaction\interaction_modes\combat_mode.dm"
+#include "code\datums\interaction\interaction_modes\cyborg.dm"
 #include "code\datums\interaction\interaction_modes\intents3.dm"
 #include "code\datums\keybinding\_defines.dm"
 #include "code\datums\keybinding\_keybindings.dm"

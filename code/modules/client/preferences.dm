@@ -1574,8 +1574,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/pickedmode = input(user, "Choose your interaction mode.", "Character Preference", interaction_mode) as null|anything in sort_list(GLOB.available_interaction_modes)
 					if (pickedmode)
 						interaction_mode = pickedmode
-						parent.imode.replace(GLOB.available_interaction_modes[pickedmode])
-						parent.mob.hud_used.show_hud(version = HUD_STYLE_STANDARD) // update hud.
+						if (!parent.mob.forced_interaction_mode) // you can change your interaction mode, but if it is forced it won't get replaced.
+							parent.imode.replace(GLOB.available_interaction_modes[pickedmode])
 				if("pda_style")
 					var/pickedPDAStyle = input(user, "Choose your PDA style.", "Character Preference", pda_style)  as null|anything in GLOB.pda_styles
 					if(pickedPDAStyle)

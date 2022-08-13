@@ -9,14 +9,10 @@
 	M.istate.alternate = LAZYACCESS(modifiers, SHIFT_CLICK)
 	M.istate.control = LAZYACCESS(modifiers, CTRL_CLICK)
 
-/datum/interaction_mode/combat_mode/procure_hud(mob/M, datum/hud/H, robot = FALSE)
+/datum/interaction_mode/combat_mode/procure_hud(mob/M, datum/hud/H)
 	if (!M.hud_used.has_interaction_ui)
 		return
-	var/atom/movable/screen/combattoggle/CT
-	if (robot)
-		CT = new /atom/movable/screen/combattoggle/robot()
-	else
-		CT = new /atom/movable/screen/combattoggle/flashy()
+	var/atom/movable/screen/combattoggle/flashy/CT = new
 	CT.hud = H
 	CT.icon = H.ui_style
 	CT.combat_mode = src

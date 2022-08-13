@@ -14,11 +14,10 @@
 		if (INTENT_HARM)
 			M.istate.harm = TRUE
 
-/datum/interaction_mode/intents3/procure_hud(mob/M, datum/hud/H, robot = FALSE)
+/datum/interaction_mode/intents3/procure_hud(mob/M, datum/hud/H)
 	if (!M.hud_used.has_interaction_ui)
 		return
-	var/atom/movable/screen/act_intent3/AI
-	AI = new /atom/movable/screen/act_intent3()
+	var/atom/movable/screen/act_intent3/AI = new
 	AI.hud = H
 	AI.intents = src
 	UI = AI
