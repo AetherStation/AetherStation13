@@ -68,11 +68,15 @@
 		user_unbuckle_mob(buckled_mobs[1], user)
 	else
 		if(user.combat_mode)
-			user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
+			user.do_attack_animation(src, user?.dna?.species.attack_effect ? user.dna.species.attack_effect : ATTACK_EFFECT_PUNCH)
 			playsound(src.loc, 'sound/effects/bang.ogg', 10, TRUE)
-			visible_message(span_danger("[user] punches [src], but doesn't leave a dent!"), \
-							span_warning("[user] punches you, but doesn't leave a dent!"), null, COMBAT_MESSAGE_RANGE, user)
-			to_chat(user, span_danger("You punch [src], but don't leave a dent!"))
+			var/trait_check = HAS_TRAIT(user, TRAIT_STRONG_PUNCHES) || user?.mind.martial_art
+			var/atck_verb = user.dna.species.attack_verb ? user.dna.species.attack_verb : "punch" 
+			visible_message(span_danger("[user] [atck_verb]es [src][trait_check : "" ? ", but doesn't leave a dent"]!"), \
+							span_warning("[user] [atck_verb]es you[trait_check : "" ? ", but doesn't leave a dent"]!"), null, COMBAT_MESSAGE_RANGE, user)
+			to_chat(user, span_danger("You [atck_verb] [src][trait_check : "" ? ", but don't leave a dent"]!"))
+			if(trait_check)
+				apply_damage(rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh), attack_type)
 		else
 			visible_message(span_notice("[user] pets [src]."), \
 							span_notice("[user] pets you."), null, null, user)

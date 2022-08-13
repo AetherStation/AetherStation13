@@ -62,11 +62,35 @@
 	icon_state = "rapid"
 	inhand_icon_state = "rapid"
 	transfer_prints = TRUE
+	var/mob/ownr
 
 /obj/item/clothing/gloves/rapid/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/wearertargeting/punchcooldown)
 
+/obj/item/clothing/gloves/rapid/Initialize()
+	. = ..()
+	RegisterSignal(src, COMSIG_ITEM_EQUIPPED, .proc/on_glove_equip)
+	RegisterSignal(src, COMSIG_ITEM_POST_UNEQUIP, .proc/on_glove_unequip)
+
+/// Called when the glove is equipped. Adds a component to the equipper and stores a weak reference to it.
+/obj/item/clothing/gloves/rapid/proc/on_glove_equip(datum/source, mob/equipper, slot)
+	SIGNAL_HANDLER
+
+	ADD_TRAIT(equipper, TRAIT_STRONG_PUNCHES, GENERIC_ITEM_TRAIT)
+	ownr = equipper
+
+/*
+ * Called when the glove is unequipped. Deletes the component if one exists.
+ *
+ * No component being associated on equip is a valid state, as holding the gloves in your hands also counts
+ * as having them equipped, or even in pockets. They only give the component when they're worn on the hands.
+ */
+/obj/item/clothing/gloves/rapid/proc/on_glove_unequip(datum/source, force, atom/newloc, no_move, invdrop, silent)
+	SIGNAL_HANDLER
+
+	REMOVE_TRAIT(ownr, TRAIT_STRONG_PUNCHES, GENERIC_ITEM_TRAIT)
+	ownr = null
 
 /obj/item/clothing/gloves/color/plasmaman
 	desc = "Covers up those scandalous boney hands."
