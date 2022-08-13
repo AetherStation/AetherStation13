@@ -8,6 +8,7 @@
 	icon_keyboard = "med_key"
 	circuit = /obj/item/circuitboard/computer/operating
 
+	var/mob/living/carbon/human/patient
 	var/obj/structure/table/optable/table
 	var/obj/machinery/stasis/sbed
 	var/list/advanced_surgeries = list()

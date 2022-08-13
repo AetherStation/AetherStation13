@@ -76,11 +76,11 @@
 
 	//Get the relevant operating computer
 	var/obj/machinery/computer/operating/opcomputer
-	var/obj/structure/table/optable/table = locate(/obj/structure/table/optable, T)
+	var/obj/structure/table/optable/table = locate(/obj/structure/table/optable, patient_turf)
 	if(table?.computer)
 		opcomputer = table.computer
 	else
-		var/obj/machinery/stasis/the_stasis_bed = locate(/obj/machinery/stasis, T)
+		var/obj/machinery/stasis/the_stasis_bed = locate(/obj/machinery/stasis, patient_turf)
 		if(the_stasis_bed?.op_computer)
 			opcomputer = the_stasis_bed.op_computer
 
