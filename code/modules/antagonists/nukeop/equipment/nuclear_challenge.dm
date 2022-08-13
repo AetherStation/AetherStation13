@@ -1,7 +1,9 @@
-#define CHALLENGE_TELECRYSTALS 280
-#define CHALLENGE_TIME_LIMIT 3000
-#define CHALLENGE_MIN_PLAYERS 50
-#define CHALLENGE_SHUTTLE_DELAY 15000 // 25 minutes, so the ops have at least 5 minutes before the shuttle is callable.
+#define WAR_TC_MIN 60
+#define WAR_TC_MAX 280
+#define WAR_MIN_PLAYERS 25
+#define WAR_MAX_PAYOUT 50
+#define WAR_TIME_LIMIT 3000
+#define WAR_SHUTTLE_DELAY 15000 // 25 minutes, so the ops have at least 5 minutes before the shuttle is callable.
 
 GLOBAL_LIST_EMPTY(jam_on_wardec)
 
@@ -23,7 +25,9 @@ GLOBAL_LIST_EMPTY(jam_on_wardec)
 		return
 
 	declaring_war = TRUE
-	var/are_you_sure = tgui_alert(user, "Consult your team carefully before you declare war on [station_name()]]. Are you sure you want to alert the enemy crew? You have [DisplayTimeText(world.time-SSticker.round_start_time - CHALLENGE_TIME_LIMIT)] to decide", "Declare war?", list("Yes", "No"))
+	var/are_you_sure = tgui_alert(user, "Consult your team carefully before you declare war on [station_name()]]. Are you sure you want to alert the enemy crew? You will get \
+		[round(WAR_TC_MIN + (WAR_TC_MAX - WAR_TC_MIN) * (1 - (WAR_MAX_PAYOUT - min(WAR_MAX_PAYOUT, GLOB.player_list.len)) / (WAR_MAX_PAYOUT - WAR_MIN_PLAYERS)),1)] \
+		extra telecystals. You have [DisplayTimeText(WAR_TIME_LIMIT - (world.time - SSticker.round_start_time))] to decide", "Declare war?", list("Yes", "No"))
 	declaring_war = FALSE
 
 	if(!check_allowed(user))
@@ -63,7 +67,7 @@ GLOBAL_LIST_EMPTY(jam_on_wardec)
 
 	distribute_tc()
 
-	CONFIG_SET(number/shuttle_refuel_delay, max(CONFIG_GET(number/shuttle_refuel_delay), CHALLENGE_SHUTTLE_DELAY))
+	CONFIG_SET(number/shuttle_refuel_delay, max(CONFIG_GET(number/shuttle_refuel_delay), WAR_SHUTTLE_DELAY))
 	SSblackbox.record_feedback("amount", "nuclear_challenge_mode", 1)
 
 	qdel(src)
@@ -97,7 +101,7 @@ GLOBAL_LIST_EMPTY(jam_on_wardec)
 
 	distribute_tc()
 
-	CONFIG_SET(number/shuttle_refuel_delay, max(CONFIG_GET(number/shuttle_refuel_delay), CHALLENGE_SHUTTLE_DELAY))
+	CONFIG_SET(number/shuttle_refuel_delay, max(CONFIG_GET(number/shuttle_refuel_delay), WAR_SHUTTLE_DELAY))
 
 	qdel(src)
 
@@ -114,7 +118,7 @@ GLOBAL_LIST_EMPTY(jam_on_wardec)
 			continue
 		uplinks += uplink
 
-	var/tc_to_distribute = CHALLENGE_TELECRYSTALS
+	var/tc_to_distribute = round(WAR_TC_MIN + (WAR_TC_MAX - WAR_TC_MIN) * (1 - (WAR_MAX_PAYOUT - min(WAR_MAX_PAYOUT, GLOB.player_list.len)) / (WAR_MAX_PAYOUT - WAR_MIN_PLAYERS)),1)
 	var/tc_per_nukie = round(tc_to_distribute / (length(orphans)+length(uplinks)))
 
 	for (var/datum/component/uplink/uplink in uplinks)
@@ -139,13 +143,13 @@ GLOBAL_LIST_EMPTY(jam_on_wardec)
 	if(declaring_war)
 		to_chat(user, span_boldwarning("You are already in the process of declaring war! Make your mind up."))
 		return FALSE
-	if(GLOB.player_list.len < CHALLENGE_MIN_PLAYERS)
+	if(GLOB.player_list.len < WAR_MIN_PLAYERS)
 		to_chat(user, span_boldwarning("The enemy crew is too small to be worth declaring war on."))
 		return FALSE
 	if(!user.onSyndieBase())
 		to_chat(user, span_boldwarning("You have to be at your base to use this."))
 		return FALSE
-	if(world.time-SSticker.round_start_time > CHALLENGE_TIME_LIMIT)
+	if(world.time-SSticker.round_start_time > WAR_TIME_LIMIT)
 		to_chat(user, span_boldwarning("It's too late to declare hostilities. Your benefactors are already busy with other schemes. You'll have to make do with what you have on hand."))
 		return FALSE
 	for(var/V in GLOB.syndicate_shuttle_boards)
@@ -158,7 +162,9 @@ GLOBAL_LIST_EMPTY(jam_on_wardec)
 /obj/item/nuclear_challenge/clownops
 	uplink_type = /obj/item/uplink/clownop
 
-#undef CHALLENGE_TELECRYSTALS
-#undef CHALLENGE_TIME_LIMIT
-#undef CHALLENGE_MIN_PLAYERS
-#undef CHALLENGE_SHUTTLE_DELAY
+#undef WAR_TC_MIN
+#undef WAR_TC_MAX
+#undef WAR_TIME_LIMIT
+#undef WAR_MIN_PLAYERS
+#undef WAR_MAX_PAYOUT
+#undef WAR_SHUTTLE_DELAY
