@@ -1,4 +1,4 @@
-/datum/heretic_knowledge/hunt_and_sacrifice
+/datum/eldritch_knowledge/hunt_and_sacrifice
 	name = "Heartbeat of the Mansus"
 	desc = "Allows you to sacrifice targets to the Mansus by bringing them to a rune in critical (or worse) condition. \
 		If you have no targets, stand on a transmutation rune and invoke it to aquire some."
@@ -16,17 +16,17 @@
 	/// An assoc list of [ref] to [timers] - a list of all the timers of people in the shadow realm currently
 	var/return_timers
 
-/datum/heretic_knowledge/hunt_and_sacrifice/Destroy(force, ...)
+/datum/eldritch_knowledge/hunt_and_sacrifice/Destroy(force, ...)
 	heretic_mind = null
 	LAZYCLEARLIST(target_blacklist)
 	return ..()
 
-/datum/heretic_knowledge/hunt_and_sacrifice/on_research(mob/user, regained = FALSE)
+/datum/eldritch_knowledge/hunt_and_sacrifice/on_research(mob/user, regained = FALSE)
 	. = ..()
 	obtain_targets(user, silent = TRUE)
 	heretic_mind = user.mind
 
-/datum/heretic_knowledge/hunt_and_sacrifice/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
+/datum/eldritch_knowledge/hunt_and_sacrifice/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	var/obj/item/organ/heart/our_heart = user.getorganslot(ORGAN_SLOT_HEART)
 	if(!our_heart || !HAS_TRAIT(our_heart, TRAIT_LIVING_HEART))
 		return FALSE
@@ -52,7 +52,7 @@
 	// Otherwise, return FALSE and stop the ritual
 	return !!(locate(/mob/living/carbon/human) in atoms)
 
-/datum/heretic_knowledge/hunt_and_sacrifice/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
+/datum/eldritch_knowledge/hunt_and_sacrifice/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 	var/datum/antagonist/heretic/heretic_datum = IS_HERETIC(user)
 	if(LAZYLEN(heretic_datum.sac_targets))
 		sacrifice_process(user, selected_atoms, loc)
@@ -61,7 +61,7 @@
 
 	return TRUE
 
-/datum/heretic_knowledge/hunt_and_sacrifice/proc/sacrifice_process(mob/living/carbon/user, list/selected_atoms)
+/datum/eldritch_knowledge/hunt_and_sacrifice/proc/sacrifice_process(mob/living/carbon/user, list/selected_atoms)
 
 	var/datum/antagonist/heretic/heretic_datum = IS_HERETIC(user)
 	var/mob/living/carbon/human/sacrifice = locate() in selected_atoms
@@ -76,13 +76,11 @@
 
 	to_chat(user, span_hypnophrase("Your patrons accepts your offer."))
 
-	if(sacrifice.mind?.assigned_role?.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
-
 	heretic_datum.total_sacrifices++
 	for(var/obj/item/forbidden_book/book as anything in user.get_all_gear())
 		if(!istype(book))
 			continue
-		book.charge += (sacrifice.mind?.assigned_role?.departments_bitflags && DEPARTMENT_BITFLAG_COMMAND) ? 3 : 2
+		book.charge += 2
 		break
 
 	disembowel_target(sacrifice)
@@ -93,7 +91,7 @@
  *
  * Returns FALSE if no targets are found, TRUE if the targets list was populated.
  */
-/datum/heretic_knowledge/hunt_and_sacrifice/proc/obtain_targets(mob/living/user, silent = FALSE)
+/datum/eldritch_knowledge/hunt_and_sacrifice/proc/obtain_targets(mob/living/user, silent = FALSE)
 
 	// First construct a list of minds that are valid objective targets.
 	var/list/datum/mind/valid_targets = list()
@@ -115,40 +113,8 @@
 		skip_this_ritual = TRUE
 		addtimer(VARSET_CALLBACK(src, skip_this_ritual, FALSE), 5 MINUTES)
 		return FALSE
-
-	// Now, let's try to get four targets.
-	// - One completely random
-	// - One from your department
-	// - One from security
-	// - One from heads of staff ("high value")
 	var/list/datum/mind/final_targets = list()
 
-	// First target, any command.
-	for(var/datum/mind/head_mind as anything in shuffle_inplace(valid_targets))
-		if(head_mind.assigned_role?.departments_bitflags & DEPARTMENT_BITFLAG_COMMAND)
-			final_targets += head_mind
-			valid_targets -= head_mind
-			break
-
-	// Second target, any security
-	for(var/datum/mind/sec_mind as anything in shuffle_inplace(valid_targets))
-		if(sec_mind.assigned_role?.departments_bitflags & DEPARTMENT_BITFLAG_SECURITY)
-			final_targets += sec_mind
-			valid_targets -= sec_mind
-			break
-
-	// Third target, someone in their department.
-	for(var/datum/mind/department_mind as anything in shuffle_inplace(valid_targets))
-		if(department_mind.assigned_role?.departments_bitflags & user.mind.assigned_role?.departments_bitflags)
-			final_targets += department_mind
-			valid_targets -= department_mind
-			break
-
-	// Final target, just get someone random.
-	final_targets += pick_n_take(valid_targets)
-
-	// If any of our targets failed to aquire,
-	// Let's run a loop until we get four total, grabbing random targets.
 	var/target_sanity = 0
 	while(length(final_targets) < 4 && length(valid_targets) > 4 && target_sanity < 25)
 		final_targets += pick_n_take(valid_targets)
@@ -167,10 +133,9 @@
 	return TRUE
 
 /**
- * "Fuck you" proc that gets called if the chain is interrupted at some points.
  * Disembowels the [sac_target] and brutilizes their body. Throws some gibs around for good measure.
  */
-/datum/heretic_knowledge/hunt_and_sacrifice/proc/disembowel_target(mob/living/carbon/human/sac_target)
+/datum/eldritch_knowledge/hunt_and_sacrifice/proc/disembowel_target(mob/living/carbon/human/sac_target)
 	if(heretic_mind)
 		log_combat(heretic_mind.current, sac_target, "disemboweled via sacrifice")
 	sac_target.spill_organs()

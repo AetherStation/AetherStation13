@@ -363,7 +363,7 @@
 		to_chat(admin, span_warning("You shouldn't be using this!"))
 		return
 
-	var/datum/heretic_knowledge/living_heart/heart_knowledge = get_knowledge(/datum/heretic_knowledge/living_heart)
+	var/datum/eldritch_knowledge/living_heart/heart_knowledge = get_knowledge(/datum/eldritch_knowledge/living_heart)
 	if(!heart_knowledge)
 		to_chat(admin, span_warning("The heretic doesn't have a living heart knowledge for some reason. What?"))
 		return

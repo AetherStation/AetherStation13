@@ -28,7 +28,7 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 	result_atoms = list(/obj/item/forbidden_book/ritual)
 	route = PATH_START
 
-/datum/heretic_knowledge/reroll_targets
+/datum/eldritch_knowledge/reroll_targets
 	name = "The Relentless Heartbeat"
 	desc = "Allows you transmute a harebell, a book, and a jumpsuit while standing over a rune \
 		to reroll your sacrifice targets."
@@ -42,7 +42,7 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 	cost = 1
 	route = PATH_START
 
-/datum/heretic_knowledge/reroll_targets/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
+/datum/eldritch_knowledge/reroll_targets/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	var/obj/item/organ/heart/our_heart = user.getorganslot(ORGAN_SLOT_HEART)
 	if(!our_heart || !HAS_TRAIT(our_heart, TRAIT_LIVING_HEART))
 		return FALSE
@@ -54,11 +54,11 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 	atoms += user
 	return (user in range(1, loc))
 
-/datum/heretic_knowledge/reroll_targets/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
+/datum/eldritch_knowledge/reroll_targets/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 	var/datum/antagonist/heretic/heretic_datum = IS_HERETIC(user)
 	LAZYCLEARLIST(heretic_datum.sac_targets)
 
-	var/datum/heretic_knowledge/hunt_and_sacrifice/target_finder = heretic_datum.get_knowledge(/datum/heretic_knowledge/hunt_and_sacrifice)
+	var/datum/eldritch_knowledge/hunt_and_sacrifice/target_finder = heretic_datum.get_knowledge(/datum/eldritch_knowledge/hunt_and_sacrifice)
 	if(!target_finder)
 		CRASH("Heretic datum didn't have a hunt_and_sacrifice knowledge learned, what?")
 
@@ -73,7 +73,7 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
  * Gives the heretic a living heart.
  * Also includes a ritual to turn their heart into a living heart.
  */
-/datum/heretic_knowledge/living_heart
+/datum/eldritch_knowledge/living_heart
 	name = "The Living Heart"
 	desc = "Grants you a Living Heart, allowing you to track sacrifice targets. \
 		Should you lose your heart, you can transmute a poppy and a pool of blood \
@@ -86,19 +86,19 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 	cost = 0
 	route = PATH_START
 
-/datum/heretic_knowledge/living_heart/on_research(mob/user)
+/datum/eldritch_knowledge/living_heart/on_research(mob/user)
 	. = ..()
 
 	var/obj/item/organ/heart/our_heart = user.getorganslot(ORGAN_SLOT_HEART)
 	if(our_heart)
 		our_heart.AddComponent(/datum/component/living_heart)
 
-/datum/heretic_knowledge/living_heart/on_lose(mob/user)
+/datum/eldritch_knowledge/living_heart/on_lose(mob/user)
 	var/obj/item/organ/heart/our_heart = user.getorganslot(ORGAN_SLOT_HEART)
 	if(our_heart)
 		qdel(our_heart.GetComponent(/datum/component/living_heart))
 
-/datum/heretic_knowledge/living_heart/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
+/datum/eldritch_knowledge/living_heart/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	var/obj/item/organ/heart/our_heart = user.getorganslot(ORGAN_SLOT_HEART)
 	if(!our_heart || HAS_TRAIT(our_heart, TRAIT_LIVING_HEART))
 		return FALSE
@@ -115,7 +115,7 @@ GLOBAL_LIST_INIT(heretic_start_knowledge, initialize_starting_knowledge())
 		return FALSE
 
 
-/datum/heretic_knowledge/living_heart/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
+/datum/eldritch_knowledge/living_heart/on_finished_recipe(mob/living/user, list/selected_atoms, turf/loc)
 
 	var/obj/item/organ/heart/our_heart = user.getorganslot(ORGAN_SLOT_HEART)
 

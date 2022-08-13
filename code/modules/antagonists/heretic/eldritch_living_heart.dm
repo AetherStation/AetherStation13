@@ -77,7 +77,6 @@
 	desc = "LMB: Chose one of your sacrifice targets to track. RMB: Repeats last target you chose to track."
 	check_flags = AB_CHECK_CONSCIOUS
 	background_icon_state = "bg_ecult"
-	action_icon = 'icons/mob/actions/actions_ecult.dmi'
 	/// The real name of the last mob we tracked
 	var/last_tracked_name
 	/// Whether the target radial is currently opened.
@@ -129,7 +128,7 @@
 
 	// If we don't have a last tracked name, open a radial to set one.
 	// If we DO have a last tracked name, we skip the radial if they right click the action.
-	if(isnull(last_tracked_name) || !(trigger_flags & TRIGGER_SECONDARY_ACTION))
+	if(isnull(last_tracked_name))
 		radial_open = TRUE
 		last_tracked_name = show_radial_menu(
 			owner,
