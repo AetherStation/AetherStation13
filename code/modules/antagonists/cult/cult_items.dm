@@ -838,24 +838,24 @@
 	damage_type = BRUTE
 	impact_effect_type = /obj/effect/temp_visual/dir_setting/bloodsplatter
 
-/obj/projectile/magic/arcane_barrage/blood/Bump(atom/target)
+/obj/projectile/magic/arcane_barrage/blood/on_hit(atom/target, blocked = FALSE)
 	var/turf/T = get_turf(target)
 	playsound(T, 'sound/effects/splat.ogg', 50, TRUE)
 	var/mob/mob_target = target
 
-	if(mob_target && IS_CULTIST(mob_target))
-		if(ishuman(target))
-			var/mob/living/carbon/human/H = target
-			if(H.stat != DEAD)
-				H.reagents.add_reagent(/datum/reagent/fuel/unholywater, 4)
-		if(isshade(target) || isconstruct(target))
-			var/mob/living/simple_animal/M = target
-			if(M.health+5 < M.maxHealth)
-				M.adjustHealth(-5)
-		new /obj/effect/temp_visual/cult/sparks(T)
-		qdel(src)
-	else
-		..()
+	if(!(mob_target && IS_CULTIST(mob_target)))
+		return ..()
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		if(H.stat != DEAD)
+			H.reagents.add_reagent(/datum/reagent/fuel/unholywater, 4)
+	if(isshade(target) || isconstruct(target))
+		var/mob/living/simple_animal/M = target
+		if(M.health+5 < M.maxHealth)
+			M.adjustHealth(-5)
+	new /obj/effect/temp_visual/cult/sparks(T)
+	qdel(src)
+
 
 /obj/item/blood_beam
 	name = "\improper magical aura"
