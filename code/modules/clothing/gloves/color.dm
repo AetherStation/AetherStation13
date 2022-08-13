@@ -72,7 +72,7 @@
 
 /obj/item/clothing/gloves/color/fyellow/Initialize()
 	. = ..()
-	siemens_coefficient = pick(0,0.5,0.5,0.5,0.5,0.75,1.5)
+	siemens_coefficient = pick(0,0,0.5,1.5)
 
 /obj/item/clothing/gloves/color/fyellow/old
 	desc = "Old and worn out insulated gloves, hopefully they still work."
@@ -80,7 +80,7 @@
 
 /obj/item/clothing/gloves/color/fyellow/old/Initialize()
 	. = ..()
-	siemens_coefficient = pick(0,0,0,0.5,0.5,0.5,0.75)
+	siemens_coefficient = pick(0,0,0.5)
 
 /obj/item/clothing/gloves/cut
 	desc = "These gloves would protect the wearer from electric shock... if the fingers were covered."
