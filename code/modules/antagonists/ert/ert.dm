@@ -40,6 +40,10 @@
 	. = ..()
 	name_source = GLOB.last_names
 
+/datum/antagonist/ert/clown/New()
+	. = ..()
+	name_source = GLOB.clown_names
+
 /datum/antagonist/ert/proc/update_name()
 	owner.current.fully_replace_character_name(owner.current.real_name,"[role] [pick(name_source)]")
 
@@ -177,6 +181,16 @@
 	role = "Clown"
 	outfit = /datum/outfit/centcom/ert/clown
 	plasmaman_outfit = /datum/outfit/plasmaman/party_comedian
+
+/datum/antagonist/ert/clown
+	name = "Comedy Response Officer"
+	outfit = /datum/outfit/centcom_clown
+	role = "Prankster"
+
+/datum/antagonist/ert/clown/honk
+	name = "HONK Squad Trooper"
+	outfit = /datum/outfit/centcom_clown/honk_squad
+	role = "HONKER"
 
 /datum/antagonist/ert/clown/New()
 	. = ..()
