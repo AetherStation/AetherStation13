@@ -507,6 +507,7 @@
 		/obj/item/storage/box/flashbangs = 1,
 		/obj/item/storage/box/survival/engineer = 1,
 		/obj/item/storage/firstaid/regular = 1,
+		/obj/item/reagent_containers/hypospray/medipen/stimulants,
 )
 	belt = /obj/item/gun/ballistic/revolver/mateba
 	ears = /obj/item/radio/headset/headset_cent/alt
