@@ -20,13 +20,9 @@
 	var/list/timezones = list(TIMEZONE_LINT, TIMEZONE_UTC, TIMEZONE_ANYWHERE_ON_EARTH)
 	///If this is defined, drones without a default hat will spawn with this one during the holiday; check drones_as_items.dm to see this used
 	var/obj/item/drone_hat
-	///When this holiday is active, does this prevent mail from arriving to cargo? Try not to use this for longer holidays.
-	var/mail_holiday = FALSE
 
 // This proc gets run before the game starts when the holiday is activated. Do festive shit here.
 /datum/holiday/proc/celebrate()
-	if(mail_holiday)
-		SSeconomy.mail_blocked = TRUE
 	return
 
 // When the round starts, this proc is ran to get a text message to display to everyone to wish them a happy holiday
@@ -81,7 +77,6 @@
 	end_day = 2
 	end_month = JANUARY
 	drone_hat = /obj/item/clothing/head/festive
-	mail_holiday = TRUE
 
 /datum/holiday/new_year/getStationPrefix()
 	return pick("Party","New","Hangover","Resolution", "Auld")
@@ -230,7 +225,6 @@
 	begin_day = 1
 	begin_month = MAY
 	drone_hat = /obj/item/clothing/head/hardhat
-	mail_holiday = TRUE
 
 /datum/holiday/firefighter
 	name = "Firefighter's Day"
@@ -275,7 +269,6 @@
 	timezones = list(TIMEZONE_EDT, TIMEZONE_CDT, TIMEZONE_MDT, TIMEZONE_MST, TIMEZONE_PDT, TIMEZONE_AKDT, TIMEZONE_HDT, TIMEZONE_HST)
 	begin_day = 4
 	begin_month = JULY
-	mail_holiday = TRUE
 
 /datum/holiday/usa/getStationPrefix()
 	return pick("Independent","American","Burger","Bald Eagle","Star-Spangled", "Fireworks")
@@ -314,7 +307,6 @@
 	begin_day = 14
 	begin_month = JULY
 	drone_hat = /obj/item/clothing/head/beret
-	mail_holiday = TRUE
 
 /datum/holiday/france/getStationPrefix()
 	return pick("Francais","Fromage", "Zut", "Merde")
@@ -488,7 +480,6 @@
 	begin_month = DECEMBER
 	end_day = 27
 	drone_hat = /obj/item/clothing/head/santa
-	mail_holiday = TRUE
 
 /datum/holiday/xmas/greet()
 	return "Have a merry Christmas!"
