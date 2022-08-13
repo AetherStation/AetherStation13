@@ -4,6 +4,8 @@
 	name = "\proper space"
 	intact = 0
 
+	rust_resistance = RUST_RESISTANCE_ABSOLUTE
+
 	temperature = TCMB
 	thermal_conductivity = OPEN_HEAT_TRANSFER_COEFFICIENT
 	heat_capacity = 700000

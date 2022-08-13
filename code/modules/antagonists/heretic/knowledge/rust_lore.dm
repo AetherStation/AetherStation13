@@ -12,7 +12,9 @@
 
 /datum/eldritch_knowledge/rust_fist
 	name = "Grasp of Rust"
-	desc = "Empowers your Mansus Grasp to deal 500 damage to non-living matter and rust any surface it touches. Already rusted surfaces are destroyed. You only rust surfaces and machinery while in combat mode."
+	desc = "Your Mansus Grasp will deal 500 damage to non-living matter and rust any surface it touches. \
+		Already rusted surfaces are destroyed. Surfaces and structures can only be rusted by using Right-Click. \
+		Allows you to rust basic iron walls and floors."
 	gain_text = "On the ceiling of the Mansus, rust grows as moss does on a stone."
 	cost = 1
 	next_knowledge = list(/datum/eldritch_knowledge/rust_regen)
@@ -28,6 +30,8 @@
 /datum/eldritch_knowledge/rust_fist/on_gain(mob/user)
 	RegisterSignal(user, COMSIG_HERETIC_MANSUS_GRASP_ATTACK, .proc/on_mansus_grasp)
 	RegisterSignal(user, COMSIG_HERETIC_BLADE_ATTACK, .proc/on_eldritch_blade)
+	var/datum/antagonist/heretic/our_heretic = IS_HERETIC(user)
+	our_heretic.increase_rust_strength()
 
 /datum/eldritch_knowledge/rust_fist/on_lose(mob/user)
 	UnregisterSignal(user, list(COMSIG_HERETIC_MANSUS_GRASP_ATTACK, COMSIG_HERETIC_BLADE_ATTACK))
@@ -38,7 +42,7 @@
 	if(!issilicon(target) && !(target.mob_biotypes & MOB_ROBOTIC))
 		return
 
-	target.rust_heretic_act()
+	target.rust_heretic_act(source)
 
 /datum/eldritch_knowledge/rust_fist/proc/on_eldritch_blade(mob/living/user, mob/living/target)
 	SIGNAL_HANDLER
@@ -105,11 +109,18 @@
 
 /datum/eldritch_knowledge/mark/rust_mark
 	name = "Mark of Rust"
-	desc = "Your Mansus Grasp now applies the Mark of Rust on hit. Attack the afflicted with your Sickly Blade to detonate the mark. Upon detonation, the Mark of Rust has a chance to deal between 0 to 200 damage to 75% of your enemy's held items."
+	desc = "Your Mansus Grasp now applies the Mark of Rust. The mark is triggered from an attack with your Rusty Blade. \
+		When triggered, the victim's organs and equipment will have a 75% chance to sustain damage and may be destroyed. \
+		Allows you to rust reinforced walls and floors as well as plasteel."
 	gain_text = "Rusted Hills help those in dire need at a cost."
 	next_knowledge = list(/datum/eldritch_knowledge/knowledge_ritual/rust)
 	route = PATH_RUST
 	mark_type = /datum/status_effect/eldritch/rust
+
+/datum/eldritch_knowledge/mark/rust_mark/on_gain(mob/user)
+	. = ..()
+	var/datum/antagonist/heretic/our_heretic = IS_HERETIC(user)
+	our_heretic.increase_rust_strength()
 
 /datum/eldritch_knowledge/knowledge_ritual/rust
 	next_knowledge = list(/datum/eldritch_knowledge/spell/area_conversion)
@@ -117,7 +128,9 @@
 
 /datum/eldritch_knowledge/spell/area_conversion
 	name = "Agressive Spread"
-	desc = "Spreads rust to nearby surfaces. Already rusted surfaces are destroyed."
+	desc = "Grants you Aggressive Spread, a spell that spreads rust to nearby surfaces. \
+			Already rusted surfaces are destroyed. \
+			Also improves the rusting abilities of non-rust heretics."
 	gain_text = "All wise men know well not to touch the Bound King."
 	cost = 1
 	spell_to_add = /obj/effect/proc_holder/spell/aoe_turf/rust_conversion
@@ -128,10 +141,16 @@
 	)
 	route = PATH_RUST
 
+/datum/eldritch_knowledge/spell/area_conversion/on_gain(mob/user)
+	. = ..()
+	var/datum/antagonist/heretic/our_heretic = IS_HERETIC(user)
+	our_heretic.increase_rust_strength(TRUE)
+
 /datum/eldritch_knowledge/blade_upgrade/rust
 	name = "Toxic Blade"
 	gain_text = "The Blade will guide you through the flesh, should you let it."
-	desc = "Your blade of choice will now poison your enemies on hit."
+	desc = "Your Blade now poisons enemies on attack. \
+			Allows you to rust titanium and plastitanium."
 	next_knowledge = list(/datum/eldritch_knowledge/spell/entropic_plume)
 	route = PATH_RUST
 
@@ -139,9 +158,14 @@
 	// No user == target check here, cause it's technically good for the heretic?
 	target.reagents?.add_reagent(/datum/reagent/eldritch, 5)
 
+/datum/eldritch_knowledge/blade_upgrade/rust/on_gain(mob/user)
+	. = ..()
+	var/datum/antagonist/heretic/our_heretic = IS_HERETIC(user)
+	our_heretic.increase_rust_strength(TRUE)
+
 /datum/eldritch_knowledge/spell/entropic_plume
 	name = "Entropic Plume"
-	desc = "You can now send a disorienting plume of pure entropy that blinds, poisons and makes enemies strike each other. It also rusts any tiles it affects."
+	desc = "You can now send a disorienting plume of pure entropy that blinds, poisons and makes enemies strike each other. It also rusts any tiles it affects. Also improves the rusting abilities of non-rust heretics."
 	gain_text = "Messengers of Hope, fear the Rustbringer!"
 	cost = 1
 	spell_to_add = /obj/effect/proc_holder/spell/cone/staggered/entropic_plume
@@ -152,13 +176,19 @@
 		)
 	route = PATH_RUST
 
+/datum/eldritch_knowledge/spell/entropic_plume/on_gain(mob/user)
+	. = ..()
+	var/datum/antagonist/heretic/our_heretic = IS_HERETIC(user)
+	our_heretic.increase_rust_strength(TRUE)
+
 /datum/eldritch_knowledge/final/rust_final
 	name = "Rustbringer's Oath"
 	desc = "The ascension ritual of the Path of Rust. \
 		Bring 3 corpses to a transumation rune on the bridge of the station to complete the ritual. \
 		When completed, the ritual site will endlessly spread rust onto any surface, stopping for nothing. \
 		Additionally, you will become extremely resilient on rust, healing at triple the rate \
-		and becoming immune to many effects and dangers."
+		and becoming immune to many effects and dangers. \
+		You will become able to spread rust to almost anything upon ascending."
 	gain_text = "Champion of rust. Corruptor of steel. Fear the dark, for the RUSTBRINGER has come! \
 		The Blacksmith forges ahead! Rusted Hills, CALL MY NAME! WITNESS MY ASCENSION!"
 	route = PATH_RUST

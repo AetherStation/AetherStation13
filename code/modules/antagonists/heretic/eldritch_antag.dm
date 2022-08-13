@@ -24,6 +24,8 @@
 	var/list/researched_knowledge = list()
 	var/total_sacrifices = 0
 	var/ascended = FALSE
+	/// Controls what types of turf we can spread rust to, increases as we unlock more powerful rust abilites
+	var/rust_strength = 0
 
 /datum/antagonist/heretic/ui_static_data(mob/user)
 	var/list/data = list()
@@ -230,6 +232,17 @@
 
 /datum/antagonist/heretic/proc/get_knowledge(wanted)
 	return researched_knowledge[wanted]
+
+/datum/antagonist/heretic/proc/increase_rust_strength(side_path_only = FALSE)
+	if(side_path_only && get_knowledge(/datum/heretic_knowledge/limited_amount/base_rust))
+		return
+
+	rust_strength++
+
+/datum/antagonist/heretic/proc/set_rust_strength(strength)
+	if(ISNAN(strength))
+		return
+	rust_strength = strength
 
 /datum/antagonist/heretic/proc/get_all_knowledge()
 	return researched_knowledge

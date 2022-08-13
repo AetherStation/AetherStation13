@@ -558,6 +558,9 @@
 		var/mob/living/carbon/human/human_user = user
 		human_user.physiology.brute_mod *= 0.5
 		human_user.physiology.burn_mod *= 0.5
+
+	heretic_datum.increase_rust_strength()
+
 	return TRUE
 
 /datum/eldritch_knowledge/final/cleanup_atoms(list/selected_atoms)

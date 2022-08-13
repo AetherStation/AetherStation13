@@ -39,7 +39,7 @@
 		if(!X || prob(25))
 			continue
 		var/turf/T = X
-		T.rust_heretic_act()
+		T.rust_heretic_act(usr)
 
 /obj/effect/proc_holder/spell/targeted/projectile/dumbfire/rust_wave/short
 	name = "Small Patron's Reach"

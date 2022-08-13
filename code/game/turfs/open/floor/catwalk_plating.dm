@@ -17,6 +17,8 @@
 	heavyfootstep = FOOTSTEP_CATWALK
 	var/covered = TRUE
 
+	rust_resistance = RUST_RESISTANCE_BASIC
+
 /turf/open/floor/plating/catwalk_floor/Initialize()
 	. = ..()
 	update_icon(UPDATE_OVERLAYS)
