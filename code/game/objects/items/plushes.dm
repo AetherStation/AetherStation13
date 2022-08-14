@@ -485,6 +485,11 @@
 		qdel(src)
 		P.clashing = FALSE
 
+/obj/item/toy/plush/narplush/hugbox
+	desc = "A small stuffed doll of the elder goddess Nar'Sie. Who thought this was a good children's toy? <b>It looks sad.</b>"
+	is_invoker = FALSE
+	var/is_invoker = TRUE
+
 /obj/item/toy/plush/narplush
 	name = "\improper Nar'Sie plushie"
 	desc = "A small stuffed doll of the elder goddess Nar'Sie. Who thought this was a good children's toy?"
