@@ -68,8 +68,13 @@
   - code_imp: removed gbp
   - bugfix: Fixes meta atmos for real
 2022-08-14:
+  AcapitalA:
+  - bugfix: The Durand's shield does not take damage from fire and acid anymore, as
+      it would burn infinitely long.
   Twaticus:
   - bugfix: raduit helmet now uses the correct worn icon
   - bugfix: Recyclers no longer eat their own parts when dismantled.
+  maxspells, ported by SuperSlayer:
+  - expansion: Surgery steps play sound effects appropriate to the step
   nicholast013:
   - rscadd: Added Ammonium Nitrate as high explosive chemical and a fertilizer

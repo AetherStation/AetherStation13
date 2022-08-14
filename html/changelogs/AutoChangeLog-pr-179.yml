@@ -1,5 +1,0 @@
-author: AcapitalA
-delete-after: true
-changes:
-  - bugfix: The Durand's shield does not take damage from fire and acid anymore, as
-      it would burn infinitely long.
