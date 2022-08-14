@@ -155,6 +155,16 @@
 /datum/chemical_reaction/reagent_explosion/gunpowder_explosion/on_reaction(datum/reagents/holder, created_volume)
 	addtimer(CALLBACK(src, .proc/default_explode, holder, created_volume), rand(5,10) SECONDS)
 
+/datum/chemical_reaction/anfo
+	results = list(/datum/reagent/anfo = 3)
+	required_reagents = list(/datum/reagent/plantnutriment/eznutriment = 1, /datum/reagent/plantnutriment/left4zednutriment = 1, /datum/reagent/plantnutriment/robustharvestnutriment = 1, /datum/reagent/fuel = 1)
+
+/datum/chemical_reaction/reagent_explosion/anfo_explosion
+	required_reagents = list(/datum/reagent/anfo = 1)
+	required_temp = 474
+	strengthdiv = 5
+	modifier = 10
+
 /datum/chemical_reaction/thermite
 	results = list(/datum/reagent/thermite = 3)
 	required_reagents = list(/datum/reagent/aluminium = 1, /datum/reagent/iron = 1, /datum/reagent/oxygen = 1)
