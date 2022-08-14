@@ -826,6 +826,7 @@
 	desc = "A hilarious hardsuit favored by HONK squad troopers for use in special pranks."
 	icon_state = "hardsuit0-clown"
 	inhand_icon_state = "hardsuit0-clown"
+	hardsuit_type = "clown"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/swat/honk
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded/swat/honk
