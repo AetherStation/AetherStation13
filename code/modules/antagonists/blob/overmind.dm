@@ -66,6 +66,8 @@ GLOBAL_LIST_EMPTY(blob_nodes)
 	if(blob_core)
 		blob_core.update_appearance()
 	SSshuttle.registerHostileEnvironment(src)
+	ADD_TRAIT(src, TRAIT_XRAY_VISION, INNATE_TRAIT)
+	ADD_TRAIT(src, TRAIT_SIXTHSENSE, INNATE_TRAIT)
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
