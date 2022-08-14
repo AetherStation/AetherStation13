@@ -16,6 +16,7 @@
 	unique_name = 1
 	combat_mode = TRUE
 	see_in_dark = 8
+	retreat_distance = null //! retreat doesn't obey pass_flags, so won't work on blob mobs.
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	initial_language_holder = /datum/language_holder/empty
 	var/mob/camera/blob/overmind = null
@@ -66,6 +67,18 @@
 	. = ..()
 	if(istype(mover, /obj/structure/blob))
 		return TRUE
+
+///override to use astar/JPS instead of walk_to so we can take our blob pass_flags into account.
+/mob/living/simple_animal/hostile/blob/Goto(target, delay, minimum_distance)
+	if(prevent_goto_movement)
+		return FALSE
+	if(target == src.target)
+		approaching_target = TRUE
+	else
+		approaching_target = FALSE
+
+	SSmove_manager.jps_move(moving = src, chasing = target, delay = delay, repath_delay = 2 SECONDS, minimum_distance = minimum_distance, simulated_only = FALSE, skip_first = TRUE, timeout = 5 SECONDS, flags = MOVEMENT_LOOP_IGNORE_GLIDE)
+	return TRUE
 
 /mob/living/simple_animal/hostile/blob/Process_Spacemove(movement_dir = 0)
 	for(var/obj/structure/blob/B in range(1, src))
