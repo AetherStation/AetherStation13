@@ -1,4 +1,4 @@
-/datum/antagonist/shadowling
+/datum/antagonist/shadowling 
 	name = "Shadowling"
 	roundend_category = "shadowlings"
 	antagpanel_category = "Shadowlings"
