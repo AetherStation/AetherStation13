@@ -102,15 +102,6 @@
 	polldesc = "a Code Rainbow Nanotrasen Emergency Response Party"
 	code = "Rainbow"
 
-/datum/ert/clown
-	roles = list(/datum/antagonist/ert/clown)
-	leader_role = /datum/antagonist/ert/clown
-	teamsize = 7
-	opendoors = FALSE
-	rename_team = "The Circus"
-	mission = "Provide vital moral support to the station in this time of crisis"
-	code = "Banana"
-
 /datum/ert/honk
 	roles = list(/datum/antagonist/ert/clown/honk)
 	leader_role = /datum/antagonist/ert/clown/honk

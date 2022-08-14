@@ -108,3 +108,8 @@
 /datum/card_access/centcom/ert/clown
 	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING)
 	assignment = "Entertainment Response Officer"
+
+/datum/card_access/centcom
+	access = list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_LIVING, ACCESS_CENT_STORAGE)
+	region = REGION_CENTCOM
+	assignment = "Central Command"
