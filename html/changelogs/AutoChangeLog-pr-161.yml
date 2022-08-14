@@ -1,4 +1,0 @@
-author: Twaticus
-delete-after: true
-changes:
-  - bugfix: Recyclers no longer eat their own parts when dismantled.
