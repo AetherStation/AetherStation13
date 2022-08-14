@@ -1,4 +1,4 @@
-/**
+/** 
  * # Living Heart Component
  *
  * Applied to a heart to turn it into a heretic's 'living heart'.
