@@ -153,7 +153,7 @@
 		// PDA Assigned
 		else if(bloodsucker_vassals.owner.current && ishuman(bloodsucker_vassals.owner.current))
 			var/mob/living/carbon/human/vassal_users = bloodsucker_vassals.owner.current
-			var/obj/item/card/id/id_cards = vassal_users.wear_id ? vassal_users.wear_id.GetID() : null
+			var/obj/item/card/id/id_cards = vassal_users.get_idcard(TRUE)
 			if(id_cards && (id_cards.assignment in valid_jobs) && !(id_cards.assignment in counted_roles))
 				//to_chat(owner, span_userdanger("PROTEGE OBJECTIVE: (GET ID)"))
 				this_role = id_cards.assignment
@@ -198,7 +198,7 @@
 	if(!owner.current)
 		return FALSE
 
-	var/list/all_items = owner.current.GetAllContents()
+	var/list/all_items = owner.current.get_all_contents()
 	var/heart_count = 0
 	for(var/obj/item/organ/heart/current_hearts in all_items)
 		if(current_hearts.organ_flags & ORGAN_SYNTHETIC) // No robo-hearts allowed
