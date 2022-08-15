@@ -211,7 +211,7 @@ GLOBAL_LIST_INIT(normal_employers, list(
 
 #define IS_THRALL(M) (istype(M, /mob/living) && M.mind && M.mind.has_antag_datum(/datum/antagonist/thrall))
 #define IS_SHADOW(M) (istype(M, /mob/living) && M.mind && M.mind.has_antag_datum(/datum/antagonist/shadowling))
-#define IS_SHADOW_OR_THRALL(M) (is_thrall(M) || is_shadow(M))
+#define IS_SHADOW_OR_THRALL(M) (IS_THRALL(M) || IS_SHADOW(M))
 
 ///How many damage shadowlings take from light
 #define LIGHT_DAMAGE_TAKEN 7
