@@ -150,7 +150,7 @@
 	if(!CONFIG_GET(flag/disable_secborg))
 		model_list["Security"] = /obj/item/robot_model/security
 	if(!CONFIG_GET(flag/disable_secborg))
-		model_list["Standart"] = /obj/item/robot_module/standard
+		model_list["Standart"] = /obj/item/robot_model/standard
 
 	// Create radial menu for choosing borg model
 	var/list/model_icons = list()
