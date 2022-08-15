@@ -41,7 +41,7 @@
 					return
 				if(!animal_user.canUseStorage())
 					return
-			else if(!iscarbon(L) && !iscyborg(L))
+			else if(!iscarbon(L))
 				return
 			if(ChargeHand(L))
 				recharging = FALSE
