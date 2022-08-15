@@ -33,9 +33,15 @@
 		to_chat(user, span_notice("[dropmessage]"))
 		return
 
-	for(var/mob/living/carbon/C in targets)
+	for(var/mob/living/L in targets)
 		if(!attached_hand)
-			if(ChargeHand(C))
+			if(isanimal(L))
+				var/mob/living/simple_animal/SA = L
+				if(!L.dextrous)
+					return
+			else if(!iscarbon(L) && !iscyborg(L))
+				return
+			if(ChargeHand(L))
 				recharging = FALSE
 				return
 
@@ -45,7 +51,7 @@
 	else
 		return ..()
 
-/obj/effect/proc_holder/spell/targeted/touch/proc/ChargeHand(mob/living/carbon/user)
+/obj/effect/proc_holder/spell/targeted/touch/proc/ChargeHand(mob/living/user)
 	attached_hand = new hand_path(src)
 	attached_hand.attached_spell = src
 	if(!user.put_in_hands(attached_hand))
