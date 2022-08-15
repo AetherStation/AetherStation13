@@ -1,6 +1,6 @@
 #define EMPOWERED_THRALL_LIMIT 3w
 
-/obj/effect/proc_holder/spell/proc/shadowling_check(var/mob/living/carbon/human/H)
+/obj/effect/proc_holder/spell/proc/shadowling_check(mob/living/carbon/human/H)
 	if(!H || !istype(H)) return
 	if(H.dna && H.dna.species && H.dna.species.id == "shadowling" && IS_SHADOW(H)) return TRUE
 	if(H.dna && H.dna.species && H.dna.species.id == "l_shadowling" && IS_THRALL(H)) return TRUE
@@ -361,7 +361,7 @@
 		revert_cast()
 		return
 	user.visible_message(span_warning("[user]'s skin suddenly bubbles and shifts around their body!"), \
-						 span_shadowling("You regenerate your protective armor and cleanse your form of defects."))
+						span_shadowling("You regenerate your protective armor and cleanse your form of defects."))
 	user.setCloneLoss(0)
 	user.equip_to_slot_or_del(new /obj/item/clothing/suit/space/shadowling(user), ITEM_SLOT_OCLOTHING)
 	user.equip_to_slot_or_del(new /obj/item/clothing/head/shadowling(user), ITEM_SLOT_HEAD)
@@ -578,17 +578,17 @@
 					to_chat(user, "<span class='warning'>[thrallToRevive] is already empowered.</span>")
 					revert_cast()
 					return
-				//var/empowered_thralls = 0
-				//for(var/datum/mind/M in SSticker.mode.thralls)
-				//	if(!ishuman(M.current))
-				//		return
-				//	var/mob/living/carbon/human/H = M.current
-				//	if(H.dna.species.id == "l_shadowling")
-				//		empowered_thralls++
-				//if(empowered_thralls >= EMPOWERED_THRALL_LIMIT)
-				//	to_chat(user, "<span class='warning'>You cannot spare this much energy. There are too many empowered thralls.</span>")
-				//	revert_cast()
-				//	return
+				var/empowered_thralls = 0
+				for(var/datum/mind/M in SSticker.mode.thralls)
+					if(!ishuman(M.current))
+						return
+					var/mob/living/carbon/human/H = M.current
+					if(H.dna.species.id == "l_shadowling")
+						empowered_thralls++
+				if(empowered_thralls >= EMPOWERED_THRALL_LIMIT)
+					to_chat(user, "<span class='warning'>You cannot spare this much energy. There are too many empowered thralls.</span>")
+					revert_cast()
+					return
 				user.visible_message("<span class='danger'>[user] places their hands over [thrallToRevive]'s face, red light shining from beneath.</span>", \
 									"<span class='shadowling'>You place your hands on [thrallToRevive]'s face and begin gathering energy...</span>")
 				to_chat(thrallToRevive, "<span class='userdanger'>[user] places their hands over your face. You feel energy gathering. Stand still...</span>")
