@@ -654,7 +654,7 @@
 						thrallToRevive.Unconscious(500)
 						thrallToRevive.visible_message("<span class='boldannounce'>[thrallToRevive] collapses in exhaustion.</span>", \
 						   "<span class='warning'><b><i>You collapse in exhaustion... nap..... dark.</b></i></span>")
-			else
+			if("Cancell")
 				revert_cast()
 				return
 
