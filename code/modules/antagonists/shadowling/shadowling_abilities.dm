@@ -585,10 +585,10 @@
 					var/mob/living/carbon/human/H = M.current
 					if(H.dna.species.id == "l_shadowling")
 						empowered_thralls++
-				if(empowered_thralls >= EMPOWERED_THRALL_LIMIT)
-					to_chat(user, "<span class='warning'>You cannot spare this much energy. There are too many empowered thralls.</span>")
-					revert_cast()
-					return
+				//if(empowered_thralls >= EMPOWERED_THRALL_LIMIT)
+				//	to_chat(user, "<span class='warning'>You cannot spare this much energy. There are too many empowered thralls.</span>")
+				//	revert_cast()
+				//	return
 				user.visible_message("<span class='danger'>[user] places their hands over [thrallToRevive]'s face, red light shining from beneath.</span>", \
 									"<span class='shadowling'>You place your hands on [thrallToRevive]'s face and begin gathering energy...</span>")
 				to_chat(thrallToRevive, "<span class='userdanger'>[user] places their hands over your face. You feel energy gathering. Stand still...</span>")
