@@ -1,4 +1,4 @@
-#define EMPOWERED_THRALL_LIMIT 3
+#define EMPOWERED_THRALL_LIMIT 3w
 
 /obj/effect/proc_holder/spell/proc/shadowling_check(var/mob/living/carbon/human/H)
 	if(!H || !istype(H)) return
@@ -292,7 +292,7 @@
 							enthralling = FALSE
 							return
 						to_chat(user, span_notice("The nanobots composing the mindshield implant have been rendered inert. Now to continue."))
-						user.visible_messagespan_warning("[user] relaxes again.</span>")
+						user.visible_message(span_warning("[user] relaxes again.</span>"))
 						for(var/obj/item/implant/mindshield/L in target)
 							if(L)
 								qdel(L)

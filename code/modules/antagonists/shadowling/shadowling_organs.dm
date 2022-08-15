@@ -26,7 +26,7 @@
 		var/light_count = T.get_lumcount()
 		if(light_count > LIGHT_DAM_THRESHOLD && organ_health > 0) //Die in the light
 			organ_health--
-		else if(light_count < LIGHT_HEAL_THRESHOLD && organ_health < 3) //Heal in the dark
+		else if(organ_health < 3) //Heal in the dark
 			organ_health++
 		if(organ_health <= 0)
 			visible_message("<span class='warning'>[src] collapses in on itself!</span>")

@@ -156,7 +156,7 @@
 		var/light_amount = T.get_lumcount()
 		if(light_amount > LIGHT_DAM_THRESHOLD && !H.incorporeal_move)
 			H.take_overall_damage(0, LIGHT_DAMAGE_TAKEN/2)
-		else if (light_amount < LIGHT_HEAL_THRESHOLD)
+		else
 			H.heal_overall_damage(2,2)
 			H.adjustToxLoss(-5)
 			H.adjustOrganLoss(ORGAN_SLOT_BRAIN, -25)

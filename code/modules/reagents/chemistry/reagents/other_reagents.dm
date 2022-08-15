@@ -2532,7 +2532,7 @@
 	metabolization_rate = 100 //lel
 
 /datum/reagent/shadowling_blindness_smoke/on_mob_life(mob/living/M, delta_time)
-	if(!is_shadow_or_thrall(M))
+	if(!IS_SHADOW_OR_THRALL(M))
 		to_chat(M, span_warning("<b>You breathe in the black smoke, and your eyes burn horribly!</b>"))
 		M.blind_eyes(5)
 		if(DT_PROB(25, delta_time))

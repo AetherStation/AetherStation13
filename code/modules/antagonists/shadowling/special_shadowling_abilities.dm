@@ -100,7 +100,7 @@
 				return
 			to_chat(H, span_shadowling("<b><i>Your powers are awoken. You may now live to your fullest extent. Remember your goal. Cooperate with your thralls and allies.</b></i>"))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/enthrall(null))
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/sling/glare(null))
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/shadowling/glare(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/veil(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/void_jaunt(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/shadowwalk(null))
@@ -170,8 +170,8 @@
 				var/obj/effect/proc_holder/spell/S = X
 				if(S == src) continue
 				H.mind.RemoveSpell(S)
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/sling/annihilate(null))
-			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/sling/hypnosis(null))
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/shadowling/annihilate(null))
+			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/shadowling/hypnosis(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/ascendant_storm(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/void_jaunt/ascendant(null))
 			H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/shadowling_hivemind_ascendant(null))
