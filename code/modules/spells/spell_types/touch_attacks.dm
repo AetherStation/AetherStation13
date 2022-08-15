@@ -36,8 +36,10 @@
 	for(var/mob/living/L in targets)
 		if(!attached_hand)
 			if(isanimal(L))
-				var/mob/living/simple_animal/SA = L
-				if(!SA.dextrous || !SA.canUseStorage())
+				var/mob/living/simple_animal/animal_user = L
+				if(!animal_user.dextrous)
+					return
+				if(!animal_user.canUseStorage())
 					return
 			else if(!iscarbon(L) && !iscyborg(L))
 				return
