@@ -208,7 +208,7 @@
 	if(!shadowling_check(user))
 		revert_cast()
 		return
-	to_chat(user, shadowling("You freeze the nearby air."))
+	to_chat(user, span_shadowling("You freeze the nearby air."))
 	for(var/turf/T in targets)
 		for(var/mob/living/carbon/M in T.contents)
 			if(IS_SHADOW_OR_THRALL(M))
