@@ -37,7 +37,7 @@
 		if(!attached_hand)
 			if(isanimal(L))
 				var/mob/living/simple_animal/SA = L
-				if(!L.dextrous)
+				if(!SA.dextrous)
 					return
 			else if(!iscarbon(L) && !iscyborg(L))
 				return
