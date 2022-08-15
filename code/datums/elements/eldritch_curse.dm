@@ -29,7 +29,7 @@
 
 	curse_proc.Invoke(user)
 	addtimer(CALLBACK(src, curse_proc/uncurse_proc, user),duration)
-	src.Detach(source)
+	Detach(source)
 
 /datum/element/eldritch_curse/proc/curse_safety_check(datum/source, mob/living/carbon/user)
 	if(!istype(user))
