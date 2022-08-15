@@ -185,7 +185,7 @@
 		if(!istype(G, /obj/structure/glowshroom/shadowshroom))
 			var/obj/structure/glowshroom/shadowshroom/S = new /obj/structure/glowshroom/shadowshroom(G.loc) //I CAN FEEL THE WARP OVERTAKING ME! IT IS A GOOD PAIN!
 			S.generation = G.generation
-			G.visible_message("<span class='warning'>[G] suddenly turns dark!</span>")
+			G.visible_message(span_warning("[G] suddenly turns dark!"))
 			qdel(G)
 
 /obj/effect/proc_holder/spell/aoe_turf/flashfreeze //Stuns and freezes nearby people - a bit more effective than a changeling's cryosting
@@ -208,7 +208,7 @@
 	if(!shadowling_check(user))
 		revert_cast()
 		return
-	to_chat(user, "<span class='shadowling'>You freeze the nearby air.</span>")
+	to_chat(user, shadowling("You freeze the nearby air."))
 	for(var/turf/T in targets)
 		for(var/mob/living/carbon/M in T.contents)
 			if(IS_SHADOW_OR_THRALL(M))
@@ -567,15 +567,15 @@
 		switch(choice)
 			if("Empower")
 				if(!IS_THRALL(thrallToRevive))
-					to_chat(user, "<span class='warning'>[thrallToRevive] is not a thrall.</span>")
+					to_chat(user, span_warning("[thrallToRevive] is not a thrall."))
 					revert_cast()
 					return
 				if(thrallToRevive.stat != CONSCIOUS)
-					to_chat(user, "<span class='warning'>[thrallToRevive] must be conscious to become empowered.</span>")
+					to_chat(user, span_warning("[thrallToRevive] must be conscious to become empowered."))
 					revert_cast()
 					return
 				if(thrallToRevive.dna.species.id == "l_shadowling")
-					to_chat(user, "<span class='warning'>[thrallToRevive] is already empowered.</span>")
+					to_chat(user, span_warning("[thrallToRevive] is already empowered."))
 					revert_cast()
 					return
 				var/empowered_thralls = 0
@@ -586,32 +586,32 @@
 					if(H.dna.species.id == "l_shadowling")
 						empowered_thralls++
 				if(empowered_thralls >= EMPOWERED_THRALL_LIMIT)
-					to_chat(user, "<span class='warning'>You cannot spare this much energy. There are too many empowered thralls.</span>")
+					to_chat(user, span_warning("You cannot spare this much energy. There are too many empowered thralls."))
 					revert_cast()
 					return
-				user.visible_message("<span class='danger'>[user] places their hands over [thrallToRevive]'s face, red light shining from beneath.</span>", \
-									"<span class='shadowling'>You place your hands on [thrallToRevive]'s face and begin gathering energy...</span>")
-				to_chat(thrallToRevive, "<span class='userdanger'>[user] places their hands over your face. You feel energy gathering. Stand still...</span>")
+				user.visible_message(span_danger("[user] places their hands over [thrallToRevive]'s face, red light shining from beneath."), \
+									span_shadowling("You place your hands on [thrallToRevive]'s face and begin gathering energy..."))
+				to_chat(thrallToRevive, span_userdanger("[user] places their hands over your face. You feel energy gathering. Stand still..."))
 				if(!do_mob(user, thrallToRevive, 80))
-					to_chat(user, "<span class='warning'>Your concentration snaps. The flow of energy ebbs.</span>")
+					to_chat(user, span_warning("Your concentration snaps. The flow of energy ebbs."))
 					revert_cast()
 					return
-				to_chat(user, "<span class='shadowling'><b><i>You release a massive surge of power into [thrallToRevive]!</b></i></span>")
-				user.visible_message("<span class='boldannounce'><i>Red lightning surges into [thrallToRevive]'s face!</i></span>")
+				to_chat(user, span_shadowling("<b><i>You release a massive surge of power into [thrallToRevive]!</b></i>"))
+				user.visible_message(span_boldannounce("<i>Red lightning surges into [thrallToRevive]'s face!</i>"))
 				playsound(thrallToRevive, 'sound/weapons/Egloves.ogg', 50, 1)
 				playsound(thrallToRevive, 'sound/machines/defib_zap.ogg', 50, 1)
 				user.Beam(thrallToRevive,icon_state="red_lightning",time=1)
 				thrallToRevive.Knockdown(5)
-				thrallToRevive.visible_message("<span class='warning'><b>[thrallToRevive] collapses, their skin and face distorting!</span>", \
-											   "<span class='userdanger'><i>AAAAAAAAAAAAAAAAAAAGH-</i></span>")
+				thrallToRevive.visible_message(span_warning("<b>[thrallToRevive] collapses, their skin and face distorting!"), \
+											   span_userdanger("<i>AAAAAAAAAAAAAAAAAAAGH-</i>"))
 				if (!do_mob(user, thrallToRevive, 5))
 					thrallToRevive.Unconscious(600)
-					thrallToRevive.visible_message("<span class='warning'><b>[thrallToRevive] gasps, and passes out!</b></span>", "<span class='warning'><i>That... feels nice....</i></span>")
-					to_chat(user, "<span class='warning'>We have been interrupted! [thrallToRevive] will need to rest to recover.</span>")
+					thrallToRevive.visible_message(span_warning("<b>[thrallToRevive] gasps, and passes out!</b>"), span_warning("<i>That... feels nice....</i>"))
+					to_chat(user, span_warning("We have been interrupted! [thrallToRevive] will need to rest to recover."))
 					return
-				thrallToRevive.visible_message("<span class='warning'>[thrallToRevive] slowly rises, no longer recognizable as human.</span>", \
-											   "<span class='shadowling'><b>You feel new power flow into you. You have been gifted by your masters. You now closely resemble them. You are empowered in \
-												darkness but wither slowly in light. In addition, Lesser Glare and Guise have been upgraded into their true forms, and you've been given the ability to turn off nearby lights.</b></span>")
+				thrallToRevive.visible_message(span_warning("[thrallToRevive] slowly rises, no longer recognizable as human."), \
+											   span_shadowling("<b>You feel new power flow into you. You have been gifted by your masters. You now closely resemble them. You are empowered in \
+												darkness but wither slowly in light. In addition, Lesser Glare and Guise have been upgraded into their true forms, and you've been given the ability to turn off nearby lights.</b>"))
 				thrallToRevive.set_species(/datum/species/shadow/ling/lesser)
 				thrallToRevive.mind.RemoveSpell(/obj/effect/proc_holder/spell/targeted/lesser_glare)
 				thrallToRevive.mind.RemoveSpell(/obj/effect/proc_holder/spell/self/lesser_shadow_walk)
@@ -619,41 +619,41 @@
 				thrallToRevive.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/veil(null))
 			if("Revive")
 				if(!IS_THRALL(thrallToRevive))
-					to_chat(user, "<span class='warning'>[thrallToRevive] is not a thrall.</span>")
+					to_chat(user, span_warning("[thrallToRevive] is not a thrall."))
 					revert_cast()
 					return
 				if(thrallToRevive.stat != DEAD)
-					to_chat(user, "<span class='warning'>[thrallToRevive] is not dead.</span>")
+					to_chat(user, span_warning("[thrallToRevive] is not dead."))
 					revert_cast()
 					return
 				if(HAS_TRAIT(thrallToRevive, TRAIT_BADDNA))
-					to_chat(user, "<span class='warning'>[thrallToRevive] is too far gone.</span>")
+					to_chat(user, span_warning("[thrallToRevive] is too far gone."))
 					revert_cast()
 					return
-				user.visible_message("<span class='danger'>[user] kneels over [thrallToRevive], placing their hands on \his chest.</span>", \
-									"<span class='shadowling'>You crouch over the body of your thrall and begin gathering energy...</span>")
+				user.visible_message(span_danger("[user] kneels over [thrallToRevive], placing their hands on \his chest."), \
+									span_shadowling("You crouch over the body of your thrall and begin gathering energy..."))
 				thrallToRevive.notify_ghost_cloning("Your masters are resuscitating you! Re-enter your corpse if you wish to be brought to life.", source = thrallToRevive)
 				if(!do_mob(user, thrallToRevive, 30))
-					to_chat(user, "<span class='warning'>Your concentration snaps. The flow of energy ebbs.</span>")
+					to_chat(user, span_warning("Your concentration snaps. The flow of energy ebbs."))
 					revert_cast()
 					return
-				to_chat(user, "<span class='shadowling'><b><i>You release a massive surge of power into [thrallToRevive]!</b></i></span>")
-				user.visible_message("<span class='boldannounce'><i>Red lightning surges from [user]'s hands into [thrallToRevive]'s chest!</i></span>")
+				to_chat(user, span_shadowling("<b><i>You release a massive surge of power into [thrallToRevive]!</b></i>"))
+				user.visible_message(span_boldannounce("<i>Red lightning surges from [user]'s hands into [thrallToRevive]'s chest!</i>"))
 				playsound(thrallToRevive, 'sound/weapons/Egloves.ogg', 50, 1)
 				playsound(thrallToRevive, 'sound/machines/defib_zap.ogg', 50, 1)
 				user.Beam(thrallToRevive,icon_state="red_lightning",time=1)
 				var/b = do_mob(user, thrallToRevive, 20)
 				if(thrallToRevive.revive(full_heal = 1))
-					thrallToRevive.visible_message("<span class='boldannounce'>[thrallToRevive] heaves in breath, dim red light shining in their eyes.</span>", \
-											   "<span class='shadowling'><b><i>You have returned. One of your masters has brought you from the darkness beyond.</b></i></span>")
+					thrallToRevive.visible_message(span_boldannounce("[thrallToRevive] heaves in breath, dim red light shining in their eyes."), \
+											   span_shadowling("<b><i>You have returned. One of your masters has brought you from the darkness beyond.</b></i>"))
 					thrallToRevive.Knockdown(4)
 					thrallToRevive.emote("gasp")
-					playsound(thrallToRevive, "bodyfall", 50, 1)
+					playsound(thrallToRevive, 'sound/effects/bodyfall1.ogg', 50, 1)
 					if (!b)
 						thrallToRevive.Knockdown(50)
 						thrallToRevive.Unconscious(500)
-						thrallToRevive.visible_message("<span class='boldannounce'>[thrallToRevive] collapses in exhaustion.</span>", \
-						   "<span class='warning'><b><i>You collapse in exhaustion... nap..... dark.</b></i></span>")
+						thrallToRevive.visible_message(span_boldannounce("[thrallToRevive] collapses in exhaustion."), \
+						   span_warning("<b><i>You collapse in exhaustion... nap..... dark.</b></i>"))
 			if("Cancell")
 				revert_cast()
 				return
