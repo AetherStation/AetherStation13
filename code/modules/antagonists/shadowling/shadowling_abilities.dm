@@ -1,4 +1,4 @@
-#define EMPOWERED_THRALL_LIMIT 3w
+#define EMPOWERED_THRALL_LIMIT 3
 
 /obj/effect/proc_holder/spell/proc/shadowling_check(mob/living/carbon/human/H)
 	if(!H || !istype(H)) return
