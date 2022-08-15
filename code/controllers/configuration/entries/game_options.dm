@@ -50,6 +50,8 @@
 
 /datum/config_entry/flag/disable_secborg // disallow secborg model to be chosen.
 
+/datum/config_entry/flag/disable_standardborg // disallow standard model to be chosen.
+
 /datum/config_entry/flag/disable_peaceborg
 
 /datum/config_entry/flag/disable_warops

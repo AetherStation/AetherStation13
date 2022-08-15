@@ -138,15 +138,19 @@
 		to_chat(src,span_userdanger("ERROR: Model installer reply timeout. Please check internal connections."))
 		return
 
-	var/list/model_list = list("Engineering" = /obj/item/robot_model/engineering, \
+	var/list/model_list = list(
+	"Engineering" = /obj/item/robot_model/engineering, \
 	"Medical" = /obj/item/robot_model/medical, \
 	"Miner" = /obj/item/robot_model/miner, \
 	"Janitor" = /obj/item/robot_model/janitor, \
-	"Service" = /obj/item/robot_model/service)
+	"Service" = /obj/item/robot_model/service
+	)
 	if(!CONFIG_GET(flag/disable_peaceborg))
 		model_list["Peacekeeper"] = /obj/item/robot_model/peacekeeper
 	if(!CONFIG_GET(flag/disable_secborg))
 		model_list["Security"] = /obj/item/robot_model/security
+	if(!CONFIG_GET(flag/disable_secborg))
+		modulelist["Standart"] = /obj/item/robot_module/standard
 
 	// Create radial menu for choosing borg model
 	var/list/model_icons = list()
