@@ -1,0 +1,4 @@
+author: Skog
+delete-after: true
+changes:
+  - balance: Budget insuls now work 50% of the time, up from <15% of the time.
