@@ -1,8 +1,0 @@
-author: Addust
-delete-after: true
-changes:
-  - rscadd: 'Syndicate Lavaland now has:'
-  - rscadd: an autolathe and Mauler wreckage
-  - rscadd: more cornerwalls
-  - rscadd: a new pipe to the oxygen tank so that the shit works
-  - rscadd: a backup generator with uranium. yes you can make a crude RTG with this

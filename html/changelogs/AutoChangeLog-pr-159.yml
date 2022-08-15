@@ -1,5 +1,0 @@
-author: Addust
-delete-after: true
-changes:
-  - rscadd: Crashed Ship TEG, because yes
-  - qol: Crashed Ship now has actual shuttle windows.

@@ -78,3 +78,24 @@
   - expansion: Surgery steps play sound effects appropriate to the step
   nicholast013:
   - rscadd: Added Ammonium Nitrate as high explosive chemical and a fertilizer
+2022-08-15:
+  AcapitalA:
+  - bugfix: Door remotes no longer have all access.
+  Addust:
+  - rscadd: 'Syndicate Lavaland now has:'
+  - rscadd: an autolathe and Mauler wreckage
+  - rscadd: more cornerwalls
+  - rscadd: a new pipe to the oxygen tank so that the shit works
+  - rscadd: a backup generator with uranium. yes you can make a crude RTG with this
+  - rscadd: Crashed Ship TEG, because yes
+  - qol: Crashed Ship now has actual shuttle windows.
+  Skog:
+  - balance: Budget insuls now work 50% of the time, up from <15% of the time.
+  - balance: ORM can no longer be wrenched and moved.
+  - balance: The ORM can now have its parts upgraded again! Tier 2 parts give the
+      same amount of materials as old Tier 1, point generation goes no lower than
+      100%. Maxes out at 150% ore and point generation.
+  - balance: Traitor uplink implant fallback no longer costs 4 TC. If you have the
+      uplink preference, nothing has changed and you will still be charged.
+  - bugfix: Uplink creation will now look for alternatives in PDA and radio if you
+      have the pen preference.

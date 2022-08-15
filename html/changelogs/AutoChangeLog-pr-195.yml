@@ -1,7 +1,0 @@
-author: Skog
-delete-after: true
-changes:
-  - balance: ORM can no longer be wrenched and moved.
-  - balance: The ORM can now have its parts upgraded again! Tier 2 parts give the
-      same amount of materials as old Tier 1, point generation goes no lower than
-      100%. Maxes out at 150% ore and point generation.
