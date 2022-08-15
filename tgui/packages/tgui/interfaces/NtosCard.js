@@ -1,8 +1,6 @@
 import { useBackend, useSharedState } from '../backend';
-import { Box, Button, Dropdown, Input, NoticeBox, NumberInput, Section, Stack, Tabs } from '../components';
+import { Box, Button, Input, NoticeBox, NumberInput, Section, Stack, Tabs, Dropdown } from '../components';
 import { NtosWindow } from '../layouts';
-import { AccessList } from './common/AccessList';
-
 export const NtosCard = (props, context) => {
   return (
     <NtosWindow
@@ -19,16 +17,12 @@ export const NtosCardContent = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     authenticatedUser,
-    regions = [],
     access_on_card = [],
+    access_on_chip = [],
+    id_tier,
     has_id,
     have_id_slot,
-    wildcardSlots,
-    wildcardFlags,
-    trimAccess,
-    accessFlags,
-    accessFlagNames,
-    showBasic,
+    regions = [],
   } = data;
 
   const { templates } = data || {};
@@ -44,6 +38,22 @@ export const NtosCardContent = (props, context) => {
   const [
     selectedTab,
   ] = useSharedState(context, "selectedTab", "login");
+
+  const [
+    selectedRegion,
+    setSelectedRegion,
+  ] = useSharedState(context, "selectedRegion", regions["General"] ? "General" : Object.keys(regions)[0]);
+
+  const button_tooltip = (access) => {
+    let ret = [];
+    if (access_on_chip.includes(access.id)) {
+      ret.push("On access chip");
+    }
+    if (access.tier > id_tier) {
+      ret.push("Requires tier " + access.tier + " ID card");
+    }
+    return ret.join(", ");
+  };
 
   return (
     <>
@@ -62,42 +72,83 @@ export const NtosCardContent = (props, context) => {
       {(!!has_id && !!authenticatedUser) && (
         <Section
           title="Templates"
-          mt={1}
-          buttons={
-            <Button
-              icon="question-circle"
-              tooltip={
-                "Will attempt to apply all access for the template to the ID card.\n"
-              + "Does not use wildcards unless the template specifies them."
-              }
-              tooltipPosition="left" />
-          } >
-          <TemplateDropdown templates={templates} />
-        </Section>)}
+          mt={1} >
+          <Dropdown
+            width="100%"
+            displayText={"Select a template..."}
+            options={
+              Object.keys(templates).map(k => {
+                return k;
+              })
+            }
+            onSelected={sel => act("PRG_template", {
+              path: templates[sel],
+            })} />
+        </Section>
+      )}
       <Stack mt={1}>
         <Stack.Item grow>
           {(!!has_id && !!authenticatedUser) && (
             <Box>
-              <AccessList
-                accesses={regions}
-                selectedList={access_on_card}
-                wildcardFlags={wildcardFlags}
-                wildcardSlots={wildcardSlots}
-                trimAccess={trimAccess}
-                accessFlags={accessFlags}
-                accessFlagNames={accessFlagNames}
-                showBasic={!!showBasic}
-                extraButtons={
-                  <Button.Confirm
-                    content="Terminate Employment"
-                    confirmContent="Fire Employee?"
-                    color="bad"
-                    onClick={() => act('PRG_terminate')} />
-                }
-                accessMod={(ref, wildcard) => act('PRG_access', {
-                  access_target: ref,
-                  access_wildcard: wildcard,
-                })} />
+              <Section
+                title="Access"
+                buttons={(
+                  <>
+                    <Button
+                      icon="check"
+                      content="Grant Region"
+                      color="good"
+                      onClick={() => act('PRG_grant_region', { region: selectedRegion })} />
+                    <Button
+                      icon="undo"
+                      content="Deny Region"
+                      color="bad"
+                      onClick={() => act('PRG_deny_region', { region: selectedRegion })} />
+                  </>
+                )}>
+                <Stack>
+                  <Stack.Item>
+                    <Tabs vertical>
+                      {Object.keys(regions).map((k) => {
+                        return (
+                          <Tabs.Tab
+                            mr={1}
+                            key={k}
+                            selected={selectedRegion === k}
+                            onClick={() => setSelectedRegion(k)}
+                            altSelection
+                          >{k}
+                          </Tabs.Tab>
+                        );
+                      })}
+                    </Tabs>
+                  </Stack.Item>
+                  <Stack.Item width="100%">
+                    {regions[selectedRegion].map(access => {
+                      return (
+                        <Button
+                          key={access.id}
+                          tooltip={button_tooltip(access)}
+                          disabled={
+                            !access_on_chip.includes(access.id)
+                            && access.tier > id_tier
+                          }
+                          color={
+                            access_on_chip.includes(access.id)
+                              ? "olive"
+                              : ""
+                          }
+                          content={access.name}
+                          selected={access_on_card.includes(access.id)}
+                          onClick={() => {
+                            if (access.tier > id_tier) { return; }
+                            act('PRG_access', { access_target: access.id });
+                          }} />
+                      );
+                    })}
+                  </Stack.Item>
+                </Stack>
+              </Section>
             </Box>
           )}
         </Stack.Item>
@@ -198,7 +249,7 @@ const IDCardTarget = (props, context) => {
         icon="eject"
         content={id_name}
         onClick={() => act('PRG_ejectmodid')} />
-      {!!(has_id && authenticatedUser) && (
+      {(!!has_id && !!authenticatedUser) && (
         <>
           <Stack mt={1}>
             <Stack.Item align="center">
@@ -241,36 +292,5 @@ const IDCardTarget = (props, context) => {
         </>
       )}
     </Section>
-  );
-};
-
-const TemplateDropdown = (props, context) => {
-  const { act } = useBackend(context);
-  const {
-    templates,
-  } = props;
-
-  const templateKeys = Object.keys(templates);
-
-  if (!templateKeys.length) {
-    return;
-  }
-
-  return (
-    <Stack>
-      <Stack.Item grow>
-        <Dropdown
-          width="100%"
-          displayText={"Select a template..."}
-          options={
-            templateKeys.map(path => {
-              return templates[path];
-            })
-          }
-          onSelected={sel => act("PRG_template", {
-            name: sel,
-          })} />
-      </Stack.Item>
-    </Stack>
   );
 };

@@ -154,7 +154,7 @@
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/research)
 "aQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -179,7 +179,7 @@
 /turf/closed/wall,
 /area/awaymission/snowdin/post/dorm)
 "aT" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -201,7 +201,7 @@
 /turf/closed/wall/rust,
 /area/awaymission/snowdin/post/dorm)
 "aW" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -221,7 +221,7 @@
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
 "aY" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -240,7 +240,7 @@
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
 "ba" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -292,27 +292,23 @@
 /turf/closed/indestructible/rock/snow/ice,
 /area/awaymission/snowdin/cave/cavern)
 "bi" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/wood{
 	icon_state = "wood-broken"
 	},
 /area/awaymission/snowdin/post/dorm)
 "bl" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
 "bo" = (
@@ -377,26 +373,6 @@
 /obj/structure/kitchenspike,
 /turf/open/floor/iron/freezer,
 /area/awaymission/snowdin/post/kitchen)
-"bx" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/turf/open/floor/wood,
-/area/awaymission/snowdin/post/dorm)
-"bA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/turf/open/floor/wood{
-	icon_state = "wood-broken"
-	},
-/area/awaymission/snowdin/post/dorm)
 "bE" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -405,8 +381,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/research)
 "bF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -416,7 +392,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/research)
 "bH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -427,7 +403,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/research)
 "bI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -437,7 +413,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/research)
 "bJ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -449,18 +425,13 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/research)
-"bL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/structure/spider/stickyweb,
-/turf/open/floor/iron/freezer,
-/area/awaymission/snowdin/post/kitchen)
 "bM" = (
 /obj/effect/landmark/awaystart,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/iron/freezer,
 /area/awaymission/snowdin/post/kitchen)
 "bN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -475,12 +446,12 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "bQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock{
 	id_tag = "snowdindormresearch3";
 	name = "Jouslen McGee's Private Quarters"
@@ -488,12 +459,12 @@
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
 "bR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock{
 	id_tag = "snowdindormresearch2";
 	name = "Elizabeth Queef's Private Quarters"
@@ -501,12 +472,12 @@
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
 "bS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock{
 	id_tag = "snowdindormresearch1";
 	name = "Jacob Ullman's Private Quarters"
@@ -514,12 +485,12 @@
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
 "bT" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock{
 	id_tag = "snowdindormhydro2";
 	name = "Rachel Migro's Private Quarters"
@@ -529,12 +500,12 @@
 	},
 /area/awaymission/snowdin/post/dorm)
 "bU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock{
 	id_tag = "snowdindormhydro1";
 	name = "Katherine Esterdeen's Private Quarters"
@@ -542,8 +513,8 @@
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
 "bV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -587,7 +558,7 @@
 /turf/open/floor/iron/freezer,
 /area/awaymission/snowdin/post/kitchen)
 "cc" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -650,12 +621,12 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "cp" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -681,12 +652,12 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "cs" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "ct" = (
@@ -703,12 +674,12 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "cu" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -723,12 +694,12 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "cw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -748,12 +719,12 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "cy" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -773,8 +744,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/research)
 "cA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -810,17 +781,13 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/research)
 "cH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/spider/stickyweb,
 /turf/open/floor/iron/freezer,
 /area/awaymission/snowdin/post/kitchen)
 "cI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -830,10 +797,8 @@
 /turf/open/floor/iron/freezer,
 /area/awaymission/snowdin/post/kitchen)
 "cJ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -847,10 +812,8 @@
 /turf/open/floor/iron/freezer,
 /area/awaymission/snowdin/post/kitchen)
 "cK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -859,10 +822,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/kitchen)
 "cL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -873,10 +834,8 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/kitchen)
 "cM" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -890,10 +849,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/kitchen)
 "cN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 1;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -904,7 +861,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/kitchen)
 "cO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -914,7 +871,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/kitchen)
 "cP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -925,7 +882,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/kitchen)
 "cQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -935,7 +892,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/kitchen)
 "cR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -944,7 +901,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/kitchen)
 "cS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -959,10 +916,8 @@
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
 "cV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -973,35 +928,31 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "cW" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "cX" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "cY" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -1013,15 +964,13 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "cZ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/item/trash/can,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -1030,15 +979,13 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "da" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -1047,8 +994,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "db" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -1058,28 +1005,14 @@
 	icon_state = "platingdmg1"
 	},
 /area/awaymission/snowdin/post/dorm)
-"dd" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
-	dir = 4;
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/dorm)
 "de" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -1087,8 +1020,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "df" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -1098,15 +1031,13 @@
 	},
 /area/awaymission/snowdin/post/dorm)
 "dg" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock/public/glass{
 	name = "Research Desks"
 	},
@@ -1118,15 +1049,13 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/research)
 "dh" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 1;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -1134,15 +1063,13 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/research)
 "di" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -1150,10 +1077,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/research)
 "dj" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -1216,8 +1141,8 @@
 	},
 /area/awaymission/snowdin/post/kitchen)
 "dt" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -1335,8 +1260,8 @@
 /turf/closed/wall,
 /area/awaymission/snowdin/post)
 "dL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -1368,18 +1293,14 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/kitchen)
 "dR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/closet/secure_closet/freezer/fridge/open,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/kitchen)
 "dS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -1490,8 +1411,8 @@
 /turf/closed/wall,
 /area/awaymission/snowdin/post)
 "ej" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -1567,8 +1488,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/kitchen)
 "ez" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -1639,12 +1560,12 @@
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
 "eO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
 "eP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -1663,25 +1584,21 @@
 	},
 /area/awaymission/snowdin/post/dorm)
 "eR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
 /area/awaymission/snowdin/post/dorm)
 "eS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -1691,10 +1608,8 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "eT" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -1707,10 +1622,8 @@
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
 "eU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -1721,10 +1634,8 @@
 	},
 /area/awaymission/snowdin/post/dorm)
 "eV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -1734,7 +1645,7 @@
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
 "eW" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -1778,8 +1689,8 @@
 /turf/open/floor/iron/white,
 /area/awaymission/snowdin/post)
 "fd" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -1807,8 +1718,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/messhall)
 "fj" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -1867,7 +1778,7 @@
 /turf/open/lava/plasma,
 /area/awaymission/snowdin/cave/cavern)
 "fs" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
 "ft" = (
@@ -1886,13 +1797,13 @@
 	},
 /area/awaymission/snowdin/post/dorm)
 "fu" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 8;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
@@ -2039,8 +1950,8 @@
 	},
 /area/awaymission/snowdin/post/hydro)
 "fQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -2141,7 +2052,7 @@
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
 "gh" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -2150,10 +2061,8 @@
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
 "gi" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -2187,7 +2096,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "gn" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -2203,7 +2112,7 @@
 /turf/open/floor/iron/white,
 /area/awaymission/snowdin/post)
 "go" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -2218,7 +2127,7 @@
 /turf/open/floor/iron/white,
 /area/awaymission/snowdin/post)
 "gp" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -2234,13 +2143,13 @@
 /turf/open/floor/iron/white,
 /area/awaymission/snowdin/post)
 "gq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 10;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
@@ -2330,8 +2239,8 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/hydro)
 "gF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -2369,7 +2278,7 @@
 	dir = 8;
 	pixel_x = 11
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -2378,30 +2287,8 @@
 	icon_state = "platingdmg1"
 	},
 /area/awaymission/snowdin/post/hydro)
-"gM" = (
-/obj/item/stack/cable_coil{
-	amount = 1
-	},
-/obj/structure/lattice/catwalk,
-/obj/effect/turf_decal/weather/snow,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/outside)
-"gN" = (
-/obj/structure/lattice/catwalk,
-/obj/effect/turf_decal/weather/snow,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/structure/cable,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/outside)
 "gO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/garage)
@@ -2437,15 +2324,13 @@
 /turf/closed/mineral/diamond/ice,
 /area/awaymission/snowdin/cave/cavern)
 "gZ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 8;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/trash/can,
 /obj/effect/decal/cleanable/dirt,
@@ -2453,10 +2338,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "ha" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -2470,10 +2353,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "hb" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -2486,19 +2367,17 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "hc" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "hd" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -2507,7 +2386,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "he" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -2543,12 +2422,12 @@
 /turf/open/floor/iron/white,
 /area/awaymission/snowdin/post)
 "hh" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/item/storage/firstaid/o2{
 	pixel_x = 4;
 	pixel_y = 4
@@ -2664,7 +2543,7 @@
 	},
 /area/awaymission/snowdin/post/hydro)
 "hA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -2674,7 +2553,7 @@
 "hB" = (
 /obj/structure/lattice/catwalk,
 /obj/effect/turf_decal/weather/snow,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/outside)
 "hC" = (
@@ -2712,17 +2591,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
-"hH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
-/turf/open/floor/carpet,
-/area/awaymission/snowdin/post/dorm)
 "hI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -2731,10 +2602,8 @@
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
 "hJ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -2747,10 +2616,8 @@
 /turf/open/floor/carpet,
 /area/awaymission/snowdin/post/dorm)
 "hK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -2767,15 +2634,13 @@
 	},
 /area/awaymission/snowdin/post/dorm)
 "hL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
@@ -2795,12 +2660,12 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
 "hO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/medical/glass{
 	name = "Medbay Storage";
@@ -2815,8 +2680,8 @@
 /turf/open/floor/iron/white,
 /area/awaymission/snowdin/post)
 "hP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -2883,8 +2748,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/hydro)
 "hY" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -2908,7 +2773,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/secpost)
 "ib" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -2918,7 +2783,7 @@
 	},
 /area/awaymission/snowdin/post/hydro)
 "ic" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/garage)
 "id" = (
@@ -2991,10 +2856,8 @@
 	},
 /area/awaymission/snowdin/cave/cavern)
 "io" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -3004,28 +2867,24 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "ip" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/dorm)
 "iq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -3036,15 +2895,13 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "ir" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 1;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -3055,15 +2912,13 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "is" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock/public/glass{
 	name = "Dorms"
 	},
@@ -3078,15 +2933,13 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "it" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -3097,12 +2950,12 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "iu" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -3113,10 +2966,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "iv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -3129,10 +2980,8 @@
 	},
 /area/awaymission/snowdin/post)
 "iw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 10;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -3166,22 +3015,18 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "iA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/landmark/awaystart,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/gateway)
 "iB" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/landmark/awaystart,
 /obj/machinery/holopad,
 /obj/effect/decal/cleanable/dirt,
@@ -3189,7 +3034,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/gateway)
 "iC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -3216,7 +3061,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/messhall)
 "iH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -3243,7 +3088,7 @@
 	},
 /area/awaymission/snowdin/post/hydro)
 "iL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -3257,17 +3102,15 @@
 "iM" = (
 /obj/structure/lattice/catwalk,
 /obj/effect/turf_decal/weather/snow,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/outside)
 "iN" = (
 /obj/structure/table,
 /obj/effect/decal/cleanable/cobweb,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -3280,68 +3123,58 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/garage)
 "iQ" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/garage)
 "iR" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Garage"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/garage)
 "iS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/garage)
 "iT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 1;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -3350,10 +3183,8 @@
 /obj/machinery/door/airlock/public/glass{
 	name = "Garage"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -3363,10 +3194,8 @@
 /area/awaymission/snowdin/post/garage)
 "iV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 10;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -3451,12 +3280,12 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/dorm)
 "jh" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -3506,44 +3335,38 @@
 	},
 /area/awaymission/snowdin/post)
 "jp" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 8;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
 /area/awaymission/snowdin/post)
 "jq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
 "jr" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -3558,8 +3381,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/gateway)
 "jv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -3590,7 +3413,7 @@
 /area/awaymission/snowdin/post/messhall)
 "jz" = (
 /obj/structure/table,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -3599,7 +3422,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/messhall)
 "jB" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -3614,31 +3437,13 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/hydro)
-"jC" = (
-/obj/structure/lattice/catwalk,
-/obj/effect/turf_decal/weather/snow,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
-/obj/structure/cable,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/outside)
-"jD" = (
-/obj/structure/lattice/catwalk,
-/obj/effect/turf_decal/weather/snow,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
-/obj/structure/cable,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/outside)
 "jE" = (
 /obj/structure/chair{
 	dir = 4
 	},
 /obj/effect/landmark/awaystart,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -3677,12 +3482,12 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/garage)
 "jK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/garage)
 "jL" = (
@@ -3709,12 +3514,12 @@
 	},
 /area/awaymission/snowdin/cave/cavern)
 "jP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock{
 	name = "Bathroom"
 	},
@@ -3741,8 +3546,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "jV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -3772,8 +3577,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/gateway)
 "jZ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -3791,7 +3596,7 @@
 	},
 /area/awaymission/snowdin/post/messhall)
 "kc" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -3820,8 +3625,8 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 8;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -3831,7 +3636,7 @@
 /area/awaymission/snowdin/post/garage)
 "ki" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -3843,7 +3648,7 @@
 /area/awaymission/snowdin/post/garage)
 "kj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -3928,73 +3733,52 @@
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/snowdin/post/dorm)
 "kw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/shower{
 	pixel_y = 25
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/snowdin/post/dorm)
 "kx" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/shower{
 	pixel_y = 25
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/snowdin/post/dorm)
 "ky" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock{
 	name = "Showers"
 	},
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/snowdin/post/dorm)
-"kz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
-	dir = 4;
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt,
-/turf/open/floor/iron/showroomfloor,
-/area/awaymission/snowdin/post/dorm)
 "kA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/snowdin/post/dorm)
@@ -4042,8 +3826,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "kK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -4117,14 +3901,12 @@
 	},
 /obj/structure/lattice/catwalk,
 /obj/effect/turf_decal/weather/snow,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/outside)
 "kU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -4133,17 +3915,13 @@
 /area/awaymission/snowdin/post/garage)
 "kV" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/garage)
 "kW" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/garage)
 "kX" = (
@@ -4170,12 +3948,12 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/garage)
 "lc" = (
@@ -4188,15 +3966,13 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/garage)
 "lf" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/snowdin/post/dorm)
@@ -4208,7 +3984,7 @@
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/snowdin/post/dorm)
 "lj" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4247,24 +4023,20 @@
 	},
 /area/awaymission/snowdin/post)
 "lo" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 8;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/snowdin_station_sign/up,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "lp" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4276,10 +4048,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "lq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4292,10 +4062,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "lr" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4307,10 +4075,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "ls" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4322,10 +4088,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "lt" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4336,10 +4100,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "lu" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4351,20 +4113,18 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "lv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "lw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4374,10 +4134,8 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "lx" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4395,10 +4153,8 @@
 /obj/machinery/door/airlock/public/glass{
 	name = "Mess Hall"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4409,49 +4165,30 @@
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/messhall)
 "lz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/messhall)
-"lA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
-	dir = 4;
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/messhall)
 "lB" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/messhall)
 "lC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 1;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4460,28 +4197,14 @@
 /obj/structure/cable,
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/messhall)
-"lD" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/structure/cable,
-/turf/open/floor/iron/cafeteria,
-/area/awaymission/snowdin/post/messhall)
 "lE" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock/public/glass{
 	name = "Hydroponics";
 	req_access_txt = "35"
@@ -4491,34 +4214,30 @@
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/messhall)
 "lF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/hydro)
 "lG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating{
 	icon_state = "platingdmg2"
 	},
 /area/awaymission/snowdin/post/hydro)
 "lH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4530,7 +4249,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/hydro)
 "lI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4550,7 +4269,7 @@
 /turf/open/floor/wood,
 /area/awaymission/snowdin/post/dorm)
 "lK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4561,7 +4280,7 @@
 	},
 /area/awaymission/snowdin/post/hydro)
 "lL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4573,8 +4292,8 @@
 /area/awaymission/snowdin/post/hydro)
 "lM" = (
 /obj/machinery/door/airlock/external/glass,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -4589,28 +4308,24 @@
 /area/awaymission/snowdin/post/garage)
 "lO" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/garage)
 "lP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/garage)
@@ -4618,27 +4333,23 @@
 /obj/machinery/door/airlock{
 	name = "Mechanic's Quarters"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/garage)
 "lR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/garage)
 "lS" = (
@@ -4687,35 +4398,29 @@
 /turf/closed/wall,
 /area/awaymission/snowdin/post/custodials)
 "ma" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/custodials)
 "mb" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/custodials)
 "mc" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock{
 	name = "Custodial Closet"
 	},
@@ -4723,10 +4428,8 @@
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/custodials)
 "md" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4744,28 +4447,24 @@
 	},
 /area/awaymission/snowdin/post)
 "me" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 1;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "mf" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/snowdin_station_sign,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -4818,8 +4517,8 @@
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/messhall)
 "mo" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -4836,7 +4535,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/messhall)
 "mr" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/hydro)
 "ms" = (
@@ -4872,11 +4571,11 @@
 	set_cap = 3;
 	set_luminosity = 6
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/outside)
 "my" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 10;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4913,7 +4612,7 @@
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/custodials)
 "mF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/custodials)
 "mG" = (
@@ -4921,8 +4620,8 @@
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/custodials)
 "mI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -4933,8 +4632,8 @@
 	},
 /area/awaymission/snowdin/post)
 "mJ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -4962,8 +4661,8 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/messhall)
 "mP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -5052,15 +4751,13 @@
 	},
 /area/awaymission/snowdin/post)
 "ne" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 8;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -5069,15 +4766,13 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "nf" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -5085,32 +4780,28 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "nh" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
 "ni" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "nj" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -5120,7 +4811,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
 "nk" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 10;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -5157,12 +4848,12 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "np" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -5244,12 +4935,12 @@
 /turf/closed/wall/rust,
 /area/awaymission/snowdin/post/secpost)
 "nG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock/security{
 	name = "Security Checkpoint";
 	req_access_txt = "1"
@@ -5302,7 +4993,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "nK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -5317,7 +5008,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "nM" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -5351,12 +5042,12 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "nR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
@@ -5407,12 +5098,12 @@
 /turf/closed/wall,
 /area/awaymission/snowdin/post/secpost)
 "of" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
@@ -5440,7 +5131,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/secpost)
 "oj" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/door/airlock/public/glass,
 /obj/machinery/door/firedoor,
 /obj/effect/turf_decal/tile/neutral{
@@ -5456,7 +5147,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "ok" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -5497,8 +5188,8 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
 "on" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	dir = 8;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -5508,7 +5199,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "oo" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -5518,7 +5209,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "op" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -5583,9 +5274,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/secpost)
 "oB" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/holopad,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -5596,17 +5285,13 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/secpost)
 "oC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/secpost)
 "oD" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -5616,7 +5301,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/secpost)
 "oE" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -5626,7 +5311,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/secpost)
 "oF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -5637,7 +5322,7 @@
 /area/awaymission/snowdin/post/secpost)
 "oG" = (
 /obj/structure/table,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -5667,7 +5352,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "oJ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -5677,7 +5362,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "oK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -5719,15 +5404,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/turf/open/floor/plating,
-/area/awaymission/snowdin/post/engineering)
-"oO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
-	piping_layer = 4;
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
 "oP" = (
@@ -5779,7 +5455,7 @@
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/engineering)
 "oX" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/engineering)
@@ -5871,9 +5547,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/secpost)
 "pp" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -5885,9 +5559,7 @@
 	},
 /area/awaymission/snowdin/post)
 "pq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
@@ -5899,7 +5571,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "ps" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 8;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -5910,7 +5582,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "pt" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -5934,29 +5606,23 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
 "pv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
 /area/awaymission/snowdin/post/engineering)
 "pw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "px" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
 "py" = (
@@ -5977,7 +5643,7 @@
 /area/awaymission/snowdin/post/engineering)
 "pz" = (
 /obj/structure/rack,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
@@ -6059,7 +5725,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "pO" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
@@ -6073,7 +5739,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "pQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -6093,48 +5759,26 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post)
 "pT" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
 "pU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/machinery/holopad,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "pV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/iron,
-/area/awaymission/snowdin/post/engineering)
-"pW" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/awaymission/snowdin/post/engineering)
-"pX" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 1
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg1"
-	},
 /area/awaymission/snowdin/post/engineering)
 "pY" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -6142,9 +5786,7 @@
 "pZ" = (
 /obj/machinery/portable_atmospherics/scrubber,
 /obj/effect/turf_decal/bot,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
 "qa" = (
@@ -6153,26 +5795,20 @@
 	},
 /obj/machinery/portable_atmospherics/pump,
 /obj/effect/turf_decal/bot,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qb" = (
 /obj/machinery/portable_atmospherics/canister,
 /obj/effect/turf_decal/bot,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qc" = (
 /obj/structure/reagent_dispensers/watertank/high,
 /obj/effect/turf_decal/bot,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qd" = (
@@ -6180,21 +5816,15 @@
 /obj/item/clothing/head/welding,
 /obj/item/weldingtool/largetank,
 /obj/effect/turf_decal/bot,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qe" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/closed/wall,
 /area/awaymission/snowdin/post/engineering)
 "qf" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/structure/cable,
 /obj/structure/grille/broken,
 /turf/open/floor/plating,
@@ -6260,14 +5890,14 @@
 /area/awaymission/snowdin/post/secpost)
 "qr" = (
 /obj/machinery/door/airlock/external/glass,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/barricade/wooden/crude,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
 "qs" = (
 /obj/machinery/door/airlock/external/glass,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -6280,7 +5910,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -6293,7 +5923,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
 "qu" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -6311,9 +5941,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
 /turf/open/floor/iron,
@@ -6326,25 +5954,19 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qy" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/pink/visible{
-	dir = 8
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qz" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/pink/visible{
-	dir = 8
-	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/pink/visible{
-	dir = 10
-	},
 /obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
 	},
@@ -6367,7 +5989,7 @@
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/custodials)
 "qF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden,
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/cavern2)
 "qG" = (
@@ -6400,9 +6022,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
 "qN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
 "qP" = (
@@ -6415,7 +6035,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -6446,9 +6066,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /obj/machinery/door_buttons/airlock_controller{
 	idExterior = "snowdin_turbine_exterior";
 	idInterior = "snowdin_turbine_interior";
@@ -6470,9 +6088,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qW" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
@@ -6485,7 +6101,7 @@
 	frequency = 1442;
 	name = "Toxins Supply Control";
 	output_tag = "snowdin_toxins_out";
-	sensors = list("snowdin_toxins" = "Tank")
+	sensors = list("snowdin_toxins"="Tank")
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -6499,11 +6115,11 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "qZ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/pink/visible,
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
 "ra" = (
@@ -6512,7 +6128,7 @@
 	frequency = 1442;
 	name = "Oxygen Supply Control";
 	output_tag = "snowdin_oxygen_out";
-	sensors = list("snowdin_oxygen" = "Tank")
+	sensors = list("snowdin_oxygen"="Tank")
 	},
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
@@ -6526,7 +6142,7 @@
 	frequency = 1442;
 	name = "Nitrogen Supply Control";
 	output_tag = "snowdin_nitrogen_out";
-	sensors = list("snowdin_nitrogen" = "Tank")
+	sensors = list("snowdin_nitrogen"="Tank")
 	},
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
@@ -6580,7 +6196,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
 "rm" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 9;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -6598,7 +6214,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
 "ro" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -6623,12 +6239,12 @@
 /turf/open/floor/engine,
 /area/awaymission/snowdin/post/engineering)
 "rr" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/closed/wall/r_wall,
 /area/awaymission/snowdin/post/engineering)
 "rs" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
 "rt" = (
@@ -7103,9 +6719,7 @@
 /turf/open/floor/iron/dark/snowdin,
 /area/awaymission/snowdin/outside)
 "sT" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable,
@@ -7776,20 +7390,18 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/cavern1)
 "vy" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/snowdin/post/dorm)
 "vA" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden,
 /turf/closed/wall/ice,
 /area/awaymission/snowdin/post/cavern1)
 "vB" = (
@@ -8346,13 +7958,6 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=180"
 	},
 /area/awaymission/snowdin/cave)
-"xn" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 10
-	},
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "xp" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 8
@@ -8397,7 +8002,7 @@
 /turf/open/floor/engine/cult,
 /area/awaymission/snowdin/post/mining_dock)
 "xw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 6;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -8472,12 +8077,6 @@
 	},
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
-"xE" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 6
-	},
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "xF" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -8549,12 +8148,6 @@
 	initial_gas_mix = "o2=22;n2=82;TEMP=180"
 	},
 /area/awaymission/snowdin/cave)
-"xL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 8
-	},
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "xM" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -8618,14 +8211,8 @@
 	},
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/cave)
-"xT" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 5
-	},
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "xV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4
 	},
@@ -8669,12 +8256,6 @@
 	},
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/mining_dock)
-"yc" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 6
-	},
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/cave)
 "yd" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8
@@ -8777,15 +8358,13 @@
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
 "ys" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
 "yt" = (
 /obj/structure/window/reinforced/fulltile/ice,
 /obj/structure/grille,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/cave)
 "yu" = (
@@ -8887,18 +8466,6 @@
 /obj/effect/turf_decal/caution/stand_clear,
 /turf/open/floor/iron/dark/snowdin,
 /area/awaymission/snowdin/outside)
-"yH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 5
-	},
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/cave)
-"yI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 10
-	},
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/cave)
 "yJ" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /obj/machinery/portable_atmospherics/canister,
@@ -9007,19 +8574,7 @@
 /turf/open/floor/engine/plasma,
 /area/awaymission/snowdin/cave)
 "zc" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 8
-	},
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/cave)
-"zd" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
-/turf/open/floor/plating/snowed/smoothed,
-/area/awaymission/snowdin/cave)
-"ze" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/cave)
 "zf" = (
@@ -9206,7 +8761,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
 "zI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4
 	},
@@ -9889,12 +9444,6 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood,
 /area/awaymission/snowdin/igloo)
-"BN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 9
-	},
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "BO" = (
 /obj/effect/turf_decal/stripes/end{
 	dir = 1
@@ -9923,12 +9472,6 @@
 	},
 /turf/open/floor/plating/snowed/cavern,
 /area/awaymission/snowdin/cave/cavern)
-"BS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 10
-	},
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/cave)
 "BT" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 4
@@ -11298,24 +10841,12 @@
 	},
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/snowdin/outside)
-"Fu" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 4
-	},
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/outside)
 "Fw" = (
 /obj/item/shard,
 /turf/open/floor/plating/asteroid/snow/ice,
 /area/awaymission/snowdin/cave/cavern)
-"Fx" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/outside)
 "Fy" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/outside)
 "FA" = (
@@ -11354,7 +10885,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
 "FE" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/outside)
@@ -11381,7 +10912,7 @@
 /area/awaymission/snowdin/post/mining_dock)
 "FI" = (
 /obj/structure/lattice/catwalk,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/snowdin/outside)
 "FK" = (
@@ -11547,26 +11078,12 @@
 	},
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/snowdin/outside)
-"Gt" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 1
-	},
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/outside)
 "Gv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /obj/effect/light_emitter{
 	name = "outdoor light";
 	set_cap = 3;
 	set_luminosity = 6
-	},
-/turf/open/floor/plating/snowed,
-/area/awaymission/snowdin/outside)
-"Gw" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 8
 	},
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/outside)
@@ -11685,7 +11202,7 @@
 "GT" = (
 /obj/structure/window/reinforced/fulltile/ice,
 /obj/structure/grille,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible,
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/outside)
 "GU" = (
@@ -13099,7 +12616,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/research)
 "Lg" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/spider/stickyweb,
 /obj/machinery/light/broken/directional/west,
 /turf/open/floor/iron/freezer,
@@ -13158,9 +12675,7 @@
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/mining_dock)
 "Ly" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/cave)
@@ -13205,9 +12720,7 @@
 /turf/open/floor/engine/cult,
 /area/awaymission/snowdin/post/mining_dock)
 "Mb" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
@@ -13238,9 +12751,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/snowdin/post/messhall)
 "Ml" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/engineering)
@@ -13450,7 +12961,7 @@
 /turf/open/floor/iron/white,
 /area/awaymission/snowdin/post)
 "Oh" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -13552,15 +13063,13 @@
 /turf/open/floor/plating/asteroid/snow,
 /area/awaymission/snowdin/cave)
 "Pm" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plating{
@@ -13576,9 +13085,7 @@
 /turf/open/floor/engine/cult,
 /area/awaymission/snowdin/post/cavern2)
 "Pr" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/spider/stickyweb,
 /mob/living/simple_animal/hostile/giant_spider/hunter/ice,
 /turf/open/floor/iron/freezer,
@@ -13622,7 +13129,7 @@
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/cave)
 "PU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
@@ -13750,9 +13257,7 @@
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/research)
 "RS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/outside)
@@ -13816,15 +13321,13 @@
 /turf/open/floor/plating/snowed/smoothed,
 /area/awaymission/snowdin/cave)
 "Sr" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post)
@@ -13985,15 +13488,13 @@
 /turf/open/floor/engine/plasma,
 /area/awaymission/snowdin/post/engineering)
 "Us" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/iron,
 /area/awaymission/snowdin/post/garage)
@@ -14239,9 +13740,7 @@
 /area/awaymission/snowdin/post/cavern1)
 "WV" = (
 /obj/machinery/light/small/directional/south,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/orange/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
 /turf/open/floor/plating/snowed,
 /area/awaymission/snowdin/outside)
 "WW" = (
@@ -14259,7 +13758,7 @@
 /area/awaymission/snowdin/post/mining_main/mechbay)
 "Xh" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/pink/visible,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/plating,
 /area/awaymission/snowdin/post/engineering)
 "Xj" = (
@@ -14360,8 +13859,8 @@
 /area/awaymission/snowdin/post/cavern1)
 "Yd" = (
 /obj/machinery/light/small/directional/west,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden{
 	dir = 5;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -14490,7 +13989,7 @@
 /turf/open/floor/iron/dark,
 /area/awaymission/snowdin/post/custodials)
 "ZH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	dir = 4;
 	piping_layer = 4;
 	pixel_x = 5;
@@ -19422,7 +18921,7 @@ eO
 fs
 eO
 eO
-hH
+fs
 aK
 ag
 af
@@ -20183,7 +19682,7 @@ af
 aK
 aQ
 bi
-bx
+bl
 bQ
 cp
 cV
@@ -20954,7 +20453,7 @@ af
 aK
 aT
 bi
-bx
+bl
 bR
 cs
 cY
@@ -20968,7 +20467,7 @@ aS
 iq
 jf
 aV
-kz
+kA
 lh
 lX
 OT
@@ -21725,7 +21224,7 @@ af
 aK
 aW
 bl
-bA
+bi
 bS
 cu
 db
@@ -22242,7 +21741,7 @@ aV
 aS
 aS
 cr
-dd
+hc
 dF
 ei
 eX
@@ -22496,7 +21995,7 @@ af
 aK
 aY
 bl
-bx
+bl
 bT
 cw
 cY
@@ -23267,7 +22766,7 @@ af
 aK
 ba
 bl
-bx
+bl
 bU
 cy
 df
@@ -23784,7 +23283,7 @@ aV
 aV
 aS
 cq
-dd
+hc
 dJ
 dK
 fc
@@ -26880,7 +26379,7 @@ gA
 jy
 gA
 kN
-lA
+lz
 gA
 dO
 On
@@ -27122,7 +26621,7 @@ af
 af
 be
 bu
-bL
+cH
 Lg
 Pr
 dn
@@ -27400,7 +26899,7 @@ mP
 np
 nR
 on
-oO
+pT
 pv
 pT
 qu
@@ -27908,7 +27407,7 @@ iH
 jz
 kc
 iH
-lD
+mo
 hV
 dO
 UB
@@ -28430,7 +27929,7 @@ nN
 nN
 nN
 nN
-pW
+pV
 qv
 qW
 rs
@@ -28687,7 +28186,7 @@ nV
 or
 oR
 nt
-pX
+pY
 qw
 qX
 rt
@@ -28804,7 +28303,7 @@ wS
 wS
 wS
 gy
-xL
+ys
 ys
 SL
 an
@@ -29041,9 +28540,9 @@ wQ
 wS
 tI
 tI
-yc
 zc
-yH
+zc
+zc
 zc
 an
 an
@@ -29061,8 +28560,8 @@ wS
 tI
 wS
 Bv
-BN
-BS
+ys
+ys
 BV
 an
 BZ
@@ -29300,8 +28799,8 @@ ii
 tI
 yd
 yo
-yI
-zd
+zc
+zc
 an
 ii
 ij
@@ -29558,7 +29057,7 @@ tI
 wS
 wS
 yJ
-zd
+zc
 an
 ii
 tI
@@ -29815,7 +29314,7 @@ ii
 wS
 wS
 yK
-ze
+zc
 an
 ii
 tI
@@ -30670,13 +30169,13 @@ ae
 ae
 tq
 Fn
-Gw
-Fx
+Fy
+Fy
 FE
 FI
 FI
 FE
-Fx
+Fy
 Fy
 GS
 Ho
@@ -30740,7 +30239,7 @@ fW
 fW
 fW
 fW
-jC
+iM
 oX
 pz
 qf
@@ -30927,14 +30426,14 @@ ae
 ae
 tq
 Fo
-Fx
+Fy
 te
 dX
 af
 af
 dX
 te
-Gt
+Fy
 GT
 Hp
 Ho
@@ -30989,7 +30488,7 @@ af
 af
 af
 am
-jC
+iM
 iM
 kT
 hB
@@ -30997,7 +30496,7 @@ mw
 kT
 iM
 iM
-jD
+iM
 oW
 oW
 oW
@@ -31113,11 +30612,11 @@ wS
 wS
 wS
 Bv
-xT
+ys
 an
-xE
-xL
-xT
+ys
+ys
+ys
 Az
 Am
 Am
@@ -31184,7 +30683,7 @@ ae
 ae
 tq
 Fp
-Fx
+Fy
 te
 dX
 dX
@@ -31242,11 +30741,11 @@ af
 ak
 af
 af
-gM
+kT
 hB
 hB
 iM
-jD
+iM
 ak
 am
 am
@@ -31441,7 +30940,7 @@ ae
 ae
 tq
 WA
-Fx
+Fy
 te
 te
 dX
@@ -31499,7 +30998,7 @@ af
 af
 af
 af
-gN
+iM
 ak
 af
 af
@@ -31698,7 +31197,7 @@ ae
 ae
 tq
 Fn
-Fu
+Fy
 Fy
 te
 dX
@@ -31756,7 +31255,7 @@ af
 af
 af
 af
-gN
+iM
 ag
 fY
 fY
@@ -31956,13 +31455,13 @@ ae
 tq
 tq
 Fp
-Fx
+Fy
 te
 dX
 af
 dX
 te
-Gw
+Fy
 GS
 Ho
 Ho
@@ -32214,12 +31713,12 @@ ae
 tq
 Fp
 RS
-Fx
+Fy
 FE
 FI
 FE
-Fx
-Fu
+Fy
+Fy
 GT
 Hp
 Ho
@@ -32636,11 +32135,11 @@ ae
 wQ
 wS
 wS
-xE
-xL
-xT
+ys
+ys
+ys
 an
-xE
+ys
 yL
 wS
 wS
@@ -32895,7 +32394,7 @@ wS
 wS
 xF
 xM
-xn
+Ly
 ys
 ys
 NF

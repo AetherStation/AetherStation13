@@ -299,6 +299,10 @@
 
 /datum/config_entry/flag/maprotation
 
+/datum/config_entry/number/map_rotation_pool // size of forced map pool for blocking repeated maps
+
+/datum/config_entry/number/map_rotation_repetitions // amount of repetitions before blocking a map from the votes
+
 /datum/config_entry/number/auto_lag_switch_pop //Number of clients at which drastic lag mitigation measures kick in
 	config_entry_value = null
 	min_val = 0

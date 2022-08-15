@@ -31,21 +31,21 @@
 	try_eject(forced = TRUE)
 	return ..()
 
-/obj/item/computer_hardware/card_slot/GetAccess()
+/obj/item/computer_hardware/card_slot/get_access()
 	var/list/total_access
 	if(stored_card)
-		total_access = stored_card.GetAccess()
+		total_access = stored_card.get_access()
 	var/obj/item/computer_hardware/card_slot/card_slot2 = holder?.all_components[MC_CARD2] //Best of both worlds
 	if(card_slot2?.stored_card)
-		total_access |= card_slot2.stored_card.GetAccess()
+		total_access |= card_slot2.stored_card.get_access()
 	return total_access
 
-/obj/item/computer_hardware/card_slot/GetID()
+/obj/item/computer_hardware/card_slot/get_id()
 	if(stored_card)
 		return stored_card
 	return ..()
 
-/obj/item/computer_hardware/card_slot/RemoveID()
+/obj/item/computer_hardware/card_slot/remove_id()
 	if(stored_card)
 		. = stored_card
 		if(!try_eject())
@@ -86,9 +86,13 @@
 	return TRUE
 
 
-/obj/item/computer_hardware/card_slot/try_eject(mob/living/user = null, forced = FALSE)
+/obj/item/computer_hardware/card_slot/try_eject(mob/living/user = null, forced = FALSE, deleting = FALSE)
 	if(!stored_card)
 		to_chat(user, span_warning("There are no cards in \the [src]."))
+		return FALSE
+
+	if(deleting)
+		QDEL_NULL(stored_card)
 		return FALSE
 
 	if(user && !issilicon(user) && in_range(src, user))

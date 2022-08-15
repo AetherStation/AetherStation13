@@ -67,6 +67,7 @@
 	var/purchase_message_cooldown
 	///The ref of the last mob to shop with us
 	var/last_shopper
+	var/free_for_department = FALSE
 	var/tilted = FALSE
 	var/tiltable = TRUE
 	var/squish_damage = 75
@@ -740,7 +741,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	. = list()
 	.["onstation"] = onstation
 	.["department"] = payment_department
-	.["jobDiscount"] = VENDING_DISCOUNT
+	.["jobDiscount"] = free_for_department ? 0 : VENDING_DISCOUNT
 	.["product_records"] = list()
 	for (var/datum/data/vending_product/R in product_records)
 		var/list/data = list(
@@ -914,7 +915,10 @@ GLOBAL_LIST_EMPTY(vending_products)
 			return
 		var/datum/bank_account/account = C.registered_account
 		if(account.account_job && account.account_job.paycheck_department == payment_department)
-			price_to_use = max(round(price_to_use * VENDING_DISCOUNT), 1) //No longer free, but signifigantly cheaper.
+			if (free_for_department)
+				price_to_use = 0
+			else
+				price_to_use = max(round(price_to_use * VENDING_DISCOUNT), 1) //No longer free, but signifigantly cheaper.
 		if(coin_records.Find(R) || hidden_records.Find(R))
 			price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
 		if(price_to_use && !account.adjust_money(-price_to_use))

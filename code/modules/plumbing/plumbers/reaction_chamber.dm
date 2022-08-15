@@ -22,26 +22,10 @@
 	var/target_temperature = 300
 	///cool/heat power
 	var/heater_coefficient = 0.05 //same lvl as acclimator
-	///Beaker that holds the acidic buffer. I don't want to deal with snowflaking so it's just a seperate thing. It's a small (50u) beaker
-	var/obj/item/reagent_containers/glass/beaker/acidic_beaker
-	///beaker that holds the alkaline buffer.
-	var/obj/item/reagent_containers/glass/beaker/alkaline_beaker
 
 /obj/machinery/plumbing/reaction_chamber/Initialize(mapload, bolt, layer)
 	. = ..()
 	AddComponent(/datum/component/plumbing/reaction_chamber, bolt, layer)
-
-	acidic_beaker = new (src)
-	alkaline_beaker = new (src)
-
-	AddComponent(/datum/component/plumbing/acidic_input, bolt, custom_receiver = acidic_beaker)
-	AddComponent(/datum/component/plumbing/alkaline_input, bolt, custom_receiver = alkaline_beaker)
-
-/// Make sure beakers are deleted when being deconstructed
-/obj/machinery/plumbing/reaction_chamber/Destroy()
-	QDEL_NULL(acidic_beaker)
-	QDEL_NULL(alkaline_beaker)
-	. = ..()
 
 /obj/machinery/plumbing/reaction_chamber/create_reagents(max_vol, flags)
 	. = ..()
@@ -88,12 +72,13 @@
 	for(var/datum/reagent/required_reagent as anything in required_reagents) //make a list where the key is text, because that looks alot better in the ui than a typepath
 		var/list/reagent_data = list()
 		reagent_data["name"] = initial(required_reagent.name)
-		reagent_data["required_reagent"] = required_reagents[required_reagent]
+		reagent_data["amount"] = required_reagents[required_reagent]
 		reagents_data += list(reagent_data)
 
 	data["reagents"] = reagents_data
 	data["emptying"] = emptying
 	data["temperature"] = round(reagents.chem_temp, 0.1)
+	data["target_temperature"] = round(target_temperature, 0.1)
 	return data
 
 /obj/machinery/plumbing/reaction_chamber/ui_act(action, params)
@@ -119,8 +104,3 @@
 				. = TRUE
 			if(.)
 				target_temperature = clamp(target, 0, 1000)
-		if("acidic")
-			acidic_limit = round(text2num(params["target"]))
-		if("alkaline")
-			alkaline_limit = round(text2num(params["target"]))
-

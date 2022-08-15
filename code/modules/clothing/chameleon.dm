@@ -267,15 +267,9 @@
 
 /datum/action/item_action/chameleon/change/id/update_item(obj/item/picked_item)
 	..()
-	var/obj/item/card/id/advanced/chameleon/agent_card = target
+	var/obj/item/card/id/chameleon/agent_card = target
 	if(istype(agent_card))
 		var/obj/item/card/id/copied_card = picked_item
-
-		// If the outfit comes with a special trim override, we'll steal some stuff from that.
-		var/new_trim = initial(copied_card.trim)
-
-		if(new_trim)
-			SSid_access.apply_trim_to_chameleon_card(agent_card, new_trim, TRUE)
 
 		// If the ID card hasn't been forged, we'll check if there has been an assignment set already by any new trim.
 		// If there has not, we set the assignment to the copied card's default as well as copying over the the
@@ -287,16 +281,13 @@
 			agent_card.registered_name = initial(copied_card.registered_name)
 
 		agent_card.icon_state = initial(copied_card.icon_state)
-		if(ispath(copied_card, /obj/item/card/id/advanced))
-			var/obj/item/card/id/advanced/copied_advanced_card = copied_card
-			agent_card.assigned_icon_state = initial(copied_advanced_card.assigned_icon_state)
 
 		agent_card.update_label()
 		agent_card.update_icon()
 
 /datum/action/item_action/chameleon/change/id/apply_job_data(datum/job/job_datum)
 	..()
-	var/obj/item/card/id/advanced/chameleon/agent_card = target
+	var/obj/item/card/id/chameleon/agent_card = target
 	if(istype(agent_card) && istype(job_datum))
 		agent_card.forged = TRUE
 
@@ -310,46 +301,10 @@
 		if(!copied_card)
 			return
 
-		// If the outfit comes with a special trim override, we'll use that. Otherwise, use the card's default trim. Failing that, no trim at all.
-		var/new_trim = initial(job_outfit.id_trim) ? initial(job_outfit.id_trim) : initial(copied_card.trim)
-
-		if(new_trim)
-			SSid_access.apply_trim_to_chameleon_card(agent_card, new_trim, FALSE)
-		else
-			agent_card.assignment = job_datum.title
-
+		agent_card.assignment = job_datum.title
 		agent_card.icon_state = initial(copied_card.icon_state)
-		if(ispath(copied_card, /obj/item/card/id/advanced))
-			var/obj/item/card/id/advanced/copied_advanced_card = copied_card
-			agent_card.assigned_icon_state = initial(copied_advanced_card.assigned_icon_state)
-
 		agent_card.update_label()
 		agent_card.update_icon()
-
-/datum/action/item_action/chameleon/change/id_trim/initialize_disguises()
-	if(button)
-		button.name = "Change [chameleon_name] Appearance"
-
-	chameleon_blacklist |= typecacheof(target.type)
-	for(var/trim_path in typesof(chameleon_type))
-		if(ispath(trim_path) && ispath(trim_path, /datum/id_trim))
-			if(chameleon_blacklist[trim_path])
-				continue
-
-			var/datum/id_trim/trim = SSid_access.trim_singletons_by_path[trim_path]
-
-			if(trim && trim.trim_state && trim.assignment)
-				var/chameleon_item_name = "[trim.assignment] ([trim.trim_state])"
-				chameleon_list[chameleon_item_name] = trim_path
-
-/datum/action/item_action/chameleon/change/id_trim/update_item(picked_trim_path)
-	var/obj/item/card/id/advanced/chameleon/agent_card = target
-
-	if(istype(agent_card))
-		SSid_access.apply_trim_to_chameleon_card(agent_card, picked_trim_path, TRUE)
-
-	agent_card.update_label()
-	agent_card.update_icon()
 
 /datum/action/item_action/chameleon/change/pda/update_item(obj/item/picked_item)
 	..()

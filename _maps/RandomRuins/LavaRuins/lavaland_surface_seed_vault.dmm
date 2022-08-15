@@ -228,7 +228,7 @@
 /area/ruin/powered/seedvault)
 "aH" = (
 /obj/machinery/door/airlock/vault,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/ruin/powered/seedvault)
 "aI" = (
@@ -631,29 +631,25 @@
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "oR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/ruin/powered/seedvault)
 "sv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/vault,
 /area/ruin/powered/seedvault)
 "Bb" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/ruin/powered/seedvault)
 "DA" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/powered/seedvault)
 "Eu" = (
 /obj/machinery/light/directional/south,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/ruin/powered/seedvault)
 "GN" = (
@@ -672,13 +668,11 @@
 /area/ruin/powered/seedvault)
 "KF" = (
 /obj/machinery/door/airlock/titanium,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/vault,
 /area/ruin/powered/seedvault)
 "PH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/freezer,
 /area/ruin/powered/seedvault)
 "Uz" = (

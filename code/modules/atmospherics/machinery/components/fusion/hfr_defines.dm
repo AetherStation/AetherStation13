@@ -16,14 +16,6 @@
 #define MAX_HEAT_VARIATION 1e5
 ///Max mole consumption per reaction cycle
 #define MAX_FUEL_USAGE 36
-///Mole count required (tritium/hydrogen) to start a fusion reaction
-#define FUSION_MOLE_THRESHOLD 25
-///Used to reduce the gas_power to a more useful amount
-#define INSTABILITY_GAS_POWER_FACTOR 0.003
-///Used to calculate the toroidal_size for the instability
-#define TOROID_VOLUME_BREAKEVEN 1000
-///Constant used when calculating the chance of emitting a radioactive particle
-#define PARTICLE_CHANCE_CONSTANT (-20000000)
 ///Conduction of heat inside the fusion reactor
 #define METALLIC_VOID_CONDUCTIVITY 0.15
 ///Conduction of heat near the external cooling loop

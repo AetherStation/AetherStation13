@@ -328,7 +328,7 @@
 						span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
 						span_hear("You hear a ratchet."))
 	else if(!user.combat_mode)
-		var/item_is_id = W.GetID()
+		var/item_is_id = W.get_id()
 		if(!item_is_id)
 			return FALSE
 		if(item_is_id || !toggle(user))
@@ -534,7 +534,7 @@
 				open()
 			else
 				req_access = list()
-				req_access += pick(SSid_access.get_region_access_list(list(REGION_ALL_STATION)))
+				req_access += pick(SSid_access.accesses_by_region[REGION_ACCESS_STATION])
 
 /obj/structure/closet/contents_explosion(severity, target)
 	switch(severity)

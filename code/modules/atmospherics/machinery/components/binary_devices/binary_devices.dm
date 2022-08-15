@@ -5,7 +5,6 @@
 	use_power = IDLE_POWER_USE
 	device_type = BINARY
 	layer = GAS_PUMP_LAYER
-	pipe_flags = PIPING_BRIDGE
 
 /obj/machinery/atmospherics/components/binary/SetInitDirections()
 	switch(dir)

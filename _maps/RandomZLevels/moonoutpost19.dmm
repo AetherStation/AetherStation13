@@ -1974,9 +1974,7 @@
 	},
 /area/awaymission/moonoutpost19/research)
 "ei" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /obj/structure/alien/weeds,
 /obj/structure/cable,
 /turf/open/floor/iron/white,
@@ -2055,9 +2053,7 @@
 	},
 /area/awaymission/moonoutpost19/research)
 "ex" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes,
 /obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/awaymission/moonoutpost19/research)
@@ -2137,7 +2133,7 @@
 	},
 /area/awaymission/moonoutpost19/research)
 "eN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /obj/structure/chair/office/light{
 	dir = 4
 	},
@@ -2355,7 +2351,7 @@
 /turf/open/floor/iron/white,
 /area/awaymission/moonoutpost19/research)
 "fl" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/awaymission/moonoutpost19/research)
@@ -2450,14 +2446,12 @@
 /turf/open/floor/iron/white,
 /area/awaymission/moonoutpost19/research)
 "fC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /obj/structure/cable,
 /turf/open/floor/iron/white,
 /area/awaymission/moonoutpost19/research)
 "fD" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	desc = "A one meter section of pipe. This one has been applied with an acid-proof coating.";
 	dir = 4;
 	name = "Acid-Proof Pipe"
@@ -2482,7 +2476,7 @@
 	id = "Awaylab";
 	name = "Acid-Proof containment chamber blast door"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	desc = "A one meter section of pipe. This one has been applied with an acid-proof coating.";
 	dir = 4;
 	name = "Acid-Proof Pipe"
@@ -2498,7 +2492,7 @@
 /turf/open/floor/engine,
 /area/awaymission/moonoutpost19/research)
 "fF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	desc = "A one meter section of pipe. This one has been applied with an acid-proof coating.";
 	dir = 4;
 	name = "Acid-Proof Pipe"
@@ -2507,7 +2501,7 @@
 /turf/open/floor/engine,
 /area/awaymission/moonoutpost19/research)
 "fG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	desc = "A one meter section of pipe. This one has been applied with an acid-proof coating.";
 	dir = 4;
 	name = "Acid-Proof Pipe"
@@ -2517,7 +2511,7 @@
 /turf/open/floor/engine,
 /area/awaymission/moonoutpost19/research)
 "fH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	desc = "A one meter section of pipe. This one has been applied with an acid-proof coating.";
 	dir = 4;
 	name = "Acid-Proof Pipe"

@@ -2665,7 +2665,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/atmospherics)
 "lu" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden,
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/atmospherics)
 "lv" = (
@@ -2737,9 +2737,7 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/atmospherics)
 "lK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/atmospherics)
 "lL" = (
@@ -2783,15 +2781,11 @@
 /turf/open/floor/iron/airless,
 /area/ruin/space/derelict/atmospherics)
 "lU" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/atmospherics)
 "lV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden,
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/atmospherics)
 "lX" = (
@@ -3525,7 +3519,7 @@
 /area/template_noop)
 "ES" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /obj/structure/grille,
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/atmospherics)
@@ -3640,7 +3634,7 @@
 /turf/open/floor/iron/airless,
 /area/ruin/space/derelict/se_solar)
 "MS" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/atmospherics)
 "Ni" = (
@@ -3671,12 +3665,12 @@
 /turf/open/floor/iron,
 /area/ruin/space/derelict/solar_control)
 "PR" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/iron/airless,
 /area/ruin/space/derelict/atmospherics)
 "Qt" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/structure/grille,
 /turf/open/floor/plating/airless,
 /area/ruin/space/derelict/atmospherics)
@@ -3731,7 +3725,7 @@
 /turf/open/floor/iron/airless,
 /area/ruin/space/derelict/hallway/primary/port)
 "VV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /turf/open/floor/iron/airless,
 /area/ruin/space/derelict/atmospherics)
 "Xq" = (

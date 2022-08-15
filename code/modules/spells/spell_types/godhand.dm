@@ -83,6 +83,19 @@
 	target.gib()
 	return ..()
 
+/obj/item/melee/touch_attack/proc/use_charge(mob/living/user, whisper = FALSE)
+	if(QDELETED(src))
+		return
+
+	if(catchphrase)
+		if(whisper)
+			user.say("#[catchphrase]", forced = "spell")
+		else
+			user.say(catchphrase, forced = "spell")
+	playsound(get_turf(user), on_use_sound, 50, TRUE)
+	if(--charges <= 0)
+		qdel(src)
+
 /obj/item/melee/touch_attack/fleshtostone
 	name = "\improper petrifying touch"
 	desc = "That's the bottom line, because flesh to stone said so!"

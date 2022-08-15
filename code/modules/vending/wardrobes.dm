@@ -5,6 +5,7 @@
 	default_price = PAYCHECK_ASSISTANT
 	extra_price = PAYCHECK_HARD
 	payment_department = NO_FREEBIES
+	free_for_department = TRUE
 	input_display_header = "Returned Clothing"
 	light_mask = "wardrobe-light-mask"
 

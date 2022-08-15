@@ -274,15 +274,6 @@
 #define COLD_SLOWDOWN_FACTOR 20
 
 //PIPES
-//Defines for pipe bitmasking
-#define NORTH_FULLPIPE (1<<0) //also just NORTH
-#define SOUTH_FULLPIPE (1<<1) //also just SOUTH
-#define EAST_FULLPIPE (1<<2) //also just EAST
-#define WEST_FULLPIPE (1<<3) //also just WEST
-#define NORTH_SHORTPIPE (1<<4)
-#define SOUTH_SHORTPIPE (1<<5)
-#define EAST_SHORTPIPE (1<<6)
-#define WEST_SHORTPIPE (1<<7)
 //Atmos pipe limits
 /// (kPa) What pressure pumps and powered equipment max out at.
 #define MAX_OUTPUT_PRESSURE 4500
@@ -528,10 +519,6 @@
 #define PIPING_DEFAULT_LAYER_ONLY (1<<2)
 /// north/south east/west doesn't matter, auto normalize on build.
 #define PIPING_CARDINAL_AUTONORMALIZE (1<<3)
-/// intended to connect with everything, both layers and colors
-#define PIPING_ALL_COLORS (1<<4)
-/// can bridge over pipenets
-#define PIPING_BRIDGE (1<<5)
 
 // Ventcrawling bitflags, handled in var/vent_movement
 ///Allows for ventcrawling to occur. All atmospheric machines have this flag on by default. Cryo is the exception
@@ -540,6 +527,21 @@
 #define VENTCRAWL_ENTRANCE_ALLOWED (1<<1)
 ///Used to check if a machinery is visible. Called by update_pipe_vision(). On by default for all except cryo.
 #define VENTCRAWL_CAN_SEE	(1<<2)
+
+GLOBAL_LIST_INIT(pipe_paint_colors, sort_list(list(
+		"amethyst" = rgb(130,43,255), //supplymain
+		"blue" = rgb(0,0,255),
+		"brown" = rgb(178,100,56),
+		"cyan" = rgb(0,255,249),
+		"dark" = rgb(69,69,69),
+		"green" = rgb(30,255,0),
+		"grey" = rgb(255,255,255),
+		"orange" = rgb(255,129,25),
+		"purple" = rgb(128,0,182),
+		"red" = rgb(255,0,0),
+		"violet" = rgb(64,0,128),
+		"yellow" = rgb(255,198,0)
+)))
 
 //Helpers
 #define PIPING_LAYER_SHIFT(T, PipingLayer) \

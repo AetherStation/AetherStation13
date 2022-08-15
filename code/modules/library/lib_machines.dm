@@ -348,6 +348,7 @@
 /obj/machinery/computer/bookmanagement/emag_act(mob/user)
 	if(density && !(obj_flags & EMAGGED))
 		obj_flags |= EMAGGED
+		to_chat(user, span_warning("Restrictions on \the [src] have been deactivated!"))
 
 /obj/machinery/computer/bookmanagement/Topic(href, href_list)
 	if(!COOLDOWN_FINISHED(src, library_console_topic_cooldown))
@@ -595,6 +596,7 @@
 	user.visible_message(span_notice("[user] loads some paper into [src]."), span_notice("You load some paper into [src]."))
 	audible_message(span_hear("[src] begins to hum as it warms up its printing drums."))
 	busy = TRUE
+	flick("binder1", src)
 	sleep(rand(200,400))
 	busy = FALSE
 	if(P)

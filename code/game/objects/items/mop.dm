@@ -1,3 +1,10 @@
+#define REAGENT_SPEED_WATER 1
+#define REAGENT_SPEED_HOLY 0.95
+#define REAGENT_SPEED_SOAPY 0.8
+#define REAGENT_SPEED_VODKA 0.7
+#define REAGENT_SPEED_CLEANER 0.6
+
+
 /obj/item/mop
 	desc = "The world of janitalia wouldn't be complete without a mop."
 	name = "mop"
@@ -15,7 +22,9 @@
 	resistance_flags = FLAMMABLE
 	var/mopcount = 0
 	var/mopcap = 15
+	var/transfer = 5
 	var/mopspeed = 15
+	var/reagentspeed = 1
 	force_string = "robust... against germs"
 	var/insertable = TRUE
 
@@ -25,7 +34,7 @@
 
 
 /obj/item/mop/proc/clean(turf/A, mob/living/cleaner)
-	if(reagents.has_reagent(/datum/reagent/water, 1) || reagents.has_reagent(/datum/reagent/water/holywater, 1) || reagents.has_reagent(/datum/reagent/consumable/ethanol/vodka, 1) || reagents.has_reagent(/datum/reagent/space_cleaner, 1))
+	if(reagents.has_reagent(/datum/reagent/water, 1) || reagents.has_reagent(/datum/reagent/water/soapy, 1) || reagents.has_reagent(/datum/reagent/water/holywater, 1) || reagents.has_reagent(/datum/reagent/consumable/ethanol/vodka, 1) || reagents.has_reagent(/datum/reagent/space_cleaner, 1))
 		// If there's a cleaner with a mind, let's gain some experience!
 		if(cleaner?.mind)
 			var/total_experience_gain = 0
@@ -41,6 +50,20 @@
 		val2remove = round(cleaner.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER),0.1)
 	reagents.remove_any(val2remove) //reaction() doesn't use up the reagents
 
+/obj/item/mop/proc/update_speed()
+	if(reagents.has_reagent(/datum/reagent/space_cleaner, reagents.total_volume))
+		reagentspeed = REAGENT_SPEED_CLEANER
+		return
+	if(reagents.has_reagent(/datum/reagent/water/soapy, reagents.total_volume))
+		reagentspeed = REAGENT_SPEED_SOAPY
+		return
+	if(reagents.has_reagent(/datum/reagent/consumable/ethanol/vodka, reagents.total_volume))
+		reagentspeed = REAGENT_SPEED_VODKA
+		return
+	if(reagents.has_reagent(/datum/reagent/water/holywater, reagents.total_volume))
+		reagentspeed = REAGENT_SPEED_HOLY
+		return
+	reagentspeed = REAGENT_SPEED_WATER
 
 /obj/item/mop/afterattack(atom/A, mob/user, proximity)
 	. = ..()
@@ -61,7 +84,7 @@
 		var/clean_speedies = 1
 		if(user.mind)
 			clean_speedies = user.mind.get_skill_modifier(/datum/skill/cleaning, SKILL_SPEED_MODIFIER)
-		if(do_after(user, mopspeed*clean_speedies, target = T))
+		if(do_after(user, mopspeed*reagentspeed*clean_speedies, target = T))
 			to_chat(user, span_notice("You finish mopping."))
 			clean(T, user)
 
@@ -110,6 +133,7 @@
 	refill_enabled = !refill_enabled
 	if(refill_enabled)
 		START_PROCESSING(SSobj, src)
+		reagentspeed = REAGENT_SPEED_WATER
 	else
 		STOP_PROCESSING(SSobj,src)
 	to_chat(user, span_notice("You set the condenser switch to the '[refill_enabled ? "ON" : "OFF"]' position."))
@@ -130,3 +154,10 @@
 
 /obj/item/mop/advanced/cyborg
 	insertable = FALSE
+
+
+#undef REAGENT_SPEED_WATER
+#undef REAGENT_SPEED_HOLY
+#undef REAGENT_SPEED_SOAPY
+#undef REAGENT_SPEED_VODKA
+#undef REAGENT_SPEED_CLEANER

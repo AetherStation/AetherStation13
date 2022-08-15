@@ -127,19 +127,19 @@
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "aD" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/engine/o2,
 /area/icemoon/surface/outdoors)
 "aE" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown,
+/obj/effect/mapping_helpers/simple_pipes/brown,
 /turf/open/floor/engine/o2,
 /area/icemoon/surface/outdoors)
 "aF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/engine/n2,
 /area/icemoon/surface/outdoors)
 "aG" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown,
+/obj/effect/mapping_helpers/simple_pipes/brown,
 /turf/open/floor/engine/n2,
 /area/icemoon/surface/outdoors)
 "aH" = (
@@ -174,7 +174,7 @@
 /area/icemoon/surface/outdoors)
 "aM" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/cyan/visible,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/engine/airless,
 /area/icemoon/surface/outdoors)
 "aO" = (
@@ -203,9 +203,7 @@
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "aT" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
@@ -216,7 +214,7 @@
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "aW" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown,
+/obj/effect/mapping_helpers/simple_pipes/brown,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -236,7 +234,7 @@
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible,
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bc" = (
@@ -251,7 +249,7 @@
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
 "be" = (
-/obj/item/card/id/advanced/engioutpost,
+/obj/item/card/id/engioutpost,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
 "bf" = (
@@ -278,16 +276,12 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bk" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bl" = (
@@ -296,9 +290,7 @@
 	req_access_txt = "204"
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bm" = (
@@ -306,9 +298,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bo" = (
@@ -319,9 +309,7 @@
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /obj/structure/cable,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
@@ -329,9 +317,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
@@ -339,14 +325,12 @@
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown,
+/obj/effect/mapping_helpers/simple_pipes/brown,
 /obj/structure/cable,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
@@ -356,7 +340,7 @@
 	pixel_x = 26
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible,
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "by" = (
@@ -382,7 +366,7 @@
 /turf/open/floor/plating/snowed/icemoon,
 /area/icemoon/surface/outdoors)
 "bC" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/plating/icemoon,
 /area/icemoon/surface/outdoors)
 "bD" = (
@@ -407,7 +391,7 @@
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bF" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
@@ -415,33 +399,33 @@
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bH" = (
 /obj/effect/turf_decal/trimline/yellow/filled/warning{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bI" = (
 /obj/item/pda/clear{
 	note = "Chief's asked me to check on the machinery inside PDA. He's also worried about Build, but i'm sure Harry'll handle the construction. I just need to work on Internals. Fuck i'm hungry"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bL" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/visible{
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible{
 	dir = 1;
 	icon_state = "manifold-2"
 	},
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bM" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bQ" = (
@@ -482,9 +466,9 @@
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bY" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "bZ" = (
@@ -494,7 +478,7 @@
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "ca" = (
@@ -520,7 +504,7 @@
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "ce" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/visible{
+/obj/effect/mapping_helpers/simple_pipes/dark/visible{
 	dir = 4;
 	icon_state = "manifold-2"
 	},
@@ -528,7 +512,7 @@
 /area/icemoon/surface/outdoors)
 "cf" = (
 /obj/machinery/airalarm/directional/east,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible,
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "cg" = (
@@ -553,7 +537,7 @@
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "ck" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "cl" = (
@@ -570,7 +554,7 @@
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "cn" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "cp" = (
@@ -579,7 +563,7 @@
 /area/icemoon/surface/outdoors)
 "cs" = (
 /obj/machinery/light/directional/east,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible,
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "ct" = (
@@ -605,7 +589,7 @@
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "cx" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/green/visible,
+/obj/effect/mapping_helpers/simple_pipes/green/visible,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "cC" = (
@@ -663,7 +647,7 @@
 /area/icemoon/surface/outdoors)
 "cL" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "cM" = (
@@ -730,12 +714,12 @@
 /area/icemoon/surface/outdoors)
 "cW" = (
 /obj/effect/turf_decal/trimline/neutral/filled/line,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
 "cX" = (
 /obj/effect/turf_decal/trimline/neutral/filled/line,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
@@ -748,12 +732,12 @@
 /area/icemoon/surface/outdoors)
 "cZ" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/engine/airless,
 /area/icemoon/surface/outdoors)
 "db" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible,
+/obj/effect/mapping_helpers/simple_pipes/brown/visible,
 /turf/open/floor/engine/airless,
 /area/icemoon/surface/outdoors)
 "dc" = (
@@ -780,12 +764,12 @@
 /area/icemoon/surface/outdoors)
 "dh" = (
 /obj/structure/sign/poster/contraband/grey_tide,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/closed/wall,
 /area/icemoon/surface/outdoors)
 "di" = (
 /obj/machinery/door/airlock,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
@@ -793,15 +777,15 @@
 /turf/closed/wall/rust,
 /area/icemoon/surface/outdoors)
 "dk" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/visible,
+/obj/effect/mapping_helpers/simple_pipes/supply/visible,
 /turf/open/floor/engine/air,
 /area/icemoon/surface/outdoors)
 "dl" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown,
+/obj/effect/mapping_helpers/simple_pipes/brown,
 /turf/open/floor/engine/air,
 /area/icemoon/surface/outdoors)
 "dn" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown/visible,
+/obj/effect/mapping_helpers/simple_pipes/brown/visible,
 /turf/open/floor/engine/vacuum,
 /area/icemoon/surface/outdoors)
 "do" = (
@@ -831,7 +815,7 @@
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
@@ -839,7 +823,7 @@
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/icemoon,
 /area/icemoon/surface/outdoors)
@@ -909,21 +893,21 @@
 /area/icemoon/surface/outdoors)
 "na" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/visible,
+/obj/effect/mapping_helpers/simple_pipes/dark/visible,
 /turf/open/floor/engine/airless,
 /area/icemoon/surface/outdoors)
 "tH" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown,
+/obj/effect/mapping_helpers/simple_pipes/brown,
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/engine/airless,
 /area/icemoon/surface/outdoors)
 "xA" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/brown,
+/obj/effect/mapping_helpers/simple_pipes/brown,
 /turf/open/floor/engine/airless,
 /area/icemoon/surface/outdoors)
 "UK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/dark/visible,
+/obj/effect/mapping_helpers/simple_pipes/dark/visible,
 /turf/open/floor/engine/vacuum,
 /area/icemoon/surface/outdoors)
 

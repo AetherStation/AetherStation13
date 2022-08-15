@@ -81,36 +81,44 @@
 		to_chat(user, span_notice("You fill [src] with [trans] unit\s of the contents of [target]."))
 
 /obj/item/reagent_containers/glass/attackby(obj/item/I, mob/user, params)
-	var/hotness = I.get_temperature()
-	if(hotness && reagents)
-		reagents.expose_temperature(hotness)
-		to_chat(user, span_notice("You heat [name] with [I]!"))
+	. = ..()
 
-	//Cooling method
+	// Don't do anything if no reagent holder
+	if(!reagents)
+		return
+
+	// Deals with most things that affect temperature through heat
+	var/expose_temp = I.get_temperature()
+
+	// Fire extinguishers have their own temperature behavior
 	if(istype(I, /obj/item/extinguisher))
 		var/obj/item/extinguisher/extinguisher = I
 		if(extinguisher.safety)
-			return
-		if (extinguisher.reagents.total_volume < 1)
+			to_chat(user, span_warning("\The [extinguisher]'s safety is on!"))
+		else if (extinguisher.reagents.total_volume < 1)
 			to_chat(user, span_warning("\The [extinguisher] is empty!"))
-			return
-		var/cooling = (0 - reagents.chem_temp) * extinguisher.cooling_power * 2
-		reagents.expose_temperature(cooling)
-		to_chat(user, span_notice("You cool the [name] with the [I]!"))
-		playsound(loc, 'sound/effects/extinguish.ogg', 75, TRUE, -3)
-		extinguisher.reagents.remove_all(1)
+		else
+			expose_temp -= reagents.chem_temp * extinguisher.cooling_power * 2 //todo rebalance this
+			playsound(loc, 'sound/effects/extinguish.ogg', 75, TRUE, -3)
+			extinguisher.reagents.remove_all(1)
 
-	if(istype(I, /obj/item/food/egg)) //breaking eggs
+	// Change temperature if necessary
+	if(expose_temp)
+		reagents.expose_temperature(expose_temp)
+		if(expose_temp > reagents.chem_temp)
+			to_chat(user, span_notice("You heat the [name] with the [I]!"))
+		else
+			to_chat(user, span_notice("You cool the [name] with the [I]!"))
+
+	// Breaking eggs
+	if(istype(I, /obj/item/food/egg))
 		var/obj/item/food/egg/E = I
-		if(reagents)
-			if(reagents.total_volume >= reagents.maximum_volume)
-				to_chat(user, span_notice("[src] is full."))
-			else
-				to_chat(user, span_notice("You break [E] in [src]."))
-				E.reagents.trans_to(src, E.reagents.total_volume, transfered_by = user)
-				qdel(E)
-			return
-	..()
+		if(reagents.total_volume >= reagents.maximum_volume)
+			to_chat(user, span_notice("The [src] is full."))
+		else
+			to_chat(user, span_notice("You break the [E] in the [src]."))
+			E.reagents.trans_to(src, E.reagents.total_volume, transfered_by = user)
+			qdel(E)
 
 /*
  * On accidental consumption, make sure the container is partially glass, and continue to the reagent_container proc
@@ -264,7 +272,9 @@
 		if(reagents.total_volume < 1)
 			to_chat(user, span_warning("[src] is out of water!"))
 		else
-			reagents.trans_to(O, 5, transfered_by = user)
+			var/obj/item/mop/M = O
+			reagents.trans_to(M, M.transfer, transfered_by = user)
+			M.update_speed()
 			to_chat(user, span_notice("You wet [O] in [src]."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 	else if(isprox(O)) //This works with wooden buckets for now. Somewhat unintended, but maybe someone will add sprites for it soon(TM)

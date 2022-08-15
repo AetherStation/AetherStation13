@@ -1,0 +1,59 @@
+2022-07-21:
+  TheChosenEvilOne:
+  - bugfix: Selecting observe in lobby while the game is initializing now works properly.
+  Thebleh:
+  - server: Will this trigger after the merge? I have no idea!
+2022-07-23:
+  TheChosenEvilOne:
+  - bugfix: Ghosts move up and down again after orbiting.
+  - bugfix: latejoin buckling sets your facing direction correctly.
+  - bugfix: You can use the reaction chamber again.
+  - rscadd: Re-added custom soups.
+  - bugfix: Deep frying correctly transfers food reagents again.
+2022-07-24:
+  TheChosenEvilOne:
+  - rscadd: ID card tiers, you can only add access to ID cards if the access' tier
+      is lower or equal to the ID card's tier.
+  - rscadd: additional access chips, every job that has a lower tier ID card than
+      some accesses they require spawn with an additional access chip in the ID card
+      which contain the access required. You can use a screwdriver to remove the chip
+      and add a chip in an ID card by clicking an ID card with it.
+  - rscdel: Removed ID trims.
+  - balance: Agent ID card no longer has a limit on how many access levels it can
+      hold.
+2022-07-26:
+  Sonnicon:
+  - qol: Merged heating and cooling modes of thermomachine.
+  - qol: Made alt-clicking thermomachines more useful.
+  - bugfix: Thermomachine will now always reach target temperature.
+  Sparkezel:
+  - balance: Removed poplimit from noslips, reduces their price to 2 for nukies
+  - code_imp: removed nukie noslip subtype
+2022-07-27:
+  TheChosenEvilOne:
+  - rscdel: Smart pipes have been removed and replaced with old simple pipes.
+  - rscadd: Re-added old carbon/plasma/trit fusion.
+2022-07-28:
+  NonCancerAlias, MrMelbert, ViktorKoL, Watermelon914, GoblinBackwards:
+  - rscadd: Adds a new heretic path, the the Blade Path
+  - expansion: Heretic sidepaths got tweaked a bit. Blood siphon is now between raw
+      ritual and void phase. Cleave is now between Lonely Ritual and Void pull. Rusted
+      Ritual is now between Entropic Plume and Firey Rebirth.
+  - expansion: Ritual of Knowledge has been added which allows you to gain points
+      for item sacrifice
+  - bugfix: Fixed quite a few bugs and unintended behaviors with heretic code.
+  - refactor: Refactored and improved much of Heretic code. Improved the file structure
+      dramatically.
+  - bugfix: Rust Heretics now need to stand on Rust to heal again, instead of passive
+      free healing
+  - bugfix: corrected Fiery Rebirth's and Curse of Corrosion's heretic research descriptions
+  - bugfix: fixed heretic research progression after unlocking the Lonely Ritual
+  - qol: Heretic now has an antagonist panel
+  - qol: Heretics transmutation rune has a UI now
+  - bugfix: Rust heretic ascension spread rusts everywhere again.
+  - bugfix: Ash mark now deals the correct amount of damage and no longer gets stuck
+      bouncing between the same two targets.
+  - balance: Ash mark is significantly stronger due to this fix.
+2022-07-31:
+  Twaticus:
+  - bugfix: fixes drink icons updating properly for real this time

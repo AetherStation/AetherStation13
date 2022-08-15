@@ -8,9 +8,9 @@
 
 
 /obj/item/clothing/glasses/hud/equipped(mob/living/carbon/human/user, slot)
-	..()
+	. = ..()
 	if(slot != ITEM_SLOT_EYES)
-		return
+		return FALSE
 	if(hud_type)
 		var/datum/atom_hud/H = GLOB.huds[hud_type]
 		H.add_hud_to(user)
@@ -18,9 +18,9 @@
 		ADD_TRAIT(user, hud_trait, GLASSES_TRAIT)
 
 /obj/item/clothing/glasses/hud/dropped(mob/living/carbon/human/user)
-	..()
+	. = ..()
 	if(!istype(user) || user.glasses != src)
-		return
+		return FALSE
 	if(hud_type)
 		var/datum/atom_hud/H = GLOB.huds[hud_type]
 		H.remove_hud_from(user)
@@ -101,6 +101,48 @@
 	hud_type = DATA_HUD_SECURITY_ADVANCED
 	hud_trait = TRAIT_SECURITY_HUD
 	glass_colour_type = /datum/client_colour/glass_colour/red
+
+/obj/item/clothing/glasses/hud/security/equipped(mob/living/carbon/human/user, slot)
+	. = ..()
+	if (!.)
+		return FALSE
+	RegisterSignal(user, COMSIG_MOB_MIDDLECLICKON, .proc/create_ping)
+
+/obj/item/clothing/glasses/hud/security/dropped(mob/living/carbon/human/user)
+	. = ..()
+	if (!.)
+		return FALSE
+	UnregisterSignal(user, COMSIG_MOB_MIDDLECLICKON)
+
+/obj/item/clothing/glasses/hud/security/proc/create_ping(datum/source, atom/A, params)
+	SIGNAL_HANDLER
+
+	var/list/modifiers = params2list(params)
+	var/mob/living/L = source
+	if (L.stat != CONSCIOUS || (!LAZYACCESS(modifiers, ALT_CLICK) && !LAZYACCESS(modifiers, CTRL_CLICK)))
+		return
+	var/image/holder = L.hud_list[SEC_PING]
+	// not ideal, but it works.
+	addtimer(CALLBACK(src, .proc/remove_ping, holder), 10 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
+	var/mutable_appearance/MA = new /mutable_appearance()
+	MA.icon = 'icons/effects/effects.dmi'
+	MA.plane = ABOVE_LIGHTING_PLANE // you are wearing glasses so.
+	if (LAZYACCESS(modifiers, ALT_CLICK))
+		MA.icon_state = "squestion"
+		holder.appearance = MA
+		holder.loc = get_turf(A)
+	else // CTRL_CLICK
+		MA.icon_state = "salert"
+		holder.appearance = MA
+		holder.loc = get_turf(A)
+	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_SECURITY_ADVANCED]
+	for (var/mob/M as anything in H.hudusers) // only mobs can be added to hudusers.
+		if (get_dist(M, A) <= 7)
+			SEND_SOUND(M, sound('sound/machines/ping.ogg', volume = 50))
+	return COMSIG_MOB_CANCEL_CLICKON
+
+/obj/item/clothing/glasses/hud/security/proc/remove_ping(image/holder)
+	holder.loc = null
 
 /obj/item/clothing/glasses/hud/security/chameleon
 	name = "chameleon security HUD"

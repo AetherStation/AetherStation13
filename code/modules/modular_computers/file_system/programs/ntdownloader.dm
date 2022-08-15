@@ -135,7 +135,7 @@
 	if(!istype(my_computer))
 		return
 	var/obj/item/computer_hardware/card_slot/card_slot = computer.all_components[MC_CARD]
-	var/list/access = card_slot?.GetAccess()
+	var/list/access = card_slot?.get_access()
 
 	var/list/data = get_header_data()
 

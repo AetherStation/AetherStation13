@@ -61,15 +61,23 @@
 #define CONTRACT_UPLINK_PAGE_CONTRACTS "CONTRACTS"
 #define CONTRACT_UPLINK_PAGE_HUB "HUB"
 
-GLOBAL_LIST_INIT(heretic_start_knowledge,list(/datum/eldritch_knowledge/spell/basic,/datum/eldritch_knowledge/living_heart,/datum/eldritch_knowledge/codex_cicatrix))
-
-
+//Heretic path defines
+#define PATH_START "Start"
 #define PATH_SIDE "Side"
-
 #define PATH_ASH "Ash"
 #define PATH_RUST "Rust"
 #define PATH_FLESH "Flesh"
 #define PATH_VOID "Void"
+#define PATH_BLADE "Blade"
+
+/// A define used in ritual priority for heretics.
+#define MAX_KNOWLEDGE_PRIORITY 100
+
+/// Checks if the passed mob can become a heretic ghoul.
+/// - Must be a human (type, not species)
+/// - Skeletons cannot be husked (they are snowflaked instead of having a trait)
+/// - Monkeys are monkeys, not quite human (balance reasons)
+#define IS_VALID_GHOUL_MOB(mob) (ishuman(mob) && !isskeleton(mob) && !ismonkey(mob))
 
 /// Forces the blob to place the core where they currently are, ignoring any checks.
 #define BLOB_FORCE_PLACEMENT -1
@@ -176,9 +184,17 @@ GLOBAL_LIST_INIT(normal_employers, list(
 /// Checks if the given mob is a nuclear operative
 #define IS_NUKE_OP(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/nukeop))
 
+/// Checks if the given mob is a heretic.
 #define IS_HERETIC(mob) (mob.mind?.has_antag_datum(/datum/antagonist/heretic))
 
+/// Check if the given mob is a heretic monster.
 #define IS_HERETIC_MONSTER(mob) (mob.mind?.has_antag_datum(/datum/antagonist/heretic_monster))
+
+/// Checks if the given mob is either a heretic or a heretic monster.
+#define IS_HERETIC_OR_MONSTER(mob) (IS_HERETIC(mob) || IS_HERETIC_MONSTER(mob))
+
+/// Define for the heretic faction applied to heretics and heretic mobs.
+#define FACTION_HERETIC "heretics"
 
 /// Checks if the given mob is a wizard
 #define IS_WIZARD(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/wizard))

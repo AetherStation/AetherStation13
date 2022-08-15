@@ -75,16 +75,14 @@ const VendingRow = (props, context) => {
     user,
     jobDiscount,
   } = data;
+
   const free = (
-    !onstation
-    || product.price === 0
+    product.price === 0
     || (
-      !product.premium
-      && department
-      && user
+      department === user?.department
+      && !product.premium
     )
   );
-  const discount = department === user?.department;
   const redPrice = Math.round(product.price * jobDiscount);
   return (
     <Table.Row>
@@ -112,20 +110,23 @@ const VendingRow = (props, context) => {
         {product.name}
       </Table.Cell>
       <Table.Cell collapsing textAlign="center">
-        <Box
-          color={(
-            custom && 'good'
-            || productStock.amount <= 0 && 'bad'
-            || productStock.amount <= (product.max_amount / 2) && 'average'
-            || 'good'
-          )}>
-          {productStock.amount} in stock
-        </Box>
+        {custom || (
+          <Box
+            color={(
+              custom && 'good'
+              || productStock.amount <= 0 && 'bad'
+              || productStock.amount <= (product.max_amount / 2) && 'average'
+              || 'good'
+            )}>
+            {productStock.amount} in stock
+          </Box>
+        )}
       </Table.Cell>
       <Table.Cell collapsing textAlign="center">
         {custom && (
           <Button
             fluid
+            disabled={!data.access && (!user || product.price > user.cash)}
             content={data.access ? 'FREE' : product.price + ' cr'}
             onClick={() => act('dispense', {
               'item': product.name,
@@ -135,13 +136,20 @@ const VendingRow = (props, context) => {
             fluid
             disabled={(
               productStock.amount === 0
-              || !free && (
+              || onstation
+              && (
                 !user
+                || (free && redPrice > user.cash)
                 || product.price > user.cash
               )
             )}
-            content={(free && discount)
-              ? `${redPrice} cr` : `${product.price} cr`}
+            content={
+              free || !onstation
+                ? ((onstation && redPrice)
+                  ? `${redPrice} cr`
+                  : "FREE")
+                : `${product.price} cr`
+            }
             onClick={() => act('vend', {
               'ref': product.ref,
             })} />
@@ -149,7 +157,7 @@ const VendingRow = (props, context) => {
       </Table.Cell>
       <Table.Cell>
         {
-          productStock.colorable
+          !custom && productStock.colorable
             ? (
               <Button
                 fluid

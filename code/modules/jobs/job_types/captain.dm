@@ -44,8 +44,9 @@
 /datum/outfit/job/captain
 	name = "Captain"
 	jobtype = /datum/job/captain
+	card_access = /datum/card_access/job/captain
 
-	id = /obj/item/card/id/advanced/gold
+	id = /obj/item/card/id/tier5
 	belt = /obj/item/pda/captain
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/radio/headset/heads/captain/alt
@@ -67,7 +68,6 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
 
-	id_trim = /datum/id_trim/job/captain
 	var/special_charter
 
 /datum/outfit/job/captain/pre_equip(mob/living/carbon/human/H, visualsOnly)

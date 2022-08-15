@@ -391,6 +391,76 @@ INITIALIZE_IMMEDIATE(/obj/effect/mapping_helpers/no_lava)
 	log_mapping("[src] at [x],[y] could not find an airlock on current turf, cannot place paper note.")
 	qdel(src)
 
+/obj/effect/mapping_helpers/simple_pipes
+	name = "Simple Pipes"
+	icon_state = "pipe-3"
+	var/piping_layer = 3
+	var/pipe_color = ""
+	var/hide = FALSE
+
+	var/straight = FALSE
+	// pipe direction
+	var/p_dir = 0
+
+/obj/effect/mapping_helpers/simple_pipes/Initialize()
+	. = ..()
+	var/taken_dirs = 0
+	var/top_colour
+	// get_turf in case something puts us inside something.
+	for (var/obj/effect/mapping_helpers/simple_pipes/P in get_turf(src))
+		if (P != src && P.piping_layer == piping_layer)
+			straight = TRUE
+			P.straight = TRUE
+			top_colour = P.pipe_color
+	for (var/obj/machinery/atmospherics/P in get_turf(src))
+		if (P.piping_layer != piping_layer)
+			continue
+		taken_dirs |= P.initialize_directions
+	for (var/d in GLOB.cardinals)
+		var/rd = turn(d, 180)
+		var/turf/T = get_step(loc, d)
+		for (var/obj/effect/mapping_helpers/simple_pipes/P in T)
+			if (P.piping_layer != piping_layer)
+				continue
+			if (P.pipe_color && P.pipe_color != pipe_color)
+				if (P.pipe_color == top_colour)
+					taken_dirs |= d
+				continue
+			p_dir |= d
+		for (var/obj/machinery/atmospherics/A in T)
+			if (!(A.initialize_directions & rd) || (A.piping_layer != piping_layer && !istype(A, /obj/machinery/atmospherics/pipe/layer_manifold)))
+				continue
+			// layer manifolds are considered components in this case.
+			if (istype(A, /obj/machinery/atmospherics/pipe) && !istype(A, /obj/machinery/atmospherics/pipe/layer_manifold))
+				if (A.pipe_color && A.pipe_color != pipe_color)
+					taken_dirs |= d // don't connect to wrong colours
+					continue
+			else if (straight) // We don't really care about components in straight mode
+				continue
+			p_dir |= d
+	p_dir &= ~taken_dirs
+	if (straight && !p_dir)
+		p_dir = taken_dirs & 3 ? EAST : NORTH
+	if (p_dir == 0xF)
+		spawn_pipe(/obj/machinery/atmospherics/pipe/manifold4w)
+	else if (!((p_dir ^ 0xF) & ((p_dir ^ 0xF) - 1)))
+		spawn_pipe(/obj/machinery/atmospherics/pipe/manifold, p_dir ^ 0xF)
+	else if (p_dir)
+		if (p_dir << (p_dir & 0x2) == 0xC)
+			spawn_pipe(/obj/machinery/atmospherics/pipe/simple, p_dir & 0x9)
+		else // bent pipe
+			spawn_pipe(/obj/machinery/atmospherics/pipe/simple, p_dir)
+
+//spawn pipe
+/obj/effect/mapping_helpers/simple_pipes/proc/spawn_pipe(type, direction = SOUTH)
+	var/obj/machinery/atmospherics/pipe/pipe = new type(get_turf(src), TRUE, direction, hide)
+	pipe.piping_layer = piping_layer
+	pipe.paint(pipe_color)
+	pipe.update_appearance()
+	// HACK: if a meter is initialized before this helper the meter won't connect properly, this fixes that.
+	var/obj/machinery/meter/M = locate(/obj/machinery/meter) in get_turf(src)
+	M?.reattach_to_layer()
+
 //This helper applies traits to things on the map directly.
 /obj/effect/mapping_helpers/trait_injector
 	name = "Trait Injector"

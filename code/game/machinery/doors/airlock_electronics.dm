@@ -1,6 +1,7 @@
 /obj/item/electronics/airlock
 	name = "airlock electronics"
 	req_access = list(ACCESS_MAINT_TUNNELS)
+	var/usable_regions = list(REGION_GENERAL,REGION_SECURITY, REGION_MEDBAY, REGION_RESEARCH, REGION_ENGINEERING, REGION_SUPPLY, REGION_COMMAND)
 	/// A list of all granted accesses
 	var/list/accesses = list()
 	/// If the airlock should require ALL or only ONE of the listed accesses
@@ -25,13 +26,9 @@
 
 /obj/item/electronics/airlock/ui_static_data(mob/user)
 	var/list/data = list()
-
-	var/list/regions = list()
-	var/list/tgui_region_data = SSid_access.all_region_access_tgui
-	for(var/region in SSid_access.station_regions)
-		regions += tgui_region_data[region]
-
-	data["regions"] = regions
+	data["regions"] = list()
+	for (var/r in usable_regions)
+		data["regions"][r] = SSid_access.tgui_access_list[r]
 	return data
 
 /obj/item/electronics/airlock/ui_data()
@@ -51,8 +48,11 @@
 			accesses = list()
 			one_access = 0
 			. = TRUE
-		if("grant_all")
-			accesses = SSid_access.get_region_access_list(list(REGION_ALL_STATION))
+		if("grant_region")
+			accesses |= SSid_access.accesses_by_region[params["region"]]
+			. = TRUE
+		if("deny_region")
+			accesses -= SSid_access.accesses_by_region[params["region"]]
 			. = TRUE
 		if("one_access")
 			one_access = !one_access
@@ -67,18 +67,6 @@
 		if("direc_set")
 			var/unres_direction = text2num(params["unres_direction"])
 			unres_sides ^= unres_direction //XOR, toggles only the bit that was clicked
-			. = TRUE
-		if("grant_region")
-			var/region = params["region"]
-			if(isnull(region))
-				return
-			accesses |= SSid_access.get_region_access_list(list(region))
-			. = TRUE
-		if("deny_region")
-			var/region = params["region"]
-			if(isnull(region))
-				return
-			accesses -= SSid_access.get_region_access_list(list(region))
 			. = TRUE
 
 /obj/item/electronics/airlock/ui_host()

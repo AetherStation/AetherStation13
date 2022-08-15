@@ -1,7 +1,6 @@
 import { useBackend, useLocalState } from '../backend';
-import { Button, Flex, Grid, LabeledList, Section, Tabs } from '../components';
+import { Button, LabeledList, Section, Flex, Tabs, Grid } from '../components';
 import { Window } from '../layouts';
-import { sortBy } from 'common/collections';
 
 export const AirlockElectronics = (props, context) => {
   const { act, data } = useBackend(context);
@@ -59,12 +58,11 @@ export const AirlockElectronics = (props, context) => {
           </LabeledList>
         </Section>
         <AirlockAccessList
-          accesses={regions}
+          regions={regions}
           selectedList={accesses}
           accessMod={ref => act('set', {
             access: ref,
           })}
-          grantAll={() => act('grant_all')}
           denyAll={() => act('clear_all')}
           grantDep={ref => act('grant_region', {
             region: ref,
@@ -76,7 +74,6 @@ export const AirlockElectronics = (props, context) => {
     </Window>
   );
 };
-
 
 const diffMap = {
   0: {
@@ -95,79 +92,40 @@ const diffMap = {
 
 export const AirlockAccessList = (props, context) => {
   const {
-    accesses = [],
+    regions = [],
     selectedList = [],
     accessMod,
-    grantAll,
     denyAll,
     grantDep,
     denyDep,
   } = props;
   const [
-    selectedAccessName,
-    setSelectedAccessName,
-  ] = useLocalState(context, 'accessName', accesses[0]?.name);
-  const selectedAccess = accesses
-    .find(access => access.name === selectedAccessName);
-  const selectedAccessEntries = sortBy(
-    entry => entry.desc,
-  )(selectedAccess?.accesses || []);
-
-  const checkAccessIcon = accesses => {
-    let oneAccess = false;
-    let oneInaccess = false;
-    for (let element of accesses) {
-      if (selectedList.includes(element.ref)) {
-        oneAccess = true;
-      }
-      else {
-        oneInaccess = true;
-      }
-    }
-    if (!oneAccess && oneInaccess) {
-      return 0;
-    }
-    else if (oneAccess && oneInaccess) {
-      return 1;
-    }
-    else {
-      return 2;
-    }
-  };
+    selectedRegion,
+    setSelectedRegion,
+  ] = useLocalState(context, 'region', Object.keys(regions)[0]);
 
   return (
     <Section
       title="Access"
       buttons={(
-        <>
-          <Button
-            icon="check-double"
-            content="Grant All"
-            color="good"
-            onClick={() => grantAll()} />
-          <Button
-            icon="undo"
-            content="Deny All"
-            color="bad"
-            onClick={() => denyAll()} />
-        </>
+        <Button
+          icon="undo"
+          content="Deny All"
+          color="bad"
+          onClick={() => denyAll()} />
       )}>
       <Flex>
         <Flex.Item>
           <Tabs vertical>
-            {accesses.map(access => {
-              const entries = access.accesses || [];
-              const icon = diffMap[checkAccessIcon(entries)].icon;
-              const color = diffMap[checkAccessIcon(entries)].color;
+            {Object.keys(regions).map(region => {
+              const entries = regions[region] || [];
               return (
                 <Tabs.Tab
-                  key={access.name}
+                  key={region}
                   altSelection
-                  color={color}
-                  icon={icon}
-                  selected={access.name === selectedAccessName}
-                  onClick={() => setSelectedAccessName(access.name)}>
-                  {access.name}
+                  selected={region === selectedRegion}
+                  onClick={() => setSelectedRegion(region)}>
+                  {region}
                 </Tabs.Tab>
               );
             })}
@@ -181,7 +139,7 @@ export const AirlockAccessList = (props, context) => {
                 icon="check"
                 content="Grant Region"
                 color="good"
-                onClick={() => grantDep(selectedAccess.name)} />
+                onClick={() => grantDep(selectedRegion)} />
             </Grid.Column>
             <Grid.Column ml={0}>
               <Button
@@ -189,16 +147,16 @@ export const AirlockAccessList = (props, context) => {
                 icon="times"
                 content="Deny Region"
                 color="bad"
-                onClick={() => denyDep(selectedAccess.name)} />
+                onClick={() => denyDep(selectedRegion)} />
             </Grid.Column>
           </Grid>
-          {selectedAccessEntries.map(entry => (
+          {regions[selectedRegion].map(entry => (
             <Button.Checkbox
               fluid
-              key={entry.desc}
-              content={entry.desc}
-              checked={selectedList.includes(entry.ref)}
-              onClick={() => accessMod(entry.ref)} />
+              key={entry.name}
+              content={entry.name}
+              checked={selectedList.includes(entry.id)}
+              onClick={() => accessMod(entry.id)} />
           ))}
         </Flex.Item>
       </Flex>

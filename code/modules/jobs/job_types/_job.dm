@@ -222,7 +222,7 @@
 	var/jobtype = null
 
 	uniform = /obj/item/clothing/under/color/grey
-	id = /obj/item/card/id/advanced
+	id = /obj/item/card/id/tier2
 	ears = /obj/item/radio/headset
 	belt = /obj/item/pda
 	back = /obj/item/storage/backpack
@@ -418,7 +418,7 @@
 
 /mob/living/silicon/robot/apply_prefs_job(client/player_client, datum/job/job)
 	if(mmi)
-		var/organic_name 
+		var/organic_name
 		if(GLOB.current_anonymous_theme)
 			organic_name = GLOB.current_anonymous_theme.anonymous_name(src)
 		else if(player_client.prefs.randomise[RANDOM_NAME] || CONFIG_GET(flag/force_random_names) || is_banned_from(player_client.ckey, "Appearance"))

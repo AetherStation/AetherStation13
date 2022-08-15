@@ -30,6 +30,8 @@
 /datum/outfit/job/quartermaster
 	name = "Quartermaster"
 	jobtype = /datum/job/quartermaster
+	id = /obj/item/card/id/tier3
+	card_access = /datum/card_access/job/quartermaster
 
 	belt = /obj/item/pda/quartermaster
 	ears = /obj/item/radio/headset/headset_cargo
@@ -40,5 +42,3 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/cargo/quartermaster = 1)
 
 	chameleon_extras = /obj/item/stamp/qm
-
-	id_trim = /datum/id_trim/job/quartermaster

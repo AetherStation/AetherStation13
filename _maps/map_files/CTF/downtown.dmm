@@ -71,7 +71,7 @@
 /area/ctf)
 "bA" = (
 /obj/effect/decal/cleanable/oil,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	dir = 4;
 	mouse_opacity = 0;
 	resistance_flags = 64
@@ -525,7 +525,7 @@
 /turf/open/floor/iron/dark,
 /area/ctf)
 "jD" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	dir = 4;
 	mouse_opacity = 0;
 	resistance_flags = 64
@@ -902,7 +902,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/shreds,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	dir = 4;
 	mouse_opacity = 0;
 	resistance_flags = 64
@@ -1233,7 +1233,7 @@
 "xD" = (
 /obj/effect/decal/cleanable/oil,
 /obj/structure/barricade/security/ctf,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	dir = 4;
 	mouse_opacity = 0;
 	resistance_flags = 64
@@ -1526,7 +1526,7 @@
 /obj/effect/turf_decal/siding/yellow{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	dir = 4;
 	mouse_opacity = 0;
 	resistance_flags = 64
@@ -2311,7 +2311,7 @@
 /turf/open/floor/plating/grass,
 /area/ctf)
 "RD" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	dir = 4;
 	mouse_opacity = 0;
 	resistance_flags = 64
@@ -2481,7 +2481,7 @@
 /area/ctf)
 "Vi" = (
 /obj/structure/barricade/security/ctf,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	dir = 4;
 	mouse_opacity = 0;
 	resistance_flags = 64
@@ -2735,7 +2735,7 @@
 /obj/structure/barricade/sandbags{
 	resistance_flags = 64
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
+/obj/effect/mapping_helpers/simple_pipes/general/visible{
 	dir = 4;
 	mouse_opacity = 0;
 	resistance_flags = 64

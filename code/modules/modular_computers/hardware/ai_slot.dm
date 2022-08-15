@@ -40,7 +40,7 @@
 	return TRUE
 
 
-/obj/item/computer_hardware/ai_slot/try_eject(mob/living/user = null, forced = FALSE)
+/obj/item/computer_hardware/ai_slot/try_eject(mob/living/user = null, forced = FALSE, deleting = FALSE)
 	if(!stored_card)
 		to_chat(user, span_warning("There is no card in \the [src]."))
 		return FALSE

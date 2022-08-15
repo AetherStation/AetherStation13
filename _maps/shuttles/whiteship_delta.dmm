@@ -284,7 +284,7 @@
 /obj/machinery/door/airlock{
 	name = "Cabin 2"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/wood,
 /area/shuttle/abandoned/crew)
 "aF" = (
@@ -292,7 +292,7 @@
 /obj/machinery/door/airlock{
 	name = "Cabin 1"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/wood,
 /area/shuttle/abandoned/crew)
 "aG" = (
@@ -334,9 +334,7 @@
 /obj/machinery/door/airlock/external/glass{
 	name = "E.V.A Access"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -368,9 +366,7 @@
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
@@ -379,9 +375,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -390,9 +384,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -407,9 +399,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -419,9 +409,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -431,7 +419,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -444,9 +432,7 @@
 	name = "E.V.A Access"
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/bar)
@@ -456,9 +442,7 @@
 	},
 /obj/machinery/light/small/built/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark{
 	dir = 8
@@ -469,9 +453,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/shuttle/abandoned/crew)
@@ -481,9 +463,7 @@
 	},
 /obj/machinery/light/small/built/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/shuttle/abandoned/crew)
@@ -493,9 +473,7 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/bar)
@@ -505,9 +483,7 @@
 /obj/effect/turf_decal/tile/bar{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/bar)
 "bc" = (
@@ -611,9 +587,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
@@ -640,7 +614,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -673,7 +647,7 @@
 /obj/machinery/door/airlock/public/glass{
 	name = "Crew Quarters"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -753,7 +727,7 @@
 /area/shuttle/abandoned/engine)
 "bz" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
@@ -783,7 +757,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/shuttle/abandoned/bridge)
@@ -807,7 +781,7 @@
 "bG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/tile/blue,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -910,17 +884,13 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/meter,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "bQ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
@@ -933,7 +903,7 @@
 	req_access = null
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/shuttle/abandoned/bridge)
@@ -974,7 +944,7 @@
 	},
 /obj/machinery/light/small/built/directional/east,
 /obj/effect/turf_decal/tile/blue,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -1016,7 +986,7 @@
 /area/shuttle/abandoned/bridge)
 "bX" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/shuttle/abandoned/bridge)
@@ -1061,7 +1031,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
 /obj/effect/turf_decal/tile/blue,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -1074,7 +1044,7 @@
 	name = "Engineering"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
@@ -1100,9 +1070,7 @@
 "cf" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/gun/energy/laser/retro,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /mob/living/simple_animal/hostile/giant_spider/tarantula/scrawny,
 /turf/open/floor/iron/dark,
@@ -1134,9 +1102,7 @@
 "cj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -1155,7 +1121,7 @@
 "cl" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/power/apc/auto_name/east,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
@@ -1192,7 +1158,7 @@
 	pixel_x = 2;
 	pixel_y = 2
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/shuttle/abandoned/bridge)
@@ -1234,7 +1200,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -1254,7 +1220,7 @@
 /area/shuttle/abandoned/engine)
 "ct" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /obj/machinery/button/door/directional/west{
 	id = "whiteship_windows";
@@ -1296,7 +1262,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)
@@ -1333,7 +1299,7 @@
 "cC" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/oil,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
@@ -1478,9 +1444,7 @@
 	pixel_x = -24
 	},
 /obj/structure/spider/stickyweb,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
@@ -1500,7 +1464,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/medbay)
@@ -1535,7 +1499,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/medbay)
@@ -1648,17 +1612,13 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "dd" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
@@ -1667,22 +1627,20 @@
 	name = "Engineering"
 	},
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/shuttle/abandoned/engine)
 "df" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/medbay)
 "dg" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/medbay)
@@ -1691,9 +1649,7 @@
 /obj/machinery/door/airlock/medical{
 	name = "Medbay Storage"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/medbay)
@@ -1710,9 +1666,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/spider/stickyweb,
 /obj/machinery/firealarm/directional/north,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/white/side{
 	dir = 9
@@ -1720,9 +1674,7 @@
 /area/shuttle/abandoned/medbay)
 "dk" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/white/side{
 	dir = 1
@@ -1730,7 +1682,7 @@
 /area/shuttle/abandoned/medbay)
 "dl" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/white/side{
 	dir = 1
@@ -1739,9 +1691,7 @@
 "dm" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/north,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/white/side{
 	dir = 5
@@ -1753,18 +1703,14 @@
 	},
 /obj/machinery/light/small/built/directional/south,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/shuttle/abandoned/medbay)
 "do" = (
 /obj/effect/turf_decal/stripes/white/line,
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/shuttle/abandoned/medbay)
@@ -1775,7 +1721,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small/directional/south,
 /obj/structure/spider/stickyweb,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron/dark,
 /area/shuttle/abandoned/medbay)
@@ -1788,9 +1734,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/medbay)
@@ -1802,25 +1746,19 @@
 /obj/machinery/door/airlock/external/glass{
 	name = "E.V.A Access"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/cargo)
 "ds" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/cargo)
 "dt" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/cargo)
@@ -2212,7 +2150,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/shuttle/abandoned/crew)

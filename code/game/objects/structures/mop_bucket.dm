@@ -16,8 +16,10 @@
 		if(reagents.total_volume < 1)
 			to_chat(user, span_warning("[src] is out of water!"))
 		else
-			reagents.trans_to(I, 5, transfered_by = user)
-			to_chat(user, span_notice("You wet [I] in [src]."))
+			var/obj/item/mop/M = I
+			reagents.trans_to(M, M.transfer, transfered_by = user)
+			M.update_speed()
+			to_chat(user, span_notice("You wet \the [M] in [src]."))
 			playsound(loc, 'sound/effects/slosh.ogg', 25, TRUE)
 			update_appearance()
 	else

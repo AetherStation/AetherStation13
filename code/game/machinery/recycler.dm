@@ -39,7 +39,6 @@
 /obj/machinery/recycler/LateInitialize()
 	. = ..()
 	update_appearance(UPDATE_ICON)
-	req_one_access = SSid_access.get_region_access_list(list(REGION_ALL_STATION, REGION_CENTCOM))
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
@@ -209,6 +208,9 @@
 	// Instantly lie down, also go unconscious from the pain, before you die.
 	L.Unconscious(100)
 	L.adjustBruteLoss(crush_damage)
+
+/obj/machinery/recycler/on_deconstruction()
+	safety_mode = TRUE
 
 /obj/machinery/recycler/deathtrap
 	name = "dangerous old crusher"

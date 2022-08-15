@@ -111,6 +111,8 @@
 	///Simple_animal access.
 	///Innate access uses an internal ID card.
 	var/obj/item/card/id/access_card = null
+	///Card access applied to internal ID card.
+	var/datum/card_access/card_access = null
 	///If the mob can be spawned with a gold slime core. HOSTILE_SPAWN are spawned with plasma, FRIENDLY_SPAWN are spawned with blood.
 	var/gold_core_spawnable = NO_SPAWN
 

@@ -229,6 +229,10 @@
 ///called when teleporting into a protected turf: (channel, turf/origin)
 #define COMSIG_ATOM_INTERCEPT_TELEPORT "intercept_teleport"
 	#define COMPONENT_BLOCK_TELEPORT (1<<0)
+///Called when a movable is being teleported from `do_teleport()`: (destination, channel)
+#define COMSIG_MOVABLE_TELEPORTED "movable_teleported"
+///Called after a movable is teleported from `do_teleport()`: ()
+#define COMSIG_MOVABLE_POST_TELEPORT "movable_post_teleport"
 ///called when an atom is added to the hearers on get_hearers_in_view(): (list/processing_list, list/hearers)
 #define COMSIG_ATOM_HEARER_IN_VIEW "atom_hearer_in_view"
 ///called when an atom starts orbiting another atom: (atom)
@@ -484,7 +488,7 @@
 #define COMSIG_MOB_STATCHANGE "mob_statchange"
 ///from base of mob/clickon(): (atom/A, params)
 #define COMSIG_MOB_CLICKON "mob_clickon"
-///from base of mob/MiddleClickOn(): (atom/A)
+///from base of mob/MiddleClickOn(): (atom/A, params)
 #define COMSIG_MOB_MIDDLECLICKON "mob_middleclickon"
 ///from base of mob/AltClickOn(): (atom/A)
 #define COMSIG_MOB_ALTCLICKON "mob_altclickon"
@@ -618,6 +622,9 @@
 ///from end of fully_heal(): (admin_revive)
 #define COMSIG_LIVING_POST_FULLY_HEAL "living_post_fully_heal"
 
+///Called when a carbon updates their health (source = carbon)
+#define COMSIG_CARBON_HEALTH_UPDATE "carbon_health_update"
+
 ///from somewhere in door i dunno use the fucking search function
 #define COMSIG_LIVING_INTERACTED_WITH_DOOR "living_interacted_with_door"
 	#define DOOR_CLOSE "close"
@@ -709,6 +716,10 @@
 #define COMSIG_HOSTILE_POST_ATTACKINGTARGET "hostile_post_attackingtarget"
 ///from base of mob/living/simple_animal/hostile/regalrat: (mob/living/simple_animal/hostile/regalrat/king)
 #define COMSIG_RAT_INTERACT "rat_interaction"
+
+//from /mob/living/carbon/human/proc/check_shields(): (atom/hit_by, damage, attack_text, attack_type, armour_penetration)
+#define COMSIG_HUMAN_CHECK_SHIELDS "human_check_shields"
+	#define SHIELD_BLOCK (1<<0)
 
 ///from /obj/item/slapper/attack_obj(): (source=mob/living/slammer, obj/structure/table/slammed_table)
 #define COMSIG_LIVING_SLAM_TABLE "living_slam_table"
@@ -1072,6 +1083,8 @@
 #define COMSIG_ITEM_USED_AS_INGREDIENT "item_used_as_ingredient"
 ///called when an edible ingredient is added: (datum/component/edible/ingredient)
 #define COMSIG_EDIBLE_INGREDIENT_ADDED "edible_ingredient_added"
+///called when a custom food item replaces itself: (datum/component/customizable_reagent_holder)
+#define COMSIG_CUSTOM_FOOD_REPLACED "custom_food_replaced"
 
 //Plants / Plant Traits
 
@@ -1123,6 +1136,9 @@
 
 ///(customer, container) venue signal sent when a venue sells an item. source is the thing sold, which can be a datum, so we send container for location checks
 #define COMSIG_ITEM_SOLD_TO_CUSTOMER "item_sold_to_customer"
+
+///From living/Life(). (deltatime, times_fired)
+#define COMSIG_LIVING_LIFE "living_life"
 
 //Nanites
 
@@ -1338,6 +1354,12 @@
 /// Sent on successful finish of exoscan: (datum/exoscan/finished_scan)
 #define COMSIG_EXOSCAN_FINISHED "exoscan_finished"
 
+/// from base of /datum/action/cooldown/proc/PreActivate(): (datum/action/cooldown/activated)
+#define COMSIG_ABILITY_STARTED "mob_ability_base_started"
+	#define COMPONENT_BLOCK_ABILITY_START (1<<0)
+/// from base of /datum/action/cooldown/proc/PreActivate(): (datum/action/cooldown/finished)
+#define COMSIG_ABILITY_FINISHED "mob_ability_base_finished"
+
 // Exosca signals
 /// Sent on exoscan failure/manual interruption: ()
 #define COMSIG_EXOSCAN_INTERRUPTED "exoscan_interrupted"
@@ -1427,3 +1449,7 @@
 #define COMSIG_MIAMI_CURED_DISORDER "miami_cured"
 #define COMSIG_MIAMI_START_SPREE "miami_start_spree"
 #define COMSIG_MIAMI_END_SPREE "miami_end_spree"
+
+// MOS6502 signals, used with signal memory map.
+#define COMSIG_MOS6502_MEMORY_WRITE "comsig_mos6502_memory_write"
+#define COMSIG_MOS6502_MEMORY_READ "comsig_mos6502_memory_read"

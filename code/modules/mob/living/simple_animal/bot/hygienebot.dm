@@ -20,6 +20,7 @@
 	path_image_color = "#993299"
 	allow_pai = FALSE
 	layer = ABOVE_MOB_LAYER
+	card_access = /datum/card_access/job/janitor
 
 	///The human target the bot is trying to wash.
 	var/mob/living/carbon/human/target
@@ -42,10 +43,6 @@
 	. = ..()
 	update_appearance(UPDATE_ICON)
 
-	// Doing this hurts my soul, but simplebot access reworks are for another day.
-	var/datum/id_trim/job/jani_trim = SSid_access.trim_singletons_by_path[/datum/id_trim/job/janitor]
-	access_card.add_access(jani_trim.access + jani_trim.wildcard_access)
-	prev_access = access_card.access.Copy()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)

@@ -37,6 +37,7 @@
 /datum/outfit/job/doctor
 	name = "Medical Doctor"
 	jobtype = /datum/job/doctor
+	card_access = /datum/card_access/job/medical_doctor
 
 	belt = /obj/item/pda/medical
 	ears = /obj/item/radio/headset/headset_med
@@ -54,5 +55,3 @@
 	skillchips = list(/obj/item/skillchip/entrails_reader)
 
 	chameleon_extras = /obj/item/gun/syringe
-
-	id_trim = /datum/id_trim/job/medical_doctor

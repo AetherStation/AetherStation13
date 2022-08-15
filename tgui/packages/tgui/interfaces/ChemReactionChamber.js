@@ -1,7 +1,8 @@
 import { map } from 'common/collections';
+import { toFixed } from 'common/math';
 import { classes } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Input, LabeledList, NumberInput, Section } from '../components';
+import { Box, Button, Input, LabeledList, NumberInput, Section, Stack, AnimatedNumber } from '../components';
 import { Window } from '../layouts';
 
 export const ChemReactionChamber = (props, context) => {
@@ -14,21 +15,49 @@ export const ChemReactionChamber = (props, context) => {
     reagentQuantity,
     setReagentQuantity,
   ] = useLocalState(context, 'reagentQuantity', 1);
-  const emptying = data.emptying;
   const reagents = data.reagents || [];
   return (
     <Window
       width={250}
-      height={225}>
+      height={325}>
       <Window.Content scrollable>
+        <Section
+          title="Temperature"
+          buttons={
+            <NumberInput
+              width="65px"
+              unit="K"
+              step={10}
+              stepPixelSize={3}
+              value={data.target_temperature}
+              minValue={0}
+              maxValue={1000}
+              onDrag={(e, value) =>
+                act('temperature', {
+                  target: value,
+                })}
+            />
+          }>
+          <Stack fill>
+            <Stack.Item textColor="label">
+              Current:
+            </Stack.Item>
+            <Stack.Item grow>
+              <AnimatedNumber
+                value={data.temperature}
+                format={(value) => toFixed(value) + ' K'}
+              />
+            </Stack.Item>
+          </Stack>
+        </Section>
         <Section
           title="Reagents"
           buttons={(
             <Box
               inline
               bold
-              color={emptying ? "bad" : "good"}>
-              {emptying ? "Emptying" : "Filling"}
+              color={data.emptying ? "bad" : "good"}>
+              {data.emptying ? "Emptying" : "Filling"}
             </Box>
           )}>
           <LabeledList>
@@ -64,19 +93,19 @@ export const ChemReactionChamber = (props, context) => {
                   })} />
               </td>
             </tr>
-            {map((amount, reagent) => (
+            {map((reagent) => (
               <LabeledList.Item
-                key={reagent}
-                label={reagent}
+                key={reagent.name}
+                label={reagent.name}
                 buttons={(
                   <Button
                     icon="minus"
                     color="bad"
                     onClick={() => act('remove', {
-                      chem: reagent,
+                      chem: reagent.name,
                     })} />
                 )}>
-                {amount}
+                {reagent.amount}
               </LabeledList.Item>
             ))(reagents)}
           </LabeledList>

@@ -5,9 +5,7 @@
 "au" = (
 /obj/machinery/door/airlock/silver/glass,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "aA" = (
@@ -42,16 +40,14 @@
 "cH" = (
 /obj/machinery/door/airlock/silver,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "de" = (
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "pirateportexternal"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "dI" = (
@@ -96,9 +92,7 @@
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/pirate)
 "fT" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "gg" = (
@@ -109,7 +103,7 @@
 /area/shuttle/pirate)
 "ht" = (
 /obj/machinery/door/airlock/silver,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "hu" = (
@@ -118,9 +112,7 @@
 /area/shuttle/pirate)
 "hW" = (
 /obj/machinery/piratepad,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "iY" = (
@@ -156,7 +148,7 @@
 /area/shuttle/pirate)
 "jo" = (
 /obj/effect/spawner/structure/window/shuttle,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/plating,
 /area/shuttle/pirate)
 "jG" = (
@@ -166,9 +158,7 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "jQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
@@ -228,9 +218,7 @@
 /turf/open/space/basic,
 /area/shuttle/pirate)
 "mI" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/pirate)
 "nh" = (
@@ -268,9 +256,7 @@
 "pU" = (
 /obj/machinery/door/airlock/silver,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/pirate)
 "qA" = (
@@ -284,9 +270,7 @@
 /turf/closed/wall/mineral/titanium,
 /area/shuttle/pirate)
 "ue" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "uP" = (
@@ -324,7 +308,7 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "wa" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "xe" = (
@@ -378,9 +362,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "zN" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
@@ -388,9 +370,7 @@
 /obj/machinery/door/airlock/external/glass{
 	id_tag = "piratestarboardexternal"
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "Ae" = (
@@ -404,7 +384,7 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "AE" = (
@@ -429,9 +409,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "BK" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/pirate)
 "BO" = (
@@ -444,7 +422,7 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "Ch" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "CH" = (
@@ -547,9 +525,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "Jq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/pirate)
 "JL" = (
@@ -557,7 +533,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "JV" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/pirate)
 "Kq" = (
@@ -569,9 +545,7 @@
 	dir = 1
 	},
 /obj/structure/cable,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 6
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "LQ" = (
@@ -604,9 +578,7 @@
 /area/shuttle/pirate)
 "NI" = (
 /obj/machinery/door/airlock/silver,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/shuttle/pirate)
 "Oo" = (
@@ -652,9 +624,7 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "Pg" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 1
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "Qm" = (
@@ -667,9 +637,7 @@
 "QO" = (
 /obj/structure/bed/pod,
 /obj/item/bedsheet/black,
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 10
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/pirate)
 "QU" = (
@@ -688,9 +656,7 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "RE" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /obj/effect/mob_spawn/human/pirate/silverscale/gunner{
 	dir = 4
 	},
@@ -732,9 +698,7 @@
 /turf/open/floor/plating/airless,
 /area/shuttle/pirate)
 "Si" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "Su" = (
@@ -745,9 +709,7 @@
 /turf/open/floor/pod/dark,
 /area/shuttle/pirate)
 "Sv" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden,
 /turf/open/floor/carpet/royalblack,
 /area/shuttle/pirate)
 "TT" = (

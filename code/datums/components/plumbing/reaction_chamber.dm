@@ -7,6 +7,11 @@
 	if(!istype(parent, /obj/machinery/plumbing/reaction_chamber))
 		return COMPONENT_INCOMPATIBLE
 
+/datum/component/plumbing/reaction_chamber/can_give(amount, reagent, datum/ductnet/net)
+	. = ..()
+	var/obj/machinery/plumbing/reaction_chamber/reaction_chamber = parent
+	return (. && reaction_chamber.emptying)
+
 /datum/component/plumbing/reaction_chamber/send_request(dir)
 	var/obj/machinery/plumbing/reaction_chamber/chamber = parent
 	if(chamber.emptying)

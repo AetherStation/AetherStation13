@@ -1,7 +1,5 @@
 #define FILE_RECENT_MAPS "data/RecentMaps.json"
 
-#define KEEP_ROUNDS_MAP 3
-
 SUBSYSTEM_DEF(persistence)
 	name = "Persistence"
 	init_order = INIT_ORDER_PERSISTENCE
@@ -18,6 +16,7 @@ SUBSYSTEM_DEF(persistence)
 	var/list/obj/item/storage/photo_album/photo_albums
 	var/list/obj/structure/sign/painting/painting_frames = list()
 	var/list/paintings = list()
+	var/list/mainframe_roms = list()
 
 /datum/controller/subsystem/persistence/Initialize()
 	LoadPoly()
@@ -28,6 +27,7 @@ SUBSYSTEM_DEF(persistence)
 	LoadRandomizedRecipes()
 	LoadPaintings()
 	load_custom_outfits()
+	load_mainframe_roms()
 
 	load_adventures()
 	return ..()
@@ -110,7 +110,12 @@ SUBSYSTEM_DEF(persistence)
 		return
 	saved_maps = json["data"]
 
+	//Forced rotation is off.
+	if(!CONFIG_GET(number/map_rotation_pool))
+		return
+
 	//Convert the mapping data to a shared blocking list, saves us doing this in several places later.
+	var/runsallowed = CONFIG_GET(number/map_rotation_repetitions)
 	for(var/map in config.maplist)
 		var/datum/map_config/VM = config.maplist[map]
 		var/run = 0
@@ -119,7 +124,7 @@ SUBSYSTEM_DEF(persistence)
 		for(var/name in SSpersistence.saved_maps)
 			if(VM.map_name == name)
 				run++
-		if(run >= 2) //If run twice in the last KEEP_ROUNDS_MAP + 1 (including current) rounds, disable map for voting and rotation.
+		if(run >= runsallowed) //If run twice in the last map_rotation_pool + 1 (including current) rounds, disable map for voting and rotation.
 			blocked_maps += VM.map_name
 
 /datum/controller/subsystem/persistence/proc/SetUpTrophies(list/trophy_items)
@@ -157,6 +162,7 @@ SUBSYSTEM_DEF(persistence)
 	SavePaintings()
 	SaveScars()
 	save_custom_outfits()
+	save_mainframe_roms()
 
 /datum/controller/subsystem/persistence/proc/GetPhotoAlbums()
 	var/album_path = file("data/photo_albums.json")
@@ -270,9 +276,12 @@ SUBSYSTEM_DEF(persistence)
 		saved_trophies += list(data)
 
 /datum/controller/subsystem/persistence/proc/CollectMaps()
-	if(length(saved_maps) > KEEP_ROUNDS_MAP) //Get rid of extras from old configs.
-		saved_maps.Cut(KEEP_ROUNDS_MAP+1)
-	var/mapstosave = min(length(saved_maps)+1, KEEP_ROUNDS_MAP)
+	var/numberofmaps = CONFIG_GET(number/map_rotation_pool)
+	if(numberofmaps < 1)	// Config is disabled or someone fucked up.
+		return
+	if(length(saved_maps) > numberofmaps) //Get rid of extras from old configs.
+		saved_maps.Cut(numberofmaps+1)
+	var/mapstosave = min(length(saved_maps)+1, numberofmaps)
 	if(length(saved_maps) < mapstosave) //Add extras if too short, one per round.
 		saved_maps += mapstosave
 	for(var/i = mapstosave; i > 1; i--)
@@ -382,6 +391,18 @@ SUBSYSTEM_DEF(persistence)
 		if(!outfit.load_from(outfit_data))
 			continue
 		GLOB.custom_outfits += outfit
+
+/datum/controller/subsystem/persistence/proc/load_mainframe_roms()
+	var/file = file("data/mainframe_roms.json")
+	if (!fexists(file))
+		return
+	var/roms_json = file2text(file)
+	mainframe_roms = json_decode(roms_json)
+
+/datum/controller/subsystem/persistence/proc/save_mainframe_roms()
+	var/file = file("data/mainframe_roms.json")
+	fdel(file)
+	WRITE_FILE(file, json_encode(mainframe_roms))
 
 /datum/controller/subsystem/persistence/proc/save_custom_outfits()
 	var/file = file("data/custom_outfits.json")

@@ -25,7 +25,7 @@
 	///Bitflag of the initialized directions (NORTH | SOUTH | EAST | WEST)
 	var/initialize_directions = 0
 	///The color of the pipe
-	var/pipe_color = COLOR_VERY_LIGHT_GRAY
+	var/pipe_color
 	///What layer the pipe is in (from 1 to 5, default 3)
 	var/piping_layer = PIPING_LAYER_DEFAULT
 	///The flags of the pipe/component (PIPING_ALL_LAYER | PIPING_ONE_PER_TURF | PIPING_DEFAULT_LAYER_ONLY | PIPING_CARDINAL_AUTONORMALIZE)
@@ -50,20 +50,13 @@
 	var/on = FALSE
 
 	///Whether it can be painted
-	var/paintable = TRUE
+	var/paintable = FALSE
 
 	///Is the thing being rebuilt by SSair or not. Prevents list bloat
 	var/rebuilding = FALSE
 
 	///The bitflag that's being checked on ventcrawling. Default is to allow ventcrawling and seeing pipes.
 	var/vent_movement = VENTCRAWL_ALLOWED | VENTCRAWL_CAN_SEE
-
-	///Store the smart pipes connections, used for pipe construction
-	var/connection_num = 0
-
-/obj/machinery/atmospherics/LateInitialize()
-	. = ..()
-	name = "[GLOB.pipe_color_name[pipe_color]] [name]"
 
 /obj/machinery/atmospherics/examine(mob/user)
 	. = ..()
@@ -73,9 +66,11 @@
 		if(HAS_TRAIT(L, TRAIT_VENTCRAWLER_NUDE) || HAS_TRAIT(L, TRAIT_VENTCRAWLER_ALWAYS))
 			. += span_notice("Alt-click to crawl through it.")
 
-/obj/machinery/atmospherics/New(loc, process = TRUE, setdir, init_dir = ALL_CARDINALS)
+/obj/machinery/atmospherics/New(loc, process = TRUE, setdir, _hide)
 	if(!isnull(setdir))
 		setDir(setdir)
+	if(!isnull(_hide))
+		hide = _hide
 	if(pipe_flags & PIPING_CARDINAL_AUTONORMALIZE)
 		normalize_cardinal_directions()
 	nodes = new(device_type)
@@ -84,7 +79,7 @@
 	..()
 	if(process)
 		SSair.start_processing_machine(src)
-	SetInitDirections(init_dir)
+	SetInitDirections()
 
 /obj/machinery/atmospherics/Destroy()
 	for(var/i in 1 to device_type)
@@ -206,11 +201,10 @@
  * * prompted_layer - the piping_layer we are inside
  */
 /obj/machinery/atmospherics/proc/findConnecting(direction, prompted_layer)
-	for(var/obj/machinery/atmospherics/target in get_step_multiz(src, direction))
-		if(!(target.initialize_directions & get_dir(target,src)) && !istype(target, /obj/machinery/atmospherics/pipe/multiz))
-			continue
-		if(connection_check(target, prompted_layer))
-			return target
+	for(var/obj/machinery/atmospherics/target in get_step(src, direction))
+		if(target.initialize_directions & get_dir(target,src))
+			if(connection_check(target, prompted_layer))
+				return target
 
 /**
  * Check the connection between two nodes
@@ -222,23 +216,12 @@
  * * given_layer - the piping_layer we are checking
  */
 /obj/machinery/atmospherics/proc/connection_check(obj/machinery/atmospherics/target, given_layer)
-	if(isConnectable(target, given_layer) && target.isConnectable(src, given_layer) && check_init_directions(target))
+	if(isConnectable(target, given_layer) && target.isConnectable(src, given_layer) && (target.initialize_directions & get_dir(target,src) || istype(target, /obj/machinery/atmospherics/pipe/multiz)))
 		return TRUE
 	return FALSE
 
 /**
- * check if the initialized direction are the same on both sides (or if is a multiz adapter)
- * returns TRUE or FALSE if the connection is possible or not
- * Arguments:
- * * obj/machinery/atmospherics/target - the machinery we want to connect to
- */
-/obj/machinery/atmospherics/proc/check_init_directions(obj/machinery/atmospherics/target)
-	if((initialize_directions & get_dir(src, target) && target.initialize_directions & get_dir(target,src)) || istype(target, /obj/machinery/atmospherics/pipe/multiz))
-		return TRUE
-	return FALSE
-
-/**
- * check if the piping layer and color are the same on both sides (grey can connect to all colors)
+ * check if the piping layer are the same on both sides
  * returns TRUE or FALSE if the connection is possible or not
  * Arguments:
  * * obj/machinery/atmospherics/target - the machinery we want to connect to
@@ -247,31 +230,7 @@
 /obj/machinery/atmospherics/proc/isConnectable(obj/machinery/atmospherics/target, given_layer)
 	if(isnull(given_layer))
 		given_layer = piping_layer
-	if(check_connectable_layer(target, given_layer) && target.loc != loc && check_connectable_color(target))
-		return TRUE
-	return FALSE
-
-/**
- * check if the piping layer are the same on both sides or one of them has the PIPING_ALL_LAYER flag
- * returns TRUE if one of the parameters is TRUE
- * called by isConnectable()
- * Arguments:
- * * obj/machinery/atmospherics/target - the machinery we want to connect to
- * * given_layer - the piping_layer we are connecting to
- */
-/obj/machinery/atmospherics/proc/check_connectable_layer(obj/machinery/atmospherics/target, given_layer)
-	if(target.piping_layer == given_layer || target.pipe_flags & PIPING_ALL_LAYER)
-		return TRUE
-	return FALSE
-
-/**
- * check if the color are the same on both sides or if one of the pipes are grey or have the PIPING_ALL_COLORS flag
- * returns TRUE if one of the parameters is TRUE
- * Arguments:
- * * obj/machinery/atmospherics/target - the machinery we want to connect to
- */
-/obj/machinery/atmospherics/proc/check_connectable_color(obj/machinery/atmospherics/target)
-	if(lowertext(target.pipe_color) == lowertext(pipe_color) || ((target.pipe_flags | pipe_flags) & PIPING_ALL_COLORS) || lowertext(target.pipe_color) == lowertext(COLOR_VERY_LIGHT_GRAY) || lowertext(pipe_color) == lowertext(COLOR_VERY_LIGHT_GRAY))
+	if((target.piping_layer == given_layer) || (target.pipe_flags & PIPING_ALL_LAYER))
 		return TRUE
 	return FALSE
 
@@ -284,7 +243,7 @@
 /**
  * Set the initial directions of the device (NORTH || SOUTH || EAST || WEST), called on New()
  */
-/obj/machinery/atmospherics/proc/SetInitDirections(init_dir)
+/obj/machinery/atmospherics/proc/SetInitDirections()
 	return
 
 /**
@@ -413,7 +372,7 @@
 /obj/machinery/atmospherics/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(can_unwrench)
-			var/obj/item/pipe/stored = new construction_type(loc, null, dir, src, pipe_color)
+			var/obj/item/pipe/stored = new construction_type(loc, null, dir, src)
 			stored.setPipingLayer(piping_layer)
 			if(!disassembled)
 				stored.take_damage(stored.max_integrity * 0.5, sound_effect=FALSE)
@@ -519,7 +478,7 @@
  * Update the layer in which the pipe/device is in, that way pipes have consistent layer depending on piping_layer
  */
 /obj/machinery/atmospherics/proc/update_layer()
-	layer = initial(layer) + (piping_layer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_LCHANGE + (GLOB.pipe_colors_ordered[pipe_color] * 0.01)
+	layer = initial(layer) + (piping_layer - PIPING_LAYER_DEFAULT) * PIPING_LAYER_LCHANGE
 
 /**
  * Called by the RPD.dm pre_attack(), overriden by pipes.dm

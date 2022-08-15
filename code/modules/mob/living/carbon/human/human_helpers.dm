@@ -82,7 +82,7 @@
 	if(. && hand_first)
 		return
 	//Check inventory slots
-	return (wear_id?.GetID() || belt?.GetID())
+	return (wear_id?.get_id() || belt?.get_id())
 
 /mob/living/carbon/human/reagent_check(datum/reagent/R, delta_time, times_fired)
 	return dna.species.handle_chemicals(R, src, delta_time, times_fired)
@@ -208,9 +208,7 @@
 		WRITE_FILE(F["scar[char_index]-[scar_index]"], "")
 		return
 
-	for(var/k in all_wounds)
-		var/datum/wound/iter_wound = k
-		iter_wound.remove_wound() // so we can get the scars for open wounds
+	remove_wounds() // so we can get the scars for open wounds
 
 	var/valid_scars = format_scars()
 	WRITE_FILE(F["scar[char_index]-[scar_index]"], sanitize_text(valid_scars))

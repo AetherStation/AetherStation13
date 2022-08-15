@@ -242,9 +242,9 @@
 	return ..()
 
 /obj/item/clothing/dropped(mob/user)
-	..()
+	. = ..()
 	if(!istype(user))
-		return
+		return FALSE
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 	for(var/trait in clothing_traits)
 		REMOVE_TRAIT(user, trait, "[CLOTHING_TRAIT] [REF(src)]")
@@ -259,7 +259,7 @@
 /obj/item/clothing/equipped(mob/user, slot)
 	. = ..()
 	if (!istype(user))
-		return
+		return FALSE
 	if(slot_flags & slot) //Was equipped to a valid slot for this item?
 		if(iscarbon(user) && LAZYLEN(zones_disabled))
 			RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/bristle, override = TRUE)
@@ -436,7 +436,7 @@ SEE_PIXELS// if an object is located on an unlit area, but some of its pixels ar
 BLIND     // can't see anything
 */
 
-/proc/generate_female_clothing(index,t_color,icon,type)
+/proc/generate_female_clothing(index, t_color, icon, type)
 	var/icon/female_clothing_icon = icon("icon"=icon, "icon_state"=t_color)
 	var/icon/female_s = icon("icon"='icons/mob/clothing/under/masking_helpers.dmi', "icon_state"="[(type == FEMALE_UNIFORM_FULL) ? "female_full" : "female_top"]")
 	female_clothing_icon.Blend(female_s, ICON_MULTIPLY)

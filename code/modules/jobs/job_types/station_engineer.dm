@@ -36,6 +36,7 @@
 /datum/outfit/job/engineer
 	name = "Station Engineer"
 	jobtype = /datum/job/station_engineer
+	card_access = /datum/card_access/job/station_engineer
 
 	belt = /obj/item/storage/belt/utility/full/engi
 	l_pocket = /obj/item/pda/engineering
@@ -54,8 +55,6 @@
 
 	skillchips = list(/obj/item/skillchip/job/engineer)
 
-	id_trim = /datum/id_trim/job/station_engineer
-
 /datum/outfit/job/engineer/gloved
 	name = "Station Engineer (Gloves)"
 	gloves = /obj/item/clothing/gloves/color/yellow
@@ -69,7 +68,5 @@
 	internals_slot = ITEM_SLOT_SUITSTORE
 
 /datum/outfit/job/engineer/gloved/gunner
-	id_trim = /datum/id_trim/job/station_engineer/gunner
 
 /datum/outfit/job/engineer/gloved/rig/gunner
-	id_trim = /datum/id_trim/job/station_engineer/gunner

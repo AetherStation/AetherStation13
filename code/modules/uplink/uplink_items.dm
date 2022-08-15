@@ -1182,11 +1182,12 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 
 /datum/uplink_item/stealthy_tools/agent_card
 	name = "Agent Identification Card"
-	desc = "Agent cards prevent artificial intelligences from tracking the wearer, and hold up to 5 wildcards \
-			from other identification cards. In addition, they can be forged to display a new assignment, name and trim. \
+	desc = "Agent cards prevent artificial intelligences from tracking the wearer, and can copy access \
+			from other identification cards. The access is cumulative, so scanning one card does not erase the \
+			access gained from another. In addition, they can be forged to display a new assignment and name. \
 			This can be done an unlimited amount of times. Some Syndicate areas and devices can only be accessed \
 			with these cards."
-	item = /obj/item/card/id/advanced/chameleon
+	item = /obj/item/card/id/chameleon
 	cost = 2
 
 /datum/uplink_item/stealthy_tools/ai_detector
@@ -1269,13 +1270,6 @@ GLOBAL_LIST_INIT(uplink_items, subtypesof(/datum/uplink_item))
 			They do not work on heavily lubricated surfaces."
 	item = /obj/item/clothing/shoes/chameleon/noslip
 	cost = 2
-	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
-	player_minimum = 20
-
-/datum/uplink_item/stealthy_tools/syndigaloshes/nuke
-	item = /obj/item/clothing/shoes/chameleon/noslip
-	cost = 4
-	purchasable_from = UPLINK_NUKE_OPS
 
 /datum/uplink_item/stealthy_tools/jammer
 	name = "Radio Jammer"

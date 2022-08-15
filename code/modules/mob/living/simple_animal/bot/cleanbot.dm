@@ -17,6 +17,7 @@
 	window_name = "Automatic Station Cleaner v1.4"
 	pass_flags = PASSMOB | PASSFLAPS
 	path_image_color = "#993299"
+	card_access = /datum/card_access/job/janitor
 
 	var/blood = 1
 	var/trash = 0
@@ -105,10 +106,6 @@
 	get_targets()
 	icon_state = "cleanbot[on]"
 
-	// Doing this hurts my soul, but simplebot access reworks are for another day.
-	var/datum/id_trim/job/jani_trim = SSid_access.trim_singletons_by_path[/datum/id_trim/job/janitor]
-	access_card.add_access(jani_trim.access + jani_trim.wildcard_access)
-	prev_access = access_card.access.Copy()
 	stolen_valor = list()
 
 	prefixes = list(command, security, engineering)
@@ -165,7 +162,7 @@
 		C.Knockdown(20)
 
 /mob/living/simple_animal/bot/cleanbot/attackby(obj/item/W, mob/living/user, params)
-	if(W.GetID())
+	if(W.get_id())
 		if(bot_core.allowed(user) && !open && !emagged)
 			locked = !locked
 			to_chat(user, span_notice("You [ locked ? "lock" : "unlock"] \the [src] behaviour controls."))

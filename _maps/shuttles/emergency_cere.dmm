@@ -1057,19 +1057,15 @@
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
 "cq" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 5
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
 "cr" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
 "cs" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 9
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/iron/white,
 /area/shuttle/escape)
 "ct" = (

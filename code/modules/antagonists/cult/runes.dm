@@ -240,7 +240,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 	Cult_team.check_size() // Triggers the eye glow or aura effects if the cult has grown large enough relative to the crew
 	rune_in_use = FALSE
 
-/obj/effect/rune/convert/proc/do_convert(mob/living/convertee, list/invokers)
+/obj/effect/rune/convert/proc/do_convert(mob/living/carbon/convertee, list/invokers)
 	if(invokers.len < 2)
 		for(var/M in invokers)
 			to_chat(M, span_warning("You need at least two invokers to convert [convertee]!"))
@@ -256,6 +256,8 @@ structure_check() searches for nearby cultist structures required for the invoca
 	if(brutedamage || burndamage)
 		convertee.adjustBruteLoss(-(brutedamage * 0.75))
 		convertee.adjustFireLoss(-(burndamage * 0.75))
+	convertee.restore_blood()
+	convertee.remove_wounds()
 	convertee.visible_message("<span class='warning'>[convertee] writhes in pain \
 	[brutedamage || burndamage ? "even as [convertee.p_their()] wounds heal and close" : "as the markings below [convertee.p_them()] glow a bloody red"]!</span>", \
 	span_cultlarge("<i>AAAAAAAAAAAAAA-</i>"))
@@ -315,7 +317,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 				to_chat(M, span_cultlarge("\"I accept this sacrifice.\""))
 			else
 				to_chat(M, span_cultlarge("\"I accept this meager sacrifice.\""))
-	
+
 	if(iscyborg(sacrificial))
 		var/construct_class = show_radial_menu(first_invoker, sacrificial, GLOB.construct_radial_images, require_near = TRUE, tooltips = TRUE)
 		if(QDELETED(sacrificial))

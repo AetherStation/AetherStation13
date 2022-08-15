@@ -116,6 +116,7 @@
 /datum/outfit/job/chaplain
 	name = "Chaplain"
 	jobtype = /datum/job/chaplain
+	card_access = /datum/card_access/job/chaplain
 
 	belt = /obj/item/pda/chaplain
 	ears = /obj/item/radio/headset/headset_srv
@@ -132,4 +133,3 @@
 
 	chameleon_extras = /obj/item/stamp/chap
 
-	id_trim = /datum/id_trim/job/chaplain

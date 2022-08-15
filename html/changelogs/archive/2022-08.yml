@@ -1,0 +1,101 @@
+2022-08-01:
+  Pugie:
+  - bugfix: reaction chamber works again??
+  Sonnicon:
+  - rscadd: RPD Amend upgrade disk, allows an RPD to rightclick atmos pipes to add
+      nodes.
+  - bugfix: Placing pipes quickly won't runtime.
+  Sparkezel:
+  - bugfix: Disposals in medical on meta now work
+  TheChosenEvilOne:
+  - admin: Admins can now set Z-Traits, space Z-level count, and minetype on custom
+      map loading.
+2022-08-05:
+  Pugie:
+  - bugfix: Chems will now stop to react in reaction chamber.
+  Skoglol:
+  - bugfix: Firelocks no longer trigger at -3C, lowered to -63C. Still safe temperature
+      and pressure levels, but will make breaches vent significantly more atmos before
+      the firelocks engage.
+  TheChosenEvilOne:
+  - rscadd: Added the chemical assembler, a programmable plumbing machine you can
+      get from Advanced Biotechnology research.
+  - rscadd: Added the mainframe, the mainframe is a programmable computer using a
+      MOS 6502 emulator.
+2022-08-06:
+  Twaticus:
+  - imageadd: Resprites ID cards & chips
+  - imagedel: Removes on-mob ID sprites
+2022-08-07:
+  Skog:
+  - config: Added configs for forced map rotation.
+  Skoglol:
+  - bugfix: Tablet batteries and ID's now properly delete.
+2022-08-08:
+  TheChosenEvilOne:
+  - rscadd: PubbyStation is back.
+2022-08-09:
+  ? ''
+  : - bugfix: fixes missing pipe in atmos oxygen mix line
+    - balance: you can make chem silver in chem assembler and synthesizer
+  AcapitalA:
+  - balance: Buckshot now does 60 damage if all pellets land.
+  - balance: Shotgun slugs now do 35 damage, but have an armor piercing value of 30.
+  CursedBirb:
+  - bugfix: Library book printer now has emag message
+  Sonnicon:
+  - bugfix: Fixed condenser cooling message.
+  - refactor: Refactored /obj/item/reagent_containers/glass/attackby()
+  Sparkezel:
+  - bugfix: removed abundant airlocks from maintbay
+  TheChosenEvilOne:
+  - bugfix: Space ruin ID cards have the correct access again.
+2022-08-10:
+  Skog:
+  - config: map rotation configs now work properly
+  Skoglol:
+  - rscadd: Added soapy water, and a visual effect when cleaning with soapy water
+      or soap. Make soapy water by putting soap in water. Water, holy water, soapy
+      water, vodka and space cleaner now have different mopping speed, in ascending
+      order. Soapy water can be sprayed like space cleaner, but wont always clean
+      everythign.
+  - rscadd: Added temporary decals framework.
+  - bugfix: Water no longer cleans floors when sprayed.
+  Thebleh:
+  - admin: Admins can now ping each other in asay
+2022-08-12:
+  Sparkezel:
+  - code_imp: removed gbp
+  - bugfix: Fixes meta atmos for real
+2022-08-14:
+  AcapitalA:
+  - bugfix: The Durand's shield does not take damage from fire and acid anymore, as
+      it would burn infinitely long.
+  Twaticus:
+  - bugfix: raduit helmet now uses the correct worn icon
+  - bugfix: Recyclers no longer eat their own parts when dismantled.
+  maxspells, ported by SuperSlayer:
+  - expansion: Surgery steps play sound effects appropriate to the step
+  nicholast013:
+  - rscadd: Added Ammonium Nitrate as high explosive chemical and a fertilizer
+2022-08-15:
+  AcapitalA:
+  - bugfix: Door remotes no longer have all access.
+  Addust:
+  - rscadd: 'Syndicate Lavaland now has:'
+  - rscadd: an autolathe and Mauler wreckage
+  - rscadd: more cornerwalls
+  - rscadd: a new pipe to the oxygen tank so that the shit works
+  - rscadd: a backup generator with uranium. yes you can make a crude RTG with this
+  - rscadd: Crashed Ship TEG, because yes
+  - qol: Crashed Ship now has actual shuttle windows.
+  Skog:
+  - balance: Budget insuls now work 50% of the time, up from <15% of the time.
+  - balance: ORM can no longer be wrenched and moved.
+  - balance: The ORM can now have its parts upgraded again! Tier 2 parts give the
+      same amount of materials as old Tier 1, point generation goes no lower than
+      100%. Maxes out at 150% ore and point generation.
+  - balance: Traitor uplink implant fallback no longer costs 4 TC. If you have the
+      uplink preference, nothing has changed and you will still be charged.
+  - bugfix: Uplink creation will now look for alternatives in PDA and radio if you
+      have the pen preference.

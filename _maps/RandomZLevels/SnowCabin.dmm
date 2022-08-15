@@ -564,15 +564,11 @@
 /turf/open/floor/iron/cafeteria,
 /area/awaymission/cabin)
 "bP" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 8
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/iron/white,
 /area/awaymission/cabin)
 "bQ" = (
-/obj/machinery/atmospherics/pipe/smart/manifold4w/general/visible{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/iron/white,
 /area/awaymission/cabin)
 "bS" = (
