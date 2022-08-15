@@ -1,0 +1,7 @@
+author: Skog
+delete-after: true
+changes:
+  - balance: Traitor uplink implant fallback no longer costs 4 TC. If you have the
+      uplink preference, nothing has changed and you will still be charged.
+  - bugfix: Uplink creation will now look for alternatives in PDA and radio if you
+      have the pen preference.
