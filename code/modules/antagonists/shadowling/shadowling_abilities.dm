@@ -578,13 +578,13 @@
 					to_chat(user, "<span class='warning'>[thrallToRevive] is already empowered.</span>")
 					revert_cast()
 					return
-				var/empowered_thralls = 0
-				for(var/datum/mind/M in SSticker.mode.thralls)
-					if(!ishuman(M.current))
-						return
-					var/mob/living/carbon/human/H = M.current
-					if(H.dna.species.id == "l_shadowling")
-						empowered_thralls++
+				//var/empowered_thralls = 0
+				//for(var/datum/mind/M in SSticker.mode.thralls)
+				//	if(!ishuman(M.current))
+				//		return
+				//	var/mob/living/carbon/human/H = M.current
+				//	if(H.dna.species.id == "l_shadowling")
+				//		empowered_thralls++
 				//if(empowered_thralls >= EMPOWERED_THRALL_LIMIT)
 				//	to_chat(user, "<span class='warning'>You cannot spare this much energy. There are too many empowered thralls.</span>")
 				//	revert_cast()

@@ -43,7 +43,7 @@
 				return
 
 			shadowling.visible_message(span_warning("[shadowling] suddenly bloats and explodes!"))
-			to_chat(shadowling,span_warningbold("AAAAAAAAA<font size=3>AAAAAAAAAAAAA</font><font size=4>AAAAAAAAAAAA----</font>"))
+			to_chat(shadowling,span_bold(span_warning("AAAAAAAAA<font size=3>AAAAAAAAAAAAA</font><font size=4>AAAAAAAAAAAA----</font>")))
 			playsound(shadowling, 'sound/magic/Disintegrate.ogg', 100, 1)
 			shadowling.gib()
 	return ..()
