@@ -7,12 +7,12 @@
 	var/datum/callback/curse_proc
 	var/datum/callback/uncurse_proc
 
-/datum/element/eldritch_curse/Attach(datum/target, nduration, datum/callback/curse, datum/callback/uncurse)
+/datum/element/eldritch_curse/Attach(datum/target, duration, datum/callback/curse, datum/callback/uncurse)
 	. = ..()
 	if(!isitem(target))
 		return ELEMENT_INCOMPATIBLE
 
-	src.duration = nduration
+	src.duration = duration
 	src.curse_proc = curse
 	src.uncurse_proc = uncurse
 	RegisterSignal(target, COMSIG_ITEM_PICKUP, .proc/pickup_safety_check)
