@@ -207,6 +207,14 @@
 	parts += knowledge_message.Join(", ")
 
 	return parts.Join("<br>")
+
+/datum/antagonist/heretic/proc/add_sacrifice_target(mob/living/carbon/human/target)
+
+	var/image/target_image = image(icon = target.icon, icon_state = target.icon_state)
+	target_image.overlays = target.overlays
+
+	LAZYSET(sac_targets, WEAKREF(target), target_image)
+
 ////////////////
 // Knowledge //
 ////////////////

@@ -5,6 +5,13 @@
 	required_atoms = list(/mob/living/carbon/human = 1)
 	cost = 0
 	route = PATH_START
+	next_knowledge = list(
+		/datum/eldritch_knowledge/starting/base_ash,
+		/datum/eldritch_knowledge/starting/base_blade,
+		/datum/eldritch_knowledge/starting/base_flesh,
+		/datum/eldritch_knowledge/starting/base_rust,
+		/datum/eldritch_knowledge/starting/base_void,
+		)
 	/// Whether we've generated a heretic sacrifice z-level yet, from any heretic.
 	var/static/heretic_level_generated = FALSE
 	/// If TRUE, we skip the ritual when our target list is empty. Done to avoid locking up the heretic.
@@ -95,17 +102,19 @@
 
 	// First construct a list of minds that are valid objective targets.
 	var/list/datum/mind/valid_targets = list()
-	for(var/datum/mind/possible_target as anything in get_crewmember_minds())
-		if(possible_target == user.mind)
+	for(var/mob/living/possible_target in GLOB.alive_mob_list)
+		if(!possible_target.mind)
 			continue
-		if(possible_target in target_blacklist)
+		if(possible_target == user)
 			continue
-		if(!ishuman(possible_target.current))
+		if(possible_target.mind in target_blacklist)
 			continue
-		if(possible_target.current.stat == DEAD)
+		if(!ishuman(possible_target))
+			continue
+		if(possible_target.stat == DEAD)
 			continue
 
-		valid_targets += possible_target
+		valid_targets += possible_target.mind
 
 	if(!length(valid_targets))
 		if(!silent)
