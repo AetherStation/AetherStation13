@@ -78,7 +78,7 @@
 	name = "bag of honking"
 	desc = "An advanced clowning backpack for holding large quantities of pranking gear."
 	icon_state = "clownpack"
-	item_state = "clownpack"
+	inhand_icon_state = "clownpack"
 
 /obj/item/storage/backpack/santabag
 	name = "Santa's Gift Bag"
