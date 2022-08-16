@@ -201,7 +201,7 @@ RSF
 	var/cooldowndelay = 10
 	w_class = WEIGHT_CLASS_NORMAL
 
-/obj/item/cookiesynth/examine(mob/user)
+/obj/item/donutsynth/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>It currently holds [matter]/10 donut-units.</span>"
 
@@ -231,7 +231,7 @@ RSF
 	var/turf/T = get_turf(A)
 	playsound(src.loc, 'sound/machines/click.ogg', 10, 1)
 	to_chat(user, "Fabricating Donut..")
-	new /obj/item/reagent_containers/food/snacks/donut(T)
+	new /obj/item/food/snacks/donut(T)
 	if (iscyborg(user))
 		var/mob/living/silicon/robot/R = user
 		R.cell.charge -= 100

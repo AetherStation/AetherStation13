@@ -697,7 +697,7 @@
 	name = "borg module picker (Security)"
 	desc = "Allows you to turn a cyborg into a hunter, HALT!"
 	icon_state = "cyborg_upgrade3"
-	new_module = /obj/item/robot_model/security
+	new_model = /obj/item/robot_model/security
 
 /obj/item/borg/upgrade/transform/security/action(mob/living/silicon/robot/R, user = usr)
 	if(CONFIG_GET(flag/disable_secborg))

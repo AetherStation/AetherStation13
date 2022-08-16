@@ -84,6 +84,6 @@
 	variance = 0.8
 
 /obj/item/ammo_casing/energy/laser/cyborg
-	projectile_type = /obj/item/projectile/beam/laser
+	projectile_type = /obj/projectile/beam/laser
 	select_name = "kill"
 	e_cost = 125
