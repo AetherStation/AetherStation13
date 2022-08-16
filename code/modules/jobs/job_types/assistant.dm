@@ -58,10 +58,6 @@ Assistant
 	else
 		uniform = GLOB.colored_assistant.jumpskirts[index]
 
-/datum/outfit/job/assistant/consistent/give_jumpsuit(mob/living/carbon/human/target)
-	uniform = /obj/item/clothing/under/color/grey
-
-
 /proc/get_configured_colored_assistant_type()
 	return CONFIG_GET(flag/grey_assistants) ? /datum/colored_assistant/grey : /datum/colored_assistant/random
 
