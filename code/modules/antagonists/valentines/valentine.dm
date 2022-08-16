@@ -6,7 +6,6 @@
 	suicide_cry = "FOR MY LOVE!!"
 	count_against_dynamic_roll_chance = FALSE
 	var/datum/mind/date
-	soft_antag = TRUE
 
 /datum/antagonist/valentine/proc/forge_objectives()
 	var/datum/objective/protect/protect_objective = new /datum/objective/protect
