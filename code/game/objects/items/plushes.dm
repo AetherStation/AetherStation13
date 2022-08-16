@@ -485,17 +485,13 @@
 		qdel(src)
 		P.clashing = FALSE
 
-/obj/item/toy/plush/narplush/hugbox
-	desc = "A small stuffed doll of the elder goddess Nar'Sie. Who thought this was a good children's toy? <b>It looks sad.</b>"
-	is_invoker = FALSE
-	var/is_invoker = TRUE
-
 /obj/item/toy/plush/narplush
 	name = "\improper Nar'Sie plushie"
 	desc = "A small stuffed doll of the elder goddess Nar'Sie. Who thought this was a good children's toy?"
 	icon_state = "narplush"
 	divine = TRUE
 	var/clashing
+	var/is_invoker = TRUE
 	gender = FEMALE //it's canon if the toy is
 
 /obj/item/toy/plush/narplush/Moved()
@@ -503,6 +499,10 @@
 	var/obj/item/toy/plush/ratplush/P = locate() in range(1, src)
 	if(P && istype(P.loc, /turf/open) && !P.clash_target && !clashing)
 		P.clash_of_the_plushies(src)
+
+/obj/item/toy/plush/narplush/hugbox
+	desc = "A small stuffed doll of the elder goddess Nar'Sie. Who thought this was a good children's toy? <b>It looks sad.</b>"
+	is_invoker = FALSE
 
 /obj/item/toy/plush/lizard_plushie
 	name = "lizard plushie"
