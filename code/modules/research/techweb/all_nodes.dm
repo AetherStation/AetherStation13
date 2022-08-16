@@ -1349,6 +1349,7 @@
 	prereq_ids = list("adv_engi", "weaponry")
 	design_ids = list(
 		"pin_loyalty",
+		"borg_transform_security",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 10000)
 	channel_tag = list(RADIO_CHANNEL_SECURITY)
