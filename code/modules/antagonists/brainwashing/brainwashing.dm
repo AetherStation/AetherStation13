@@ -34,6 +34,7 @@
 	show_name_in_check_antagonists = TRUE
 	ui_name = "AntagInfoBrainwashed"
 	suicide_cry = "FOR... SOMEONE!!"
+	count_against_dynamic_roll_chance = FALSE
 
 /datum/antagonist/brainwashed/ui_static_data(mob/user)
 	. = ..()

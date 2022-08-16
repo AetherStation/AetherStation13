@@ -4,6 +4,7 @@
 	show_in_antagpanel = FALSE
 	prevent_roundtype_conversion = FALSE
 	suicide_cry = "FOR MY LOVE!!"
+	count_against_dynamic_roll_chance = FALSE
 	var/datum/mind/date
 	soft_antag = TRUE
 

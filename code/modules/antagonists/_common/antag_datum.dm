@@ -36,7 +36,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 	///Name of the antag hud we provide to this mob.
 	var/antag_hud_name
 	/// If set to true, the antag will not be added to the living antag list.
-	var/soft_antag = FALSE
+	var/count_against_dynamic_roll_chance = TRUE
 	/// The battlecry this antagonist shouts when suiciding with C4/X4.
 	var/suicide_cry = ""
 	//Antag panel properties
@@ -88,10 +88,10 @@ GLOBAL_LIST_EMPTY(antagonists)
 /datum/antagonist/proc/on_body_transfer(mob/living/old_body, mob/living/new_body)
 	SHOULD_CALL_PARENT(TRUE)
 	remove_innate_effects(old_body)
-	if(!soft_antag && old_body.stat != DEAD && !LAZYLEN(old_body.mind?.antag_datums))
+	if(old_body && old_body.stat != DEAD && !LAZYLEN(old_body.mind?.antag_datums))
 		old_body.remove_from_current_living_antags()
 	apply_innate_effects(new_body)
-	if(!soft_antag && new_body.stat != DEAD)
+	if(count_against_dynamic_roll_chance && new_body.stat != DEAD)
 		new_body.add_to_current_living_antags()
 
 //This handles the application of antag huds/special abilities
@@ -155,7 +155,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 		replace_banned_player()
 	else if(owner.current.client?.holder && (CONFIG_GET(flag/auto_deadmin_antagonists) || owner.current.client.prefs?.toggles & DEADMIN_ANTAGONIST))
 		owner.current.client.holder.auto_deadmin()
-	if(!soft_antag && owner.current.stat != DEAD)
+	if(count_against_dynamic_roll_chance && owner.current.stat != DEAD && owner.current.client)
 		owner.current.add_to_current_living_antags()
 
 /**
@@ -194,7 +194,7 @@ GLOBAL_LIST_EMPTY(antagonists)
 	remove_innate_effects()
 	clear_antag_moodies()
 	LAZYREMOVE(owner.antag_datums, src)
-	if(!LAZYLEN(owner.antag_datums) && !soft_antag)
+	if(!LAZYLEN(owner.antag_datums))
 		owner.current.remove_from_current_living_antags()
 	if(info_button)
 		QDEL_NULL(info_button)
