@@ -100,15 +100,21 @@
 	preload_cell_type = /obj/item/stock_parts/cell/high
 
 /obj/item/melee/baton/proc/deductcharge(chrgdeductamt)
-	if(cell)
+	var/mob/living/silicon/robot/borg_owner = loc
+	var/cell_charge
+	if(borg_owner && istype(borg_owner))
+		. = borg_owner.cell.use(chrgdeductamt + (borg_owner.cell.maxcharge*0.02))
+		cell_charge = borg_owner.cell.charge
+	else if(cell)
 		//Note this value returned is significant, as it will determine
 		//if a stun is applied or not
 		. = cell.use(chrgdeductamt)
-		if(turned_on && cell.charge < cell_hit_cost)
-			//we're below minimum, turn off
-			turned_on = FALSE
-			update_appearance()
-			playsound(src, activate_sound, 75, TRUE, -1)
+		cell_charge = cell.charge
+	if(turned_on && cell_check < cell_hit_cost)
+		//we're below minimum, turn off
+		turned_on = FALSE
+		update_appearance()
+		playsound(src, activate_sound, 75, TRUE, -1)
 
 
 /obj/item/melee/baton/update_icon_state()
@@ -283,6 +289,10 @@
 			playsound(H, 'sound/weapons/genhit.ogg', 50, TRUE)
 			return TRUE
 	return FALSE
+
+///Borg stunbaton. Hit cost is slightly lower because of deducting charge based on the max cell charge.
+/obj/item/melee/baton/loaded/robot
+	cell_hit_cost = 750
 
 //Makeshift stun baton. Replacement for stun gloves.
 /obj/item/melee/baton/cattleprod
