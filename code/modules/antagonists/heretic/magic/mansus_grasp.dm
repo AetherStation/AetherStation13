@@ -94,6 +94,8 @@
 		var/mob/living/carbon/carbon_hit = hit
 		carbon_hit.AdjustKnockdown(5 SECONDS)
 		carbon_hit.adjustStaminaLoss(80)
+	else if(iscyborg(hit))
+		hit.Stun(5 SECONDS)
 
 	return TRUE
 
