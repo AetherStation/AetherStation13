@@ -231,7 +231,7 @@ RSF
 	var/turf/T = get_turf(A)
 	playsound(src.loc, 'sound/machines/click.ogg', 10, 1)
 	to_chat(user, "Fabricating Donut..")
-	new /obj/item/food/snacks/donut(T)
+	new /obj/item/food/donut(T)
 	if (iscyborg(user))
 		var/mob/living/silicon/robot/R = user
 		R.cell.charge -= 100
