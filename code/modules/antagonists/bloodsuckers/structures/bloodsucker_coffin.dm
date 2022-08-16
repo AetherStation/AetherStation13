@@ -201,12 +201,20 @@
 	. = ..()
 	if(!.)
 		return FALSE
+
+	INVOKE_ASYNC(src, .proc/handle_sucker, user) //Invoked async so it wouldn't fuck up skittish element(fuck skittish element)
+
+/obj/structure/closet/crate/coffin/proc/handle_sucker(mob/living/user)
 	// Only the User can put themself into Torpor. If already in it, you'll start to heal.
 	if(user in src)
 		var/datum/antagonist/bloodsucker/bloodsuckerdatum = user.mind.has_antag_datum(/datum/antagonist/bloodsucker)
 		if(!bloodsuckerdatum)
 			return FALSE
-		LockMe(user)
+		if(!bloodsuckerdatum.coffin && !resident)
+			switch(input("Do you wish to claim this as your coffin? [get_area(src)] will be your lair, and you will learn to craft new structures.","Claim Lair") in list("Yes", "No"))
+				if("Yes")
+					ClaimCoffin(user)
+			LockMe(user)
 		bloodsuckerdatum.SpendRank()
 		/// You're in a Coffin, everything else is done, you're likely here to heal. Let's offer them the oppertunity to do so.
 		bloodsuckerdatum.Check_Begin_Torpor()
