@@ -179,7 +179,7 @@
 		if(!cell)
 			to_chat(user, span_warning("[src] does not have a power source!"))
 		else
-			to_chat(user, span_warning("[borg_check ? "your cell" : [src]] is out of charge."))
+			to_chat(user, span_warning("[borg_check ? "your cell" : src] is out of charge."))
 	update_appearance()
 	add_fingerprint(user)
 
