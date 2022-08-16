@@ -77,14 +77,13 @@
 		return TRUE
 	return FALSE
 
-/datum/bank_account/proc/payday(amt_of_paychecks, free = FALSE)
+/datum/bank_account/proc/payday(amt_of_paychecks = 1, free = FALSE)
 	if(!account_job)
 		return
 	var/money_to_transfer = round(account_job.paycheck * payday_modifier * amt_of_paychecks)
 	if(free)
 		adjust_money(money_to_transfer)
 		SSblackbox.record_feedback("amount", "free_income", money_to_transfer)
-		SSeconomy.station_target += money_to_transfer
 		log_econ("[money_to_transfer] credits were given to [src.account_holder]'s account from income.")
 	else
 		var/datum/bank_account/D = SSeconomy.get_dep_account(account_job.paycheck_department)
