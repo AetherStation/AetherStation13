@@ -99,3 +99,17 @@
       uplink preference, nothing has changed and you will still be charged.
   - bugfix: Uplink creation will now look for alternatives in PDA and radio if you
       have the pen preference.
+2022-08-16:
+  Canohaaaaaaa:
+  - bugfix: Xenos no longer runtime trying to adjust their body temperature according
+      to their dna.
+  Skog:
+  - balance: Nuke op war limit reduced to 25 players, with a scaling reward. 60 TC
+      extra minimum, 220 TC more depending on how close to the old minimum of 50 players
+      the server is.
+  - balance: Large changes to economy. Wages are back, inflation is gone, job tools
+      are free, mail arrives on sundays and holidays.
+  SuperSlayer:
+  - rscadd: Added latejoin changelings
+  SuperSlayer0:
+  - qol: Converted some swarmer messages to balloon alerts

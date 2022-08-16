@@ -1,5 +1,0 @@
-author: Canohaaaaaaa
-delete-after: true
-changes:
-  - bugfix: Xenos no longer runtime trying to adjust their body temperature according
-      to their dna.
