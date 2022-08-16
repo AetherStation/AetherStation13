@@ -575,7 +575,8 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		natural_bodytemperature_stabilization(environment, delta_time, times_fired)
 
 	if(!on_fire || areatemp > bodytemperature) // If we are not on fire or the area is hotter
-		adjust_bodytemperature((areatemp - bodytemperature), use_insulation=TRUE, use_steps=TRUE, hardsuit_fix=dna.species.bodytemp_normal - bodytemperature) //The suits adapt to all species
+		var/hardsuit_value = dna ? dna.species.bodytemp_normal - bodytemperature : FALSE
+		adjust_bodytemperature((areatemp - bodytemperature), use_insulation=TRUE, use_steps=TRUE, hardsuit_fix=hardsuit_value) //The suits adapt to all species
 
 /**
  * Used to stabilize the body temperature back to normal on living mobs

@@ -1,0 +1,6 @@
+author: Skog
+delete-after: true
+changes:
+  - balance: Nuke op war limit reduced to 25 players, with a scaling reward. 60 TC
+      extra minimum, 220 TC more depending on how close to the old minimum of 50 players
+      the server is.
