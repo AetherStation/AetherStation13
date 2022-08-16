@@ -400,17 +400,26 @@
 					uplink_loc = P
 			if(UPLINK_PEN)
 				uplink_loc = P
+				if(!uplink_loc)
+					uplink_loc = PDA
+				if(!uplink_loc)
+					uplink_loc = R
 			if(UPLINK_IMPLANT)
 				implant = TRUE
+				uplink_loc = implant
 
-	if(!uplink_loc) // We've looked everywhere, let's just implant you
-		implant = TRUE
+	if(!uplink_loc) // We've looked everywhere, let's just implant you at no extra cost
+		implant = "forced"
 
 	if(implant)
-		var/obj/item/implant/uplink/starting/new_implant = new(traitor_mob)
+		var/obj/item/implant/uplink/new_implant
+		if(implant == "forced")
+			new_implant = new /obj/item/implant/uplink/forced(traitor_mob)
+		else
+			new_implant = new /obj/item/implant/uplink/starting(traitor_mob)
 		new_implant.implant(traitor_mob, null, silent = TRUE)
 		if(!silent)
-			to_chat(traitor_mob, span_boldnotice("Your Syndicate Uplink has been cunningly implanted in you, for a small TC fee. Simply trigger the uplink to access it."))
+			to_chat(traitor_mob, span_boldnotice("Your Syndicate Uplink has been cunningly implanted in you. Simply trigger the uplink to access it."))
 		return new_implant
 
 	. = uplink_loc
