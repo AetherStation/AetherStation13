@@ -140,7 +140,7 @@
 
 //////////////////////////////////////////////
 //                                          //
-//           HERETIC SMUGGLER //
+//             HERETIC SMUGGLER             //
 //                                          //
 //////////////////////////////////////////////
 
@@ -154,4 +154,22 @@
 	weight = 4
 	cost = 10
 	requirements = list(101,101,101,10,10,10,10,10,10,10)
+	repeatable = TRUE
+
+//////////////////////////////////////////////
+//                                          //
+//               CHANGELING                 //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/latejoin/changeling
+	name = "Changeling Infiltrator"   //Sorry no idea for a normal name 
+	antag_datum = /datum/antagonist/changeling
+	antag_flag = ROLE_CHANGELING
+	protected_roles = list("Security Officer", "Warden", "Head of Personnel", "Detective", "Head of Security", "Captain")
+	restricted_roles = list("AI","Cyborg")
+	required_candidates = 1
+	weight = 4
+	cost = 11
+	requirements = list(70,70,60,50,40,20,20,10,10,10)
 	repeatable = TRUE
