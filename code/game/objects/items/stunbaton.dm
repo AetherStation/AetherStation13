@@ -102,9 +102,9 @@
 /obj/item/melee/baton/proc/deductcharge(chrgdeductamt)
 	var/mob/living/silicon/robot/borg_owner = loc
 	var/cell_charge
-	if(borg_owner && istype(borg_owner))
-		. = borg_owner.cell.use(chrgdeductamt + (borg_owner.cell.maxcharge*0.02))
-		cell_charge = borg_owner.cell.charge
+	if(borg_owner && istype(borg_owner) && chrgdeductamt > 0)
+		. = borg_owner.cell.use(chrgdeductamt + borg_owner.cell.maxcharge*0.02)
+		cell_charge = borg_owner.cell.charge - borg_owner.cell.maxcharge*0.02 //Instead of adding the max cell charge penalty to cell_hit_cost we substract it from cell_charge
 	else if(cell)
 		//Note this value returned is significant, as it will determine
 		//if a stun is applied or not
@@ -167,7 +167,10 @@
 	toggle_on(user)
 
 /obj/item/melee/baton/proc/toggle_on(mob/user)
-	if(cell && cell.charge >= cell_hit_cost)
+	var/mob/living/silicon/robot/borg_owner
+	var/borg_check = borg_owner && istype(borg_owner)
+	var/obj/item/stock_parts/cell/used_cell = borg_check ? borg_owner.cell : cell
+	if(used_cell && used_cell.charge >= cell_hit_cost)
 		turned_on = !turned_on
 		to_chat(user, span_notice("[src] is now [turned_on ? "on" : "off"]."))
 		playsound(src, activate_sound, 75, TRUE, -1)
@@ -176,7 +179,7 @@
 		if(!cell)
 			to_chat(user, span_warning("[src] does not have a power source!"))
 		else
-			to_chat(user, span_warning("[src] is out of charge."))
+			to_chat(user, span_warning("[borg_check ? "your cell" : [src]] is out of charge."))
 	update_appearance()
 	add_fingerprint(user)
 
