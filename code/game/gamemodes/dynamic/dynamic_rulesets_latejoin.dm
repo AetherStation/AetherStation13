@@ -163,7 +163,7 @@
 //////////////////////////////////////////////
 
 /datum/dynamic_ruleset/latejoin/changeling
-	name = "Changeling Infiltrator"   //Sorry no idea for a normal name
+	name = "Changeling Infiltrator"   //Sorry no idea for a normal name 
 	antag_datum = /datum/antagonist/changeling
 	antag_flag = ROLE_CHANGELING
 	protected_roles = list("Security Officer", "Warden", "Head of Personnel", "Detective", "Head of Security", "Captain")
