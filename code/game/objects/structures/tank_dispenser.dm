@@ -53,7 +53,7 @@
 	else if(I.tool_behaviour == TOOL_WRENCH)
 		default_unfasten_wrench(user, I, time = 20)
 		return
-	else if(!user.combat_mode)
+	else if(!user.istate.harm)
 		to_chat(user, span_notice("[I] does not fit into [src]."))
 		return
 	else

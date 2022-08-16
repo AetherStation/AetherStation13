@@ -102,7 +102,7 @@
 		update_appearance()
 		return
 
-	if(!user.combat_mode && !(W.item_flags & NOBLUDGEON))
+	if(!user.istate.harm && !(W.item_flags & NOBLUDGEON))
 		return attack_hand(user)
 	else
 		return ..()
@@ -133,7 +133,7 @@
 		id = "[port.id]_[id]"
 		setup_device()
 
-/obj/machinery/button/attack_hand(mob/user, list/modifiers)
+/obj/machinery/button/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

@@ -189,7 +189,7 @@
 	return ..()
 
 
-/obj/machinery/porta_turret_construct/attack_hand(mob/user, list/modifiers)
+/obj/machinery/porta_turret_construct/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

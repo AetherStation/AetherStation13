@@ -301,7 +301,7 @@
 		return
 	return ..()
 
-/obj/item/stack/medical/mesh/attack_hand(mob/user, list/modifiers)
+/obj/item/stack/medical/mesh/attack_hand(mob/user)
 	if(!is_open && user.get_inactive_held_item() == src)
 		to_chat(user, span_warning("You need to open [src] first."))
 		return

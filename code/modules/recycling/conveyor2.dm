@@ -192,13 +192,13 @@ GLOBAL_LIST_EMPTY(conveyors_by_id)
 			update_move_direction()
 			to_chat(user, span_notice("You reverse [src]'s direction."))
 
-	else if(!user.combat_mode)
+	else if(!user.istate.harm)
 		user.transferItemToLoc(I, drop_location())
 	else
 		return ..()
 
 // attack with hand, move pulled object onto conveyor
-/obj/machinery/conveyor/attack_hand(mob/user, list/modifiers)
+/obj/machinery/conveyor/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

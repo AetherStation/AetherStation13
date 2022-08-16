@@ -68,7 +68,7 @@
 	anchored = TRUE
 	hand_activated = FALSE
 
-/obj/item/hourglass/admin/attack_hand(mob/user, list/modifiers)
+/obj/item/hourglass/admin/attack_hand(mob/user)
 	. = ..()
 	if(user.client && user.client.holder)
 		toggle(user)

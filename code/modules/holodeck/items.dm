@@ -167,7 +167,7 @@
 /obj/machinery/readybutton/attackby(obj/item/W, mob/user, params)
 	to_chat(user, span_warning("The device is a solid button, there's nothing you can do with it!"))
 
-/obj/machinery/readybutton/attack_hand(mob/user, list/modifiers)
+/obj/machinery/readybutton/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

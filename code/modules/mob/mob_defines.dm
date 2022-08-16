@@ -227,3 +227,8 @@
 
 	/// A mock client, provided by tests and friends
 	var/datum/client_interface/mock_client
+
+	/// Path to forced interaction mode, should be used for mobs that have special interaction modes such as cyborgs.
+	var/forced_interaction_mode
+	/// The interaction state of this mob, istate for short because typing interaction_state is annoying.
+	var/datum/interaction_state/istate = new

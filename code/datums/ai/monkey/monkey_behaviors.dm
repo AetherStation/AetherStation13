@@ -182,7 +182,8 @@
 
 	living_pawn.face_atom(target)
 
-	living_pawn.set_combat_mode(TRUE)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	living_pawn.istate.harm = TRUE
 
 	if(isnull(controller.blackboard[BB_MONKEY_GUN_WORKED]))
 		controller.blackboard[BB_MONKEY_GUN_WORKED] = TRUE

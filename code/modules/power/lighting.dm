@@ -89,7 +89,7 @@
 	else
 		. += span_danger("This casing doesn't support power cells for backup power.")
 
-/obj/structure/light_construct/attack_hand(mob/user, list/modifiers)
+/obj/structure/light_construct/attack_hand(mob/user)
 	if(cell)
 		user.visible_message(span_notice("[user] removes [cell] from [src]!"), span_notice("You remove [cell]."))
 		user.put_in_hands(cell)

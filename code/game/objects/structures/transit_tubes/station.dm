@@ -59,7 +59,7 @@
 	qdel(R)
 
 
-/obj/structure/transit_tube/station/attack_hand(mob/user, list/modifiers)
+/obj/structure/transit_tube/station/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

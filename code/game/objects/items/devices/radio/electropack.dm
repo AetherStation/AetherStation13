@@ -29,7 +29,7 @@
 	return (FIRELOSS)
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/electropack/attack_hand(mob/user, list/modifiers)
+/obj/item/electropack/attack_hand(mob/user)
 	if(iscarbon(user))
 		var/mob/living/carbon/C = user
 		if(src == C.back)

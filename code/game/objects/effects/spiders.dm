@@ -34,7 +34,7 @@
 	var/genetic = FALSE
 	icon_state = "stickyweb1"
 
-/obj/structure/spider/stickyweb/attack_hand(mob/user, list/modifiers)
+/obj/structure/spider/stickyweb/attack_hand(mob/user)
 	.= ..()
 	if(.)
 		return

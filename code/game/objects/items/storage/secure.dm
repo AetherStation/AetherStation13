@@ -197,7 +197,7 @@
 	new /obj/item/paper(src)
 	new /obj/item/pen(src)
 
-/obj/item/storage/secure/safe/attack_hand(mob/user, list/modifiers)
+/obj/item/storage/secure/safe/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

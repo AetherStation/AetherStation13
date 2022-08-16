@@ -391,7 +391,7 @@
 
 /datum/species/golem/uranium/spec_attack_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
 	..()
-	if(COOLDOWN_FINISHED(src, radiation_emission_cooldown) && M != H &&  M.combat_mode)
+	if(COOLDOWN_FINISHED(src, radiation_emission_cooldown) && M != H &&  M.istate.harm)
 		radiation_emission(H)
 
 /datum/species/golem/uranium/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, mob/living/carbon/human/H)
@@ -507,7 +507,7 @@
 
 /datum/species/golem/bluespace/spec_attack_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
 	..()
-	if(world.time > last_teleport + teleport_cooldown && M != H &&  M.combat_mode)
+	if(world.time > last_teleport + teleport_cooldown && M != H &&  M.istate.harm)
 		reactive_teleport(H)
 
 /datum/species/golem/bluespace/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, mob/living/carbon/human/H)
@@ -632,7 +632,7 @@
 
 /datum/species/golem/bananium/spec_attack_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
 	..()
-	if(COOLDOWN_FINISHED(src, banana_cooldown) && M != H &&  M.combat_mode)
+	if(COOLDOWN_FINISHED(src, banana_cooldown) && M != H &&  M.istate.harm)
 		new /obj/item/grown/bananapeel/specialpeel(get_turf(H))
 		COOLDOWN_START(src, banana_cooldown, banana_delay)
 
@@ -920,7 +920,7 @@
 
 /datum/species/golem/bronze/spec_attack_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
 	..()
-	if(world.time > last_gong_time + gong_cooldown && M.combat_mode)
+	if(world.time > last_gong_time + gong_cooldown && M.istate.harm)
 		gong(H)
 
 /datum/species/golem/bronze/spec_attacked_by(obj/item/I, mob/living/user, obj/item/bodypart/affecting, mob/living/carbon/human/H)
