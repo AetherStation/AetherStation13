@@ -239,6 +239,9 @@
 	L.Jitter(20)
 	L.set_confusion(max(confusion_amt, L.get_confusion()))
 	L.stuttering = max(8, L.stuttering)
+	
+	var/obj/item/bodypart/affecting = L.get_bodypart(user.zone_selected)
+	var/armor_block = L.run_armor_check(affecting, ENERGY)
 	L.apply_damage(stamina_loss_amt, STAMINA, BODY_ZONE_CHEST)
 
 	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
