@@ -110,7 +110,7 @@
 		//if a stun is applied or not
 		. = cell.use(chrgdeductamt)
 		cell_charge = cell.charge
-	if(turned_on && cell_check < cell_hit_cost)
+	if(turned_on && cell_charge < cell_hit_cost)
 		//we're below minimum, turn off
 		turned_on = FALSE
 		update_appearance()
