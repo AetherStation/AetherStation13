@@ -335,7 +335,7 @@
 		return FALSE
 	var/mob/living/carbon/buckled_carbons = pick(buckled_mobs)
 	var/mob/living/L = user
-	if(L.combat_mode == TRUE)
+	if(!L.istate.harm)
 		if(istype(bloodsuckerdatum))
 			unbuckle_mob(buckled_carbons)
 			return FALSE
@@ -624,7 +624,7 @@
 			toggle()
 			return
 		var/mob/living/carbon/target = pick(buckled_mobs)
-		if(target.stat >= DEAD || user.combat_mode == FALSE)
+		if(target.stat >= DEAD || !istate.harm)
 			unbuckle_mob(target)
 			return
 		if(user.blood_volume >= 150)
