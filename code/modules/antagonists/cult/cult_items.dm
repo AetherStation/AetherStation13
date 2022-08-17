@@ -855,7 +855,7 @@
 		if(M.health+5 < M.maxHealth)
 			M.adjustHealth(-5)
 	nodamage = TRUE
-	impact_effect_type = /obj/effect/temp_visual/cult/sparks(T)
+	impact_effect_type = /obj/effect/temp_visual/cult/sparks
 	return ..()
 
 
