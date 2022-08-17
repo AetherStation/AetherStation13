@@ -208,12 +208,12 @@
 	to_chat(user, span_danger("You [hulk_verb] [src]!"))
 	apply_damage(15, BRUTE, wound_bonus=10)
 
-/mob/living/carbon/human/attack_hand(mob/user, list/modifiers)
+/mob/living/carbon/human/attack_hand(mob/user)
 	if(..()) //to allow surgery to return properly.
 		return
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
-		dna.species.spec_attack_hand(H, src, null, modifiers)
+		dna.species.spec_attack_hand(H, src, null)
 
 /mob/living/carbon/human/attack_paw(mob/living/carbon/human/user, list/modifiers)
 	var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
@@ -225,7 +225,7 @@
 	if (martial_result != MARTIAL_ATTACK_INVALID)
 		return martial_result
 
-	if(LAZYACCESS(modifiers, RIGHT_CLICK)) //Always drop item in hand, if no item, get stunned instead.
+	if(user.istate.secondary) //Always drop item in hand, if no item, get stunned instead.
 		var/obj/item/I = get_active_held_item()
 		if(I && !(I.item_flags & ABSTRACT) && dropItemToGround(I))
 			playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
@@ -248,7 +248,7 @@
 				to_chat(user, span_danger("You tackle [src] down!"))
 		return TRUE
 
-	if(!user.combat_mode)
+	if(!user.istate.harm)
 		..() //shaking
 		return FALSE
 
@@ -276,7 +276,7 @@
 	if(!.)
 		return
 
-	if(LAZYACCESS(modifiers, RIGHT_CLICK)) //Always drop item in hand, if no item, get stun instead.
+	if(user.istate.secondary) //Always drop item in hand, if no item, get stun instead.
 		var/obj/item/I = get_active_held_item()
 		if(I && dropItemToGround(I))
 			playsound(loc, 'sound/weapons/slash.ogg', 25, TRUE, -1)
@@ -292,7 +292,7 @@
 			to_chat(user, span_danger("You tackle [src] down!"))
 		return TRUE
 
-	if(user.combat_mode)
+	if(user.istate.harm)
 		if (w_uniform)
 			w_uniform.add_fingerprint(user)
 		var/damage = prob(90) ? rand(user.melee_damage_lower, user.melee_damage_upper) : 0

@@ -79,7 +79,7 @@
 	create_reagents(20)
 	reagents.add_reagent(dispensedreagent, 20)
 
-/obj/structure/sink/oil_well/attack_hand(mob/user, list/modifiers)
+/obj/structure/sink/oil_well/attack_hand(mob/user)
 	flick("puddle-oil-splash",src)
 	reagents.expose(user, TOUCH, 20) //Covers target in 20u of oil.
 	to_chat(user, span_notice("You touch the pool of oil, only to get oil all over yourself. It would be wise to wash this off with water."))
@@ -100,7 +100,7 @@
 				return TRUE
 			to_chat(user, span_notice("\The [RG] is full."))
 			return FALSE
-	if(!user.combat_mode)
+	if(!user.istate.harm)
 		to_chat(user, span_notice("You won't have any luck getting \the [O] out if you drop it in the oil."))
 		return 1
 	else
@@ -162,7 +162,7 @@
 		to_chat(user, span_notice("The grave has already been dug up."))
 
 /obj/structure/closet/crate/grave/tool_interact(obj/item/S, mob/living/carbon/user)
-	if(!user.combat_mode) //checks to attempt to dig the grave, must be done with combat mode off only.
+	if(!user.istate.harm) //checks to attempt to dig the grave, must be done with combat mode off only.
 		if(!opened)
 			if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
 				to_chat(user, span_notice("You start start to dig open \the [src]  with \the [S]..."))
@@ -185,7 +185,7 @@
 			to_chat(user, span_notice("The grave has already been dug up."))
 			return 1
 
-	else if((user.combat_mode) && opened) //checks to attempt to remove the grave entirely.
+	else if((user.istate.harm) && opened) //checks to attempt to remove the grave entirely.
 		if(istype(S,cutting_tool) && S.tool_behaviour == TOOL_SHOVEL)
 			to_chat(user, span_notice("You start to remove \the [src]  with \the [S]."))
 			if (do_after(user,15, target = src))

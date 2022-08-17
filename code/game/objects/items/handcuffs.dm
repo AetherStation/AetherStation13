@@ -402,7 +402,7 @@
 		do_sparks(1, TRUE, src)
 		qdel(src)
 
-/obj/item/restraints/legcuffs/beartrap/energy/attack_hand(mob/user, list/modifiers)
+/obj/item/restraints/legcuffs/beartrap/energy/attack_hand(mob/user)
 	spring_trap(null, user)
 	return ..()
 

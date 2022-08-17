@@ -113,3 +113,9 @@
   - rscadd: Added latejoin changelings
   SuperSlayer0:
   - qol: Converted some swarmer messages to balloon alerts
+2022-08-17:
+  Skog:
+  - balance: Job bags (plant bag, chemistry bag, contruction bag etc etc) are now
+      normal sized down from bulky, and fits in your backpack.
+  TheChosenEvilOne:
+  - rscadd: A changed version of intents have been re-added as a user preference.

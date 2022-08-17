@@ -77,6 +77,9 @@
 	icon_state = "sunlight_night"
 	screen_loc = ui_sunlight_display
 
+/datum/hud/human
+	has_interaction_ui = TRUE
+
 /datum/hud/human/New(mob/living/carbon/human/owner)
 	..()
 
@@ -97,13 +100,6 @@
 	using.icon = ui_style
 	using.hud = src
 	static_inventory += using
-
-	action_intent = new /atom/movable/screen/combattoggle/flashy()
-	action_intent.hud = src
-	action_intent.icon = ui_style
-	action_intent.screen_loc = ui_combat_toggle
-	static_inventory += action_intent
-
 
 	using = new /atom/movable/screen/mov_intent
 	using.icon = ui_style

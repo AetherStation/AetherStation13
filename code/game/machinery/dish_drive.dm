@@ -47,7 +47,7 @@
 	flick("synthesizer_beam", src)
 
 /obj/machinery/dish_drive/attackby(obj/item/I, mob/living/user, params)
-	if(is_type_in_list(I, collectable_items) && !user.combat_mode)
+	if(is_type_in_list(I, collectable_items) && !user.istate.harm)
 		if(!user.transferItemToLoc(I, src))
 			return
 		LAZYADD(dish_drive_contents, I)

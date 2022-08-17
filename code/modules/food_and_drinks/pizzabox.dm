@@ -133,7 +133,7 @@
 	update_appearance()
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/pizzabox/attack_hand(mob/user, list/modifiers)
+/obj/item/pizzabox/attack_hand(mob/user)
 	if(user.get_inactive_held_item() != src)
 		return ..()
 	if(open)

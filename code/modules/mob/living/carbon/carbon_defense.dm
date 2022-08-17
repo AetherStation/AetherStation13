@@ -160,7 +160,7 @@
 
 	for(var/datum/surgery/S in surgeries)
 		if(body_position == LYING_DOWN || !S.lying_required)
-			if(!user.combat_mode)
+			if(!user.istate.harm)
 				if(S.next_step(user, modifiers))
 					return TRUE
 
@@ -185,7 +185,7 @@
 		if(D.spread_flags & DISEASE_SPREAD_CONTACT_SKIN)
 			ContactContractDisease(D)
 
-	if(!user.combat_mode)
+	if(!user.istate.harm)
 		help_shake_act(user)
 		return FALSE
 
@@ -440,7 +440,7 @@
 			return
 		M.visible_message(span_notice("[M] shakes [src] trying to get [p_them()] up!"), \
 						null, span_hear("You hear the rustling of clothes."), DEFAULT_MESSAGE_RANGE, list(M, src))
-		to_chat(M, span_notice("You shake [src] trying to pick [p_them()] up!"))
+		to_chat(M, span_notice("You shake [src] trying to get [p_them()] up!"))
 		to_chat(src, span_notice("[M] shakes you to get you up!"))
 
 	else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD) //Headpats!

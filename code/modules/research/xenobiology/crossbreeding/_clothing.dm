@@ -56,7 +56,7 @@ Slimecrossing Armor
 	set_light_color(newcolor)
 	set_light(5)
 
-/obj/structure/light_prism/attack_hand(mob/user, list/modifiers)
+/obj/structure/light_prism/attack_hand(mob/user)
 	to_chat(user, span_notice("You dispel [src]."))
 	qdel(src)
 
@@ -116,7 +116,7 @@ Slimecrossing Armor
 			return TRUE
 	return FALSE
 
-/obj/item/clothing/head/peaceflower/attack_hand(mob/user, list/modifiers)
+/obj/item/clothing/head/peaceflower/attack_hand(mob/user)
 	if(at_peace_check(user))
 		return
 	return ..()

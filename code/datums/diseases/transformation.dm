@@ -69,7 +69,8 @@
 		if(istype(new_mob))
 			if(bantype && is_banned_from(affected_mob.ckey, bantype))
 				replace_banned_player(new_mob)
-			new_mob.set_combat_mode(TRUE)
+			// TODO: make sure this is correct, used to be set_combat_mode() call.
+			new_mob.istate.harm = TRUE
 			if(affected_mob.mind)
 				affected_mob.mind.transfer_to(new_mob)
 			else
