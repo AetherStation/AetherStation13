@@ -82,7 +82,7 @@
 	. = ..()
 	INVOKE_ASYNC(src, .proc/latetoggle)
 
-/obj/machinery/door/firedoor/attack_hand(mob/user, list/modifiers)
+/obj/machinery/door/firedoor/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

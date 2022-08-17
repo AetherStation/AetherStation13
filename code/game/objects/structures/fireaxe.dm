@@ -41,7 +41,7 @@
 /obj/structure/fireaxecabinet/attackby(obj/item/I, mob/living/user, params)
 	if(iscyborg(user) || I.tool_behaviour == TOOL_MULTITOOL)
 		toggle_lock(user)
-	else if(I.tool_behaviour == TOOL_WELDER && !user.combat_mode && !broken)
+	else if(I.tool_behaviour == TOOL_WELDER && !user.istate.harm && !broken)
 		if(obj_integrity < max_integrity)
 			if(!I.tool_start_check(user, amount=2))
 				return
@@ -121,7 +121,7 @@
 		fireaxe = null
 	qdel(src)
 
-/obj/structure/fireaxecabinet/attack_hand(mob/user, list/modifiers)
+/obj/structure/fireaxecabinet/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

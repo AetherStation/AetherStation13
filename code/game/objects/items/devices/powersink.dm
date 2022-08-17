@@ -110,7 +110,7 @@
 /obj/item/powersink/attack_ai()
 	return
 
-/obj/item/powersink/attack_hand(mob/user, list/modifiers)
+/obj/item/powersink/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

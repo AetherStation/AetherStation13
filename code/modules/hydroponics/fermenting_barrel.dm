@@ -57,7 +57,7 @@
 	else
 		return ..()
 
-/obj/structure/fermenting_barrel/attack_hand(mob/user, list/modifiers)
+/obj/structure/fermenting_barrel/attack_hand(mob/user)
 	if(!can_open)
 		return
 	open = !open

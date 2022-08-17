@@ -46,7 +46,7 @@
 	return attack_hand(user, modifiers)
 
 /mob/living/silicon/attack_larva(mob/living/carbon/alien/larva/L)
-	if(!L.combat_mode)
+	if(!L.istate.harm)
 		visible_message(span_notice("[L.name] rubs its head against [src]."))
 
 /mob/living/silicon/attack_hulk(mob/living/carbon/human/user)
@@ -64,10 +64,9 @@
 	. = FALSE
 	if(SEND_SIGNAL(src, COMSIG_ATOM_ATTACK_HAND, user, modifiers) & COMPONENT_CANCEL_ATTACK_CHAIN)
 		. = TRUE
-	if(has_buckled_mobs() && !user.combat_mode)
+	if(has_buckled_mobs() && !user.istate.harm)
 		user_unbuckle_mob(buckled_mobs[1], user)
-	else
-		if(user.combat_mode)
+  else if(user.istate.harm)
 			user.do_attack_animation(src, user?.dna?.species.attack_effect ? user.dna.species.attack_effect : ATTACK_EFFECT_PUNCH)
 			playsound(src.loc, 'sound/effects/bang.ogg', 10, TRUE)
 			var/trait_check = HAS_TRAIT(user, TRAIT_STRONG_PUNCHES) || user?.mind.martial_art
@@ -77,6 +76,8 @@
 			to_chat(user, span_danger("You [atck_verb] [src][trait_check : "" ? ", but don't leave a dent"]!"))
 			if(trait_check)
 				apply_damage(rand(user.dna.species.punchdamagelow, user.dna.species.punchdamagehigh), user?.dna?.species.attack_type ? user.dna.species.attack_type : BRUTE)
+		else if (user.istate.control)
+			grabbedby(user)
 		else
 			visible_message(span_notice("[user] pets [src]."), \
 							span_notice("[user] pets you."), null, null, user)
@@ -85,7 +86,7 @@
 
 
 /mob/living/silicon/attack_drone(mob/living/simple_animal/drone/M)
-	if(M.combat_mode)
+	if(M.istate.harm)
 		return
 	return ..()
 

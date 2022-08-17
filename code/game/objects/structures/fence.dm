@@ -122,7 +122,7 @@
 	open = TRUE
 	density = TRUE
 
-/obj/structure/fence/door/attack_hand(mob/user, list/modifiers)
+/obj/structure/fence/door/attack_hand(mob/user)
 	if(can_open(user))
 		toggle(user)
 

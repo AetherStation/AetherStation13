@@ -70,7 +70,7 @@
 			if(pushed_mob.buckled)
 				to_chat(user, span_warning("[pushed_mob] is buckled to [pushed_mob.buckled]!"))
 				return
-			if(user.combat_mode)
+			if(user.istate.harm)
 				switch(user.grab_state)
 					if(GRAB_PASSIVE)
 						to_chat(user, span_warning("You need a better grip to do that!"))
@@ -164,7 +164,7 @@
 
 /obj/structure/table/attackby(obj/item/I, mob/living/user, params)
 	var/list/modifiers = params2list(params)
-	if(!(flags_1 & NODECONSTRUCT_1) && LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(!(flags_1 & NODECONSTRUCT_1) && user.istate.secondary)
 		if(I.tool_behaviour == TOOL_SCREWDRIVER && deconstruction_ready)
 			to_chat(user, span_notice("You start disassembling [src]..."))
 			if(I.use_tool(src, user, 20, volume=50))
@@ -194,7 +194,7 @@
 		var/mob/living/carried_mob = riding_item.rider
 		if(carried_mob == user) //Piggyback user.
 			return
-		if(user.combat_mode)
+		if(user.istate.harm)
 			user.unbuckle_mob(carried_mob)
 			tablelimbsmash(user, carried_mob)
 		else
@@ -213,7 +213,7 @@
 				tableplace(user, carried_mob)
 		return TRUE
 
-	if(!user.combat_mode && !(I.item_flags & ABSTRACT))
+	if(!user.istate.harm && !(I.item_flags & ABSTRACT))
 		if(user.transferItemToLoc(I, drop_location(), silent = FALSE))
 			//Center the icon where the user clicked.
 			if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
@@ -649,12 +649,11 @@
 		step(O, get_dir(O, src))
 
 /obj/structure/rack/attackby(obj/item/W, mob/living/user, params)
-	var/list/modifiers = params2list(params)
-	if (W.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1) && LAZYACCESS(modifiers, RIGHT_CLICK))
+	if (W.tool_behaviour == TOOL_WRENCH && !(flags_1 & NODECONSTRUCT_1) && user.istate.secondary)
 		W.play_tool_sound(src)
 		deconstruct(TRUE)
 		return
-	if(user.combat_mode)
+	if(user.istate.harm)
 		return ..()
 	if(user.transferItemToLoc(W, drop_location()))
 		return 1

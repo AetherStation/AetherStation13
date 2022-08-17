@@ -114,7 +114,7 @@
 			to_chat(user, span_notice("You add [O] to [src.name]."))
 			updateUsrDialog()
 		return
-	else if(!user.combat_mode)
+	else if(!user.istate.harm)
 		to_chat(user, span_warning("You can't extract any seeds from \the [O.name]!"))
 	else
 		return ..()

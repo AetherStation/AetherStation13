@@ -250,6 +250,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	prefs.last_ip = address //these are gonna be used for banning
 	prefs.last_id = computer_id //these are gonna be used for banning
 	fps = (prefs.clientfps < 0) ? RECOMMENDED_FPS : prefs.clientfps
+	var/datum/interaction_mode/IM = GLOB.available_interaction_modes[prefs.interaction_mode]
+	if (mob?.forced_interaction_mode)
+		IM = mob.forced_interaction_mode
+	imode = new IM (src)
 
 	if(fexists(roundend_report_file()))
 		add_verb(src, /client/proc/show_previous_roundend_report)
@@ -503,6 +507,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	QDEL_NULL(view_size)
 	QDEL_NULL(void)
 	QDEL_NULL(tooltips)
+	QDEL_NULL(imode)
 	seen_messages = null
 	Master.UpdateTickRate()
 	..() //Even though we're going to be hard deleted there are still some things that want to know the destroy is happening

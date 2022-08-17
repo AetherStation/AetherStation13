@@ -1,7 +1,5 @@
 #define FILE_RECENT_MAPS "data/RecentMaps.json"
 
-#define KEEP_ROUNDS_MAP 3
-
 SUBSYSTEM_DEF(persistence)
 	name = "Persistence"
 	init_order = INIT_ORDER_PERSISTENCE
@@ -126,7 +124,7 @@ SUBSYSTEM_DEF(persistence)
 		for(var/name in SSpersistence.saved_maps)
 			if(VM.map_name == name)
 				run++
-		if(run >= runsallowed) //If run twice in the last KEEP_ROUNDS_MAP + 1 (including current) rounds, disable map for voting and rotation.
+		if(run >= runsallowed) //If run twice in the last map_rotation_pool + 1 (including current) rounds, disable map for voting and rotation.
 			blocked_maps += VM.map_name
 
 /datum/controller/subsystem/persistence/proc/SetUpTrophies(list/trophy_items)
@@ -278,9 +276,12 @@ SUBSYSTEM_DEF(persistence)
 		saved_trophies += list(data)
 
 /datum/controller/subsystem/persistence/proc/CollectMaps()
-	if(length(saved_maps) > KEEP_ROUNDS_MAP) //Get rid of extras from old configs.
-		saved_maps.Cut(KEEP_ROUNDS_MAP+1)
-	var/mapstosave = min(length(saved_maps)+1, KEEP_ROUNDS_MAP)
+	var/numberofmaps = CONFIG_GET(number/map_rotation_pool)
+	if(numberofmaps < 1)	// Config is disabled or someone fucked up.
+		return
+	if(length(saved_maps) > numberofmaps) //Get rid of extras from old configs.
+		saved_maps.Cut(numberofmaps+1)
+	var/mapstosave = min(length(saved_maps)+1, numberofmaps)
 	if(length(saved_maps) < mapstosave) //Add extras if too short, one per round.
 		saved_maps += mapstosave
 	for(var/i = mapstosave; i > 1; i--)
