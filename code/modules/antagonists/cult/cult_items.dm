@@ -835,6 +835,7 @@
 	name = "blood bolt"
 	icon_state = "mini_leaper"
 	nondirectional_sprite = TRUE
+	nodamage = FALSE
 	damage_type = BRUTE
 	impact_effect_type = /obj/effect/temp_visual/dir_setting/bloodsplatter
 
@@ -853,8 +854,9 @@
 		var/mob/living/simple_animal/M = target
 		if(M.health+5 < M.maxHealth)
 			M.adjustHealth(-5)
-	new /obj/effect/temp_visual/cult/sparks(T)
-	qdel(src)
+	nodamage = TRUE
+	impact_effect_type = /obj/effect/temp_visual/cult/sparks(T)
+	return ..()
 
 
 /obj/item/blood_beam
