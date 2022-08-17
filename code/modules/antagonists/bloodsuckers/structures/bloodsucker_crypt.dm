@@ -624,7 +624,7 @@
 			toggle()
 			return
 		var/mob/living/carbon/target = pick(buckled_mobs)
-		if(target.stat >= DEAD || !istate.harm)
+		if(target.stat >= DEAD || !user.istate.harm)
 			unbuckle_mob(target)
 			return
 		if(user.blood_volume >= 150)
