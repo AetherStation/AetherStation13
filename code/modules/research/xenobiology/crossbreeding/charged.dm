@@ -78,10 +78,10 @@ Charged extracts:
 
 /obj/item/slimecross/charged/yellow
 	colour = "yellow"
-	effect_desc = "Creates a hypercharged slime cell battery, which has high capacity but takes longer to recharge."
+	effect_desc = "Creates a hypercharged slime cell battery, which has high capacity and recharges constantly at very fast rate."
 
 /obj/item/slimecross/charged/yellow/do_effect(mob/user)
-	new /obj/item/stock_parts/cell/high/slime_hypercharged(get_turf(user))
+	new /obj/item/stock_parts/cell/high/slime/hypercharged(get_turf(user))
 	user.visible_message(span_notice("[src] sparks violently, and swells with electric power!"))
 	..()
 
