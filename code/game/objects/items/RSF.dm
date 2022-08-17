@@ -42,7 +42,7 @@ RSF
 	///A list of surfaces that we are allowed to place things on.
 	var/list/allowed_surfaces = list(/turf/open/floor, /obj/structure/table)
 	///The unit of mesure of the matter, for use in text
-	var/discriptor = "fabrication-units"
+	var/descriptor = "fabrication-units"
 	///The verb that describes what we're doing, for use in text
 	var/action_type = "Dispensing"
 	///Holds a copy of world.time from the last time the synth was used.
@@ -57,7 +57,7 @@ RSF
 
 /obj/item/rsf/examine(mob/user)
 	. = ..()
-	. += span_notice("It currently holds [matter]/[max_matter] [discriptor].")
+	. += span_notice("It currently holds [matter]/[max_matter] [descriptor].")
 
 /obj/item/rsf/cyborg
 	matter = 30
@@ -66,7 +66,7 @@ RSF
 	if(is_type_in_list(W,matter_by_item))//If the thing we got hit by is in our matter list
 		var/tempMatter = matter_by_item[W.type] + matter
 		if(tempMatter > max_matter)
-			to_chat(user, span_warning("\The [src] can't hold any more [discriptor]!"))
+			to_chat(user, span_warning("\The [src] can't hold any more [descriptor]!"))
 			return
 		if(isstack(W))
 			var/obj/item/stack/stack = W
@@ -75,7 +75,7 @@ RSF
 			qdel(W)
 		matter = tempMatter //We add its value
 		playsound(src.loc, 'sound/machines/click.ogg', 10, TRUE)
-		to_chat(user, span_notice("\The [src] now holds [matter]/[max_matter] [discriptor]."))
+		to_chat(user, span_notice("\The [src] now holds [matter]/[max_matter] [descriptor]."))
 		icon_state = base_icon_state//and set the icon state to the base state
 	else
 		return ..()
@@ -140,11 +140,11 @@ RSF
 		return TRUE
 	else
 		if(matter - 1 < 0)
-			to_chat(user, span_warning("\The [src] doesn't have enough [discriptor] left."))
+			to_chat(user, span_warning("\The [src] doesn't have enough [descriptor] left."))
 			icon_state = spent_icon_state
 			return FALSE
 		matter--
-		to_chat(user, span_notice("\The [src] now holds [matter]/[max_matter] [discriptor]."))
+		to_chat(user, span_notice("\The [src] now holds [matter]/[max_matter] [descriptor]."))
 		return TRUE
 
 ///Helper proc that iterates through all the things we are allowed to spawn on, and sees if the passed atom is one of them
@@ -163,9 +163,9 @@ RSF
 	max_matter = 10
 	cost_by_item = list(/obj/item/food/cookie = 100)
 	dispense_cost = 100
-	discriptor = "cookie-units"
+	descriptor = "cookie-units"
 	action_type = "Fabricates"
-	cooldowndelay = 10 SECONDS
+	cooldowndelay = 2 SECONDS
 	///Tracks whether or not the cookiesynth is about to print a poisoned cookie
 	var/toxin = FALSE //This might be better suited to some initialize fuckery, but I don't have a good "poisoned" sprite
 
