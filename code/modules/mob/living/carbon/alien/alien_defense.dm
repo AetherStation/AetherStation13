@@ -18,7 +18,7 @@ In all, this is a lot like the monkey code. /N
 		to_chat(user, "No attacking people at spawn, you jackass.")
 		return
 
-	if(user.combat_mode)
+	if(user.istate.harm)
 		if(user == src && check_self_for_injuries())
 			return
 		set_resting(FALSE)
@@ -29,6 +29,8 @@ In all, this is a lot like the monkey code. /N
 		AdjustUnconscious(-60)
 		AdjustSleeping(-100)
 		visible_message(span_notice("[user.name] nuzzles [src] trying to wake [p_them()] up!"))
+	else if (user.istate.control)
+		grabbedby(user)
 	else if(health > 0)
 		user.do_attack_animation(src, ATTACK_EFFECT_BITE)
 		playsound(loc, 'sound/weapons/bite.ogg', 50, TRUE, -1)
@@ -56,12 +58,14 @@ In all, this is a lot like the monkey code. /N
 	if (martial_result != MARTIAL_ATTACK_INVALID)
 		return martial_result
 
-	if(user.combat_mode)
-		if(LAZYACCESS(modifiers, RIGHT_CLICK))
-			user.do_attack_animation(src, ATTACK_EFFECT_DISARM)
-			return TRUE
+	if(user.istate.secondary)
+		user.do_attack_animation(src, ATTACK_EFFECT_DISARM)
+		return TRUE
+	else if(user.istate.harm)
 		user.do_attack_animation(src, ATTACK_EFFECT_PUNCH)
 		return TRUE
+	else if (user.istate.control)
+		grabbedby(user)
 	else
 		help_shake_act(user)
 

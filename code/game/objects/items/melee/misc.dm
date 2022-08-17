@@ -298,9 +298,8 @@
 		return
 	if(!isliving(target))
 		return
-	var/list/modifiers = params2list(params)
 
-	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(user.istate.harm && !user.istate.secondary)
 		..()
 		return
 	if(cooldown_check > world.time)
@@ -629,7 +628,7 @@
 			to_chat(user, span_warning("[target] doesn't seem to want to get on [src]!"))
 	update_appearance()
 
-/obj/item/melee/roastingstick/attack_hand(mob/user, list/modifiers)
+/obj/item/melee/roastingstick/attack_hand(mob/user)
 	..()
 	if (held_sausage)
 		user.put_in_hands(held_sausage)

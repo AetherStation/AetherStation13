@@ -16,7 +16,7 @@
 	processing_flags = START_PROCESSING_MANUALLY
 
 	var/points = 0
-	var/ore_multiplier = 1
+	var/ore_multiplier = 0.5
 	var/point_upgrade = 1
 	var/list/ore_values = list(/datum/material/iron = 1, /datum/material/glass = 1,  /datum/material/plasma = 15,  /datum/material/silver = 16, /datum/material/gold = 18, /datum/material/titanium = 30, /datum/material/uranium = 30, /datum/material/diamond = 50, /datum/material/bluespace = 50, /datum/material/bananium = 60)
 	/// Variable that holds a timer which is used for callbacks to `send_console_message()`. Used for preventing multiple calls to this proc while the ORM is eating a stack of ores.
@@ -35,10 +35,28 @@
 	materials = null
 	return ..()
 
+/**
+ * Ore multiplier will range between 0.75 at tier 1, and 1.5 at tier 4.
+ * Point generation will range between 1 at tier 1, with its first upgrade to 1.25 at tier 3. Maxes out at 1.5 at tier 4.
+*/
+/obj/machinery/mineral/ore_redemption/RefreshParts()
+	var/ore_multiplier_temp = 0.5
+	var/point_upgrade_temp = 0.5
+	for(var/obj/item/stock_parts/manipulator/M in component_parts)
+		point_upgrade_temp += (0.25 * M.rating)
+	point_upgrade = max(point_upgrade_temp, 1)
+
+	for(var/obj/item/stock_parts/matter_bin/B in component_parts)
+		ore_multiplier_temp += (0.125 * B.rating)
+	for(var/obj/item/stock_parts/micro_laser/L in component_parts)
+		ore_multiplier_temp += (0.125 * L.rating)
+	ore_multiplier = min(1.5, round(ore_multiplier_temp, 0.01))
+
 /obj/machinery/mineral/ore_redemption/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: Smelting <b>[ore_multiplier]</b> sheet(s) per piece of ore.<br>Reward point generation at <b>[point_upgrade*100]%</b>.")
+		. += "You notice a new looking sticker on the side. It reads: \"Do not move after assembly.\""
+		. += span_notice("The status display reads:<br>Smelting <b>[ore_multiplier]</b> sheet(s) per piece of ore.<br>Reward point generation at <b>[point_upgrade*100]%</b>.")
 	if(panel_open)
 		. += span_notice("Alt-click to rotate the input and output direction.")
 
@@ -152,13 +170,7 @@
 		console_notify_timer = addtimer(CALLBACK(src, .proc/send_console_message), 5 SECONDS)
 
 /obj/machinery/mineral/ore_redemption/default_unfasten_wrench(mob/user, obj/item/I)
-	. = ..()
-	if(. != SUCCESSFUL_UNFASTEN)
-		return
-	if(anchored)
-		register_input_turf() // someone just wrenched us down, re-register the turf
-	else
-		unregister_input_turf() // someone just un-wrenched us, unregister the turf
+	return CANT_UNFASTEN
 
 /obj/machinery/mineral/ore_redemption/attackby(obj/item/W, mob/user, params)
 	if(default_unfasten_wrench(user, W))

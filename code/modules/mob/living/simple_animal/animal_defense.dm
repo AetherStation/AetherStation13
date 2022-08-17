@@ -3,7 +3,7 @@
 	if (..())
 		return TRUE
 
-	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(user.istate.secondary)
 		user.do_attack_animation(src, ATTACK_EFFECT_DISARM)
 		playsound(src, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 		var/shove_dir = get_dir(user, src)
@@ -19,7 +19,9 @@
 		to_chat(src, span_userdanger("You're pushed by [user.name]!"))
 		return TRUE
 
-	if(!user.combat_mode)
+	if (user.istate.control)
+		grabbedby(user)
+	else if(!user.istate.harm)
 		if (stat == DEAD)
 			return
 		visible_message(span_notice("[user] [response_help_continuous] [src]."), \
@@ -50,13 +52,13 @@
 	to_chat(user, span_danger("You punch [src]!"))
 	adjustBruteLoss(15)
 
-/mob/living/simple_animal/attack_paw(mob/living/carbon/human/user, list/modifiers)
+/mob/living/simple_animal/attack_paw(mob/living/carbon/human/user)
 	if(..()) //successful monkey bite.
 		if(stat != DEAD)
 			var/damage = rand(1, 3)
 			attack_threshold_check(damage)
 			return 1
-	if (!user.combat_mode)
+	if (!user.istate.harm)
 		if (health > 0)
 			visible_message(span_notice("[user.name] [response_help_continuous] [src]."), \
 							span_notice("[user.name] [response_help_continuous] you."), null, COMBAT_MESSAGE_RANGE, user)
@@ -64,9 +66,9 @@
 			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, TRUE, -1)
 
 
-/mob/living/simple_animal/attack_alien(mob/living/carbon/alien/humanoid/user, list/modifiers)
+/mob/living/simple_animal/attack_alien(mob/living/carbon/alien/humanoid/user)
 	if(..()) //if harm or disarm intent.
-		if(LAZYACCESS(modifiers, RIGHT_CLICK))
+		if(user.istate.secondary)
 			playsound(loc, 'sound/weapons/pierce.ogg', 25, TRUE, -1)
 			visible_message(span_danger("[user] [response_disarm_continuous] [name]!"), \
 							span_userdanger("[user] [response_disarm_continuous] you!"), null, COMBAT_MESSAGE_RANGE, user)
@@ -90,7 +92,7 @@
 		if(.)
 			L.amount_grown = min(L.amount_grown + damage, L.max_grown)
 
-/mob/living/simple_animal/attack_animal(mob/living/simple_animal/user, list/modifiers)
+/mob/living/simple_animal/attack_animal(mob/living/simple_animal/user)
 	. = ..()
 	if(.)
 		var/damage = rand(user.melee_damage_lower, user.melee_damage_upper)
@@ -104,7 +106,7 @@
 		return attack_threshold_check(damage)
 
 /mob/living/simple_animal/attack_drone(mob/living/simple_animal/drone/M)
-	if(M.combat_mode) //No kicking dogs even as a rogue drone. Use a weapon.
+	if(M.istate.harm) //No kicking dogs even as a rogue drone. Use a weapon.
 		return
 	return ..()
 

@@ -44,19 +44,21 @@
 
 /mob/living/simple_animal/hostile/hivebot/Aggro()
 	. = ..()
-	set_combat_mode(TRUE)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	istate.harm = TRUE
 	update_icons()
 	if(prob(5))
 		say(pick("INTRUDER DETECTED!", "CODE 7-34.", "101010!!"), forced = type)
 
 /mob/living/simple_animal/hostile/hivebot/LoseAggro()
 	. = ..()
-	set_combat_mode(FALSE)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	istate.harm = FALSE
 	update_icons()
 
 /mob/living/simple_animal/hostile/hivebot/update_icons()
 	QDEL_NULL(alert_light)
-	if(combat_mode)
+	if(istate.harm)
 		icon_state = "[initial(icon_state)]_attack"
 		alert_light = mob_light(6, 0.4, COLOR_RED_LIGHT)
 	else

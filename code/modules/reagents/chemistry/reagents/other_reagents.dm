@@ -1559,6 +1559,23 @@
 		myseed.adjust_potency(round(chems.get_reagent_amount(src.type) * 0.3))
 		myseed.adjust_yield(round(chems.get_reagent_amount(src.type) * 0.1))
 
+/datum/reagent/anfo
+	name = "Ammonium Nitrate"
+	description = "High explosive fertilizer"
+	reagent_state = LIQUID
+	color = "#db5a5a"
+	metabolization_rate = 0.125 * REAGENTS_METABOLISM
+	taste_description = "salt"
+	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
+
+/datum/reagent/plantnutriment/anfo/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray)
+	. = ..()
+	if(myseed && chems.has_reagent(src.type, 1))
+		myseed.adjust_instability(0.1)
+		myseed.adjust_potency(round(chems.get_reagent_amount(src.type) * 0.3))
+		myseed.adjust_yield(round(chems.get_reagent_amount(src.type) * 0.3))
+		mytray.adjustHealth(round(chems.get_reagent_amount(src.type) * 0.1))
+
 /datum/reagent/plantnutriment/left4zednutriment
 	name = "Left 4 Zed"
 	description = "Unstable nutriment that makes plants mutate more often than usual."

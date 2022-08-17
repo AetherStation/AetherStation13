@@ -46,7 +46,7 @@
 	if(manifest)
 		. += "manifest"
 
-/obj/structure/closet/crate/attack_hand(mob/user, list/modifiers)
+/obj/structure/closet/crate/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

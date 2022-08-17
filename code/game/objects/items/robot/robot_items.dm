@@ -30,7 +30,7 @@
 
 	playsound(loc, 'sound/weapons/egloves.ogg', 50, TRUE, -1)
 
-	log_combat(user, M, "stunned", src, "(Combat mode: [user.combat_mode ? "On" : "Off"])")
+	log_combat(user, M, "stunned", src, "(ISTATE: [user.istate.logging()])")
 
 /obj/item/borg/cyborghug
 	name = "hugging module"
@@ -72,7 +72,7 @@
 			if(M.health >= 0)
 				if(isanimal(M))
 					var/list/modifiers = params2list(params)
-					if (!user.combat_mode && !LAZYACCESS(modifiers, RIGHT_CLICK))
+					if (!user.istate.harm && !user.istate.secondary)
 						M.attack_hand(user, modifiers) //This enables borgs to get the floating heart icon and mob emote from simple_animal's that have petbonus == true.
 					return
 				if(user.zone_selected == BODY_ZONE_HEAD)

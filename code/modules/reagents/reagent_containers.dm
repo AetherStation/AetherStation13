@@ -42,7 +42,7 @@
 	RegisterSignal(reagents, COMSIG_PARENT_QDELETING, .proc/on_reagents_del)
 
 /obj/item/reagent_containers/attack(mob/living/M, mob/living/user, params)
-	if (!user.combat_mode)
+	if (!user.istate.harm)
 		return
 	return ..()
 

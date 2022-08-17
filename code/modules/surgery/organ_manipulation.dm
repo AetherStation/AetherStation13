@@ -65,6 +65,8 @@
 	implements = list(
 		/obj/item/organ = 100,
 		/obj/item/borg/apparatus/organ_storage = 100)
+	preop_sound = 'sound/surgery/organ2.ogg'
+	success_sound = 'sound/surgery/organ1.ogg'
 	var/implements_extract = list(TOOL_HEMOSTAT = 100, TOOL_CROWBAR = 55, /obj/item/kitchen/fork = 35)
 	var/current_type
 	var/obj/item/organ/target_organ
@@ -76,6 +78,8 @@
 /datum/surgery_step/manipulate_organs/preop(mob/user, mob/living/carbon/target, target_zone, obj/item/tool, datum/surgery/surgery)
 	target_organ = null
 	if(istype(tool, /obj/item/borg/apparatus/organ_storage))
+		preop_sound = initial(preop_sound)
+		success_sound = initial(success_sound)
 		if(!tool.contents.len)
 			to_chat(user, span_warning("There is nothing inside [tool]!"))
 			return -1
@@ -87,6 +91,8 @@
 			return -1
 		tool = target_organ
 	if(isorgan(tool))
+		preop_sound = 'sound/surgery/hemostat1.ogg'
+		success_sound = 'sound/surgery/organ2.ogg'
 		current_type = "insert"
 		target_organ = tool
 		if(target_zone != target_organ.zone || target.getorganslot(target_organ.slot))
@@ -154,7 +160,7 @@
 			display_results(user, target, span_notice("You successfully extract [target_organ] from [target]'s [parse_zone(target_zone)]."),
 				span_notice("[user] successfully extracts [target_organ] from [target]'s [parse_zone(target_zone)]!"),
 				span_notice("[user] successfully extracts something from [target]'s [parse_zone(target_zone)]!"))
-			log_combat(user, target, "surgically removed [target_organ.name] from", addition="COMBAT MODE: [uppertext(user.combat_mode)]")
+			log_combat(user, target, "surgically removed [target_organ.name] from", addition="ISTATE: [user.istate.logging()]")
 			target_organ.Remove(target)
 			target_organ.forceMove(get_turf(target))
 		else

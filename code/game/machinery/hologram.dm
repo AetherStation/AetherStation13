@@ -131,7 +131,7 @@ Possible to do for anyone motivated enough:
 		var/obj/effect/holo = masters[holo_master]
 		update_holoray(holo_master, holo.loc)
 
-/obj/machinery/holopad/tutorial/attack_hand(mob/user, list/modifiers)
+/obj/machinery/holopad/tutorial/attack_hand(mob/user)
 	if(!istype(user))
 		return
 	if(user.incapacitated() || !is_operational)

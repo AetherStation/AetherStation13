@@ -187,7 +187,7 @@
 	var/can_transfer = TRUE //if golems can switch bodies to this new shell
 	var/mob/living/owner = null //golem's owner if it has one
 	short_desc = "You are a Free Golem. Your family worships The Liberator."
-	flavour_text = "In his infinite and divine wisdom, he set your clan free to travel the stars with a single declaration: \"Yeah go do whatever.\"" 
+	flavour_text = "In his infinite and divine wisdom, he set your clan free to travel the stars with a single declaration: \"Yeah go do whatever.\""
 
 /obj/effect/mob_spawn/human/golem/Initialize(mapload, datum/species/golem/species = null, mob/creator = null)
 	if(species) //spawners list uses object name to register so this goes before ..()
@@ -234,7 +234,7 @@
 	else
 		new_spawn.mind.set_assigned_role(SSjob.GetJobType(/datum/job/free_golem))
 
-/obj/effect/mob_spawn/human/golem/attack_hand(mob/user, list/modifiers)
+/obj/effect/mob_spawn/human/golem/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
@@ -850,7 +850,7 @@
 	outfit = /datum/outfit/spacebartender
 	spawner_job_path = /datum/job/space_bar_patron
 
-/obj/effect/mob_spawn/human/alive/space_bar_patron/attack_hand(mob/user, list/modifiers)
+/obj/effect/mob_spawn/human/alive/space_bar_patron/attack_hand(mob/user)
 	var/despawn = tgui_alert(usr, "Return to cryosleep? (Warning, Your mob will be deleted!)", null, list("Yes", "No"))
 	if(despawn == "No" || !loc || !Adjacent(user))
 		return

@@ -62,7 +62,7 @@
 		display_results(user, target, span_notice("You successfully augment [target]'s [parse_zone(target_zone)]."),
 			span_notice("[user] successfully augments [target]'s [parse_zone(target_zone)] with [tool]!"),
 			span_notice("[user] successfully augments [target]'s [parse_zone(target_zone)]!"))
-		log_combat(user, target, "augmented", addition="by giving him new [parse_zone(target_zone)] COMBAT MODE: [uppertext(user.combat_mode)]")
+		log_combat(user, target, "augmented", addition="by giving him new [parse_zone(target_zone)] ISTATE: [user.istate.logging()]")
 	else
 		to_chat(user, span_warning("[target] has no organic [parse_zone(target_zone)] there!"))
 	return ..()

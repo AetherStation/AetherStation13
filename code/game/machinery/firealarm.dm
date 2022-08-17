@@ -175,7 +175,7 @@
 	if(user)
 		log_game("[user] reset a fire alarm at [COORD(src)]")
 
-/obj/machinery/firealarm/attack_hand(mob/user, list/modifiers)
+/obj/machinery/firealarm/attack_hand(mob/user)
 	if(buildstage != 2)
 		return ..()
 	add_fingerprint(user)
@@ -203,7 +203,7 @@
 
 	if(panel_open)
 
-		if(tool.tool_behaviour == TOOL_WELDER && !user.combat_mode)
+		if(tool.tool_behaviour == TOOL_WELDER && !user.istate.harm)
 			if(obj_integrity < max_integrity)
 				if(!tool.tool_start_check(user, amount=0))
 					return

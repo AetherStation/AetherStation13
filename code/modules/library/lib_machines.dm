@@ -527,7 +527,7 @@
 	else
 		return ..()
 
-/obj/machinery/libraryscanner/attack_hand(mob/user, list/modifiers)
+/obj/machinery/libraryscanner/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
