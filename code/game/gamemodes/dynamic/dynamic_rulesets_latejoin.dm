@@ -63,6 +63,24 @@
 
 //////////////////////////////////////////////
 //                                          //
+//            MALFUNCTIONING AI             //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/latejoin/malf_ai
+	name = "Malfunctioning AI"
+	antag_datum = /datum/antagonist/malf_ai
+	antag_flag = ROLE_MALF
+	exclusive_roles = list("AI")
+	required_candidates = 1
+	weight = 4
+	cost = 15
+	requirements = list(101,101,80,70,60,60,50,50,40,40)
+	repeatable = FALSE
+	flags = HIGH_IMPACT_RULESET
+
+//////////////////////////////////////////////
+//                                          //
 //       REVOLUTIONARY PROVOCATEUR          //
 //                                          //
 //////////////////////////////////////////////
