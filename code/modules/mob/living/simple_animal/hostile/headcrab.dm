@@ -20,6 +20,7 @@
 	stat_attack = DEAD
 	obj_damage = 0
 	environment_smash = ENVIRONMENT_SMASH_NONE
+	gold_core_spawnable = HOSTILE_SPAWN
 	speak_emote = list("squeaks")
 	var/datum/mind/origin
 	var/egg_lain = 0
