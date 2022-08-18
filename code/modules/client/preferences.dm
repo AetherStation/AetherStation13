@@ -159,6 +159,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///What outfit typepaths we've favorited in the SelectEquipment menu
 	var/list/favorite_outfits = list()
 
+	/// Which interaction mode do we want?
+	var/interaction_mode
+
 /datum/preferences/New(client/C)
 	parent = C
 
@@ -166,6 +169,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		custom_names[custom_name_id] = get_default_name(custom_name_id)
 
 	UI_style = GLOB.available_ui_styles[1]
+	interaction_mode = GLOB.available_interaction_modes[1]
 	if(istype(C))
 		if(!IsGuestKey(C.key))
 			load_path(C.ckey)
@@ -585,6 +589,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<table><tr><td width='340px' height='300px' valign='top'>"
 			dat += "<h2>General Settings</h2>"
 			dat += "<b>UI Style:</b> <a href='?_src_=prefs;task=input;preference=ui'>[UI_style]</a><br>"
+			dat += "<b>Interaction Mode:</b> <a href='?_src_=prefs;task=input;preference=imode'>[interaction_mode]</a><br>"
 			dat += "<b>tgui Window Mode:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Fancy (default)" : "Compatible (slower)"]</a><br>"
 			dat += "<b>tgui Window Placement:</b> <a href='?_src_=prefs;preference=tgui_lock'>[(tgui_lock) ? "Primary monitor" : "Free (default)"]</a><br>"
 			dat += "<b>Show Runechat Chat Bubbles:</b> <a href='?_src_=prefs;preference=chat_on_map'>[chat_on_map ? "Enabled" : "Disabled"]</a><br>"
@@ -1565,6 +1570,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						UI_style = pickedui
 						if (parent && parent.mob && parent.mob.hud_used)
 							parent.mob.hud_used.update_ui_style(ui_style2icon(UI_style))
+				if("imode")
+					var/pickedmode = input(user, "Choose your interaction mode.", "Character Preference", interaction_mode) as null|anything in sort_list(GLOB.available_interaction_modes)
+					if (pickedmode)
+						interaction_mode = pickedmode
+						if (!parent.mob.forced_interaction_mode) // you can change your interaction mode, but if it is forced it won't get replaced.
+							parent.imode.replace(GLOB.available_interaction_modes[pickedmode])
 				if("pda_style")
 					var/pickedPDAStyle = input(user, "Choose your PDA style.", "Character Preference", pda_style)  as null|anything in GLOB.pda_styles
 					if(pickedPDAStyle)

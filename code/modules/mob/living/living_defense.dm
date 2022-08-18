@@ -70,20 +70,6 @@
 		else
 				return 0
 
-/mob/living/proc/set_combat_mode(new_mode, silent = TRUE)
-	if(combat_mode == new_mode)
-		return
-	. = combat_mode
-	combat_mode = new_mode
-	if(hud_used?.action_intent)
-		hud_used.action_intent.update_appearance()
-	if(silent || !(client?.prefs.toggles & SOUND_COMBATMODE))
-		return
-	if(combat_mode)
-		SEND_SOUND(src, sound('sound/misc/ui_togglecombat.ogg', volume = 25)) //Sound from interbay!
-	else
-		SEND_SOUND(src, sound('sound/misc/ui_toggleoffcombat.ogg', volume = 25)) //Slightly modified version of the above
-
 /mob/living/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
 	if(isitem(AM))
 		var/obj/item/thrown_item = AM
@@ -237,26 +223,28 @@
 	log_combat(user, src, "attacked")
 	return TRUE
 
-/mob/living/attack_hand(mob/living/carbon/human/user, list/modifiers)
+/mob/living/attack_hand(mob/living/carbon/human/user)
 	. = ..()
-	var/martial_result = user.apply_martial_art(src, modifiers)
+	var/martial_result = user.apply_martial_art(src)
 	if (martial_result != MARTIAL_ATTACK_INVALID)
 		return martial_result
 
-/mob/living/attack_paw(mob/living/carbon/human/user, list/modifiers)
+/mob/living/attack_paw(mob/living/carbon/human/user)
 	if(isturf(loc) && istype(loc.loc, /area/start))
 		to_chat(user, "No attacking people at spawn, you jackass.")
 		return FALSE
 
-	var/martial_result = user.apply_martial_art(src, modifiers)
+	var/martial_result = user.apply_martial_art(src)
 	if (martial_result != MARTIAL_ATTACK_INVALID)
 		return martial_result
 
-	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(user.istate.secondary)
 		if (user != src)
 			user.disarm(src)
 			return TRUE
-	if (!user.combat_mode)
+	else if (user.istate.control)
+		grabbedby(user)
+	if (!user.istate.harm)
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
 		to_chat(user, span_warning("You don't want to hurt anyone!"))
@@ -281,7 +269,7 @@
 	return FALSE
 
 /mob/living/attack_larva(mob/living/carbon/alien/larva/L)
-	if(L.combat_mode)
+	if(L.istate.harm)
 		if(HAS_TRAIT(L, TRAIT_PACIFISM))
 			to_chat(L, span_warning("You don't want to hurt anyone!"))
 			return
@@ -306,15 +294,17 @@
 	return FALSE
 
 /mob/living/attack_alien(mob/living/carbon/alien/humanoid/user, list/modifiers)
-	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(user.istate.secondary)
 		user.do_attack_animation(src, ATTACK_EFFECT_DISARM)
 		return TRUE
-	if(user.combat_mode)
+	if(user.istate.harm)
 		if(HAS_TRAIT(user, TRAIT_PACIFISM))
 			to_chat(user, span_warning("You don't want to hurt anyone!"))
 			return FALSE
 		user.do_attack_animation(src)
 		return TRUE
+	else if (user.istate.control)
+		grabbedby(user)
 	else
 		visible_message(span_notice("[user] caresses [src] with its scythe-like arm."), \
 						span_notice("[user] caresses you with its scythe-like arm."), null, null, user)

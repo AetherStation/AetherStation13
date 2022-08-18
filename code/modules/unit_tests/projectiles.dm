@@ -17,7 +17,8 @@
 	TEST_ASSERT(loaded_bullet, "Ammo casing has no loaded bullet")
 
 	gunner.put_in_hands(test_gun, forced=TRUE)
-	gunner.set_combat_mode(FALSE) // just to make sure we know we're not trying to pistol-whip them
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	gunner.istate.harm = FALSE // just to make sure we know we're not trying to pistol-whip them
 	var/expected_damage = loaded_bullet.damage
 	loaded_bullet.def_zone = BODY_ZONE_CHEST
 	var/did_we_shoot = test_gun.afterattack(victim, gunner)

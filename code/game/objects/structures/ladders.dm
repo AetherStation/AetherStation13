@@ -125,7 +125,7 @@
 		return FALSE
 	return TRUE
 
-/obj/structure/ladder/attack_hand(mob/user, list/modifiers)
+/obj/structure/ladder/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

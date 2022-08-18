@@ -842,7 +842,7 @@
 	update_appearance()
 
 /obj/item/food/pancakes/attack(mob/M, mob/living/user, params, stacked = TRUE)
-	if(user.combat_mode || !contents.len || !stacked)
+	if(user.istate.harm || !contents.len || !stacked)
 		return ..()
 	var/obj/item/O = contents[contents.len]
 	. = O.attack(M, user, params, FALSE)

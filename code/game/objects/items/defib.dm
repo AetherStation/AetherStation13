@@ -106,7 +106,7 @@
 	INVOKE_ASYNC(src, .proc/toggle_paddles)
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/defibrillator/attack_hand(mob/user, list/modifiers)
+/obj/item/defibrillator/attack_hand(mob/user)
 	if(loc == user)
 		if(slot_flags == ITEM_SLOT_BACK)
 			if(user.get_item_by_slot(ITEM_SLOT_BACK) == src)
@@ -443,7 +443,7 @@
 	forceMove(defib)
 	defib.update_power()
 
-/obj/item/shockpaddles/attack(mob/M, mob/living/user, params)
+/obj/item/shockpaddles/attack(mob/M, mob/living/user)
 	if(busy)
 		return
 	defib?.update_power()
@@ -464,8 +464,7 @@
 			to_chat(user, span_warning("[src] are recharging!"))
 		return
 
-	var/list/modifiers = params2list(params)
-	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+	if(user.istate.secondary)
 		do_disarm(M, user)
 		return
 
@@ -481,7 +480,7 @@
 		to_chat(user, span_warning("You need to target your patient's chest with [src]!"))
 		return
 
-	if(user.combat_mode)
+	if(user.istate.harm)
 		do_harm(H, user)
 		return
 

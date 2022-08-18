@@ -130,7 +130,7 @@
 	master.disrupt()
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/effect/dummy/chameleon/attack_hand(mob/user, list/modifiers)
+/obj/effect/dummy/chameleon/attack_hand(mob/user)
 	master.disrupt()
 
 /obj/effect/dummy/chameleon/attack_animal(mob/user, list/modifiers)

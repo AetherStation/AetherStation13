@@ -62,7 +62,7 @@
 /obj/structure/sign/barsign/attack_ai(mob/user)
 	return attack_hand(user)
 
-/obj/structure/sign/barsign/attack_hand(mob/user, list/modifiers)
+/obj/structure/sign/barsign/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

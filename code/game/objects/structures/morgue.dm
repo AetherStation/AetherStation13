@@ -57,7 +57,7 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 /obj/structure/bodycontainer/attack_paw(mob/user, list/modifiers)
 	return attack_hand(user, modifiers)
 
-/obj/structure/bodycontainer/attack_hand(mob/user, list/modifiers)
+/obj/structure/bodycontainer/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
@@ -326,7 +326,7 @@ GLOBAL_LIST_EMPTY(crematoriums)
 /obj/structure/tray/attack_paw(mob/user, list/modifiers)
 	return attack_hand(user, modifiers)
 
-/obj/structure/tray/attack_hand(mob/user, list/modifiers)
+/obj/structure/tray/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

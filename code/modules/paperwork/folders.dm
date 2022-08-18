@@ -49,8 +49,8 @@
 		to_chat(user, span_notice("You remove [Item] from [src]."))
 		update_icon()
 
-/obj/item/folder/attack_hand(mob/user, list/modifiers)
-	if(LAZYACCESS(modifiers, RIGHT_CLICK))
+/obj/item/folder/attack_hand(mob/user)
+	if(user.istate.secondary)
 		remove_item(contents[1], user)
 		return TRUE
 	. = ..()

@@ -11,7 +11,8 @@
 /turf/closed/wall/mineral/titanium,
 /area/awaymission/bmpship/aft)
 "ae" = (
-/turf/closed/wall/mineral/titanium/overspace,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/closed/wall/mineral/titanium/interior,
 /area/awaymission/bmpship/aft)
 "ag" = (
 /obj/machinery/porta_turret{
@@ -29,11 +30,12 @@
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "aj" = (
-/obj/effect/spawner/structure/window/hollow/reinforced/middle{
-	dir = 4
+/obj/machinery/atmospherics/pipe/heat_exchanging/junction{
+	dir = 1
 	},
-/turf/open/floor/engine,
-/area/awaymission/bmpship/aft)
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/template_noop)
 "ak" = (
 /obj/machinery/door/airlock/titanium,
 /turf/open/floor/plating,
@@ -46,10 +48,7 @@
 /turf/template_noop,
 /area/template_noop)
 "an" = (
-/obj/structure/window/reinforced,
-/obj/effect/spawner/structure/window/hollow/reinforced/middle{
-	dir = 4
-	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/engine,
 /area/awaymission/bmpship/aft)
 "ao" = (
@@ -65,6 +64,7 @@
 "ar" = (
 /obj/effect/mapping_helpers/airlock/locked,
 /obj/machinery/door/airlock/titanium,
+/obj/structure/cable,
 /turf/open/floor/plating{
 	icon_state = "panelscorched"
 	},
@@ -107,20 +107,18 @@
 /turf/open/floor/plating/airless,
 /area/awaymission/bmpship/midship)
 "aB" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 9
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/machinery/atmospherics/miner/oxygen{
+	desc = "A stripped-down chem dispenser modified to pump out oxygen into a chamber.";
+	name = "modified chem dispenser"
+	},
+/turf/open/floor/engine/o2,
 /area/awaymission/bmpship/aft)
 "aC" = (
-/obj/structure/closet/crate/freezer,
-/obj/item/organ/appendix,
-/obj/item/food/meat/slab,
-/obj/item/food/meat/slab/human/mutant/golem,
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/plating,
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
+/turf/closed/wall/mineral/titanium/interior,
 /area/awaymission/bmpship/aft)
 "aD" = (
 /obj/structure/closet/crate/freezer,
@@ -130,34 +128,36 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "aE" = (
-/obj/structure/table,
 /obj/item/stack/package_wrap,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "aF" = (
-/obj/structure/table,
 /obj/item/storage/box,
 /obj/machinery/light/small/directional/north,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "aG" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 8
 	},
-/turf/open/floor/plating,
+/turf/open/floor/engine/vacuum,
 /area/awaymission/bmpship/aft)
 "aI" = (
-/turf/closed/wall/mineral/titanium/overspace,
-/area/awaymission/bmpship/fore)
+/obj/effect/spawner/structure/window/shuttle,
+/turf/open/floor/plating,
+/area/awaymission/bmpship/aft)
 "aM" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -255,11 +255,12 @@
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "bl" = (
-/obj/effect/spawner/structure/window/hollow/reinforced/middle{
-	dir = 4
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 5
 	},
-/turf/open/floor/plating/airless,
-/area/awaymission/bmpship/fore)
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/template_noop)
 "bm" = (
 /turf/open/floor/wood,
 /area/awaymission/bmpship/fore)
@@ -291,9 +292,7 @@
 /area/awaymission/bmpship/aft)
 "bt" = (
 /obj/structure/window/reinforced,
-/obj/effect/spawner/structure/window/hollow/reinforced/middle{
-	dir = 4
-	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating/airless,
 /area/awaymission/bmpship/fore)
 "bu" = (
@@ -390,6 +389,7 @@
 /obj/item/food/meat/slab,
 /obj/item/food/meat/slab/human/mutant/golem/adamantine,
 /obj/effect/turf_decal/stripes/line,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "bU" = (
@@ -632,17 +632,34 @@
 /area/awaymission/bmpship/aft)
 "cz" = (
 /obj/machinery/light/small/directional/north,
+/obj/machinery/atmospherics/components/binary/circulator{
+	dir = 4
+	},
 /turf/open/floor/iron/white,
 /area/awaymission/bmpship/aft)
 "cA" = (
 /obj/effect/decal/cleanable/blood/gibs/old,
-/turf/open/floor/iron/white,
-/area/awaymission/bmpship/aft)
-"cB" = (
 /obj/machinery/gibber,
 /turf/open/floor/iron/white,
 /area/awaymission/bmpship/aft)
+"cB" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+	dir = 8
+	},
+/obj/machinery/atmospherics/miner/toxins{
+	name = "modified chem dispenser";
+	desc = "A chem dispenser stripped down and refitted to pump out plasma into a chamber."
+	},
+/turf/open/floor/engine/plasma,
+/area/awaymission/bmpship/aft)
 "cE" = (
+/turf/open/floor/iron,
+/area/awaymission/bmpship/aft)
+"cF" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/cable,
 /turf/open/floor/iron,
 /area/awaymission/bmpship/aft)
 "cG" = (
@@ -730,11 +747,15 @@
 /area/awaymission/bmpship/aft)
 "cT" = (
 /obj/effect/decal/cleanable/blood/splatter,
+/obj/item/crowbar,
 /turf/open/floor/iron/white,
 /area/awaymission/bmpship/aft)
 "cU" = (
-/obj/item/crowbar,
-/turf/open/floor/iron/white,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/iron,
 /area/awaymission/bmpship/aft)
 "cV" = (
 /obj/effect/turf_decal/stripes/line{
@@ -837,6 +858,7 @@
 /area/awaymission/bmpship/aft)
 "dq" = (
 /obj/item/multitool,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/engine,
 /area/awaymission/bmpship/aft)
 "dr" = (
@@ -846,13 +868,13 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/open/floor/engine/airless,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft)
 "ds" = (
 /obj/structure/shuttle/engine/propulsion{
 	dir = 4
 	},
-/turf/template_noop,
+/turf/open/floor/plating/airless,
 /area/awaymission/bmpship/aft)
 "dt" = (
 /obj/structure/table,
@@ -892,16 +914,16 @@
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/bmpship/aft)
 "dD" = (
-/obj/machinery/light/small/directional/west,
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
+/obj/item/stock_parts/cell/high,
+/obj/structure/cable,
+/obj/machinery/atmospherics/components/trinary/filter{
+	dir = 8;
+	name = "Gas Recycling Filter"
 	},
 /turf/open/floor/iron,
 /area/awaymission/bmpship/aft)
 "dG" = (
-/obj/effect/spawner/structure/window/hollow/reinforced/end{
-	dir = 1
-	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/awaymission/bmpship/fore)
 "dH" = (
@@ -1013,13 +1035,10 @@
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "dY" = (
-/obj/structure/rack,
-/obj/item/storage/box/lights,
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/awaymission/bmpship/aft)
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple,
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/template_noop)
 "ea" = (
 /obj/machinery/power/smes/magical{
 	desc = "A high-capacity superconducting magnetic energy storage (SMES) unit.";
@@ -1036,11 +1055,11 @@
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "ed" = (
-/obj/effect/spawner/structure/window/hollow/reinforced/middle{
-	dir = 4
-	},
+/obj/machinery/door/airlock/titanium,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/obj/structure/cable,
 /turf/open/floor/plating,
-/area/awaymission/bmpship/fore)
+/area/awaymission/bmpship/aft)
 "ee" = (
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/space/fancytech,
@@ -1146,11 +1165,8 @@
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "et" = (
-/obj/structure/rack,
-/obj/item/storage/belt/utility/full,
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
+/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/iron,
 /area/awaymission/bmpship/aft)
 "ey" = (
@@ -1193,14 +1209,9 @@
 /turf/open/floor/iron,
 /area/awaymission/bmpship/aft)
 "eH" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/effect/spawner/structure/window/hollow/reinforced/directional{
-	dir = 6
-	},
-/turf/open/floor/plating,
-/area/awaymission/bmpship/fore)
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/turf/open/floor/iron,
+/area/awaymission/bmpship/aft)
 "eI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/small/directional/west,
@@ -1239,8 +1250,10 @@
 /turf/open/floor/iron,
 /area/awaymission/bmpship/aft)
 "eS" = (
-/obj/effect/decal/cleanable/cobweb,
-/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 1;
+	name = "Cold Loop Cycler Pump"
+	},
 /turf/open/floor/engine,
 /area/awaymission/bmpship/aft)
 "eT" = (
@@ -1288,9 +1301,8 @@
 /turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "fa" = (
-/obj/item/stock_parts/cell/high,
-/obj/structure/cable,
-/turf/open/floor/iron,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "fc" = (
 /obj/machinery/door/airlock/titanium,
@@ -1382,9 +1394,9 @@
 /turf/open/floor/iron,
 /area/awaymission/bmpship/aft)
 "fs" = (
-/obj/item/stack/sheet/mineral/uranium{
-	amount = 50
-	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/obj/structure/cable,
+/obj/machinery/power/port_gen/pacman/super,
 /turf/open/floor/engine,
 /area/awaymission/bmpship/aft)
 "ft" = (
@@ -1438,8 +1450,10 @@
 /turf/open/floor/iron,
 /area/awaymission/bmpship/midship)
 "fF" = (
-/obj/item/mop,
-/turf/open/floor/iron/showroomfloor,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium/interior,
 /area/awaymission/bmpship/aft)
 "fG" = (
 /obj/effect/decal/cleanable/oil,
@@ -1485,8 +1499,11 @@
 /turf/open/floor/iron/showroomfloor,
 /area/awaymission/bmpship/aft)
 "fQ" = (
-/obj/structure/reagent_dispensers,
-/turf/open/floor/iron/showroomfloor,
+/obj/machinery/power/solar_control{
+	desc = "A controller for solar panel arrays, repurposed to track the ship's orbit."
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
 /area/awaymission/bmpship/aft)
 "fS" = (
 /turf/open/floor/plating/asteroid/airless,
@@ -1578,6 +1595,7 @@
 /obj/structure/table,
 /obj/item/pen/red,
 /obj/item/reagent_containers/food/drinks/beer,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
 /turf/open/floor/iron,
 /area/awaymission/bmpship/aft)
 "gj" = (
@@ -1586,9 +1604,7 @@
 /turf/open/floor/iron,
 /area/awaymission/bmpship/aft)
 "gk" = (
-/obj/effect/spawner/structure/window/hollow/reinforced/end{
-	dir = 1
-	},
+/obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating/airless,
 /area/awaymission/bmpship/fore)
 "gl" = (
@@ -1667,14 +1683,12 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/awaymission/bmpship)
 "gF" = (
-/obj/effect/spawner/structure/window/hollow/reinforced/directional{
-	dir = 4
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 9
 	},
-/obj/item/shard{
-	icon_state = "small"
-	},
-/turf/open/floor/plating/airless,
-/area/awaymission/bmpship/fore)
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/template_noop)
 "gG" = (
 /turf/open/floor/engine,
 /area/awaymission/bmpship/fore)
@@ -1725,11 +1739,10 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/awaymission/bmpship)
 "gR" = (
-/obj/effect/spawner/structure/window/hollow/reinforced/directional{
-	dir = 6
-	},
-/turf/open/floor/plating/airless,
-/area/awaymission/bmpship/fore)
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/awaymission/bmpship/aft)
 "gS" = (
 /turf/closed/wall/mineral/titanium,
 /area/awaymission/bmpship)
@@ -1808,8 +1821,8 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/awaymission/bmpship)
 "ho" = (
-/obj/effect/spawner/structure/window/hollow/reinforced/end{
-	dir = 1
+/obj/machinery/atmospherics/components/binary/circulator/cold{
+	dir = 8
 	},
 /turf/open/floor/engine,
 /area/awaymission/bmpship/aft)
@@ -1834,8 +1847,8 @@
 /turf/closed/wall/mineral/titanium/interior,
 /area/awaymission/bmpship/aft)
 "hu" = (
-/obj/effect/spawner/structure/window/hollow/reinforced/end,
-/turf/open/floor/engine,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/iron,
 /area/awaymission/bmpship/aft)
 "hv" = (
 /turf/closed/mineral/diamond,
@@ -1843,9 +1856,76 @@
 "hw" = (
 /turf/closed/mineral/bananium,
 /area/awaymission/bmpship)
+"hx" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 6
+	},
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/template_noop)
 "hE" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/awaymission/bmpship/fore)
+"mY" = (
+/obj/structure/closet/crate/freezer,
+/obj/item/organ/appendix,
+/obj/item/food/meat/slab,
+/obj/item/food/meat/slab/human/mutant/golem,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/bmpship/aft)
+"ny" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/awaymission/bmpship/aft)
+"qe" = (
+/obj/structure/cable,
+/obj/item/stack/sheet/mineral/uranium{
+	amount = 15
+	},
+/turf/open/floor/engine,
+/area/awaymission/bmpship/aft)
+"qD" = (
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/obj/structure/cable,
+/turf/open/floor/iron,
+/area/awaymission/bmpship/aft)
+"rG" = (
+/obj/machinery/light/small/directional/west,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/iron,
+/area/awaymission/bmpship/aft)
+"se" = (
+/obj/structure/cable,
+/turf/closed/wall/mineral/titanium/interior,
+/area/awaymission/bmpship/aft)
+"si" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/simple{
+	dir = 10
+	},
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/template_noop)
+"ua" = (
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/engine,
+/area/awaymission/bmpship/aft)
+"us" = (
+/obj/machinery/atmospherics/components/binary/circulator{
+	dir = 4
+	},
+/turf/open/floor/engine,
+/area/awaymission/bmpship/aft)
+"wm" = (
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/bmpship/aft)
 "ya" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "packerMine"
@@ -1869,10 +1949,46 @@
 /obj/effect/spawner/lootdrop/space/rareseed,
 /turf/open/floor/iron,
 /area/awaymission/bmpship/midship)
+"DU" = (
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/obj/structure/cable,
+/obj/item/stack/sheet/mineral/uranium{
+	amount = 15
+	},
+/turf/open/floor/engine,
+/area/awaymission/bmpship/aft)
+"Ei" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/simple_pipes/cyan/visible,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/bmpship/aft)
 "EQ" = (
 /obj/structure/lattice,
 /turf/template_noop,
 /area/awaymission/bmpship/midship)
+"EW" = (
+/obj/structure/rack,
+/obj/item/storage/belt/utility/full,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/iron,
+/area/awaymission/bmpship/aft)
+"Ff" = (
+/obj/machinery/atmospherics/pipe/heat_exchanging/junction,
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/template_noop)
+"FN" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "Hot Loop Cycler Pump"
+	},
+/turf/open/floor/engine,
+/area/awaymission/bmpship/aft)
 "GF" = (
 /obj/machinery/hydroponics,
 /obj/effect/turf_decal/tile/green{
@@ -1895,10 +2011,40 @@
 /obj/item/gps/spaceruin,
 /turf/open/floor/carpet,
 /area/awaymission/bmpship/fore)
+"IV" = (
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/nitrogen,
+/turf/open/floor/engine,
+/area/awaymission/bmpship/aft)
+"Jj" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/iron,
+/area/awaymission/bmpship/aft)
+"JK" = (
+/obj/effect/mapping_helpers/simple_pipes/orange/visible,
+/turf/closed/wall/mineral/titanium/interior,
+/area/awaymission/bmpship/aft)
 "Kj" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/asteroid/airless,
 /area/awaymission/bmpship/midship)
+"Km" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	name = "Hot Loop Cycler Pump"
+	},
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/awaymission/bmpship/aft)
+"KK" = (
+/obj/item/hand_labeler,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/plating,
+/area/awaymission/bmpship/aft)
 "KU" = (
 /obj/machinery/door/poddoor/shutters{
 	id = "packerMed"
@@ -1909,15 +2055,71 @@
 	},
 /turf/open/floor/plating/airless,
 /area/awaymission/bmpship/midship)
+"LY" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/awaymission/bmpship/aft)
 "Mx" = (
 /turf/closed/mineral/random,
 /area/awaymission/bmpship/midship)
+"Ou" = (
+/obj/machinery/power/tracker{
+	desc = "A solar directional tracker. Probably being used to check orbit instead of track the Sun for solar arrays."
+	},
+/obj/structure/cable,
+/turf/open/floor/plating/airless,
+/area/awaymission/bmpship/aft)
+"OI" = (
+/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/plating,
+/area/awaymission/bmpship/aft)
+"OU" = (
+/obj/machinery/light/small/directional/east,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/iron,
+/area/awaymission/bmpship/aft)
+"Qe" = (
+/obj/structure/rack,
+/obj/item/storage/box/lights,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/iron,
+/area/awaymission/bmpship/aft)
+"Qy" = (
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 4
+	},
+/turf/open/floor/engine/vacuum,
+/area/awaymission/bmpship/aft)
 "QM" = (
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/plating/airless{
 	icon_state = "platingdmg1"
 	},
 /area/awaymission/bmpship/midship)
+"UH" = (
+/obj/machinery/power/generator,
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/awaymission/bmpship/aft)
+"Vn" = (
+/obj/effect/spawner/structure/window/shuttle,
+/obj/effect/mapping_helpers/simple_pipes/general/visible,
+/turf/open/floor/plating,
+/area/awaymission/bmpship/aft)
+"Xb" = (
+/obj/machinery/igniter/on,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on,
+/turf/open/floor/engine/vacuum,
+/area/awaymission/bmpship/aft)
 "Xc" = (
 /obj/structure/frame/computer{
 	anchored = 1;
@@ -1933,6 +2135,16 @@
 /obj/machinery/light/small/directional/south,
 /turf/open/floor/iron,
 /area/awaymission/bmpship/midship)
+"Zi" = (
+/obj/structure/cable,
+/turf/open/floor/engine,
+/area/awaymission/bmpship/aft)
+"ZV" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+	dir = 4
+	},
+/turf/open/floor/engine/vacuum,
+/area/awaymission/bmpship/aft)
 
 (1,1,1) = {"
 aa
@@ -2258,14 +2470,14 @@ aa
 aa
 aa
 aa
-aI
+cG
 aT
 dG
-ed
-ed
-eH
+dG
+dG
+dG
 aT
-aI
+cG
 aa
 aa
 aa
@@ -2308,7 +2520,7 @@ aa
 aa
 aa
 aa
-aI
+cG
 hE
 bV
 IA
@@ -2317,7 +2529,7 @@ Xc
 ee
 bV
 aT
-aI
+cG
 aa
 aa
 gc
@@ -2358,7 +2570,7 @@ aa
 aa
 aa
 aa
-aI
+cG
 hE
 bV
 bV
@@ -2408,7 +2620,7 @@ aa
 aa
 aa
 aa
-aI
+cG
 hE
 bV
 bV
@@ -2456,7 +2668,7 @@ aa
 aa
 cG
 gk
-bl
+gk
 bt
 hE
 hE
@@ -2475,8 +2687,8 @@ fJ
 cG
 hE
 gk
-gF
-gR
+gk
+gk
 cG
 fS
 fS
@@ -3015,7 +3227,7 @@ aa
 aa
 aa
 aa
-aI
+cG
 aY
 bq
 aT
@@ -4030,12 +4242,12 @@ aa
 aa
 aa
 ac
-ho
-aj
+an
+an
 an
 ac
 aB
-aM
+aI
 aM
 aM
 aM
@@ -4061,9 +4273,9 @@ dl
 cE
 hk
 ht
-ho
-aj
-hu
+an
+an
+an
 dk
 aa
 aa
@@ -4086,7 +4298,7 @@ ah
 ag
 ac
 aC
-al
+ht
 al
 al
 al
@@ -4137,7 +4349,7 @@ ah
 ao
 ac
 aD
-al
+bi
 al
 al
 aO
@@ -4188,7 +4400,7 @@ ak
 ac
 ac
 aE
-aN
+bj
 bh
 al
 al
@@ -4239,7 +4451,7 @@ al
 al
 ac
 aF
-al
+bk
 al
 al
 al
@@ -4284,15 +4496,15 @@ aa
 aa
 aa
 aa
-ae
 ht
-al
-al
+ht
+fQ
+dm
 ar
-aG
-al
-al
-al
+Ei
+dm
+dm
+dm
 aN
 bM
 ac
@@ -4319,7 +4531,7 @@ fY
 al
 hs
 ht
-ae
+ht
 aa
 aa
 aa
@@ -4336,26 +4548,26 @@ aa
 aa
 aa
 aa
-ae
 ht
-al
+ht
+dm
 ac
-aG
-al
-bi
-al
+aC
+ht
+ht
+mY
 al
 bP
 ac
 cA
 cT
 ac
+dC
 cw
 cw
 cw
 cw
-cw
-cw
+dC
 cw
 cw
 fP
@@ -4369,7 +4581,7 @@ cE
 ht
 hr
 ht
-ae
+ht
 aa
 aa
 aa
@@ -4388,28 +4600,28 @@ aa
 aa
 aa
 aa
-ae
 ht
+se
 ht
 aG
-al
-bj
-al
-al
+Xb
+Vn
+wm
+fa
 bQ
 ac
-cB
-cU
+ht
+ht
 ac
-dC
-cw
-cw
-cw
-cw
-dC
-cw
-fF
-fQ
+ht
+ht
+ht
+ht
+ht
+ht
+ht
+ht
+ht
 ac
 gh
 dl
@@ -4419,7 +4631,7 @@ gN
 cE
 ht
 ac
-ae
+ht
 aa
 aa
 aa
@@ -4440,35 +4652,35 @@ aa
 aa
 aa
 aa
-ae
+se
 ht
-aG
-al
-bk
-al
-al
+Qy
+ZV
+aI
+dm
+KK
 bR
-ht
-ht
-ht
-ht
-ht
-ht
-ht
-ht
-ht
-ht
-ht
-ht
-ht
-ht
+ae
+ae
+cU
+cU
+rG
+Qe
+EW
+eG
+eP
+rG
+cU
+cU
+ae
+ae
 gi
-dl
-cE
-cE
-cE
-cE
-ht
+et
+hu
+hu
+hu
+hu
+ae
 ae
 aa
 aa
@@ -4491,26 +4703,26 @@ aa
 aa
 aa
 aa
-aa
+Ou
 ht
-aG
-al
-al
-al
+JK
+ae
+ae
+dm
 al
 bN
 ac
+eH
 cE
-cV
-cV
-dD
-dY
+dl
+dl
+dl
 et
-eG
-eP
+et
+et
 dD
-cV
-cV
+dl
+dl
 cV
 ac
 gf
@@ -4520,7 +4732,7 @@ ht
 hd
 ht
 ht
-aa
+ny
 aa
 aa
 aa
@@ -4544,24 +4756,24 @@ aa
 aa
 aa
 ht
-aG
-aO
-al
-al
-al
-bM
-ak
-cE
-cE
-dl
-dl
-dl
-dl
-dl
-dl
+cB
+aI
 fa
-dl
-dl
+wm
+wm
+LY
+ed
+qD
+qD
+OI
+al
+al
+al
+al
+al
+fa
+al
+cE
 dm
 ga
 dl
@@ -4594,24 +4806,24 @@ aa
 aa
 aa
 aa
-ae
 ht
-aP
+ht
+fF
 aP
 bs
 bH
 bU
 ht
+eH
 cE
-cE
+OI
 dm
-al
-al
-al
-al
-al
-al
-al
+ea
+dm
+dm
+ea
+fa
+fq
 cE
 al
 ac
@@ -4621,7 +4833,7 @@ gP
 ht
 hf
 ht
-ae
+ht
 aa
 aa
 aa
@@ -4646,7 +4858,6 @@ aa
 aa
 aa
 aa
-ae
 ht
 ht
 ht
@@ -4654,16 +4865,17 @@ ht
 ht
 ht
 ht
-cE
-dm
-dm
-ea
-dm
-dm
-ea
+ht
+cW
+OI
 al
-fq
-cE
+eb
+al
+al
+eb
+fa
+al
+fG
 ht
 ht
 ht
@@ -4671,7 +4883,7 @@ ht
 ht
 ht
 ht
-ae
+ht
 aa
 aa
 aa
@@ -4701,24 +4913,24 @@ aa
 aa
 aa
 aa
+am
 aa
-aa
-ae
-ac
-cW
-dm
-al
-eb
-al
-al
-eb
-al
-al
-fG
 ht
-ae
+ac
+cX
+OU
+Jj
+cF
+cX
+cX
+cF
+Jj
+fr
+fH
+ht
+ht
 aa
-aa
+am
 aa
 aa
 aa
@@ -4752,24 +4964,24 @@ aa
 aa
 aa
 aa
-aa
+am
 aa
 aa
 ac
-cX
-fr
-cX
-cX
-cX
-cX
-cX
-cX
-fr
-fH
+ah
+ht
+ua
+gR
+FN
+us
+Km
+ua
+ht
+ah
 ht
 aa
 aa
-aa
+am
 aa
 aa
 aa
@@ -4803,24 +5015,24 @@ aa
 aa
 aa
 aa
-aa
+am
 aa
 aa
 ac
 ht
 ht
-ak
-ht
-ht
-ac
-ht
-ak
+IV
+Zi
+Zi
+UH
+qe
+Zi
 ht
 ht
 ht
 aa
 aa
-aa
+am
 aa
 aa
 aa
@@ -4853,26 +5065,26 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
+hx
+dY
+dY
+aj
 ae
-ht
+ae
 dq
-ah
-ah
-ht
-ht
+ua
+ua
 eS
-ah
+ho
+eS
+DU
 fs
-ht
 ae
-aa
-aa
-aa
-aa
+ae
+Ff
+dY
+dY
+bl
 aa
 aa
 aa
@@ -4904,10 +5116,10 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
+si
+dY
+dY
+bl
 aa
 ht
 dr
@@ -4920,10 +5132,10 @@ dr
 dr
 ht
 aa
-aa
-aa
-aa
-aa
+hx
+dY
+dY
+gF
 aa
 aa
 aa
@@ -4955,21 +5167,225 @@ aa
 aa
 aa
 aa
+hx
+dY
+dY
+gF
+aa
+ht
+ds
+ds
+ds
+ht
+ht
+ds
+ds
+ds
+ht
+aa
+si
+dY
+dY
+bl
 aa
 aa
 aa
 aa
 aa
-ae
-ds
-ds
-ds
-ae
-ae
-ds
-ds
-ds
-ae
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(61,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+si
+dY
+dY
+bl
+aa
+am
+aa
+am
+aa
+am
+am
+aa
+am
+aa
+am
+aa
+hx
+dY
+dY
+gF
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(62,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+hx
+dY
+dY
+gF
+aa
+am
+aa
+am
+aa
+am
+am
+aa
+am
+aa
+am
+aa
+si
+dY
+dY
+bl
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(63,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+si
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+dY
+gF
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(64,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa

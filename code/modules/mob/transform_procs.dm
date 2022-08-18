@@ -195,8 +195,8 @@
 			new_xeno = new /mob/living/carbon/alien/humanoid/sentinel(loc)
 		if("Drone")
 			new_xeno = new /mob/living/carbon/alien/humanoid/drone(loc)
-
-	new_xeno.set_combat_mode(TRUE)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	new_xeno.istate.harm = TRUE
 	new_xeno.key = key
 	update_atom_languages()
 
@@ -230,7 +230,8 @@
 		new_slime = pick(babies)
 	else
 		new_slime = new /mob/living/simple_animal/slime(loc)
-	new_slime.set_combat_mode(TRUE)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	new_slime.istate.harm = TRUE
 	new_slime.key = key
 
 	to_chat(new_slime, "<B>You are now a slime. Skreee!</B>")
@@ -258,7 +259,8 @@
 		qdel(t)
 
 	var/mob/living/simple_animal/pet/dog/corgi/new_corgi = new /mob/living/simple_animal/pet/dog/corgi (loc)
-	new_corgi.set_combat_mode(TRUE)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	new_corgi.istate.harm = TRUE
 	new_corgi.key = key
 
 	to_chat(new_corgi, "<B>You are now a Corgi. Yap Yap!</B>")
@@ -282,7 +284,8 @@
 	icon = null
 	invisibility = INVISIBILITY_MAXIMUM
 	var/mob/living/simple_animal/hostile/gorilla/new_gorilla = new (get_turf(src))
-	new_gorilla.set_combat_mode(TRUE)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	new_gorilla.istate.harm = TRUE
 	if(mind)
 		mind.transfer_to(new_gorilla)
 	else
@@ -318,7 +321,8 @@
 	var/mob/living/new_mob = new mobpath(src.loc)
 
 	new_mob.key = key
-	new_mob.set_combat_mode(TRUE)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	new_mob.istate.harm = TRUE
 
 	to_chat(new_mob, span_boldnotice("You suddenly feel more... animalistic."))
 	. = new_mob
@@ -336,7 +340,8 @@
 	var/mob/living/new_mob = new mobpath(src.loc)
 
 	new_mob.key = key
-	new_mob.set_combat_mode(TRUE)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	new_mob.istate.harm = TRUE
 	to_chat(new_mob, span_boldnotice("You feel more... animalistic."))
 
 	. = new_mob

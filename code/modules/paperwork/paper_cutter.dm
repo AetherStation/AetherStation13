@@ -68,7 +68,7 @@
 		return
 	..()
 
-/obj/item/papercutter/attack_hand(mob/user, list/modifiers)
+/obj/item/papercutter/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
