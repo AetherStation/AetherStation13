@@ -265,6 +265,12 @@ Key procs
 	spoken_languages = list(/datum/language/slime = list(LANGUAGE_ATOM))
 	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
 
+/datum/language_holder/preternis
+	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+								/datum/language/machine = list(LANGUAGE_ATOM),)
+	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
+							/datum/language/machine = list(LANGUAGE_ATOM),)
+
 /datum/language_holder/lizard
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
 								/datum/language/draconic = list(LANGUAGE_ATOM))

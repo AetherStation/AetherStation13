@@ -79,6 +79,8 @@
 					'sound/creatures/monkey/monkey_screech_5.ogg',
 					'sound/creatures/monkey/monkey_screech_6.ogg',
 					'sound/creatures/monkey/monkey_screech_7.ogg')
+	else if (ispreternis(H))
+		return 'goon/sound/robot_scream.ogg'
 
 /datum/emote/living/carbon/human/scream/screech //If a human tries to screech it'll just scream.
 	key = "screech"

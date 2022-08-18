@@ -1,5 +1,5 @@
 /mob/living/carbon/AltClickOn(atom/A)
-    dna?.species.spec_AltClickOn(A,src)
+	dna?.species.spec_AltClickOn(A,src)
 	return ..()
 
 /datum/species/preternis/spec_AltClickOn(atom/A,H)

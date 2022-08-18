@@ -13,15 +13,16 @@ adjust_charge - take a positive or negative value to adjust the charge level
 	species_traits = list(EYECOLOR,HAIR,LIPS)
 	say_mod = "intones"
 	attack_verb = "assault"
-	meat = null
+	meat = /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat
 	toxic_food = NONE
 	brutemod = 1.25
 	burnmod = 1.5
 	draw_robot_hair = TRUE
 	mutanteyes = /obj/item/organ/eyes/preternis
 	mutantlungs = /obj/item/organ/lungs/preternis
-	yogs_virus_infect_chance = 20
+	virus_infect_chance = 20
 	virus_resistance_boost = 10 //YEOUTCH,good luck getting it out
+    species_language_holder = /datum/language_holder/preternis
 
 	var/charge = PRETERNIS_LEVEL_FULL
 	var/eating_msg_cooldown = FALSE
@@ -91,13 +92,13 @@ adjust_charge - take a positive or negative value to adjust the charge level
 /datum/species/preternis/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	. = ..()
 
-	if(H.reagents.has_reagent("oil"))
+	if(H.reagents.has_reagent(/datum/reagent/oil))
 		H.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER,FALSE,FALSE, BODYPART_ANY)
 
-	if(H.reagents.has_reagent("welding_fuel"))
+	if(H.reagents.has_reagent(/datum/reagent/fuel))
 		H.adjustFireLoss(-1*REAGENTS_EFFECT_MULTIPLIER,FALSE,FALSE, BODYPART_ANY)
 
-	if(H.reagents.has_reagent("teslium",10)) //10 u otherwise it wont update and they will remain quikk
+	if(H.reagents.has_reagent(/datum/reagent/teslium,10)) //10 u otherwise it wont update and they will remain quikk
 		H.add_movespeed_modifier("preternis_teslium", update=TRUE, priority=101, multiplicative_slowdown=-2, blacklisted_movetypes=(FLYING|FLOATING))
 		if(H.health < 50 && H.health > 0)
 			H.adjustOxyLoss(-1*REAGENTS_EFFECT_MULTIPLIER)
@@ -143,6 +144,8 @@ adjust_charge - take a positive or negative value to adjust the charge level
 
 /datum/species/preternis/spec_life(mob/living/carbon/human/H)
 	. = ..()
+	if(H.stat == DEAD)
+		return
 	handle_charge(H)
 
 /datum/species/preternis/proc/handle_charge(mob/living/carbon/human/H)
