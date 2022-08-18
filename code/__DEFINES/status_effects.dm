@@ -39,6 +39,8 @@
 
 #define STATUS_EFFECT_DETERMINED /datum/status_effect/determined //currently in a combat high from being seriously wounded
 
+#define STATUS_EFFECT_FRENZY /datum/status_effect/frenzy //Makes you fast and stronger
+
 #define STATUS_EFFECT_LIGHTNINGORB /datum/status_effect/lightningorb //Speed from a lightning orb!
 
 #define STATUS_EFFECT_MAYHEM /datum/status_effect/mayhem //Total bloodbath. Activated by orb of mayhem pickup/bottle of mayhem item.
@@ -140,6 +142,8 @@
 #define STATUS_EFFECT_EIGEN /datum/status_effect/eigenstasium
 
 #define STATUS_EFFECT_STONED /datum/status_effect/stoned
+
+#define STATUS_EFFECT_MASQUERADE /datum/status_effect/masquerade 
 
 /////////////
 //  SLIME  //

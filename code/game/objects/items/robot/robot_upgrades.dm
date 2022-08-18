@@ -677,7 +677,7 @@
 
 /obj/item/borg/upgrade/transform
 	name = "borg model picker (Standard)"
-	desc = "Allows you to to turn a cyborg into a standard cyborg."
+	desc = "Allows you to turn a cyborg into a standard cyborg."
 	icon_state = "cyborg_upgrade3"
 	var/obj/item/robot_model/new_model = /obj/item/robot_model/standard
 
@@ -688,9 +688,25 @@
 
 /obj/item/borg/upgrade/transform/clown
 	name = "borg model picker (Clown)"
-	desc = "Allows you to to turn a cyborg into a clown, honk."
+	desc = "Allows you to turn a cyborg into a clown, honk."
 	icon_state = "cyborg_upgrade3"
 	new_model = /obj/item/robot_model/clown
+
+
+/obj/item/borg/upgrade/transform/security
+	name = "borg module picker (Security)"
+	desc = "Allows you to turn a cyborg into a hunter, HALT!"
+	icon_state = "cyborg_upgrade3"
+	new_model = /obj/item/robot_model/security
+
+/obj/item/borg/upgrade/transform/security/action(mob/living/silicon/robot/R, user = usr)
+	if(CONFIG_GET(flag/disable_secborg))
+		to_chat(user, "<span class='warning'>Nanotrasen policy disallows the use of weapons of mass destruction.</span>")
+		return FALSE
+	if(is_banned_from(R.ckey, "Security Officer"))
+		to_chat(user, "<span class='warning'>Nanotrasen has disallowed this unit from becoming this type of module.</span>")
+		return FALSE
+	return ..()
 
 /obj/item/borg/upgrade/circuit_app
 	name = "circuit manipulation apparatus"
