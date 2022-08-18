@@ -292,7 +292,6 @@
 				ROLE_MIND_TRANSFER,
 				ROLE_POSIBRAIN,
 				ROLE_SENTIENCE,
-				ROLE_MONSTERHUNTER,
 			),
 			"Antagonist Positions" = list(
 				ROLE_ABDUCTOR,
@@ -315,7 +314,6 @@
 				ROLE_SYNDICATE,
 				ROLE_TRAITOR,
 				ROLE_WIZARD,
-				ROLE_BLOODSUCKER,
 			),
 		)
 		for(var/department in long_job_lists)

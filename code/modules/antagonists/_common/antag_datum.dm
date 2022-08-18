@@ -25,8 +25,6 @@ GLOBAL_LIST_EMPTY(antagonists)
 	var/list/objectives = list()
 	///String dialogue that is added to the player's in-round notes and memories regarding specifics of that antagonist, eg. the nuke code for nuke ops, or your unlock code for traitors.
 	var/antag_memory = ""
-	//Optional little objectives that are to be removed on a certain milestone
-	var/task_memory = ""
 	///typepath of moodlet that the mob will gain when granted this antagonist type.
 	var/antag_moodlet
 	///If these antags are alone when a shuttle elimination happens.
@@ -350,7 +348,6 @@ GLOBAL_LIST_EMPTY(antagonists)
 	if (isnull(new_memo))
 		return
 	antag_memory = new_memo
-	task_memory = new_memo
 
 /**
  * Gets how fast we can hijack the shuttle, return 0 for can not hijack.
