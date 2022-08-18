@@ -22,7 +22,7 @@ adjust_charge - take a positive or negative value to adjust the charge level
 	mutantlungs = /obj/item/organ/lungs/preternis
 	virus_infect_chance = 20
 	virus_resistance_boost = 10 //YEOUTCH,good luck getting it out
-    species_language_holder = /datum/language_holder/preternis
+	species_language_holder = /datum/language_holder/preternis
 
 	var/charge = PRETERNIS_LEVEL_FULL
 	var/eating_msg_cooldown = FALSE
