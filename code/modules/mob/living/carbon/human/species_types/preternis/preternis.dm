@@ -15,10 +15,12 @@ adjust_charge - take a positive or negative value to adjust the charge level
 	attack_verb = "assault"
 	meat = /obj/item/food/meat/slab/synthmeat
 	toxic_food = NONE
+	liked_food = FRIED | SUGAR | JUNKFOOD | FRUIT
+	disliked_food = GROSS | VEGETABLES
 	brutemod = 1.25
 	burnmod = 1.5
 	draw_robot_hair = TRUE
-	mutanteyes = /obj/item/organ/eyes/preternis
+	mutanteyes = /obj/item/organ/eyes/robotic/preternis
 	mutantlungs = /obj/item/organ/lungs/preternis
 	virus_infect_chance = 20
 	virus_resistance_boost = 10 //YEOUTCH,good luck getting it out

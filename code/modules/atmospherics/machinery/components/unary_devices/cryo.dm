@@ -238,7 +238,7 @@ GLOBAL_VAR_INIT(cryo_overlay_cover_off, mutable_appearance('icons/obj/cryogenics
 	if(mob_occupant.stat == DEAD) // We don't bother with dead people.
 		return
 
-	if(HAS_TRAIT(mob_occupant,TRAIT_MEDICALIGNORE))
+	if(HAS_TRAIT(mob_occupant,TRAIT_MEDICALIGNORE) && !(mob_occupant.getCloneLoss() + mob_occupant.getToxLoss() + mob_occupant.getOxyLoss()))
 		src.visible_message("<span class='warning'>[src] is unable to treat [mob_occupant] as they cannot be treated with conventional medicine.</span>")
 		playsound(src,'sound/machines/cryo_warning_ignore.ogg',60,1)
 		on = FALSE

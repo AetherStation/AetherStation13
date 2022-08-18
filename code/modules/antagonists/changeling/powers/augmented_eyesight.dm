@@ -25,6 +25,11 @@
 	..()
 	var/obj/item/organ/eyes/E = user.getorganslot(ORGAN_SLOT_EYES)
 	if(E)
+		if(istype(E, /obj/item/organ/eyes/robotic/preternis))
+			E.Remove(user, 1)
+			var/obj/item/organ/eyes/neweyes = new(user)
+			neweyes.Insert(user, 1)
+			neweyes.flash_protect = 2
 		if(!active)
 			E.sight_flags |= SEE_MOBS | SEE_OBJS | SEE_TURFS //Add sight flags to the user's eyes
 			E.flash_protect = FLASH_PROTECTION_SENSITIVE //Adjust the user's eyes' flash protection
