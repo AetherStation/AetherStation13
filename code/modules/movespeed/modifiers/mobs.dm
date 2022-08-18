@@ -126,3 +126,8 @@
 
 /datum/movespeed_modifier/morph_disguised
 	multiplicative_slowdown = 1
+
+/datum/movespeed_modifier/morbin
+	multiplicative_slowdown = -0.4
+	blacklisted_movetypes = FLYING|FLOATING
+	priority = 100
