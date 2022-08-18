@@ -117,7 +117,7 @@
 /obj/machinery/power/apc/can_consume_power_from()
 	if(!cell)
 		return "<span class='info'>APC cell absent, cannot consume power.</span>"
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		return "<span class='info'>APC is damaged, cannot consume power.</span>"
 	if(!operating || shorted)
 		return "<span class='info'>APC main breaker is off, cannot consume power.</span>"
@@ -136,7 +136,7 @@
 
 //SMES//
 /obj/machinery/power/smes/can_consume_power_from()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		return "<span class='info'>SMES is damaged, cannot consume power.</span>"
 	if(!output_attempt)
 		return "<span class='info'>SMES is not outputting power, cannot consume power.</span>"
@@ -151,14 +151,14 @@
 	return amount
 
 //MECH//
-/obj/mecha/can_consume_power_from()
+/obj/vehicle/sealed/mecha/can_consume_power_from()
 	if(!cell)
 		return "<span class='info'>Mech power cell absent, cannot consume power.</span>"
 	if(cell.charge < MIN_DRAINABLE_POWER)
 		return "<span class='info'>Mech power cell depleted, cannot consume power.</span>"
 	return TRUE
 
-/obj/mecha/consume_power_from(amount)
+/obj/vehicle/sealed/mecha/consume_power_from(amount)
 	occupant_message("<span class='danger'>Warning: Unauthorized access through sub-route 4, block H, detected.</span>")
 	if((cell.charge - amount) < MIN_DRAINABLE_POWER)
 		amount = max(cell.charge - MIN_DRAINABLE_POWER, 0)

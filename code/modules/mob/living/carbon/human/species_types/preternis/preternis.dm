@@ -34,6 +34,8 @@ adjust_charge - take a positive or negative value to adjust the charge level
 
 /datum/species/preternis/on_species_gain(mob/living/carbon/C, datum/species/old_species, pref_load)
 	. = ..()
+	RegisterSignal(C, COMSIG_ATOM_EMAG_ACT, .proc/on_emag_act)
+	RegisterSignal(C, COMSIG_ATOM_EMP_ACT, .proc/on_emp_act)
 	for (var/V in C.bodyparts)
 		var/obj/item/bodypart/BP = V
 		BP.change_bodypart_status(ORGAN_ROBOTIC,FALSE,TRUE)
@@ -46,6 +48,8 @@ adjust_charge - take a positive or negative value to adjust the charge level
 
 /datum/species/preternis/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	. = ..()
+	UnregisterSignal(C, COMSIG_ATOM_EMAG_ACT)
+	UnregisterSignal(C, COMSIG_ATOM_EMP_ACT)
 	for (var/V in C.bodyparts)
 		var/obj/item/bodypart/BP = V
 		BP.change_bodypart_status(ORGAN_ORGANIC,FALSE,TRUE)
@@ -55,8 +59,8 @@ adjust_charge - take a positive or negative value to adjust the charge level
 	C.clear_fullscreen("preternis_emag")
 	C.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/preternis_teslium, TRUE)
 
-/datum/species/preternis/spec_emp_act(mob/living/carbon/human/H, severity)
-	. = ..()
+/datum/species/preternis/proc/on_emp_act(mob/living/carbon/human/H, severity)
+	SIGNAL_HANDLER
 	switch(severity)
 		if(EMP_HEAVY)
 			H.adjustBruteLoss(20)
@@ -73,8 +77,8 @@ adjust_charge - take a positive or negative value to adjust the charge level
 			H.visible_message("<span class='danger'>A faint fizzling emanates from [H].</span>", \
 							"<span class='userdanger'>A fit of twitching overtakes you as your subdermal implants convulse violently from the electromagnetic disruption. Your sustenance reserves have been partially depleted from the blast.</span>")
 
-/datum/species/preternis/spec_emag_act(mob/living/carbon/human/H, mob/user)
-	. = ..()
+/datum/species/preternis/proc/on_emag_act(mob/living/carbon/human/H, mob/user)
+	SIGNAL_HANDLER
 	if(emag_lvl == 2)
 		return
 	emag_lvl = min(emag_lvl + 1,2)
@@ -92,7 +96,7 @@ adjust_charge - take a positive or negative value to adjust the charge level
 /datum/species/preternis/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H)
 	. = ..()
 
-	if(H.reagents.has_reagent(/datum/reagent/oil))
+	if(H.reagents.has_reagent(/datum/reagent/fuel/oil))
 		H.adjustFireLoss(-2*REAGENTS_EFFECT_MULTIPLIER,FALSE,FALSE, BODYPART_ANY)
 
 	if(H.reagents.has_reagent(/datum/reagent/fuel))
@@ -127,7 +131,7 @@ adjust_charge - take a positive or negative value to adjust the charge level
 				to_chat(H,"<span class='info'>NOTICE: Digestive subroutines are inefficient. Seek sustenance via power-cell C.O.N.S.U.M.E. technology induction.</span>")
 
 	if(chem.current_cycle >= 20)
-		H.reagents.del_reagent(chem.id)
+		H.reagents.del_reagent(chem.type)
 
 
 	return FALSE
