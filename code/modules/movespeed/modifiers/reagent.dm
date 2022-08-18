@@ -39,3 +39,7 @@
 
 /datum/movespeed_modifier/reagent/nooartrium
 	multiplicative_slowdown = 2
+
+/datum/movespeed_modifier/reagent/preternis_teslium
+	multiplicative_slowdown = -2
+	priority = 101
