@@ -73,7 +73,7 @@
 	return attack_hand(user, modifiers)
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/paper_bin/attack_hand(mob/user, list/modifiers)
+/obj/item/paper_bin/attack_hand(mob/user)
 	if(isliving(user))
 		var/mob/living/living_mob = user
 		if(!(living_mob.mobility_flags & MOBILITY_PICKUP))
@@ -203,7 +203,7 @@
 	bin_overlay.color = binding_cable.color
 	return ..()
 
-/obj/item/paper_bin/bundlenatural/attack_hand(mob/user, list/modifiers)
+/obj/item/paper_bin/bundlenatural/attack_hand(mob/user)
 	. = ..()
 	if(!LAZYLEN(papers))
 		deconstruct(FALSE)

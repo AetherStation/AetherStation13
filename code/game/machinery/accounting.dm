@@ -35,7 +35,7 @@
 	return ..()
 
 
-/obj/machinery/accounting/attack_hand(mob/user, list/modifiers)
+/obj/machinery/accounting/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

@@ -295,7 +295,7 @@
 
 
 /mob/living/simple_animal/bot/attack_hand(mob/living/carbon/human/user, list/modifiers)
-	if(!user.combat_mode)
+	if(!user.istate.harm)
 		interact(user)
 	else
 		return ..()
@@ -350,7 +350,7 @@
 					ejectpai(user)
 	else
 		user.changeNext_move(CLICK_CD_MELEE)
-		if(W.tool_behaviour == TOOL_WELDER && !user.combat_mode)
+		if(W.tool_behaviour == TOOL_WELDER && !user.istate.harm)
 			if(health >= maxHealth)
 				to_chat(user, span_warning("[src] does not need a repair!"))
 				return

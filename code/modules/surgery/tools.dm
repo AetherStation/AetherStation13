@@ -322,7 +322,7 @@
 	custom_premium_price = PAYCHECK_MEDIUM * 14
 
 /obj/item/shears/attack(mob/living/M, mob/living/user)
-	if(!iscarbon(M) || user.combat_mode)
+	if(!iscarbon(M) || user.istate.harm)
 		return ..()
 
 	if(user.zone_selected == BODY_ZONE_CHEST)

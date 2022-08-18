@@ -114,7 +114,7 @@
 	obj_damage = 60
 	melee_damage_lower = 25
 	melee_damage_upper = 25
-	combat_mode = TRUE
+	istate = new /datum/interaction_state/harm
 	del_on_death = TRUE
 	deathmessage = "collapses into bits of plant matter."
 	attacked_sound = 'sound/creatures/venus_trap_hurt.ogg'

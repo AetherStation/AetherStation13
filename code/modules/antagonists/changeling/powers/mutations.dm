@@ -362,7 +362,7 @@
 				var/firer_combat_mode = TRUE
 				var/mob/living/living_shooter = firer
 				if(istype(living_shooter))
-					firer_combat_mode = living_shooter.combat_mode
+					firer_combat_mode = living_shooter.istate.harm
 				if(fire_modifiers && fire_modifiers["right"])
 					var/obj/item/I = C.get_active_held_item()
 					if(I)

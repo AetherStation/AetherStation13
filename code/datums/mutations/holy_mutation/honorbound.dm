@@ -52,7 +52,6 @@
 	SIGNAL_HANDLER
 
 	var/obj/item/weapon = honorbound.get_active_held_item()
-	var/list/modifiers = params2list(params)
 
 	if(!isliving(clickingon))
 		return
@@ -60,7 +59,7 @@
 		return
 	if(weapon.item_flags & NOBLUDGEON)
 		return
-	if(!honorbound.combat_mode && ((!weapon || !weapon.force) && !LAZYACCESS(modifiers, RIGHT_CLICK)))
+	if(!honorbound.istate.harm && ((!weapon || !weapon.force) && !honorbound.istate.secondary))
 		return
 	var/mob/living/clickedmob = clickingon
 	if(!is_honorable(honorbound, clickedmob))
@@ -133,7 +132,7 @@
 
 /datum/mutation/human/honorbound/proc/hand_guilt(datum/source, mob/living/attacker)
 	SIGNAL_HANDLER
-	if(attacker.combat_mode)
+	if(attacker.istate.harm)
 		guilty(attacker)
 
 /datum/mutation/human/honorbound/proc/paw_guilt(datum/source, mob/living/attacker)

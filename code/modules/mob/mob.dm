@@ -518,10 +518,12 @@
 
 	//now we touch the thing we're examining
 	/// our current intent, so we can go back to it after touching
-	var/previous_combat_mode = combat_mode
-	set_combat_mode(FALSE)
+	var/previous_harm_state = istate.harm
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	istate.harm = FALSE
 	INVOKE_ASYNC(examined_thing, /atom/proc/attack_hand, src)
-	set_combat_mode(previous_combat_mode)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	istate.harm = previous_harm_state
 	return TRUE
 
 

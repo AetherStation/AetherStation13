@@ -86,13 +86,13 @@
 			return TRUE
 		else
 			toggle_cabinet(user)
-	else if(!user.combat_mode)
+	else if(!user.istate.harm)
 		toggle_cabinet(user)
 	else
 		return ..()
 
 
-/obj/structure/extinguisher_cabinet/attack_hand(mob/user, list/modifiers)
+/obj/structure/extinguisher_cabinet/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

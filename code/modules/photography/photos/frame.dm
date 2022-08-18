@@ -22,7 +22,7 @@
 	..()
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/item/wallframe/picture/attack_hand(mob/user, list/modifiers)
+/obj/item/wallframe/picture/attack_hand(mob/user)
 	if(user.get_inactive_held_item() != src)
 		..()
 		return
@@ -142,7 +142,7 @@
 
 	..()
 
-/obj/structure/sign/picture_frame/attack_hand(mob/user, list/modifiers)
+/obj/structure/sign/picture_frame/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
