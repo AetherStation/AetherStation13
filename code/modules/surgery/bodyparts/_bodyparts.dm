@@ -100,6 +100,7 @@
 	var/last_maxed
 	/// How much generic bleedstacks we have on this bodypart
 	var/generic_bleedstacks
+	var/draw_robot_hair = FALSE 
 	/// If we have a gauze wrapping currently applied (not including splints)
 	var/obj/item/stack/current_gauze
 	/// If something is currently grasping this bodypart and trying to staunch bleeding (see [/obj/item/self_grasp])
@@ -228,7 +229,7 @@
 	if(owner && (owner.status_flags & GODMODE))
 		return FALSE //godmode
 
-	if(required_status && (status != required_status))
+	if(!(required_status == -1) && (required_status && (status != required_status)))
 		return FALSE
 
 	var/dmg_multi = CONFIG_GET(number/damage_multiplier) * hit_percent
@@ -505,7 +506,7 @@
 //Cannot remove negative damage (i.e. apply damage)
 /obj/item/bodypart/proc/heal_damage(brute, burn, stamina, required_status, updating_health = TRUE)
 
-	if(required_status && status != required_status) //So we can only heal certain kinds of limbs, ie robotic vs organic.
+	if(!(required_status == BODYPART_ANY) && (required_status && (status != required_status)) ) //So we can only heal certain kinds of limbs, ie robotic vs organic.
 		return
 
 	if(brute)

@@ -222,6 +222,13 @@
 		SSdisease.archive_diseases[the_id] = Copy()
 		if(new_name)
 			AssignName()
+	if(affected_mob?.dna)
+		var/datum/species/S = affected_mob.dna.species
+		properties["resistance"] += S.virus_resistance_boost
+		properties["stealth"] += S.virus_stealth_boost
+		properties["stage_rate"] += S.virus_stage_rate_boost
+		properties["transmittable"] += S.virus_transmittable_boost
+		AssignProperties()
 
 //Generate disease properties based on the effects. Returns an associated list.
 /datum/disease/advance/proc/GenerateProperties()

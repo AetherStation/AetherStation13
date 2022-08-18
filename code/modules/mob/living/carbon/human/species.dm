@@ -207,6 +207,17 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	///List of visual overlays created by handle_body()
 	var/list/body_vis_overlays = list()
 
+	var/draw_robot_hair = FALSE //DAMN ROBOTS STEALING OUR HAIR AND AIR
+
+	///Chance of a mob with this species to infect with a virus
+	var/virus_infect_chance = 100 
+
+	///How big  boost to it's propetries gets a disease that infects a mob with this species
+	var/virus_resistance_boost = 0
+	var/virus_stealth_boost = 0
+	var/virus_stage_rate_boost = 0
+	var/virus_transmittable_boost = 0
+
 ///////////
 // PROCS //
 ///////////
@@ -440,6 +451,10 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	C.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/species, multiplicative_slowdown=speedmod)
 
+	if(draw_robot_hair)
+		for(var/obj/item/bodypart/BP in C.bodyparts)
+			BP.draw_robot_hair = TRUE
+
 	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src, old_species)
 
 /**
@@ -482,6 +497,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 
 	C.remove_movespeed_modifier(/datum/movespeed_modifier/species)
 
+	for(var/obj/item/bodypart/BP in C.bodyparts)
+		BP.draw_robot_hair = initial(BP.draw_robot_hair)
+
 	SEND_SIGNAL(C, COMSIG_SPECIES_LOSS, src)
 
 /**
@@ -510,7 +528,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	var/dynamic_fhair_suffix = ""
 
 	//for augmented heads
-	if(noggin.status == BODYPART_ROBOTIC)
+	if(noggin.status == BODYPART_ROBOTIC && !draw_robot_hair)
 		return
 
 	//we check if our hat or helmet hides our facial hair.
@@ -1560,6 +1578,9 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 /datum/species/proc/bullet_act(obj/projectile/P, mob/living/carbon/human/H)
 	// called before a projectile hit
 	return 0
+
+/datum/species/proc/spec_AltClickOn(atom/A,mob/living/carbon/human/H)
+	return FALSE
 
 //////////////////////////
 // ENVIRONMENT HANDLERS //

@@ -137,6 +137,10 @@
 		if(HAS_TRAIT(src, TRAIT_VIRUSIMMUNE) && !D.bypasses_immunity)
 			return FALSE
 
+	var/infectchance = dna.species ? dna.species.virus_infect_chance : 100
+	if(!prob(infectchance))
+		return FALSE
+
 	for(var/thing in D.required_organs)
 		if(!((locate(thing) in bodyparts) || (locate(thing) in internal_organs)))
 			return FALSE
