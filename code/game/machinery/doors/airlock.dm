@@ -698,7 +698,7 @@
 	INVOKE_ASYNC(src, /atom/proc/attack_hand, user, modifiers)
 	return COMPONENT_CANCEL_ATTACK_CHAIN
 
-/obj/machinery/door/airlock/attack_hand(mob/user, list/modifiers)
+/obj/machinery/door/airlock/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
@@ -1221,7 +1221,7 @@
 	if(!density) //Already open
 		return ..()
 	if(locked || welded || seal) //Extremely generic, as aliens only understand the basics of how airlocks work.
-		if(user.combat_mode)
+		if(user.istate.harm)
 			return ..()
 		to_chat(user, span_warning("[src] refuses to budge!"))
 		return

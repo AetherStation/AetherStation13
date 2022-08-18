@@ -292,7 +292,7 @@ GLOBAL_LIST_EMPTY(lifts)
 		thing.forceMove(destination)
 
 /obj/structure/industrial_lift/proc/use(mob/living/user)
-	if(!isliving(user) || !in_range(src, user) || user.combat_mode)
+	if(!isliving(user) || !in_range(src, user) || user.istate.harm)
 		return
 
 	var/list/tool_list = list()
@@ -309,7 +309,7 @@ GLOBAL_LIST_EMPTY(lifts)
 		add_fingerprint(user)
 		return
 	var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
-	if(!isliving(user) || !in_range(src, user) || user.combat_mode)
+	if(!isliving(user) || !in_range(src, user) || user.istate.harm)
 		return //nice try
 	switch(result)
 		if("Up")
@@ -329,7 +329,7 @@ GLOBAL_LIST_EMPTY(lifts)
 		return FALSE
 	return TRUE
 
-/obj/structure/industrial_lift/attack_hand(mob/user, list/modifiers)
+/obj/structure/industrial_lift/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

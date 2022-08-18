@@ -15,7 +15,7 @@
 	// Stops people from "diving into" a crate you can't open normally
 	divable = FALSE
 
-/obj/structure/closet/crate/large/attack_hand(mob/user, list/modifiers)
+/obj/structure/closet/crate/large/attack_hand(mob/user)
 	add_fingerprint(user)
 	if(manifest)
 		tear_manifest(user)
@@ -41,7 +41,7 @@
 		qdel(src)
 
 	else
-		if(user.combat_mode) //Only return  ..() if intent is harm, otherwise return 0 or just end it.
+		if(user.istate.harm) //Only return  ..() if intent is harm, otherwise return 0 or just end it.
 			return ..() //Stops it from opening and turning invisible when items are used on it.
 
 		else

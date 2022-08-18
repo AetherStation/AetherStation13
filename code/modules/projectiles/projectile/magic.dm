@@ -288,8 +288,8 @@
 		new_mob.equip_to_appropriate_slot(W)
 
 	M.log_message("became [new_mob.name]([new_mob.type])", LOG_ATTACK, color="orange")
-
-	new_mob.set_combat_mode(TRUE)
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	new_mob.istate.harm = TRUE
 
 	M.wabbajack_act(new_mob)
 

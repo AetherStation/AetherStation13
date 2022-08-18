@@ -48,7 +48,7 @@
 	return
 
 
-/obj/machinery/power/singularity_beacon/attack_hand(mob/user, list/modifiers)
+/obj/machinery/power/singularity_beacon/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

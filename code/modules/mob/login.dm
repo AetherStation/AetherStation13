@@ -33,11 +33,15 @@
 	world.update_status()
 	client.screen = list() //remove hud items just in case
 	client.images = list()
-	client.set_right_click_menu_mode(shift_to_open_context_menu)
+	client.set_right_click_menu_mode(client.imode.shift_to_open_context_menu)
 
 	if(!hud_used)
 		create_mob_hud()
 	if(hud_used)
+		if (forced_interaction_mode)
+			client.imode.replace(forced_interaction_mode)
+		else
+			client.imode.reload_hud(src)
 		hud_used.show_hud(hud_used.hud_version)
 		hud_used.update_ui_style(ui_style2icon(client.prefs.UI_style))
 

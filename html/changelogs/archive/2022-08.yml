@@ -51,6 +51,8 @@
   TheChosenEvilOne:
   - bugfix: Space ruin ID cards have the correct access again.
 2022-08-10:
+  Skog:
+  - config: map rotation configs now work properly
   Skoglol:
   - rscadd: Added soapy water, and a visual effect when cleaning with soapy water
       or soap. Make soapy water by putting soap in water. Water, holy water, soapy
@@ -59,3 +61,61 @@
       everythign.
   - rscadd: Added temporary decals framework.
   - bugfix: Water no longer cleans floors when sprayed.
+  Thebleh:
+  - admin: Admins can now ping each other in asay
+2022-08-12:
+  Sparkezel:
+  - code_imp: removed gbp
+  - bugfix: Fixes meta atmos for real
+2022-08-14:
+  AcapitalA:
+  - bugfix: The Durand's shield does not take damage from fire and acid anymore, as
+      it would burn infinitely long.
+  Twaticus:
+  - bugfix: raduit helmet now uses the correct worn icon
+  - bugfix: Recyclers no longer eat their own parts when dismantled.
+  maxspells, ported by SuperSlayer:
+  - expansion: Surgery steps play sound effects appropriate to the step
+  nicholast013:
+  - rscadd: Added Ammonium Nitrate as high explosive chemical and a fertilizer
+2022-08-15:
+  AcapitalA:
+  - bugfix: Door remotes no longer have all access.
+  Addust:
+  - rscadd: 'Syndicate Lavaland now has:'
+  - rscadd: an autolathe and Mauler wreckage
+  - rscadd: more cornerwalls
+  - rscadd: a new pipe to the oxygen tank so that the shit works
+  - rscadd: a backup generator with uranium. yes you can make a crude RTG with this
+  - rscadd: Crashed Ship TEG, because yes
+  - qol: Crashed Ship now has actual shuttle windows.
+  Skog:
+  - balance: Budget insuls now work 50% of the time, up from <15% of the time.
+  - balance: ORM can no longer be wrenched and moved.
+  - balance: The ORM can now have its parts upgraded again! Tier 2 parts give the
+      same amount of materials as old Tier 1, point generation goes no lower than
+      100%. Maxes out at 150% ore and point generation.
+  - balance: Traitor uplink implant fallback no longer costs 4 TC. If you have the
+      uplink preference, nothing has changed and you will still be charged.
+  - bugfix: Uplink creation will now look for alternatives in PDA and radio if you
+      have the pen preference.
+2022-08-16:
+  Canohaaaaaaa:
+  - bugfix: Xenos no longer runtime trying to adjust their body temperature according
+      to their dna.
+  Skog:
+  - balance: Nuke op war limit reduced to 25 players, with a scaling reward. 60 TC
+      extra minimum, 220 TC more depending on how close to the old minimum of 50 players
+      the server is.
+  - balance: Large changes to economy. Wages are back, inflation is gone, job tools
+      are free, mail arrives on sundays and holidays.
+  SuperSlayer:
+  - rscadd: Added latejoin changelings
+  SuperSlayer0:
+  - qol: Converted some swarmer messages to balloon alerts
+2022-08-17:
+  Skog:
+  - balance: Job bags (plant bag, chemistry bag, contruction bag etc etc) are now
+      normal sized down from bulky, and fits in your backpack.
+  TheChosenEvilOne:
+  - rscadd: A changed version of intents have been re-added as a user preference.

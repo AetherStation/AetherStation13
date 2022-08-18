@@ -154,7 +154,7 @@
 
 				qdel(src)
 				return
-	if(user.combat_mode)
+	if(user.istate.harm)
 		return ..()
 
 

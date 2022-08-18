@@ -1,12 +1,11 @@
 /// Number of paychecks jobs start with at the creation of a new bank account for a player (So at shift-start or game join, but not a blank new account.)
-#define STARTING_PAYCHECKS 7
+#define STARTING_PAYCHECKS 4
 /// How much mail the Economy SS will create per minute, regardless of firing time.
 #define MAX_MAIL_PER_MINUTE 3
 /// Probability of using letters of envelope sprites on all letters.
 #define FULL_CRATE_LETTER_ODDS 70
 
-//Experimental change: These are subject to tweaking based on the /tg/ economy overhaul.
-//Current design direction: Higher paying jobs are vastly outnumbered by lower paying jobs, so anything above medium hurts inflation, common jobs help inflation
+/// For Wages and starting cash
 #define PAYCHECK_PRISONER 25
 #define PAYCHECK_ASSISTANT 50
 #define PAYCHECK_MINIMAL 55
@@ -15,12 +14,10 @@
 #define PAYCHECK_HARD 100
 #define PAYCHECK_COMMAND 200
 
-#define STATION_TARGET_BUFFER 40
-
-#define MAX_GRANT_DPT 500
+#define MAX_GRANT_DPT 1500
 
 //What should vending machines charge when you buy something in-department.
-#define VENDING_DISCOUNT 0.2
+#define VENDING_DISCOUNT 0
 
 #define ACCOUNT_CIV "CIV"
 #define ACCOUNT_CIV_NAME "Civil Budget"
@@ -53,9 +50,6 @@
 #define CIV_JOB_MED 11
 #define CIV_JOB_GROW 12
 #define CIV_JOB_RANDOM 13
-
-//By how much should the station's inflation value be multiplied by when dividing the civilian bounty's reward?
-#define BOUNTY_MULTIPLIER 10
 
 //These defines are to be used to with the payment component, determines which lines will be used during a transaction. If in doubt, go with clinical.
 #define PAYMENT_CLINICAL "clinical"

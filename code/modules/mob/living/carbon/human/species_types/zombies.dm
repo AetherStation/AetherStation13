@@ -72,7 +72,8 @@
 
 /datum/species/zombie/infectious/spec_life(mob/living/carbon/C, delta_time, times_fired)
 	. = ..()
-	C.set_combat_mode(TRUE) // THE SUFFERING MUST FLOW
+	// TODO: make sure this is correct, used to be set_combat_mode() call.
+	C.istate.harm = TRUE
 
 	//Zombies never actually die, they just fall down until they regenerate enough to rise back up.
 	//They must be restrained, beheaded or gibbed to stop being a threat.

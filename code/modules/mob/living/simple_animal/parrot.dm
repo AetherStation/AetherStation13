@@ -57,7 +57,7 @@
 	response_harm_continuous = "swats"
 	response_harm_simple = "swat"
 	stop_automated_movement = 1
-	combat_mode = TRUE //parrots now start "aggressive" since only player parrots will nuzzle.
+	istate = new /datum/interaction_state/harm //parrots now start "aggressive" since only player parrots will nuzzle.
 	attack_verb_continuous = "chomps"
 	attack_verb_simple = "chomp"
 	attack_vis_effect = ATTACK_EFFECT_BITE
@@ -154,7 +154,7 @@
 	. = ..()
 	. += ""
 	. += "Held Item: [held_item]"
-	. += "Combat mode: [combat_mode ? "On" : "Off"]"
+	. += client.imode.status()
 
 /mob/living/simple_animal/parrot/Hear(message, atom/movable/speaker, message_langs, raw_message, radio_freq, list/spans, list/message_mods = list())
 	. = ..()
@@ -285,7 +285,7 @@ GLOBAL_LIST_INIT(strippable_parrot_items, create_strippable_list(list(
 	..()
 	if(client)
 		return
-	if(!stat && user.combat_mode)
+	if(!stat && user.istate.harm)
 
 		icon_state = icon_living //It is going to be flying regardless of whether it flees or attacks
 
@@ -300,7 +300,7 @@ GLOBAL_LIST_INIT(strippable_parrot_items, create_strippable_list(list(
 		else
 			parrot_state |= PARROT_FLEE //Otherwise, fly like a bat out of hell!
 			drop_held_item(0)
-	if(stat != DEAD && !user.combat_mode)
+	if(stat != DEAD && !user.istate.harm)
 		handle_automated_speech(1) //assured speak/emote
 	return
 
@@ -570,7 +570,8 @@ GLOBAL_LIST_INIT(strippable_parrot_items, create_strippable_list(list(
 		var/mob/living/L = parrot_interest
 		if(melee_damage_upper == 0)
 			melee_damage_upper = parrot_damage_upper
-			set_combat_mode(TRUE)
+			// TODO: make sure this is correct, used to be set_combat_mode() call.
+			istate.harm = TRUE
 
 		//If the mob is close enough to interact with
 		if(Adjacent(parrot_interest))
@@ -864,13 +865,15 @@ GLOBAL_LIST_INIT(strippable_parrot_items, create_strippable_list(list(
 	if(stat || !client)
 		return
 
-	if(combat_mode)
+	if(istate.harm)
 		melee_damage_upper = 0
-		set_combat_mode(FALSE)
+		// TODO: make sure this is correct, used to be set_combat_mode() call.
+		istate.harm = FALSE
 	else
 		melee_damage_upper = parrot_damage_upper
-		set_combat_mode(TRUE)
-	to_chat(src, span_notice("You will now [combat_mode ? "Harm" : "Help"] others."))
+		// TODO: make sure this is correct, used to be set_combat_mode() call.
+		istate.harm = TRUE
+	to_chat(src, span_notice("You will now [istate.harm ? "harm" : "help"] others."))
 	return
 
 /*

@@ -172,7 +172,7 @@
 	if(W.get_temperature())
 		StartBurning()
 	if(grill)
-		if(!user.combat_mode && !(W.item_flags & ABSTRACT))
+		if(!user.istate.harm && !(W.item_flags & ABSTRACT))
 			if(user.temporarilyRemoveItemFromInventory(W))
 				W.forceMove(get_turf(src))
 				var/list/modifiers = params2list(params)
@@ -186,7 +186,7 @@
 			return ..()
 
 
-/obj/structure/bonfire/attack_hand(mob/user, list/modifiers)
+/obj/structure/bonfire/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

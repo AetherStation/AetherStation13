@@ -60,7 +60,7 @@
 
 /obj/machinery/pdapainter/attackby(obj/item/O, mob/living/user, params)
 	if(machine_stat & BROKEN)
-		if(O.tool_behaviour == TOOL_WELDER && !user.combat_mode)
+		if(O.tool_behaviour == TOOL_WELDER && !user.istate.harm)
 			if(!O.tool_start_check(user, amount=0))
 				return
 			user.visible_message(span_notice("[user] is repairing [src]."), \
@@ -97,7 +97,7 @@
 /obj/machinery/pdapainter/deconstruct(disassembled = TRUE)
 	obj_break()
 
-/obj/machinery/pdapainter/attack_hand(mob/user, list/modifiers)
+/obj/machinery/pdapainter/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

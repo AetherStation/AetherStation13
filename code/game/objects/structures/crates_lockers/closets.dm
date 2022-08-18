@@ -327,7 +327,7 @@
 		user.visible_message(span_notice("[user] [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
 						span_notice("You [anchored ? "anchored" : "unanchored"] \the [src] [anchored ? "to" : "from"] the ground."), \
 						span_hear("You hear a ratchet."))
-	else if(!user.combat_mode)
+	else if(!user.istate.harm)
 		var/item_is_id = W.get_id()
 		if(!item_is_id)
 			return FALSE
