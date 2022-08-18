@@ -63,3 +63,11 @@
 		else
 			to_chat(user, span_warning("You don't find anything in [target]'s [target_zone]."))
 			return FALSE
+
+/datum/surgery/cavity_implant/mechanical
+	name = "Prosthesis cavity implant"
+	steps = list(/datum/surgery_step/mechanic_open, /datum/surgery_step/open_hatch, /datum/surgery_step/prepare_electronics, /datum/surgery_step/handle_cavity, /datum/surgery_step/mechanic_close)
+	possible_locs = list(BODY_ZONE_CHEST)
+	requires_bodypart_type = BODYPART_ROBOTIC
+	lying_required = FALSE
+	self_operable = TRUE
