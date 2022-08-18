@@ -6,6 +6,11 @@
 	return drain_power_from(H, A)
 
 /datum/species/preternis/proc/drain_power_from(mob/living/carbon/human/H, atom/A)
+
+	if(get_dist(get_turf(H), get_turf(A)) > 1)
+		to_chat(H, span_warning("[A] is too far away!"))
+		return FALSE
+
 	if(!istype(H) || !A)
 		return FALSE
 
