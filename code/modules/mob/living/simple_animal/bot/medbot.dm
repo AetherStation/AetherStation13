@@ -445,6 +445,9 @@
 	if(emagged == 2) //Everyone needs our medicine. (Our medicine is toxins)
 		return TRUE
 
+	if(HAS_TRAIT(C,TRAIT_MEDICALIGNORE))
+		return FALSE
+
 	if(HAS_TRAIT(C,TRAIT_MEDIBOTCOMINGTHROUGH) && !HAS_TRAIT_FROM(C,TRAIT_MEDIBOTCOMINGTHROUGH,tag)) //the early medbot gets the worm (or in this case the patient)
 		return FALSE
 

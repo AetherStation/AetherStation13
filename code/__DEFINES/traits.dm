@@ -226,6 +226,7 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 #define TRAIT_NOSOFTCRIT "nosoftcrit"
 #define TRAIT_MINDSHIELD "mindshield"
 #define TRAIT_DISSECTED "dissected"
+#define TRAIT_MEDICALIGNORE "medical_ignore"
 /// Can hear observers
 #define TRAIT_SIXTHSENSE "sixth_sense"
 #define TRAIT_FEARLESS "fearless"
