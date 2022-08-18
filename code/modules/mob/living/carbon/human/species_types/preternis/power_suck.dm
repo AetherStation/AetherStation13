@@ -159,7 +159,7 @@
 	return TRUE
 
 /obj/vehicle/sealed/mecha/consume_power_from(amount)
-	occupant_message("<span class='danger'>Warning: Unauthorized access through sub-route 4, block H, detected.</span>")
+	to_chat(occupants,"<span class='danger'>Warning: Unauthorized access through sub-route 4, block H, detected.</span>")
 	if((cell.charge - amount) < MIN_DRAINABLE_POWER)
 		amount = max(cell.charge - MIN_DRAINABLE_POWER, 0)
 	cell.use(amount)
