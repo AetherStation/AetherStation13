@@ -163,7 +163,7 @@
 			attached.transfer_blood_to(target, amount)
 			update_appearance()
 
-/obj/machinery/iv_drip/attack_hand(mob/user, list/modifiers)
+/obj/machinery/iv_drip/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

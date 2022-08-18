@@ -124,7 +124,7 @@
 /obj/machinery/grill/attack_ai(mob/user)
 	return
 
-/obj/machinery/grill/attack_hand(mob/user, list/modifiers)
+/obj/machinery/grill/attack_hand(mob/user)
 	if(grilled_item)
 		to_chat(user, span_notice("You take out [grilled_item] from [src]."))
 		grilled_item.forceMove(drop_location())

@@ -78,7 +78,7 @@
 			O.add_fingerprint(user)
 			update_appearance()
 
-	else if(O.tool_behaviour == TOOL_WELDER && !user.combat_mode)
+	else if(O.tool_behaviour == TOOL_WELDER && !user.istate.harm)
 		if(obj_integrity < max_integrity)
 			if(!O.tool_start_check(user, amount=0))
 				return
@@ -99,7 +99,7 @@
 	else
 		return ..()
 
-/obj/machinery/aug_manipulator/attack_hand(mob/user, list/modifiers)
+/obj/machinery/aug_manipulator/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return

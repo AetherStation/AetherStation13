@@ -106,7 +106,7 @@
 	else if(I.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1))
 		I.play_tool_sound(src)
 		deconstruct()
-	else if(cistern && !user.combat_mode)
+	else if(cistern && !user.istate.harm)
 		if(I.w_class > WEIGHT_CLASS_NORMAL)
 			to_chat(user, span_warning("[I] does not fit!"))
 			return
@@ -119,7 +119,7 @@
 		w_items += I.w_class
 		to_chat(user, span_notice("You carefully place [I] into the cistern."))
 
-	else if(istype(I, /obj/item/reagent_containers) && !user.combat_mode)
+	else if(istype(I, /obj/item/reagent_containers) && !user.istate.harm)
 		if (!open)
 			return
 		if(istype(I, /obj/item/food/monkeycube))
@@ -411,7 +411,7 @@
 	if(O.item_flags & ABSTRACT) //Abstract items like grabs won't wash. No-drop items will though because it's still technically an item in your hand.
 		return
 
-	if(!user.combat_mode)
+	if(!user.istate.harm)
 		to_chat(user, span_notice("You start washing [O]..."))
 		busy = TRUE
 		if(!do_after(user, 40, target = src))
@@ -610,7 +610,7 @@
 	if(O.item_flags & ABSTRACT) //Abstract items like grabs won't wash. No-drop items will though because it's still technically an item in your hand.
 		return
 
-	if(!user.combat_mode)
+	if(!user.istate.harm)
 		to_chat(user, span_notice("You start washing [O]..."))
 		busy = TRUE
 		if(!do_after(user, 4 SECONDS, target = src))
@@ -633,7 +633,7 @@
 	resistance_flags = UNACIDABLE
 
 //ATTACK HAND IGNORING PARENT RETURN VALUE
-/obj/structure/water_source/puddle/attack_hand(mob/user, list/modifiers)
+/obj/structure/water_source/puddle/attack_hand(mob/user)
 	icon_state = "puddle-splash"
 	. = ..()
 	icon_state = "puddle"
@@ -711,7 +711,7 @@
 	return TRUE
 
 
-/obj/structure/curtain/attack_hand(mob/user, list/modifiers)
+/obj/structure/curtain/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
@@ -784,5 +784,5 @@
 	if(opaque_closed)
 		set_opacity(TRUE)
 
-/obj/structure/curtain/cloth/fancy/mechanical/attack_hand(mob/user, list/modifiers)
+/obj/structure/curtain/cloth/fancy/mechanical/attack_hand(mob/user)
 		return

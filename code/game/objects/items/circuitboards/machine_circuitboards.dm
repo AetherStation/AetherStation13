@@ -1234,7 +1234,7 @@
 		/obj/item/stock_parts/micro_laser = 1,
 		/obj/item/stock_parts/manipulator = 1,
 		/obj/item/assembly/igniter = 1)
-	needs_anchored = FALSE
+	needs_anchored = TRUE
 
 /obj/item/circuitboard/machine/ore_silo
 	name = "Ore Silo (Machine Board)"

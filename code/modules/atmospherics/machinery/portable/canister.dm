@@ -486,7 +486,7 @@ GLOBAL_LIST_INIT(gas_id_to_canister, init_gas_id_to_canister())
 
 /obj/machinery/portable_atmospherics/canister/welder_act(mob/living/user, obj/item/tool)
 	. = ..()
-	if(user.combat_mode)
+	if(user.istate.harm)
 		return FALSE
 	if(obj_integrity >= max_integrity)
 		return TRUE

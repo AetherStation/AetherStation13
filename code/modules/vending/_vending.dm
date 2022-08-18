@@ -305,8 +305,8 @@ GLOBAL_LIST_EMPTY(vending_products)
  * * startempty - should we set vending_product record amount from the product list (so it's prefilled at roundstart)
  */
 /obj/machinery/vending/proc/build_inventory(list/productlist, list/recordlist, start_empty = FALSE)
-	default_price = round(initial(default_price) * SSeconomy.inflation_value())
-	extra_price = round(initial(extra_price) * SSeconomy.inflation_value())
+	default_price = initial(default_price)
+	extra_price = initial(extra_price)
 	for(var/typepath in productlist)
 		var/amount = productlist[typepath]
 		if(isnull(amount))
@@ -321,36 +321,11 @@ GLOBAL_LIST_EMPTY(vending_products)
 			R.amount = amount
 		R.max_amount = amount
 		///Prices of vending machines are all increased uniformly.
-		R.custom_price = round(initial(temp.custom_price) * SSeconomy.inflation_value())
-		R.custom_premium_price = round(initial(temp.custom_premium_price) * SSeconomy.inflation_value())
+		R.custom_price = initial(temp.custom_price)
+		R.custom_premium_price = initial(temp.custom_premium_price)
 		R.age_restricted = initial(temp.age_restricted)
 		R.colorable = !!(initial(temp.greyscale_config) && initial(temp.greyscale_colors) && (initial(temp.flags_1) & IS_PLAYER_COLORABLE_1))
 		recordlist += R
-
-/**
- * Reassign the prices of the vending machine as a result of the inflation value, as provided by SSeconomy
- *
- * This rebuilds both /datum/data/vending_products lists for premium and standard products based on their most relevant pricing values.
- * Arguments:
- * * recordlist - the list of standard product datums in the vendor to refresh their prices.
- * * premiumlist - the list of premium product datums in the vendor to refresh their prices.
- */
-/obj/machinery/vending/proc/reset_prices(list/recordlist, list/premiumlist)
-	default_price = round(initial(default_price) * SSeconomy.inflation_value())
-	extra_price = round(initial(extra_price) * SSeconomy.inflation_value())
-	for(var/R in recordlist)
-		var/datum/data/vending_product/record = R
-		var/atom/potential_product = record.product_path
-		record.custom_price = round(initial(potential_product.custom_price) * SSeconomy.inflation_value())
-	for(var/R in premiumlist)
-		var/datum/data/vending_product/record = R
-		var/atom/potential_product = record.product_path
-		var/premium_sanity = round(initial(potential_product.custom_premium_price))
-		if(premium_sanity)
-			record.custom_premium_price = round(premium_sanity * SSeconomy.inflation_value())
-			continue
-		//For some ungodly reason, some premium only items only have a custom_price
-		record.custom_premium_price = round(extra_price + (initial(potential_product.custom_price) * (SSeconomy.inflation_value() - 1)))
 
 /**
  * Refill a vending machine from a refill canister
@@ -462,7 +437,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				else
 					to_chat(user, span_warning("There's nothing to restock!"))
 			return
-	if(compartmentLoadAccessCheck(user) && !user.combat_mode)
+	if(compartmentLoadAccessCheck(user) && !user.istate.harm)
 		if(canLoadItem(I))
 			loadingAttempt(I,user)
 			updateUsrDialog() //can't put this on the proc above because we spam it below
@@ -897,11 +872,6 @@ GLOBAL_LIST_EMPTY(vending_products)
 		else if (!C.registered_account)
 			say("No account found.")
 			flick(icon_deny,src)
-			vend_ready = TRUE
-			return
-		else if(!C.registered_account.account_job)
-			say("Departmental accounts have been blacklisted from personal expenses due to embezzlement.")
-			flick(icon_deny, src)
 			vend_ready = TRUE
 			return
 		else if(age_restrictions && R.age_restricted && (!C.registered_age || C.registered_age < AGE_MINOR))

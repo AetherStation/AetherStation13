@@ -514,7 +514,6 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 				span_notice("You flip [src]. It lands on [coinflip]."), \
 				span_hear("You hear the clattering of loose change."))
 		SSeconomy.fire()
-		to_chat(user,"<span class='bounty'>[SSeconomy.inflation_value()] is the inflation value.</span>")
 	return TRUE//did the coin flip? useful for suicide_act
 
 #undef ORESTACK_OVERLAYS_MAX

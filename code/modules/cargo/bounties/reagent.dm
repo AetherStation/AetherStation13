@@ -128,6 +128,7 @@
 		/datum/reagent/drug/space_drugs,\
 		/datum/reagent/drug/crank,\
 		/datum/reagent/gunpowder,\
+		/datum/reagent/anfo,\
 		/datum/reagent/napalm,\
 		/datum/reagent/firefighting_foam,\
 		/datum/reagent/consumable/mayonnaise,\

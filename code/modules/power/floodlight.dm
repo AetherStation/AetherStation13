@@ -118,7 +118,7 @@
 	else
 		. = ..()
 
-/obj/machinery/power/floodlight/attack_hand(mob/user, list/modifiers)
+/obj/machinery/power/floodlight/attack_hand(mob/user)
 	. = ..()
 	if(.)
 		return
