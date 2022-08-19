@@ -201,7 +201,7 @@
 			FinalDeath()
 			return
 	// Fire Damage? (above double health)
-	if(owner.current.getFireLoss() >= owner.current.maxHealth * 2.5)
+	if(owner.current.getFireLoss() >= owner.current.maxHealth * 3)
 		FinalDeath()
 		return
 	// Staked while "Temp Death" or Asleep
