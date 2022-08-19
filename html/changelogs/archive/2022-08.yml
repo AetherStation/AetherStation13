@@ -119,3 +119,7 @@
       normal sized down from bulky, and fits in your backpack.
   TheChosenEvilOne:
   - rscadd: A changed version of intents have been re-added as a user preference.
+2022-08-19:
+  Ryll/Shaps:
+  - admin: Log messages for being deconverted from a revolution are now also registered
+      in the mob's individual logs instead of just to the game.log
