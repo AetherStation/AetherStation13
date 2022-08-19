@@ -645,6 +645,7 @@
 /datum/outfit/centcom_clown
 	name = "Code Banana ERT"
 	id = /obj/item/card/id/centcom
+	card_access = /datum/card_access/centcom/ert/clown
 	belt = /obj/item/pda/clown
 	ears = /obj/item/radio/headset/headset_cent
 	uniform = /obj/item/clothing/under/rank/civilian/clown
