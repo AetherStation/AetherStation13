@@ -26,6 +26,7 @@
 	var/prev_socks
 	var/prev_disfigured
 	var/list/prev_features // For lizards and such
+	var/prev_real_name
 
 /datum/action/bloodsucker/veil/ActivatePower()
 	. = ..()
@@ -47,7 +48,7 @@
 	user.name = user.name_override
 	user.SetSpecialVoice(user.name_override)
 	to_chat(owner, span_warning("You mystify the air around your person. Your identity is now altered."))
-
+	user.prev_real_name = user.real_name
 	// Store Prev Appearance
 	prev_gender = user.gender
 	prev_skin_tone = user.skin_tone
@@ -84,6 +85,7 @@
 	// Revert Identity
 	user.UnsetSpecialVoice()
 	user.name_override = null
+	user.real_name = prev_real_name
 	user.name = user.real_name
 
 	// Revert Appearance
