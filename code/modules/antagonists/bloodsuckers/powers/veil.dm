@@ -22,11 +22,8 @@
 	var/prev_hair_color
 	var/prev_facial_hair_color
 	var/prev_underwear
-	var/prev_undershirt
-	var/prev_socks
 	var/prev_disfigured
 	var/list/prev_features // For lizards and such
-	var/prev_real_name
 
 /datum/action/bloodsucker/veil/ActivatePower()
 	. = ..()
@@ -48,7 +45,6 @@
 	user.name = user.name_override
 	user.SetSpecialVoice(user.name_override)
 	to_chat(owner, span_warning("You mystify the air around your person. Your identity is now altered."))
-	prev_real_name = user.real_name
 	// Store Prev Appearance
 	prev_gender = user.gender
 	prev_skin_tone = user.skin_tone
@@ -57,14 +53,19 @@
 	prev_hair_color = user.hair_color
 	prev_facial_hair_color = user.facial_hair_color
 	prev_underwear = user.underwear
-	prev_undershirt = user.undershirt
-	prev_socks = user.socks
 //	prev_eye_color
 	prev_disfigured = HAS_TRAIT(user, TRAIT_DISFIGURED) // I was disfigured! //prev_disabilities = user.disabilities
 	prev_features = user.dna.features
 
-	// Change Appearance
-	randomize_human(user)
+	// Change 
+	user.gender = pick(MALE, FEMALE)
+	user.skin_tone = random_skin_tone()
+	user.hairstyle = random_hairstyle(user.gender)
+	user.facial_hairstyle = random_facial_hairstyle(user.gender)
+	user.hair_color = random_short_color()
+	user.facial_hair_color = user.hair_color
+	user.underwear = random_underwear(user.gender)
+
 	//user.eye_color = random_eye_color()
 	if(prev_disfigured)
 		REMOVE_TRAIT(user, TRAIT_DISFIGURED, null)
@@ -85,7 +86,6 @@
 	// Revert Identity
 	user.UnsetSpecialVoice()
 	user.name_override = null
-	user.real_name = prev_real_name
 	user.name = user.real_name
 
 	// Revert Appearance
@@ -96,8 +96,6 @@
 	user.hair_color = prev_hair_color
 	user.facial_hair_color = prev_facial_hair_color
 	user.underwear = prev_underwear
-	user.undershirt = prev_undershirt
-	user.socks = prev_socks
 
 	//user.disabilities = prev_disabilities // Restore HUSK, CLUMSY, etc.
 	if(prev_disfigured)
