@@ -48,7 +48,7 @@
 	user.name = user.name_override
 	user.SetSpecialVoice(user.name_override)
 	to_chat(owner, span_warning("You mystify the air around your person. Your identity is now altered."))
-	user.prev_real_name = user.real_name
+	prev_real_name = user.real_name
 	// Store Prev Appearance
 	prev_gender = user.gender
 	prev_skin_tone = user.skin_tone
