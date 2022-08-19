@@ -5,4 +5,4 @@
 /atom/movable/screen/alert/preternis_charge
 	name = "Low power"
 	desc = "Find a power cell to recharge from or you may lose power."
-	icon_state = "lowcell" 
+	icon_state = "low_cell" 
