@@ -28,6 +28,7 @@
 #define NESTYPE_BOOLEAN "boolean"
 
 ///Nanite Extra Settings - Note that these will also be the names displayed in the UI
+#define NES_CLOUD_ID "Cloud ID"
 #define NES_SENT_CODE "Sent Code"
 #define NES_DELAY "Delay"
 #define NES_MODE "Mode"
