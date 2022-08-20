@@ -200,7 +200,7 @@
 // ------------------------------------------ Setting base model modules
 // --------------------- Standart
 /obj/item/robot_model/standard
-	name = "Standard"
+	name = "Standard" 
 	basic_modules = list(
 		/obj/item/assembly/flash/cyborg,
 		/obj/item/reagent_containers/borghypo/epi,
