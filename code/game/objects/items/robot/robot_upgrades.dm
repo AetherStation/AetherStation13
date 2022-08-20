@@ -679,11 +679,11 @@
 	name = "borg model picker (Standard)"
 	desc = "Allows you to to turn a cyborg into a standard cyborg."
 	icon_state = "cyborg_upgrade3"
-	var/obj/item/robot_model/new_model = null
+	var/obj/item/robot_model/new_model = /obj/item/robot_model/standard
 
 /obj/item/borg/upgrade/transform/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	if(. && new_model)
+	if(.)
 		R.model.transform_to(new_model)
 
 /obj/item/borg/upgrade/transform/clown
