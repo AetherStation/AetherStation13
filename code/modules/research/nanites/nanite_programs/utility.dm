@@ -225,9 +225,7 @@
 	extra_settings[NES_CLOUD_ID] = new /datum/nanite_extra_setting/number(1, 1, 100)
 
 /datum/nanite_program/nanite_sting/on_trigger(comm_message)
-	var/datum/nanite_extra_setting/ID_number = extra_settings[NES_CLOUD_ID]
-	var/cloudID = 0
-	cloudID = ID_number.get_value()
+	var/cloud_id = extra_settings[NES_CLOUD_ID].get_value()
 	var/list/mob/living/target_hosts = list()
 	for(var/mob/living/L in oview(1, host_mob))
 		if(!(L.mob_biotypes & (MOB_ORGANIC|MOB_UNDEAD)) || SEND_SIGNAL(L, COMSIG_HAS_NANITES) || !L.Adjacent(host_mob))
@@ -241,8 +239,8 @@
 		//unlike with Infective Exo-Locomotion, this can't take over existing nanites, because Nanite Sting only targets non-hosts.
 		infectee.AddComponent(/datum/component/nanites, 5)
 		SEND_SIGNAL(infectee, COMSIG_NANITE_SYNC, nanites)
-		SEND_SIGNAL(infectee, COMSIG_NANITE_SET_CLOUD, cloudID)
-		infectee.investigate_log("was infected by a nanite cluster with cloud ID [cloudID] by [key_name(host_mob)] at [AREACOORD(infectee)].", INVESTIGATE_NANITES)
+		SEND_SIGNAL(infectee, COMSIG_NANITE_SET_CLOUD, cloud_id)
+		infectee.investigate_log("was infected by a nanite cluster with cloud ID [cloud_id] by [key_name(host_mob)] at [AREACOORD(infectee)].", INVESTIGATE_NANITES)
 		to_chat(infectee, span_warning("You feel a tiny prick."))
 
 /datum/nanite_program/mitosis
