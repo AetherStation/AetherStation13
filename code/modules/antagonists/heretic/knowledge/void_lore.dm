@@ -8,7 +8,7 @@
 	cost = 1
 	route = PATH_VOID
 
-/datum/eldritch_knowledge/starting/base_void/recipe_snowflake_check(list/atoms, loc)
+/datum/eldritch_knowledge/starting/base_void/recipe_snowflake_check(mob/living/user, list/atoms, list/selected_atoms, turf/loc)
 	var/turf/open/turfie = loc
 	if(turfie.GetTemperature() > T0C)
 		return FALSE
