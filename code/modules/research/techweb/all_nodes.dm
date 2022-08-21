@@ -1790,6 +1790,8 @@
 		"access_nanites",
 		"debugging_nanites",
 		"monitoring_nanites",
+		"research_nanites",
+		"researchplus_nanites",
 		"nanite_chamber",
 		"nanite_chamber_control",
 		"nanite_cloud_control",
