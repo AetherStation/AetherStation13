@@ -225,7 +225,7 @@
 	extra_settings[NES_CLOUD_ID] = new /datum/nanite_extra_setting/number(1, 1, 100)
 
 /datum/nanite_program/nanite_sting/on_trigger(comm_message)
-	var/cloud_id = extra_settings[NES_CLOUD_ID].get_value()
+	var/cloud_id = get_extra_setting_value(NES_CLOUD_ID)
 	var/list/mob/living/target_hosts = list()
 	for(var/mob/living/L in oview(1, host_mob))
 		if(!(L.mob_biotypes & (MOB_ORGANIC|MOB_UNDEAD)) || SEND_SIGNAL(L, COMSIG_HAS_NANITES) || !L.Adjacent(host_mob))
