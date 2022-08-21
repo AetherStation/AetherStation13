@@ -254,3 +254,35 @@
 		return
 	else
 		return ..()
+
+/obj/structure/reflector/ui_interact(mob/user, datum/tgui/ui)
+	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY, FALSE, !iscyborg(user)))
+		return
+	if(!finished)
+		to_chat(user, span_alert("The reflector isn't finished!"))
+		return
+	if(!can_rotate)
+		to_chat(user, span_alert("The rotation is locked!"))
+		return
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "Reflector")
+		ui.open()
+
+/obj/structure/reflector/ui_data(mob/user)
+	var/list/data = list()
+	data["rotation_angle"] = rotation_angle
+
+	return data
+
+/obj/structure/reflector/ui_act(action, params)
+	. = ..()
+	if(.)
+		return
+	if(action == "rotate")
+		if (!can_rotate || admin)
+			return FALSE
+		var/new_angle = params["rotation_angle"]
+		if(!isnull(new_angle))
+			set_angle(SIMPLIFY_DEGREES(new_angle))
+		return TRUE
