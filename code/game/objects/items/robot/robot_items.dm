@@ -346,9 +346,9 @@
 	name = "treat fabricator"
 	desc = "Reward humans with various treats. Toggle in-module to switch between dispensing and high velocity ejection modes."
 	icon_state = "lollipop"
-	var/candy = 5
-	var/candymax = 5
-	var/charge_delay = 10 SECONDS
+	var/candy = 10
+	var/candymax = 10
+	var/charge_delay = 3 SECONDS
 	var/charging = FALSE
 	var/mode = DISPENSE_LOLLIPOP_MODE
 
@@ -537,7 +537,7 @@
 
 /obj/projectile/bullet/reusable/lollipop/harmful
 	embedding = list(embed_chance=35, fall_chance=2, jostle_chance=0, ignore_throwspeed_threshold=TRUE, pain_stam_pct=0.5, pain_mult=3, rip_time=10)
-	damage = 10
+	damage = 5
 	nodamage = FALSE
 	embed_falloff_tile = 0
 
