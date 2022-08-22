@@ -270,6 +270,7 @@
 /obj/structure/reflector/ui_data(mob/user)
 	var/list/data = list()
 	data["rotation_angle"] = rotation_angle
+	data["reflector_name"] = name
 
 	return data
 

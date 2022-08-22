@@ -6,7 +6,7 @@ export const Reflector = (props, context) => {
   const { act, data } = useBackend(context);
   return (
     <Window
-      title="Reflector"
+      title={data.reflector_name}
       height={200}
       width={219}>
       <Window.Content>
@@ -129,16 +129,6 @@ export const Reflector = (props, context) => {
                     <Button
                       fluid
                       icon="undo-alt"
-                      content="-1"
-                      mb={1}
-                      onClick={() => act('calculate', {
-                        rotation_angle: -1,
-                      })} />
-                  </Flex.Item>
-                  <Flex.Item>
-                    <Button
-                      fluid
-                      icon="undo-alt"
                       content="-5"
                       mb={1}
                       onClick={() => act('calculate', {
@@ -155,19 +145,18 @@ export const Reflector = (props, context) => {
                         rotation_angle: -10,
                       })} />
                   </Flex.Item>
-                </Flex>
-                <Flex direction="column">
                   <Flex.Item>
                     <Button
                       fluid
-                      icon="redo-alt"
-                      iconPosition="right"
-                      content="+1"
+                      icon="undo-alt"
+                      content="-15"
                       mb={1}
                       onClick={() => act('calculate', {
-                        rotation_angle: 1,
+                        rotation_angle: -15,
                       })} />
                   </Flex.Item>
+                </Flex>
+                <Flex direction="column">
                   <Flex.Item>
                     <Button
                       fluid
@@ -188,6 +177,17 @@ export const Reflector = (props, context) => {
                       mb={1}
                       onClick={() => act('calculate', {
                         rotation_angle: 10,
+                      })} />
+                  </Flex.Item>
+                  <Flex.Item>
+                    <Button
+                      fluid
+                      icon="redo-alt"
+                      iconPosition="right"
+                      content="+15"
+                      mb={1}
+                      onClick={() => act('calculate', {
+                        rotation_angle: 15,
                       })} />
                   </Flex.Item>
                 </Flex>
