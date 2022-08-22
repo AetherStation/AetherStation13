@@ -197,7 +197,7 @@
 
 /datum/design/nanites/nervous
 	name = "Nerve Support"
-	desc = "The nanites act as a secondary nervous system, reducing the amount of time the host is stunned."
+	desc = "The nanites absorb excess strain on the nervous system, allowing the host to resist incapacitating attacks."
 	id = "nervous_nanites"
 	program_type = /datum/nanite_program/nervous
 	category = list("Augmentation Nanites")
