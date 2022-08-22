@@ -10,12 +10,14 @@
 	. = ..()
 	if(ishuman(host_mob))
 		var/mob/living/carbon/human/H = host_mob
+		H.physiology.stun_mod *= 0.5
 		H.physiology.stamina_mod *= 0.5
 
 /datum/nanite_program/nervous/disable_passive_effect()
 	. = ..()
 	if(ishuman(host_mob))
 		var/mob/living/carbon/human/H = host_mob
+		H.physiology.stun_mod *= 2
 		H.physiology.stamina_mod *= 2
 
 /datum/nanite_program/hardening
