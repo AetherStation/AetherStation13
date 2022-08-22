@@ -262,11 +262,20 @@
 	empulse(get_turf(holder.my_atom), 3, 7)
 	..()
 
+/datum/chemical_reaction/slime/slimecell
+	required_reagents = list(/datum/reagent/toxin/plasma = 1)
+	required_container = /obj/item/slime_extract/yellow
+	required_other = TRUE
+
+/datum/chemical_reaction/slime/slimecell/on_reaction(datum/reagents/holder, created_volume)
+	new /obj/item/stock_parts/cell/high/slime(get_turf(holder.my_atom))
+	..()
+
 /datum/chemical_reaction/slime/slimeglow
 	required_reagents = list(/datum/reagent/water = 1)
 	required_container = /obj/item/slime_extract/yellow
 	required_other = TRUE
-
+	
 /datum/chemical_reaction/slime/slimeglow/on_reaction(datum/reagents/holder)
 	var/turf/T = get_turf(holder.my_atom)
 	T.visible_message(span_danger("The slime begins to emit a soft light. Squeezing it will cause it to grow brightly."))
