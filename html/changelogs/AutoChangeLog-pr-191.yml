@@ -1,0 +1,5 @@
+author: kriskog
+delete-after: true
+changes:
+  - balance: Bag of holding no longer requires an anomaly core to build, inert version
+      removed. You can no longer boh bomb (very effectively).
