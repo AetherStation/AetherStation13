@@ -18,6 +18,9 @@
 	volume = 40
 	reagent_flags = REFILLABLE | DRAINABLE | AMOUNT_VISIBLE
 	spillable = TRUE
+	w_class = WEIGHT_CLASS_NORMAL
+	var/shrapnel_type = /obj/projectile/bullet/shrapnel
+	var/shrapnel_magnitude = 2
 	var/sealed = FALSE
 	var/fused = FALSE
 	var/fuse_length = 0
@@ -32,6 +35,8 @@
 /obj/item/reagent_containers/pipe/attackby(obj/item/I, mob/living/user, params)
 	. = ..()
 	if (istype(I, /obj/item/stack/cable_coil))
+		if (sealed && !fuse_length)
+			to_chat(user, span_warning("\the [src] is sealed, you can't add a fuse to this."))
 		if (fuse_length >= 5)
 			to_chat(user, span_warning("You can't lengthen the fuse of \the [src] any more."))
 
@@ -52,6 +57,9 @@
 		return TRUE
 	if (sealed)
 		to_chat(user, span_notice("You open \the [src]."))
+		UnregisterSignal(src, COMSIG_ITEM_UNWRAPPED)
+		var/datum/component/C = GetComponent(/datum/component/pellet_cloud)
+		C.RemoveComponent()
 		// You are using a welder to open a container, what did you expect?
 		if (fuse_length)
 			detonate()
@@ -67,13 +75,15 @@
 		to_chat(user, span_notice("You seal \the [src] shut."))
 		if (fuse_length)
 			name = "pipe bomb"
-			desc = "A work of art, it fills you with the wish to destroy industrial society."
+			desc = "Often made by those with strong feelings about industrial society."
+			RegisterSignal(src, COMSIG_ITEM_UNWRAPPED, .proc/unwrapped)
+			AddComponent(/datum/component/pellet_cloud, projectile_type = shrapnel_type, magnitude = shrapnel_magnitude)
 		else
 			desc = "A sealed pipe."
 		icon_state = "pipe_sealed"
-		sealed = TRUE
 		spillable = FALSE
 		reagents.flags = NONE
+		sealed = TRUE
 
 /obj/item/reagent_containers/pipe/attack_self(mob/user)
 	if (sealed && fuse_length)
@@ -82,6 +92,12 @@
 		update_icon(UPDATE_OVERLAYS)
 		return
 	. = ..()
+
+/obj/item/reagent_containers/pipe/proc/unwrapped(datum/source)
+	SIGNAL_HANDLER
+
+	if (prob(80))
+		detonate()
 
 /obj/item/reagent_containers/pipe/proc/detonate()
 	reagents.chem_temp += rand(5, 20)
