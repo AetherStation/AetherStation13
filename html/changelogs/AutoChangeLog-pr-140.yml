@@ -1,0 +1,6 @@
+author: TheChosenEvilOne
+delete-after: true
+changes:
+  - rscadd: 'New deathmatch map by tlaltecuhtli: Mech Madness.'
+  - rscadd: The deathmatch map "Shooting Range" has been reworked.
+  - bugfix: the CTF button in ghost HUD works now.
