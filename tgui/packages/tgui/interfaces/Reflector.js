@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Box, Button, Flex, Stack, Icon, LabeledControls, Section, NumberInput } from '../components';
+import { Box, Button, Flex, Stack, Icon, LabeledControls, Section, NumberInput, Table } from '../components';
 import { Window } from '../layouts';
 
 export const Reflector = (props, context) => {
@@ -7,18 +7,18 @@ export const Reflector = (props, context) => {
   return (
     <Window
       title="Reflector"
-      width={220}
-      height={175}>
+      height={200}
+      width={219}>
       <Window.Content>
         <Flex direction="row">
           <Flex.Item>
             <Section
               title="Presets"
-              textAlign="center">
-              <Stack direction="row"
-                align="center">
-                <Stack direction="column" fill>
-                  <Stack.Item>
+              textAlign="center"
+              fill>
+              <Table mt={3.5}>
+                <Table.Cell>
+                  <Table.Row>
                     <Button
                       icon="arrow-left"
                       iconRotation={45}
@@ -26,16 +26,16 @@ export const Reflector = (props, context) => {
                       onClick={() => act('rotate', {
                         rotation_angle: 315,
                       })} />
-                  </Stack.Item>
-                  <Stack.Item>
+                  </Table.Row>
+                  <Table.Row>
                     <Button
                       icon="arrow-left"
                       mb={1}
                       onClick={() => act('rotate', {
                         rotation_angle: 270,
                       })} />
-                  </Stack.Item>
-                  <Stack.Item>
+                  </Table.Row>
+                  <Table.Row>
                     <Button
                       icon="arrow-left"
                       iconRotation={-45}
@@ -43,36 +43,38 @@ export const Reflector = (props, context) => {
                       onClick={() => act('rotate', {
                         rotation_angle: 225,
                       })} />
-                  </Stack.Item>
-                </Stack>
-                <Stack direction="column" fill>
-                  <Stack.Item>
+                  </Table.Row>
+                </Table.Cell>
+                <Table.Cell>
+                  <Table.Row>
                     <Button
                       icon="arrow-up"
                       mb={1}
                       onClick={() => act('rotate', {
                         rotation_angle: 0,
                       })} />
-                  </Stack.Item>
-                  <Stack.Item>
-                    <Icon
-                      name="angle-double-up"
-                      size={2}
-                      rotation={data.rotation_angle}
-                      mb={1}
-                    />
-                  </Stack.Item>
-                  <Stack.Item>
+                  </Table.Row>
+                  <Table.Row>
+                    <Box px={0.75}>
+                      <Icon
+                        name="angle-double-up"
+                        size={1.66}
+                        rotation={data.rotation_angle}
+                        mb={1}
+                      />
+                    </Box>
+                  </Table.Row>
+                  <Table.Row>
                     <Button
                       icon="arrow-down"
                       mb={1}
                       onClick={() => act('rotate', {
                         rotation_angle: 180,
                       })} />
-                  </Stack.Item>
-                </Stack>
-                <Stack direction="column" fill>
-                  <Stack.Item>
+                  </Table.Row>
+                </Table.Cell>
+                <Table.Cell>
+                  <Table.Row>
                     <Button
                       icon="arrow-right"
                       iconRotation={-45}
@@ -80,16 +82,16 @@ export const Reflector = (props, context) => {
                       onClick={() => act('rotate', {
                         rotation_angle: 45,
                       })} />
-                  </Stack.Item>
-                  <Stack.Item>
+                  </Table.Row>
+                  <Table.Row>
                     <Button
                       icon="arrow-right"
                       mb={1}
                       onClick={() => act('rotate', {
                         rotation_angle: 90,
                       })} />
-                  </Stack.Item>
-                  <Stack.Item>
+                  </Table.Row>
+                  <Table.Row>
                     <Button
                       icon="arrow-right"
                       iconRotation={45}
@@ -97,9 +99,9 @@ export const Reflector = (props, context) => {
                       onClick={() => act('rotate', {
                         rotation_angle: 135,
                       })} />
-                  </Stack.Item>
-                </Stack>
-              </Stack>
+                  </Table.Row>
+                </Table.Cell>
+              </Table>
             </Section>
           </Flex.Item>
           <Flex.Item>
@@ -108,22 +110,88 @@ export const Reflector = (props, context) => {
               textAlign="center"
               fill>
               <LabeledControls>
-                <LabeledControls.Item label="Angle regulator">
-                  <Box
-                    position="relative">
-                    <NumberInput
-                      value={data.rotation_angle}
-                      unit="degrees"
-                      minValue={0}
-                      maxValue={359}
-                      step={1}
-                      stepPixelSize={2}
-                      onDrag={(e, value) => act('rotate', {
-                        rotation_angle: value,
-                      })} />
-                  </Box>
+                <LabeledControls.Item ml={0.5} label="Set rotation">
+                  <NumberInput
+                    value={data.rotation_angle}
+                    unit="degrees"
+                    minValue={0}
+                    maxValue={359}
+                    step={1}
+                    stepPixelSize={1}
+                    onDrag={(e, value) => act('rotate', {
+                      rotation_angle: value,
+                    })} />
                 </LabeledControls.Item>
               </LabeledControls>
+              <Flex direction="row" grow={1}>
+                <Flex direction="column" grow={1}>
+                  <Flex.Item>
+                    <Button
+                      fluid
+                      icon="undo-alt"
+                      content="-1"
+                      mb={1}
+                      onClick={() => act('calculate', {
+                        rotation_angle: -1,
+                      })} />
+                  </Flex.Item>
+                  <Flex.Item>
+                    <Button
+                      fluid
+                      icon="undo-alt"
+                      content="-5"
+                      mb={1}
+                      onClick={() => act('calculate', {
+                        rotation_angle: -5,
+                      })} />
+                  </Flex.Item>
+                  <Flex.Item>
+                    <Button
+                      fluid
+                      icon="undo-alt"
+                      content="-10"
+                      mb={1}
+                      onClick={() => act('calculate', {
+                        rotation_angle: -10,
+                      })} />
+                  </Flex.Item>
+                </Flex>
+                <Flex direction="column">
+                  <Flex.Item>
+                    <Button
+                      fluid
+                      icon="redo-alt"
+                      iconPosition="right"
+                      content="+1"
+                      mb={1}
+                      onClick={() => act('calculate', {
+                        rotation_angle: 1,
+                      })} />
+                  </Flex.Item>
+                  <Flex.Item>
+                    <Button
+                      fluid
+                      icon="redo-alt"
+                      iconPosition="right"
+                      content="+5"
+                      mb={1}
+                      onClick={() => act('calculate', {
+                        rotation_angle: 5,
+                      })} />
+                  </Flex.Item>
+                  <Flex.Item>
+                    <Button
+                      fluid
+                      icon="redo-alt"
+                      iconPosition="right"
+                      content="+10"
+                      mb={1}
+                      onClick={() => act('calculate', {
+                        rotation_angle: 10,
+                      })} />
+                  </Flex.Item>
+                </Flex>
+              </Flex>
             </Section>
           </Flex.Item>
         </Flex>
