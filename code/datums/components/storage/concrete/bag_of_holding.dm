@@ -11,7 +11,7 @@
 
 /datum/component/storage/concrete/bluespace/bag_of_holding/proc/recursive_insertion(obj/item/W, mob/living/user)
 	var/atom/A = parent
-	var/safety = tgui_alert(user, "Doing this will have extremely dire consequences for the station and its crew. Be sure you know what you're doing.", "Put in [A.name]?", list("Proceed", "Abort"))
+	var/safety = tgui_alert(user, "You get a feeling this is pretty stupid.", "Put in [A.name]?", list("Proceed", "Abort"))
 	if(safety != "Proceed" || QDELETED(A) || QDELETED(W) || QDELETED(user) || !user.canUseTopic(A, BE_CLOSE, iscarbon(user)))
 		return
 	var/turf/loccheck = get_turf(A)
@@ -19,9 +19,7 @@
 	qdel(W)
 	playsound(loccheck,'sound/effects/supermatter.ogg', 200, TRUE)
 
-	message_admins("[ADMIN_LOOKUPFLW(user)] detonated a bag of holding at [ADMIN_VERBOSEJMP(loccheck)].")
-	log_game("[key_name(user)] detonated a bag of holding at [loc_name(loccheck)].")
+	log_game("[key_name(user)] deleted themselves with two bags of holding at [loc_name(loccheck)].")
 
 	user.gib(TRUE, TRUE, TRUE)
-	new/obj/boh_tear(loccheck)
 	qdel(A)
