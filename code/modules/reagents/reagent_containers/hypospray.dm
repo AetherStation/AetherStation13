@@ -69,9 +69,9 @@
 	amount_per_transfer_from_this = 10
 	inhand_icon_state = "combat_hypo"
 	icon_state = "combat_hypo"
-	volume = 90
+	volume = 100
 	ignore_flags = 1 // So they can heal their comrades.
-	list_reagents = list(/datum/reagent/medicine/epinephrine = 30, /datum/reagent/medicine/omnizine = 30, /datum/reagent/medicine/leporazine = 15, /datum/reagent/medicine/atropine = 15)
+	list_reagents = list(/datum/reagent/medicine/salbutamol = 15, /datum/reagent/medicine/morphine = 15, /datum/reagent/medicine/omnizine = 30, /datum/reagent/medicine/leporazine = 10, /datum/reagent/medicine/atropine = 10, /datum/reagent/medicine/coagulant = 20)
 
 /obj/item/reagent_containers/hypospray/combat/nanites
 	name = "experimental combat stimulant injector"

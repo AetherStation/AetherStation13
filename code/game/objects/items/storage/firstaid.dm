@@ -269,10 +269,10 @@
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/defibrillator/compact/combat/loaded(src)
 	new /obj/item/reagent_containers/hypospray/combat(src)
-	new /obj/item/reagent_containers/pill/patch/libital(src)
-	new /obj/item/reagent_containers/pill/patch/libital(src)
-	new /obj/item/reagent_containers/pill/patch/aiuri(src)
-	new /obj/item/reagent_containers/pill/patch/aiuri(src)
+	new /obj/item/reagent_containers/hypospray/medipen/salacid(src)
+	new /obj/item/reagent_containers/hypospray/medipen/salacid(src)
+	new /obj/item/reagent_containers/hypospray/medipen/oxandrolone(src)
+	new /obj/item/reagent_containers/hypospray/medipen/oxandrolone(src)
 	new /obj/item/clothing/glasses/hud/health/night(src)
 
 //medibot assembly
