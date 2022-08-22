@@ -124,7 +124,22 @@
   - admin: Log messages for being deconverted from a revolution are now also registered
       in the mob's individual logs instead of just to the game.log
 2022-08-22:
+  HansRobertCoooding:
+  - rscadd: Recharging yellow extract power cells
+  Pepsiman:
+  - rscadd: good shotgun ammo is printable again
+  - rscadd: pulse slugs deal 40 damage
+  Pugie:
+  - balance: Combat medic kit has good meds now, and its hypospray also contains coagulant
+      and morphine.
   Skog:
   - balance: Peacekeeper borgs can now dispense cookies faster, and mediborgs get
       more candy storaage and lower cooldown. Lowered the emagged gumball damage to
       compensate.
+  TheChosenEvilOne:
+  - rscadd: 'New deathmatch map by tlaltecuhtli: Mech Madness.'
+  - rscadd: The deathmatch map "Shooting Range" has been reworked.
+  - bugfix: the CTF button in ghost HUD works now.
+  kriskog:
+  - balance: Bag of holding no longer requires an anomaly core to build, inert version
+      removed. You can no longer boh bomb (very effectively).
