@@ -123,3 +123,8 @@
   Ryll/Shaps:
   - admin: Log messages for being deconverted from a revolution are now also registered
       in the mob's individual logs instead of just to the game.log
+2022-08-22:
+  Skog:
+  - balance: Peacekeeper borgs can now dispense cookies faster, and mediborgs get
+      more candy storaage and lower cooldown. Lowered the emagged gumball damage to
+      compensate.

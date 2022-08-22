@@ -1,6 +1,0 @@
-author: Skog
-delete-after: true
-changes:
-  - balance: Peacekeeper borgs can now dispense cookies faster, and mediborgs get
-      more candy storaage and lower cooldown. Lowered the emagged gumball damage to
-      compensate.
