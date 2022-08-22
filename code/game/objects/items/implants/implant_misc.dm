@@ -136,11 +136,10 @@
 	imp_in.SetImmobilized(0)
 	imp_in.adjustStaminaLoss(-75)
 	imp_in.set_resting(FALSE)
-	imp_in.update_mobility()
 
-	imp_in.reagents.add_reagent(/datum/reagent/medicine/synaptizine, 10)
-	imp_in.reagents.add_reagent(/datum/reagent/medicine/omnizine, 10)
-	imp_in.reagents.add_reagent(/datum/reagent/medicine/stimulants, 10)
+	imp_in.reagents.add_reagent(/datum/reagent/medicine/synaptizine, 5)
+	imp_in.reagents.add_reagent(/datum/reagent/medicine/omnizine, 5)
+	imp_in.reagents.add_reagent(/datum/reagent/medicine/stimulants, 5)
 	if(!uses)
 		qdel(src)
 
