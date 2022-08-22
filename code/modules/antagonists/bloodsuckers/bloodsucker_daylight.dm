@@ -1,5 +1,5 @@
-/// 1 minute
-#define TIME_BLOODSUCKER_DAY 60
+/// 45 seconds
+#define TIME_BLOODSUCKER_DAY 45
 /// 10 minutes
 #define TIME_BLOODSUCKER_NIGHT 600
 /// 1.5 minutes
