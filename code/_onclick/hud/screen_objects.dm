@@ -318,6 +318,8 @@
 	var/datum/interaction_mode/intents3/intents
 
 /atom/movable/screen/act_intent3/Click(location, control, params)
+	if(isobserver(usr))
+		return
 	var/_x = text2num(params2list(params)["icon-x"])
 	var/_y = text2num(params2list(params)["icon-y"])
 	if(_y<=16)
