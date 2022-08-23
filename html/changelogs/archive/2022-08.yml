@@ -146,3 +146,4 @@
 2022-08-23:
   TheChosenEvilOne:
   - bugfix: Fixed ghosts being able to change people's intents.
+  - bugfix: fixed not being able to rotate TEG circulators with alt-click.
