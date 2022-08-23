@@ -143,3 +143,6 @@
   kriskog:
   - balance: Bag of holding no longer requires an anomaly core to build, inert version
       removed. You can no longer boh bomb (very effectively).
+2022-08-23:
+  TheChosenEvilOne:
+  - bugfix: Fixed ghosts being able to change people's intents.

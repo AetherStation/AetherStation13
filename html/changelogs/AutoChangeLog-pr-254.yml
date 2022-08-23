@@ -1,4 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - bugfix: Fixed ghosts being able to change people's intents.
