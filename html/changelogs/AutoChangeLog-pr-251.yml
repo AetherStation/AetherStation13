@@ -1,0 +1,4 @@
+author: TheChosenEvilOne
+delete-after: true
+changes:
+  - bugfix: fixed not being able to rotate TEG circulators with alt-click.
