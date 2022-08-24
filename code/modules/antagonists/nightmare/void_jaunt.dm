@@ -45,7 +45,6 @@
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "nothing"
 	var/canmove = TRUE
-	var/mob/living/jaunter
 	density = FALSE
 	anchored = TRUE
 	invisibility = 60

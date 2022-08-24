@@ -24,6 +24,30 @@
 	AddComponent(/datum/component/butchering, 80, 70)
 	AddComponent(/datum/component/light_eater)
 
+/obj/item/light_eater/afterattack(atom/target, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+
+	if(istype(target, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/A = target
+
+		if((!A.requiresID() || A.allowed(user)) && A.hasPower())
+			return
+		if(A.locked)
+			to_chat(user, span_warning("The airlock's bolts prevent it from being forced!"))
+			return
+
+		if(A.hasPower())
+			user.visible_message(span_warning("[user] jams [src] into the airlock and starts prying it open!"), span_warning("You start forcing the [A] open."), \
+			span_hear("You hear a metal screeching sound."))
+			playsound(A, 'sound/machines/airlock_alien_prying.ogg', 100, TRUE)
+			if(!do_after(user, 5 SECONDS, target = A))
+				return
+		user.visible_message(span_warning("[user] forces the airlock to open with [user.p_their()] [src]!"), span_warning("You force the [A] to open."), \
+		span_hear("You hear a metal screeching sound."))
+		A.open(2)
+
 /obj/item/clothing/suit/space/shadow
 	name = "chitin shell"
 	desc = "A dark, semi-transparent shell. Protects against vacuum, but not against the light of the stars." //Still takes damage from spacewalking but is immune to space itself

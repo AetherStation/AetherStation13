@@ -19,7 +19,7 @@
 	void_jaunt.Grant(M)
 
 /obj/item/organ/brain/nightmare/Remove(mob/living/carbon/M, special = FALSE)
-	if(shadowwalk)
+	if(void_jaunt)
 		M.RemoveSpell(void_jaunt)
 	return ..()
 

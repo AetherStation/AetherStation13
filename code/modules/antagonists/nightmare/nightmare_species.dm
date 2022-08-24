@@ -43,7 +43,9 @@
 
 /datum/species/shadow/nightmare/on_species_loss(mob/living/carbon/C)
 	. = ..()
-	C.RemoveComponent(/datum/component/walk/shadow)
+	var/datum/component/walk/shadow/SW = C.GetComponent(/datum/component/walk/shadow)
+	if(SW)
+		qdel(SW)
 	qdel(suit)
 	qdel(helmet)
 
