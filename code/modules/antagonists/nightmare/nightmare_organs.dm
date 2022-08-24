@@ -8,20 +8,19 @@
 	name = "tumorous mass"
 	desc = "A fleshy growth that was dug out of the skull of a Nightmare."
 	icon_state = "brain-x-d"
-	var/obj/effect/proc_holder/spell/targeted/shadowwalk/shadowwalk
+	var/obj/effect/proc_holder/spell/targeted/void_jaunt/void_jaunt
 
 /obj/item/organ/brain/nightmare/Insert(mob/living/carbon/M, special = FALSE)
 	. = ..()
 	if(M.dna.species.id != SPECIES_NIGHTMARE)
 		M.set_species(/datum/species/shadow/nightmare)
 		visible_message(span_warning("[M] thrashes as [src] takes root in [M.p_their()] body!"))
-	var/obj/effect/proc_holder/spell/targeted/shadowwalk/SW = new
-	M.AddSpell(SW)
-	shadowwalk = SW
+	void_jaunt = new /obj/effect/proc_holder/spell/targeted/void_jaunt
+	void_jaunt.Grant(M)
 
 /obj/item/organ/brain/nightmare/Remove(mob/living/carbon/M, special = FALSE)
 	if(shadowwalk)
-		M.RemoveSpell(shadowwalk)
+		M.RemoveSpell(void_jaunt)
 	return ..()
 
 
@@ -60,7 +59,7 @@
 /obj/item/organ/heart/nightmare/Insert(mob/living/carbon/M, special = FALSE)
 	. = ..()
 	if(special != HEART_SPECIAL_SHADOWIFY)
-		blade = new/obj/item/light_eater
+		blade = new /obj/item/light_eater(M)
 		M.put_in_hands(blade)
 
 /obj/item/organ/heart/nightmare/Remove(mob/living/carbon/M, special = FALSE)
