@@ -148,6 +148,8 @@
   - bugfix: Fixed ghosts being able to change people's intents.
   - bugfix: fixed not being able to rotate TEG circulators with alt-click.
 2022-08-24:
+  PolishUser:
+  - bugfix: Traitor objectives no longer spit null values
   TheChosenEvilOne:
   - bugfix: slime cells no longer have a charge overlay.
   - bugfix: fixed cult made cult constructs being doubled.
