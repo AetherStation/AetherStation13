@@ -1,0 +1,5 @@
+author: Sparkezel
+delete-after: true
+changes:
+  - expansion: Adds a tgui menu to reflectors, now you can rotate them real time and
+      they have presets too!
