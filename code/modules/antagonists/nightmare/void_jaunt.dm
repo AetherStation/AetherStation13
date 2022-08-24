@@ -1,7 +1,7 @@
 /obj/effect/proc_holder/spell/targeted/void_jaunt
 	name = "Void Jaunt"
 	desc = "Move through the void for a time, avoiding mortal eyes and lights."
-	charge_max = 800
+	charge_max = 2 MINUTES
 	clothes_req = FALSE
 	antimagic_allowed = TRUE
 	phase_allowed = TRUE

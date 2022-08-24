@@ -44,6 +44,8 @@
 /datum/species/shadow/nightmare/on_species_loss(mob/living/carbon/C)
 	. = ..()
 	C.RemoveComponent(/datum/component/walk/shadow)
+	qdel(suit)
+	qdel(helmet)
 
 /datum/species/shadow/nightmare/bullet_act(obj/projectile/P, mob/living/carbon/human/H)
 	var/turf/T = H.loc
