@@ -10,6 +10,7 @@
 
 	var/obj/item/disk/nanite_program/disk
 	var/list/datum/nanite_cloud_backup/cloud_backups = list()
+	var/scienceLock = TRUE
 	var/current_view = 0 //0 is the main menu, any other number is the page of the backup with that ID
 	var/new_backup_id = 1
 
@@ -19,6 +20,14 @@
 	obj_flags |= EMAGGED
 	to_chat(user, span_danger("You overwrite the security measures!"))
 	playsound(src, 'sound/machines/terminal_alert.ogg', 50, FALSE)
+
+	var/obj/item/circuitboard/computer/nanite_cloud_controller/board = circuit
+	board.obj_flags |= EMAGGED
+	update_static_data(user)
+
+/obj/machinery/computer/nanite_cloud_controller/on_construction()
+	. = ..()
+	circuit.configure_machine(src)
 
 /obj/machinery/computer/nanite_cloud_controller/Destroy()
 	QDEL_LIST(cloud_backups) //rip backups
@@ -81,6 +90,7 @@
 
 	data["authenticated"] = (authenticated || issilicon(user))
 	data["canLogOut"] = !issilicon(user)
+	data["sciLock"] = scienceLock
 
 	if(disk)
 		data["has_disk"] = TRUE
@@ -198,7 +208,6 @@
 				authenticated = TRUE
 		playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
 		return TRUE
-	if (!authenticated && !issilicon(usr)) return
 	switch(action)
 		if("eject")
 			eject(usr)
