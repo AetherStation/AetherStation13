@@ -19,7 +19,7 @@
 #define ACCESS_MEDICAL 5
 /// Morgue access
 #define ACCESS_MORGUE 6
-/// R&D department and R&D console
+/// R&D department, R&D console and Nanite Cloud Controller
 #define ACCESS_RND 7
 /// Toxins lab and burn chamber
 #define ACCESS_TOXINS 8

@@ -279,6 +279,7 @@ export const NaniteCloudControl = (props, context) => {
     authenticated,
     canLogOut,
     emagged,
+    sciLock,
   } = data;
   return (
     <Window
@@ -286,17 +287,18 @@ export const NaniteCloudControl = (props, context) => {
       height={700}
       theme={emagged ? "syndicate" : undefined}>
       <Window.Content scrollable>
-        {(canLogOut || !authenticated) && (
+        {((canLogOut || !authenticated) && !!sciLock) && (
           <Section title="Authentication">
             <Button
-              icon={authenticated ? "sign-out-alt" : "sign-in-alt"}
-              content={authenticated ? `Log Out` : "Log In"}
+              icon={(authenticated || emagged) ? "sign-out-alt" : "sign-in-alt"}
+              content={(authenticated || emagged) ? `Log Out` : "Log In"}
               color={authenticated ? "bad" : "good"}
               onClick={() => act("toggleAuthentication")}
+              disabled={emagged && authenticated}
             />
           </Section>
         )}
-        {authenticated && (
+        {(!!authenticated || emagged || !sciLock) && (
           <>
             <Section
               title="Program Disk"
