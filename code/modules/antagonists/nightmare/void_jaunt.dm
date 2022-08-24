@@ -66,7 +66,7 @@
 /obj/effect/dummy/phased_mob/shadow/proc/check_light_level()
 	var/turf/T = get_turf(src)
 	var/light_amount = T.get_lumcount()
-	if(light_amount > LIGHT_DAM_THRESHOLD)	//Increased penalty
+	if(light_amount > SHADOW_SPECIES_LIGHT_THRESHOLD)	//Increased penalty
 		jaunter.apply_damage(VOIDJAUNT_STAM_PENALTY_LIGHT, STAMINA)
 	else
 		jaunter.apply_damage(VOIDJAUNT_STAM_PENALTY_DARK, STAMINA)
