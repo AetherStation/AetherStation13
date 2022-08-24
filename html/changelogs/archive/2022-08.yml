@@ -150,6 +150,11 @@
 2022-08-24:
   PolishUser:
   - bugfix: Traitor objectives no longer spit null values
+  Salex08:
+  - bugfix: you can craft void blades again
+  Sparkezel:
+  - expansion: Adds a tgui menu to reflectors, now you can rotate them real time and
+      they have presets too!
   TheChosenEvilOne:
   - bugfix: slime cells no longer have a charge overlay.
   - bugfix: fixed cult made cult constructs being doubled.
