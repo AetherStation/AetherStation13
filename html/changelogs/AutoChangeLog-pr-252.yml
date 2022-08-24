@@ -1,0 +1,4 @@
+author: TheChosenEvilOne
+delete-after: true
+changes:
+  - bugfix: slime cells no longer have a charge overlay.
