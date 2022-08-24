@@ -1,0 +1,4 @@
+author: PolishUser
+delete-after: true
+changes:
+  - bugfix: Traitor objectives no longer spit null values
