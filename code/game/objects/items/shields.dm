@@ -1,4 +1,4 @@
-/obj/item/shield
+/obj/item/shield // you better add stuff here alphabetically >:(
 	name = "shield"
 	icon = 'icons/obj/shields.dmi'
 	block_chance = 50
@@ -7,26 +7,6 @@
 
 /obj/item/shield/proc/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
 	return TRUE
-
-/obj/item/shield/riot
-	name = "riot shield"
-	desc = "A shield adept at blocking blunt objects from connecting with the torso of the shield wielder."
-	icon_state = "riot"
-	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
-	slot_flags = ITEM_SLOT_BACK
-	force = 10
-	throwforce = 5
-	throw_speed = 2
-	throw_range = 3
-	w_class = WEIGHT_CLASS_BULKY
-	custom_materials = list(/datum/material/glass=7500, /datum/material/iron=1000)
-	attack_verb_continuous = list("shoves", "bashes")
-	attack_verb_simple = list("shove", "bash")
-	var/cooldown = 0 //shield bash cooldown. based on world.time
-	transparent = TRUE
-	max_integrity = 75
-	material_flags = MATERIAL_NO_EFFECTS
 
 /obj/item/shield/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	if(transparent && (hitby.pass_flags & PASSGLASS))
@@ -38,155 +18,6 @@
 	. = ..()
 	if(.)
 		on_shield_block(owner, hitby, attack_text, damage, attack_type)
-
-/obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
-	if(istype(W, /obj/item/melee/baton))
-		if(cooldown < world.time - 25)
-			user.visible_message(span_warning("[user] bashes [src] with [W]!"))
-			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, TRUE)
-			cooldown = world.time
-	else if(istype(W, /obj/item/stack/sheet/mineral/titanium))
-		if (obj_integrity >= max_integrity)
-			to_chat(user, span_warning("[src] is already in perfect condition."))
-		else
-			var/obj/item/stack/sheet/mineral/titanium/T = W
-			T.use(1)
-			obj_integrity = max_integrity
-			to_chat(user, span_notice("You repair [src] with [T]."))
-	else
-		return ..()
-
-/obj/item/shield/riot/examine(mob/user)
-	. = ..()
-	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
-	switch(healthpercent)
-		if(50 to 99)
-			. += span_info("It looks slightly damaged.")
-		if(25 to 50)
-			. += span_info("It appears heavily damaged.")
-		if(0 to 25)
-			. += span_warning("It's falling apart!")
-
-/obj/item/shield/riot/proc/shatter(mob/living/carbon/human/owner)
-	playsound(owner, 'sound/effects/glassbr3.ogg', 100)
-	new /obj/item/shard((get_turf(src)))
-
-/obj/item/shield/riot/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
-	if (obj_integrity <= damage)
-		var/turf/T = get_turf(owner)
-		T.visible_message(span_warning("[hitby] destroys [src]!"))
-		shatter(owner)
-		qdel(src)
-		return FALSE
-	take_damage(damage)
-	return ..()
-
-/obj/item/shield/riot/roman
-	name = "\improper Roman shield"
-	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>."
-	icon_state = "roman_shield"
-	inhand_icon_state = "roman_shield"
-	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
-	transparent = FALSE
-	custom_materials = list(/datum/material/iron=8500)
-	max_integrity = 65
-
-/obj/item/shield/riot/roman/fake
-	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>. It appears to be a bit flimsy."
-	block_chance = 0
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
-	max_integrity = 30
-
-/obj/item/shield/riot/roman/shatter(mob/living/carbon/human/owner)
-	playsound(owner, 'sound/effects/grillehit.ogg', 100)
-	new /obj/item/stack/sheet/iron(get_turf(src))
-
-/obj/item/shield/riot/buckler
-	name = "wooden buckler"
-	desc = "A medieval wooden buckler."
-	icon_state = "buckler"
-	inhand_icon_state = "buckler"
-	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
-	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 10)
-	resistance_flags = FLAMMABLE
-	block_chance = 30
-	transparent = FALSE
-	max_integrity = 55
-	w_class = WEIGHT_CLASS_NORMAL
-
-/obj/item/shield/riot/buckler/shatter(mob/living/carbon/human/owner)
-	playsound(owner, 'sound/effects/bang.ogg', 50)
-	new /obj/item/stack/sheet/mineral/wood(get_turf(src))
-
-/obj/item/shield/riot/flash
-	name = "strobe shield"
-	desc = "A shield with a built in, high intensity light capable of blinding and disorienting suspects. Takes regular handheld flashes as bulbs."
-	icon_state = "flashshield"
-	inhand_icon_state = "flashshield"
-	var/obj/item/assembly/flash/handheld/embedded_flash
-
-/obj/item/shield/riot/flash/Initialize()
-	. = ..()
-	embedded_flash = new(src)
-
-/obj/item/shield/riot/flash/ComponentInitialize()
-	. = .. ()
-	AddElement(/datum/element/update_icon_updates_onmob)
-
-/obj/item/shield/riot/flash/attack(mob/living/M, mob/user)
-	. =  embedded_flash.attack(M, user)
-	update_appearance()
-
-/obj/item/shield/riot/flash/attack_self(mob/living/carbon/user)
-	. = embedded_flash.attack_self(user)
-	update_appearance()
-
-/obj/item/shield/riot/flash/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
-	. = ..()
-	if (. && !embedded_flash.burnt_out)
-		embedded_flash.activate()
-		update_appearance()
-
-
-/obj/item/shield/riot/flash/attackby(obj/item/W, mob/user)
-	if(istype(W, /obj/item/assembly/flash/handheld))
-		var/obj/item/assembly/flash/handheld/flash = W
-		if(flash.burnt_out)
-			to_chat(user, span_warning("No sense replacing it with a broken bulb!"))
-			return
-		else
-			to_chat(user, span_notice("You begin to replace the bulb..."))
-			if(do_after(user, 20, target = user))
-				if(flash.burnt_out || !flash || QDELETED(flash))
-					return
-				playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
-				qdel(embedded_flash)
-				embedded_flash = flash
-				flash.forceMove(src)
-				update_appearance()
-				return
-	..()
-
-/obj/item/shield/riot/flash/emp_act(severity)
-	. = ..()
-	embedded_flash.emp_act(severity)
-	update_appearance()
-
-/obj/item/shield/riot/flash/update_icon_state()
-	if(!embedded_flash || embedded_flash.burnt_out)
-		icon_state = "riot"
-		inhand_icon_state = "riot"
-	else
-		icon_state = "flashshield"
-		inhand_icon_state = "flashshield"
-	return ..()
-
-/obj/item/shield/riot/flash/examine(mob/user)
-	. = ..()
-	if (embedded_flash?.burnt_out)
-		. += span_info("The mounted bulb has burnt out. You can try replacing it with a new one.")
 
 /obj/item/shield/energy
 	name = "energy combat shield"
@@ -239,6 +70,198 @@
 		playsound(user, 'sound/weapons/saberoff.ogg', 35, TRUE)
 		to_chat(user, span_notice("[src] can now be concealed."))
 	add_fingerprint(user)
+
+/obj/item/shield/riot
+	name = "riot shield"
+	desc = "A shield adept at blocking blunt objects from connecting with the torso of the shield wielder."
+	icon_state = "riot"
+	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
+	slot_flags = ITEM_SLOT_BACK
+	force = 10
+	throwforce = 5
+	throw_speed = 2
+	throw_range = 3
+	w_class = WEIGHT_CLASS_BULKY
+	custom_materials = list(/datum/material/glass=7500, /datum/material/iron=1000)
+	attack_verb_continuous = list("shoves", "bashes")
+	attack_verb_simple = list("shove", "bash")
+	var/cooldown = 0 //shield bash cooldown. based on world.time
+	transparent = TRUE
+	max_integrity = 75
+	material_flags = MATERIAL_NO_EFFECTS
+	var/fixing_material = /obj/item/stack/sheet/rglass
+	var/flashmount_installed = FALSE //if shield has flashmount installed on it
+	var/obj/item/assembly/flash/handheld/embedded_flash //flash inserted into the shield
+
+/obj/item/shield/riot/ComponentInitialize()
+	. = .. ()
+	AddElement(/datum/element/update_icon_updates_onmob)
+
+/obj/item/shield/riot/attack(mob/living/M, mob/user)
+	if(embedded_flash)
+		if(embedded_flash.burnt_out)
+			return ..()
+		. = embedded_flash.attack(M, user)
+		update_appearance()
+	else
+		. = ..()
+
+/obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
+	if(istype(W, /obj/item/melee/baton))
+		if(cooldown < world.time - 25)
+			user.visible_message(span_warning("[user] bashes [src] with [W]!"))
+			playsound(user.loc, 'sound/effects/shieldbash.ogg', 50, TRUE)
+			cooldown = world.time
+		return
+
+	if(istype(W, fixing_material))
+		if (obj_integrity >= max_integrity)
+			to_chat(user, span_warning("[src] is already in perfect condition."))
+		else
+			var/obj/item/stack/sheet/T = W
+			T.use(1)
+			obj_integrity = max_integrity
+			to_chat(user, span_notice("You repair [src] with [T]."))
+		return
+
+	if(istype(W, /obj/item/wallframe/flasher))
+		if(flashmount_installed)
+			to_chat("Flashbulb mount is already attached!")
+			return
+		to_chat(user, span_notice("You begin to attach the flashbulb mount..."))
+		if(do_after(user, 20, target = user))
+			if(!W || QDELETED(W))
+				return
+			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
+			flashmount_installed = TRUE
+			qdel(W)
+		return
+
+	if(istype(W, /obj/item/assembly/flash/handheld) && flashmount_installed)
+		var/obj/item/assembly/flash/handheld/flash = W
+		if(flash.burnt_out)
+			to_chat(user, span_warning("You feel like you want to reconsider putting a burnt out flashbulb inside!"))
+		to_chat(user, span_notice("You begin to replace the flashbulb..."))
+		if(do_after(user, 20, target = user))
+			if(!flash || QDELETED(flash))
+				return
+			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
+			if(embedded_flash)
+				embedded_flash.forceMove(get_turf(src))
+			embedded_flash = flash
+			flash.forceMove(src)
+			update_appearance()
+		return
+
+	if (W.tool_behaviour == TOOL_WIRECUTTER)
+		if(embedded_flash)
+			to_chat(user, span_notice("You begin to disconnect the flashbulb..."))
+			if(W.use_tool(src, user, 20, volume=50) && embedded_flash)
+				embedded_flash.forceMove(get_turf(src))
+				embedded_flash = null
+		return
+
+	if (W.tool_behaviour == TOOL_CROWBAR)
+		if(flashmount_installed && !embedded_flash)
+			to_chat(user, span_notice("You begin to pry off the flashbulb mount..."))
+			if(W.use_tool(src, user, 20, volume=50) && flashmount_installed)
+				embedded_flash = FALSE
+				new /obj/item/wallframe/flasher(get_turf(src))
+		else
+			to_chat(user, span_warning("Remove flashbulb from the [src] first!"))
+	return ..()
+
+/obj/item/shield/riot/attack_self(mob/living/carbon/user)
+	if(embedded_flash)
+		. = embedded_flash.attack_self(user)
+		update_appearance()
+	else
+		. = ..()
+
+/obj/item/shield/riot/examine(mob/user)
+	. = ..()
+	var/healthpercent = round((obj_integrity/max_integrity) * 100, 1)
+	switch(healthpercent)
+		if(50 to 99)
+			. += span_info("It looks slightly damaged.")
+		if(25 to 50)
+			. += span_info("It appears heavily damaged.")
+		if(0 to 25)
+			. += span_warning("It's falling apart!")
+
+	if(flashmount_installed)
+		. += span_info("It has a flashbulb mounting point installed [ embedded_flash ? "with a flash inside" : "" ].")
+	if(embedded_flash?.burnt_out)
+		. += span_info("The mounted flashbulb has burnt out. You can try replacing it with a new one.")
+
+/obj/item/shield/riot/emp_act(severity)
+	. = ..()
+	if(embedded_flash)
+		embedded_flash.emp_act(severity)
+		update_appearance()
+
+
+/obj/item/shield/riot/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
+	. = ..()
+	if (. && !embedded_flash.burnt_out)
+		embedded_flash.activate()
+		update_appearance()
+
+/obj/item/shield/riot/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
+	if (obj_integrity <= damage)
+		var/turf/T = get_turf(owner)
+		T.visible_message(span_warning("[hitby] destroys [src]!"))
+		shatter(owner)
+		qdel(src)
+		return FALSE
+	take_damage(damage)
+	return ..()
+
+/obj/item/shield/riot/proc/shatter(mob/living/carbon/human/owner)
+	playsound(owner, 'sound/effects/glassbr3.ogg', 100)
+	new /obj/item/shard((get_turf(src)))
+
+/obj/item/shield/riot/buckler
+	name = "wooden buckler"
+	desc = "A medieval wooden buckler."
+	icon_state = "buckler"
+	inhand_icon_state = "buckler"
+	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
+	custom_materials = list(/datum/material/wood = MINERAL_MATERIAL_AMOUNT * 10)
+	resistance_flags = FLAMMABLE
+	block_chance = 30
+	transparent = FALSE
+	max_integrity = 55
+	w_class = WEIGHT_CLASS_NORMAL
+	fixing_material = /obj/item/stack/sheet/mineral/wood
+
+/obj/item/shield/riot/buckler/shatter(mob/living/carbon/human/owner)
+	playsound(owner, 'sound/effects/bang.ogg', 50)
+	new /obj/item/stack/sheet/mineral/wood(get_turf(src))
+
+/obj/item/shield/riot/roman
+	name = "\improper Roman shield"
+	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>."
+	icon_state = "roman_shield"
+	inhand_icon_state = "roman_shield"
+	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
+	transparent = FALSE
+	custom_materials = list(/datum/material/iron=8500)
+	max_integrity = 65
+	fixing_material = /obj/item/stack/sheet/iron
+
+/obj/item/shield/riot/roman/shatter(mob/living/carbon/human/owner)
+	playsound(owner, 'sound/effects/grillehit.ogg', 100)
+	new /obj/item/stack/sheet/iron(get_turf(src))
+
+/obj/item/shield/riot/roman/fake
+	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>. It appears to be a bit flimsy."
+	block_chance = 50
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
+	max_integrity = 20
 
 /obj/item/shield/riot/tele
 	name = "telescopic shield"
