@@ -2,7 +2,7 @@
 
 /datum/nanite_program/nervous
 	name = "Nerve Support"
-	desc = "The nanites act as a secondary nervous system, reducing the amount of time the host is stunned."
+	desc = "The nanites absorb excess strain on the nervous system, allowing the host to resist incapacitating attacks."
 	use_rate = 1.5
 	rogue_types = list(/datum/nanite_program/nerve_decay)
 
@@ -11,12 +11,14 @@
 	if(ishuman(host_mob))
 		var/mob/living/carbon/human/H = host_mob
 		H.physiology.stun_mod *= 0.5
+		H.physiology.stamina_mod *= 0.5
 
 /datum/nanite_program/nervous/disable_passive_effect()
 	. = ..()
 	if(ishuman(host_mob))
 		var/mob/living/carbon/human/H = host_mob
 		H.physiology.stun_mod *= 2
+		H.physiology.stamina_mod *= 2
 
 /datum/nanite_program/hardening
 	name = "Dermal Hardening"
