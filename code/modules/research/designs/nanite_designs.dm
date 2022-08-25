@@ -106,7 +106,7 @@
 
 /datum/design/nanites/nanite_sting
 	name = "Nanite Sting"
-	desc = "When triggered, projects a nearly invisible spike of nanites that attempts to infect a nearby non-host with a copy of the host's nanites cluster."
+	desc = "When triggered, projects a nearly invisible spike of nanites that attempts to infect a nearby non-host with a copy of the designated cloud ID."
 	id = "nanite_sting_nanites"
 	program_type = /datum/nanite_program/nanite_sting
 	category = list("Utility Nanites")
