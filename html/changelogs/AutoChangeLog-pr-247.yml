@@ -1,0 +1,4 @@
+author: AcapitalA
+delete-after: true
+changes:
+  - balance: Updates the Nerve Support nanite program to also work with stamina.
