@@ -322,6 +322,8 @@ Nothing else in the console has ID requirements.
 			if(QDELETED(d_disk))
 				say("No Design Disk Inserted!")
 				return TRUE
+			if (!(params["selectedDesign"] in stored_research.researched_designs))
+				return
 			var/slot = text2num(params["slot"])
 			var/datum/design/design = SSresearch.techweb_design_by_id(params["selectedDesign"])
 			if(design)
