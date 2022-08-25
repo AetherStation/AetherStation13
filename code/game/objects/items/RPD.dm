@@ -307,7 +307,7 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 		for(var/obj/machinery/atmospherics/other in target_pipe.nodes)
 			var/index = other.nodes.Find(target_pipe)
 			other.nodes[index] = null
-		
+
 		// Don't spill or lose gas
 		target_pipe.flags_1 |= NODECONSTRUCT_1
 		target_pipe.parent.air.volume -= target_pipe.volume
@@ -327,7 +327,7 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 		new_pipe.atom_colours = target_pipe.atom_colours
 		new_pipe.update_atom_colour()
 		target_pipe.transfer_fingerprints_to(new_pipe)
-		
+
 		// Feedback
 		play_tool_sound(new_pipe)
 		user.visible_message( \
@@ -428,7 +428,7 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 			p_dir = NORTH
 			playeffect = FALSE
 		if("piping_layer")
-			piping_layer = text2num(params["piping_layer"])
+			piping_layer = clamp(round(text2num(params["piping_layer"])), PIPING_LAYER_MIN, PIPING_LAYER_MAX)
 			playeffect = FALSE
 		if("ducting_layer")
 			ducting_layer = text2num(params["ducting_layer"])
