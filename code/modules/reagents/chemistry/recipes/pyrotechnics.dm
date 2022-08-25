@@ -162,8 +162,7 @@
 /datum/chemical_reaction/reagent_explosion/anfo_explosion
 	required_reagents = list(/datum/reagent/anfo = 1)
 	required_temp = 474
-	strengthdiv = 5
-	modifier = 10
+	strengthdiv = 10
 
 /datum/chemical_reaction/thermite
 	results = list(/datum/reagent/thermite = 3)
