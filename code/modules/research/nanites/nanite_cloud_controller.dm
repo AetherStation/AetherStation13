@@ -208,6 +208,10 @@
 				authenticated = TRUE
 		playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
 		return TRUE
+
+	if (!(obj_flags & EMAGGED) && scienceLock && !authenticated && !issilicon(usr))
+		return
+
 	switch(action)
 		if("eject")
 			eject(usr)
