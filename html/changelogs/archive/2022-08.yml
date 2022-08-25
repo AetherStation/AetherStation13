@@ -158,3 +158,11 @@
   TheChosenEvilOne:
   - bugfix: slime cells no longer have a charge overlay.
   - bugfix: fixed cult made cult constructs being doubled.
+2022-08-25:
+  AcapitalA:
+  - balance: Updates the Nerve Support nanite program to also work with stamina.
+  PolishUser:
+  - balance: Added cloud ID injection selector for nanite sting and removed the copy
+      of your cloud ID injection mechanic.
+  Pugie:
+  - rscadd: Nanite research protocols are back, under the basic nanites technode.

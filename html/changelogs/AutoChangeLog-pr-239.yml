@@ -1,5 +1,0 @@
-author: PolishUser
-delete-after: true
-changes:
-  - balance: Added cloud ID injection selector for nanite sting and removed the copy
-      of your cloud ID injection mechanic.
