@@ -1,4 +1,4 @@
-/obj/item/shield // you better add stuff here alphabetically >:(
+/obj/item/shield
 	name = "shield"
 	icon = 'icons/obj/shields.dmi'
 	block_chance = 50
@@ -93,6 +93,14 @@
 	var/fixing_material = /obj/item/stack/sheet/rglass
 	var/flashmount_installed = FALSE //if shield has flashmount installed on it
 	var/obj/item/assembly/flash/handheld/embedded_flash //flash inserted into the shield
+	var/can_strobe = TRUE //whenever or not you can convert those shields into flash shields
+	var/flashing = FALSE //if shield is flashing currently
+
+/obj/item/shield/riot/Initialize()
+	. = ..()
+	if(flashmount_installed)
+		embedded_flash = new(src)
+		update_appearance()
 
 /obj/item/shield/riot/ComponentInitialize()
 	. = .. ()
@@ -103,7 +111,7 @@
 		if(embedded_flash.burnt_out)
 			return ..()
 		. = embedded_flash.attack(M, user)
-		update_appearance()
+		update_appearance(flash = TRUE)
 	else
 		. = ..()
 
@@ -125,7 +133,7 @@
 			to_chat(user, span_notice("You repair [src] with [T]."))
 		return
 
-	if(istype(W, /obj/item/wallframe/flasher))
+	if(istype(W, /obj/item/wallframe/flasher) && can_strobe)
 		if(flashmount_installed)
 			to_chat("Flashbulb mount is already attached!")
 			return
@@ -135,12 +143,14 @@
 				return
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			flashmount_installed = TRUE
+			name += "Strobe "
+			update_appearance()
 			qdel(W)
 		return
 
 	if(istype(W, /obj/item/assembly/flash/handheld) && flashmount_installed)
 		var/obj/item/assembly/flash/handheld/flash = W
-		if(flash.burnt_out)
+		if(flash?.burnt_out)
 			to_chat(user, span_warning("You feel like you want to reconsider putting a burnt out flashbulb inside!"))
 		to_chat(user, span_notice("You begin to replace the flashbulb..."))
 		if(do_after(user, 20, target = user))
@@ -160,24 +170,28 @@
 			if(W.use_tool(src, user, 20, volume=50) && embedded_flash)
 				embedded_flash.forceMove(get_turf(src))
 				embedded_flash = null
+				update_appearance()
 		return
 
 	if (W.tool_behaviour == TOOL_CROWBAR)
 		if(flashmount_installed && !embedded_flash)
 			to_chat(user, span_notice("You begin to pry off the flashbulb mount..."))
 			if(W.use_tool(src, user, 20, volume=50) && flashmount_installed)
-				embedded_flash = FALSE
+				flashmount_installed = FALSE
 				new /obj/item/wallframe/flasher(get_turf(src))
+				update_appearance()
 		else
 			to_chat(user, span_warning("Remove flashbulb from the [src] first!"))
 	return ..()
 
 /obj/item/shield/riot/attack_self(mob/living/carbon/user)
 	if(embedded_flash)
+		if(embedded_flash.burnt_out)
+			return ..()
 		. = embedded_flash.attack_self(user)
-		update_appearance()
+		update_appearance(flash = TRUE)
 	else
-		. = ..()
+		return ..()
 
 /obj/item/shield/riot/examine(mob/user)
 	. = ..()
@@ -191,7 +205,9 @@
 			. += span_warning("It's falling apart!")
 
 	if(flashmount_installed)
-		. += span_info("It has a flashbulb mounting point installed [ embedded_flash ? "with a flash inside" : "" ].")
+		. += span_info("It has a flashbulb mounting point installed [ embedded_flash ? "with a flashbulb inside" : "" ].")
+	if(embedded_flash && istype(embedded_flash, /obj/item/assembly/flash/handheld/hypnotic))
+		. += span_info("The flashbulb emits soothing purple light...")
 	if(embedded_flash?.burnt_out)
 		. += span_info("The mounted flashbulb has burnt out. You can try replacing it with a new one.")
 
@@ -199,14 +215,14 @@
 	. = ..()
 	if(embedded_flash)
 		embedded_flash.emp_act(severity)
-		update_appearance()
+		update_appearance(flash = TRUE)
 
 
 /obj/item/shield/riot/hit_reaction(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", final_block_chance = 0, damage = 0, attack_type = MELEE_ATTACK)
 	. = ..()
 	if (. && !embedded_flash.burnt_out)
 		embedded_flash.activate()
-		update_appearance()
+		update_appearance(flash = TRUE)
 
 /obj/item/shield/riot/on_shield_block(mob/living/carbon/human/owner, atom/movable/hitby, attack_text = "the attack", damage = 0, attack_type = MELEE_ATTACK)
 	if (obj_integrity <= damage)
@@ -221,6 +237,28 @@
 /obj/item/shield/riot/proc/shatter(mob/living/carbon/human/owner)
 	playsound(owner, 'sound/effects/glassbr3.ogg', 100)
 	new /obj/item/shard((get_turf(src)))
+
+/obj/item/shield/riot/update_overlays()
+	. = ..()
+	if(flashmount_installed)
+		. += "flashmount"
+	if(embedded_flash)
+		. += "flash[embedded_flash.burnt_out ? "burnt" : "idle" ]"
+	if(flashing && !(embedded_flash?.burnt_out))
+		. += "flashact"
+
+/obj/item/shield/riot/update_name()
+	name = "[flashmount_installed ? "Strobe [initial(name)]" : "[initial(name)]"]"
+	return ..()
+
+/obj/item/shield/riot/update_appearance(updates, flash = FALSE)
+	flashing = flash
+	. = ..()
+	if(flash)
+		addtimer(CALLBACK(src, /atom/.proc/update_appearance), 5)
+
+/obj/item/shield/riot/strobe
+	flashmount_installed = TRUE
 
 /obj/item/shield/riot/buckler
 	name = "wooden buckler"
@@ -241,6 +279,9 @@
 	playsound(owner, 'sound/effects/bang.ogg', 50)
 	new /obj/item/stack/sheet/mineral/wood(get_turf(src))
 
+/obj/item/shield/riot/buckler/strobe
+	flashmount_installed = TRUE
+
 /obj/item/shield/riot/roman
 	name = "\improper Roman shield"
 	desc = "Bears an inscription on the inside: <i>\"Romanes venio domus\"</i>."
@@ -252,6 +293,7 @@
 	custom_materials = list(/datum/material/iron=8500)
 	max_integrity = 65
 	fixing_material = /obj/item/stack/sheet/iron
+	can_strobe = FALSE //this shield wont be able to become stroboscopic
 
 /obj/item/shield/riot/roman/shatter(mob/living/carbon/human/owner)
 	playsound(owner, 'sound/effects/grillehit.ogg', 100)
@@ -303,3 +345,6 @@
 		slot_flags = null
 		to_chat(user, span_notice("[src] can now be concealed."))
 	add_fingerprint(user)
+
+/obj/item/shield/riot/tele/strobe
+	flashmount_installed = TRUE
