@@ -80,6 +80,6 @@
 	name = "Mech Madness"
 	desc = "Write Me"
 	min_players = 2
-	max_players = 8
+	max_players = 4
 	allowed_loadouts = list(/datum/deathmatch_loadout/operative)
 	map_path = "_maps/map_files/DM/mech_madness.dmm"
