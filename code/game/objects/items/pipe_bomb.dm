@@ -37,8 +37,10 @@
 	if (istype(I, /obj/item/stack/cable_coil))
 		if (sealed && !fuse_length)
 			to_chat(user, span_warning("\the [src] is sealed, you can't add a fuse to this."))
+			return
 		if (fuse_length >= 5)
 			to_chat(user, span_warning("You can't lengthen the fuse of \the [src] any more."))
+			return
 
 		var/obj/item/stack/cable_coil/C = I
 		if (!C.use(1))
