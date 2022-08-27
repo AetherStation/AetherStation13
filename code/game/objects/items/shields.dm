@@ -143,7 +143,6 @@
 				return
 			playsound(src, 'sound/items/deconstruct.ogg', 50, TRUE)
 			flashmount_installed = TRUE
-			name += "Strobe "
 			update_appearance()
 			qdel(W)
 		return
@@ -238,6 +237,10 @@
 	playsound(owner, 'sound/effects/glassbr3.ogg', 100)
 	new /obj/item/shard((get_turf(src)))
 
+/obj/item/shield/riot/update_icon_state()
+	inhand_icon_state = "[flashmount_installed ? "[initial(icon_state)]strobe" : "[initial(icon_state)]"]"
+	return ..()
+
 /obj/item/shield/riot/update_overlays()
 	. = ..()
 	if(flashmount_installed)
@@ -327,7 +330,6 @@
 
 /obj/item/shield/riot/tele/attack_self(mob/living/user)
 	active = !active
-	icon_state = "teleriot[active]"
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
 
 	if(active)
@@ -345,6 +347,12 @@
 		slot_flags = null
 		to_chat(user, span_notice("[src] can now be concealed."))
 	add_fingerprint(user)
+	update_icon_state()
+
+/obj/item/shield/riot/tele/update_icon_state()
+	..()
+	icon_state = "teleriot[active]"
+	inhand_icon_state = "[flashmount_installed ? "teleriot[active]strobe" : "teleriot[active]"]"
 
 /obj/item/shield/riot/tele/strobe
 	flashmount_installed = TRUE
