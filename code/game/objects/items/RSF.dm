@@ -237,4 +237,4 @@ RSF
 		R.cell.charge -= 100
 	else
 		matter--
-	cooldown = world.time + cooldowndelay 
+	cooldown = world.time + cooldowndelay
