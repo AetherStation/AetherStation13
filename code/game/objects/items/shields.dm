@@ -107,10 +107,12 @@
 	AddElement(/datum/element/update_icon_updates_onmob)
 
 /obj/item/shield/riot/attack(mob/living/M, mob/user)
+	if(user.istate.secondary)
+		return ..()
 	if(embedded_flash)
 		if(embedded_flash.burnt_out)
 			return ..()
-		. = embedded_flash.attack(M, user)
+		embedded_flash.attack(M, user)
 		update_appearance(flash = TRUE)
 	else
 		. = ..()
@@ -328,7 +330,7 @@
 		return ..()
 	return 0
 
-/obj/item/shield/riot/tele/attack_self(mob/living/user)
+/obj/item/shield/riot/tele/AltClick(mob/living/user)
 	active = !active
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
 
@@ -347,7 +349,7 @@
 		slot_flags = null
 		to_chat(user, span_notice("[src] can now be concealed."))
 	add_fingerprint(user)
-	update_icon_state()
+	update_appearance()
 
 /obj/item/shield/riot/tele/update_icon_state()
 	..()
