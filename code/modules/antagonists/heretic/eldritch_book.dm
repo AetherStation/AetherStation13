@@ -130,8 +130,6 @@
 				var/datum/eldritch_knowledge/EK = X
 				if(initial(EK.name) != ekname)
 					continue
-				if (EK.cost > charge)
-					return
 				if(cultie.gain_knowledge(EK))
 					log_codex_ciatrix("[key_name(last_user)] gained knowledge of [EK]")
 					charge -= initial(EK.cost)
