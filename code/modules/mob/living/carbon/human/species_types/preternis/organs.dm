@@ -1,4 +1,4 @@
-/obj/item/organ/eyes/robotic/preternis
+/obj/item/organ/eyes/robotic/preternis 
 	name = "preternis eyes"
 	desc = "An experimental upgraded version of eyes that can see in the dark. They are designed to fit preternis"
 	see_in_dark = PRETERNIS_NV_ON
