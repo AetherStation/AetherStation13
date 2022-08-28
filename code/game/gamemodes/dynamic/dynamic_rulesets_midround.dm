@@ -551,7 +551,7 @@
 	weight = 3
 	cost = 10
 	requirements = list(101,101,101,70,50,40,20,15,10,10)
-	repeatable = FALSE
+	repeatable = TRUE
 	var/list/spawn_locs = list()
 
 /datum/dynamic_ruleset/midround/from_ghosts/nightmare/execute()
