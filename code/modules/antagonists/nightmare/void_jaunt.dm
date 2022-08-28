@@ -18,7 +18,7 @@
 	var/L = user.loc
 	if(istype(user.loc, /obj/effect/dummy/phased_mob))
 		if(istype(user.loc, /obj/effect/dummy/phased_mob/void))
-			var/obj/effect/dummy/phased_mob/shadow/S = L
+			var/obj/effect/dummy/phased_mob/void/S = L
 			S.end_jaunt(FALSE)
 		return	
 	else
@@ -31,7 +31,7 @@
 													"<span class='alien'>You allow yourself to fall into the void.</span>")
 		user.SetAllImmobility(0)
 		user.setStaminaLoss(0, 0)
-		var/obj/effect/dummy/phased_mob/shadow/S2 = new(get_turf(user.loc))
+		var/obj/effect/dummy/phased_mob/void/S2 = new(get_turf(user.loc))
 		S2.apply_damage = apply_damage
 		user.forceMove(S2)
 		S2.jaunter = user
