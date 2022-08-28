@@ -16,10 +16,11 @@
 
 /obj/effect/proc_holder/spell/targeted/void_jaunt/cast(list/targets,mob/living/user = usr)
 	var/L = user.loc
-	if(istype(user.loc, /obj/effect/dummy/phased_mob/shadow))
-		var/obj/effect/dummy/phased_mob/shadow/S = L
-		S.end_jaunt(FALSE)
-		return
+	if(istype(user.loc, /obj/effect/dummy/phased_mob))
+		if(istype(user.loc, /obj/effect/dummy/phased_mob/void))
+			var/obj/effect/dummy/phased_mob/shadow/S = L
+			S.end_jaunt(FALSE)
+		return	
 	else
 		playsound(get_turf(user), 'sound/magic/ethereal_enter.ogg', 50, 1, -1)
 		if(apply_damage)
@@ -40,7 +41,7 @@
 #define VOIDJAUNT_STAM_PENALTY_DARK 10
 #define VOIDJAUNT_STAM_PENALTY_LIGHT 35
 
-/obj/effect/dummy/phased_mob/shadow
+/obj/effect/dummy/phased_mob/void
 	name = "darkness"
 	icon = 'icons/effects/effects.dmi'
 	icon_state = "nothing"
@@ -54,7 +55,7 @@
 	var/move_delay = 0			//Time until next move allowed
 	var/move_speed = 2			//Deciseconds per move
 
-/obj/effect/dummy/phased_mob/shadow/relaymove(mob/user, direction)
+/obj/effect/dummy/phased_mob/void/relaymove(mob/user, direction)
 	if(move_delay > world.time && apply_damage)	//Ascendants get no slowdown
 		return
 
@@ -62,7 +63,7 @@
 	var/turf/newLoc = get_step(src,direction)
 	forceMove(newLoc)
 
-/obj/effect/dummy/phased_mob/shadow/proc/check_light_level()
+/obj/effect/dummy/phased_mob/void/proc/check_light_level()
 	var/turf/T = get_turf(src)
 	var/light_amount = T.get_lumcount()
 	if(light_amount > SHADOW_SPECIES_LIGHT_THRESHOLD)	//Increased penalty
@@ -70,7 +71,7 @@
 	else
 		jaunter.apply_damage(VOIDJAUNT_STAM_PENALTY_DARK, STAMINA)
 
-/obj/effect/dummy/phased_mob/shadow/proc/end_jaunt(forced = FALSE)
+/obj/effect/dummy/phased_mob/void/proc/end_jaunt(forced = FALSE)
 	if(jaunter)
 		jaunter.forceMove(get_turf(src))
 		if(forced)
@@ -84,15 +85,15 @@
 		jaunter = null
 	qdel(src)
 
-/obj/effect/dummy/phased_mob/shadow/Initialize(mapload)
+/obj/effect/dummy/phased_mob/void/Initialize(mapload)
 	. = ..()
 	START_PROCESSING(SSobj, src)
 
-/obj/effect/dummy/phased_mob/shadow/Destroy()
+/obj/effect/dummy/phased_mob/void/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	. = ..()
 
-/obj/effect/dummy/phased_mob/shadow/process()
+/obj/effect/dummy/phased_mob/void/process()
 	if(!jaunter)
 		qdel(src)
 	if(jaunter.loc != src)
@@ -106,13 +107,13 @@
 			end_jaunt(TRUE)
 			return
 
-/obj/effect/dummy/phased_mob/shadow/ex_act()
+/obj/effect/dummy/phased_mob/void/ex_act()
 	return
 
-/obj/effect/dummy/phased_mob/shadow/bullet_act()
+/obj/effect/dummy/phased_mob/void/bullet_act()
 	return BULLET_ACT_FORCE_PIERCE
 
-/obj/effect/dummy/phased_mob/shadow/singularity_act()
+/obj/effect/dummy/phased_mob/void/singularity_act()
 	return
 
 #undef VOIDJAUNT_STAM_PENALTY_DARK

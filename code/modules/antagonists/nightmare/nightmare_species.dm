@@ -25,18 +25,9 @@
 	mutanteyes = /obj/item/organ/eyes/night_vision/nightmare
 	mutantheart = /obj/item/organ/heart/nightmare
 	mutantbrain = /obj/item/organ/brain/nightmare
-	var/obj/item/clothing/suit/space/shadow/suit
-	var/obj/item/clothing/head/shadow/helmet
 
 /datum/species/shadow/nightmare/on_species_gain(mob/living/carbon/C, datum/species/old_species)
-	C.unequip_everything()
-	suit = new /obj/item/clothing/suit/space/shadow(C)
-	C.equip_to_slot_or_del(suit, ITEM_SLOT_OCLOTHING)
-	helmet = new /obj/item/clothing/head/shadow(C)
-	C.equip_to_slot_or_del(helmet, ITEM_SLOT_HEAD)
-
 	. = ..()
-
 	C.fully_replace_character_name(null, pick(GLOB.nightmare_names))
 	C.set_safe_hunger_level()
 	C._LoadComponent(/datum/component/walk/shadow)
@@ -46,8 +37,6 @@
 	var/datum/component/walk/shadow/SW = C.GetComponent(/datum/component/walk/shadow)
 	if(SW)
 		qdel(SW)
-	qdel(suit)
-	qdel(helmet)
 
 /datum/species/shadow/nightmare/bullet_act(obj/projectile/P, mob/living/carbon/human/H)
 	var/turf/T = H.loc
