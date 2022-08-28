@@ -167,3 +167,9 @@
   Pugie:
   - rscadd: Nanite research protocols are back, under the basic nanites technode.
   - balance: anfo has been nerfed severely.
+2022-08-28:
+  Pepsiman:
+  - qol: stasis beds and op computers work together again
+  TheChosenEvilOne:
+  - rscadd: Added quick equip keybinds for pocket slots Shift+R and Shift+F for right
+      and left pockets respectively.

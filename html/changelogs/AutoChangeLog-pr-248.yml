@@ -1,5 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - rscadd: Added quick equip keybinds for pocket slots Shift+R and Shift+F for right
-      and left pockets respectively.
