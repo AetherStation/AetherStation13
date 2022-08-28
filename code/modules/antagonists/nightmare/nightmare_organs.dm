@@ -16,11 +16,10 @@
 	if(M.dna.species.id != SPECIES_NIGHTMARE)
 		M.set_species(/datum/species/shadow/nightmare)
 		visible_message(span_warning("[M] thrashes as [src] takes root in [M.p_their()] body!"))
-	var/obj/effect/proc_holder/spell/targeted/shadowwalk/SW = new
-	M.AddSpell(SW)
-	shadowwalk = SW
+	shadowwalk = new /obj/effect/proc_holder/spell/targeted/shadowwalk
+	M.AddSpell(shadowwalk)
 	void_jaunt = new /obj/effect/proc_holder/spell/targeted/void_jaunt
-	void_jaunt.Grant(M)
+	M.AddSpell(void_jaunt)
 
 /obj/item/organ/brain/nightmare/Remove(mob/living/carbon/M, special = FALSE)
 	if(shadowwalk)
