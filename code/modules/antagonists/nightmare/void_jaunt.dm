@@ -51,6 +51,7 @@
 	invisibility = 60
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 
+	var/mob/living/jaunter
 	var/apply_damage = TRUE
 	var/move_delay = 0			//Time until next move allowed
 	var/move_speed = 2			//Deciseconds per move
@@ -67,9 +68,9 @@
 	var/turf/T = get_turf(src)
 	var/light_amount = T.get_lumcount()
 	if(light_amount > SHADOW_SPECIES_LIGHT_THRESHOLD)	//Increased penalty
-		jaunter.apply_damage(VOIDJAUNT_STAM_PENALTY_LIGHT, STAMINA)
+		jaunter.adjustStaminaLoss(VOIDJAUNT_STAM_PENALTY_LIGHT)
 	else
-		jaunter.apply_damage(VOIDJAUNT_STAM_PENALTY_DARK, STAMINA)
+		jaunter.adjustStaminaLoss(VOIDJAUNT_STAM_PENALTY_DARK)
 
 /obj/effect/dummy/phased_mob/void/proc/end_jaunt(forced = FALSE)
 	if(jaunter)
