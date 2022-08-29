@@ -1,0 +1,4 @@
+author: AcapitalA
+delete-after: true
+changes:
+  - balance: Nerve Splicing surgery now takes stamina damage in mind. (50% reduction)
