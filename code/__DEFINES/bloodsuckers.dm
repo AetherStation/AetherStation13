@@ -1,4 +1,4 @@
-/** 
+/**
  * Bloodsucker defines
  */
 #define IS_BLOODSUCKER(mob) (mob?.mind?.has_antag_datum(/datum/antagonist/bloodsucker))
