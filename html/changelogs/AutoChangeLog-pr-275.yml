@@ -1,5 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - rscadd: Added a dead chat message when a new deathmatch lobby is created.
-  - rscadd: Added chat to deathmatch that can be toggled in lobby.

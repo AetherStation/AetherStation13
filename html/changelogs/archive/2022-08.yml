@@ -173,3 +173,14 @@
   TheChosenEvilOne:
   - rscadd: Added quick equip keybinds for pocket slots Shift+R and Shift+F for right
       and left pockets respectively.
+2022-08-29:
+  AcapitalA:
+  - bugfix: Mechs do not go super fast anymore upon meeting a dull, universal force.
+  - balance: Nerve Splicing surgery now takes stamina damage in mind. (50% reduction)
+  SuperSlayer:
+  - rscadd: Added honksquad ERT
+  TheChosenEvilOne:
+  - rscadd: Added a dead chat message when a new deathmatch lobby is created.
+  - rscadd: Added chat to deathmatch that can be toggled in lobby.
+  UselessTheremin, redmoogle, ported by SuperSlayer:
+  - rscadd: Adds COG-Nac, liquid of the justicars
