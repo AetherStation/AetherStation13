@@ -22,7 +22,9 @@
 	var/shrapnel_type = /obj/projectile/bullet/shrapnel
 	var/shrapnel_magnitude = 2
 	var/sealed = FALSE
+	/// Is the pipe bomb active? Only used for overlay.
 	var/fused = FALSE
+	/// How long the fuse of the pipe bomb is? Actual fuse length is random from half of fuse length to fuse length seconds.
 	var/fuse_length = 0
 
 /obj/item/reagent_containers/pipe/update_overlays()
