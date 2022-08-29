@@ -10,7 +10,7 @@
 
 	var/obj/item/disk/nanite_program/disk
 	var/list/datum/nanite_cloud_backup/cloud_backups = list()
-	var/scienceLock = TRUE
+	var/science_lock = TRUE
 	var/current_view = 0 //0 is the main menu, any other number is the page of the backup with that ID
 	var/new_backup_id = 1
 
@@ -90,7 +90,7 @@
 
 	data["authenticated"] = (authenticated || issilicon(user))
 	data["canLogOut"] = !issilicon(user)
-	data["sciLock"] = scienceLock
+	data["sciLock"] = science_lock
 
 	if(disk)
 		data["has_disk"] = TRUE
@@ -209,7 +209,7 @@
 		playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
 		return TRUE
 
-	if (!(obj_flags & EMAGGED) && scienceLock && !authenticated && !issilicon(usr))
+	if (!(obj_flags & EMAGGED) && science_lock && !authenticated && !issilicon(usr))
 		return
 
 	switch(action)

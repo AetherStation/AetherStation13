@@ -373,13 +373,13 @@
 	name = "Nanite Cloud Control (Computer Board)"
 	greyscale_colors = CIRCUIT_COLOR_SCIENCE
 	build_path = /obj/machinery/computer/nanite_cloud_controller
-	var/scienceLock = TRUE
+	var/science_lock = TRUE
 
 /obj/item/circuitboard/computer/nanite_cloud_controller/multitool_act(mob/living/user)
 	. = ..()
 	if(!(obj_flags & EMAGGED))
-		scienceLock = !scienceLock
-		to_chat(user, span_notice("SciLock set to [scienceLock ? "Enabled" : "Disabled"]."))
+		science_lock = !science_lock
+		to_chat(user, span_notice("SciLock set to [science_lock ? "Enabled" : "Disabled"]."))
 	else
 		to_chat(user, span_alert("The security chip is unresponsive."))
 
@@ -393,7 +393,7 @@
 	if(!istype(machine))
 		CRASH("Science board attempted to configure incorrect machine type: [machine] ([machine?.type])")
 
-	machine.scienceLock = scienceLock
+	machine.science_lock = science_lock
 
 /obj/item/circuitboard/computer/rdconsole
 	name = "R&D Console (Computer Board)"
