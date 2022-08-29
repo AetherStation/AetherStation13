@@ -177,6 +177,10 @@
   AcapitalA:
   - bugfix: Mechs do not go super fast anymore upon meeting a dull, universal force.
   - balance: Nerve Splicing surgery now takes stamina damage in mind. (50% reduction)
+  Couls:
+  - bugfix: bright white spheres when attacking things with an item that has a light
+      source attached
+  - bugfix: inventory and action buttons creating light sources
   SuperSlayer:
   - rscadd: Added honksquad ERT
   TheChosenEvilOne:
