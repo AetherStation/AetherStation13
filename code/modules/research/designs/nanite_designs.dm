@@ -250,6 +250,13 @@
 	program_type = /datum/nanite_program/mindshield
 	category = list("Augmentation Nanites")
 
+/datum/design/nanites/senators_law
+	name = "Senator's Law"
+	desc = "placeholder"
+	id = "senator_nanites"
+	program_type = /datum/nanite_program/senators_law
+	category = list("Augmentation Nanites")
+
 ////////////////////DEFECTIVE NANITES//////////////////////////////////////
 
 /datum/design/nanites/glitch

@@ -111,3 +111,30 @@
 	. = ..()
 	REMOVE_TRAIT(host_mob, TRAIT_MINDSHIELD, NANITES_TRAIT)
 	host_mob.sec_hud_set_implants()
+
+
+/datum/nanite_program/senators_law
+	name = "Senator's Law"
+	desc = "placeholder"
+	use_rate = 0
+	rogue_types = list(/datum/nanite_program/nerve_decay)
+	var/datum/martial_art/senators_law/senators_law
+
+/datum/nanite_program/senators_law/enable_passive_effect()
+	. = ..()
+	if(iscarbon(host_mob))
+		senators_law = new(null)
+		var/activated = span_spider("S.E.N.A.T.O.R. FIRMWARE ACTIVATED.")
+		to_chat(host_mob, activated)
+		senators_law.teach(host_mob)
+
+/datum/nanite_program/senators_law/disable_passive_effect()
+	. = ..()
+	if(senators_law.SENATOR_STAGE2)
+		deltimer(senators_law.timer_punish)
+		senators_law.punishment(host_mob)
+	if(iscarbon(host_mob))
+		var/deactivated = span_spider("S.E.N.A.T.O.R. FIRMWARE DEACTIVATED.")
+		to_chat(host_mob, deactivated)
+		senators_law.remove(host_mob)
+		QDEL_NULL(senators_law)
