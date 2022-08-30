@@ -140,7 +140,7 @@
 	if (players[_mob.ckey])
 		CRASH("Tried to add [_mob.ckey] as an observer while being a player.")
 	if (playing && global_chat)
-		RegisterSignal(player, COMSIG_MOB_DEADSAY, .proc/global_chat)
+		RegisterSignal(_mob, COMSIG_MOB_DEADSAY, .proc/global_chat)
 	observers[_mob.ckey] = list(mob = _mob, host = _host)
 
 /datum/deathmatch_lobby/proc/add_player(mob/_mob, _loadout, _host = FALSE)
