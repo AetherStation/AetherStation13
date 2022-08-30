@@ -71,6 +71,8 @@
 		qdel(S)
 		// equip player
 		var/datum/deathmatch_loadout/L = players[K]["loadout"]
+		if (!(L in loadouts))
+			L = loadouts[1]
 		L = new L // agony
 		var/mob/living/carbon/human/H = O.change_mob_type(/mob/living/carbon/human, delete_old_mob = TRUE)
 		clean_player(H)
