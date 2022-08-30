@@ -1928,7 +1928,6 @@
 		"nanite_sting_nanites",
 		"pyro_nanites",
 		"viral_nanites",
-		"senator_nanites",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500, TECHWEB_POINT_TYPE_NANITES = 2500)
 	channel_tag = list(RADIO_CHANNEL_SCIENCE)
