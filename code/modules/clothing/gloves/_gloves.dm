@@ -43,7 +43,7 @@
 		M.update_inv_gloves()
 
 // Called just before an attack_hand(), in mob/UnarmedAttack()
-/obj/item/clothing/gloves/proc/Touch(atom/A, proximity, mouseparams)
+/obj/item/clothing/gloves/proc/Touch(atom/A, proximity)
 	return FALSE // return 1 to cancel attack_hand()
 
 /obj/item/clothing/gloves/wirecutter_act(mob/living/user, obj/item/I)
