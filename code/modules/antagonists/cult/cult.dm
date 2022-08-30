@@ -247,7 +247,7 @@
 	var/cultplayers = 0
 	for(var/I in GLOB.player_list)
 		var/mob/M = I
-		if(M.stat != DEAD)
+		if(M.stat != DEAD && !M.has_status_effect(STATUS_EFFECT_SUMMONEDGHOST))
 			if(IS_CULTIST(M))
 				++cultplayers
 			else
