@@ -167,3 +167,24 @@
   Pugie:
   - rscadd: Nanite research protocols are back, under the basic nanites technode.
   - balance: anfo has been nerfed severely.
+2022-08-28:
+  Pepsiman:
+  - qol: stasis beds and op computers work together again
+  TheChosenEvilOne:
+  - rscadd: Added quick equip keybinds for pocket slots Shift+R and Shift+F for right
+      and left pockets respectively.
+2022-08-29:
+  AcapitalA:
+  - bugfix: Mechs do not go super fast anymore upon meeting a dull, universal force.
+  - balance: Nerve Splicing surgery now takes stamina damage in mind. (50% reduction)
+  Couls:
+  - bugfix: bright white spheres when attacking things with an item that has a light
+      source attached
+  - bugfix: inventory and action buttons creating light sources
+  SuperSlayer:
+  - rscadd: Added honksquad ERT
+  TheChosenEvilOne:
+  - rscadd: Added a dead chat message when a new deathmatch lobby is created.
+  - rscadd: Added chat to deathmatch that can be toggled in lobby.
+  UselessTheremin, redmoogle, ported by SuperSlayer:
+  - rscadd: Adds COG-Nac, liquid of the justicars

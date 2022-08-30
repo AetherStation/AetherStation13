@@ -62,6 +62,12 @@
 	playsound(src, "rustle", 50, TRUE, -5)
 	qdel(user)
 
+/obj/item/storage/backpack/holding/clown
+	name = "bag of honking"
+	desc = "An advanced clowning backpack for holding large quantities of pranking gear."
+	icon_state = "clownpack"
+	inhand_icon_state = "clownpack"
+
 /obj/item/storage/backpack/santabag
 	name = "Santa's Gift Bag"
 	desc = "Space Santa uses this to deliver presents to all the nice children in space in Christmas! Wow, it's pretty big!"

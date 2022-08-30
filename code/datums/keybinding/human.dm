@@ -52,7 +52,25 @@
 	hotkey_keys = list("ShiftQ")
 	name = "quick_equip_suit_storage"
 	full_name = "Quick equip suit storage slot"
-	description = "Put held thing in suit storage slot item or take out most recent thing from suit storage slot item"
+	description = "Put held thing in suit storage slot or take out most recent thing from suit storage slot"
 	slot_type = ITEM_SLOT_SUITSTORE
 	slot_item_name = "suit storage slot item"
 	keybind_signal = COMSIG_KB_HUMAN_SUITEQUIP_DOWN
+
+/datum/keybinding/human/quick_equip_belt/quick_equip_pocket_r
+	hotkey_keys = list("ShiftR")
+	name = "quick_equip_pocket_r"
+	full_name = "Quick equip right pocket slot"
+	description = "Put held thing in right pocket or take out most recent thing from right pocket"
+	slot_type = ITEM_SLOT_RPOCKET
+	slot_item_name = "right pocket slot item"
+	keybind_signal = COMSIG_KB_HUMAN_RPOCKETEQUIP_DOWN
+
+/datum/keybinding/human/quick_equip_belt/quick_equip_pocket_l
+	hotkey_keys = list("ShiftF")
+	name = "quick_equip_pocket_l"
+	full_name = "Quick equip left pocket slot"
+	description = "Put held thing in left pocket or take out most recent thing from left pocket"
+	slot_type = ITEM_SLOT_LPOCKET
+	slot_item_name = "left pocket slot item"
+	keybind_signal = COMSIG_KB_HUMAN_LPOCKETEQUIP_DOWN
