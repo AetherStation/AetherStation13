@@ -54,6 +54,9 @@
 		forge_traitor_objectives()
 		forge_ending_objective()
 
+	if (should_give_codewords)
+		give_codewords()
+
 	var/faction = prob(75) ? FACTION_SYNDICATE : FACTION_NANOTRASEN
 
 	pick_employer(faction)
