@@ -188,3 +188,9 @@
   - rscadd: Added chat to deathmatch that can be toggled in lobby.
   UselessTheremin, redmoogle, ported by SuperSlayer:
   - rscadd: Adds COG-Nac, liquid of the justicars
+2022-08-31:
+  AcapitalA:
+  - qol: Biting food is now instant again!
+  TheChosenEvilOne:
+  - bugfix: Fixed roundstart cultist not being informed about their objectives.
+  - bugfix: Fixed traitors not having codewords in notes.

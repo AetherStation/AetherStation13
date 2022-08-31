@@ -1,5 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - bugfix: Fixed roundstart cultist not being informed about their objectives.
-  - bugfix: Fixed traitors not having codewords in notes.
