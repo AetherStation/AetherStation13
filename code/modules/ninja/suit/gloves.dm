@@ -32,13 +32,13 @@
 	var/door_hack_counter = 0
 
 
-/obj/item/clothing/gloves/space_ninja/Touch(atom/A,proximity,modifiers)
-	if(!LAZYACCESS(modifiers, RIGHT_CLICK) || draining)
-		return FALSE
+/obj/item/clothing/gloves/space_ninja/Touch(atom/A, proximity)
 	if(!ishuman(loc))
 		return FALSE //Only works while worn
 
 	var/mob/living/carbon/human/wearer = loc
+	if(!wearer.istate.secondary || draining)
+		return FALSE
 
 	var/obj/item/clothing/suit/space/space_ninja/suit = wearer.wear_suit
 	if(!istype(suit))
