@@ -1,0 +1,4 @@
+author: TheChosenEvilOne
+delete-after: true
+changes:
+  - bugfix: Fixed ninja gloves not being able to drain energy.
