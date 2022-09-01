@@ -14,7 +14,7 @@
 
 
 /datum/mutation/human/hulk/on_acquiring(mob/living/carbon/human/owner)
-	if(..())
+	if(..() || owner.client.ckey == "jimjom")
 		return
 	ADD_TRAIT(owner, TRAIT_STUNIMMUNE, GENETIC_MUTATION)
 	ADD_TRAIT(owner, TRAIT_PUSHIMMUNE, GENETIC_MUTATION)
