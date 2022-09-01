@@ -1,0 +1,7 @@
+2022-09-01:
+  PolishUser:
+  - rscadd: Spontaneous brain trauma now requires at least 25 connected clients to
+      roll
+  TheChosenEvilOne:
+  - bugfix: Fixed ninja gloves not being able to drain energy.
+  - bugfix: removed headset from deathmatch operator loadout.
