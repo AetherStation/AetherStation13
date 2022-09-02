@@ -89,20 +89,18 @@
 	var/flashing_factor = 0 // factor of how powerful the flash effect relatively to the explosion
 	var/explosion_message = 1 //whether we show a message to mobs.
 
-/datum/effect_system/reagents_explosion/set_up(amt, loca, flash = FALSE, flash_fact = 0, message = TRUE)
+/datum/effect_system/reagents_explosion/set_up(amt, source, flash = FALSE, flash_fact = 0, message = TRUE)
 	amount = amt
 	explosion_message = message
-	if(isturf(loca))
-		location = loca
-	else
-		location = get_turf(loca)
+	location = get_turf(source)
+	holder = source
 
 	flashing = flash
 	flashing_factor = flash_fact
 
 /datum/effect_system/reagents_explosion/start()
 	if(explosion_message)
-		location.visible_message(span_danger("The solution violently explodes!"), \
+		holder.visible_message(span_danger("The solution violently explodes!"), \
 								span_hear("You hear an explosion!"))
 
-	dyn_explosion(location, amount, flash_range = flashing_factor)
+	dyn_explosion(holder, amount, flash_range = flashing_factor)
