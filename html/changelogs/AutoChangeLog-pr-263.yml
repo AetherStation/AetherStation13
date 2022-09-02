@@ -1,0 +1,5 @@
+author: Polish_User, TCEO, SparkezelPL, TheBleh
+delete-after: true
+changes:
+  - rscadd: Added SciLock for Nanite Cloud Controllers
+  - code_imp: Improved configure_machine proc in circuitboard.dm
