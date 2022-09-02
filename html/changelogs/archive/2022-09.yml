@@ -7,3 +7,13 @@
   TheChosenEvilOne:
   - bugfix: Fixed ninja gloves not being able to drain energy.
   - bugfix: removed headset from deathmatch operator loadout.
+2022-09-02:
+  Polish_User, TCEO, SparkezelPL, TheBleh:
+  - rscadd: Added SciLock for Nanite Cloud Controllers
+  - code_imp: Improved configure_machine proc in circuitboard.dm
+  TheChosenEvilOne:
+  - rscadd: Added capped pipes, a 40 volume beaker made from welding a straight pipe.
+      If welded again it will be capped and can't be spilled/filled/emptied. If you
+      add a fuse (cable coil) before sealing the pipe it will become a pipe bomb,
+      when detonated it heats up reagent contents by a random amount from five to
+      twenty degrees.

@@ -1,8 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - rscadd: Added capped pipes, a 40 volume beaker made from welding a straight pipe.
-      If welded again it will be capped and can't be spilled/filled/emptied. If you
-      add a fuse (cable coil) before sealing the pipe it will become a pipe bomb,
-      when detonated it heats up reagent contents by a random amount from five to
-      twenty degrees.
