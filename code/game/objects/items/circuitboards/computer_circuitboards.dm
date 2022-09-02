@@ -373,6 +373,27 @@
 	name = "Nanite Cloud Control (Computer Board)"
 	greyscale_colors = CIRCUIT_COLOR_SCIENCE
 	build_path = /obj/machinery/computer/nanite_cloud_controller
+	var/science_lock = TRUE
+
+/obj/item/circuitboard/computer/nanite_cloud_controller/multitool_act(mob/living/user)
+	. = ..()
+	if(!(obj_flags & EMAGGED))
+		science_lock = !science_lock
+		to_chat(user, span_notice("SciLock set to [science_lock ? "Enabled" : "Disabled"]."))
+	else
+		to_chat(user, span_alert("The security chip is unresponsive."))
+
+/obj/item/circuitboard/computer/nanite_cloud_controller/emag_act(mob/living/user)
+	if(!(obj_flags & EMAGGED))
+		obj_flags |= EMAGGED
+		to_chat(user, span_notice("You overwrite [src]'s security measures."))
+
+/obj/item/circuitboard/computer/nanite_cloud_controller/configure_machine(obj/machinery/computer/nanite_cloud_controller/machine)
+	. = ..()
+	if(!istype(machine))
+		CRASH("Science board attempted to configure incorrect machine type: [machine] ([machine?.type])")
+
+	machine.science_lock = science_lock
 
 /obj/item/circuitboard/computer/rdconsole
 	name = "R&D Console (Computer Board)"
@@ -486,14 +507,11 @@
 		to_chat(user, span_notice("You adjust [src]'s routing and receiver spectrum, unlocking special supplies and contraband."))
 
 /obj/item/circuitboard/computer/cargo/configure_machine(obj/machinery/computer/cargo/machine)
+	. = ..()
 	if(!istype(machine))
 		CRASH("Cargo board attempted to configure incorrect machine type: [machine] ([machine?.type])")
 
 	machine.contraband = contraband
-	if (obj_flags & EMAGGED)
-		machine.obj_flags |= EMAGGED
-	else
-		machine.obj_flags &= ~EMAGGED
 
 /obj/item/circuitboard/computer/cargo/express
 	name = "Express Supply Console (Computer Board)"

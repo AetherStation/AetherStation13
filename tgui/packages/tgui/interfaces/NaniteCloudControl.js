@@ -276,57 +276,77 @@ export const NaniteCloudControl = (props, context) => {
     has_disk,
     current_view,
     new_backup_id,
+    authenticated,
+    canLogOut,
+    emagged,
+    sciLock,
   } = data;
   return (
     <Window
       width={375}
-      height={700}>
+      height={700}
+      theme={emagged ? "syndicate" : undefined}>
       <Window.Content scrollable>
-        <Section
-          title="Program Disk"
-          buttons={(
+        {((canLogOut || !authenticated) && !!sciLock) && (
+          <Section title="Authentication">
             <Button
-              icon="eject"
-              content="Eject"
-              disabled={!has_disk}
-              onClick={() => act('eject')} />
-          )}>
-          <NaniteDiskBox />
-        </Section>
-        <Section
-          title="Cloud Storage"
-          buttons={(
-            current_view ? (
-              <Button
-                icon="arrow-left"
-                content="Return"
-                onClick={() => act('set_view', {
-                  view: 0,
-                })} />
-            ) : (
-              <>
-                {"New Backup: "}
-                <NumberInput
-                  value={new_backup_id}
-                  minValue={1}
-                  maxValue={100}
-                  stepPixelSize={4}
-                  width="39px"
-                  onChange={(e, value) => act('update_new_backup_value', {
-                    value: value,
-                  })} />
+              icon={(authenticated || emagged) ? "sign-out-alt" : "sign-in-alt"}
+              content={(authenticated || emagged) ? `Log Out` : "Log In"}
+              color={authenticated ? "bad" : "good"}
+              onClick={() => act("toggleAuthentication")}
+              disabled={emagged && authenticated}
+            />
+          </Section>
+        )}
+        {(!!authenticated || emagged || !sciLock) && (
+          <>
+            <Section
+              title="Program Disk"
+              buttons={(
                 <Button
-                  icon="plus"
-                  onClick={() => act('create_backup')} />
-              </>
-            )
-          )}>
-          {!data.current_view ? (
-            <NaniteCloudBackupList />
-          ) : (
-            <NaniteCloudBackupDetails />
-          )}
-        </Section>
+                  icon="eject"
+                  content="Eject"
+                  disabled={!has_disk}
+                  onClick={() => act('eject')} />
+              )}>
+              <NaniteDiskBox />
+            </Section>
+            <Section
+              title="Cloud Storage"
+              buttons={(
+                current_view ? (
+                  <Button
+                    icon="arrow-left"
+                    content="Return"
+                    onClick={() => act('set_view', {
+                      view: 0,
+                    })} />
+                ) : (
+                  <>
+                    {"New Backup: "}
+                    <NumberInput
+                      value={new_backup_id}
+                      minValue={1}
+                      maxValue={100}
+                      stepPixelSize={4}
+                      width="39px"
+                      onChange={(e, value) => act('update_new_backup_value', {
+                        value: value,
+                      })} />
+                    <Button
+                      icon="plus"
+                      onClick={() => act('create_backup')} />
+                  </>
+                )
+              )}>
+              {!data.current_view ? (
+                <NaniteCloudBackupList />
+              ) : (
+                <NaniteCloudBackupDetails />
+              )}
+            </Section>
+          </>
+        )}
       </Window.Content>
     </Window>
   );

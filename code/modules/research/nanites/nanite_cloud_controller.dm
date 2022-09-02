@@ -6,11 +6,28 @@
 	circuit = /obj/item/circuitboard/computer/nanite_cloud_controller
 	icon_screen = "nanite_cloud_controller_screen"
 	icon_keyboard = null
+	req_access = list(ACCESS_RND)
 
 	var/obj/item/disk/nanite_program/disk
 	var/list/datum/nanite_cloud_backup/cloud_backups = list()
+	var/science_lock = TRUE
 	var/current_view = 0 //0 is the main menu, any other number is the page of the backup with that ID
 	var/new_backup_id = 1
+
+/obj/machinery/computer/nanite_cloud_controller/emag_act(mob/user)
+	if (obj_flags & EMAGGED)
+		return
+	obj_flags |= EMAGGED
+	to_chat(user, span_danger("You overwrite the security measures!"))
+	playsound(src, 'sound/machines/terminal_alert.ogg', 50, FALSE)
+
+	var/obj/item/circuitboard/computer/nanite_cloud_controller/board = circuit
+	board.obj_flags |= EMAGGED
+	update_static_data(user)
+
+/obj/machinery/computer/nanite_cloud_controller/on_construction()
+	. = ..()
+	circuit.configure_machine(src)
 
 /obj/machinery/computer/nanite_cloud_controller/Destroy()
 	QDEL_LIST(cloud_backups) //rip backups
@@ -65,8 +82,15 @@
 		ui = new(user, src, "NaniteCloudControl", name)
 		ui.open()
 
-/obj/machinery/computer/nanite_cloud_controller/ui_data()
+/obj/machinery/computer/nanite_cloud_controller/ui_data(mob/user)
 	var/list/data = list()
+
+	if (obj_flags & EMAGGED)
+		data["emagged"] = TRUE
+
+	data["authenticated"] = (authenticated || issilicon(user))
+	data["canLogOut"] = !issilicon(user)
+	data["sciLock"] = science_lock
 
 	if(disk)
 		data["has_disk"] = TRUE
@@ -168,6 +192,26 @@
 	. = ..()
 	if(.)
 		return
+	if (action == "toggleAuthentication")
+		if (authenticated)
+			authenticated = FALSE
+			playsound(src, 'sound/machines/terminal_off.ogg', 50, FALSE)
+			return TRUE
+		if (obj_flags & EMAGGED)
+			authenticated = TRUE
+			to_chat(usr, span_warning("[src] lets out a quiet alarm as its login is overridden."))
+			playsound(src, 'sound/machines/terminal_alert.ogg', 25, FALSE)
+		else if(isliving(usr))
+			var/mob/living/L = usr
+			var/obj/item/card/id/id_card = L.get_idcard(hand_first = TRUE)
+			if (check_access(id_card))
+				authenticated = TRUE
+		playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
+		return TRUE
+
+	if (!(obj_flags & EMAGGED) && science_lock && !authenticated && !issilicon(usr))
+		return
+
 	switch(action)
 		if("eject")
 			eject(usr)
