@@ -165,14 +165,13 @@
 			update_appearance()
 		return
 
-	if (W.tool_behaviour == TOOL_WIRECUTTER)
-		if(embedded_flash)
-			to_chat(user, span_notice("You begin to disconnect the flashbulb..."))
-			if(W.use_tool(src, user, 20, volume=50) && embedded_flash)
-				embedded_flash.forceMove(get_turf(src))
-				embedded_flash = null
-				update_appearance()
-		return
+	if ((W.tool_behaviour == TOOL_WIRECUTTER) && embedded_flash)
+		to_chat(user, span_notice("You begin to disconnect the flashbulb..."))
+		if(W.use_tool(src, user, 20, volume=50) && embedded_flash)
+			embedded_flash.forceMove(get_turf(src))
+			embedded_flash = null
+			update_appearance()
+	return
 
 	if (W.tool_behaviour == TOOL_CROWBAR)
 		if(flashmount_installed && !embedded_flash)
