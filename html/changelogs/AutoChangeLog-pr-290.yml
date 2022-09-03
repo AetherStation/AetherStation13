@@ -1,0 +1,5 @@
+author: Pugie
+delete-after: true
+changes:
+  - balance: HoS wintercoat has been rebalanced, it now takes as many disabler hits
+      to down as any other HoS armour.
