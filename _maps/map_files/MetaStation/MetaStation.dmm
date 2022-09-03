@@ -60529,11 +60529,8 @@
 /turf/open/floor/iron/white,
 /area/medical/medbay/central)
 "tzK" = (
-/obj/effect/turf_decal/delivery/white{
-	color = "#52B4E9"
-	},
-/obj/machinery/recharge_station,
 /obj/effect/turf_decal/trimline/blue/filled/line,
+/obj/machinery/vending/drugs,
 /turf/open/floor/iron/dark,
 /area/medical/storage)
 "tAg" = (
