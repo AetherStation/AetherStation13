@@ -171,7 +171,7 @@
 			embedded_flash.forceMove(get_turf(src))
 			embedded_flash = null
 			update_appearance()
-	return
+		return
 
 	if (W.tool_behaviour == TOOL_CROWBAR)
 		if(flashmount_installed && !embedded_flash)
