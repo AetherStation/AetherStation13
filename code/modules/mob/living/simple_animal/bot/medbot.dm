@@ -180,10 +180,7 @@
 	if(href_list["adj_threshold"])
 		var/adjust_num = text2num(href_list["adj_threshold"])
 		heal_threshold += adjust_num
-		if(heal_threshold < 0)
-			heal_threshold = 0
-		if(heal_threshold > 195)
-			heal_threshold = 195
+		heal_threshold = clamp(heal_threshold, 0, 195)
 
 	else if(href_list["togglevoice"])
 		shut_up = !shut_up
