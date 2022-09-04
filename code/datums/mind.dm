@@ -287,11 +287,13 @@
 	log_game("[key_name(src)] has gained antag datum [A.name]([A.type])")
 	return A
 
-/datum/mind/proc/remove_antag_datum(datum_type)
+/datum/mind/proc/remove_antag_datum(datum_type, silent = FALSE)
 	if(!datum_type)
 		return
 	var/datum/antagonist/A = has_antag_datum(datum_type)
-	if(A)
+	if (silent)
+		A.silent = TRUE
+	if (A)
 		A.on_removal()
 		return TRUE
 
