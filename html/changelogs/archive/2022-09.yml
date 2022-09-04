@@ -23,3 +23,20 @@
       to down as any other HoS armour.
   TheChosenEvilOne:
   - rscadd: Added a NanoDrug Plus vendor to medbay in MetaStation.
+2022-09-04:
+  Sparkezel:
+  - expansion: You can now turn buckler and telescopic shields into strobe shields.
+      Telescopic shields toggle now on alt. You can bash people with strobeshields
+      using rmb/disarm.
+  - rscdel: Deleted strobe shield recipe
+  - balance: Each shield has its own fixing material, rglass for telescopic and riot,
+      wood for buckler, iron for roman
+  - balance: Rebalanced fake roman shield to have same block value as real one but
+      made it more flimsy
+  - imageadd: added overlays for flash mount and flash on shields, added inhands for
+      stroboscopic shields
+  - code_imp: Changed hypnoflash to be of flash/handheld type
+  - code_imp: Prettied up shieldcode
+  TheChosenEvilOne:
+  - bugfix: Fixed cult spirit realm rune ghosts increasing cult size for eyes/halo.
+  - bugfix: Fixed engine floors destroying gas heat.

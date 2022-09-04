@@ -1,4 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - bugfix: Fixed engine floors destroying gas heat.
