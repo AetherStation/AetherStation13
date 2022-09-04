@@ -1,0 +1,6 @@
+author: PolishUser
+delete-after: true
+changes:
+  - rscadd: When felinids get chocolate reagents they get disgust and slight internal
+      organ damage (brain, eyes, liver, heart)
+  - balance: Changed chocolate milk and hot chocolate recipes.
