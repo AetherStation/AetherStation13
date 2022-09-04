@@ -525,10 +525,9 @@
 	quality = POSITIVE
 	text_gain_indication = "<span class='warning'>There is a sharp pain in your wrists!</span>"
 	text_lose_indication = "<span class'notice'>Your wrists painfully reform back to normal.</span>"
-	species_allowed = list(SPECIES_FELINE)
 	difficulty = 16
 	instability = 30
-	var/datum/action/innate/toggle_claws/clawpower
+	var/datum/action/innate/extend_claws/clawpower
 
 /datum/mutation/human/claws/on_acquiring()
 	. = ..()
@@ -541,38 +540,34 @@
 	. = ..()
 	if(.)
 		return
-	if(clawpower.extended)
-		clawpower.Activate()
+	for(var/V in owner.held_items)
+		var/obj/item/I = V
+		if(istype(I, /obj/item/claw))
+			qdel(I)
 	QDEL_NULL(clawpower)
 
-/datum/action/innate/toggle_claws
+/datum/action/innate/extend_claws
 	icon_icon = 'icons/mob/actions/actions_genetic.dmi'
 	background_icon_state = "bg_spell"
 	check_flags = AB_CHECK_CONSCIOUS
 	button_icon_state = "spikechemswap"
-	name = "Toggle Claws"
+	name = "Extend Claws"
 	desc = "Extend or retract your claws."
-	var/extended = FALSE
 
-/datum/action/innate/toggle_claws/Activate()
+/datum/action/innate/extend_claws/Activate() //if hand doesnt have undroppable items, extend claws, if does, dont. if hand has claws, hide them
 	var/mob/living/carbon/human/clawt_girl = owner
-	if(extended)
-		to_chat(clawt_girl, "<span class='notice'>You retract your claws.</span>")
-		for(var/obj/item/claw/C in clawt_girl.held_items)
-			if(istype(C)) //nodrop doesn't get replaced by claws, lets not delete nodrop items that aren't this
-				qdel(C)
+	var/obj/item/I = clawt_girl.get_active_held_item()
+	if(I && istype(I, /obj/item/claw))
+		to_chat(clawt_girl, span_notice("You retract your claws."))
+		qdel(I)
 	else
-		to_chat(clawt_girl, "<span class='notice'>You extend your claws!</span>")
 		// Drop items in hands
 		// If you're lucky enough to have a TRAIT_NODROP item, then it stays.
-		for(var/V in clawt_girl.held_items)
-			var/obj/item/I = V
-			if(istype(I))
-				if(clawt_girl.dropItemToGround(I))
-					clawt_girl.put_in_hands(new /obj/item/claw()) //now it's an empty hand
-			else	//Entries in the list should only ever be items or null, so if it's not an item, we can assume it's an empty hand
-				clawt_girl.put_in_hands(new /obj/item/claw())
-	extended = !extended
+		if(clawt_girl.dropItemToGround(I))
+			to_chat(clawt_girl, span_notice("You extend your claws."))
+			clawt_girl.put_in_hands(new /obj/item/claw())
+		else
+			to_chat(clawt_girl, span_alert("The [I] blocks your claws!"))
 
 /obj/item/claw
 	name = "claw"
