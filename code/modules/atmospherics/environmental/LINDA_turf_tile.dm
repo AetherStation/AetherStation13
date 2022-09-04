@@ -590,7 +590,7 @@ Then we space some of our heat, and think about if we should stop conducting.
 
 /turf/open/finish_superconduction()
 	//Conduct with air on my tile if I have it
-	if(!blocks_air)
+	if(!blocks_air && heat_capacity < INFINITY)
 		temperature = air.temperature_share(null, thermal_conductivity, temperature, heat_capacity)
 	..((blocks_air ? temperature : air.temperature))
 
