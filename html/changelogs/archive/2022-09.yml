@@ -24,6 +24,10 @@
   TheChosenEvilOne:
   - rscadd: Added a NanoDrug Plus vendor to medbay in MetaStation.
 2022-09-04:
+  PolishUser:
+  - rscadd: When felinids get chocolate reagents they get disgust and slight internal
+      organ damage (brain, eyes, liver, heart)
+  - balance: Changed chocolate milk and hot chocolate recipes.
   Sparkezel:
   - expansion: You can now turn buckler and telescopic shields into strobe shields.
       Telescopic shields toggle now on alt. You can bash people with strobeshields
@@ -40,3 +44,5 @@
   TheChosenEvilOne:
   - bugfix: Fixed cult spirit realm rune ghosts increasing cult size for eyes/halo.
   - bugfix: Fixed engine floors destroying gas heat.
+  Thebleh:
+  - balance: Balances Hulk.
