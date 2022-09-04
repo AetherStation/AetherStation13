@@ -12,6 +12,7 @@
 #define BLINDMUT /datum/mutation/human/blind
 #define CHAMELEON /datum/mutation/human/chameleon
 #define CHAV /datum/mutation/human/chav
+#define CLAWS /datum/mutation/human/claws
 #define CLOWNMUT /datum/mutation/human/clumsy
 #define COUGH /datum/mutation/human/cough
 #define CRYOKINESIS /datum/mutation/human/cryokinesis
