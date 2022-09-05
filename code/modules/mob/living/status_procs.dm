@@ -362,6 +362,7 @@
 	if(SEND_SIGNAL(src, COMSIG_LIVING_STATUS_UNCONSCIOUS, amount, ignore_canstun) & COMPONENT_NO_STUN)
 		return
 	if(IS_STUN_IMMUNE(src, ignore_canstun))
+		return
 	var/datum/status_effect/incapacitating/unconscious/U = IsUnconscious()
 	if(U)
 		U.duration += amount
