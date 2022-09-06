@@ -64,7 +64,7 @@
 	var/puff_reagent_left = range //how many turf, mob or dense objet we can react with before we consider the chem puff consumed
 	if(stream_mode)
 		reagents.trans_to(reagent_puff, amount_per_transfer_from_this)
-		puff_reagent_left = 1
+		puff_reagent_left = 10
 	else
 		reagents.trans_to(reagent_puff, amount_per_transfer_from_this, 1/range)
 	reagent_puff.color = mix_color_from_reagents(reagent_puff.reagents.reagent_list)
@@ -105,7 +105,7 @@
 					if(!turf_mob.can_inject())
 						continue
 
-					if((turf_mob.body_position == STANDING_UP) || has_travelled_max_distance)
+					if(has_travelled_max_distance)
 						reagent_puff.reagents.expose(turf_mob, VAPOR)
 						log_combat(user, turf_mob, "sprayed", src, addition="which had [puff_reagents_string]")
 						puff_reagent_left -= 1
@@ -339,7 +339,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	throwforce = 0
 	w_class = WEIGHT_CLASS_NORMAL
-	stream_mode = 1
+	stream_mode = 0
 	current_range = 7
 	spray_range = 4
 	stream_range = 7
