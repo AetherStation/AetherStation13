@@ -377,7 +377,7 @@
 	on_inhand_icon_state = "nullrod"
 	force_on = 10
 	force_off = 0
-	weight_class_on = WEIGHT_CLASS_BULKY
+	weight_class_on = WEIGHT_CLASS_NORMAL
 	bare_wound_bonus = 5
 
 /obj/item/melee/classic_baton/telescopic/suicide_act(mob/user)
