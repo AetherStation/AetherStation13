@@ -1268,7 +1268,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 	else
 		//Steal them shoes
 		if(target.body_position == LYING_DOWN && (user.zone_selected == BODY_ZONE_L_LEG || user.zone_selected == BODY_ZONE_R_LEG) \
-		&& user.istate.control && target.shoes && !(target.w_uniform.body_parts_covered & FEET || target.wear_suit.body_parts_covered & FEET))
+		&& user.istate.control && target.shoes && !(target?.w_uniform?.body_parts_covered & FEET || target?.wear_suit?.body_parts_covered & FEET))
 			var/obj/item/I = target.shoes
 			user.visible_message("<span class='warning'>[user] starts stealing [target]'s [I.name]!</span>",
 							"<span class='danger'>You start stealing [target]'s [I.name]...</span>", null, null, target)
