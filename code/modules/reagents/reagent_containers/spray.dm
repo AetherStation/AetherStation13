@@ -105,10 +105,9 @@
 					if(!turf_mob.can_inject())
 						continue
 
-					if(has_travelled_max_distance)
-						reagent_puff.reagents.expose(turf_mob, VAPOR)
-						log_combat(user, turf_mob, "sprayed", src, addition="which had [puff_reagents_string]")
-						puff_reagent_left -= 1
+					reagent_puff.reagents.expose(turf_mob, VAPOR)
+					log_combat(user, turf_mob, "sprayed", src, addition="which had [puff_reagents_string]")
+					puff_reagent_left -= 1
 				else if(has_travelled_max_distance)
 					reagent_puff.reagents.expose(turf_atom, VAPOR)
 					log_combat(user, turf_atom, "sprayed", src, addition="which had [puff_reagents_string]")
