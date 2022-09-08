@@ -50,6 +50,8 @@
   Pugie:
   - balance: most material recipes which make unpassable objects that didn't have
       timers now do.
+  Sparkezel:
+  - rscadd: Felinids now like eating mice
   TheChosenEvilOne:
   - rscadd: Stasis now stops chem reactions in mobs.
   - rscadd: Made custom foods able to hold all reagents of added ingredients.
