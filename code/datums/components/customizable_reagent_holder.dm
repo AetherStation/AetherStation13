@@ -179,6 +179,7 @@
 /datum/component/customizable_reagent_holder/proc/handle_reagents(obj/item/ingredient)
 	var/atom/atom_parent = parent
 	if (atom_parent.reagents && ingredient.reagents)
+		atom_parent.reagents.maximum_volume += ingredient.reagents.total_volume // Make space for ingredient contents
 		ingredient.reagents.trans_to(atom_parent, ingredient.reagents.total_volume)
 	return
 
