@@ -1,0 +1,5 @@
+author: Pugie
+delete-after: true
+changes:
+  - balance: most material recipes which make unpassable objects that didn't have
+      timers now do.
