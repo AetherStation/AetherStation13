@@ -40,9 +40,9 @@
 				bite_consumption = bite_consumption,\
 				microwaved_type = microwaved_type,\
 				junkiness = junkiness,\
-				after_eat = CALLBACK(src, .proc/after_eat))
+				on_consume = CALLBACK(src, .proc/on_consume))
 
-/obj/item/food/candy/bronx/proc/after_eat(mob/living/eater)
+/obj/item/food/candy/bronx/proc/on_consume(mob/living/eater)
 	if(ishuman(eater))
 		var/mob/living/carbon/human/carl = eater
 		var/datum/disease/P = new /datum/disease/parasite()
