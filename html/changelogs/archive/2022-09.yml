@@ -46,3 +46,11 @@
   - bugfix: Fixed engine floors destroying gas heat.
   Thebleh:
   - balance: Balances Hulk.
+2022-09-08:
+  Pugie:
+  - balance: most material recipes which make unpassable objects that didn't have
+      timers now do.
+  TheChosenEvilOne:
+  - rscadd: Stasis now stops chem reactions in mobs.
+  - rscadd: Made custom foods able to hold all reagents of added ingredients.
+  - rscadd: Made deepfried items inherit reagent holder volume.

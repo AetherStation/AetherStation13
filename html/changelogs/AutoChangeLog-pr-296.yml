@@ -1,5 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - rscadd: Made custom foods able to hold all reagents of added ingredients.
-  - rscadd: Made deepfried items inherit reagent holder volume.

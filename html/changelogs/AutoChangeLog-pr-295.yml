@@ -1,4 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - rscadd: Stasis now stops chem reactions in mobs.
