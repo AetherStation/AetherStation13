@@ -56,3 +56,6 @@
   - rscadd: Stasis now stops chem reactions in mobs.
   - rscadd: Made custom foods able to hold all reagents of added ingredients.
   - rscadd: Made deepfried items inherit reagent holder volume.
+2022-09-09:
+  Thebleh:
+  - bugfix: South Bronx Paradise Bars are once again the best weight loss aid on station
