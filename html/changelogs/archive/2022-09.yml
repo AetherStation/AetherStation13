@@ -59,3 +59,14 @@
 2022-09-09:
   Thebleh:
   - bugfix: South Bronx Paradise Bars are once again the best weight loss aid on station
+2022-09-11:
+  ? ''
+  : - bugfix: You need to hold teleshield in hand to extend or contract it
+  Pugie:
+  - bugfix: Spray stream is more likely to effect mobs when tiles have several turfs,
+      biochem sprayer now streams at 10u as opposed to 5u.
+  - balance: Spray stream works on people who are lying down now.
+  Sparkezel:
+  - qol: Chemdispenser now have fully unlocked reagent synthesis ranges
+  - rscadd: You can make felinid mutation toxin by injecting green slime extract with...
+      water, chug multiver quick to avoid it
