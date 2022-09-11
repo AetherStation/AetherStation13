@@ -502,9 +502,11 @@
 					/obj/item/clothing/shoes/kim = 1,
 					/obj/item/clothing/gloves/kim = 1,
 					/obj/item/clothing/glasses/regular/kim = 1,
+					/obj/item/clothing/glasses/sunglasses/osi = 1,
 					/obj/item/reagent_containers/food/drinks/flask/det = 2,
 					/obj/item/storage/fancy/cigarettes = 5)
 	premium = list(/obj/item/clothing/head/flatcap = 1)
+	contraband = list(/obj/item/clothing/glasses/phantom = 1)
 	refill_canister = /obj/item/vending_refill/wardrobe/det_wardrobe
 	extra_price = PAYCHECK_COMMAND * 1.75
 	payment_department = ACCOUNT_SEC
