@@ -21,6 +21,11 @@
 		window_flash(iter_admin_client)
 		SEND_SOUND(iter_admin_client.mob, sound('sound/misc/bloop.ogg'))
 
+	var/list/linked_datums = check_memory_refs(msg)
+	if(length(linked_datums) && linked_datums[ADMINSAY_LINK_DATUM_REF])
+		msg = linked_datums[ADMINSAY_LINK_DATUM_REF]
+		linked_datums -= ADMINSAY_LINK_DATUM_REF
+
 	mob.log_talk(msg, LOG_ASAY)
 	msg = keywords_lookup(msg)
 	var/custom_asay_color = (CONFIG_GET(flag/allow_admin_asaycolor) && prefs.asaycolor) ? "<font color=[prefs.asaycolor]>" : "<font color='#FF4500'>"
