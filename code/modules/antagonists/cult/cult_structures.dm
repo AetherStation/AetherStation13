@@ -128,7 +128,7 @@
 /obj/structure/destructible/cult/forge
 	name = "daemon forge"
 	desc = "A forge used in crafting the unholy weapons used by the armies of Nar'Sie."
-	cultist_examine_message = "A blood cultist can use it to create Nar'Sien hardened armor, flagellant's robes, and Mirror Shields."
+	cultist_examine_message = "A blood cultist can use it to create Nar'Sien hardened armor, flagellant's robes, and mirror shields."
 	icon_state = "forge"
 	light_range = 2
 	light_color = LIGHT_COLOR_LAVA
