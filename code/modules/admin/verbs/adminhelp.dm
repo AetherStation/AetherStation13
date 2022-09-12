@@ -802,8 +802,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 		i++
 		if(!length(word))
 			continue
-		if(word[1] != "@")
-			continue
+
 		switch(word[1])
 			if("@")
 				var/stripped_word = ckey(copytext(word, 2))
