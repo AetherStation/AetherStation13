@@ -126,6 +126,7 @@ export const DeathmatchLobby = (props, context) => {
               </Box>
               <Button.Checkbox
                 checked={data.global_chat}
+                disabled={!(data.host || data.admin)}
                 content="Global Chat"
                 tooltip="Allow players and observers to talk with each other."
                 onClick={() => act('host', {
