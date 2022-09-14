@@ -102,6 +102,7 @@
 	armour_penetration = 35
 	force_on = 30 //same as esword (but makes you an epic gamer)
 	light_range = 3 //ditto
+	light_color = "#08eb2e" //to fit the sprite :)
 	heat = 1000
 
 /obj/item/clothing/head/hardhat/cakehat/energycake/turn_on(mob/living/user)
