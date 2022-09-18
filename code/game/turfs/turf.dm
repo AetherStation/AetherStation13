@@ -550,6 +550,14 @@ GLOBAL_LIST_EMPTY(station_turfs)
 /turf/proc/acid_melt()
 	return
 
+/turf/rust_heretic_act()
+	if(turf_flags & NO_RUST)
+		return
+	if(HAS_TRAIT(src, TRAIT_RUSTY))
+		return
+
+	AddComponent(/datum/component/rust)
+
 /turf/handle_fall(mob/faller)
 	if(has_gravity(src))
 		playsound(src, "bodyfall", 50, TRUE)
