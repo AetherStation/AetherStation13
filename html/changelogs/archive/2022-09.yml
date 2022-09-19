@@ -78,3 +78,6 @@
   - imageadd: added new hos cap and coat sprites
   - imagedel: deleted old hos cap and security overcoat sprites
   - spellcheck: changed some names
+2022-09-19:
+  Pugie:
+  - bugfix: Meat has the proper reagents now.
