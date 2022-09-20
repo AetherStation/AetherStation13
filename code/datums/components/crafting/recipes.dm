@@ -100,17 +100,6 @@
 	category = CAT_WEAPONRY
 	subcategory = CAT_WEAPON
 
-/datum/crafting_recipe/supermatterspear //totally not a bad idea
-	name = "Supermatter Spear"
-	result = /obj/item/spear/supermatter
-	reqs = list(/obj/item/restraints/handcuffs/cable = 1,
-				/obj/item/nuke_core/supermatter_sliver = 1,
-				/obj/item/stack/sheet/mineral/plastitanium = 2)
-	parts = list(/obj/item/nuke_core/supermatter_sliver = 1)
-	time = 180
-	category = CAT_WEAPONRY
-	subcategory = CAT_WEAPON
-
 /datum/crafting_recipe/bola
 	name = "Bola"
 	result = /obj/item/restraints/legcuffs/bola
