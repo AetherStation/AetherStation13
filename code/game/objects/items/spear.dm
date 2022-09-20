@@ -179,3 +179,104 @@
 /obj/item/spear/bonespear/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=20, icon_wielded="[icon_prefix]1")
+
+
+/obj/item/spear/supermatter
+	icon_state = "spearsm0"
+	base_icon_state = "spearsm"
+	icon_prefix = "spearsm"
+	name = "supermatter spear"
+	desc = "A very bad idea, made even worse."
+	w_class = WEIGHT_CLASS_GIGANTIC // you aren't putting this in ANYTHING.
+	force = 0.001
+	armour_penetration = 1000
+	var/obj/machinery/power/supermatter_crystal/shard
+	light_color = LIGHT_COLOR_YELLOW
+	light_system = MOVABLE_LIGHT
+	light_power = 5
+	light_range = 7
+	var/balanced = TRUE
+
+/obj/item/spear/supermatter/Initialize()
+	. = ..()
+	shard = new /obj/machinery/power/supermatter_crystal(src)
+	qdel(shard.countdown)
+	shard.countdown = null
+	START_PROCESSING(SSobj, src)
+	visible_message(span_warning("[src] appears, balanced precariously on its shaft. This wasn't a bad idea at all."))
+
+/obj/item/spear/supermatter/pickup(user)
+	..()
+	balanced = FALSE
+
+/obj/item/spear/supermatter/process()
+	if(balanced || throwing || ismob(src.loc) || isnull(src.loc))
+		return
+	if(!isturf(src.loc))
+		var/atom/target = src.loc
+		forceMove(target.loc)
+		consume_everything(target)
+	else
+		var/turf/T = get_turf(src)
+		if(!isspaceturf(T))
+			consume_turf(T)
+
+/obj/item/spear/supermatter/afterattack(target, mob/user, proximity_flag)
+	. = ..()
+	if(user && target == user)
+		user.dropItemToGround(src)
+	if(proximity_flag)
+		consume_everything(target)
+
+/obj/item/spear/supermatter/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
+	..()
+	if(ismob(hit_atom))
+		var/mob/M = hit_atom
+		if(src.loc == M)
+			M.dropItemToGround(src)
+	consume_everything(hit_atom)
+
+/obj/item/spear/supermatter/ex_act(severity, target)
+	visible_message(
+		span_danger("The blast wave smacks into [src] and rapidly flashes to ash."),
+		span_hear("You hear a loud crack as you are washed with a wave of heat.")
+	)
+	consume_everything()
+
+/obj/item/spear/supermatter/acid_act()
+	visible_message(span_danger("The acid smacks into [src] and rapidly flashes to ash."),\
+	span_hear("You hear a loud crack as you are washed with a wave of heat."))
+	consume_everything()
+	return TRUE
+
+/obj/item/spear/supermatter/bullet_act(obj/projectile/P)
+	visible_message(span_danger("[P] smacks into [src] and rapidly flashes to ash."),\
+	span_hear("You hear a loud crack as you are washed with a wave of heat."))
+	consume_everything(P)
+	return BULLET_ACT_HIT
+
+/obj/item/spear/supermatter/suicide_act(mob/user)
+	user.visible_message(span_suicide("[user] touches [src]'s tip. It looks like [user.p_theyre()] tired of waiting for the radiation to kill [user.p_them()]!"))
+	user.dropItemToGround(src, TRUE)
+	shard.Bumped(user)
+
+/obj/item/spear/supermatter/proc/consume_everything(target)
+	if(isnull(target))
+		shard.Consume()
+	else if(!isturf(target))
+		shard.Bumped(target)
+	else
+		consume_turf(target)
+
+/obj/item/spear/supermatter/proc/consume_turf(turf/T)
+	var/oldtype = T.type
+	var/turf/newT = T.ScrapeAway(flags = CHANGETURF_INHERIT_AIR)
+	if(newT.type == oldtype)
+		return
+	playsound(T, 'sound/effects/supermatter.ogg', 50, TRUE)
+	T.visible_message(span_danger("[T] smacks into [src] and rapidly flashes to ash."),\
+	span_hear("You hear a loud crack as you are washed with a wave of heat."))
+	shard.Consume()
+
+/obj/item/spear/supermatter/add_blood_DNA(list/blood_dna)
+	return FALSE
