@@ -66,13 +66,9 @@
 
 	var/list/logs = file2list(".git/logs/HEAD")
 	if(logs.len)
-		logs = splittext(logs[logs.len], " ")
-		if (logs.len >= 2)
-			commit = logs[2]
-		else
-			TGS_ERROR_LOG("Error parsing commit logs")
-
-	logs = TGS_FILE2LIST(".git/logs/refs/remotes/origin/master")
+		logs = splittext(logs[logs.len - 1], " ")
+		commit = logs[2]
+	logs = file2list(".git/logs/refs/remotes/origin/master")
 	if(logs.len)
 		logs = splittext(logs[logs.len], " ")
 		if (logs.len >= 2)
