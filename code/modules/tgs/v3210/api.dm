@@ -28,8 +28,6 @@
 
 #define SERVICE_RETURN_SUCCESS "SUCCESS"
 
-#define TGS_FILE2LIST(filename) (splittext(trim_left(trim_right(file2text(filename))), "\n"))
-
 /datum/tgs_api/v3210
 	var/reboot_mode = REBOOT_MODE_NORMAL
 	var/comms_key
@@ -54,6 +52,9 @@
 		if (text2ascii(text, i) > 32)
 			return copytext(text, 1, i + 1)
 	return ""
+
+/datum/tgs_api/v3210/proc/file2list(filename)
+	return splittext(trim_left(trim_right(file2text(filename))), "\n")
 
 /datum/tgs_api/v3210/OnWorldNew(minimum_required_security_level)
 	. = FALSE
