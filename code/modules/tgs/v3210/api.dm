@@ -64,7 +64,7 @@
 	if(!instance_name)
 		instance_name = "TG Station Server" //maybe just upgraded
 
-	var/list/logs = TGS_FILE2LIST(".git/logs/HEAD")
+	var/list/logs = file2list(".git/logs/HEAD")
 	if(logs.len)
 		logs = splittext(logs[logs.len], " ")
 		if (logs.len >= 2)
