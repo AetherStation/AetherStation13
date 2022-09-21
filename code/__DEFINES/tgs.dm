@@ -102,8 +102,6 @@
 // #define TGS_EVENT_WORLD_REBOOT 20
 /// Watchdog event when TgsInitializationComplete() is called. No parameters.
 #define TGS_EVENT_WORLD_PRIME 21
-// DMAPI also doesnt implement this
-// #define TGS_EVENT_DREAM_DAEMON_LAUNCH 22
 
 // OTHER ENUMS
 
