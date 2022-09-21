@@ -388,20 +388,14 @@
 	mix_message = "The smells of fresh green grass and sand traps waft through the air as the mixture turns a friendly yellow-orange."
 
 /datum/chemical_reaction/drink/chocolate_milk
-	results = list(/datum/reagent/consumable/milk/chocolate_milk = 5)
-	required_reagents = list(/datum/reagent/consumable/hot_coco = 3, /datum/reagent/consumable/coco = 2)
+	results = list(/datum/reagent/consumable/milk/chocolate_milk = 2)
+	required_reagents = list(/datum/reagent/consumable/milk = 1, /datum/reagent/consumable/coco = 1)
 	mix_message = "The color changes as the mixture blends smoothly."
-	required_temp = 300
 
 /datum/chemical_reaction/drink/hot_coco
-	results = list(/datum/reagent/consumable/hot_coco = 6)
-	required_reagents = list(/datum/reagent/consumable/milk = 5, /datum/reagent/consumable/coco = 1)
-	required_temp = 320
-
-/datum/chemical_reaction/drink/hot_coco_from_chocolate_milk
-	results = list(/datum/reagent/consumable/hot_coco = 3)
-	required_reagents = list(/datum/reagent/consumable/milk/chocolate_milk = 1, /datum/reagent/consumable/milk = 2)
-	required_temp = 320
+	results = list(/datum/reagent/consumable/hot_coco = 5)
+	required_reagents = list(/datum/reagent/consumable/milk/chocolate_milk = 5, /datum/reagent/consumable/coco = 1)
+	required_temp = 330
 
 /datum/chemical_reaction/drink/coffee
 	results = list(/datum/reagent/consumable/coffee = 5)
@@ -619,3 +613,7 @@
 	results = list(/datum/reagent/consumable/ethanol/triumphal_arch = 10)
 	required_reagents = list(/datum/reagent/consumable/ethanol/mushi_kombucha = 5, /datum/reagent/consumable/ethanol/grappa = 2, /datum/reagent/consumable/lemonjuice = 2, /datum/reagent/gold = 1)
 	mix_message = "The mixture turns a deep golden hue."
+
+/datum/chemical_reaction/justicar_juice
+	results = list(/datum/reagent/consumable/ethanol/coggernac = 4)
+	required_reagents = list(/datum/reagent/consumable/lemonjuice = 1, /datum/reagent/consumable/ethanol/cognac = 1, /datum/reagent/iron = 1, /datum/reagent/consumable/ethanol/tequila_sunrise = 1)

@@ -182,6 +182,24 @@
 	. = ..()
 	name_source = GLOB.clown_names
 
+/datum/antagonist/ert/clown/honk
+	name = "HONK Squad Trooper"
+	outfit = /datum/outfit/centcom_clown/honk_squad
+	role = "HONKER"
+
+/datum/antagonist/ert/clown/honk/greet()
+	if(!ert_team)
+		return
+
+	to_chat(owner, "<B><font size=3 color=red>You are the [name].</font></B>")
+
+	var/missiondesc = "Your squad is being sent on a mission to [station_name()] by Nanotrasen's Comedy Division."
+	if(leader) //If Squad Leader
+		missiondesc += " You are the worst clown here. As such, you were able to stop slipping the admiral for long enough to be given command. Good luck, honk!"
+	else
+		missiondesc += " Follow orders given to you by your squad leader in order to ensure maximum laughs."
+		missiondesc += " Be the funniest Prankster possible!" 
+
 /datum/antagonist/ert/janitor/party
 	role = "Party Cleaning Service"
 	outfit = /datum/outfit/centcom/ert/janitor/party

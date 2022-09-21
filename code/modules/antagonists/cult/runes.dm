@@ -842,6 +842,7 @@ structure_check() searches for nearby cultist structures required for the invoca
 					span_cultlarge("Your link to the world fades. Your form breaks apart."))
 			for(var/obj/I in new_human)
 				new_human.dropItemToGround(I, TRUE)
+			new_human.mind?.remove_antag_datum(/datum/antagonist/cult, silent = TRUE)
 			new_human.dust()
 	else if(choice == "Ascend as a Dark Spirit")
 		affecting = user

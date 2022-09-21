@@ -3653,23 +3653,6 @@
 	},
 /turf/open/floor/iron,
 /area/security/warden)
-"aBW" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
-/obj/machinery/camera{
-	c_tag = "Central Primary Hallway - Aft-Port Corner";
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/structure/cable,
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/trimline/blue/filled/corner,
-/turf/open/floor/iron,
-/area/hallway/primary/central)
 "aBZ" = (
 /obj/item/hand_labeler_refill,
 /obj/structure/disposalpipe/segment{
@@ -15830,15 +15813,6 @@
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /turf/open/floor/plating,
 /area/maintenance/starboard/secondary)
-"dln" = (
-/obj/structure/disposalpipe/segment{
-	dir = 5
-	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/trimline/blue/filled/line,
-/turf/open/floor/iron,
-/area/hallway/primary/central)
 "dlE" = (
 /obj/item/storage/bag/plants/portaseeder,
 /obj/item/plant_analyzer,
@@ -17482,6 +17456,17 @@
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/wood,
 /area/service/bar)
+"dNx" = (
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/hallway/primary/central)
 "dNC" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
@@ -26025,21 +26010,6 @@
 /obj/structure/cable,
 /turf/open/floor/iron,
 /area/hallway/primary/central)
-"gSz" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/machinery/light/directional/south,
-/obj/effect/turf_decal/trimline/blue/filled/corner{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/hallway/primary/central)
 "gSN" = (
 /obj/machinery/light/directional/east,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
@@ -32601,6 +32571,17 @@
 /obj/effect/turf_decal/trimline/brown/filled/warning,
 /turf/open/floor/iron,
 /area/cargo/sorting)
+"jwm" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/hallway/primary/central)
 "jwC" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -49539,6 +49520,22 @@
 	dir = 1
 	},
 /area/command/gateway)
+"pCp" = (
+/obj/structure/disposalpipe/segment{
+	dir = 9
+	},
+/obj/machinery/camera{
+	c_tag = "Central Primary Hallway - Aft-Port Corner";
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/cable,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/turf/open/floor/iron,
+/area/hallway/primary/central)
 "pCv" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -58971,15 +58968,6 @@
 /obj/effect/landmark/start/hangover/closet,
 /turf/open/floor/iron/dark,
 /area/commons/fitness/recreation)
-"sXw" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/trimline/blue/filled/line,
-/turf/open/floor/iron,
-/area/hallway/primary/central)
 "sXF" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -60541,11 +60529,8 @@
 /turf/open/floor/iron/white,
 /area/medical/medbay/central)
 "tzK" = (
-/obj/effect/turf_decal/delivery/white{
-	color = "#52B4E9"
-	},
-/obj/machinery/recharge_station,
 /obj/effect/turf_decal/trimline/blue/filled/line,
+/obj/machinery/vending/drugs,
 /turf/open/floor/iron/dark,
 /area/medical/storage)
 "tAg" = (
@@ -69140,6 +69125,18 @@
 /obj/effect/spawner/lootdrop/gross_decal_spawner,
 /turf/open/floor/wood,
 /area/maintenance/port/aft)
+"wGK" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron,
+/area/hallway/primary/central)
 "wHb" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -96264,7 +96261,7 @@ baG
 baG
 bTE
 bUZ
-aBW
+pCp
 css
 dos
 eip
@@ -96521,7 +96518,7 @@ tPf
 bHX
 bTF
 bVa
-dln
+dNx
 css
 xFQ
 qaK
@@ -96778,7 +96775,7 @@ tOh
 tOh
 bTG
 dCE
-sXw
+jwm
 css
 kvE
 lnV
@@ -97035,7 +97032,7 @@ stp
 tOh
 cED
 aWf
-sXw
+jwm
 css
 rcE
 hpA
@@ -97292,7 +97289,7 @@ dLC
 rGm
 mIU
 aWf
-gSz
+wGK
 css
 lTy
 eqt

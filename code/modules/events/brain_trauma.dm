@@ -7,6 +7,8 @@
 	fakeable = FALSE
 
 /datum/round_event/brain_trauma/start()
+	if(length(GLOB.clients) < 25)
+		return
 	for(var/mob/living/carbon/human/H in shuffle(GLOB.alive_mob_list))
 		if(!H.client)
 			continue

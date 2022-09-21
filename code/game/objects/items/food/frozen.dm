@@ -7,7 +7,6 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 3, /datum/reagent/consumable/ice = 4)
 	tastes = list("ice cream" = 1)
 	foodtypes = GRAIN | DAIRY | SUGAR
-	food_flags = FOOD_FINGER_FOOD
 
 /obj/item/food/strawberryicecreamsandwich
 	name = "strawberry ice cream sandwich"
@@ -18,7 +17,6 @@
 	food_reagents = list(/datum/reagent/consumable/nutriment = 4, /datum/reagent/consumable/ice = 4)
 	tastes = list("ice cream" = 2, "berry" = 2)
 	foodtypes = FRUIT | DAIRY | SUGAR
-	food_flags = FOOD_FINGER_FOOD
 
 
 /obj/item/food/spacefreezy
@@ -77,7 +75,6 @@
 	food_reagents = list(/datum/reagent/water = 11) // We dont get food for water/juices
 	tastes = list("ice" = 1, "water" = 1)
 	foodtypes = SUGAR //We use SUGAR as a base line to act in as junkfood, other wise we use fruit
-	food_flags = FOOD_FINGER_FOOD
 
 /obj/item/food/snowcones/lime
 	name = "lime snowcone"
@@ -229,7 +226,6 @@
 	var/bite_states = 4 //This value value is used for correctly setting the bite_consumption to ensure every bite changes the sprite. Do not set to zero.
 	var/bitecount = 0
 	foodtypes = DAIRY | SUGAR
-	food_flags = FOOD_FINGER_FOOD
 
 /obj/item/food/popsicle/Initialize()
 	. = ..()

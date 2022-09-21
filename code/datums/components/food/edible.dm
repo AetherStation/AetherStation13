@@ -171,9 +171,10 @@ Behavior that's still missing from this component that original food items had t
 
 	return TryToEat(user, user)
 
-/datum/component/edible/proc/OnFried(datum/source, fry_object)
+/datum/component/edible/proc/OnFried(datum/source, obj/fry_object)
 	SIGNAL_HANDLER
 	var/atom/our_atom = parent
+	fry_object.reagents.maximum_volume = our_atom.reagents.maximum_volume
 	our_atom.reagents.trans_to(fry_object, our_atom.reagents.total_volume)
 	qdel(our_atom)
 	return COMSIG_FRYING_HANDLED
@@ -270,8 +271,6 @@ Behavior that's still missing from this component that original food items had t
 	. = COMPONENT_CANCEL_ATTACK_CHAIN //Point of no return I suppose
 
 	if(eater == feeder)//If you're eating it yourself.
-		if(eat_time && !do_mob(feeder, eater, eat_time, timed_action_flags = food_flags & FOOD_FINGER_FOOD ? IGNORE_USER_LOC_CHANGE | IGNORE_TARGET_LOC_CHANGE : NONE)) //Gotta pass the minimal eat time
-			return
 		if(IsFoodGone(owner, feeder))
 			return
 		var/eatverb = pick(eatverbs)
@@ -309,10 +308,6 @@ Behavior that's still missing from this component that original food items had t
 									span_userdanger("[feeder] forces you to eat [parent]!"))
 
 	TakeBite(eater, feeder)
-
-	//If we're not force-feeding and there's an eat delay, try take another bite
-	if(eater == feeder && eat_time)
-		INVOKE_ASYNC(src, .proc/TryToEat, eater, feeder)
 
 
 ///This function lets the eater take a bite and transfers the reagents to the eater.

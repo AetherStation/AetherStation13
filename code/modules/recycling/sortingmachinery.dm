@@ -336,8 +336,6 @@
 		add_overlay(overlaystring)
 
 /obj/item/small_delivery/proc/unwrap_contents()
-	if(!sticker)
-		return
 	for(var/obj/I in src.get_all_contents())
 		SEND_SIGNAL(I, COMSIG_ITEM_UNWRAPPED)
 

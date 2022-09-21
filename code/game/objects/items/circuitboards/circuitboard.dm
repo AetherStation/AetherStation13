@@ -54,7 +54,10 @@
  * * machine - The machine to attempt to configure.
  */
 /obj/item/circuitboard/proc/configure_machine(obj/machinery/machine)
-	return
+	if (obj_flags & EMAGGED)
+		machine.obj_flags |= EMAGGED
+	else
+		machine.obj_flags &= EMAGGED
 
 // Circuitboard/machine
 /*Common Parts: Parts List: Ignitor, Timer, Infra-red laser, Infra-red sensor, t_scanner, Capacitor, Valve, sensor unit,
