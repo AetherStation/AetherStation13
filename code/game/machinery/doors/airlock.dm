@@ -1521,7 +1521,7 @@
 	else
 		open()
 
-/obj/machinery/door/airlock/proc/slice(mob/user, delay = 20 SECONDS)
+/obj/machinery/door/airlock/proc/slice(mob/user, delay = 14 SECONDS)
 	user.visible_message(span_warning("[user] begins slicing through \the [src]!"), \
 		span_notice("You begin slicing through \the [src]."), \
 		span_warning("You hear slicing noises."))
