@@ -1521,6 +1521,18 @@
 	else
 		open()
 
+/obj/machinery/door/airlock/proc/slice(mob/user, delay = 20 SECONDS)
+	user.visible_message(span_warning("[user] begins slicing through \the [src]!"), \
+		span_notice("You begin slicing through \the [src]."), \
+		span_warning("You hear slicing noises."))
+	playsound(src, 'sound/items/welder2.ogg', 100, 1)
+	if (density && do_after(user, delay, src))
+		user.visible_message(span_warning("[user] slices through \the [src]!"), \
+			span_notice("You slice through \the [src]."), \
+			span_warning("You hear slicing noises."))
+		playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
+		qdel(src)
+
 /**
  * Generates the airlock's wire layout based on the current area the airlock resides in.
  *

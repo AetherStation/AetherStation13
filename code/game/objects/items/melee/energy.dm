@@ -105,6 +105,14 @@
 	armour_penetration = 35
 	block_chance = 50
 
+/obj/item/melee/transforming/energy/sword/afterattack(atom/A, mob/user, proximity)
+	. = ..()
+	if(!proximity || !active)
+		return
+	if(istype(A, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/airlock = A
+		airlock.slice(user)
+
 /obj/item/melee/transforming/energy/sword/transform_weapon(mob/living/user, supress_message_text)
 	. = ..()
 	if(. && active && sword_color)
