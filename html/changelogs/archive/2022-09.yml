@@ -84,6 +84,9 @@
 2022-09-26:
   PolishUser:
   - rscdel: Removed cook CQC from bar areas.
+  - balance: replaced longswords with mirror shields in cult forge
+  - balance: added back longswords to summon equipment
+  - balance: removed block chance from longswords/daggers
   Salex08:
   - bugfix: fixes rust heretic not being able to properly rust or destroy specific
       objects/turfs
