@@ -1,0 +1,5 @@
+author: Salex08
+delete-after: true
+changes:
+  - bugfix: fixes rust heretic not being able to properly rust or destroy specific
+      objects/turfs
