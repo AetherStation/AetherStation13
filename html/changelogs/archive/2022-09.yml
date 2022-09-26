@@ -81,3 +81,11 @@
 2022-09-19:
   Pugie:
   - bugfix: Meat has the proper reagents now.
+2022-09-26:
+  PolishUser:
+  - rscdel: Removed cook CQC from bar areas.
+  Salex08:
+  - bugfix: fixes rust heretic not being able to properly rust or destroy specific
+      objects/turfs
+  TheChosenEvilOne:
+  - balance: cult stun now ignores stun immunity.
