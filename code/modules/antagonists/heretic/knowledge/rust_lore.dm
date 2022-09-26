@@ -27,10 +27,11 @@
 
 /datum/eldritch_knowledge/rust_fist/on_gain(mob/user)
 	RegisterSignal(user, COMSIG_HERETIC_MANSUS_GRASP_ATTACK, .proc/on_mansus_grasp)
+	RegisterSignal(user, COMSIG_HERETIC_MANSUS_GRASP_ATTACK_SECONDARY, .proc/on_secondary_mansus_grasp)
 	RegisterSignal(user, COMSIG_HERETIC_BLADE_ATTACK, .proc/on_eldritch_blade)
 
 /datum/eldritch_knowledge/rust_fist/on_lose(mob/user)
-	UnregisterSignal(user, list(COMSIG_HERETIC_MANSUS_GRASP_ATTACK, COMSIG_HERETIC_BLADE_ATTACK))
+	UnregisterSignal(user, list(COMSIG_HERETIC_MANSUS_GRASP_ATTACK, COMSIG_HERETIC_MANSUS_GRASP_ATTACK_SECONDARY, COMSIG_HERETIC_BLADE_ATTACK))
 
 /datum/eldritch_knowledge/rust_fist/proc/on_mansus_grasp(mob/living/source, mob/living/target)
 	SIGNAL_HANDLER
@@ -39,6 +40,12 @@
 		return
 
 	target.rust_heretic_act()
+
+/datum/eldritch_knowledge/rust_fist/proc/on_secondary_mansus_grasp(mob/living/source, atom/target)
+	SIGNAL_HANDLER
+
+	target.rust_heretic_act()
+	return COMPONENT_USE_CHARGE
 
 /datum/eldritch_knowledge/rust_fist/proc/on_eldritch_blade(mob/living/user, mob/living/target)
 	SIGNAL_HANDLER
