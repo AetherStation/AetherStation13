@@ -47,7 +47,7 @@
 	"minetype": "none",
 	"job_changes": {
 		"cook": {
-			"additional_cqc_areas": ["/area/service/kitchen/diner"]
+			"additional_cqc_areas": ["/area/service/kitchen/coldroom"]
 		},
 		"captain": {
 			"special_charter": "moon"

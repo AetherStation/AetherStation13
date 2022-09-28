@@ -128,7 +128,7 @@
 /obj/structure/destructible/cult/forge
 	name = "daemon forge"
 	desc = "A forge used in crafting the unholy weapons used by the armies of Nar'Sie."
-	cultist_examine_message = "A blood cultist can use it to create Nar'Sien hardened armor, flagellant's robes, and eldritch longswords."
+	cultist_examine_message = "A blood cultist can use it to create Nar'Sien hardened armor, flagellant's robes, and mirror shields."
 	icon_state = "forge"
 	light_range = 2
 	light_color = LIGHT_COLOR_LAVA
@@ -150,7 +150,7 @@
 	var/list/items = list(
 		"Nar'Sien Hardened Armor" = image(icon = 'icons/obj/clothing/suits.dmi', icon_state = "cult_armor"),
 		"Flagellant's Robe" = image(icon = 'icons/obj/clothing/suits.dmi', icon_state = "cultrobes"),
-		"Eldritch Longsword" = image(icon = 'icons/obj/items_and_weapons.dmi', icon_state = "cultblade")
+		"Mirror Shield" = image(icon = 'icons/obj/shields.dmi', icon_state = "mirror_shield")
 		)
 	var/choice = show_radial_menu(user, src, items, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
 	var/list/pickedtype = list()
@@ -159,8 +159,8 @@
 			pickedtype += /obj/item/clothing/suit/space/hardsuit/cult/real
 		if("Flagellant's Robe")
 			pickedtype += /obj/item/clothing/suit/hooded/cultrobes/berserker
-		if("Eldritch Longsword")
-			pickedtype += /obj/item/melee/cultblade
+		if("Mirror Shield")
+			pickedtype += /obj/item/shield/mirror
 		else
 			return
 	if(src && !QDELETED(src) && anchored && pickedtype && Adjacent(user) && !user.incapacitated() && IS_CULTIST(user) && cooldowntime <= world.time)

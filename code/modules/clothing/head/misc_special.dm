@@ -98,9 +98,12 @@
 	hitsound_on = 'sound/weapons/blade1.ogg'
 	hitsound_off = 'sound/weapons/tap.ogg'
 	damtype_on = BRUTE
-	force_on = 18 //same as epen (but much more obvious)
+	sharpness = SHARP_EDGED
+	armour_penetration = 35
+	force_on = 30 //same as esword (but makes you an epic gamer)
 	light_range = 3 //ditto
-	heat = 0
+	light_color = "#08eb2e" //to fit the sprite :)
+	heat = 1000
 
 /obj/item/clothing/head/hardhat/cakehat/energycake/turn_on(mob/living/user)
 	playsound(user, 'sound/weapons/saberon.ogg', 5, TRUE)
