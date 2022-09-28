@@ -141,9 +141,9 @@
 	throw_range = 5
 	w_class = WEIGHT_CLASS_TINY
 	inhand_icon_state = "broken_beer"
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
+    lefthand_file = 'icons/mob/inhands/misc/food_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/misc/food_righthand.dmi'
+	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb_continuous = list("stabs", "slashes", "attacks")
 	attack_verb_simple = list("stab", "slash", "attack")
 	sharpness = SHARP_EDGED
@@ -156,6 +156,7 @@
 	name = "space beer"
 	desc = "Beer. In space."
 	icon_state = "beer"
+	volume = 50
 	list_reagents = list(/datum/reagent/consumable/ethanol/beer = 30)
 	foodtype = GRAIN | ALCOHOL
 	custom_price = PAYCHECK_EASY
@@ -172,6 +173,7 @@
 	name = "Magm-Ale"
 	desc = "A true dorf's drink of choice."
 	icon_state = "alebottle"
+	volume = 50
 	inhand_icon_state = "beer"
 	list_reagents = list(/datum/reagent/consumable/ethanol/ale = 30)
 	foodtype = GRAIN | ALCOHOL
