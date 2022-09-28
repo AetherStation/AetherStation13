@@ -2582,7 +2582,7 @@
 	desc = "A fresh tank of exploration drone fuel."
 	cost = CARGO_CRATE_VALUE * 3
 	contains = list(/obj/item/fuel_pellet)
-    crate_name = "fuel pellet crate"
+    crate_name = "exodrone fuel crate"
 
 /datum/supply_pack/misc/paper
 	name = "Bureaucracy Crate"
