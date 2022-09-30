@@ -424,9 +424,6 @@ GLOBAL_LIST_INIT(pda_styles, sort_list(list(MONO, VT, ORBITRON, SHARE)))
 #define LOCATIONS_FILE "locations.json"
 #define WANTED_FILE "wanted_message.json"
 #define VISTA_FILE "steve.json"
-#define FLESH_SCAR_FILE "wounds/flesh_scar_desc.json"
-#define BONE_SCAR_FILE "wounds/bone_scar_desc.json"
-#define SCAR_LOC_FILE "wounds/scar_loc.json"
 #define EXODRONE_FILE "exodrone.json"
 #define CLOWN_NONSENSE_FILE "clown_nonsense.json"
 

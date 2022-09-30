@@ -152,8 +152,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/hearted_until
 	/// Agendered spessmen can choose whether to have a male or female bodytype
 	var/body_type
-	/// If we have persistent scars enabled
-	var/persistent_scars = TRUE
 	///If we want to broadcast deadchat connect/disconnect messages
 	var/broadcast_login_logout = TRUE
 	///What outfit typepaths we've favorited in the SelectEquipment menu
@@ -1747,14 +1745,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						randomise -= random_type
 					else
 						randomise[random_type] = TRUE
-
-				if("persistent_scars")
-					persistent_scars = !persistent_scars
-
-				if("clear_scars")
-					var/path = "data/player_saves/[user.ckey[1]]/[user.ckey]/scars.sav"
-					fdel(path)
-					to_chat(user, span_notice("All scar slots cleared."))
 
 				if("hear_midis")
 					toggles ^= SOUND_MIDI
