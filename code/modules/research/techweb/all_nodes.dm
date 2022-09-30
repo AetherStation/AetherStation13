@@ -167,7 +167,6 @@
 	design_ids = list(
 		"beaker",
 		"blood_filter",
-		"bonesetter",
 		"cautery",
 		"circular_saw",
 		"cybernetic_eyes",

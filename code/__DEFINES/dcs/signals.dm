@@ -656,15 +656,10 @@
 #define COMSIG_ON_CARBON_SLIP "carbon_slip"
 ///When a carbon gets a vending machine tilted on them
 #define COMSIG_ON_VENDOR_CRUSH "carbon_vendor_crush"
-// /mob/living/carbon physiology signals
-#define COMSIG_CARBON_GAIN_WOUND "carbon_gain_wound" //from /datum/wound/proc/apply_wound() (/mob/living/carbon/C, /datum/wound/W, /obj/item/bodypart/L)
-#define COMSIG_CARBON_LOSE_WOUND "carbon_lose_wound" //from /datum/wound/proc/remove_wound() (/mob/living/carbon/C, /datum/wound/W, /obj/item/bodypart/L)
 ///from base of /obj/item/bodypart/proc/attach_limb(): (new_limb, special) allows you to fail limb attachment
 #define COMSIG_CARBON_ATTACH_LIMB "carbon_attach_limb"
 	#define COMPONENT_NO_ATTACH (1<<0)
 #define COMSIG_CARBON_REMOVE_LIMB "carbon_remove_limb" //from base of /obj/item/bodypart/proc/drop_limb(special, dismembered)
-#define COMSIG_BODYPART_GAUZED "bodypart_gauzed" // from /obj/item/bodypart/proc/apply_gauze(/obj/item/stack/gauze)
-#define COMSIG_BODYPART_GAUZE_DESTROYED "bodypart_degauzed" // from [/obj/item/bodypart/proc/seep_gauze] when it runs out of absorption
 
 ///from base of mob/living/carbon/soundbang_act(): (list(intensity))
 #define COMSIG_CARBON_SOUNDBANG "carbon_soundbang"

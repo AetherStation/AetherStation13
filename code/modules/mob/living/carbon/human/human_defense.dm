@@ -206,7 +206,7 @@
 	visible_message(span_danger("[user] [hulk_verb]ed [src]!"), \
 					span_userdanger("[user] [hulk_verb]ed [src]!"), span_hear("You hear a sickening sound of flesh hitting flesh!"), null, user)
 	to_chat(user, span_danger("You [hulk_verb] [src]!"))
-	apply_damage(15, BRUTE, wound_bonus=10)
+	apply_damage(15, BRUTE)
 
 /mob/living/carbon/human/attack_hand(mob/user)
 	if(..()) //to allow surgery to return properly.
@@ -351,7 +351,7 @@
 	if(!affecting)
 		affecting = get_bodypart(BODY_ZONE_CHEST)
 	var/armor = run_armor_check(affecting, MELEE, armour_penetration = user.armour_penetration)
-	apply_damage(damage, user.melee_damage_type, affecting, armor, wound_bonus = user.wound_bonus, bare_wound_bonus = user.bare_wound_bonus, sharpness = user.sharpness)
+	apply_damage(damage, user.melee_damage_type, affecting, armor, sharpness = user.sharpness)
 
 
 /mob/living/carbon/human/attack_slime(mob/living/simple_animal/slime/M)
@@ -361,11 +361,8 @@
 	var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
 	if(!damage)
 		return
-	var/wound_mod = -45 // 25^1.4=90, 90-45=45
 	if(M.is_adult)
 		damage += rand(5, 10)
-		wound_mod = -90 // 35^1.4=145, 145-90=55
-
 	if(check_shields(M, damage, "the [M.name]"))
 		return FALSE
 
@@ -377,7 +374,7 @@
 	if(!affecting)
 		affecting = get_bodypart(BODY_ZONE_CHEST)
 	var/armor_block = run_armor_check(affecting, MELEE)
-	apply_damage(damage, BRUTE, affecting, armor_block, wound_bonus=wound_mod)
+	apply_damage(damage, BRUTE, affecting, armor_block)
 
 
 /mob/living/carbon/human/ex_act(severity, target, origin)
@@ -760,20 +757,6 @@
 			else
 				isdisabled += " and"
 		combined_msg += "\t <span class='[no_damage ? "notice" : "warning"]'>Your [body_part.name][isdisabled][self_aware ? " has " : " is "][status].</span>"
-
-		for(var/thing in body_part.wounds)
-			var/datum/wound/W = thing
-			var/msg
-			switch(W.severity)
-				if(WOUND_SEVERITY_TRIVIAL)
-					msg = "\t [span_danger("Your [body_part.name] is suffering [W.a_or_from] [lowertext(W.name)].")]"
-				if(WOUND_SEVERITY_MODERATE)
-					msg = "\t [span_warning("Your [body_part.name] is suffering [W.a_or_from] [lowertext(W.name)]!")]"
-				if(WOUND_SEVERITY_SEVERE)
-					msg = "\t [span_warning("<b>Your [body_part.name] is suffering [W.a_or_from] [lowertext(W.name)]!</b>")]"
-				if(WOUND_SEVERITY_CRITICAL)
-					msg = "\t [span_warning("<b>Your [body_part.name] is suffering [W.a_or_from] [lowertext(W.name)]!!</b>")]"
-			combined_msg += msg
 
 		for(var/obj/item/I in body_part.embedded_objects)
 			if(I.isEmbedHarmless())

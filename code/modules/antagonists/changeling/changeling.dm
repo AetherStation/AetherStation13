@@ -294,10 +294,6 @@
 
 	prof.skillchips = H.clone_skillchip_list(TRUE)
 
-	for(var/i in H.all_scars)
-		var/datum/scar/iter_scar = i
-		LAZYADD(prof.stored_scars, iter_scar.format())
-
 	var/datum/icon_snapshot/entry = new
 	entry.name = H.name
 	entry.icon = H.icon
@@ -522,12 +518,6 @@
 	user.update_body()
 	user.domutcheck()
 
-	// get rid of any scars from previous changeling-ing
-	for(var/i in user.all_scars)
-		var/datum/scar/iter_scar = i
-		if(iter_scar.fake)
-			qdel(iter_scar)
-
 	// Do skillchip code after DNA code.
 	// There's a mutation that increases max chip complexity available, even though we force-implant skillchips.
 
@@ -600,11 +590,6 @@
 			user.equip_to_slot_or_del(C, slot2slot[slot])
 			if(!QDELETED(C))
 				ADD_TRAIT(C, TRAIT_NODROP, CHANGELING_TRAIT)
-
-	for(var/stored_scar_line in chosen_prof.stored_scars)
-		var/datum/scar/attempted_fake_scar = user.load_scar(stored_scar_line)
-		if(attempted_fake_scar)
-			attempted_fake_scar.fake = TRUE
 
 	user.regenerate_icons()
 

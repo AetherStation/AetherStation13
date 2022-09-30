@@ -46,7 +46,6 @@
 	if(empty)
 		return
 	var/static/items_inside = list(
-		/obj/item/healthanalyzer/wound = 1,
 		/obj/item/stack/medical/gauze = 1,
 		/obj/item/stack/medical/suture/emergency = 1,
 		/obj/item/stack/medical/ointment = 1,
@@ -94,7 +93,6 @@
 		/obj/item/surgical_drapes, //for true paramedics
 		/obj/item/scalpel,
 		/obj/item/circular_saw,
-		/obj/item/bonesetter,
 		/obj/item/surgicaldrill,
 		/obj/item/retractor,
 		/obj/item/cautery,

@@ -163,9 +163,6 @@
 		M.adjustFireLoss(-power * REM * delta_time, 0)
 		M.adjustToxLoss(-power * REM * delta_time, 0, TRUE) //heals TOXINLOVERs
 		M.adjustCloneLoss(-power * REM * delta_time, 0)
-		for(var/i in M.all_wounds)
-			var/datum/wound/iter_wound = i
-			iter_wound.on_xadone(power * REAGENTS_EFFECT_MULTIPLIER * delta_time)
 		REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC) //fixes common causes for disfiguration
 		. = TRUE
 	metabolization_rate = REAGENTS_METABOLISM * (0.00001 * (M.bodytemperature ** 2) + 0.5)
@@ -217,9 +214,6 @@
 		M.adjustFireLoss(-1.5 * power * REM * delta_time, FALSE)
 		M.adjustToxLoss(-power * REM * delta_time, FALSE, TRUE)
 		M.adjustCloneLoss(-power * REM * delta_time, FALSE)
-		for(var/i in M.all_wounds)
-			var/datum/wound/iter_wound = i
-			iter_wound.on_xadone(power * REAGENTS_EFFECT_MULTIPLIER * delta_time)
 		REMOVE_TRAIT(M, TRAIT_DISFIGURED, TRAIT_GENERIC)
 		. = TRUE
 	..()
@@ -1364,6 +1358,9 @@
 	. = ..()
 	M.adjustOrganLoss(ORGAN_SLOT_LUNGS, -0.25 * REM * delta_time)
 	M.adjustBruteLoss(-0.35 * REM * delta_time, 0)
+	if (prob(50) && ishuman(M))
+		for (var/obj/item/bodypart/BP in M.bodyparts)
+			BP.bleedstacks = max(BP.bleedstacks - 1, 0)
 	return TRUE
 
 /datum/reagent/medicine/polypyr/expose_mob(mob/living/carbon/human/exposed_human, methods=TOUCH, reac_volume)
@@ -1427,24 +1424,13 @@
 
 /datum/reagent/medicine/coagulant/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	. = ..()
-	if(!M.blood_volume || !M.all_wounds)
+	if(!M.blood_volume)
 		return
-
-	var/datum/wound/bloodiest_wound
-
-	for(var/i in M.all_wounds)
-		var/datum/wound/iter_wound = i
-		if(iter_wound.blood_flow)
-			if(iter_wound.blood_flow > bloodiest_wound?.blood_flow)
-				bloodiest_wound = iter_wound
-
-	if(bloodiest_wound)
-		if(!was_working)
-			to_chat(M, span_green("You can feel your flowing blood start thickening!"))
-			was_working = TRUE
-		bloodiest_wound.blood_flow = max(0, bloodiest_wound.blood_flow - (clot_rate * REM * delta_time))
-	else if(was_working)
-		was_working = FALSE
+	// WOUNDS REMOVAL TODO: make this work.
+	for (var/obj/item/bodypart/BP in M.bodyparts)
+		if (BP.bleedstacks && prob(50))
+			BP.bleedstacks = max(BP.bleedstacks - clot_rate * delta_time, 0)
+		BP.bleedstacks = max(BP.bleedstacks - passive_bleed_modifier, 0)
 
 /datum/reagent/medicine/coagulant/overdose_process(mob/living/M, delta_time, times_fired)
 	. = ..()

@@ -540,15 +540,6 @@
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/bonesetter
-	name = "Bonesetter"
-	id = "bonesetter"
-	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
-	materials = list(/datum/material/iron = 5000,  /datum/material/glass = 2500)
-	build_path = /obj/item/bonesetter
-	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/surgicaldrill
 	name = "Surgical Drill"
 	id = "surgicaldrill"

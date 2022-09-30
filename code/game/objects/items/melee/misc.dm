@@ -21,8 +21,6 @@
 	slot_flags = ITEM_SLOT_BELT
 	force = 10
 	throwforce = 7
-	wound_bonus = 15
-	bare_wound_bonus = 10
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb_continuous = list("flogs", "whips", "lashes", "disciplines")
 	attack_verb_simple = list("flog", "whip", "lash", "discipline")
@@ -72,8 +70,6 @@
 	attack_verb_simple = list("slash", "cut")
 	hitsound = 'sound/weapons/rapierhit.ogg'
 	custom_materials = list(/datum/material/iron = 1000)
-	wound_bonus = 10
-	bare_wound_bonus = 25
 
 /obj/item/melee/sabre/Initialize()
 	. = ..()
@@ -211,8 +207,6 @@
 	var/force_on // Damage when on - not stunning
 	var/force_off // Damage when off - not stunning
 	var/weight_class_on // What is the new size class when turned on
-
-	wound_bonus = 15
 
 /obj/item/melee/classic_baton/Initialize()
 	. = ..()
@@ -378,7 +372,6 @@
 	force_on = 10
 	force_off = 0
 	weight_class_on = WEIGHT_CLASS_BULKY
-	bare_wound_bonus = 5
 
 /obj/item/melee/classic_baton/telescopic/suicide_act(mob/user)
 	var/mob/living/carbon/human/H = user

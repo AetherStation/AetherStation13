@@ -174,7 +174,6 @@
 		/obj/item/surgical_drapes, //for true paramedics
 		/obj/item/scalpel,
 		/obj/item/circular_saw,
-		/obj/item/bonesetter,
 		/obj/item/surgicaldrill,
 		/obj/item/retractor,
 		/obj/item/cautery,
@@ -206,7 +205,6 @@
 	new /obj/item/pinpointer/crew/prox(src)
 	new /obj/item/stack/medical/gauze/twelve(src)
 	new /obj/item/reagent_containers/syringe(src)
-	new /obj/item/stack/medical/bone_gel(src)
 	new /obj/item/stack/sticky_tape/surgical(src)
 	new /obj/item/reagent_containers/glass/bottle/formaldehyde(src)
 	update_appearance()

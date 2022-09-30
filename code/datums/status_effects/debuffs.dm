@@ -425,8 +425,7 @@
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
 		var/obj/item/bodypart/bodypart = pick(H.bodyparts)
-		var/datum/wound/slash/severe/crit_wound = new()
-		crit_wound.apply_wound(bodypart)
+		bodypart.bleedstacks += 3.25
 	return ..()
 
 /datum/status_effect/eldritch/ash
@@ -597,13 +596,7 @@
 	if(H.stat == DEAD || !throat)
 		H.remove_status_effect(/datum/status_effect/neck_slice)
 
-	var/still_bleeding = FALSE
-	for(var/thing in throat.wounds)
-		var/datum/wound/W = thing
-		if(W.wound_type == WOUND_SLASH && W.severity > WOUND_SEVERITY_MODERATE)
-			still_bleeding = TRUE
-			break
-	if(!still_bleeding)
+	if(!throat.bleedstacks)
 		H.remove_status_effect(/datum/status_effect/neck_slice)
 
 	if(prob(10))

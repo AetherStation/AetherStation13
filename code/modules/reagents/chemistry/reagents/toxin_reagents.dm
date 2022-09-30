@@ -854,13 +854,14 @@
 	toxpwr = 0
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
-/datum/reagent/toxin/heparin/on_mob_metabolize(mob/living/M)
-	ADD_TRAIT(M, TRAIT_BLOODY_MESS, /datum/reagent/toxin/heparin)
-	return ..()
-
-/datum/reagent/toxin/heparin/on_mob_end_metabolize(mob/living/M)
-	REMOVE_TRAIT(M, TRAIT_BLOODY_MESS, /datum/reagent/toxin/heparin)
-	return ..()
+/datum/reagent/toxin/heprain/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	if(ishuman(M))
+		var/mob/living/carbon/human/H = M
+		var/obj/item/bodypart/BP = pick(H.bodyparts)
+		BP.bleedstacks = min(BP.bleedstacks + 2, 8)
+		H.adjustBruteLoss(1, 0)
+		. = 1
+	return ..() || .
 
 /datum/reagent/toxin/rotatium //Rotatium. Fucks up your rotation and is hilarious
 	name = "Rotatium"
@@ -1059,7 +1060,7 @@
 			playsound(M, get_sfx("desecration"), 50, TRUE, -1)
 			M.visible_message(span_warning("[M]'s bones hurt too much!!"), span_danger("Your bones hurt too much!!"))
 			M.say("OOF!!", forced = /datum/reagent/toxin/bonehurtingjuice)
-			bp.receive_damage(20, 0, 200, wound_bonus = rand(30, 130))
+			bp.receive_damage(20, 0, 200)
 		else //SUCH A LUST FOR REVENGE!!!
 			to_chat(M, span_warning("A phantom limb hurts!"))
 			M.say("Why are we still here, just to suffer?", forced = /datum/reagent/toxin/bonehurtingjuice)

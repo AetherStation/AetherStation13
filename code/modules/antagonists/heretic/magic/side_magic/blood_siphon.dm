@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/pointed/blood_siphon
 	name = "Blood Siphon"
-	desc = "A touch spell that heals your wounds while damaging the enemy. It has a chance to transfer wounds between you and your enemy."
+	desc = "A touch spell that heals your wounds while damaging the enemy."
 	school = SCHOOL_EVOCATION
 	charge_max = 150
 	clothes_req = FALSE
@@ -27,18 +27,6 @@
 		carbon_user.adjustBruteLoss(-20)
 	if(iscarbon(target))
 		var/mob/living/carbon/carbon_target = target
-		for(var/bp in carbon_user.bodyparts)
-			var/obj/item/bodypart/bodypart = bp
-			for(var/i in bodypart.wounds)
-				var/datum/wound/iter_wound = i
-				if(prob(50))
-					continue
-				var/obj/item/bodypart/target_bodypart = locate(bodypart.type) in carbon_target.bodyparts
-				if(!target_bodypart)
-					continue
-				iter_wound.remove_wound()
-				iter_wound.apply_wound(target_bodypart)
-
 		carbon_target.blood_volume -= 20
 		if(carbon_user.blood_volume < BLOOD_VOLUME_MAXIMUM) //we dont want to explode after all
 			carbon_user.blood_volume += 20

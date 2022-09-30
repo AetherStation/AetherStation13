@@ -4,7 +4,7 @@
 	id = SPECIES_LIZARD
 	say_mod = "hisses"
 	default_color = "00FF00"
-	species_traits = list(MUTCOLORS, EYECOLOR, LIPS, HAS_FLESH, HAS_BONE)
+	species_traits = list(MUTCOLORS, EYECOLOR, LIPS)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -122,7 +122,7 @@ Lizard subspecies: ASHWALKERS
 	name = "Ash Walker"
 	id = SPECIES_LIZARD_ASH
 	limbs_id = "lizard"
-	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,DIGITIGRADE,HAS_FLESH,HAS_BONE)
+	species_traits = list(MUTCOLORS,EYECOLOR,LIPS,DIGITIGRADE)
 	mutantlungs = /obj/item/organ/lungs/ashwalker
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,

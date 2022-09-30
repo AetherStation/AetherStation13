@@ -265,8 +265,6 @@ GLOBAL_DATUM(syndicate_code_response_regex, /regex)
 			return "a fine cutting tool"
 		if(TOOL_SAW)
 			return "a saw"
-		if(TOOL_BONESET)
-			return "a bone setter"
 		if(TOOL_KNIFE)
 			return "a cutting tool"
 		if(TOOL_BLOODFILTER)

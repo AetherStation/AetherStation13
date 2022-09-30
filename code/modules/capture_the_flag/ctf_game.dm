@@ -222,8 +222,6 @@
 	var/list/ctf_gear = list("Rifleman" = /datum/outfit/ctf, "Assaulter" = /datum/outfit/ctf/assault, "Marksman" = /datum/outfit/ctf/marksman)
 	var/instagib_gear = /datum/outfit/ctf/instagib
 	var/ammo_type = /obj/effect/powerup/ammo/ctf
-	// Fast paced gameplay, no real time for burn infections.
-	var/player_traits = list(TRAIT_NEVER_WOUNDED)
 
 	var/list/dead_barricades = list()
 
@@ -387,8 +385,6 @@
 	M.faction += team
 	M.equipOutfit(chosen_class)
 	RegisterSignal(M, COMSIG_PARENT_QDELETING, .proc/ctf_qdelled_player) //just in case CTF has some map hazards (read: chasms). bit shorter than dust
-	for(var/trait in player_traits)
-		ADD_TRAIT(M, trait, CAPTURE_THE_FLAG_TRAIT)
 	spawned_mobs[M] = chosen_class
 	return M //used in medisim.dm
 

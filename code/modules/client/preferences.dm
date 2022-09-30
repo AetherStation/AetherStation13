@@ -323,10 +323,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<br><b>Backpack:</b><BR><a href ='?_src_=prefs;preference=bag;task=input'>[backpack]</a>"
 			dat += "<a href='?_src_=prefs;preference=toggle_random;random_type=[RANDOM_BACKPACK]'>[(randomise[RANDOM_BACKPACK]) ? "Lock" : "Unlock"]</A>"
 
-			if((HAS_FLESH in pref_species.species_traits) || (HAS_BONE in pref_species.species_traits))
-				dat += "<BR><b>Temporal Scarring:</b><BR><a href='?_src_=prefs;preference=persistent_scars'>[(persistent_scars) ? "Enabled" : "Disabled"]</A>"
-				dat += "<a href='?_src_=prefs;preference=clear_scars'>Clear scar slots</A>"
-
 			dat += "<br><b>Uplink Spawn Location:</b><BR><a href ='?_src_=prefs;preference=uplink_loc;task=input'>[uplink_spawn_loc == UPLINK_IMPLANT ? UPLINK_IMPLANT_WITH_PRICE : uplink_spawn_loc]</a><BR></td>"
 			if (user.client.get_exp_living(TRUE) >= PLAYTIME_VETERAN)
 				dat += "<br><b>Don The Ultimate Gamer Cloak?:</b><BR><a href ='?_src_=prefs;preference=playtime_reward_cloak'>[(playtime_reward_cloak) ? "Enabled" : "Disabled"]</a><BR></td>"

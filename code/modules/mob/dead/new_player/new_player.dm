@@ -344,9 +344,6 @@
 			AnnounceArrival(humanc, rank)
 		AddEmploymentContract(humanc)
 
-		humanc.increment_scar_slot()
-		humanc.load_persistent_scars()
-
 		if(GLOB.curse_of_madness_triggered)
 			give_madness(humanc, GLOB.curse_of_madness_triggered)
 

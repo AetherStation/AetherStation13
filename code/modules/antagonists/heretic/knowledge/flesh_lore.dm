@@ -196,7 +196,7 @@
 		/datum/eldritch_knowledge/spell/blood_siphon,
 	)
 	route = PATH_FLESH
-	
+
 /datum/eldritch_knowledge/blade_upgrade/flesh
 	name = "Bleeding Steel"
 	gain_text = "And then, blood rained from the heavens. That's when I finally understood the Marshal's teachings."
@@ -210,8 +210,7 @@
 
 	var/mob/living/carbon/carbon_target = target
 	var/obj/item/bodypart/bodypart = pick(carbon_target.bodyparts)
-	var/datum/wound/slash/severe/crit_wound = new()
-	crit_wound.apply_wound(bodypart)
+	bodypart.bleedstacks += 5
 
 /datum/eldritch_knowledge/summon/stalker
 	name = "Lonely Ritual"

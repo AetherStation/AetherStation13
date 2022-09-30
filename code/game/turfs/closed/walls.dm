@@ -155,18 +155,13 @@
  *
  *When a hulk manages to break a wall using their hulk smash, this deals back damage to the arm used.
  *This is in its own proc just to be easily overridden by other wall types. Default allows for three
- *smashed walls per arm. Also, we use CANT_WOUND here because wounds are random. Wounds are applied
- *by hulk code based on arm damage and checked when we call break_an_arm().
+ *smashed walls per arm.
  *Arguments:
  **arg1 is the arm to deal damage to.
  **arg2 is the hulk
  */
 /turf/closed/wall/proc/hulk_recoil(obj/item/bodypart/arm, mob/living/carbon/human/hulkman, damage = 20)
-	arm.receive_damage(brute = damage, blocked = 0, wound_bonus = CANT_WOUND)
-	var/datum/mutation/human/hulk/smasher = locate(/datum/mutation/human/hulk) in hulkman.dna.mutations
-	if(!smasher || !damage) //sanity check but also snow and wood walls deal no recoil damage, so no arm breaky
-		return
-	smasher.break_an_arm(arm)
+	arm.receive_damage(brute = damage, blocked = 0)
 
 /turf/closed/wall/attack_hand(mob/user)
 	. = ..()

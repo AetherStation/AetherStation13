@@ -7,7 +7,7 @@
 	say_mod = "moans"
 	sexes = 0
 	meat = /obj/item/food/meat/slab/human/mutant/zombie
-	species_traits = list(NOBLOOD,NOZOMBIE,NOTRANSSTING, HAS_FLESH, HAS_BONE)
+	species_traits = list(NOBLOOD,NOZOMBIE,NOTRANSSTING)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
 		TRAIT_CAN_STRIP,
@@ -19,7 +19,6 @@
 		TRAIT_RESISTLOWPRESSURE,
 		TRAIT_RADIMMUNE,
 		TRAIT_EASYDISMEMBER,
-		TRAIT_EASILY_WOUNDED,
 		TRAIT_LIMBATTACHMENT,
 		TRAIT_NOBREATH,
 		TRAIT_NODEATH,
@@ -65,7 +64,7 @@
 /datum/species/zombie/infectious/spec_stun(mob/living/carbon/human/H,amount)
 	. = min(20, amount)
 
-/datum/species/zombie/infectious/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, spread_damage = FALSE, forced = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = NONE)
+/datum/species/zombie/infectious/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, spread_damage = FALSE, forced = FALSE, sharpness = NONE)
 	. = ..()
 	if(.)
 		COOLDOWN_START(src, regen_cooldown, REGENERATION_DELAY)
@@ -83,10 +82,6 @@
 			heal_amt *= 2
 		C.heal_overall_damage(heal_amt * delta_time, heal_amt * delta_time)
 		C.adjustToxLoss(-heal_amt * delta_time)
-		for(var/i in C.all_wounds)
-			var/datum/wound/iter_wound = i
-			if(DT_PROB(2-(iter_wound.severity/2), delta_time))
-				iter_wound.remove_wound()
 	if(!HAS_TRAIT(C, TRAIT_CRITICAL_CONDITION) && DT_PROB(2, delta_time))
 		playsound(C, pick(spooks), 50, TRUE, 10)
 
@@ -119,11 +114,9 @@
 	meat = /obj/item/food/meat/slab/human/mutant/zombie
 	mutanttongue = /obj/item/organ/tongue/zombie
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | ERT_SPAWN
-	species_traits = list(HAS_FLESH, HAS_BONE)
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
-		TRAIT_CAN_STRIP,
-		TRAIT_EASILY_WOUNDED,
+		TRAIT_CAN_STRIP
 	)
 
 #undef REGENERATION_DELAY

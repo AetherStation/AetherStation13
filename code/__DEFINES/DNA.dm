@@ -136,17 +136,12 @@
 #define AGENDER 16
 /// Do not draw eyes or eyeless overlay
 #define NOEYESPRITES 17
-/// Used for determining which wounds are applicable to this species.
-/// if we have flesh (can suffer slash/piercing/burn wounds, requires they don't have NOBLOOD)
-#define HAS_FLESH 18
-/// if we have bones (can suffer bone wounds)
-#define HAS_BONE 19
 ///If we have a limb-specific overlay sprite
-#define HAS_MARKINGS 20
+#define HAS_MARKINGS 18
 /// Do not draw blood overlay
-#define NOBLOODOVERLAY 21
+#define NOBLOODOVERLAY 19
 ///No augments, for monkeys in specific because they will turn into fucking freakazoids https://cdn.discordapp.com/attachments/326831214667235328/791313258912153640/102707682-fa7cad80-4294-11eb-8f13-8c689468aeb0.png
-#define NOAUGMENTS 22
+#define NOAUGMENTS 20
 
 //organ slots
 #define ORGAN_SLOT_ADAMANTINE_RESONATOR "adamantine_resonator"

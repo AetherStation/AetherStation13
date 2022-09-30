@@ -4,7 +4,7 @@
 	say_mod = "rattles"
 	sexes = 0
 	meat = /obj/item/stack/sheet/mineral/plasma
-	species_traits = list(NOBLOOD,NOTRANSSTING, HAS_BONE)
+	species_traits = list(NOBLOOD,NOTRANSSTING)
 	// plasmemes get hard to wound since they only need a severe bone wound to dismember, but unlike skellies, they can't pop their bones back into place
 	inherent_traits = list(
 		TRAIT_ADVANCEDTOOLUSER,
@@ -13,7 +13,6 @@
 		TRAIT_RADIMMUNE,
 		TRAIT_GENELESS,
 		TRAIT_NOHUNGER,
-		TRAIT_HARDLY_WOUNDED,
 	)
 
 	inherent_biotypes = MOB_HUMANOID|MOB_MINERAL
@@ -99,12 +98,6 @@
 
 /datum/species/plasmaman/handle_chemicals(datum/reagent/chem, mob/living/carbon/human/H, delta_time, times_fired)
 	. = ..()
-	if(istype(chem, /datum/reagent/toxin/plasma))
-		H.reagents.remove_reagent(chem.type, chem.metabolization_rate * delta_time)
-		for(var/i in H.all_wounds)
-			var/datum/wound/iter_wound = i
-			iter_wound.on_xadone(4 * REAGENTS_EFFECT_MULTIPLIER * delta_time) // plasmamen use plasma to reform their bones or whatever
-		return TRUE
 	if(istype(chem, /datum/reagent/toxin/bonehurtingjuice))
 		H.adjustStaminaLoss(7.5 * REAGENTS_EFFECT_MULTIPLIER * delta_time, 0)
 		H.adjustBruteLoss(0.5 * REAGENTS_EFFECT_MULTIPLIER * delta_time, 0)

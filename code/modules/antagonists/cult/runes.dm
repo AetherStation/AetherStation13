@@ -257,7 +257,6 @@ structure_check() searches for nearby cultist structures required for the invoca
 		convertee.adjustBruteLoss(-(brutedamage * 0.75))
 		convertee.adjustFireLoss(-(burndamage * 0.75))
 	convertee.restore_blood()
-	convertee.remove_wounds()
 	convertee.visible_message("<span class='warning'>[convertee] writhes in pain \
 	[brutedamage || burndamage ? "even as [convertee.p_their()] wounds heal and close" : "as the markings below [convertee.p_them()] glow a bloody red"]!</span>", \
 	span_cultlarge("<i>AAAAAAAAAAAAAA-</i>"))

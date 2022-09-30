@@ -650,7 +650,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
 	force = 12
-	wound_bonus = -10
 	throwforce = 12
 	attack_verb_continuous = list("beats", "smacks")
 	attack_verb_simple = list("beat", "smack")
@@ -669,8 +668,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 			desc = "You've got red on you."
 		else
 			desc = "You gotta know what a crumpet is to understand cricket."
-
-	AddElement(/datum/element/kneecapping)
 
 /obj/item/melee/baseball_bat/homerun
 	name = "home run bat"
@@ -899,7 +896,6 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	flags_1 = CONDUCT_1
 	force = 12
-	wound_bonus = 20
 	w_class = WEIGHT_CLASS_NORMAL
 	attack_verb_continuous = list("attacks", "slashes", "stabs", "slices", "tears", "lacerates", "rips", "dices", "cuts")
 	attack_verb_simple = list("attack", "slash", "stab", "slice", "tear", "lacerate", "rip", "dice", "cut")

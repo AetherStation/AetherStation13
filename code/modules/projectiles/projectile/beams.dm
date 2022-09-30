@@ -16,21 +16,15 @@
 	ricochets_max = 50 //Honk!
 	ricochet_chance = 80
 	reflectable = REFLECT_NORMAL
-	wound_bonus = -20
-	bare_wound_bonus = 10
-
 
 /obj/projectile/beam/laser
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
-	wound_bonus = -30
-	bare_wound_bonus = 40
 
 //overclocked laser, does a bit more damage but has much higher wound power (-0 vs -20)
 /obj/projectile/beam/laser/hellfire
 	name = "hellfire laser"
-	wound_bonus = 0
 	damage = 25
 	speed = 0.6 // higher power = faster, that's how light works right
 
@@ -108,7 +102,6 @@
 	tracer_type = /obj/effect/projectile/tracer/pulse
 	muzzle_type = /obj/effect/projectile/muzzle/pulse
 	impact_type = /obj/effect/projectile/impact/pulse
-	wound_bonus = 10
 
 /obj/projectile/beam/pulse/on_hit(atom/target, blocked = FALSE)
 	. = ..()
@@ -139,8 +132,6 @@
 	damage = 30
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	light_color = LIGHT_COLOR_GREEN
-	wound_bonus = -40
-	bare_wound_bonus = 70
 
 /obj/projectile/beam/emitter/singularity_pull()
 	return //don't want the emitters to miss
@@ -166,19 +157,10 @@
 	name = "heavy emitter beam"
 	icon_state = "emitter_heavy"
 	damage = 600
-	wound_bonus = 70
 	armour_penetration = 100
 
 /obj/projectile/beam/emitter/heavy/on_hit(atom/target, blocked)
 	. = ..()
-
-	if(iscarbon(target))
-		var/mob/living/carbon/carbon_target = target
-		for(var/i in 1 to 3)
-			var/obj/item/bodypart/bodypart = pick(carbon_target.bodyparts)
-			var/type_found = pick(GLOB.global_wound_types[WOUND_BURN])
-			var/datum/wound/burnies = new type_found()
-			burnies.apply_wound(bodypart)
 
 	if(istype(target,/obj/machinery/power/supermatter_crystal))
 		return
