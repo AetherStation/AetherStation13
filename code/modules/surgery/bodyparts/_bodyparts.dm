@@ -715,9 +715,6 @@
 /obj/item/bodypart/proc/apply_gauze(obj/item/stack/gauze)
 	if(!istype(gauze) || !gauze.absorption_capacity)
 		return
-	var/newly_gauzed = FALSE
-	if(!current_gauze)
-		newly_gauzed = TRUE
 	QDEL_NULL(current_gauze)
 	current_gauze = new gauze.type(src, 1)
 	gauze.use(1)

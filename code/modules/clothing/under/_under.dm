@@ -9,7 +9,6 @@
 	equip_sound = 'sound/items/equip/jumpsuit_equip.ogg'
 	drop_sound = 'sound/items/handling/cloth_drop.ogg'
 	pickup_sound =  'sound/items/handling/cloth_pickup.ogg'
-	limb_integrity = 30
 	var/fitted = FEMALE_UNIFORM_FULL // For use in alternate clothing styles for women
 	var/has_sensor = HAS_SENSORS // For the crew computer
 	var/random_sensor = TRUE
@@ -303,12 +302,6 @@
 		if(!alt_covers_chest)
 			body_parts_covered |= CHEST
 			body_parts_covered |= ARMS
-			if(!LAZYLEN(damage_by_parts))
-				return adjusted
-			for(var/zone in list(BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)) // ugly check to make sure we don't reenable protection on a disabled part
-				if(damage_by_parts[zone] > limb_integrity)
-					for(var/part in zone2body_parts_covered(zone))
-						body_parts_covered &= part
 	return adjusted
 
 /obj/item/clothing/under/rank

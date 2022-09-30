@@ -10,8 +10,6 @@
 	var/blood_overlay_type = "suit"
 	var/togglename = null
 	var/suittoggled = FALSE
-	limb_integrity = 0 // disabled for most exo-suits
-
 
 /obj/item/clothing/suit/worn_overlays(mutable_appearance/standing, isinhands = FALSE)
 	. = ..()

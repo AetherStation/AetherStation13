@@ -27,10 +27,6 @@
 	var/heal_burn
 	/// How much we reduce bleeding per application on cut wounds
 	var/stop_bleeding
-	/// How much sanitization to apply to burn wounds on application
-	var/sanitization
-	/// How much we add to flesh_healing for burn wounds on application
-	var/flesh_regeneration
 
 /obj/item/stack/medical/attack(mob/living/M, mob/user)
 	. = ..()
@@ -86,6 +82,8 @@
 	if(affecting.status != BODYPART_ORGANIC) //Limb must be organic to be healed - RR
 		to_chat(user, span_warning("[src] won't work on a robotic limb!"))
 		return FALSE
+	if (affecting.bleedstacks)
+		affecting.bleedstacks = max(affecting.bleedstacks - stop_bleeding, 0)
 	if(affecting.brute_dam && brute || affecting.burn_dam && burn)
 		user.visible_message("<span class='infoplain'><span class='green'>[user] applies [src] on [C]'s [affecting.name].</span></span>", "<span class='infoplain'><span class='green'>You apply [src] on [C]'s [affecting.name].</span></span>")
 		var/previous_damage = affecting.get_damage()
@@ -230,8 +228,6 @@
 	other_delay = 2 SECONDS
 
 	heal_burn = 5
-	flesh_regeneration = 2.5
-	sanitization = 0.25
 	grind_results = list(/datum/reagent/medicine/c2/lenturi = 10)
 	merge_type = /obj/item/stack/medical/ointment
 
@@ -251,8 +247,6 @@
 	heal_burn = 10
 	max_amount = 15
 	repeating = TRUE
-	sanitization = 0.75
-	flesh_regeneration = 3
 
 	var/is_open = TRUE ///This var determines if the sterile packaging of the mesh has been opened.
 	grind_results = list(/datum/reagent/medicine/spaceacillin = 2)
@@ -303,8 +297,6 @@
 	gender = PLURAL
 	icon_state = "aloe_mesh"
 	heal_burn = 15
-	sanitization = 1.25
-	flesh_regeneration = 3.5
 	grind_results = list(/datum/reagent/consumable/aloejuice = 1)
 	merge_type = /obj/item/stack/medical/mesh/advanced
 

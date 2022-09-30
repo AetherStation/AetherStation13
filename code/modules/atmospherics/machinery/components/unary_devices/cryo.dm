@@ -100,8 +100,6 @@
 	var/atom/movable/visual/cryo_occupant/occupant_vis
 
 	var/message_cooldown
-	///Cryo will continue to treat people with 0 damage but existing wounds, but will sound off when damage healing is done in case doctors want to directly treat the wounds instead
-	var/treating_wounds = FALSE
 	fair_market_price = 10
 	payment_department = ACCOUNT_MED
 
@@ -321,7 +319,6 @@ GLOBAL_VAR_INIT(cryo_overlay_cover_off, mutable_appearance('icons/obj/cryogenics
 	..()
 
 /obj/machinery/atmospherics/components/unary/cryo_cell/close_machine(mob/living/carbon/user)
-	treating_wounds = FALSE
 	if((isnull(user) || istype(user)) && state_open && !panel_open)
 		flick("pod-close-anim", src)
 		..(user)

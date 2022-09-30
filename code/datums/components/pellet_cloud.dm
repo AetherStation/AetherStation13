@@ -1,6 +1,3 @@
-// the following defines are used for [/datum/component/pellet_cloud/var/list/wound_info_by_part] to store the damage for each bodypart hit
-#define CLOUD_POSITION_DAMAGE 1
-
 /*
 	* This component is used when you want to create a bunch of shrapnel or projectiles (say, shrapnel from a fragmentation grenade, or buckshot from a shotgun) from a central point,
 	* without necessarily printing a separate message for every single impact. This component should be instantiated right when you need it (like the moment of firing), then activated
@@ -32,8 +29,6 @@
 	var/list/pellets = list()
 	/// An associated list with the atom hit as the key and how many pellets they've eaten for the value, for printing aggregate messages
 	var/list/targets_hit = list()
-	/// Another associated list for hit bodyparts on carbons so we can track how much wounding potential we have for each bodypart
-	var/list/wound_info_by_part = list()
 	/// For grenades, any /mob/living's the grenade is moved onto, see [/datum/component/pellet_cloud/proc/handle_martyrs]
 	var/list/bodies
 	/// For grenades, tracking people who die covering a grenade for achievement purposes, see [/datum/component/pellet_cloud/proc/handle_martyrs]
@@ -67,7 +62,6 @@
 	purple_hearts = null
 	pellets = null
 	targets_hit = null
-	wound_info_by_part = null
 	bodies = null
 	return ..()
 
@@ -102,9 +96,8 @@
 	if(!zone_override)
 		zone_override = shooter.zone_selected
 
-	// things like mouth executions and gunpoints can multiply the damage and wounds of projectiles, so this makes sure those effects are applied to each pellet instead of just one
+	// things like mouth executions and gunpoints can multiply the damage projectiles, so this makes sure those effects are applied to each pellet instead of just one
 	var/original_damage = shell.loaded_projectile.damage
-
 	for(var/i in 1 to num_pellets)
 		shell.ready_proj(target, user, SUPPRESSED_VERY, zone_override, fired_from)
 		if(distro)
