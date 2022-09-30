@@ -69,8 +69,6 @@
 	var/list/skills_rewarded
 	///Assoc list of skills. Use SKILL_LVL to access level, and SKILL_EXP to access skill's exp.
 	var/list/known_skills = list()
-	///Weakref to thecharacter we joined in as- either at roundstart or latejoin, so we know for persistent scars if we ended as the same person or not
-	var/datum/weakref/original_character
 
 	///Skill multiplier, adjusts how much xp you get/loose from adjust_xp. Dont override it directly, add your reason to experience_multiplier_reasons and use that as a key to put your value in there.
 	var/experience_multiplier = 1
@@ -117,7 +115,6 @@
 	return language_holder
 
 /datum/mind/proc/transfer_to(mob/new_character, force_key_move = 0)
-	set_original_character(null)
 	if(current) // remove ourself from our old body's mind variable
 		current.mind = null
 		UnregisterSignal(current, COMSIG_LIVING_DEATH)
@@ -154,10 +151,6 @@
 		LAZYCLEARLIST(new_character.client.recent_examines)
 		new_character.client.init_verbs() // re-initialize character specific verbs
 	current.update_atom_languages()
-
-//I cannot trust you fucks to do this properly
-/datum/mind/proc/set_original_character(new_original_character)
-	original_character = WEAKREF(new_original_character)
 
 /datum/mind/proc/init_known_skills()
 	for (var/type in GLOB.skill_types)

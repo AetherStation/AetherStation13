@@ -184,7 +184,6 @@
 		"scalpel",
 		"stethoscope",
 		"surgical_drapes",
-		"surgical_tape",
 		"surgicaldrill",
 		"syringe",
 		"xlarge_beaker",

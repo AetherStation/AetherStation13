@@ -339,8 +339,3 @@
 	targets_hit -= target
 	LAZYREMOVE(bodies, target)
 	LAZYREMOVE(purple_hearts, target)
-
-
-#undef CLOUD_POSITION_DAMAGE
-#undef CLOUD_POSITION_W_BONUS
-#undef CLOUD_POSITION_BW_BONUS

@@ -10,7 +10,6 @@
 					/obj/item/reagent_containers/dropper = 3,
 					/obj/item/healthanalyzer = 4,
 					/obj/item/wrench/medical = 1,
-					/obj/item/stack/sticky_tape/surgical = 3,
 					/obj/item/stack/medical/ointment = 2,
 					/obj/item/stack/medical/suture = 2)
 	contraband = list(/obj/item/storage/box/gum/happiness = 3,

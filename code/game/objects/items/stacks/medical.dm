@@ -129,7 +129,6 @@
 	custom_price = PAYCHECK_ASSISTANT * 2
 	absorption_capacity = 50
 	seepage_percentage = 0.1
-	splint_factor = 0.35
 	merge_type = /obj/item/stack/medical/gauze
 
 /obj/item/stack/medical/gauze/try_heal(mob/living/M, mob/user, silent)

@@ -4,7 +4,7 @@
 #define GUNPOINT_DELAY_STAGE_2 2.5 SECONDS
 /// How long it takes from stage 2 starting to move up to stage 3
 #define GUNPOINT_DELAY_STAGE_3 7.5 SECONDS
-/// How much the damage and wound bonus mod is multiplied when you're on stage 1
+/// How much the damage mod is multiplied when you're on stage 1
 #define GUNPOINT_MULT_STAGE_1 1
 /// As above, for stage 2
 #define GUNPOINT_MULT_STAGE_2 2

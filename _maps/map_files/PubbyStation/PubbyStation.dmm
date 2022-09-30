@@ -46025,7 +46025,6 @@
 	},
 /obj/effect/turf_decal/tile/blue,
 /obj/item/surgicaldrill,
-/obj/item/bonesetter,
 /turf/open/floor/iron/white,
 /area/medical/surgery)
 "ehK" = (
@@ -48633,7 +48632,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/blue,
-/obj/item/stack/medical/bone_gel,
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},

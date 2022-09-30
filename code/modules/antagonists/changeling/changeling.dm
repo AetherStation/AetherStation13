@@ -616,8 +616,6 @@
 	var/socks
 
 	var/list/skillchips = list()
-	/// What scars the target had when we copied them, in string form (like persistent scars)
-	var/list/stored_scars
 	/// Icon snapshot of the profile
 	var/datum/icon_snapshot/profile_snapshot
 	/// ID HUD icon associated with the profile
@@ -625,7 +623,6 @@
 
 /datum/changelingprofile/Destroy()
 	qdel(dna)
-	LAZYCLEARLIST(stored_scars)
 	. = ..()
 
 /datum/changelingprofile/proc/copy_profile(datum/changelingprofile/newprofile)
@@ -646,7 +643,6 @@
 	newprofile.worn_icon_list = worn_icon_list.Copy()
 	newprofile.worn_icon_state_list = worn_icon_state_list.Copy()
 	newprofile.skillchips = skillchips.Copy()
-	newprofile.stored_scars = stored_scars.Copy()
 	newprofile.profile_snapshot = profile_snapshot
 	newprofile.id_icon = id_icon
 

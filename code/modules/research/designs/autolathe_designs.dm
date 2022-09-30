@@ -1186,15 +1186,6 @@
 	category = list("initial", "Misc")
 	maxstack = 5
 
-/datum/design/sticky_tape/surgical
-	name = "Surgical Tape"
-	id = "surgical_tape"
-	build_type = PROTOLATHE | AWAY_LATHE
-	materials = list(/datum/material/plastic = 500)
-	build_path = /obj/item/stack/sticky_tape/surgical
-	category = list("initial", "Medical")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-
 /datum/design/petridish
 	name = "Petri Dish"
 	id = "petri_dish"
