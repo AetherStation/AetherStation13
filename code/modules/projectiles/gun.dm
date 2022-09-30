@@ -640,7 +640,11 @@
 
 	target.visible_message(span_warning("[user] pulls the trigger!"), span_userdanger("[(user == target) ? "You pull" : "[user] pulls"] the trigger!"))
 
-	process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
+	if(chambered?.loaded_projectile)
+		chambered.loaded_projectile.damage *= 5
+	var/fired = process_fire(target, user, TRUE, params, BODY_ZONE_HEAD)
+	if(!fired && chambered?.loaded_projectile)
+		chambered.loaded_projectile.damage /= 5
 
 /obj/item/gun/proc/unlock() //used in summon guns and as a convience for admins
 	if(pin)

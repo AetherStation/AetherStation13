@@ -854,14 +854,21 @@
 	toxpwr = 0
 	chemical_flags = REAGENT_CAN_BE_SYNTHESIZED
 
-/datum/reagent/toxin/heprain/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+/datum/reagent/toxin/heparin/on_mob_add(mob/living/L, amount)
+	. = ..()
+	ADD_TRAIT(L, TRAIT_BLOODY_MESS, name)
+
+/datum/reagent/toxin/heparin/on_mob_delete(mob/living/L)
+	. = ..()
+	REMOVE_TRAIT(L, TRAIT_BLOODY_MESS, name)
+
+/datum/reagent/toxin/heparin/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/bodypart/BP = pick(H.bodyparts)
-		BP.bleedstacks = min(BP.bleedstacks + 2, 8)
-		H.adjustBruteLoss(1, 0)
-		. = 1
-	return ..() || .
+		BP.bleedstacks = min(BP.bleedstacks + 2 * delta_time, 8)
+		H.adjustBruteLoss(1 * delta_time, 0)
+	return ..()
 
 /datum/reagent/toxin/rotatium //Rotatium. Fucks up your rotation and is hilarious
 	name = "Rotatium"

@@ -127,7 +127,7 @@
 	amount = 6
 	grind_results = list(/datum/reagent/cellulose = 2)
 	custom_price = PAYCHECK_ASSISTANT * 2
-	absorption_capacity = 50
+	absorption_capacity = 100
 	seepage_percentage = 0.1
 	merge_type = /obj/item/stack/medical/gauze
 
@@ -136,11 +136,11 @@
 		return
 	var/mob/living/carbon/C = M
 	var/obj/item/bodypart/BP = C.get_bodypart(check_zone(user.zone_selected))
-	if(!BP.bleeding_supressed && BP.bleedstacks) //so you can't stack bleed suppression
+	if(!BP.current_gauze && BP.bleedstacks) //so you can't stack bleed suppression
 		BP.apply_gauze(src)
 		to_chat(user, span_notice("You apply \the [src] on [M]'s [BP]."))
 		return TRUE
-	to_chat(user, span_warning("You can not use \the [src] on [M]!"))
+	to_chat(user, span_warning("You can not use \the [src] on [M]'s [BP]!"))
 
 /obj/item/stack/medical/gauze/attackby(obj/item/I, mob/user, params)
 	if(I.tool_behaviour == TOOL_WIRECUTTER || I.get_sharpness())
@@ -168,7 +168,7 @@
 	desc = "A roll of cloth roughly cut from something that does a decent job of stabilizing wounds, but less efficiently so than real medical gauze."
 	self_delay = 6 SECONDS
 	other_delay = 3 SECONDS
-	absorption_capacity = 20
+	absorption_capacity = 25
 	seepage_percentage = 0.25
 	merge_type = /obj/item/stack/medical/gauze/improvised
 

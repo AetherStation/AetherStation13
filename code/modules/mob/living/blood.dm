@@ -60,6 +60,8 @@
 					death()
 
 		var/temp_bleed = 0
+		if (HAS_TRAIT(src, TRAIT_BLOODY_MESS))
+			delta_time *= 2 // lets just make the bleeding twice as fast.
 		//Bleeding out
 		for(var/X in bodyparts)
 			var/obj/item/bodypart/BP = X
