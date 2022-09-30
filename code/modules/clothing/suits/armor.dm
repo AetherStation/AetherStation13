@@ -113,10 +113,10 @@
 	desc = "A red jacket with silver rank pips and body armor strapped on top."
 	icon_state = "warden_jacket"
 
-/obj/item/clothing/suit/armor/vest/leather
-	name = "security overcoat"
-	desc = "Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Nanotrasen Security."
-	icon_state = "leathercoat-sec"
+/obj/item/clothing/suit/armor/vest/comissarcoat
+	name = "security coat"
+	desc = "Lightly armored coat meant to display authority designed for high-ranking officers."
+	icon_state = "comissarcoat"
 	inhand_icon_state = "hostrench"
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
 	cold_protection = CHEST|GROIN|LEGS|ARMS

@@ -330,6 +330,9 @@
 	return 0
 
 /obj/item/shield/riot/tele/AltClick(mob/living/user)
+	if(src != user.get_active_held_item())
+		to_chat(user, span_alert("You need to hold \the [src] in hand!"))
+		return
 	active = !active
 	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
 

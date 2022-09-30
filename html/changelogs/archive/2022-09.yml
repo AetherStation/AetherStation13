@@ -56,3 +56,42 @@
   - rscadd: Stasis now stops chem reactions in mobs.
   - rscadd: Made custom foods able to hold all reagents of added ingredients.
   - rscadd: Made deepfried items inherit reagent holder volume.
+2022-09-09:
+  Thebleh:
+  - bugfix: South Bronx Paradise Bars are once again the best weight loss aid on station
+2022-09-11:
+  ? ''
+  : - bugfix: You need to hold teleshield in hand to extend or contract it
+  Pugie:
+  - bugfix: Spray stream is more likely to effect mobs when tiles have several turfs,
+      biochem sprayer now streams at 10u as opposed to 5u.
+  - balance: Spray stream works on people who are lying down now.
+  Sparkezel:
+  - qol: Chemdispenser now have fully unlocked reagent synthesis ranges
+  - rscadd: You can make felinid mutation toxin by injecting green slime extract with...
+      water, chug multiver quick to avoid it
+2022-09-12:
+  Sparkezel:
+  - rscadd: Readds shoestealing
+2022-09-17:
+  Twaticus:
+  - imageadd: added new hos cap and coat sprites
+  - imagedel: deleted old hos cap and security overcoat sprites
+  - spellcheck: changed some names
+2022-09-19:
+  Pugie:
+  - bugfix: Meat has the proper reagents now.
+2022-09-26:
+  PolishUser:
+  - rscdel: Removed cook CQC from bar areas.
+  - balance: replaced longswords with mirror shields in cult forge
+  - balance: added back longswords to summon equipment
+  - balance: removed block chance from longswords/daggers
+  Salex08:
+  - bugfix: fixes rust heretic not being able to properly rust or destroy specific
+      objects/turfs
+  TheChosenEvilOne:
+  - balance: cult stun now ignores stun immunity.
+2022-09-27:
+  PolishUser:
+  - balance: energy cakehat does esword dmg, can delimb and has esword armour penetration

@@ -171,6 +171,9 @@
 	anchored = TRUE
 	density = FALSE
 
+/obj/item/storage/secure/safe/rust_heretic_act()
+	take_damage(damage_amount = 100, damage_type = BRUTE, damage_flag = MELEE, armour_penetration = 100)
+
 /obj/item/storage/secure/safe/directional/north
 	dir = SOUTH
 	pixel_y = 32

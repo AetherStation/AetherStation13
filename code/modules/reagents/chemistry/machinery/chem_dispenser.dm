@@ -210,7 +210,7 @@
 	if (beaker)
 		data["beakerCurrentVolume"] = round(beakerCurrentVolume, 0.01)
 		data["beakerMaxVolume"] = beaker.volume
-		data["beakerTransferAmounts"] = beaker.possible_transfer_amounts
+		data["beakerTransferAmounts"] = list(5, 10, 15, 20, 25, 30, 50, 100, 300)
 	else
 		data["beakerCurrentVolume"] = null
 		data["beakerMaxVolume"] = null
@@ -248,10 +248,9 @@
 			if(!is_operational || QDELETED(beaker))
 				return
 			var/target = text2num(params["target"])
-			if(target in beaker.possible_transfer_amounts)
-				amount = target
-				work_animation()
-				. = TRUE
+			amount = target
+			work_animation()
+			. = TRUE
 		if("dispense")
 			if(!is_operational || QDELETED(cell))
 				return
@@ -275,7 +274,7 @@
 			if(!is_operational || recording_recipe)
 				return
 			var/amount = text2num(params["amount"])
-			if(beaker && (amount in beaker.possible_transfer_amounts))
+			if(beaker)
 				beaker.reagents.remove_all(amount)
 				work_animation()
 				. = TRUE
