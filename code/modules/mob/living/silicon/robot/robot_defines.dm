@@ -160,6 +160,10 @@
 	. = ..()
 	model.transform_to(set_model)
 
+// --------------------- Standard
+/mob/living/silicon/robot/model/standard
+	set_model = /obj/item/robot_model/standard
+
 // --------------------- Clown
 /mob/living/silicon/robot/model/clown
 	set_model = /obj/item/robot_model/clown
