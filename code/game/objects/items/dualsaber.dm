@@ -174,6 +174,15 @@
 	// Light your candles while spinning around the room
 	INVOKE_ASYNC(src, .proc/jedi_spin, user)
 
+/obj/item/dualsaber/afterattack(atom/A, mob/user, proximity)
+	. = ..()
+	if(!proximity || !wielded)
+		return
+	if(istype(A, /obj/machinery/door/airlock))
+		var/obj/machinery/door/airlock/airlock = A
+		INVOKE_ASYNC(src, .proc/jedi_spin, user)
+		airlock.slice(user, 10 SECONDS)
+
 /obj/item/dualsaber/green
 	possible_colors = list("green")
 
