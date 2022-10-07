@@ -76,7 +76,7 @@
 		log_combat(user, H, "wounded via throat slitting", source)
 		H.apply_damage(source.force, BRUTE, BODY_ZONE_HEAD) // easy tiger, we'll get to that in a sec
 		var/obj/item/bodypart/slit_throat = H.get_bodypart(BODY_ZONE_HEAD)
-		slit_throat.bleedstacks += 4.25
+		slit_throat.bleedstacks += 20 // should last for 40 seconds.
 		H.apply_status_effect(/datum/status_effect/neck_slice)
 
 /**
