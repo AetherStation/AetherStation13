@@ -55,13 +55,13 @@
 
 	if(!isliving(clickingon))
 		return
-	if(!honorbound.DirectAccess(clickingon) && !isgun(weapon))
-		return
-	if(weapon.item_flags & NOBLUDGEON)
-		return
-	if(!honorbound.istate.harm && ((!weapon || !weapon.force) && !honorbound.istate.secondary))
-		return
 	var/mob/living/clickedmob = clickingon
+	if(!honorbound.DirectAccess(clickedmob) && !isgun(weapon))
+		return
+	if(weapon?.item_flags & NOBLUDGEON)
+		return
+	if(!honorbound.istate.harm && (HAS_TRAIT(clickedmob, TRAIT_ALLOWED_HONORBOUND_ATTACK) || ((!weapon || !weapon.force) && !LAZYACCESS(honorbound.istate.secondary, RIGHT_CLICK))))
+		return
 	if(!is_honorable(honorbound, clickedmob))
 		return (COMSIG_MOB_CANCEL_CLICKON)
 

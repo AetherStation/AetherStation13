@@ -108,6 +108,7 @@
 
 			if(surgeryinstance_notonmob.ignore_clothes || get_location_accessible(livingtarget, selected_zone))
 				var/datum/surgery/procedure = new surgeryinstance_notonmob.type(livingtarget, selected_zone, affecting)
+				ADD_TRAIT(livingtarget, TRAIT_ALLOWED_HONORBOUND_ATTACK, TRAIT_GENERIC)
 				user.visible_message(span_notice("[user] drapes [parent] over [livingtarget]'s [parse_zone(selected_zone)] to prepare for surgery."), \
 					span_notice("You drape [parent] over [livingtarget]'s [parse_zone(selected_zone)] to prepare for \an [procedure.name]."))
 
@@ -129,6 +130,7 @@
 
 	if(the_surgery.status == 1)
 		the_patient.surgeries -= the_surgery
+		REMOVE_TRAIT(the_patient, TRAIT_ALLOWED_HONORBOUND_ATTACK, TRAIT_GENERIC)
 		user.visible_message(span_notice("[user] removes [the_item] from [the_patient]'s [parse_zone(selected_zone)]."), \
 			span_notice("You remove [the_item] from [the_patient]'s [parse_zone(selected_zone)]."))
 		qdel(the_surgery)
@@ -157,6 +159,7 @@
 		the_surgery.operated_bodypart.generic_bleedstacks -= 5
 
 	the_patient.surgeries -= the_surgery
+	REMOVE_TRAIT(the_patient, TRAIT_ALLOWED_HONORBOUND_ATTACK, TRAIT_GENERIC)
 	user.visible_message(span_notice("[user] closes [the_patient]'s [parse_zone(selected_zone)] with [close_tool] and removes [the_item]."), \
 		span_notice("You close [the_patient]'s [parse_zone(selected_zone)] with [close_tool] and remove [the_item]."))
 	qdel(the_surgery)
