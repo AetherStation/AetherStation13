@@ -402,6 +402,7 @@
 			player_client.prefs.randomise[RANDOM_SPECIES] = FALSE
 			if(player_client.prefs.pref_species.id != SPECIES_HUMAN)
 				player_client.prefs.pref_species = new /datum/species/human
+				apply_pref_name("Backup Human", player_client)
 		player_client.prefs.safe_transfer_prefs_to(src, TRUE, is_antag)
 		if(CONFIG_GET(flag/force_random_names))
 			player_client.prefs.real_name = player_client.prefs.pref_species.random_name(player_client.prefs.gender, TRUE)
