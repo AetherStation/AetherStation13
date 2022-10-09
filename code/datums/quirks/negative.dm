@@ -804,3 +804,24 @@
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_touch", /datum/mood_event/very_bad_touch)
 	else
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "bad_touch", /datum/mood_event/bad_touch)
+
+/datum/quirk/harm_averse
+	name = "Harm-averse"
+	desc = "You're scared to beat up people"
+	value = -6
+	gain_text = "<span class='notice'> You feel afraid of punch-fights.</span>"
+	lose_text = "<span class='danger'> You feel neutral towards beating people up.</span>"
+
+/datum/quirk/harm_averse/add()
+	. = ..()
+	RegisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND,.proc/apply_harm_averse)
+
+/datum/quirk/harm_averse/remove()
+	. = ..()
+	UnregisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND)
+
+/datum/quir/harm_averse/proc/apply_harm_averse(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
+	if(!M.istate.harm)
+		return
+	M.adjustStaminaLoss(7.5)
+
