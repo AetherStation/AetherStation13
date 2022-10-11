@@ -229,10 +229,10 @@
 /datum/quirk/bloodlust/proc/apply_bloodlust_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
 	if(!M.istate.harm)
 		return
-	M.adjustStaminaLoss(7.5)
+	M.adjustStaminaLoss(-7.5)
 
 /datum/quirk/bloodlust/proc/apply_bloodlust_item(obj/item/I, mob/living/carbon/human/target, mob/living/carbon/human/user, params)
 	if(!user.istate.harm)
 		return
-	user.adjustStaminaLoss(7.5)
+	user.adjustStaminaLoss(-7.5)
 
