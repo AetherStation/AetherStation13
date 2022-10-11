@@ -234,5 +234,5 @@
 /datum/quirk/bloodlust/proc/apply_bloodlust_item(obj/item/I, mob/living/carbon/human/target, mob/living/carbon/human/user, params)
 	if(!user.istate.harm)
 		return
-	M.adjustStaminaLoss(7.5)
+	user.adjustStaminaLoss(7.5)
 

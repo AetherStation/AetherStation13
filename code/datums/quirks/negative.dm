@@ -831,4 +831,4 @@
 /datum/quirk/harm_averse/proc/apply_harm_averse_item(obj/item/I, mob/living/carbon/human/target, mob/living/carbon/human/user, params)
 	if(!user.istate.harm)
 		return
-	M.adjustStaminaLoss(7.5)
+	user.adjustStaminaLoss(7.5)
