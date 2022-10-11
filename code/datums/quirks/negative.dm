@@ -814,14 +814,21 @@
 
 /datum/quirk/harm_averse/add()
 	. = ..()
-	RegisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND,.proc/apply_harm_averse)
+	RegisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND,.proc/apply_harm_averse_hand)
+	RegisterSignal(quirk_holder,COMSIG_MOB_ITEM_ATTACK,.proc/apply_harm_averse_item)
+
 
 /datum/quirk/harm_averse/remove()
 	. = ..()
 	UnregisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND)
+	UnregisterSignal(quirk_holder,COMSIG_MOB_ITEM_ATTACK)
 
-/datum/quir/harm_averse/proc/apply_harm_averse(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
+/datum/quirk/harm_averse/proc/apply_harm_averse_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
 	if(!M.istate.harm)
 		return
 	M.adjustStaminaLoss(7.5)
 
+/datum/quirk/harm_averse/proc/apply_harm_averse_item(obj/item/I, mob/living/carbon/human/target, mob/living/carbon/human/user, params)
+	if(!user.istate.harm)
+		return
+	M.adjustStaminaLoss(7.5)

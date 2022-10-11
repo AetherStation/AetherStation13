@@ -218,14 +218,21 @@
 
 /datum/quirk/bloodlust/add()
 	. = ..()
-	RegisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND,.proc/apply_bloodlust)
-
+	RegisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND,.proc/apply_bloodlust_hand)
+	RegisterSignal(quirk_holder,COMSIG_MOB_ITEM_ATTACK,.proc/apply_bloodlust_item)
 
 /datum/quirk/bloodlust/remove()
 	. = ..()
 	UnregisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND)
+	UnregisterSignal(quirk_holder,COMSIG_MOB_ITEM_ATTACK)
 
-/datum/quirk/bloodlust/proc/apply_bloodlust(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
+/datum/quirk/bloodlust/proc/apply_bloodlust_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
 	if(!M.istate.harm)
 		return
-	M.adjustStaminaLoss(-7.5)
+	M.adjustStaminaLoss(7.5)
+
+/datum/quirk/bloodlust/proc/apply_bloodlust_item(obj/item/I, mob/living/carbon/human/target, mob/living/carbon/human/user, params)
+	if(!user.istate.harm)
+		return
+	M.adjustStaminaLoss(7.5)
+
