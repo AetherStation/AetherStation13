@@ -1,6 +1,0 @@
-author: TheChosenEvilOne
-delete-after: true
-changes:
-  - rscdel: Wounds have been removed from code.
-  - rscdel: Due to wound removal scars have also been removed.
-  - tweak: Wound related heretic abilities now use bleeding.

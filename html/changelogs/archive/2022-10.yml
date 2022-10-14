@@ -6,3 +6,8 @@
 2022-10-07:
   Sparkezel:
   - imageadd: added 2 new outfits to the detective autodrobe
+2022-10-14:
+  TheChosenEvilOne:
+  - rscdel: Wounds have been removed from code.
+  - rscdel: Due to wound removal scars have also been removed.
+  - tweak: Wound related heretic abilities now use bleeding.
