@@ -11,7 +11,6 @@
 	stam_damage_coeff = 1
 	max_stamina_damage = 120
 	grind_results = null
-	wound_resistance = 10
 	var/obj/item/cavity_item
 
 /obj/item/bodypart/chest/can_dismember(obj/item/item)
@@ -33,7 +32,6 @@
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_chest"
 	animal_origin = MONKEY_BODYPART
-	wound_resistance = -10
 
 /obj/item/bodypart/chest/alien
 	icon = 'icons/mob/animal_parts.dmi'
@@ -132,7 +130,6 @@
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_l_arm"
 	animal_origin = MONKEY_BODYPART
-	wound_resistance = -10
 	px_x = -5
 	px_y = -3
 
@@ -227,7 +224,6 @@
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_r_arm"
 	animal_origin = MONKEY_BODYPART
-	wound_resistance = -10
 	px_x = 5
 	px_y = -3
 
@@ -317,7 +313,6 @@
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_l_leg"
 	animal_origin = MONKEY_BODYPART
-	wound_resistance = -10
 	px_y = 4
 
 /obj/item/bodypart/l_leg/alien
@@ -408,7 +403,6 @@
 	icon = 'icons/mob/animal_parts.dmi'
 	icon_state = "default_monkey_r_leg"
 	animal_origin = MONKEY_BODYPART
-	wound_resistance = -10
 	px_y = 4
 
 /obj/item/bodypart/r_leg/alien

@@ -98,7 +98,7 @@
 	return FALSE
 
 /*
- * Scan a living mob's (with MOB_PLANT biotype) health with the plant analyzer. No wound scanning, though.
+ * Scan a living mob's (with MOB_PLANT biotype) health with the plant analyzer.
  *
  * scanned_mob - the living mob being scanned
  * user - the person doing the scanning

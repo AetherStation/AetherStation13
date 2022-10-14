@@ -76,6 +76,10 @@
 		user.update_inv_hands()
 	update_action_buttons()
 
+/obj/item/chainsaw/get_dismemberment_chance()
+	if(wielded)
+		. = ..()
+
 /obj/item/chainsaw/doomslayer
 	name = "THE GREAT COMMUNICATOR"
 	desc = "<span class='warning'>VRRRRRRR!!!</span>"

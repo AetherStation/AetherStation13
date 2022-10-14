@@ -410,9 +410,8 @@
 	addiction_types = list(/datum/addiction/maintenance_drugs = 8)
 
 /datum/reagent/drug/maint/sludge/on_mob_metabolize(mob/living/L)
-
 	. = ..()
-	ADD_TRAIT(L,TRAIT_HARDLY_WOUNDED,type)
+//	ADD_TRAIT(L,TRAIT_HARDLY_WOUNDED,type)
 
 /datum/reagent/drug/maint/sludge/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	. = ..()
@@ -420,7 +419,7 @@
 
 /datum/reagent/drug/maint/sludge/on_mob_end_metabolize(mob/living/M)
 	. = ..()
-	REMOVE_TRAIT(M,TRAIT_HARDLY_WOUNDED,type)
+//	REMOVE_TRAIT(M,TRAIT_HARDLY_WOUNDED,type)
 
 /datum/reagent/drug/maint/sludge/overdose_process(mob/living/M, delta_time, times_fired)
 	. = ..()

@@ -39,8 +39,6 @@
 #define ACID "acid"
 /// Involves magic.
 #define MAGIC "magic"
-/// Involved in checking the likelyhood of applying a wound to a mob.
-#define WOUND "wound"
 
 // Weather immunities //
 #define WEATHER_STORM "storm"

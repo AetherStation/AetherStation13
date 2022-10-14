@@ -1,8 +1,3 @@
-// the following defines are used for [/datum/component/pellet_cloud/var/list/wound_info_by_part] to store the damage, wound_bonus, and bw_bonus for each bodypart hit
-#define CLOUD_POSITION_DAMAGE 1
-#define CLOUD_POSITION_W_BONUS 2
-#define CLOUD_POSITION_BW_BONUS 3
-
 /*
 	* This component is used when you want to create a bunch of shrapnel or projectiles (say, shrapnel from a fragmentation grenade, or buckshot from a shotgun) from a central point,
 	* without necessarily printing a separate message for every single impact. This component should be instantiated right when you need it (like the moment of firing), then activated
@@ -34,8 +29,6 @@
 	var/list/pellets = list()
 	/// An associated list with the atom hit as the key and how many pellets they've eaten for the value, for printing aggregate messages
 	var/list/targets_hit = list()
-	/// Another associated list for hit bodyparts on carbons so we can track how much wounding potential we have for each bodypart
-	var/list/wound_info_by_part = list()
 	/// For grenades, any /mob/living's the grenade is moved onto, see [/datum/component/pellet_cloud/proc/handle_martyrs]
 	var/list/bodies
 	/// For grenades, tracking people who die covering a grenade for achievement purposes, see [/datum/component/pellet_cloud/proc/handle_martyrs]
@@ -69,7 +62,6 @@
 	purple_hearts = null
 	pellets = null
 	targets_hit = null
-	wound_info_by_part = null
 	bodies = null
 	return ..()
 
@@ -104,11 +96,8 @@
 	if(!zone_override)
 		zone_override = shooter.zone_selected
 
-	// things like mouth executions and gunpoints can multiply the damage and wounds of projectiles, so this makes sure those effects are applied to each pellet instead of just one
+	// things like mouth executions and gunpoints can multiply the damage projectiles, so this makes sure those effects are applied to each pellet instead of just one
 	var/original_damage = shell.loaded_projectile.damage
-	var/original_wb = shell.loaded_projectile.wound_bonus
-	var/original_bwb = shell.loaded_projectile.bare_wound_bonus
-
 	for(var/i in 1 to num_pellets)
 		shell.ready_proj(target, user, SUPPRESSED_VERY, zone_override, fired_from)
 		if(distro)
@@ -120,8 +109,6 @@
 		RegisterSignal(shell.loaded_projectile, COMSIG_PROJECTILE_SELF_ON_HIT, .proc/pellet_hit)
 		RegisterSignal(shell.loaded_projectile, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), .proc/pellet_range)
 		shell.loaded_projectile.damage = original_damage
-		shell.loaded_projectile.wound_bonus = original_wb
-		shell.loaded_projectile.bare_wound_bonus = original_bwb
 		pellets += shell.loaded_projectile
 		var/turf/current_loc = get_turf(user)
 		if (!istype(target_loc) || !istype(current_loc) || !(shell.loaded_projectile))
@@ -228,23 +215,8 @@
 	pellets -= P
 	terminated++
 	hits++
-	var/obj/item/bodypart/hit_part
 	var/no_damage = FALSE
-	if(iscarbon(target) && hit_zone)
-		var/mob/living/carbon/hit_carbon = target
-		hit_part = hit_carbon.get_bodypart(hit_zone)
-		if(hit_part)
-			target = hit_part
-			if(P.wound_bonus != CANT_WOUND) // handle wounding
-				// unfortunately, due to how pellet clouds handle finalizing only after every pellet is accounted for, that also means there might be a short delay in dealing wounds if one pellet goes wide
-				// while buckshot may reach a target or miss it all in one tick, we also have to account for possible ricochets that may take a bit longer to hit the target
-				if(isnull(wound_info_by_part[hit_part]))
-					wound_info_by_part[hit_part] = list(0, 0, 0)
-				wound_info_by_part[hit_part][CLOUD_POSITION_DAMAGE] += P.damage // these account for decay
-				wound_info_by_part[hit_part][CLOUD_POSITION_W_BONUS] += P.wound_bonus
-				wound_info_by_part[hit_part][CLOUD_POSITION_BW_BONUS] += P.bare_wound_bonus
-				P.wound_bonus = CANT_WOUND // actual wounding will be handled aggregate
-	else if(isobj(target))
+	if(isobj(target))
 		var/obj/hit_object = target
 		if(hit_object.damage_deflection > P.damage || !P.damage)
 			no_damage = TRUE
@@ -297,14 +269,6 @@
 		var/obj/item/bodypart/hit_part
 		if(isbodypart(target))
 			hit_part = target
-			target = hit_part.owner
-			if(wound_info_by_part[hit_part] && (initial(P.damage_type) == BRUTE || initial(P.damage_type) == BURN)) // so a cloud of disablers that deal stamina don't inadvertently end up causing burn wounds)
-				var/damage_dealt = wound_info_by_part[hit_part][CLOUD_POSITION_DAMAGE]
-				var/w_bonus = wound_info_by_part[hit_part][CLOUD_POSITION_W_BONUS]
-				var/bw_bonus = wound_info_by_part[hit_part][CLOUD_POSITION_BW_BONUS]
-				var/wound_type = (initial(P.damage_type) == BRUTE) ? WOUND_BLUNT : WOUND_BURN // sharpness is handled in the wound rolling
-				wound_info_by_part -= hit_part
-				hit_part.painless_wound_roll(wound_type, damage_dealt, w_bonus, bw_bonus, initial(P.sharpness))
 
 		if(num_hits > 1)
 			target.visible_message(span_danger("[target] is hit by [num_hits] [proj_name][plural_s(proj_name)][hit_part ? " in the [hit_part.name]" : ""][did_damage ? ", which don't leave a mark" : ""]!"), null, null, COMBAT_MESSAGE_RANGE, target)
@@ -375,8 +339,3 @@
 	targets_hit -= target
 	LAZYREMOVE(bodies, target)
 	LAZYREMOVE(purple_hearts, target)
-
-
-#undef CLOUD_POSITION_DAMAGE
-#undef CLOUD_POSITION_W_BONUS
-#undef CLOUD_POSITION_BW_BONUS

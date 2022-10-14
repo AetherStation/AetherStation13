@@ -154,7 +154,7 @@
 		return
 
 	if(the_surgery.operated_bodypart)
-		the_surgery.operated_bodypart.generic_bleedstacks -= 5
+		the_surgery.operated_bodypart.bleedstacks -= 5
 
 	the_patient.surgeries -= the_surgery
 	user.visible_message(span_notice("[user] closes [the_patient]'s [parse_zone(selected_zone)] with [close_tool] and removes [the_item]."), \

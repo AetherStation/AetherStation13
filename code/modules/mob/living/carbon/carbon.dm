@@ -18,10 +18,6 @@
 	QDEL_LIST(internal_organs)
 	QDEL_LIST(bodyparts)
 	QDEL_LIST(implants)
-	for(var/wound in all_wounds) // these LAZYREMOVE themselves when deleted so no need to remove the list here
-		qdel(wound)
-	for(var/scar in all_scars)
-		qdel(scar)
 	remove_from_all_data_huds()
 	QDEL_NULL(dna)
 	GLOB.carbon_list -= src
@@ -69,15 +65,6 @@
 			if((S.self_operable || user != src) && !user.istate.harm)
 				if(S.next_step(user, modifiers))
 					return 1
-
-	if(!all_wounds || !(!user.istate.harm || user == src))
-		return ..()
-
-	for(var/i in shuffle(all_wounds))
-		var/datum/wound/W = i
-		if(W.try_treating(I, user))
-			return 1
-
 	return ..()
 
 /mob/living/carbon/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
@@ -92,19 +79,19 @@
 	if(hurt && hit_atom.density)
 		if(isturf(hit_atom))
 			Paralyze(2 SECONDS)
-			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
+			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE)
 		else if(isstructure(hit_atom) && extra_speed)
 			Paralyze(1 SECONDS)
-			take_bodypart_damage(5 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
+			take_bodypart_damage(5 + 5 * extra_speed, check_armor = TRUE)
 		else if(!iscarbon(hit_atom) && extra_speed)
-			take_bodypart_damage(5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
+			take_bodypart_damage(5 * extra_speed, check_armor = TRUE)
 	if(iscarbon(hit_atom) && hit_atom != src)
 		var/mob/living/carbon/victim = hit_atom
 		if(victim.movement_type & FLYING)
 			return
 		if(hurt)
-			victim.take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
-			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
+			victim.take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE)
+			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE)
 			victim.Paralyze(2 SECONDS)
 			Paralyze(2 SECONDS)
 			visible_message(span_danger("[src] crashes into [victim][extra_speed ? " really hard" : ""], knocking them both over!"),\
@@ -820,11 +807,6 @@
 	update_inv_handcuffed()
 	update_hud_handcuffed()
 
-/mob/living/carbon/proc/remove_wounds()
-	for(var/thing in all_wounds)
-		var/datum/wound/W = thing
-		W.remove_wound()
-
 /mob/living/carbon/fully_heal(admin_revive = FALSE)
 	if(reagents)
 		reagents.clear_reagents()
@@ -838,7 +820,6 @@
 		var/datum/disease/D = thing
 		if(D.severity != DISEASE_SEVERITY_POSITIVE)
 			D.cure(FALSE)
-	remove_wounds()
 	if(admin_revive)
 		suiciding = FALSE
 		regenerate_limbs()
@@ -1171,44 +1152,8 @@
 
 	return total_bleed_rate
 
-/**
- * generate_fake_scars()- for when you want to scar someone, but you don't want to hurt them first. These scars don't count for temporal scarring (hence, fake)
- *
- * If you want a specific wound scar, pass that wound type as the second arg, otherwise you can pass a list like WOUND_LIST_SLASH to generate a random cut scar.
- *
- * Arguments:
- * * num_scars- A number for how many scars you want to add
- * * forced_type- Which wound or category of wounds you want to choose from, WOUND_LIST_BLUNT, WOUND_LIST_SLASH, or WOUND_LIST_BURN (or some combination). If passed a list, picks randomly from the listed wounds. Defaults to all 3 types
- */
-/mob/living/carbon/proc/generate_fake_scars(num_scars, forced_type)
-	for(var/i in 1 to num_scars)
-		var/datum/scar/scaries = new
-		var/obj/item/bodypart/scar_part = pick(bodyparts)
-
-		var/wound_type
-		if(forced_type)
-			if(islist(forced_type))
-				wound_type = pick(forced_type)
-			else
-				wound_type = forced_type
-		else
-			wound_type = pick(GLOB.global_all_wound_types)
-
-		var/datum/wound/phantom_wound = new wound_type
-		scaries.generate(scar_part, phantom_wound)
-		scaries.fake = TRUE
-		QDEL_NULL(phantom_wound)
-
 /mob/living/carbon/is_face_visible()
 	return !(wear_mask?.flags_inv & HIDEFACE) && !(head?.flags_inv & HIDEFACE)
-
-/**
- * get_biological_state is a helper used to see what kind of wounds we roll for. By default we just assume carbons (read:monkeys) are flesh and bone, but humans rely on their species datums
- *
- * go look at the species def for more info [/datum/species/proc/get_biological_state]
- */
-/mob/living/carbon/proc/get_biological_state()
-	return BIO_FLESH_BONE
 
 /// Returns whether or not the carbon should be able to be shocked
 /mob/living/carbon/proc/should_electrocute(power_source)

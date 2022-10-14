@@ -200,7 +200,7 @@
 	desc = "Dangerous implant used by the syndicate to reinforce their assault forces that go on suicide missions."
 	implant_color = "#74942a"
 	encode_info = AUGMENT_SYNDICATE_LEVEL
-	reagent_list = list(/datum/reagent/determination = 5, /datum/reagent/drug/methamphetamine = 5 , /datum/reagent/medicine/atropine = 5)
+	reagent_list = list(/datum/reagent/drug/methamphetamine = 5 , /datum/reagent/medicine/atropine = 5)
 
 /obj/item/organ/cyberimp/leg/chemplant/emergency
 	name = "deep emergency chemical infuser"
@@ -214,5 +214,5 @@
 	desc = "Extremely dangerous system that fills the user with a mix of potent drugs in dire situation."
 	implant_color = "#ce3914"
 	encode_info = AUGMENT_TG_LEVEL
-	reagent_list = list(/datum/reagent/determination = 2, /datum/reagent/medicine/c2/penthrite = 3 , /datum/reagent/drug/bath_salts = 5 , /datum/reagent/medicine/ephedrine = 5)
+	reagent_list = list(/datum/reagent/medicine/c2/penthrite = 3 , /datum/reagent/drug/bath_salts = 5, /datum/reagent/medicine/ephedrine = 5)
 

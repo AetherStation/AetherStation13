@@ -181,7 +181,7 @@
 		return FALSE
 
 	var/obj/item/bodypart/head/the_head = target.get_bodypart(BODY_ZONE_HEAD)
-	if((target.get_biological_state() != BIO_FLESH_BONE && target.get_biological_state() != BIO_JUST_FLESH) || !the_head.is_organic_limb())
+	if (!the_head.is_organic_limb())
 		to_chat(user, span_warning("You can't noogie [target], [target.p_they()] [target.p_have()] no skin on [target.p_their()] head!"))
 		return
 
@@ -363,7 +363,6 @@
 	name = "kiss of death"
 	nodamage = FALSE // okay i kinda lied about love not being able to hurt you
 	damage = 35
-	wound_bonus = 0
 	sharpness = SHARP_POINTY
 	color = COLOR_BLACK
 

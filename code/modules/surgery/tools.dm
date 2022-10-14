@@ -109,8 +109,6 @@
 	tool_behaviour = TOOL_DRILL
 	toolspeed = 1
 	sharpness = SHARP_POINTY
-	wound_bonus = 10
-	bare_wound_bonus = 10
 
 /obj/item/surgicaldrill/Initialize()
 	. = ..()
@@ -152,8 +150,6 @@
 	sharpness = SHARP_EDGED
 	tool_behaviour = TOOL_SCALPEL
 	toolspeed = 1
-	wound_bonus = 10
-	bare_wound_bonus = 15
 
 /obj/item/scalpel/Initialize()
 	. = ..()
@@ -191,8 +187,6 @@
 	sharpness = SHARP_EDGED
 	tool_behaviour = TOOL_SAW
 	toolspeed = 1
-	wound_bonus = 15
-	bare_wound_bonus = 10
 
 /obj/item/circular_saw/Initialize()
 	. = ..()
@@ -381,22 +375,6 @@
 		timer += 1 SECONDS
 	sleep(timer)
 	return BRUTELOSS
-
-/obj/item/bonesetter
-	name = "bonesetter"
-	desc = "For setting things right."
-	icon = 'icons/obj/surgery.dmi'
-	icon_state = "bone setter"
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	custom_materials = list(/datum/material/iron=5000, /datum/material/glass=2500)
-	flags_1 = CONDUCT_1
-	item_flags = SURGICAL_TOOL
-	w_class = WEIGHT_CLASS_SMALL
-	attack_verb_continuous = list("corrects", "properly sets")
-	attack_verb_simple = list("correct", "properly set")
-	tool_behaviour = TOOL_BONESET
-	toolspeed = 1
 
 /obj/item/blood_filter
 	name = "blood filter"

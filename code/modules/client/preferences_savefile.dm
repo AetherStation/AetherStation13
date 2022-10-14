@@ -421,7 +421,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	READ_FILE(S["feature_moth_wings"], features["moth_wings"])
 	READ_FILE(S["feature_moth_antennae"], features["moth_antennae"])
 	READ_FILE(S["feature_moth_markings"], features["moth_markings"])
-	READ_FILE(S["persistent_scars"] , persistent_scars)
 	if(!CONFIG_GET(flag/join_with_mutant_humans))
 		features["tail_human"] = "none"
 		features["ears"] = "none"
@@ -510,8 +509,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["moth_antennae"] = sanitize_inlist(features["moth_antennae"], GLOB.moth_antennae_list, "Plain")
 	features["moth_markings"] = sanitize_inlist(features["moth_markings"], GLOB.moth_markings_list, "None")
 
-	persistent_scars = sanitize_integer(persistent_scars)
-
 	joblessrole = sanitize_integer(joblessrole, 1, 3, initial(joblessrole))
 	//Validate job prefs
 	for(var/j in job_preferences)
@@ -569,7 +566,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["feature_moth_wings"] , features["moth_wings"])
 	WRITE_FILE(S["feature_moth_antennae"] , features["moth_antennae"])
 	WRITE_FILE(S["feature_moth_markings"] , features["moth_markings"])
-	WRITE_FILE(S["persistent_scars"] , persistent_scars)
 
 	//Custom names
 	for(var/custom_name_id in GLOB.preferences_custom_names)

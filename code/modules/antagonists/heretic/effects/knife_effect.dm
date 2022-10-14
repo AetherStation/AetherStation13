@@ -41,7 +41,6 @@
 		return
 	if(!(signal_out & COMPONENT_BLOCK_SHARPEN_APPLIED)) //If the item has a relevant component and COMPONENT_BLOCK_SHARPEN_APPLIED is returned, the item only gets the throw force increase
 		I.force = clamp(I.force + increment, 0, max)
-		I.wound_bonus = I.wound_bonus + increment //wound_bonus has no cap
 	user.visible_message(span_notice("[user] sharpens [I] with [src]!"), span_notice("You sharpen [I], making it much more deadly than before."))
 	playsound(user, 'sound/items/unsheath.ogg', 25, TRUE)
 	I.sharpness = SHARP_EDGED //When you whetstone something, it becomes an edged weapon, even if it was previously dull or pointy

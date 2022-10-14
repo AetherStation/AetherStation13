@@ -59,7 +59,7 @@
 
 	// We're officially behind them, apply effects
 	target.AdjustParalyzed(1.5 SECONDS)
-	target.apply_damage(10, BRUTE, wound_bonus = CANT_WOUND)
+	target.apply_damage(10, BRUTE)
 	target.balloon_alert(source, "backstab!")
 	playsound(get_turf(target), 'sound/weapons/guillotine.ogg', 100, TRUE)
 
@@ -212,7 +212,6 @@
 /datum/eldritch_knowledge/duel_stance/on_gain(mob/user)
 	ADD_TRAIT(user, TRAIT_NODISMEMBER, type)
 	RegisterSignal(user, COMSIG_PARENT_EXAMINE, .proc/on_examine)
-	RegisterSignal(user, COMSIG_CARBON_GAIN_WOUND, .proc/on_wound_gain)
 	RegisterSignal(user, COMSIG_CARBON_HEALTH_UPDATE, .proc/on_health_update)
 
 	on_health_update(user) // Run this once, so if the knowledge is learned while hurt it activates properly
@@ -220,10 +219,9 @@
 /datum/eldritch_knowledge/duel_stance/on_lose(mob/user)
 	REMOVE_TRAIT(user, TRAIT_NODISMEMBER, type)
 	if(in_duelist_stance)
-		REMOVE_TRAIT(user, TRAIT_HARDLY_WOUNDED, type)
 		REMOVE_TRAIT(user, TRAIT_STUNRESISTANCE, type)
 
-	UnregisterSignal(user, list(COMSIG_PARENT_EXAMINE, COMSIG_CARBON_GAIN_WOUND, COMSIG_CARBON_HEALTH_UPDATE))
+	UnregisterSignal(user, list(COMSIG_PARENT_EXAMINE, COMSIG_CARBON_HEALTH_UPDATE))
 
 /datum/eldritch_knowledge/duel_stance/proc/on_examine(mob/living/source, mob/user, list/examine_list)
 	SIGNAL_HANDLER
@@ -232,28 +230,18 @@
 	if(in_duelist_stance)
 		examine_list += span_warning("[source] looks unnaturally poised[held_item?.force >= 15 ? " and ready to strike out":""].")
 
-/datum/eldritch_knowledge/duel_stance/proc/on_wound_gain(mob/living/source, datum/wound/gained_wound, obj/item/bodypart/limb)
-	SIGNAL_HANDLER
-
-	if(gained_wound.blood_flow <= 0)
-		return
-
-	gained_wound.blood_flow -= (gained_wound.severity * BLOOD_FLOW_PER_SEVEIRTY)
-
 /datum/eldritch_knowledge/duel_stance/proc/on_health_update(mob/living/source)
 	SIGNAL_HANDLER
 
 	if(in_duelist_stance && source.health > source.maxHealth * 0.5)
 		source.balloon_alert(source, "exited duelist stance")
 		in_duelist_stance = FALSE
-		REMOVE_TRAIT(source, TRAIT_HARDLY_WOUNDED, type)
 		REMOVE_TRAIT(source, TRAIT_STUNRESISTANCE, type)
 		return
 
 	if(!in_duelist_stance && source.health <= source.maxHealth * 0.5)
 		source.balloon_alert(source, "entered duelist stance")
 		in_duelist_stance = TRUE
-		ADD_TRAIT(source, TRAIT_HARDLY_WOUNDED, type)
 		ADD_TRAIT(source, TRAIT_STUNRESISTANCE, type)
 		return
 
@@ -334,7 +322,6 @@
 	priority_announce("[generate_eldritch_text()] Master of blades, the Colonel's disciple, [user.real_name] has ascended! Their steel is that which will cut reality in a maelstom of silver! [generate_eldritch_text()]","[generate_eldritch_text()]", ANNOUNCER_SPANOMALIES)
 	user.client?.give_award(/datum/award/achievement/misc/blade_ascension, user)
 	ADD_TRAIT(user, TRAIT_STUNIMMUNE, name)
-	ADD_TRAIT(user, TRAIT_NEVER_WOUNDED, name)
 	RegisterSignal(user, COMSIG_HERETIC_BLADE_ATTACK, .proc/on_eldritch_blade)
 	user.apply_status_effect(/datum/status_effect/protective_blades/recharging, null, 8, 30, 0.25 SECONDS, 1 MINUTES)
 
@@ -353,7 +340,6 @@
 		damage = bonus_damage,
 		damagetype = BRUTE,
 		spread_damage = TRUE,
-		wound_bonus = 5,
 		sharpness = SHARP_EDGED
 	)
 

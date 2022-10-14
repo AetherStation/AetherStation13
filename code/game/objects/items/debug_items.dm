@@ -63,7 +63,6 @@
 		"Drill" = image(icon = 'icons/obj/surgery.dmi', icon_state = "drill"),
 		"Scalpel" = image(icon = 'icons/obj/surgery.dmi', icon_state = "scalpel"),
 		"Saw" = image(icon = 'icons/obj/surgery.dmi', icon_state = "saw"),
-		"Bonesetter" = image(icon = 'icons/obj/surgery.dmi', icon_state = "bone setter"),
 		"Knife" = image(icon = 'icons/obj/kitchen.dmi', icon_state = "knife"),
 		"Blood Filter" = image(icon = 'icons/obj/surgery.dmi', icon_state = "bloodfilter"),
 		"Rolling Pin" = image(icon = 'icons/obj/kitchen.dmi', icon_state = "rolling_pin"),
@@ -103,8 +102,6 @@
 			tool_behaviour = TOOL_SCALPEL
 		if("Saw")
 			tool_behaviour = TOOL_SAW
-		if("Bonesetter")
-			tool_behaviour = TOOL_BONESET
 		if("Knife")
 			tool_behaviour = TOOL_KNIFE
 		if("Blood Filter")

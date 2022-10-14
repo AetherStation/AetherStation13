@@ -540,15 +540,6 @@
 	category = list("initial", "Medical", "Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/bonesetter
-	name = "Bonesetter"
-	id = "bonesetter"
-	build_type = AUTOLATHE | PROTOLATHE | AWAY_LATHE
-	materials = list(/datum/material/iron = 5000,  /datum/material/glass = 2500)
-	build_path = /obj/item/bonesetter
-	category = list("initial", "Medical", "Tool Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
-
 /datum/design/surgicaldrill
 	name = "Surgical Drill"
 	id = "surgicaldrill"
@@ -1194,15 +1185,6 @@
 	build_path = /obj/item/stack/sticky_tape
 	category = list("initial", "Misc")
 	maxstack = 5
-
-/datum/design/sticky_tape/surgical
-	name = "Surgical Tape"
-	id = "surgical_tape"
-	build_type = PROTOLATHE | AWAY_LATHE
-	materials = list(/datum/material/plastic = 500)
-	build_path = /obj/item/stack/sticky_tape/surgical
-	category = list("initial", "Medical")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/petridish
 	name = "Petri Dish"

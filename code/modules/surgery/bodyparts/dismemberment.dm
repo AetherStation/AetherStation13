@@ -14,7 +14,7 @@
 		return FALSE
 
 	var/obj/item/bodypart/affecting = limb_owner.get_bodypart(BODY_ZONE_CHEST)
-	affecting.receive_damage(clamp(brute_dam/2 * affecting.body_damage_coeff, 15, 50), clamp(burn_dam/2 * affecting.body_damage_coeff, 0, 50), wound_bonus=CANT_WOUND) //Damage the chest based on limb's existing damage
+	affecting.receive_damage(clamp(brute_dam/2 * affecting.body_damage_coeff, 15, 50), clamp(burn_dam/2 * affecting.body_damage_coeff, 0, 50)) //Damage the chest based on limb's existing damage
 	if(!silent)
 		limb_owner.visible_message(span_danger("<B>[limb_owner]'s [name] is violently dismembered!</B>"))
 	INVOKE_ASYNC(limb_owner, /mob.proc/emote, "scream")
@@ -91,13 +91,6 @@
 			owner.dropItemToGround(owner.get_item_for_held_index(held_index), 1)
 			owner.hand_bodyparts[held_index] = null
 
-	for(var/datum/wound/wound as anything in wounds)
-		wound.remove_wound(TRUE)
-
-	for(var/datum/scar/scar as anything in scars)
-		scar.victim = null
-		LAZYREMOVE(owner.all_scars, scar)
-
 	var/mob/living/carbon/phantom_owner = owner // so we can still refer to the guy who lost their limb after said limb forgets 'em
 	owner = null
 
@@ -142,50 +135,6 @@
 		return
 
 	forceMove(drop_loc)
-
-/**
- * get_mangled_state() is relevant for flesh and bone bodyparts, and returns whether this bodypart has mangled skin, mangled bone, or both (or neither i guess)
- *
- * Dismemberment for flesh and bone requires the victim to have the skin on their bodypart destroyed (either a critical cut or piercing wound), and at least a hairline fracture
- * (severe bone), at which point we can start rolling for dismembering. The attack must also deal at least 10 damage, and must be a brute attack of some kind (sorry for now, cakehat, maybe later)
- *
- * Returns: BODYPART_MANGLED_NONE if we're fine, BODYPART_MANGLED_FLESH if our skin is broken, BODYPART_MANGLED_BONE if our bone is broken, or BODYPART_MANGLED_BOTH if both are broken and we're up for dismembering
- */
-/obj/item/bodypart/proc/get_mangled_state()
-	. = BODYPART_MANGLED_NONE
-
-	for(var/datum/wound/iter_wound as anything in wounds)
-		if((iter_wound.wound_flags & MANGLES_BONE))
-			. |= BODYPART_MANGLED_BONE
-		if((iter_wound.wound_flags & MANGLES_FLESH))
-			. |= BODYPART_MANGLED_FLESH
-
-/**
- * try_dismember() is used, once we've confirmed that a flesh and bone bodypart has both the skin and bone mangled, to actually roll for it
- *
- * Mangling is described in the above proc, [/obj/item/bodypart/proc/get_mangled_state]. This simply makes the roll for whether we actually dismember or not
- * using how damaged the limb already is, and how much damage this blow was for. If we have a critical bone wound instead of just a severe, we add +10% to the roll.
- * Lastly, we choose which kind of dismember we want based on the wounding type we hit with. Note we don't care about all the normal mods or armor for this
- *
- * Arguments:
- * * wounding_type: Either WOUND_BLUNT, WOUND_SLASH, or WOUND_PIERCE, basically only matters for the dismember message
- * * wounding_dmg: The damage of the strike that prompted this roll, higher damage = higher chance
- * * wound_bonus: Not actually used right now, but maybe someday
- * * bare_wound_bonus: ditto above
- */
-/obj/item/bodypart/proc/try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus)
-	if(wounding_dmg < DISMEMBER_MINIMUM_DAMAGE)
-		return
-
-	var/base_chance = wounding_dmg
-	base_chance += (get_damage() / max_damage * 50) // how much damage we dealt with this blow, + 50% of the damage percentage we already had on this bodypart
-
-	if(locate(/datum/wound/blunt/critical) in wounds) // we only require a severe bone break, but if there's a critical bone break, we'll add 15% more
-		base_chance += 15
-
-	if(prob(base_chance))
-		var/datum/wound/loss/dismembering = new
-		return dismembering.apply_dismember(src, wounding_type)
 
 //when a limb is dropped, the internal organs are removed from the mob and put into the limb
 /obj/item/organ/proc/transfer_to_limb(obj/item/bodypart/bodypart, mob/living/carbon/bodypart_owner)
@@ -348,18 +297,6 @@
 	for(var/obj/item/organ/limb_organ in contents)
 		limb_organ.Insert(new_limb_owner)
 
-	for(var/datum/wound/wound as anything in wounds)
-		// we have to remove the wound from the limb wound list first, so that we can reapply it fresh with the new person
-		// otherwise the wound thinks it's trying to replace an existing wound of the same type (itself) and fails/deletes itself
-		LAZYREMOVE(wounds, wound)
-		wound.apply_wound(src, TRUE)
-
-	for(var/datum/scar/scar as anything in scars)
-		if(scar in new_limb_owner.all_scars) // prevent double scars from happening for whatever reason
-			continue
-		scar.victim = new_limb_owner
-		LAZYADD(new_limb_owner.all_scars, scar)
-
 	update_bodypart_damage_state()
 	if(can_be_disabled)
 		update_disabled()
@@ -455,7 +392,4 @@
 		if(!limb.attach_limb(src, 1))
 			qdel(limb)
 			return FALSE
-		var/datum/scar/scaries = new
-		var/datum/wound/loss/phantom_loss = new // stolen valor, really
-		scaries.generate(limb, phantom_loss)
 		return TRUE

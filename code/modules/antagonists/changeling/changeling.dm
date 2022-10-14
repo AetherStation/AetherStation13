@@ -294,10 +294,6 @@
 
 	prof.skillchips = H.clone_skillchip_list(TRUE)
 
-	for(var/i in H.all_scars)
-		var/datum/scar/iter_scar = i
-		LAZYADD(prof.stored_scars, iter_scar.format())
-
 	var/datum/icon_snapshot/entry = new
 	entry.name = H.name
 	entry.icon = H.icon
@@ -522,12 +518,6 @@
 	user.update_body()
 	user.domutcheck()
 
-	// get rid of any scars from previous changeling-ing
-	for(var/i in user.all_scars)
-		var/datum/scar/iter_scar = i
-		if(iter_scar.fake)
-			qdel(iter_scar)
-
 	// Do skillchip code after DNA code.
 	// There's a mutation that increases max chip complexity available, even though we force-implant skillchips.
 
@@ -601,11 +591,6 @@
 			if(!QDELETED(C))
 				ADD_TRAIT(C, TRAIT_NODROP, CHANGELING_TRAIT)
 
-	for(var/stored_scar_line in chosen_prof.stored_scars)
-		var/datum/scar/attempted_fake_scar = user.load_scar(stored_scar_line)
-		if(attempted_fake_scar)
-			attempted_fake_scar.fake = TRUE
-
 	user.regenerate_icons()
 
 // Profile
@@ -631,8 +616,6 @@
 	var/socks
 
 	var/list/skillchips = list()
-	/// What scars the target had when we copied them, in string form (like persistent scars)
-	var/list/stored_scars
 	/// Icon snapshot of the profile
 	var/datum/icon_snapshot/profile_snapshot
 	/// ID HUD icon associated with the profile
@@ -640,7 +623,6 @@
 
 /datum/changelingprofile/Destroy()
 	qdel(dna)
-	LAZYCLEARLIST(stored_scars)
 	. = ..()
 
 /datum/changelingprofile/proc/copy_profile(datum/changelingprofile/newprofile)
@@ -661,7 +643,6 @@
 	newprofile.worn_icon_list = worn_icon_list.Copy()
 	newprofile.worn_icon_state_list = worn_icon_state_list.Copy()
 	newprofile.skillchips = skillchips.Copy()
-	newprofile.stored_scars = stored_scars.Copy()
 	newprofile.profile_snapshot = profile_snapshot
 	newprofile.id_icon = id_icon
 

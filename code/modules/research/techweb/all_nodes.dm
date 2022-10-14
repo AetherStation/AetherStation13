@@ -167,7 +167,6 @@
 	design_ids = list(
 		"beaker",
 		"blood_filter",
-		"bonesetter",
 		"cautery",
 		"circular_saw",
 		"cybernetic_eyes",
@@ -185,7 +184,6 @@
 		"scalpel",
 		"stethoscope",
 		"surgical_drapes",
-		"surgical_tape",
 		"surgicaldrill",
 		"syringe",
 		"xlarge_beaker",
