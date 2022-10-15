@@ -1,7 +1,0 @@
-author: EdgeLordExe
-delete-after: true
-changes:
-  - rscadd: Adds bloodlust quirk that heals 7.5 stamina damage per unarmed melee hit
-      you do
-  - rscadd: Adds harm-averse quirk that deals 7.5 stamina damage per unarmed melee
-      hit you do
