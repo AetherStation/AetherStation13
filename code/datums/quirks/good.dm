@@ -208,3 +208,31 @@
 	mob_trait = TRAIT_VORACIOUS
 	gain_text = "<span class='notice'>You feel HONGRY.</span>"
 	lose_text = "<span class='danger'>You no longer feel HONGRY.</span>"
+
+/datum/quirk/bloodlust
+	name = "Bloodlust"
+	desc = "Beating people up is fun!"
+	value = 6
+	gain_text = "<span class='notice'> You feel energized by violence.</span>"
+	lose_text = "<span class='danger'> You no longer feel good about hurting others.</span>"
+
+/datum/quirk/bloodlust/add()
+	. = ..()
+	RegisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND,.proc/apply_bloodlust_hand)
+	RegisterSignal(quirk_holder,COMSIG_MOB_ITEM_ATTACK,.proc/apply_bloodlust_item)
+
+/datum/quirk/bloodlust/remove()
+	. = ..()
+	UnregisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND)
+	UnregisterSignal(quirk_holder,COMSIG_MOB_ITEM_ATTACK)
+
+/datum/quirk/bloodlust/proc/apply_bloodlust_hand(mob/living/carbon/human/M, mob/living/carbon/human/H, datum/martial_art/attacker_style)
+	if(!M.istate.harm)
+		return
+	M.adjustStaminaLoss(-7.5)
+
+/datum/quirk/bloodlust/proc/apply_bloodlust_item(obj/item/I, mob/living/carbon/human/target, mob/living/carbon/human/user, params)
+	if(!user.istate.harm)
+		return
+	user.adjustStaminaLoss(-7.5)
+
