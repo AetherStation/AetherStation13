@@ -17,3 +17,7 @@
       you do
   - rscadd: Adds harm-averse quirk that deals 7.5 stamina damage per unarmed melee
       hit you do
+2022-10-17:
+  AcapitalA:
+  - rscadd: The default cyborg has returned!
+  - balance: The default cyborg's zipties have been moved to the emag-only section.
