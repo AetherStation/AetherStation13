@@ -443,8 +443,8 @@
 
 		else
 			to_chat(user, span_cultitalic("In a brilliant flash of red, [L] falls to the ground!"))
-			L.Paralyze(16 SECONDS)
-			L.flash_act(1,TRUE)
+			L.Paralyze(16 SECONDS, TRUE)
+			L.flash_act(1, TRUE)
 			if(issilicon(target))
 				var/mob/living/silicon/S = L
 				S.emp_act(EMP_HEAVY)
@@ -674,7 +674,7 @@
 		C.equip_to_slot_or_del(new /obj/item/storage/backpack/cultpack(user), ITEM_SLOT_BACK)
 		if(C == user)
 			qdel(src) //Clears the hands
-		C.put_in_hands(new /obj/item/melee/cultblade/dagger(user))
+		C.put_in_hands(new /obj/item/melee/cultblade(user))
 		C.put_in_hands(new /obj/item/restraints/legcuffs/bola/cult(user))
 		..()
 

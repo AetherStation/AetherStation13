@@ -5558,7 +5558,7 @@
 /area/syndicate_mothership/control)
 "tf" = (
 /obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/bottle/beer{
+/obj/item/reagent_containers/food/drinks/beer{
 	pixel_x = 5;
 	pixel_y = -2
 	},

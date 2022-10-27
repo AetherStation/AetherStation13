@@ -1596,8 +1596,8 @@
 					/obj/item/reagent_containers/food/drinks/shaker,
 					/obj/item/reagent_containers/food/drinks/bottle/patron,
 					/obj/item/reagent_containers/food/drinks/bottle/goldschlager,
-					/obj/item/reagent_containers/food/drinks/bottle/ale,
-					/obj/item/reagent_containers/food/drinks/bottle/ale,
+					/obj/item/reagent_containers/food/drinks/ale,
+					/obj/item/reagent_containers/food/drinks/ale,
 					/obj/item/storage/cans/sixbeer,
 					/obj/item/storage/cans/sixsoda,
 					/obj/item/flashlight/glowstick,
@@ -2576,6 +2576,17 @@
 	cost = CARGO_CRATE_VALUE * 5
 	contains = list(/obj/item/exodrone)
 	crate_name = "exodrone crate"
+
+/datum/supply_pack/misc/exploration_fuel
+	name = "Drone Fuel Pellet"
+	desc = "A fresh tank of exploration drone fuel."
+	cost = CARGO_CRATE_VALUE * 3
+	contains = list(/obj/item/fuel_pellet)
+<<<<<<< HEAD
+    crate_name = "exodrone fuel crate"
+=======
+	crate_name = "exodrone fuel crate"
+>>>>>>> parent of 6ee0d95fbb (Merge pull request #1 from Helg2/le-bottle)
 
 /datum/supply_pack/misc/paper
 	name = "Bureaucracy Crate"

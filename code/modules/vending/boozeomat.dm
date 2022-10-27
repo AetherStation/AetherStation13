@@ -17,8 +17,8 @@
 					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 8,
 					/obj/item/reagent_containers/food/drinks/bottle/grenadine = 4,
 					/obj/item/reagent_containers/food/drinks/bottle/menthol = 4,
-					/obj/item/reagent_containers/food/drinks/bottle/ale = 6,
-					/obj/item/reagent_containers/food/drinks/bottle/beer = 6,
+					/obj/item/reagent_containers/food/drinks/ale = 6,
+					/obj/item/reagent_containers/food/drinks/beer = 6,
 					/obj/item/reagent_containers/food/drinks/bottle/maltliquor = 6,
 					/obj/item/reagent_containers/food/drinks/bottle/gin = 5,
 					/obj/item/reagent_containers/food/drinks/bottle/whiskey = 5,
@@ -72,7 +72,7 @@
 /obj/machinery/vending/boozeomat/pubby_captain //Captain's quarters on Pubbystation
 	products = list(/obj/item/reagent_containers/food/drinks/bottle/rum = 1,
 					/obj/item/reagent_containers/food/drinks/bottle/wine = 1,
-					/obj/item/reagent_containers/food/drinks/bottle/ale = 1,
+					/obj/item/reagent_containers/food/drinks/ale = 1,
 					/obj/item/reagent_containers/food/drinks/drinkingglass = 6,
 					/obj/item/reagent_containers/food/drinks/ice = 1,
 					/obj/item/reagent_containers/food/drinks/drinkingglass/shotglass = 4);
