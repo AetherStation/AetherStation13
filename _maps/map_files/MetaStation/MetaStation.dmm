@@ -29646,12 +29646,6 @@
 	},
 /turf/open/floor/iron,
 /area/hallway/primary/port)
-"inX" = (
-/obj/machinery/atmospherics/pipe/layer_manifold{
-	dir = 4
-	},
-/turf/closed/wall/r_wall,
-/area/engineering/atmos)
 "iob" = (
 /obj/machinery/iv_drip,
 /obj/effect/turf_decal/tile/blue{
@@ -38813,10 +38807,6 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/wood,
 /area/cargo/qm)
-"lNs" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/maintenance/starboard)
 "lNC" = (
 /obj/structure/cable,
 /obj/machinery/power/apc/auto_name/west,
@@ -39197,10 +39187,6 @@
 	},
 /turf/open/floor/iron/white,
 /area/security/brig)
-"lWr" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/open/floor/plating,
-/area/maintenance/starboard)
 "lWB" = (
 /obj/item/cigbutt,
 /obj/machinery/light/small/directional/east,
@@ -43545,10 +43531,6 @@
 	},
 /turf/open/floor/iron,
 /area/cargo/sorting)
-"nuA" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall,
-/area/maintenance/disposal/incinerator)
 "nuE" = (
 /obj/machinery/computer/security/telescreen/entertainment/directional/south,
 /obj/machinery/suit_storage_unit/ce,
@@ -52169,7 +52151,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/machinery/atmospherics/components/trinary/filter/atmos/co2,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /turf/open/floor/iron/dark/corner{
 	dir = 1
 	},
@@ -63725,7 +63707,6 @@
 "uHb" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/item/storage/box/lights/mixed,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/plating{
 	icon_state = "platingdmg3"
 	},
@@ -112455,7 +112436,7 @@ sRZ
 evA
 teN
 ezE
-lNs
+alq
 ozE
 ozE
 ozE
@@ -112712,7 +112693,7 @@ bVC
 grp
 bYr
 muv
-nuA
+bZE
 mKO
 aaX
 aeD
@@ -112969,7 +112950,7 @@ oCR
 qUk
 apc
 qYi
-nuA
+bZE
 vMe
 adk
 afQ
@@ -113226,7 +113207,7 @@ bPn
 oNh
 nxd
 bZE
-nuA
+bZE
 aGJ
 itV
 stM
@@ -113738,7 +113719,7 @@ pnb
 jod
 cXa
 mhI
-lWr
+apc
 qkN
 aaU
 afQ
@@ -114252,7 +114233,7 @@ bVE
 jMk
 jMk
 vTw
-inX
+jMk
 cSa
 cSa
 vhG

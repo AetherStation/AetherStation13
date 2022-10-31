@@ -42385,10 +42385,6 @@
 /obj/effect/mapping_helpers/simple_pipes/dark/visible,
 /turf/open/floor/iron/dark/telecomms,
 /area/science/server)
-"fsJ" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/closed/wall/r_wall/rust,
-/area/engineering/atmos)
 "fsQ" = (
 /obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
@@ -54174,10 +54170,8 @@
 	name = "atmospherics camera";
 	network = list("ss13","engine")
 	},
-/obj/machinery/atmospherics/components/trinary/filter/atmos/co2{
-	dir = 8
-	},
 /obj/effect/turf_decal/bot,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /turf/open/floor/iron,
 /area/engineering/atmos)
 "kQw" = (
@@ -56389,10 +56383,6 @@
 /obj/machinery/light/small/directional/north,
 /turf/open/floor/iron,
 /area/cargo/storage)
-"lUX" = (
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/turf/closed/wall/r_wall,
-/area/engineering/atmos)
 "lVw" = (
 /turf/closed/wall/rust,
 /area/command/gateway)
@@ -111637,9 +111627,9 @@ bYL
 bFa
 aRQ
 kFC
-lUX
-lUX
-fsJ
+iVw
+iVw
+qxq
 kQp
 nht
 gnH

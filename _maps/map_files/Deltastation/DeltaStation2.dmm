@@ -48267,7 +48267,6 @@
 "ibV" = (
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
 /obj/effect/turf_decal/bot,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden,
 /turf/open/floor/iron,
 /area/engineering/atmos)
@@ -54649,10 +54648,6 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/medical/virology)
-"kbD" = (
-/obj/machinery/atmospherics/pipe/layer_manifold,
-/turf/closed/wall/r_wall,
-/area/engineering/atmos)
 "kbN" = (
 /obj/structure/table,
 /obj/item/stack/sheet/iron/five,
@@ -64989,7 +64984,6 @@
 "ndi" = (
 /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
 /obj/effect/turf_decal/bot,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/engineering/atmos)
 "ndr" = (
@@ -80368,9 +80362,7 @@
 	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/bot,
-/obj/machinery/atmospherics/components/trinary/filter/atmos/co2{
-	dir = 4
-	},
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /turf/open/floor/iron/dark,
 /area/engineering/atmos)
 "rzS" = (
@@ -129427,7 +129419,7 @@ fZv
 swM
 hyV
 rzQ
-kbD
+kPH
 ndi
 ibV
 fuJ

@@ -44288,8 +44288,8 @@
 /area/commons/dorms)
 "tnP" = (
 /obj/structure/cable,
-/obj/machinery/atmospherics/components/trinary/filter/atmos/co2,
 /obj/effect/turf_decal/bot,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/visible,
 /turf/open/floor/iron,
 /area/engineering/atmos)
 "tnR" = (
@@ -84164,7 +84164,7 @@ huM
 vnD
 eqa
 oQl
-mwr
+rLU
 tQD
 tqC
 bWQ
@@ -84421,7 +84421,7 @@ vUh
 rLU
 qnI
 idb
-cXB
+rLU
 sHv
 pbB
 eCB
