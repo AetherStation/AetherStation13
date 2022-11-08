@@ -98158,6 +98158,9 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/security/prison)
+"wQD" = (
+/turf/open/floor/iron,
+/area/engineering/atmos)
 "wQI" = (
 /obj/structure/table/reinforced,
 /obj/item/clothing/shoes/magboots{
@@ -126082,7 +126085,7 @@ kne
 hSK
 elR
 aoe
-qLr
+wQD
 ykY
 jJW
 exW
