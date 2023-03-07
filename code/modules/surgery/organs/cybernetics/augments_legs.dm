@@ -68,16 +68,8 @@
 	encode_info = AUGMENT_NT_LOWLEVEL
 	double_legged = TRUE
 
-/obj/item/organ/cyberimp/leg/table_glider/update_implants()
-	if(!check_compatibility())
-		REMOVE_TRAIT(owner,TRAIT_FAST_CLIMBER,type)
-		return
-	ADD_TRAIT(owner,TRAIT_FAST_CLIMBER,type)
-
 /obj/item/organ/cyberimp/leg/table_glider/on_full_insert(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
-	if(!check_compatibility())
-		return
 	ADD_TRAIT(owner,TRAIT_FAST_CLIMBER,type)
 
 /obj/item/organ/cyberimp/leg/table_glider/Remove(mob/living/carbon/M, special)
@@ -90,16 +82,8 @@
 	encode_info = AUGMENT_NT_HIGHLEVEL
 	double_legged = TRUE
 
-/obj/item/organ/cyberimp/leg/table_glider/update_implants()
-	if(!check_compatibility())
-		REMOVE_TRAIT(owner,TRAIT_SHOVE_RESIST,type)
-		return
-	ADD_TRAIT(owner,TRAIT_SHOVE_RESIST,type)
-
 /obj/item/organ/cyberimp/leg/shove_resist/on_full_insert(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
-	if(!check_compatibility())
-		return
 	ADD_TRAIT(owner,TRAIT_SHOVE_RESIST,type)
 
 /obj/item/organ/cyberimp/leg/shove_resist/Remove(mob/living/carbon/M, special)
@@ -137,8 +121,6 @@
 	. = ..()
 
 /obj/item/organ/cyberimp/leg/chemplant/on_life()
-	if(!check_compatibility())
-		return
 		//Cost of refilling is a little bit of nutrition, some blood and getting jittery
 	if(owner.nutrition > NUTRITION_LEVEL_STARVING && owner.blood_volume > BLOOD_VOLUME_SURVIVE && current_ticks_cooldown > 0)
 

@@ -1,6 +1,6 @@
 /obj/item/cyberlink_connector
 	name = "Wireless personal connector"
-	desc = "Allows you to connect to incompatible implants and hack them."
+	desc = "Allows you to connect to crack the implants reducing their neural stress impact but also forfeiting their discount from matching cyberlink classes."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "connector"
 	var/obj/item/organ/cyberimp/cyberlink/parent_cyberlink
@@ -129,7 +129,7 @@
 /obj/item/cyberlink_connector/ui_data(mob/user)
 	var/list/data = list()
 	data["timeleft"] = current_timer_id ? timeleft(current_timer_id) : 0
-	
+
 	for(var/datum/hacking_minigame/game in game_list)
 		data["games"] += list(game.get_simplified_image())
 	return data

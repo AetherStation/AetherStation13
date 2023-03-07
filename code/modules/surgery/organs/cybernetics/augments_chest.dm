@@ -17,9 +17,6 @@
 	slot = ORGAN_SLOT_STOMACH_AID
 
 /obj/item/organ/cyberimp/chest/nutriment/on_life()
-	if(!check_compatibility())
-		return
-
 	if(synthesizing)
 		return
 
@@ -62,9 +59,6 @@
 
 
 /obj/item/organ/cyberimp/chest/reviver/on_life()
-	if(!check_compatibility())
-		return
-
 	if(reviving)
 		switch(owner.stat)
 			if(UNCONSCIOUS, HARD_CRIT)
@@ -156,20 +150,7 @@
 /obj/item/organ/cyberimp/chest/thrusters/ui_action_click()
 	toggle()
 
-/obj/item/organ/cyberimp/chest/thrusters/update_implants()
-	. = ..()
-	if(check_compatibility())
-		return
-
-	if(on)
-		toggle(TRUE)
-
 /obj/item/organ/cyberimp/chest/thrusters/proc/toggle(silent = FALSE)
-	if(!check_compatibility())
-		to_chat(owner, "<span class='warning'>The Neuralink beeps: ERR01 INCOMPATIBLE IMPLANT</span>")
-		if(!on)
-			return
-
 	if(!on)
 		if((organ_flags & ORGAN_FAILING))
 			if(!silent)
@@ -277,9 +258,6 @@
 
 /obj/item/organ/cyberimp/chest/filtration/on_life()
 	. = ..()
-	if(!check_compatibility())
-		return
-
 	for(var/R in owner.reagents.reagent_list)
 		if(istype(R,/datum/reagent/toxin) || istype(R,/datum/reagent/drug) || is_type_in_list(R,reagent_quirks))
 			owner.reagents.remove_reagent(R,removal_speed)

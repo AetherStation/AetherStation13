@@ -30,14 +30,6 @@
 	actions_types = list(/datum/action/item_action/organ_action/toggle)
 
 /obj/item/organ/cyberimp/brain/anti_drop/ui_action_click()
-	if(!check_compatibility())
-		to_chat(owner, "<span class='warning'>The Neuralink beeps: ERR01 INCOMPATIBLE IMPLANT</span>")
-		if(active)
-			active = !active
-			release_items()
-			to_chat(owner, "<span class='notice'>Your hands suddenly relax!</span>")
-		return
-
 	active = !active
 	if(active)
 		for(var/obj/item/I in owner.held_items)
@@ -56,13 +48,6 @@
 	else
 		release_items()
 		to_chat(owner, "<span class='notice'>Your hands relax...</span>")
-
-/obj/item/organ/cyberimp/brain/anti_drop/update_implants()
-	. = ..()
-	if(!check_compatibility())
-		if(active)
-			ui_action_click()
-		return
 
 /obj/item/organ/cyberimp/brain/anti_drop/emp_act(severity)
 	. = ..()
@@ -115,9 +100,6 @@
 	RegisterSignal(owner, signalCache, .proc/on_signal)
 
 /obj/item/organ/cyberimp/brain/anti_stun/proc/on_signal(datum/source, amount)
-	if(!check_compatibility())
-		to_chat(owner, "<span class='warning'>The Neuralink beeps: ERR01 INCOMPATIBLE IMPLANT</span>")
-		return
 	if(!(organ_flags & ORGAN_FAILING) && amount > 0)
 		addtimer(CALLBACK(src, .proc/clear_stuns), stun_cap_amount, TIMER_UNIQUE|TIMER_OVERRIDE)
 
