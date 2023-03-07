@@ -8,6 +8,9 @@
 	var/implant_overlay
 	var/syndicate_implant = FALSE //Makes the implant invisible to health analyzers and medical HUDs.
 
+	var/implant_cost = 0
+	var/implant_class = CYBER_CLASS_DEFAULT
+
 	var/list/encode_info = AUGMENT_NO_REQ
 
 /obj/item/organ/cyberimp/examine(mob/user)
@@ -15,24 +18,30 @@
 	if(hacked)
 		. += "It seems to have been tinkered with."
 	if(HAS_TRAIT(user,TRAIT_DIAGNOSTIC_HUD))
-		var/display = ""
-		var/list/check_list = encode_info[SECURITY_PROTOCOL]
-		if(check_list.len)
-			for(var/security in check_list)
-				display += "[uppertext(security)], "
-			. += "It's security protocols are [display] for the implant to function it requires at least one of them to be shared with the cyberlink."
-		check_list = encode_info[ENCODE_PROTOCOL]
-		if(check_list.len)
-			display = ""
-			for(var/encode in check_list)
-				display += "[uppertext(encode)], "
-			. += "It's encoding protocols are [display] for the implant to function it requires at least one of them to be shared with the cyberlink."
-		check_list = encode_info[OPERATING_PROTOCOL]
-		if(check_list.len)
-			display = ""
-			for(var/operating in check_list)
-				display += "[uppertext(operating)], "
-			. += "It's operating protocols are [display]for the implant to function it requires at least one of them to be shared with the cyberlink."
+		switch(implant_cost)
+			if(0)
+				. += "It doesn't put much stress on the recipients nervous system."
+			if(1)
+				. += "It puts some stress on the recipients nervous system."
+			if(2)
+				. += "It puts a high amount of stress on the recipients nervous system."
+			if(3)
+				. += "It puts a tremendous amount of stress on the recipients nervous system."
+		switch(implant_class)
+			if(CYBER_CLASS_DEFAULT)
+				. += "It is an implant of unknown origin."
+			if(CYBER_CLASS_NT_LOW)
+				. += "It is a cheaply made Nanotrasen implant."
+			if(CYBER_CLASS_NT_HIGH)
+				. += "It is a well made Nanotrasen implant."
+			if(CYBER_CLASS_SYNDICATE)
+				. += "It is an implant clearly manufactured by one of the Syndicate factions."
+			if(CYBER_CLASS_TERRA)
+				. += "It is an implant manufactured by the Terran government."
+			if(CYBER_CLASS_CRACKED)
+				. += "This implant has been heavily tinkered with, it's impossible to determine it's original manufacturer."
+			if(CYBER_CLASS_ADMIN)
+				. += "This implant was made by beings that have capabilities far beyond our current technological progress."
 
 /obj/item/organ/cyberimp/emp_act(severity)
 	. = ..()
@@ -52,108 +61,57 @@
 		add_overlay(overlay)
 	return ..()
 
-/**
- * Updates implants
- *
- * Used when an implant is already installed and a new cyberlink is inserted, in this situation this proc fires, to update the compatibility of an implant.
- */
-/obj/item/organ/cyberimp/proc/update_implants()
-	return
-
-/**
- * Randomly scrambles encode_info of an implant
- *
- * Every implant contains it's own encode_info, this info stores the data on what security, encoding and operating protocols it uses.
- * Implant is compatible if for every protocol catergory it shares at least 1 protocol in common with the link.
- * If it fails to meet that criteria, than it is incompatible and this proc returns FALSE. If it is compatibile returns TRUE
- */
-/obj/item/organ/cyberimp/proc/random_encode()
-	hacked = TRUE
-	encode_info = list(	SECURITY_PROTOCOL = list(pick(SECURITY_NT1,SECURITY_NT2,SECURITY_NTX,SECURITY_TMSP,SECURITY_TOSP)), \
-						ENCODE_PROTOCOL = list(pick(ENCODE_ENC1,ENCODE_ENC2,ENCODE_TENN,ENCODE_CSEP)), \
-						OPERATING_PROTOCOL = list(pick(OPERATING_NTOS,OPERATING_TGMF,OPERATING_CSOF)))
-/**
- * Checks compatibility of implant against the cyberlink
- *
- * Every implant contains it's own encode_info, this info stores the data on what security, encoding and operating protocols it uses.
- * Implant is compatible if for every protocol catergory it shares at least 1 protocol in common with the link.
- * If it fails to meet that criteria, than it is incompatible and this proc returns FALSE. If it is compatibile returns TRUE
- */
-/obj/item/organ/cyberimp/proc/check_compatibility()
-	var/obj/item/organ/cyberimp/cyberlink/link = owner.getorganslot(ORGAN_SLOT_LINK)
-
-	for(var/info in encode_info)
-		// We check if encode_info for this protocol categoru is NO_PROTOCOL meaning it is compatible with anything.
-		if(encode_info[info] == NO_PROTOCOL)
-			. = TRUE
-			continue
-
-		var/list/encrypted_information = encode_info[info]
-
-		. = FALSE
-
-		//We check for link here because implants that contain NO_PROTOCOL for every category should work even without an implant.
-		if(!link)
-			return
-
-		//We check if our protocol category shares at least 1 protocol with the cyberlink
-		for(var/protocol in encrypted_information)
-			if(protocol in link.encode_info[info])
-				. = TRUE
-
-		//If it doesn't return FALSE
-		if(!.)
-			return
+/obj/item/organ/cyberimp/proc/get_stress( obj/item/organ/cyberimp/cyberlink/link = null)
+	if(link?.implant_class == implant_class)
+		return max(0,implant_cost - 1)
+	return implant_cost
 
 /obj/item/organ/cyberimp/cyberlink
 	name = "cybernetic brain link"
-	desc = "Allows for smart communication between implants."
+	desc = "Manages the cybernetic allowing the body to handle more cybernetics before the stress they put on the nervous system causes a total mental collapse."
 	icon_state = "brain_implant"
 	implant_overlay = "brain_implant_overlay"
 	slot = ORGAN_SLOT_LINK
 	zone = BODY_ZONE_HEAD
 	w_class = WEIGHT_CLASS_TINY
-	var/obj/item/cyberlink_connector/connector
-	var/extended = FALSE
 
-/obj/item/organ/cyberimp/cyberlink/Insert(mob/living/carbon/M, special, drop_if_replaced)
-	. = ..()
-	for(var/X in M.internal_organs)
-		var/obj/item/organ/O = X
-		if(!istype(O,/obj/item/organ/cyberimp))
-			continue
-		var/obj/item/organ/cyberimp/cyber = O
-		cyber.update_implants()
+	var/implant_stress_reduction = 0
 
-
-/obj/item/organ/cyberimp/cyberlink/Remove(mob/living/carbon/M, special)
-	. = ..()
-	for(var/X in M.internal_organs)
-		var/obj/item/organ/O = X
-		if(!istype(O,/obj/item/organ/cyberimp))
-			continue
-		var/obj/item/organ/cyberimp/cyber = O
-		cyber.update_implants()
+/obj/item/organ/cyberimp/cyberlink/proc/throw_error(err_code)
+	switch(err_code)
+		if(1)
+			to_chat(owner,"<span class='warning'>Cyberlink beeps: CODE01 - NEURAL SYSTEM UNDER TOO MUCH STRESS.</span>")
+		if(2)
+			to_chat(owner,"<span class = 'danger'>Cyberlink beeps: CODE02 - ELECTROMAGNETIC MALFUNCTION DETECTED </span>")
+		if(3)
+			to_chat(owner,"<span class = 'danger'>Cyberlink beeps: CODE03 - HEAVY ELECTROMAGNETIC MALFUNCTION DETECTED. DAMAGE TO THE IMPLANTS MAY HAVE OCCURED. </span>")
+		if(4)
+			to_chat(owner,"<span class='warning'>Cyberlink beeps: CODE04 - UNAUTHORIZED ACCESS DETECTED.</span>")
 
 /obj/item/organ/cyberimp/cyberlink/nt_low
 	name = "NT Cyberlink 1.0"
-	encode_info = AUGMENT_NT_LOWLEVEL
+	implant_class = CYBER_CLASS_NT_LOW
+	implant_stress_reduction = 0
 
 /obj/item/organ/cyberimp/cyberlink/nt_high
 	name = "NT Cyberlink 2.0"
-	encode_info = AUGMENT_NT_HIGHLEVEL
+	implant_class = CYBER_CLASS_NT_HIGH
+	implant_stress_reduction = 1
 
 /obj/item/organ/cyberimp/cyberlink/terragov
 	name = "Terran Cyberware System"
-	encode_info = AUGMENT_TG_LEVEL
+	implant_class = CYBER_CLASS_TERRA
+	implant_stress_reduction = 6
 
 /obj/item/organ/cyberimp/cyberlink/syndicate
-	name = "Cybersun Cybernetics Access System"
-	encode_info = AUGMENT_SYNDICATE_LEVEL
+	name = "Cybersun Cybernetic Control System"
+	implant_class = CYBER_CLASS_SYNDICATE
+	implant_stress_reduction = 5
 
 /obj/item/organ/cyberimp/cyberlink/admin
 	name = "G.O.D. Cybernetics System"
-	encode_info = AUGMENT_ADMIN_LEVEL
+	implant_class = CYBER_CLASS_ADMIN
+	implant_stress_reduction = INFINITY
 
 /obj/item/autosurgeon/organ/cyberlink_nt_low
 	starting_organ = /obj/item/organ/cyberimp/cyberlink/nt_low

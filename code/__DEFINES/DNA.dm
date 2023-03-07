@@ -304,6 +304,15 @@ GLOBAL_LIST_INIT(organ_process_order, list(
 
 /// Cybernetics defines
 
+#define CYBER_CLASS_DEFAULT "none"
+#define CYBER_CLASS_NT_LOW "nt_low"
+#define CYBER_CLASS_NT_HIGH "nt_high"
+#define CYBER_CLASS_SYNDICATE "syndicate"
+#define CYBER_CLASS_TERRA "terragov"
+#define CYBER_CLASS_CRACKED "cracked"
+#define CYBER_CLASS_ADMIN "admin"
+
+
 #define SECURITY_PROTOCOL "sec_protocol"
 #define ENCODE_PROTOCOL "enc_protocol"
 #define OPERATING_PROTOCOL	"op_protocol"

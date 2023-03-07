@@ -60,9 +60,6 @@
 		active_item = new active_item(src)
 	items_list = contents.Copy()
 
-/obj/item/organ/cyberimp/arm/item_set/update_implants()
-	if(!check_compatibility())
-		Retract()
 
 /obj/item/organ/cyberimp/arm/item_set/Insert(mob/living/carbon/M, special = FALSE, drop_if_replaced = TRUE)
 	. = ..()
@@ -115,9 +112,6 @@
 	playsound(get_turf(owner), 'sound/mecha/mechmove03.ogg', 50, TRUE)
 
 /obj/item/organ/cyberimp/arm/item_set/proc/Extend(obj/item/item)
-	if(!check_compatibility())
-		return
-
 	if(!(item in src))
 		return
 
@@ -154,10 +148,6 @@
 	playsound(get_turf(owner), 'sound/mecha/mechmove03.ogg', 50, TRUE)
 
 /obj/item/organ/cyberimp/arm/item_set/ui_action_click()
-	if(!check_compatibility())
-		to_chat(owner, "<span class='warning'>The Neuralink beeps: ERR01 INCOMPATIBLE IMPLANT</span>")
-		return
-
 	if((organ_flags & ORGAN_FAILING) || (!active_item && !contents.len))
 		to_chat(owner, "<span class='warning'>The implant doesn't respond. It seems to be broken...</span>")
 		return
@@ -387,15 +377,9 @@
 	our_gun = null
 	update_hud_elements()
 
-/obj/item/organ/cyberimp/arm/ammo_counter/update_implants()
-	update_hud_elements()
-
 /obj/item/organ/cyberimp/arm/ammo_counter/proc/update_hud_elements()
 	SIGNAL_HANDLER
 	if(!owner || !owner?.stat || !owner?.hud_used)
-		return
-
-	if(!check_compatibility())
 		return
 
 	var/datum/hud/H = owner.hud_used
@@ -478,8 +462,6 @@
 
 /obj/item/organ/cyberimp/arm/cooler/on_life()
 	. = ..()
-	if(!check_compatibility())
-		return
 	var/amt = BODYTEMP_NORMAL - owner.get_body_temp_normal()
 	if(amt == 0)
 		return
@@ -499,8 +481,6 @@
 
 /obj/item/organ/cyberimp/arm/heater/on_life()
 	. = ..()
-	if(!check_compatibility())
-		return
 	var/amt = BODYTEMP_NORMAL - owner.get_body_temp_normal()
 	if(amt == 0)
 		return

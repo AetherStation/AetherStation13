@@ -860,3 +860,27 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		return
 
 	heart.beating = !status
+
+/mob/living/carbon/proc/get_total_implant_stress()
+	if(!implant_stress || implant_stress.len == 0)
+		return 0
+
+	var/total = 0
+	for(var/implant in implant_stress)
+		total += implant_stress[implant]
+
+	var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+	if(link)
+		total = max(0, total - link.implant_stress_reduction)
+	return total
+
+/mob/living/carbon/proc/handle_implant_stress(delta_time)
+	current_implant_stress = max(0, current_implant_stress + get_total_implant_stress() - implant_stress_natural_decay)
+	switch(current_implant_stress)
+		if(160 to 320)
+
+		if(320 to 640)
+
+		if(640 to 1280)
+
+		if(1280 to 2560)
