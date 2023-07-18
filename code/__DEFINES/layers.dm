@@ -166,6 +166,7 @@
 #define BLIND_LAYER 4
 #define CRIT_LAYER 5
 #define CURSE_LAYER 6
+#define NOISE_LAYER 7
 
 
 //-------------------- HUD ---------------------

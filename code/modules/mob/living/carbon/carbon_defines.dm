@@ -104,6 +104,7 @@
 	var/list/implant_stress
 
 	var/current_implant_stress = 0
+	var/cached_implant_stress = 0
 
 	var/implant_stress_natural_decay = 1
 

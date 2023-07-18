@@ -601,3 +601,17 @@
 			blended_color = "#2eeb9a"
 	pre_asset.Blend(blended_color, ICON_MULTIPLY)
 	return pre_asset
+
+/datum/asset/simple/vitruvian
+	assets = list(
+		"vitruvian_slave.png" = 		'icons/ui_icons/tgui/cybernetic/vitruvian_slave.png',
+		"head_button.png" = 			'icons/ui_icons/tgui/cybernetic/head_button.png',
+		"eyes_button.png" = 			'icons/ui_icons/tgui/cybernetic/eyes_button.png',
+		"mouth_button.png" = 			'icons/ui_icons/tgui/cybernetic/mouth_button.png',
+		"torso_button.png" = 			'icons/ui_icons/tgui/cybernetic/torso_button.png',
+		"left_arm_button.png" = 	'icons/ui_icons/tgui/cybernetic/left_arm_button.png',
+		"right_arm_button.png" = 	'icons/ui_icons/tgui/cybernetic/right_arm_button.png',
+		"left_leg_button.png" = 	'icons/ui_icons/tgui/cybernetic/left_leg_button.png',
+		"right_leg_button.png" = 	'icons/ui_icons/tgui/cybernetic/right_leg_button.png',
+	)
+

@@ -16,6 +16,10 @@
 //Trust me, you need one. Period. If you don't think you do, you're doing something extremely wrong.
 /atom/movable/screen/plane_master/proc/backdrop(mob/mymob)
 
+/atom/movable/screen/plane_master/proc/get_render_target()
+	render_target = "[name]_TARGET"
+	return render_target
+
 ///Things rendered on "openspace"; holes in multi-z
 /atom/movable/screen/plane_master/openspace
 	name = "open space plane master"

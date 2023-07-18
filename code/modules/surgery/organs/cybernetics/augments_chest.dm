@@ -10,7 +10,7 @@
 	desc = "This implant will synthesize and pump into your bloodstream a small amount of nutriment when you are starving."
 	icon_state = "chest_implant"
 	implant_color = "#00AA00"
-	encode_info = AUGMENT_NT_LOWLEVEL
+	implant_class = CYBER_CLASS_NT_LOW
 	var/hunger_threshold = NUTRITION_LEVEL_STARVING
 	var/synthesizing = 0
 	var/poison_amount = 5
@@ -43,7 +43,7 @@
 	icon_state = "chest_implant"
 	implant_color = "#006607"
 	hunger_threshold = NUTRITION_LEVEL_HUNGRY
-	encode_info = AUGMENT_NT_HIGHLEVEL
+	implant_class = CYBER_CLASS_NT_HIGH
 	poison_amount = 10
 
 /obj/item/organ/cyberimp/chest/reviver
@@ -52,7 +52,7 @@
 	icon_state = "chest_implant"
 	implant_color = "#AD0000"
 	slot = ORGAN_SLOT_HEART_AID
-	encode_info = AUGMENT_NT_HIGHLEVEL
+	implant_class = CYBER_CLASS_NT_HIGH
 	var/revive_cost = 0
 	var/reviving = FALSE
 	COOLDOWN_DECLARE(reviver_cooldown)
@@ -119,7 +119,7 @@
 		to_chat(H, "<span class='notice'>You feel your heart beating again!</span>")
 
 /obj/item/organ/cyberimp/chest/reviver/syndicate
-	encode_info = AUGMENT_SYNDICATE_LEVEL
+	implant_class = CYBER_CLASS_SYNDICATE
 
 /obj/item/organ/cyberimp/chest/thrusters
 	name = "implantable thrusters set"
@@ -131,7 +131,7 @@
 	implant_color = null
 	actions_types = list(/datum/action/item_action/organ_action/toggle)
 	w_class = WEIGHT_CLASS_NORMAL
-	encode_info = AUGMENT_NT_HIGHLEVEL
+	implant_class = CYBER_CLASS_NT_HIGH
 	var/on = FALSE
 	var/datum/effect_system/trail_follow/ion/ion_trail
 
@@ -240,7 +240,7 @@
 	name = "S.I.L.V.E.R. filtration pump"
 	desc = "This implant purges your body of any toxins and drugs extremely quickly"
 	implant_color = "#00e7b5"
-	encode_info = AUGMENT_NT_HIGHLEVEL
+	implant_class = CYBER_CLASS_NT_HIGH
 	slot = ORGAN_SLOT_STOMACH_AID
 	var/removal_speed = 1
 	var/list/reagent_quirks = list()
@@ -266,7 +266,7 @@
 	name = "offbrand filtration pump"
 	desc = "You're not sure if it is a great idea, This implant purges your body of any toxins and drugs extremely quickly"
 	implant_color = "#0d3d33"
-	encode_info = AUGMENT_NT_HIGHLEVEL
+	implant_class = CYBER_CLASS_NT_HIGH
 	slot = ORGAN_SLOT_STOMACH_AID
 	removal_speed = 2
 	num_reagent_quirks = 5

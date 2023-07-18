@@ -11,7 +11,6 @@
 	var/implant_cost = 0
 	var/implant_class = CYBER_CLASS_DEFAULT
 
-	var/list/encode_info = AUGMENT_NO_REQ
 
 /obj/item/organ/cyberimp/examine(mob/user)
 	. = ..()
@@ -47,7 +46,7 @@
 	. = ..()
 	if(severity == EMP_HEAVY && prob(5))
 		to_chat(owner,"<span class = 'danger'> cyberlink beeps: ERR03 HEAVY ELECTROMAGNETIC MALFUNCTION DETECTED IN [uppertext(name)].DAMAGE DETECTED, INTERNAL MEMORY DAMAGED. </span>")
-		random_encode()
+		implant_class = CYBER_CLASS_CRACKED
 	else
 		to_chat(owner,"<span class = 'danger'> cyberlink beeps: ERR02 ELECTROMAGNETIC MALFUNCTION DETECTED IN [uppertext(name)] </span>")
 
@@ -80,13 +79,19 @@
 /obj/item/organ/cyberimp/cyberlink/proc/throw_error(err_code)
 	switch(err_code)
 		if(1)
-			to_chat(owner,"<span class='warning'>Cyberlink beeps: CODE01 - NEURAL SYSTEM UNDER TOO MUCH STRESS.</span>")
+			to_chat(owner,"<span class='warning'>Cyberlink beeps: CODE01 - SOME NEURAL STRESS DETECTED. INCREASE NEURAL STRESS RECOVERY CAPABILITIES.</span>")
 		if(2)
-			to_chat(owner,"<span class = 'danger'>Cyberlink beeps: CODE02 - ELECTROMAGNETIC MALFUNCTION DETECTED </span>")
+			to_chat(owner,"<span class='warning'>Cyberlink beeps: CODE02 - NEURAL STRESS DETECTED. REFRAIN FROM FURTHER UPGRADING YOUR IMPLANTS AND CONSIDER VISITING A ROBOTICS LABORATORY.</span>")
 		if(3)
-			to_chat(owner,"<span class = 'danger'>Cyberlink beeps: CODE03 - HEAVY ELECTROMAGNETIC MALFUNCTION DETECTED. DAMAGE TO THE IMPLANTS MAY HAVE OCCURED. </span>")
+			to_chat(owner,"<span class='warning'>Cyberlink beeps: CODE03 - NEURAL SYSTEM UNDER TOO MUCH STRESS. VISIT A ROBOTICIST FOR A MAINTENANCE CHECK.</span>")
 		if(4)
-			to_chat(owner,"<span class='warning'>Cyberlink beeps: CODE04 - UNAUTHORIZED ACCESS DETECTED.</span>")
+			to_chat(owner,"<span class='danger'>Cyberlink beeps: CODE04 - NEURAL SYSTEM UNDER TOO MUCH STRESS. NEUROLOGICAL COLLAPSE IMMINENT.</span>")
+		if(5)
+			to_chat(owner,"<span class = 'danger'>Cyberlink beeps: CODE05 - ELECTROMAGNETIC MALFUNCTION DETECTED </span>")
+		if(6)
+			to_chat(owner,"<span class = 'danger'>Cyberlink beeps: CODE06 - HEAVY ELECTROMAGNETIC MALFUNCTION DETECTED. DAMAGE TO THE IMPLANTS MAY HAVE OCCURED. </span>")
+		if(7)
+			to_chat(owner,"<span class='warning'>Cyberlink beeps: CODE07 - UNAUTHORIZED ACCESS DETECTED.</span>")
 
 /obj/item/organ/cyberimp/cyberlink/nt_low
 	name = "NT Cyberlink 1.0"
@@ -107,6 +112,7 @@
 	name = "Cybersun Cybernetic Control System"
 	implant_class = CYBER_CLASS_SYNDICATE
 	implant_stress_reduction = 5
+	syndicate_implant = TRUE
 
 /obj/item/organ/cyberimp/cyberlink/admin
 	name = "G.O.D. Cybernetics System"
@@ -132,4 +138,25 @@
 /obj/item/autosurgeon/organ/cyberlink_admin
 	starting_organ = /obj/item/organ/cyberimp/cyberlink/admin
 	uses = 1
+
+
+/obj/item/debug_vitruvian
+	name = "Debug vitruvian"
+	icon = 'icons/obj/surgery.dmi'
+	icon_state = "brain_implant"
+
+/obj/item/debug_vitruvian/attack_hand(mob/user)
+	. = ..()
+
+/obj/item/debug_vitruvian/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "VitruvianTesting", name)
+		ui.open()
+
+/obj/item/debug_vitruvian/ui_assets(mob/user)
+	return list(
+		get_asset_datum(/datum/asset/simple/vitruvian),
+	)
+
 

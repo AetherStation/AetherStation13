@@ -3,7 +3,6 @@
 	desc = "Allows you to connect to crack the implants reducing their neural stress impact but also forfeiting their discount from matching cyberlink classes."
 	icon = 'icons/obj/surgery.dmi'
 	icon_state = "connector"
-	var/obj/item/organ/cyberimp/cyberlink/parent_cyberlink
 	var/list/datum/hacking_minigame/game_list = list()
 	var/current_timer_id = FALSE
 	var/obj/item/organ/cyberimp/cybernetic
@@ -11,7 +10,6 @@
 
 /obj/item/cyberlink_connector/Destroy()
 	. = ..()
-	parent_cyberlink = null
 	cleanup()
 
 ///We dont open the tgui when we click on this.
@@ -26,31 +24,16 @@
 	if(!istype(target,/obj/item/organ/cyberimp) || istype(target,/obj/item/organ/cyberimp/cyberlink))
 		return
 
-	if(!parent_cyberlink)
-		var/obj/item/organ/cyberimp/cyberlink/link = user.getorganslot(ORGAN_SLOT_LINK)
-		if(!link)
-			to_chat(user,"<span class='notice'> NO CYBERLINK DETECTED </span>")
-			return
-		parent_cyberlink = link
-
 	game_list = list()
 
-	var/diffrences = 3
+
 	current_user = user
 	cybernetic = target
 
-	for(var/info in cybernetic.encode_info)
-		if(cybernetic.encode_info[info] == NO_PROTOCOL)
-			continue
-		var/list/encrypted_information = cybernetic.encode_info[info]
-
-		for(var/protocol in encrypted_information)
-			if(protocol in parent_cyberlink.encode_info[info])
-				diffrences--
-				break
+	var/diffrences = GLOB.implant_class_tiers[cybernetic.implant_class]
 
 	if(diffrences == 0)
-		to_chat(current_user,"<span class='notice'> Cyberlink beeps: [uppertext(cybernetic.name)] ALREADY COMPATIBLE.</span>")
+		to_chat(current_user,"<span class='notice'> Cyberlink beeps: [uppertext(cybernetic.name)] ALREADY CRACKED.</span>")
 		cleanup()
 		return
 
@@ -70,36 +53,32 @@
 	current_timer_id = FALSE
 
 /obj/item/cyberlink_connector/proc/hack_success(success as num)
-	for(var/info in cybernetic.encode_info)
-		if(cybernetic.encode_info[info] == NO_PROTOCOL)
-			continue
-		//Not a += because we want to avoid having duplicate entries in either encode_info
-		cybernetic.encode_info[info] |= parent_cyberlink.encode_info[info]
+	cybernetic.implant_class = CYBER_CLASS_CRACKED
+	cybernetic.implant_cost = max(0, cybernetic.implant_cost - 1)
 	current_user.mind.adjust_experience(/datum/skill/implant_hacking,success * 25)
 	to_chat(current_user,"<span class='notice'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] SUCCESS. COMPATIBILITY ACHIEVED.</span>")
 	cleanup()
-
 
 /obj/item/cyberlink_connector/proc/hack_failure(failed as num)
 	var/chance = rand(0,40*failed)
 	switch(chance)
 		if(0 to 25)
-			to_chat(current_user,"<span class='warning'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MINOR FAILURE. COMPATIBILITY NOT ACHIEVED. NO DAMAGE DETECTED.</span>")
+			to_chat(current_user,"<span class='warning'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MINOR FAILURE. CRACKING PROCESS ABORTED.</span>")
 		if(26 to 40)
-			to_chat(current_user,"<span class='warning'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MEDIUM FAILURE. COMPATIBILITY NOT ACHIEVED. SMALL AMOUNT OF DAMAGE DETECTED.</span>")
+			to_chat(current_user,"<span class='warning'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MEDIUM FAILURE. CRACKING PROCESS ABORTED. SMALL AMOUNT OF DAMAGE DETECTED.</span>")
 			current_user.adjustFireLoss(10)
 			current_user.emote("scream")
 		if(41 to 50)
-			to_chat(current_user,"<span class='warning'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MEDIUM FAILURE. COMPATIBILITY NOT ACHIEVED. PROTOCOL SCRAMBILING DETECTED.</span>")
-			cybernetic.random_encode()
+			to_chat(current_user,"<span class='warning'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MEDIUM FAILURE. CRACKING PROCESS ABORTED. IMPLANT MOTHER BOARD DAMAGED, NEUROLOGICAL STRESS IMPACT AFFECTED.</span>")
+			cybernetic.implant_cost += 1
 		if(51 to 75)
-			to_chat(current_user,"<span class='danger'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MAJOR FAILURE. COMPATIBILITY NOT ACHIEVED. MINOR ELECTROMAGNETIC PULSE DETECTED.</span>")
+			to_chat(current_user,"<span class='danger'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MAJOR FAILURE. CRACKING PROCESS ABORTED. MINOR ELECTROMAGNETIC PULSE DETECTED.</span>")
 			empulse(current_user, 0, 1)
 		if(76 to 99)
-			to_chat(current_user,"<span class='danger'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MAJOR FAILURE. COMPATIBILITY NOT ACHIEVED. MAJOR ELECTROMAGNETIC PULSE DETECTED.</span>")
+			to_chat(current_user,"<span class='danger'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MAJOR FAILURE. CRACKING PROCESS ABORTED. MAJOR ELECTROMAGNETIC PULSE DETECTED.</span>")
 			empulse(current_user, 1, 2)
 		if(100 to INFINITY)
-			to_chat(current_user,"<span class='danger'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] CRITICAL FAILURE. COMPATIBILITY NOT ACHIEVED. IMPLANT OVERHEATING IN 5 SECONDS.</span>")
+			to_chat(current_user,"<span class='danger'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] CRITICAL FAILURE. CRACKING PROCESS ABORTED. IMPLANT OVERHEATING IN 5 SECONDS.</span>")
 			cybernetic.visible_message("<span class='danger'>[cybernetic.name] begins to flare and twitch as the electronics fry and sizzle!</span>")
 			addtimer(CALLBACK(src, .proc/explode), 5 SECONDS)
 	current_user.mind.adjust_experience(/datum/skill/implant_hacking,(4 - failed)*2)

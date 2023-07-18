@@ -435,6 +435,12 @@
 	greyscale_colors = CIRCUIT_COLOR_SCIENCE
 	build_path = /obj/machinery/computer/mechpad
 
+/obj/item/circuitboard/computer/cybernetic_inspector
+	name = "Cybernetic Inspection Console (Computer Board)"
+	greyscale_colors = CIRCUIT_COLOR_SCIENCE
+	build_path = /obj/machinery/computer/cybernetic_inspector
+
+
 //Security
 
 /obj/item/circuitboard/computer/labor_shuttle

@@ -24,6 +24,9 @@
 		if(stat != DEAD)
 			handle_brain_damage(delta_time, times_fired)
 
+		if(stat != DEAD)
+			handle_implant_stress(delta_time)
+
 	if(stat == DEAD)
 		stop_sound_channel(CHANNEL_HEARTBEAT)
 	else
@@ -866,21 +869,112 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		return 0
 
 	var/total = 0
-	for(var/implant in implant_stress)
-		total += implant_stress[implant]
-
 	var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+	for(var/implant in implant_stress)
+		var/obj/item/organ/cyberimp/C = implant
+		total += C.get_stress(link)
+
 	if(link)
 		total = max(0, total - link.implant_stress_reduction)
 	return total
 
 /mob/living/carbon/proc/handle_implant_stress(delta_time)
 	current_implant_stress = max(0, current_implant_stress + get_total_implant_stress() - implant_stress_natural_decay)
+
 	switch(current_implant_stress)
 		if(160 to 320)
+			if(cached_implant_stress > 320)
+				clear_fullscreen("implant_noise",TRUE)
+				to_chat(src,span_warning("Your can feel your body slowly calming itself..."))
+
+			if(cached_implant_stress < 160)
+				to_chat(src,span_warning("You feel unlike yourself..."))
+				var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+				link?.throw_error(1)
+
+			if(prob(12.5))
+				Dizzy(1)
+			if(prob(12.5))
+				Jitter(1)
 
 		if(320 to 640)
+			if(cached_implant_stress > 640)
+				overlay_fullscreen("implant_noise", /atom/movable/screen/fullscreen/noise_low,0)
+				to_chat(src,span_warning("Your feel at ease with your being..."))
+
+			if(cached_implant_stress < 320)
+				overlay_fullscreen("implant_noise", /atom/movable/screen/fullscreen/noise_low,0)
+				to_chat(src,span_warning("You can feel your body trembling..."))
+				var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+				link?.throw_error(2)
+
+			if(prob(20))
+				Dizzy(1)
+			if(prob(20))
+				Jitter(1)
+
+			if(prob(25))
+				hallucination += 5
 
 		if(640 to 1280)
+			if(cached_implant_stress > 1280)
+				overlay_fullscreen("implant_noise", /atom/movable/screen/fullscreen/noise_mid,0)
+				to_chat(src,span_warning("Your grasp on reality strengthens..."))
 
-		if(1280 to 2560)
+				var/atom/movable/screen/plane_master/floor/game_plane  = hud_used.plane_masters["[GAME_PLANE]"]
+				var/atom/movable/screen/plane_master/floor/floor_plane  = hud_used.plane_masters["[FLOOR_PLANE]"]
+
+				var/atom/movable/screen/fullscreen/floor_noise = overlay_fullscreen("floor_noise",/atom/movable/screen/fullscreen/noise_floor_low,0)
+				var/atom/movable/screen/fullscreen/game_noise = overlay_fullscreen("game_noise",/atom/movable/screen/fullscreen/noise_wall_low,0)
+
+				floor_noise.add_filter("floor_noise",1,list("type"="alpha","render_source"=floor_plane.get_render_target()))
+				game_noise.add_filter("game_noise",1,list("type"="alpha","render_source"=game_plane.get_render_target()))
+
+
+			if(cached_implant_stress < 640)
+				overlay_fullscreen("implant_noise", /atom/movable/screen/fullscreen/noise_mid,0)
+				to_chat(src,span_warning("You feel as if your body doesn't belong to you..."))
+				var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+				link?.throw_error(3)
+
+				var/atom/movable/screen/plane_master/floor/game_plane  = hud_used.plane_masters["[GAME_PLANE]"]
+				var/atom/movable/screen/plane_master/floor/floor_plane  = hud_used.plane_masters["[FLOOR_PLANE]"]
+
+				var/atom/movable/screen/fullscreen/floor_noise = overlay_fullscreen("floor_noise",/atom/movable/screen/fullscreen/noise_floor_low,0)
+				var/atom/movable/screen/fullscreen/game_noise = overlay_fullscreen("game_noise",/atom/movable/screen/fullscreen/noise_wall_low,0)
+
+				floor_noise.add_filter("floor_noise",1,list("type"="alpha","render_source"=floor_plane.get_render_target()))
+				game_noise.add_filter("game_noise",1,list("type"="alpha","render_source"=game_plane.get_render_target()))
+
+			if(prob(35))
+				Dizzy(1)
+			if(prob(35))
+				Jitter(1)
+
+			if(prob(40))
+				hallucination += 5
+
+			if(prob(10))
+				emote("laugh")
+
+			if(prob(10))
+				emote("drool")
+
+
+		if(1280 to INFINITY)
+			if(cached_implant_stress < 1280)
+				overlay_fullscreen("implant_noise", /atom/movable/screen/fullscreen/noise_high,0)
+				to_chat(src,span_warning("You're completely loosing your grasp on reality..."))
+				var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+				link?.throw_error(4)
+
+				var/atom/movable/screen/plane_master/floor/game_plane  = hud_used.plane_masters["[GAME_PLANE]"]
+				var/atom/movable/screen/plane_master/floor/floor_plane  = hud_used.plane_masters["[FLOOR_PLANE]"]
+
+				var/atom/movable/screen/fullscreen/floor_noise = overlay_fullscreen("floor_noise",/atom/movable/screen/fullscreen/noise_floor,0)
+				var/atom/movable/screen/fullscreen/game_noise = overlay_fullscreen("game_noise",/atom/movable/screen/fullscreen/noise_wall,0)
+
+				floor_noise.add_filter("floor_noise",1,list("type"="alpha","render_source"=floor_plane.get_render_target()))
+				game_noise.add_filter("game_noise",1,list("type"="alpha","render_source"=game_plane.get_render_target()))
+
+	cached_implant_stress = current_implant_stress

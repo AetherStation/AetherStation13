@@ -1493,3 +1493,13 @@
 	clot_rate = 0.4 //slightly better than regular coagulant
 	passive_bleed_modifier = 0.5
 	overdose_threshold = 10 //but easier to overdose on
+
+/datum/reagent/medicine/neural_stabilizer
+	name = "Neural Stabilizer"
+	description = "A wonder compound capable of quickly reducing the amount of neural stress in the patient, side effects include dizziness, staggering, nausea and fainting."
+	color = "#550062"
+	taste_description = "battery acid"
+
+/datum/reagent/medicine/neural_stabilizer/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
+	. = ..()
+	M.current_implant_stress = max(0,M.current_implant_stress - round(sqrt(M.current_implant_stress * 0.4)))

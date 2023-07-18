@@ -11,6 +11,8 @@
 	screen.icon_state = "[initial(screen.icon_state)][severity]"
 	screen.severity = severity
 	if (client && screen.should_show_to(src))
+		var/list/screen_size = getviewsize(client.view)
+		message_admins("[screen_size[1]]  -  [screen_size[2]]")
 		screen.update_for_view(client.view)
 		client.screen += screen
 
@@ -66,12 +68,25 @@
 	var/view = 7
 	var/severity = 0
 	var/show_when_dead = FALSE
+	var/alt_large_icon = 'icons/hud/screen_full_big.dmi'
+	var/alt_icon = FALSE
 
 /atom/movable/screen/fullscreen/proc/update_for_view(client_view)
-	if (screen_loc == "CENTER-7,CENTER-7" && view != client_view)
-		var/list/actualview = getviewsize(client_view)
+	if(screen_loc == "CENTER-9,CENTER-7" && view != client_view && alt_icon)
+		icon = initial(icon)
+		screen_loc = "CENTER-7,CENTER-7"
 		view = client_view
-		transform = matrix(actualview[1]/FULLSCREEN_OVERLAY_RESOLUTION_X, 0, 0, 0, actualview[2]/FULLSCREEN_OVERLAY_RESOLUTION_Y, 0)
+		return
+
+	if(screen_loc == "CENTER-7,CENTER-7" && view != client_view)
+		var/list/actualview = getviewsize(client_view)
+		if(alt_icon && (actualview[1] != 15 || actualview[2] != 15))
+			icon = alt_large_icon
+			screen_loc = "CENTER-9,CENTER-7"
+		else
+			icon = initial(icon)
+			view = client_view
+			transform = matrix(actualview[1]/FULLSCREEN_OVERLAY_RESOLUTION_X, 0, 0, 0, actualview[2]/FULLSCREEN_OVERLAY_RESOLUTION_Y, 0)
 
 /atom/movable/screen/fullscreen/proc/should_show_to(mob/mymob)
 	if(!show_when_dead && mymob.stat == DEAD)
@@ -120,6 +135,55 @@
 /atom/movable/screen/fullscreen/ivanov_display
 	icon_state = "ivanov"
 	alpha = 180
+
+/atom/movable/screen/fullscreen/noise_low
+	icon_state = "noise"
+	layer = NOISE_LAYER
+	plane = FULLSCREEN_PLANE
+	alpha = 63
+
+/atom/movable/screen/fullscreen/noise_mid
+	icon_state = "noise"
+	layer = NOISE_LAYER
+	plane = FULLSCREEN_PLANE
+	alpha = 127
+
+/atom/movable/screen/fullscreen/noise_high
+	icon_state = "noise"
+	layer = NOISE_LAYER
+	plane = FULLSCREEN_PLANE
+
+/atom/movable/screen/fullscreen/noise_floor_low
+	icon_state = "noise_floor"
+	appearance_flags = TILE_BOUND
+	layer = ABOVE_OPEN_TURF_LAYER
+	plane = BLACKNESS_PLANE
+	alpha = 75
+	alt_icon = TRUE
+
+/atom/movable/screen/fullscreen/noise_wall_low
+	icon_state = "noise_wall"
+	appearance_flags = TILE_BOUND
+	layer = BELOW_MOB_LAYER
+	plane = BLACKNESS_PLANE
+	alpha = 100
+	alt_icon = TRUE
+
+/atom/movable/screen/fullscreen/noise_floor
+	icon_state = "noise_floor"
+	appearance_flags = TILE_BOUND
+	layer = ABOVE_OPEN_TURF_LAYER
+	plane = BLACKNESS_PLANE
+	alpha = 150
+	alt_icon = TRUE
+
+/atom/movable/screen/fullscreen/noise_wall
+	icon_state = "noise_wall"
+	appearance_flags = TILE_BOUND
+	layer = BELOW_MOB_LAYER
+	plane = BLACKNESS_PLANE
+	alpha = 200
+	alt_icon = TRUE
 
 /atom/movable/screen/fullscreen/impaired
 	icon_state = "impairedoverlay"

@@ -56,7 +56,7 @@
 	. = ..()
 	var/obj/item/organ/cyberimp/implant = .
 	if(prob(30) && randomizable)
-		implant.random_encode()
+		implant.implant_class = CYBER_CLASS_CRACKED
 
 // LEGS
 
