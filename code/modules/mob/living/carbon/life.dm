@@ -918,6 +918,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 		if(640 to 1280)
 			if(cached_implant_stress > 1280)
+				cure_trauma_type(/datum/brain_trauma/special/psychotic_brawling,TRAUMA_RESILIENCE_ABSOLUTE)
 				overlay_fullscreen("implant_noise", /atom/movable/screen/fullscreen/noise_mid,0)
 				to_chat(src,span_warning("Your grasp on reality strengthens..."))
 
@@ -960,9 +961,15 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(prob(10))
 				emote("drool")
 
+			if(prob(10))
+				emote("cough")
+				to_chat(src, span_warning("You cough up nodules of coagulated blood..."))
+				blood_volume -= 5
+
 
 		if(1280 to INFINITY)
 			if(cached_implant_stress < 1280)
+				gain_trauma_type(/datum/brain_trauma/special/psychotic_brawling,TRAUMA_RESILIENCE_ABSOLUTE)
 				overlay_fullscreen("implant_noise", /atom/movable/screen/fullscreen/noise_high,0)
 				to_chat(src,span_warning("You're completely loosing your grasp on reality..."))
 				var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
@@ -976,5 +983,50 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 				floor_noise.add_filter("floor_noise",1,list("type"="alpha","render_source"=floor_plane.get_render_target()))
 				game_noise.add_filter("game_noise",1,list("type"="alpha","render_source"=game_plane.get_render_target()))
+
+			hallucination += 2
+			if(prob(75))
+				Dizzy(1)
+
+			if(prob(75))
+				Jitter(1)
+
+			if(prob(50))
+				emote("laugh")
+
+			if(prob(50))
+				emote("laugh")
+
+			if(prob(10))
+				emote("cough")
+				to_chat(src,span_danger("You cough up nodules of bile mixed with coagulated blood..."))
+				blood_volume -= 10
+				adjust_disgust(15)
+
+			if(prob(10))
+				var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+				emote("scream")
+				if(!link)
+					to_chat(src,span_warning("Sensory data from all your implants completely overwhelms you, a red streak runs down your nose."))
+					adjustOrganLoss(ORGAN_SLOT_BRAIN,5)
+					blood_volume -= 10
+				else
+					switch(link.implant_class)
+						if(CYBER_CLASS_NT_LOW)
+							to_chat(src, span_warning("Sensory data from all your implants floods your brain, but your cyberlink manages to slightly reduce the load on your brain."))
+							adjustOrganLoss(ORGAN_SLOT_BRAIN,2.5)
+						if(CYBER_CLASS_NT_HIGH)
+							to_chat(src, span_warning("Sensory data from all your implants floods your brain, but your cyberlink manages to moderately reduce the load on your brain."))
+							adjustOrganLoss(ORGAN_SLOT_BRAIN,1.5)
+						if(CYBER_CLASS_TERRA)
+							to_chat(src, span_warning("Your cyberlink barely managed to handle all of the sensory information from your implants!"))
+							adjustOrganLoss(ORGAN_SLOT_BRAIN,0.1)
+						if(CYBER_CLASS_SYNDICATE)
+							to_chat(src, span_warning("Your cyberlink manages to handle the sensory information from all your implants!"))
+						if(CYBER_CLASS_ADMIN)
+							to_chat(src, span_warning("Your cyberlink manages to handle the sensory information from all your implants!"))
+						if(CYBER_CLASS_CRACKED)
+							to_chat(src, span_warning("Your cyberlink can barely keep up with all of the sensory information from your implants"))
+							adjustOrganLoss(ORGAN_SLOT_BRAIN,(7 - link.implant_stress_reduction)/2)
 
 	cached_implant_stress = current_implant_stress

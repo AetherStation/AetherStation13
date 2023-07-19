@@ -46,11 +46,11 @@
 	required_reagents = list(/datum/reagent/consumable/tea = 1, /datum/reagent/consumable/enzyme = 3 , /datum/reagent/fuel = 1)
 
 /datum/chemical_reaction/maint_sludge
-	results = list(/datum/reagent/drug/maint/sludge = 1)
+	results = list(/datum/reagent/drug/maint/sludge = 2)
 	required_reagents = list(/datum/reagent/drug/maint/tar = 3 , /datum/reagent/toxin/acid/fluacid = 1)
 	required_catalysts = list(/datum/reagent/hydrogen_peroxide = 5)
 
 /datum/chemical_reaction/maint_powder
-	results = list(/datum/reagent/drug/maint/powder = 1)
+	results = list(/datum/reagent/drug/maint/powder = 5)
 	required_reagents = list(/datum/reagent/drug/maint/sludge = 6 , /datum/reagent/toxin/acid/nitracid = 1 , /datum/reagent/consumable/enzyme = 1)
 	required_catalysts = list(/datum/reagent/acetone_oxide = 5)

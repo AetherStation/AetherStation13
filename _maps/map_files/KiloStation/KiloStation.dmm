@@ -8066,20 +8066,6 @@
 /obj/effect/turf_decal/siding/purple,
 /turf/open/floor/iron/showroomfloor,
 /area/science/robotics/lab)
-"aCe" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
-/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/purple/corner{
-	dir = 8
-	},
-/turf/open/floor/iron/showroomfloor,
-/area/science/robotics/lab)
 "aCh" = (
 /obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple{
@@ -8197,17 +8183,18 @@
 /turf/open/floor/iron/showroomfloor,
 /area/medical/exam_room)
 "aCK" = (
-/obj/effect/turf_decal/tile/purple,
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment{
-	dir = 4
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
 	},
-/obj/effect/turf_decal/siding/purple,
+/obj/effect/turf_decal/siding/purple/corner{
+	dir = 8
+	},
 /turf/open/floor/iron/showroomfloor,
 /area/science/robotics/lab)
 "aCM" = (
@@ -8324,17 +8311,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
-"aDs" = (
-/obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/purple,
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
-/turf/open/floor/iron/showroomfloor,
-/area/science/robotics/lab)
 "aDw" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/turf_decal/stripes/corner{
@@ -8678,9 +8654,23 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral,
-/obj/machinery/vending/wardrobe/robo_wardrobe,
 /obj/effect/turf_decal/bot,
-/turf/open/floor/iron/dark,
+/obj/effect/turf_decal/siding/purple{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/purple{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/purple{
+	dir = 1
+	},
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/iron/showroomfloor,
 /area/science/robotics/lab)
 "aER" = (
 /obj/effect/decal/cleanable/dirt,
@@ -9126,21 +9116,9 @@
 /turf/open/floor/iron/showroomfloor,
 /area/security/execution/education)
 "aHM" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/effect/turf_decal/siding/purple{
-	dir = 8
-	},
 /turf/open/floor/iron/showroomfloor,
 /area/science/robotics/lab)
 "aHN" = (
@@ -9171,7 +9149,6 @@
 "aHP" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
-/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/showroomfloor,
 /area/science/robotics/lab)
 "aHQ" = (
@@ -9703,9 +9680,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/purple,
-/obj/structure/disposalpipe/segment{
-	dir = 5
-	},
 /turf/open/floor/iron/showroomfloor,
 /area/science/robotics/lab)
 "aKN" = (
@@ -13286,22 +13260,24 @@
 /turf/open/floor/iron/showroomfloor,
 /area/medical/virology)
 "aVd" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/bot,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/siding/purple{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/purple{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/purple{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple{
+	dir = 1
+	},
+/obj/machinery/computer/cybernetic_inspector{
 	dir = 4
 	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = -4;
-	pixel_y = 4
-	},
-/obj/item/multitool,
-/obj/item/storage/toolbox/electrical,
-/obj/item/multitool{
-	pixel_x = 4
-	},
-/obj/item/reagent_containers/glass/beaker/large,
-/turf/open/floor/iron/dark,
+/turf/open/floor/iron/showroomfloor,
 /area/science/robotics/lab)
 "aVf" = (
 /obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
@@ -23931,16 +23907,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/purple,
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/purple{
-	dir = 8
-	},
 /turf/open/floor/iron/showroomfloor,
 /area/science/robotics/lab)
 "bQX" = (
@@ -63947,6 +63914,7 @@
 	pixel_x = 8
 	},
 /obj/machinery/power/apc/auto_name/north,
+/obj/item/storage/secure/briefcase/neural_stabilizer,
 /turf/open/floor/iron/dark,
 /area/command/heads_quarters/rd)
 "pvR" = (
@@ -76431,6 +76399,30 @@
 /obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
 /turf/open/floor/iron/dark,
 /area/command/gateway)
+"vjl" = (
+/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/purple,
+/obj/effect/mapping_helpers/simple_pipes/supply/hidden/layer4,
+/obj/effect/mapping_helpers/simple_pipes/scrubbers/hidden/layer2,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable,
+/obj/effect/turf_decal/siding/purple,
+/obj/structure/rack,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/multitool,
+/obj/item/storage/secure/briefcase/neural_stabilizer,
+/turf/open/floor/iron/showroomfloor,
+/area/science/robotics/lab)
 "vjp" = (
 /obj/machinery/atmospherics/components/binary/pump/on{
 	dir = 8;
@@ -79254,7 +79246,6 @@
 /turf/open/floor/carpet/green,
 /area/service/bar)
 "wwp" = (
-/obj/machinery/disposal/bin,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -79266,15 +79257,13 @@
 	dir = 8
 	},
 /obj/machinery/firealarm/directional/south,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
 /obj/machinery/button/door/directional/south{
 	id = "robotics_shutters";
 	name = "Robotics Shutter Toggle";
 	pixel_x = 24;
 	req_access_txt = "29"
 	},
+/obj/machinery/vending/wardrobe/robo_wardrobe,
 /turf/open/floor/iron/dark,
 /area/science/robotics/lab)
 "wwB" = (
@@ -118777,7 +118766,7 @@ aZS
 axK
 azI
 aAo
-aBX
+vjl
 aZU
 bgB
 aZS
@@ -119291,7 +119280,7 @@ atq
 aXt
 apS
 aBe
-aCe
+aHP
 aHM
 bQW
 aZy
@@ -119548,7 +119537,7 @@ atq
 aXe
 aqU
 auk
-aDs
+auk
 aHP
 aKM
 bbQ

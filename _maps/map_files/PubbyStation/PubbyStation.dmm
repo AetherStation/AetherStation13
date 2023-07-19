@@ -23825,6 +23825,22 @@
 	dir = 4
 	},
 /obj/structure/cable,
+/obj/structure/table,
+/obj/item/stack/sheet/plasteel{
+	amount = 10
+	},
+/obj/item/stack/sheet/glass{
+	amount = 20;
+	pixel_x = 3;
+	pixel_y = -4
+	},
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/iron/fifty,
 /turf/open/floor/iron,
 /area/science/robotics/lab)
 "blL" = (
@@ -24121,20 +24137,11 @@
 /turf/open/floor/iron,
 /area/science/robotics/lab)
 "bmR" = (
-/obj/structure/table,
-/obj/item/stack/sheet/glass{
-	amount = 20;
-	pixel_x = 3;
-	pixel_y = -4
-	},
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/iron/fifty,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 27
+	},
+/obj/structure/chair{
+	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/science/robotics/lab)
@@ -24420,20 +24427,12 @@
 /turf/open/floor/iron,
 /area/science/robotics/lab)
 "bnS" = (
-/obj/structure/table,
-/obj/item/stack/sheet/plasteel{
-	amount = 10
-	},
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
 /obj/machinery/airalarm{
 	dir = 8;
 	pixel_x = 23
+	},
+/obj/machinery/computer/cybernetic_inspector{
+	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/science/robotics/lab)
@@ -24785,6 +24784,14 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/storage/secure/briefcase/neural_stabilizer,
 /turf/open/floor/iron/dark,
 /area/science/robotics/lab)
 "bpa" = (
@@ -30674,6 +30681,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
+/obj/item/storage/secure/briefcase/neural_stabilizer,
 /turf/open/floor/iron/dark,
 /area/command/heads_quarters/rd)
 "bET" = (

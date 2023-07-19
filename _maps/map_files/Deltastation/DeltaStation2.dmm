@@ -6080,12 +6080,12 @@
 /obj/effect/turf_decal/tile/purple,
 /obj/structure/table,
 /obj/item/paper/guides/mos6502_reference_sheet{
-	pixel_y = 5;
-	pixel_x = 12
+	pixel_x = 12;
+	pixel_y = 5
 	},
 /obj/item/paper/guides/mainframe_reference{
-	pixel_y = 5;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 5
 	},
 /turf/open/floor/iron/white,
 /area/science/misc_lab)
@@ -22894,7 +22894,6 @@
 /area/science/lab)
 "daS" = (
 /obj/machinery/light/directional/north,
-/obj/item/kirbyplants/random,
 /obj/machinery/status_display/evac/directional/north,
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -24199,6 +24198,7 @@
 	network = list("ss13","rd")
 	},
 /obj/effect/turf_decal/tile/purple,
+/obj/item/kirbyplants/random,
 /turf/open/floor/iron/white,
 /area/science/lab)
 "dfv" = (
@@ -28793,6 +28793,18 @@
 	},
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/bot,
+/obj/machinery/ecto_sniffer{
+	pixel_x = -6;
+	pixel_y = 6
+	},
+/obj/item/bodypart/r_arm/robot{
+	pixel_x = 3
+	},
+/obj/item/bodypart/l_arm/robot{
+	pixel_x = -3
+	},
+/obj/item/stack/cable_coil,
+/obj/item/stack/cable_coil,
 /turf/open/floor/iron,
 /area/science/robotics/lab)
 "dzH" = (
@@ -28826,6 +28838,11 @@
 	pixel_x = 24;
 	req_access_txt = "29"
 	},
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
+/obj/item/assembly/flash/handheld,
 /turf/open/floor/iron,
 /area/science/robotics/lab)
 "dzL" = (
@@ -28979,17 +28996,14 @@
 /turf/open/floor/iron,
 /area/science/mixing)
 "dAJ" = (
-/obj/item/stack/sheet/plasteel{
-	amount = 15
-	},
-/obj/item/wrench,
 /obj/machinery/light/directional/west,
-/obj/item/clothing/glasses/welding,
-/obj/structure/table/reinforced,
 /obj/effect/turf_decal/bot,
 /obj/machinery/firealarm/directional/west,
 /obj/machinery/light_switch/directional/west{
 	pixel_x = -38
+	},
+/obj/structure/chair{
+	dir = 4
 	},
 /turf/open/floor/iron,
 /area/science/robotics/lab)
@@ -29374,24 +29388,9 @@
 /turf/open/floor/iron,
 /area/engineering/break_room)
 "dCp" = (
-/obj/item/stack/cable_coil,
-/obj/item/bodypart/r_arm/robot{
-	pixel_x = 3
-	},
-/obj/item/bodypart/l_arm/robot{
-	pixel_x = -3
-	},
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/structure/table/reinforced,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
-/obj/item/assembly/flash/handheld,
 /obj/effect/turf_decal/bot,
-/obj/machinery/ecto_sniffer{
-	pixel_x = -6;
-	pixel_y = 6
+/obj/machinery/computer/cybernetic_inspector{
+	dir = 4
 	},
 /turf/open/floor/iron,
 /area/science/robotics/lab)
@@ -30003,6 +30002,8 @@
 /obj/item/healthanalyzer,
 /obj/item/paicard,
 /obj/effect/turf_decal/bot,
+/obj/item/clothing/glasses/welding,
+/obj/item/wrench,
 /turf/open/floor/iron,
 /area/science/robotics/lab)
 "dEL" = (
@@ -72246,6 +72247,10 @@
 	},
 /obj/effect/turf_decal/bot,
 /obj/structure/extinguisher_cabinet/directional/west,
+/obj/item/stack/sheet/plasteel{
+	amount = 15
+	},
+/obj/item/storage/secure/briefcase/neural_stabilizer,
 /turf/open/floor/iron,
 /area/science/robotics/lab)
 "pek" = (
@@ -73864,6 +73869,7 @@
 	name = "Research Director's Requests Console";
 	receive_ore_updates = 1
 	},
+/obj/item/storage/secure/briefcase/neural_stabilizer,
 /turf/open/floor/iron,
 /area/command/heads_quarters/rd)
 "pGi" = (

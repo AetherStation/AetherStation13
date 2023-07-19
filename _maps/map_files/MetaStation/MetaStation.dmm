@@ -20097,6 +20097,13 @@
 /obj/machinery/light_switch/directional/north{
 	pixel_x = 9
 	},
+/obj/structure/table/reinforced,
+/obj/item/circuitboard/mecha/ripley/main,
+/obj/item/circuitboard/mecha/ripley/peripherals,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/iron/fifty,
+/obj/item/stack/sheet/iron/fifty,
 /turf/open/floor/iron/dark,
 /area/science/robotics/lab)
 "eIb" = (
@@ -25567,20 +25574,8 @@
 /turf/open/floor/iron/dark,
 /area/security/brig)
 "gGb" = (
-/obj/structure/table/reinforced,
-/obj/item/stock_parts/cell/high/plus{
-	pixel_x = 4;
-	pixel_y = 5
-	},
-/obj/item/stock_parts/cell/high/plus{
-	pixel_x = -8;
-	pixel_y = 9
-	},
-/obj/item/stock_parts/cell/high/plus,
-/obj/machinery/cell_charger,
-/obj/item/borg/upgrade/rename{
-	pixel_x = 3;
-	pixel_y = 18
+/obj/structure/chair{
+	dir = 8
 	},
 /turf/open/floor/iron,
 /area/science/robotics/lab)
@@ -26100,6 +26095,7 @@
 	pixel_x = 6;
 	pixel_y = 10
 	},
+/obj/item/storage/secure/briefcase/neural_stabilizer,
 /turf/open/floor/iron/dark,
 /area/command/heads_quarters/rd)
 "gUC" = (
@@ -32025,6 +32021,7 @@
 	pixel_x = 5;
 	pixel_y = 7
 	},
+/obj/item/storage/secure/briefcase/neural_stabilizer,
 /turf/open/floor/iron,
 /area/science/robotics/lab)
 "jmL" = (
@@ -60868,6 +60865,21 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/cell/high/plus,
+/obj/item/stock_parts/cell/high/plus{
+	pixel_x = 4;
+	pixel_y = 5
+	},
+/obj/item/stock_parts/cell/high/plus{
+	pixel_x = -8;
+	pixel_y = 9
+	},
+/obj/item/borg/upgrade/rename{
+	pixel_x = 3;
+	pixel_y = 18
+	},
 /turf/open/floor/iron/dark,
 /area/science/robotics/lab)
 "tFU" = (
@@ -65335,15 +65347,11 @@
 /turf/open/floor/plating,
 /area/medical/medbay/central)
 "vkL" = (
-/obj/structure/table/reinforced,
 /obj/machinery/power/apc/auto_name/east,
 /obj/structure/cable,
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/iron/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/circuitboard/mecha/ripley/main,
-/obj/item/circuitboard/mecha/ripley/peripherals,
+/obj/machinery/computer/cybernetic_inspector{
+	dir = 8
+	},
 /turf/open/floor/iron,
 /area/science/robotics/lab)
 "vkX" = (

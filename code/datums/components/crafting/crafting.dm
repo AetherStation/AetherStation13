@@ -209,7 +209,7 @@
 			if(!check_tools(a, R, contents))
 				return ", missing tool."
 			var/list/parts = del_reqs(R, a)
-			var/atom/movable/I = new R.result (get_turf(a.loc))
+			var/atom/movable/I = R.craft_item(a)
 			I.CheckParts(parts, R)
 			if(send_feedback)
 				SSblackbox.record_feedback("tally", "object_crafted", 1, I.type)

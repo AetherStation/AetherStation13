@@ -155,6 +155,14 @@
 		new /obj/item/stack/spacecash/c1000(src)
 
 
+/obj/item/storage/secure/briefcase/neural_stabilizer
+	name = "neural stabilization serum case"
+	desc = "it has the heraldry of the Terran government engraved on the side, it contains the neural serum injectors used to temporarily stave off cyberpsychosis."
+
+/obj/item/storage/secure/briefcase/neural_stabilizer/PopulateContents()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	for(var/i = 0, i < STR.max_items - 2, i++)
+		new /obj/item/reagent_containers/hypospray/medipen/neural_stabilizer(src)
 // -----------------------------
 //        Secure Safe
 // -----------------------------

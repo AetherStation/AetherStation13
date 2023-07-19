@@ -31,9 +31,9 @@
 	name = "Terragov Integrated Cybernetic Managment System"
 	desc = "Quite rare around this part of the galaxy, allows unrestricted connection to all of Terragov's implants, we don't guarantee it will work with any other cybernetic tough."
 	item = /obj/item/organ/cyberimp/cyberlink/terragov
-	availability_prob = 15
-	price_min = 700
-	price_max = 1000
+	availability_prob = 5
+	price_min = 1500
+	price_max = 2000
 
 /datum/blackmarket_item/cyberlinks/syndicate
 	name = "Interdyne Cybernetic Operating Bioware"
@@ -55,7 +55,7 @@
 /datum/blackmarket_item/cybernetics/spawn_item(loc)
 	. = ..()
 	var/obj/item/organ/cyberimp/implant = .
-	if(prob(30) && randomizable)
+	if(prob(10) && randomizable)
 		implant.implant_class = CYBER_CLASS_CRACKED
 
 // LEGS

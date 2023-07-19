@@ -9506,6 +9506,9 @@
 "blz" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
+/obj/structure/chair{
+	dir = 4
+	},
 /turf/open/floor/iron/white,
 /area/science/robotics/lab)
 "blA" = (
@@ -22277,6 +22280,7 @@
 /obj/structure/table,
 /obj/item/pen,
 /obj/machinery/status_display/ai/directional/north,
+/obj/item/storage/secure/briefcase/neural_stabilizer,
 /turf/open/floor/iron/cafeteria,
 /area/command/heads_quarters/rd)
 "fKk" = (
@@ -45243,6 +45247,8 @@
 /obj/machinery/light_switch/directional/west,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable,
+/obj/structure/table,
+/obj/item/storage/secure/briefcase/neural_stabilizer,
 /turf/open/floor/iron/white,
 /area/science/robotics/lab)
 "tTw" = (
@@ -50956,6 +50962,14 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plating,
 /area/commons/storage/emergency/port)
+"xsP" = (
+/obj/structure/disposalpipe/segment,
+/obj/structure/cable,
+/obj/machinery/computer/cybernetic_inspector{
+	dir = 4
+	},
+/turf/open/floor/iron/white,
+/area/science/robotics/lab)
 "xta" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -96215,7 +96229,7 @@ jxN
 bfV
 sQp
 biK
-blz
+xsP
 blz
 tTq
 gTp

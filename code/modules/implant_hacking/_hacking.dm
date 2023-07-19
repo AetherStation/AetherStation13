@@ -54,7 +54,6 @@
 
 /obj/item/cyberlink_connector/proc/hack_success(success as num)
 	cybernetic.implant_class = CYBER_CLASS_CRACKED
-	cybernetic.implant_cost = max(0, cybernetic.implant_cost - 1)
 	current_user.mind.adjust_experience(/datum/skill/implant_hacking,success * 25)
 	to_chat(current_user,"<span class='notice'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] SUCCESS. COMPATIBILITY ACHIEVED.</span>")
 	cleanup()
@@ -70,7 +69,7 @@
 			current_user.emote("scream")
 		if(41 to 50)
 			to_chat(current_user,"<span class='warning'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MEDIUM FAILURE. CRACKING PROCESS ABORTED. IMPLANT MOTHER BOARD DAMAGED, NEUROLOGICAL STRESS IMPACT AFFECTED.</span>")
-			cybernetic.implant_cost += 1
+			cybernetic.implant_class = CYBER_CLASS_CRACKED_BAD
 		if(51 to 75)
 			to_chat(current_user,"<span class='danger'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] MAJOR FAILURE. CRACKING PROCESS ABORTED. MINOR ELECTROMAGNETIC PULSE DETECTED.</span>")
 			empulse(current_user, 0, 1)

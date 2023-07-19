@@ -8,7 +8,6 @@
 	var/implant_overlay
 	var/syndicate_implant = FALSE //Makes the implant invisible to health analyzers and medical HUDs.
 
-	var/implant_cost = 0
 	var/implant_class = CYBER_CLASS_DEFAULT
 
 
@@ -17,15 +16,6 @@
 	if(hacked)
 		. += "It seems to have been tinkered with."
 	if(HAS_TRAIT(user,TRAIT_DIAGNOSTIC_HUD))
-		switch(implant_cost)
-			if(0)
-				. += "It doesn't put much stress on the recipients nervous system."
-			if(1)
-				. += "It puts some stress on the recipients nervous system."
-			if(2)
-				. += "It puts a high amount of stress on the recipients nervous system."
-			if(3)
-				. += "It puts a tremendous amount of stress on the recipients nervous system."
 		switch(implant_class)
 			if(CYBER_CLASS_DEFAULT)
 				. += "It is an implant of unknown origin."
@@ -62,8 +52,8 @@
 
 /obj/item/organ/cyberimp/proc/get_stress( obj/item/organ/cyberimp/cyberlink/link = null)
 	if(link?.implant_class == implant_class)
-		return max(0,implant_cost - 1)
-	return implant_cost
+		return max(0,GLOB.implant_class_tiers[implant_class] - 1)
+	return GLOB.implant_class_tiers
 
 /obj/item/organ/cyberimp/cyberlink
 	name = "cybernetic brain link"
@@ -118,6 +108,51 @@
 	name = "G.O.D. Cybernetics System"
 	implant_class = CYBER_CLASS_ADMIN
 	implant_stress_reduction = INFINITY
+
+/obj/item/organ/cyberimp/cyberlink/cracked
+	name = "custom cyberlink"
+	implant_class = CYBER_CLASS_CRACKED
+
+/obj/item/organ/cyberimp/cyberlink/cracked/Initialize(mob/living/creator)
+	. = ..()
+	if(!creator || !creator.mind)
+		var/quality = pick_weight(list(CYBERLINK_QUALITY_SHODDY = 2,CYBERLINK_QUALITY_SHODDY = 3, CYBERLINK_QUALITY_DECENT = 7, CYBERLINK_QUALITY_GOOD = 5, CYBERLINK_QUALITY_EXCELLENT = 2, CYBERLINK_QUALITY_MASTERWORK = 1))
+		set_quality(quality)
+	else
+		set_quality(creator.mind.get_skill_modifier(/datum/skill/implant_hacking, SKILL_CYBERLINK_QUALITY_MODIFIER))
+
+/* Quality:
+	shoddy -> -1 implant_stress_reduction
+	poor -> 0 implant_stress_reduction
+	decent -> 1 implant_stress_reduction
+	good -> 2 implant_stres_reduction
+	excellent -> 4 implant_stress_reduction
+	masterwork -> 5 implant_stress_reduction
+	legendary -> 7 implant_stress_reduction
+*/
+/obj/item/organ/cyberimp/cyberlink/cracked/proc/set_quality(quality)
+	switch(quality)
+		if(CYBERLINK_QUALITY_SHODDY)
+			name = "shoddy custom-made cyberlink"
+			implant_stress_reduction = -1
+		if(CYBERLINK_QUALITY_POOR)
+			name = "poor custom-made cyberlink"
+			implant_stress_reduction = 0
+		if(CYBERLINK_QUALITY_DECENT)
+			name = "decent custom-made cyberlink"
+			implant_stress_reduction = 1
+		if(CYBERLINK_QUALITY_GOOD)
+			name = "good custom-made cyberlink"
+			implant_stress_reduction = 2
+		if(CYBERLINK_QUALITY_EXCELLENT)
+			name = "excellent custom-made cyberlink"
+			implant_stress_reduction = 4
+		if(CYBERLINK_QUALITY_MASTERWORK)
+			name = "masterwork custom-made cyberlink"
+			implant_stress_reduction = 5
+		if(CYBERLINK_QUALITY_LEGENDARY)
+			name = "legendary custom-made cyberlink"
+			implant_stress_reduction = 7
 
 /obj/item/autosurgeon/organ/cyberlink_nt_low
 	starting_organ = /obj/item/organ/cyberimp/cyberlink/nt_low

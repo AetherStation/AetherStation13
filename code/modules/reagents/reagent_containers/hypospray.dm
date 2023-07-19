@@ -312,3 +312,13 @@
 	volume = 15
 	amount_per_transfer_from_this = 15
 	list_reagents = list(/datum/reagent/medicine/epinephrine = 5, /datum/reagent/medicine/coagulant = 2.5, /datum/reagent/iron = 3.5, /datum/reagent/medicine/salglu_solution = 4)
+
+/obj/item/reagent_containers/hypospray/medipen/neural_stabilizer
+	name = "Neural stabilization serum autoinjector"
+	desc = "An autoinjector used on heavily cybernetically modified people used to treat cyberpsychosis."
+	icon_state = "robo_injector"
+	base_icon_state = "robo_injector"
+	volume = 25
+	amount_per_transfer_from_this = 25
+	list_reagents = list(/datum/reagent/medicine/neural_stabilizer = 25)
+

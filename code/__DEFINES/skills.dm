@@ -28,6 +28,7 @@
 #define SKILL_PROBS_MODIFIER "skill_probability_modifier"//ideally added/subtracted where beneficial in prob(x) calls
 #define SKILL_RANDS_MODIFIER "skill_randomness_modifier"//ideally added/subtracted where beneficial in rand(x,y) calls
 #define SKILL_TIME_MODIFIER "skill_time_modifier" //ideally added to timers and other do_afters()
+#define SKILL_CYBERLINK_QUALITY_MODIFIER "skill_cyberlink_quality_modifier"
 
 // Gets the reference for the skill type that was given
 #define GetSkillRef(A) (SSskills.all_skills[A])
@@ -35,3 +36,11 @@
 //number defines
 #define CLEAN_SKILL_BEAUTY_ADJUSTMENT -15//It's a denominator so no 0. Higher number = less cleaning xp per cleanable. Negative value means cleanables with negative beauty give xp.
 #define CLEAN_SKILL_GENERIC_WASH_XP 1.5//Value. Higher number = more XP when cleaning non-cleanables (walls/floors/lips)
+
+#define CYBERLINK_QUALITY_SHODDY "shoddy"
+#define CYBERLINK_QUALITY_POOR "poor"
+#define CYBERLINK_QUALITY_DECENT "decent"
+#define CYBERLINK_QUALITY_GOOD "good"
+#define CYBERLINK_QUALITY_EXCELLENT "excellent"
+#define CYBERLINK_QUALITY_MASTERWORK "masterwork"
+#define CYBERLINK_QUALITY_LEGENDARY "legendary"

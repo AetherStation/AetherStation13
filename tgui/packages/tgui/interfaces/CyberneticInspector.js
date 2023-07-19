@@ -14,6 +14,7 @@ export const CyberneticInspector = (props, context) => {
     organs = [],
     bodyparts = [],
   } = data;
+  const stress = no_patient===0 ?(patient.total_neural_stress/1280)*100 : 0;
   return (
     <Window
       width={600}
@@ -36,19 +37,24 @@ export const CyberneticInspector = (props, context) => {
           </Tabs.Tab>
         </Tabs>
         <Section title="Patient Data">
-          <Box><b>name: </b>{patient.name}</Box>
-          <Box><b>neural overload progress: </b>{
-            (patient.total_neural_stress/1280)*100
-          }%
-          </Box>
-          <Box><b>passive neural load: </b>{
-            (patient.total_neural_stress/1280)*100
-          }%
-          </Box>
+          {no_patient===0?(
+            <>
+              <Box><b>name: </b>{patient.name}</Box>
+              <Box><b>neural overload progress: </b>{
+                stress >= 100 ? (<Box inline>IN PROGRESS</Box>)
+                  : (<Box inline>{stress}%</Box>)
+              }
+              </Box>
+              <Box><b>passive neural load: </b>{
+                (patient.neural_stress/1280)*100
+              }%
+              </Box>
+            </>
+          ):(<Box> No patient strapped to the chair</Box>)}
         </Section>
-        <Section title="Cybernetic Inspection">
-          {no_patient===0 ? (
-            tab===1 ? (
+        {no_patient===0 ? (
+          <Section title="Cybernetic Inspection">
+            {tab===1 ? (
               <Flex direction="column">
                 {bodyparts.map(bp => (
                   <Flex key={bp.name} direction="row" style={{ 'padding': "8px 8px 8px 8px" }}>
@@ -98,11 +104,9 @@ export const CyberneticInspector = (props, context) => {
                     </Flex>
                   ):(<Box />)))}
               </Flex>
-            )
-          ) : (
-            <Box italic>No patient strapped to the chair</Box>
-          )}
-        </Section>
+            )}
+          </Section>
+        ):(<Box />)}
       </Window.Content>
     </Window>
   );

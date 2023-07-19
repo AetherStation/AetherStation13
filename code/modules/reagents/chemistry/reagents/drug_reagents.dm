@@ -384,9 +384,9 @@
 
 /datum/reagent/drug/maint/powder/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	. = ..()
-	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.1 * REM * delta_time)
-	// 5x if you want to OD, you can potentially go higher, but good luck managing the brain damage.
-	var/amt = max(round(volume/3, 0.1), 1)
+	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.05 * REM * delta_time)
+	// 10x if you want to OD, you can potentially go higher, but good luck managing the brain damage.
+	var/amt = max(round(volume/1.5, 0.1), 1)
 	M?.mind?.experience_multiplier_reasons |= type
 	M?.mind?.experience_multiplier_reasons[type] = amt * REM * delta_time
 

@@ -45,6 +45,9 @@
 /datum/crafting_recipe/proc/on_craft_completion(mob/user, atom/result)
 	return
 
+/datum/crafting_recipe/proc/craft_item(atom/crafter)
+	return new result(crafter.loc)
+
 /datum/crafting_recipe/improv_explosive
 	name = "IED"
 	result = /obj/item/grenade/iedcasing
@@ -1130,6 +1133,26 @@
 	tool_paths = list(/obj/item/bikehorn)
 	time = 40 SECONDS
 	category = CAT_MISC
+
+/datum/crafting_recipe/custom_cyberlink
+	name = "custom-made cyberlink"
+	result = /obj/item/organ/cyberimp/cyberlink/cracked
+	tool_behaviors = list(TOOL_WELDER, TOOL_SCREWDRIVER)
+	reqs = list(
+				/obj/item/stack/cable_coil = 1,
+				/obj/item/stack/sheet/iron = 1,
+				/obj/item/stock_parts/capacitor = 1,
+				/obj/item/stock_parts/scanning_module = 1,
+				/obj/item/computer_hardware/processor_unit = 1,
+				)
+	time = 15 SECONDS
+	category = CAT_ROBOT
+
+/datum/crafting_recipe/custom_cyberlink/craft_item(atom/crafter)
+	return new result(crafter.loc, isliving(crafter) ? crafter : null)
+
+/datum/crafting_recipe/custom_cyberlink/on_craft_completion(mob/user, atom/result)
+	user?.mind.adjust_experience(/datum/skill/implant_hacking,150)
 
 #undef CRAFTING_MACHINERY_CONSUME
 #undef CRAFTING_MACHINERY_USE

@@ -1502,4 +1502,4 @@
 
 /datum/reagent/medicine/neural_stabilizer/on_mob_life(mob/living/carbon/M, delta_time, times_fired)
 	. = ..()
-	M.current_implant_stress = max(0,M.current_implant_stress - round(sqrt(M.current_implant_stress * 0.4)))
+	M.current_implant_stress = max(0,M.current_implant_stress - round(sqrt(M.current_implant_stress * 0.75)))

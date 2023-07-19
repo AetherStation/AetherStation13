@@ -59,13 +59,13 @@
 		var/list/organ = list()
 		organ["name"] = O.name
 		organ["desc"] = O.desc
-		organ["icon"] = icon2base64(icon(O.icon, O.icon_state,0,0))
+		organ["icon"] = icon2base64(icon(O.icon, O.icon_state,SOUTH,frame = 1))
 		organ["cost"] = 0
 		organ["class"] = "natural"
 		organ["syndicate"] = FALSE
 		if(istype(O,/obj/item/organ/cyberimp))
 			var/obj/item/organ/cyberimp/CI = O
-			organ["cost"] = CI.implant_cost
+			organ["cost"] = GLOB.implant_class_tiers[CI.implant_class]
 			organ["class"] = CI.implant_class
 			organ["syndicate"] = CI.syndicate_implant
 		organs += list(organ)
