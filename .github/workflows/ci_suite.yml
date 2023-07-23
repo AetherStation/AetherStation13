@@ -12,12 +12,20 @@ jobs:
     name: Run Linters
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup cache
-        uses: actions/cache@v2
+      - uses: actions/checkout@v3
+      - name: Restore SpacemanDMM cache
+        uses: actions/cache@v3
         with:
           path: ~/SpacemanDMM
-          key: ${{ runner.os }}-spacemandmm-${{ secrets.CACHE_PURGE_KEY }}
+          key: ${{ runner.os }}-spacemandmm
+      - name: Restore Yarn cache
+        uses: actions/cache@v3
+        with:
+          path: tgui/.yarn/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('tgui/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Install Tools
         run: |
           pip3 install setuptools
@@ -28,11 +36,9 @@ jobs:
         run: |
           bash tools/ci/check_filedirs.sh tgstation.dme
           bash tools/ci/check_changelogs.sh
-          find . -name "*.php" -print0 | xargs -0 -n1 php -l
-          find . -name "*.json" -not -path "*/node_modules/*" -print0 | xargs -0 python3 ./tools/json_verifier.py
-          tgui/bin/tgui --lint
-          tgui/bin/tgui --test
           bash tools/ci/check_grep.sh
+          bash tools/ci/check_misc.sh
+          tools/build/build --ci lint
           tools/bootstrap/python -m dmi.test
           tools/bootstrap/python -m mapmerge2.dmm_test
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
@@ -47,18 +53,17 @@ jobs:
     name: Compile Maps
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup cache
-        uses: actions/cache@v2
+      - uses: actions/checkout@v3
+      - name: Restore BYOND cache
+        uses: actions/cache@v3
         with:
           path: ~/BYOND
-          key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
+          key: ${{ runner.os }}-byond
       - name: Compile All Maps
         run: |
           bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
-          python3 tools/ci/template_dm_generator.py
-          tools/build/build dm -DCIBUILDING -DCITESTING -DALL_MAPS
+          tools/build/build --ci dm -DCIBUILDING -DCITESTING -DALL_MAPS
 
   run_all_tests:
     if: "!contains(github.event.head_commit.message, '[ci skip]')"
@@ -73,12 +78,24 @@ jobs:
           - 3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup cache
-        uses: actions/cache@v2
+      - uses: actions/checkout@v3
+      - name: Use Node.js 14.16.1
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.16.1
+      - name: Restore BYOND cache
+        uses: actions/cache@v3
         with:
           path: ~/BYOND
-          key: ${{ runner.os }}-byond-${{ secrets.CACHE_PURGE_KEY }}
+          key: ${{ runner.os }}-byond
+      - name: Restore Yarn cache
+        uses: actions/cache@v3
+        with:
+          path: tgui/.yarn/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('tgui/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Setup database
         run: |
           sudo systemctl start mysql
@@ -96,7 +113,7 @@ jobs:
         run: |
           bash tools/ci/install_byond.sh
           source $HOME/BYOND/byond/bin/byondsetup
-          tools/build/build -DCIBUILDING
+          tools/build/build --ci -DCIBUILDING
           bash tools/ci/run_server.sh
 
   test_windows:
@@ -104,7 +121,19 @@ jobs:
     name: Windows Build
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - name: Use Node.js 14.16.1
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.16.1
+      - name: Restore Yarn cache
+        uses: actions/cache@v3
+        with:
+          path: tgui/.yarn/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('tgui/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
       - name: Compile
         run: pwsh tools/ci/build.ps1
         env:
