@@ -82,7 +82,7 @@
  */
 /obj/vehicle/sealed/mecha/combat/savannah_ivanov/proc/begin_skyfall_charge(mob/pilot)
 	balloon_alert(pilot, "charging skyfall...")
-	INVOKE_ASYNC(src, .proc/skyfall_charge_loop, pilot)
+	INVOKE_ASYNC(src, PROC_REF(skyfall_charge_loop), pilot)
 
 /**
  * ## skyfall_charge_loop
@@ -118,13 +118,13 @@
 			visible_message(span_danger("[src] leaps into the air!"))
 			playsound(src, 'sound/weapons/gun/general/rocket_launch.ogg', 50, TRUE)
 	if(skyfall_charge_level != SKYFALL_CHARGELEVEL_LAUNCH)
-		INVOKE_ASYNC(src, .proc/skyfall_charge_loop, pilot)
+		INVOKE_ASYNC(src, PROC_REF(skyfall_charge_loop), pilot)
 		return
 	COOLDOWN_START(src, skyfall_cooldown, skyfall_cooldown_time)
 	var/datum/action/vehicle/sealed/mecha/savannah_action = occupant_actions[pilot][/datum/action/vehicle/sealed/mecha/skyfall]
 	savannah_action.button_icon_state = "mech_savannah_cooldown"
 	savannah_action.UpdateButtonIcon()
-	addtimer(CALLBACK(savannah_action, /datum/action/vehicle/sealed/mecha/skyfall.proc/reset_button_icon), skyfall_cooldown_time)
+	addtimer(CALLBACK(savannah_action, TYPE_PROC_REF(/datum/action/vehicle/sealed/mecha/skyfall, reset_button_icon)), skyfall_cooldown_time)
 	for(var/mob/living/shaken in range(7, src))
 		shake_camera(shaken, 3, 3)
 
@@ -140,7 +140,7 @@
 	layer = FLY_LAYER
 	animate(src, alpha = 0, time = 8, easing = QUAD_EASING|EASE_IN, flags = ANIMATION_PARALLEL)
 	animate(src, pixel_z = 400, time = 10, easing = QUAD_EASING|EASE_IN, flags = ANIMATION_PARALLEL) //Animate our rising mech (just like pods hehe)
-	addtimer(CALLBACK(src, .proc/begin_landing, pilot), 2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(begin_landing), pilot), 2 SECONDS)
 
 /**
  * ## begin_landing
@@ -153,7 +153,7 @@
 /obj/vehicle/sealed/mecha/combat/savannah_ivanov/proc/begin_landing(mob/living/pilot)
 	animate(src, pixel_z = 0, time = 10, easing = QUAD_EASING|EASE_IN, flags = ANIMATION_PARALLEL)
 	animate(src, alpha = 255, time = 8, easing = QUAD_EASING|EASE_IN, flags = ANIMATION_PARALLEL)
-	addtimer(CALLBACK(src, .proc/land, pilot), 10)
+	addtimer(CALLBACK(src, PROC_REF(land), pilot), 10)
 
 /**
  * ## begin_landing
@@ -233,8 +233,8 @@
 	balloon_alert(gunner, "missile mode on (click to target)")
 	aiming_ivanov = TRUE
 	rockets_left = 3
-	RegisterSignal(src, COMSIG_MECHA_MELEE_CLICK, .proc/on_melee_click)
-	RegisterSignal(src, COMSIG_MECHA_EQUIPMENT_CLICK, .proc/on_equipment_click)
+	RegisterSignal(src, COMSIG_MECHA_MELEE_CLICK, PROC_REF(on_melee_click))
+	RegisterSignal(src, COMSIG_MECHA_EQUIPMENT_CLICK, PROC_REF(on_equipment_click))
 	gunner.client.mouse_override_icon = 'icons/effects/mouse_pointers/supplypod_down_target.dmi'
 	gunner.update_mouse_pointer()
 	gunner.overlay_fullscreen("ivanov", /atom/movable/screen/fullscreen/ivanov_display, 1)
@@ -295,7 +295,7 @@
 	var/datum/action/vehicle/sealed/mecha/strike_action = occupant_actions[gunner][/datum/action/vehicle/sealed/mecha/ivanov_strike]
 	strike_action.button_icon_state = "mech_ivanov_cooldown"
 	strike_action.UpdateButtonIcon()
-	addtimer(CALLBACK(strike_action, /datum/action/vehicle/sealed/mecha/ivanov_strike.proc/reset_button_icon), strike_cooldown_time)
+	addtimer(CALLBACK(strike_action, TYPE_PROC_REF(/datum/action/vehicle/sealed/mecha/ivanov_strike, reset_button_icon)), strike_cooldown_time)
 
 
 ///Savannah Skyfall
@@ -373,7 +373,7 @@
 	. = ..()
 	src.mecha = mecha
 	animate(src, alpha = 255, TOTAL_SKYFALL_LEAP_TIME/2, easing = CIRCULAR_EASING|EASE_OUT)
-	RegisterSignal(mecha, COMSIG_MOVABLE_MOVED, .proc/follow)
+	RegisterSignal(mecha, COMSIG_MOVABLE_MOVED, PROC_REF(follow))
 	QDEL_IN(src, TOTAL_SKYFALL_LEAP_TIME) //when the animations land
 
 /obj/effect/skyfall_landingzone/Destroy(force)

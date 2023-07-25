@@ -10,7 +10,7 @@
 
 /obj/item/reagent_containers/glass/bowl/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_CUSTOM_FOOD_REPLACED, .proc/handle_replacement)
+	RegisterSignal(src, COMSIG_CUSTOM_FOOD_REPLACED, PROC_REF(handle_replacement))
 	AddComponent(/datum/component/customizable_reagent_holder, /obj/item/food/salad/empty, CUSTOM_INGREDIENT_ICON_FILL, max_ingredients = 6)
 
 /obj/item/reagent_containers/glass/bowl/update_overlays()

@@ -363,7 +363,7 @@ GLOBAL_LIST_INIT(dye_registry, list(
 		return SECONDARY_ATTACK_CONTINUE_CHAIN
 	busy = TRUE
 	update_appearance()
-	addtimer(CALLBACK(src, .proc/wash_cycle), 20 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 20 SECONDS)
 	START_PROCESSING(SSfastprocess, src)
 	return SECONDARY_ATTACK_CANCEL_ATTACK_CHAIN
 

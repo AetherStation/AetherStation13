@@ -68,7 +68,7 @@ SUBSYSTEM_DEF(throwing)
 /datum/thrownthing/New(thrownthing, target_turf, init_dir, maxrange, speed, thrower, diagonals_first, force, gentle, callback, target_zone)
 	. = ..()
 	src.thrownthing = thrownthing
-	RegisterSignal(thrownthing, COMSIG_PARENT_QDELETING, .proc/on_thrownthing_qdel)
+	RegisterSignal(thrownthing, COMSIG_PARENT_QDELETING, PROC_REF(on_thrownthing_qdel))
 	src.target_turf = target_turf
 	src.init_dir = init_dir
 	src.maxrange = maxrange

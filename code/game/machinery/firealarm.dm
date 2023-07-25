@@ -53,7 +53,7 @@
 	LAZYADD(myarea.firealarms, src)
 
 	AddElement(/datum/element/atmos_sensitive, mapload)
-	RegisterSignal(SSsecurity_level, COMSIG_SECURITY_LEVEL_CHANGED, .proc/check_security_level)
+	RegisterSignal(SSsecurity_level, COMSIG_SECURITY_LEVEL_CHANGED, PROC_REF(check_security_level))
 
 /obj/machinery/firealarm/Destroy()
 	myarea.firereset(src)

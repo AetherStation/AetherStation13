@@ -372,8 +372,8 @@
 		LoadComponent(/datum/component/shy_in_room, drone_bad_areas, "Touching anything in %ROOM could break your laws.")
 		LoadComponent(/datum/component/technoshy, 5 MINUTES, "%TARGET was touched by a being recently, using it could break your laws.")
 		LoadComponent(/datum/component/itempicky, drone_good_items, "Using %TARGET could break your laws.")
-		RegisterSignal(src, COMSIG_TRY_USE_MACHINE, .proc/blacklist_on_try_use_machine)
-		RegisterSignal(src, COMSIG_TRY_WIRES_INTERACT, .proc/blacklist_on_try_wires_interact)
+		RegisterSignal(src, COMSIG_TRY_USE_MACHINE, PROC_REF(blacklist_on_try_use_machine))
+		RegisterSignal(src, COMSIG_TRY_WIRES_INTERACT, PROC_REF(blacklist_on_try_wires_interact))
 	else
 		REMOVE_TRAIT(src, TRAIT_PACIFISM, DRONE_SHY_TRAIT)
 		qdel(GetComponent(/datum/component/shy))

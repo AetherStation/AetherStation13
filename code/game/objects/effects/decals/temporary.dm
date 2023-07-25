@@ -50,7 +50,7 @@ or sprite states which will delete once there are no more states left. Fading ca
 		return
 	if(sprite_states)
 		icon_state = "[base_icon]_1"
-	stored_timer = addtimer(CALLBACK(src,.proc/update), time, TIMER_STOPPABLE)
+	stored_timer = addtimer(CALLBACK(src,PROC_REF(update)), time, TIMER_STOPPABLE)
 
 /obj/effect/decal/temporary/Destroy()
 	. = ..()
@@ -82,4 +82,4 @@ or sprite states which will delete once there are no more states left. Fading ca
 		time = longevity
 	else if(step_time)
 		time = step_time
-	stored_timer = addtimer(CALLBACK(src,.proc/update), time, TIMER_STOPPABLE)
+	stored_timer = addtimer(CALLBACK(src,PROC_REF(update)), time, TIMER_STOPPABLE)

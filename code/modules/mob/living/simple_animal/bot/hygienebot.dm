@@ -44,7 +44,7 @@
 	update_appearance(UPDATE_ICON)
 
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -170,13 +170,13 @@
 	frustration = 0
 	last_found = world.time
 	stop_washing()
-	INVOKE_ASYNC(src, .proc/handle_automated_action)
+	INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 
 /mob/living/simple_animal/bot/hygienebot/proc/back_to_hunt()
 	frustration = 0
 	mode = BOT_HUNT
 	stop_washing()
-	INVOKE_ASYNC(src, .proc/handle_automated_action)
+	INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 
 /mob/living/simple_animal/bot/hygienebot/proc/look_for_lowhygiene()
 	for (var/mob/living/carbon/human/H in view(7,src)) //Find the NEET
@@ -189,7 +189,7 @@
 			playsound(loc, 'sound/effects/hygienebot_happy.ogg', 60, 1)
 			visible_message("<b>[src]</b> points at [H.name]!")
 			mode = BOT_HUNT
-			INVOKE_ASYNC(src, .proc/handle_automated_action)
+			INVOKE_ASYNC(src, PROC_REF(handle_automated_action))
 			break
 		else
 			continue

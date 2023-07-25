@@ -27,7 +27,7 @@
 	. = ..()
 	if(ishuman(user) && slot == ITEM_SLOT_GLOVES)
 		replay.Grant(user)
-		RegisterSignal(user,COMSIG_MIAMI_CURED_DISORDER,.proc/stop_the_slaughter)
+		RegisterSignal(user,COMSIG_MIAMI_CURED_DISORDER,PROC_REF(stop_the_slaughter))
 
 /obj/item/clothing/gloves/miami/dropped(mob/user)
 	UnregisterSignal(user,COMSIG_MIAMI_CURED_DISORDER)
@@ -97,8 +97,8 @@
 	. = ..()
 	if(slot != ITEM_SLOT_MASK)
 		return
-	RegisterSignal(M,COMSIG_MIAMI_START_SPREE,.proc/on_killing_start)
-	RegisterSignal(M,list(COMSIG_MIAMI_END_SPREE,COMSIG_LIVING_DEATH),.proc/on_killing_stop)
+	RegisterSignal(M,COMSIG_MIAMI_START_SPREE,PROC_REF(on_killing_start))
+	RegisterSignal(M,list(COMSIG_MIAMI_END_SPREE,COMSIG_LIVING_DEATH),PROC_REF(on_killing_stop))
 
 	if(!ishuman(M))
 		return
@@ -170,7 +170,7 @@
 	. = ..()
 	tracker = local_wearer.overlay_fullscreen("miami",/atom/movable/screen/fullscreen/blood_tracker)
 	START_PROCESSING(SSprocessing,src)
-	RegisterSignal(local_wearer,COMSIG_MOVABLE_MOVED,.proc/update_tracking_self_moved)
+	RegisterSignal(local_wearer,COMSIG_MOVABLE_MOVED,PROC_REF(update_tracking_self_moved))
 
 /obj/item/clothing/mask/gas/miami/predator/on_killing_stop()
 	STOP_PROCESSING(SSprocessing,src)
@@ -182,7 +182,7 @@
 
 	tracker = null
 	local_wearer.clear_fullscreen("miami")
-	UnregisterSignal(local_wearer,COMSIG_MOVABLE_MOVED,.proc/update_tracking_self_moved)
+	UnregisterSignal(local_wearer,COMSIG_MOVABLE_MOVED,PROC_REF(update_tracking_self_moved))
 	. = ..()
 
 /obj/item/clothing/mask/gas/miami/predator/process(delta_time)
@@ -224,7 +224,7 @@
 		if(local_wearer.client)
 			local_wearer.client.images += blood_tracker
 
-		RegisterSignal(person,COMSIG_MOVABLE_MOVED,.proc/update_tracking_self_unmoved)
+		RegisterSignal(person,COMSIG_MOVABLE_MOVED,PROC_REF(update_tracking_self_unmoved))
 
 /obj/item/clothing/mask/gas/miami/predator/proc/update_tracking_self_unmoved(mob/living/carbon/human/someone_else)
 	var/image/blood_tracker = blood_tracker_dictionary[someone_else]
@@ -292,8 +292,8 @@
 	. = ..()
 	if(slot != ITEM_SLOT_BACK)
 		return
-	RegisterSignal(M,COMSIG_MIAMI_START_SPREE,.proc/on_killing_start)
-	RegisterSignal(M,list(COMSIG_MIAMI_END_SPREE,COMSIG_LIVING_DEATH),.proc/on_killing_stop)
+	RegisterSignal(M,COMSIG_MIAMI_START_SPREE,PROC_REF(on_killing_start))
+	RegisterSignal(M,list(COMSIG_MIAMI_END_SPREE,COMSIG_LIVING_DEATH),PROC_REF(on_killing_stop))
 
 	if(!ishuman(M))
 		return

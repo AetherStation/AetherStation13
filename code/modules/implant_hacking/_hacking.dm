@@ -101,7 +101,7 @@
 		if(100 to INFINITY)
 			to_chat(current_user,"<span class='danger'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] CRITICAL FAILURE. COMPATIBILITY NOT ACHIEVED. IMPLANT OVERHEATING IN 5 SECONDS.</span>")
 			cybernetic.visible_message("<span class='danger'>[cybernetic.name] begins to flare and twitch as the electronics fry and sizzle!</span>")
-			addtimer(CALLBACK(src, .proc/explode), 5 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(explode)), 5 SECONDS)
 	current_user.mind.adjust_experience(/datum/skill/implant_hacking,(4 - failed)*2)
 	cleanup()
 
@@ -129,7 +129,7 @@
 /obj/item/cyberlink_connector/ui_data(mob/user)
 	var/list/data = list()
 	data["timeleft"] = current_timer_id ? timeleft(current_timer_id) : 0
-	
+
 	for(var/datum/hacking_minigame/game in game_list)
 		data["games"] += list(game.get_simplified_image())
 	return data
@@ -139,7 +139,7 @@
 	if(!ui)
 		if(!current_timer_id)
 			var/time_left = (game_list.len * 10  - 2 * (game_list.len-1) + user.mind.get_skill_modifier(/datum/skill/implant_hacking, SKILL_TIME_MODIFIER)) SECONDS
-			current_timer_id = addtimer(CALLBACK(src,.proc/game_update, TRUE),time_left,TIMER_STOPPABLE)
+			current_timer_id = addtimer(CALLBACK(src,PROC_REF(game_update), TRUE),time_left,TIMER_STOPPABLE)
 			START_PROCESSING(SSprocessing,src)
 		ui = new(user, src, "Hacking", name)
 		ui.open()

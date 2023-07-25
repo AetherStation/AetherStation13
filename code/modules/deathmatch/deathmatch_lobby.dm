@@ -79,9 +79,9 @@
 		L.equip(H)
 		map.map_equip(H)
 		// register death handling.
-		RegisterSignal(H, COMSIG_LIVING_DEATH, .proc/player_died)
+		RegisterSignal(H, COMSIG_LIVING_DEATH, PROC_REF(player_died))
 		if (global_chat)
-			RegisterSignal(H, COMSIG_MOB_SAY, .proc/global_chat)
+			RegisterSignal(H, COMSIG_MOB_SAY, PROC_REF(global_chat))
 		to_chat(H.client, span_reallybig("GO!"))
 		players[K]["mob"] = H
 	// Remove rest of spawns.
@@ -91,7 +91,7 @@
 		var/mob/M = observers[K]["mob"]
 		M.forceMove(location.centre)
 		if (global_chat)
-			RegisterSignal(M, COMSIG_MOB_DEADSAY, .proc/global_chat)
+			RegisterSignal(M, COMSIG_MOB_DEADSAY, PROC_REF(global_chat))
 	log_game("Deathmatch game [host] started.")
 	return TRUE
 
@@ -140,7 +140,7 @@
 	if (players[_mob.ckey])
 		CRASH("Tried to add [_mob.ckey] as an observer while being a player.")
 	if (playing && global_chat)
-		RegisterSignal(_mob, COMSIG_MOB_DEADSAY, .proc/global_chat)
+		RegisterSignal(_mob, COMSIG_MOB_DEADSAY, PROC_REF(global_chat))
 	observers[_mob.ckey] = list(mob = _mob, host = _host)
 
 /datum/deathmatch_lobby/proc/add_player(mob/_mob, _loadout, _host = FALSE)

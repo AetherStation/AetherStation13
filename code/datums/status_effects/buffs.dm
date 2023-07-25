@@ -468,13 +468,13 @@
 	return ..()
 
 /datum/status_effect/protective_blades/on_apply()
-	RegisterSignal(owner, COMSIG_HUMAN_CHECK_SHIELDS, .proc/on_shield_reaction)
+	RegisterSignal(owner, COMSIG_HUMAN_CHECK_SHIELDS, PROC_REF(on_shield_reaction))
 	for(var/blade_num in 1 to max_num_blades)
 		var/time_until_created = (blade_num - 1) * time_between_initial_blades
 		if(time_until_created <= 0)
 			create_blade()
 		else
-			addtimer(CALLBACK(src, .proc/create_blade), time_until_created)
+			addtimer(CALLBACK(src, PROC_REF(create_blade)), time_until_created)
 
 	return TRUE
 
@@ -492,7 +492,7 @@
 	var/obj/effect/floating_blade/blade = new(get_turf(owner))
 	blades += blade
 	blade.orbit(owner, blade_orbit_radius)
-	RegisterSignal(blade, COMSIG_PARENT_QDELETING, .proc/remove_blade)
+	RegisterSignal(blade, COMSIG_PARENT_QDELETING, PROC_REF(remove_blade))
 	playsound(get_turf(owner), 'sound/items/unsheath.ogg', 33, TRUE)
 
 /// Signal proc for [COMSIG_HUMAN_CHECK_SHIELDS].
@@ -562,7 +562,7 @@
 	if(!.)
 		return
 
-	addtimer(CALLBACK(src, .proc/create_blade), blade_recharge_time)
+	addtimer(CALLBACK(src, PROC_REF(create_blade)), blade_recharge_time)
 
 /datum/status_effect/lightningorb
 	id = "Lightning Orb"
@@ -643,10 +643,10 @@
 
 /datum/status_effect/miami/on_apply()
 	. = ..()
-	RegisterSignal(owner,COMSIG_LIVING_INTERACTED_WITH_DOOR,.proc/bust_open)
-	RegisterSignal(owner,COMSIG_CARBON_THROW,.proc/throw_relay)
-	RegisterSignal(owner,COMSIG_MOB_ITEM_AFTERATTACK,.proc/basically_curbstomp)
-	RegisterSignal(owner.reagents, COMSIG_REAGENTS_ADD_REAGENT,.proc/react_to_meds)
+	RegisterSignal(owner,COMSIG_LIVING_INTERACTED_WITH_DOOR,PROC_REF(bust_open))
+	RegisterSignal(owner,COMSIG_CARBON_THROW,PROC_REF(throw_relay))
+	RegisterSignal(owner,COMSIG_MOB_ITEM_AFTERATTACK,PROC_REF(basically_curbstomp))
+	RegisterSignal(owner.reagents, COMSIG_REAGENTS_ADD_REAGENT,PROC_REF(react_to_meds))
 
 	cached_game_plane_master_controller = owner.hud_used.plane_master_controllers[PLANE_MASTERS_GAME]
 
@@ -683,10 +683,10 @@
 	SIGNAL_HANDLER
 	cached_thrown_object = thrown_thing
 	if(isliving(thrown_thing))
-		RegisterSignal(thrown_thing,COMSIG_MOVABLE_IMPACT,.proc/mob_throw_knockdown)
+		RegisterSignal(thrown_thing,COMSIG_MOVABLE_IMPACT,PROC_REF(mob_throw_knockdown))
 
 	if(isitem(thrown_thing))
-		RegisterSignal(thrown_thing,COMSIG_MOVABLE_IMPACT,.proc/item_throw_knockdown)
+		RegisterSignal(thrown_thing,COMSIG_MOVABLE_IMPACT,PROC_REF(item_throw_knockdown))
 
 /datum/status_effect/miami/proc/item_throw_knockdown(datum/source,atom/hit_atom, datum/thrownthing/throwingdatum)
 	SIGNAL_HANDLER
@@ -732,7 +732,7 @@
 
 	if(!living_target.IsKnockdown())
 		return
-	INVOKE_ASYNC(src,.proc/continue_with_stomping,weapon,target,click_parameters)
+	INVOKE_ASYNC(src,PROC_REF(continue_with_stomping),weapon,target,click_parameters)
 	living_target.AdjustKnockdown(1 SECONDS)
 
 /datum/status_effect/miami/proc/continue_with_stomping(obj/item/weapon,atom/target,click_parameters)

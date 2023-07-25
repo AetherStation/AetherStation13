@@ -3,10 +3,10 @@
 
 /obj/effect/landmark/ctf/Initialize(mapload)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/load_map)
+	INVOKE_ASYNC(src, PROC_REF(load_map))
 
 /obj/effect/landmark/ctf/proc/load_map()
-	
+
 	var/list/map_options = subtypesof(/datum/map_template/ctf)
 	var/turf/spawn_area = get_turf(src)
 	var/datum/map_template/ctf/current_map

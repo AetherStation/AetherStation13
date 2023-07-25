@@ -78,7 +78,7 @@
 /obj/item/card/emag/proc/use_charge(mob/user)
 	charges --
 	to_chat(user, span_notice("You use [src]. It now has [charges] charges remaining."))
-	current_cooldown = addtimer(CALLBACK(src, .proc/recharge), charge_time, TIMER_UNIQUE | TIMER_STOPPABLE)
+	current_cooldown = addtimer(CALLBACK(src, PROC_REF(recharge)), charge_time, TIMER_UNIQUE | TIMER_STOPPABLE)
 
 /obj/item/card/emag/proc/can_emag(atom/target, mob/user)
 	for (var/list/subtypelist in consumer_types)

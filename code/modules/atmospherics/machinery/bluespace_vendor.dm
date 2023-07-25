@@ -176,7 +176,7 @@
 /obj/machinery/bluespace_vendor/proc/register_machine(machine)
 	connected_machine = machine
 	LAZYADD(connected_machine.vendors, src)
-	RegisterSignal(connected_machine, COMSIG_PARENT_QDELETING, .proc/unregister_machine)
+	RegisterSignal(connected_machine, COMSIG_PARENT_QDELETING, PROC_REF(unregister_machine))
 	mode = BS_MODE_IDLE
 	update_appearance()
 
@@ -260,27 +260,31 @@
 
 	switch(action)
 		if("start_pumping")
-			pumping = TRUE
-			selected_gas = params["gas_id"]
-			mode = BS_MODE_PUMPING
-			update_appearance()
+			if(inserted_tank && !pumping)
+				pumping = TRUE
+				selected_gas = params["gas_id"]
+				mode = BS_MODE_PUMPING
+				update_appearance()
 			. = TRUE
 		if("stop_pumping")
-			pumping = FALSE
-			selected_gas = null
-			mode = BS_MODE_IDLE
-			update_appearance()
+			if(inserted_tank && pumping)
+				pumping = FALSE
+				selected_gas = null
+				mode = BS_MODE_IDLE
+				update_appearance()
 			. = TRUE
 		if("pumping_rate")
 			tank_filling_amount = clamp(params["rate"], 0, 100)
 			. = TRUE
 		if("tank_prepare")
-			inserted_tank = TRUE
-			internal_tank = new(src)
-			empty_tanks = max(empty_tanks - 1, 0)
+			if(empty_tanks && !inserted_tank)
+				inserted_tank = TRUE
+				internal_tank = new(src)
+				empty_tanks = max(empty_tanks - 1, 0)
 			. = TRUE
 		if("tank_expel")
-			check_price(usr)
+			if(inserted_tank && !pumping)
+				check_price(usr)
 			. = TRUE
 
 #undef BS_MODE_OFF

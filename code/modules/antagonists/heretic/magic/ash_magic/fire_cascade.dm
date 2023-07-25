@@ -12,7 +12,7 @@
 	action_background_icon_state = "bg_ecult"
 
 /obj/effect/proc_holder/spell/aoe_turf/fire_cascade/cast(list/targets, mob/user = usr)
-	INVOKE_ASYNC(src, .proc/fire_cascade, user,range)
+	INVOKE_ASYNC(src, PROC_REF(fire_cascade), user,range)
 
 /obj/effect/proc_holder/spell/aoe_turf/fire_cascade/proc/fire_cascade(atom/centre,max_range)
 	playsound(get_turf(centre), 'sound/items/welder.ogg', 75, TRUE)

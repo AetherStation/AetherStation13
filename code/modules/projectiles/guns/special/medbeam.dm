@@ -68,7 +68,7 @@
 	current_target = target
 	active = TRUE
 	current_beam = user.Beam(current_target, icon_state="medbeam", time = 10 MINUTES, maxdistance = max_range, beam_type = /obj/effect/ebeam/medical)
-	RegisterSignal(current_beam, COMSIG_PARENT_QDELETING, .proc/beam_died)//this is a WAY better rangecheck than what was done before (process check)
+	RegisterSignal(current_beam, COMSIG_PARENT_QDELETING, PROC_REF(beam_died))//this is a WAY better rangecheck than what was done before (process check)
 
 	SSblackbox.record_feedback("tally", "gun_fired", 1, type)
 
@@ -113,7 +113,7 @@
 				return FALSE // Could not leave the first turf.
 			first_step = FALSE
 		if(mounted && next_step == user_turf)
-			
+
 			continue //Mechs are dense and thus fail the check
 		if(next_step.density)
 			qdel(dummy)

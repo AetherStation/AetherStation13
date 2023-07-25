@@ -77,9 +77,9 @@
 	AddElement(/datum/element/volatile_gas_storage)
 	AddElement(/datum/element/crackable, 'icons/obj/atmospherics/stationary_canisters.dmi', crack_states)
 
-	RegisterSignal(src, COMSIG_MERGER_ADDING, .proc/MergerAdding)
-	RegisterSignal(src, COMSIG_MERGER_REMOVING, .proc/MergerRemoving)
-	RegisterSignal(src, COMSIG_ATOM_SMOOTHED_ICON, .proc/Smoothed)
+	RegisterSignal(src, COMSIG_MERGER_ADDING, PROC_REF(MergerAdding))
+	RegisterSignal(src, COMSIG_MERGER_REMOVING, PROC_REF(MergerRemoving))
+	RegisterSignal(src, COMSIG_ATOM_SMOOTHED_ICON, PROC_REF(Smoothed))
 
 	air_contents = new
 	air_contents.temperature = T20C
@@ -197,7 +197,7 @@
 	SIGNAL_HANDLER
 	if(new_merger.id != merger_id)
 		return
-	RegisterSignal(new_merger, COMSIG_MERGER_REFRESH_COMPLETE, .proc/MergerRefreshComplete)
+	RegisterSignal(new_merger, COMSIG_MERGER_REFRESH_COMPLETE, PROC_REF(MergerRefreshComplete))
 
 /obj/machinery/atmospherics/components/tank/proc/MergerRemoving(obj/machinery/atmospherics/components/tank/us, datum/merger/old_merger)
 	SIGNAL_HANDLER
