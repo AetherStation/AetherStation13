@@ -83,7 +83,7 @@ In my current plan for it, 'solid' will be defined as anything with density == 1
 
 	AddElement(/datum/element/point_of_interest)
 
-	RegisterSignal(src, COMSIG_ATOM_ENTERING, .proc/on_entering_atom)
+	RegisterSignal(src, COMSIG_ATOM_ENTERING, PROC_REF(on_entering_atom))
 
 	if(special_target)
 		walk_towards(src, special_target, 1)

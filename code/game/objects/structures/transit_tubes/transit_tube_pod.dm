@@ -141,7 +141,7 @@
 
 		enter_delay = current_tube.enter_delay(src, next_dir)
 		if(enter_delay > 0)
-			addtimer(CALLBACK(src, .proc/move_animation, MOVE_ANIMATION_STAGE_TWO), enter_delay)
+			addtimer(CALLBACK(src, PROC_REF(move_animation), MOVE_ANIMATION_STAGE_TWO), enter_delay)
 			return
 		else
 			stage = MOVE_ANIMATION_STAGE_TWO
@@ -154,7 +154,7 @@
 		if(current_tube?.should_stop_pod(src, next_dir))
 			current_tube.pod_stopped(src, dir)
 		else
-			addtimer(CALLBACK(src, .proc/move_animation, MOVE_ANIMATION_STAGE_ONE), exit_delay)
+			addtimer(CALLBACK(src, PROC_REF(move_animation), MOVE_ANIMATION_STAGE_ONE), exit_delay)
 			return
 	set_density(TRUE)
 	moving = FALSE

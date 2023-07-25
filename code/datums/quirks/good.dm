@@ -218,8 +218,8 @@
 
 /datum/quirk/bloodlust/add()
 	. = ..()
-	RegisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND,.proc/apply_bloodlust_hand)
-	RegisterSignal(quirk_holder,COMSIG_MOB_ITEM_ATTACK,.proc/apply_bloodlust_item)
+	RegisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND,PROC_REF(apply_bloodlust_hand))
+	RegisterSignal(quirk_holder,COMSIG_MOB_ITEM_ATTACK,PROC_REF(apply_bloodlust_item))
 
 /datum/quirk/bloodlust/remove()
 	. = ..()

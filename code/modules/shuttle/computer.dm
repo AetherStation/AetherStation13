@@ -113,7 +113,7 @@
 			var/obj/docking_port/stationary/S = SSshuttle.getDock(params["shuttle_id"])
 			if(!(S.port_destinations in options))
 				log_admin("[usr] attempted to href dock exploit on [src] with target location \"[params["shuttle_id"]]\"")
-				message_admins("[usr] just attempted to href dock exploit on [src] with target location \"[params["shuttle_id"]]\"")
+				message_admins("[usr] just attempted to href dock exploit on [src] with target location \"[url_encode(params["shuttle_id"])]\"")
 				return
 			switch(SSshuttle.moveShuttle(shuttleId, params["shuttle_id"], 1))
 				if(0)

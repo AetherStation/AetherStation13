@@ -100,7 +100,7 @@
 		buckled_obj.unbuckle_mob(human)
 		step(buckled_obj, olddir)
 	else
-		new /datum/forced_movement(human, get_ranged_target_turf(human, olddir, 4), 1, FALSE, CALLBACK(human, /mob/living/carbon/.proc/spin, 1, 1))
+		new /datum/forced_movement(human, get_ranged_target_turf(human, olddir, 4), 1, FALSE, CALLBACK(human, TYPE_PROC_REF(/mob/living/carbon, spin), 1, 1))
 	return TRUE
 
 ///UNSAFE PROC, should only be called through the Activate or other sources that check for CanFly
@@ -176,9 +176,9 @@
 /obj/item/organ/external/wings/moth/Insert(mob/living/carbon/reciever, special, drop_if_replaced)
 	. = ..()
 
-	RegisterSignal(reciever, COMSIG_HUMAN_BURNING, .proc/try_burn_wings)
-	RegisterSignal(reciever, COMSIG_LIVING_POST_FULLY_HEAL, .proc/heal_wings)
-	RegisterSignal(reciever, COMSIG_MOVABLE_PRE_MOVE, .proc/update_float_move)
+	RegisterSignal(reciever, COMSIG_HUMAN_BURNING, PROC_REF(try_burn_wings))
+	RegisterSignal(reciever, COMSIG_LIVING_POST_FULLY_HEAL, PROC_REF(heal_wings))
+	RegisterSignal(reciever, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(update_float_move))
 
 /obj/item/organ/external/wings/moth/Remove(mob/living/carbon/organ_owner, special)
 	. = ..()

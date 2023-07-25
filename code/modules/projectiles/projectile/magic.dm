@@ -440,7 +440,7 @@
 /obj/structure/closet/decay/Initialize()
 	. = ..()
 	if(auto_destroy)
-		addtimer(CALLBACK(src, .proc/bust_open), 5 MINUTES)
+		addtimer(CALLBACK(src, PROC_REF(bust_open)), 5 MINUTES)
 
 /obj/structure/closet/decay/after_weld(weld_state)
 	if(weld_state)
@@ -449,7 +449,7 @@
 ///Fade away into nothing
 /obj/structure/closet/decay/proc/decay()
 	animate(src, alpha = 0, time = 30)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, src), 30)
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(qdel), src), 30)
 
 /obj/structure/closet/decay/open(mob/living/user, force = FALSE)
 	. = ..()
@@ -461,7 +461,7 @@
 	icon_state = weakened_icon
 	update_appearance()
 
-	addtimer(CALLBACK(src, .proc/decay), 15 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(decay)), 15 SECONDS)
 
 /obj/projectile/magic/flying
 	name = "bolt of flying"

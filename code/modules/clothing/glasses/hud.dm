@@ -106,7 +106,7 @@
 	. = ..()
 	if (!.)
 		return FALSE
-	RegisterSignal(user, COMSIG_MOB_MIDDLECLICKON, .proc/create_ping)
+	RegisterSignal(user, COMSIG_MOB_MIDDLECLICKON, PROC_REF(create_ping))
 
 /obj/item/clothing/glasses/hud/security/dropped(mob/living/carbon/human/user)
 	. = ..()
@@ -123,7 +123,7 @@
 		return
 	var/image/holder = L.hud_list[SEC_PING]
 	// not ideal, but it works.
-	addtimer(CALLBACK(src, .proc/remove_ping, holder), 10 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
+	addtimer(CALLBACK(src, PROC_REF(remove_ping), holder), 10 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 	var/mutable_appearance/MA = new /mutable_appearance()
 	MA.icon = 'icons/effects/effects.dmi'
 	MA.plane = ABOVE_LIGHTING_PLANE // you are wearing glasses so.

@@ -80,7 +80,7 @@
 		if (fuse_length)
 			name = "pipe bomb"
 			desc = "Often made by those with strong feelings about industrial society."
-			RegisterSignal(src, COMSIG_ITEM_UNWRAPPED, .proc/unwrapped)
+			RegisterSignal(src, COMSIG_ITEM_UNWRAPPED, PROC_REF(unwrapped))
 			AddComponent(/datum/component/pellet_cloud, projectile_type = shrapnel_type, magnitude = shrapnel_magnitude)
 		else
 			desc = "A sealed pipe."
@@ -92,7 +92,7 @@
 /obj/item/reagent_containers/pipe/attack_self(mob/user)
 	if (sealed && fuse_length)
 		fused = TRUE
-		addtimer(CALLBACK(src, .proc/detonate), rand(fuse_length * 0.5 SECONDS, fuse_length SECONDS))
+		addtimer(CALLBACK(src, PROC_REF(detonate)), rand(fuse_length * 0.5 SECONDS, fuse_length SECONDS))
 		update_icon(UPDATE_OVERLAYS)
 		return
 	. = ..()

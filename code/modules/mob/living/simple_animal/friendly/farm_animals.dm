@@ -137,7 +137,7 @@
 		tip_time = 0.5 SECONDS, \
 		untip_time = 0.5 SECONDS, \
 		self_right_time = rand(25 SECONDS, 50 SECONDS), \
-		post_tipped_callback = CALLBACK(src, .proc/after_cow_tipped))
+		post_tipped_callback = CALLBACK(src, PROC_REF(after_cow_tipped)))
 	AddElement(/datum/element/pet_bonus, "moos happily!")
 	add_cell_sample()
 	make_tameable()
@@ -145,7 +145,7 @@
 
 ///wrapper for the tameable component addition so you can have non tamable cow subtypes
 /mob/living/simple_animal/cow/proc/make_tameable()
-	AddComponent(/datum/component/tameable, food_types = list(/obj/item/food/grown/wheat), tame_chance = 25, bonus_tame_chance = 15, after_tame = CALLBACK(src, .proc/tamed))
+	AddComponent(/datum/component/tameable, food_types = list(/obj/item/food/grown/wheat), tame_chance = 25, bonus_tame_chance = 15, after_tame = CALLBACK(src, PROC_REF(tamed)))
 
 /mob/living/simple_animal/cow/add_cell_sample()
 	AddElement(/datum/element/swabable, CELL_LINE_TABLE_COW, CELL_VIRUS_TABLE_GENERIC_MOB, 1, 5)
@@ -162,7 +162,7 @@
  * tipper - the mob who tipped us
  */
 /mob/living/simple_animal/cow/proc/after_cow_tipped(mob/living/carbon/tipper)
-	addtimer(CALLBACK(src, .proc/look_for_help, tipper), rand(10 SECONDS, 20 SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(look_for_help), tipper), rand(10 SECONDS, 20 SECONDS))
 
 /*
  * Find a mob in a short radius around us (prioritizing the person who originally tipped us)
@@ -326,7 +326,7 @@
 		eggs_left = 0,\
 		eggs_added_from_eating = rand(1, 4),\
 		max_eggs_held = 8,\
-		egg_laid_callback = CALLBACK(src, .proc/egg_laid)\
+		egg_laid_callback = CALLBACK(src, PROC_REF(egg_laid))\
 	)
 	ADD_TRAIT(src, TRAIT_VENTCRAWLER_ALWAYS, INNATE_TRAIT)
 
@@ -423,7 +423,7 @@
 	. = ..()
 
 /mob/living/simple_animal/pig/proc/make_tameable()
-	AddComponent(/datum/component/tameable, food_types = list(/obj/item/food/grown/carrot), tame_chance = 25, bonus_tame_chance = 15, after_tame = CALLBACK(src, .proc/tamed))
+	AddComponent(/datum/component/tameable, food_types = list(/obj/item/food/grown/carrot), tame_chance = 25, bonus_tame_chance = 15, after_tame = CALLBACK(src, PROC_REF(tamed)))
 
 /mob/living/simple_animal/pig/proc/tamed(mob/living/tamer)
 	can_buckle = TRUE
