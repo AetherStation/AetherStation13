@@ -37,7 +37,7 @@
  * `CALLBACK(src, .some_proc_here)`
  *
  * ### when the above doesn't apply:
- *.proc/procname
+ *PROC_REF(procname)
  *
  * `CALLBACK(src, PROC_REF(some_proc_here))`
  *

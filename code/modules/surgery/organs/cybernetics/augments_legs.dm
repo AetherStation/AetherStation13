@@ -169,9 +169,9 @@
 	overlay = mutable_appearance('icons/effects/effects.dmi', "biogas",ABOVE_MOB_LAYER)
 	overlay.color = implant_color
 
-	RegisterSignal(owner,COMSIG_ATOM_UPDATE_OVERLAYS,.proc/update_owner_overlay)
+	RegisterSignal(owner,COMSIG_ATOM_UPDATE_OVERLAYS,PROC_REF(update_owner_overlay))
 
-	addtimer(CALLBACK(src,.proc/remove_overlay),max_ticks_cooldown/2)
+	addtimer(CALLBACK(src,PROC_REF(remove_overlay)),max_ticks_cooldown/2)
 
 	to_chat(owner,"<span class = 'notice'> You feel a sharp pain as the cocktail of chemicals is injected into your bloodstream!</span>")
 	return

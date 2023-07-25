@@ -804,8 +804,8 @@
 
 /datum/quirk/harm_averse/add()
 	. = ..()
-	RegisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND,.proc/apply_harm_averse_hand)
-	RegisterSignal(quirk_holder,COMSIG_MOB_ITEM_ATTACK,.proc/apply_harm_averse_item)
+	RegisterSignal(quirk_holder,COMSIG_MOB_ATTACK_HAND,PROC_REF(apply_harm_averse_hand))
+	RegisterSignal(quirk_holder,COMSIG_MOB_ITEM_ATTACK,PROC_REF(apply_harm_averse_item))
 
 
 /datum/quirk/harm_averse/remove()

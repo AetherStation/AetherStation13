@@ -186,7 +186,7 @@
 
 	if(heat > max_heat)
 		visible_message("<span class='danger'>EMITTER CORE OVERHEATING, EXPLOSION EMINENT!</span>")
-		INVOKE_ASYNC(src,.proc/overheating)
+		INVOKE_ASYNC(src,PROC_REF(overheating))
 		return
 
 	for(var/V in vents)

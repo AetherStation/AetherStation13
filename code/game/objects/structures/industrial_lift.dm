@@ -164,7 +164,7 @@ GLOBAL_LIST_EMPTY(lifts)
 /obj/structure/industrial_lift/Initialize(mapload)
 	. = ..()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_EXITED =.proc/UncrossedRemoveItemFromLift,
+		COMSIG_ATOM_EXITED =PROC_REF(UncrossedRemoveItemFromLift),
 		COMSIG_ATOM_ENTERED = PROC_REF(AddItemOnLift),
 		COMSIG_ATOM_CREATED = PROC_REF(AddItemOnLift),
 	)

@@ -377,8 +377,8 @@
 
 /obj/item/organ/cyberimp/arm/ammo_counter/Insert(mob/living/carbon/M, special, drop_if_replaced)
 	. = ..()
-	RegisterSignal(M,COMSIG_CARBON_ITEM_PICKED_UP,.proc/add_to_hand)
-	RegisterSignal(M,COMSIG_CARBON_ITEM_DROPPED,.proc/remove_from_hand)
+	RegisterSignal(M,COMSIG_CARBON_ITEM_PICKED_UP,PROC_REF(add_to_hand))
+	RegisterSignal(M,COMSIG_CARBON_ITEM_DROPPED,PROC_REF(remove_from_hand))
 
 /obj/item/organ/cyberimp/arm/ammo_counter/Remove(mob/living/carbon/M, special)
 	. = ..()
@@ -439,12 +439,12 @@
 
 	if(istype(maybegun,/obj/item/gun/ballistic))
 		our_gun = maybegun
-		RegisterSignal(owner,COMSIG_MOB_FIRED_GUN,.proc/update_hud_elements)
+		RegisterSignal(owner,COMSIG_MOB_FIRED_GUN,PROC_REF(update_hud_elements))
 
 	if(istype(maybegun,/obj/item/gun/energy))
 		var/obj/item/gun/energy/egun = maybegun
 		our_gun = egun
-		RegisterSignal(egun.cell,COMSIG_CELL_CHANGE_POWER,.proc/update_hud_elements)
+		RegisterSignal(egun.cell,COMSIG_CELL_CHANGE_POWER,PROC_REF(update_hud_elements))
 
 	update_hud_elements()
 

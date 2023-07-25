@@ -139,7 +139,7 @@
 	if(!ui)
 		if(!current_timer_id)
 			var/time_left = (game_list.len * 10  - 2 * (game_list.len-1) + user.mind.get_skill_modifier(/datum/skill/implant_hacking, SKILL_TIME_MODIFIER)) SECONDS
-			current_timer_id = addtimer(CALLBACK(src,.proc/game_update, TRUE),time_left,TIMER_STOPPABLE)
+			current_timer_id = addtimer(CALLBACK(src,PROC_REF(game_update), TRUE),time_left,TIMER_STOPPABLE)
 			START_PROCESSING(SSprocessing,src)
 		ui = new(user, src, "Hacking", name)
 		ui.open()
