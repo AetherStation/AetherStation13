@@ -38,6 +38,9 @@
 	STOP_PROCESSING(SSmood, src)
 	REMOVE_TRAIT(parent, TRAIT_AREA_SENSITIVE, MOOD_COMPONENT_TRAIT)
 	unmodify_hud()
+	if(ishuman(parent))
+		var/mob/living/carbon/human/H = parent
+		H.cached_mood = null
 	return ..()
 
 /datum/component/mood/proc/register_job_signals(datum/source, job)

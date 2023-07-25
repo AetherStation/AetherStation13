@@ -873,13 +873,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	for(var/implant in implant_stress)
 		var/obj/item/organ/cyberimp/C = implant
 		total += C.get_stress(link)
-
 	if(link)
-		total = max(0, total - link.implant_stress_reduction)
+		total = max(0, total - link.implant_stress_reduction + (!isnull(cached_mood) ? (cached_mood.sanity_level - 3) : 0) )
 	return total
 
 /mob/living/carbon/proc/handle_implant_stress(delta_time)
-	current_implant_stress = max(0, current_implant_stress + get_total_implant_stress() - implant_stress_natural_decay)
+	current_implant_stress = max(0, current_implant_stress + get_total_implant_stress() - implant_stress_natural_decay )
 
 	switch(current_implant_stress)
 		if(160 to 320)

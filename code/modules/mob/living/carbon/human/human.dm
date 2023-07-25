@@ -39,11 +39,12 @@
 /mob/living/carbon/human/ComponentInitialize()
 	. = ..()
 	if(!CONFIG_GET(flag/disable_human_mood))
-		AddComponent(/datum/component/mood)
+		cached_mood = AddComponent(/datum/component/mood)
 
 /mob/living/carbon/human/Destroy()
 	QDEL_NULL(physiology)
 	QDEL_LIST(bioware)
+	cached_mood = null
 	GLOB.human_list -= src
 	return ..()
 

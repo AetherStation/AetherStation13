@@ -108,4 +108,5 @@
 
 	var/implant_stress_natural_decay = 1
 
+	var/datum/component/mood/cached_mood
 	COOLDOWN_DECLARE(bleeding_message_cd)
