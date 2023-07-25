@@ -101,7 +101,7 @@
 		if(100 to INFINITY)
 			to_chat(current_user,"<span class='danger'> Cyberlink beeps: HACKING [uppertext(cybernetic.name)] CRITICAL FAILURE. COMPATIBILITY NOT ACHIEVED. IMPLANT OVERHEATING IN 5 SECONDS.</span>")
 			cybernetic.visible_message("<span class='danger'>[cybernetic.name] begins to flare and twitch as the electronics fry and sizzle!</span>")
-			addtimer(CALLBACK(src, .proc/explode), 5 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(explode)), 5 SECONDS)
 	current_user.mind.adjust_experience(/datum/skill/implant_hacking,(4 - failed)*2)
 	cleanup()
 
@@ -129,7 +129,7 @@
 /obj/item/cyberlink_connector/ui_data(mob/user)
 	var/list/data = list()
 	data["timeleft"] = current_timer_id ? timeleft(current_timer_id) : 0
-	
+
 	for(var/datum/hacking_minigame/game in game_list)
 		data["games"] += list(game.get_simplified_image())
 	return data

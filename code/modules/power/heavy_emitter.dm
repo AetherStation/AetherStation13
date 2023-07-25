@@ -178,7 +178,7 @@
 		timer = 0
 		radiation_pulse(src,500,can_contaminate=FALSE)
 		visible_message("<span class='notice'>Heavy Emitter Core is powering the cannon....</span>")
-		INVOKE_ASYNC(linked_cannon,/obj/machinery/power/heavy_emitter/cannon.proc/fire)
+		INVOKE_ASYNC(linked_cannon,TYPE_PROC_REF(/obj/machinery/power/heavy_emitter/cannon, fire))
 		heat += 250
 
 	if(heat > max_heat*0.8 && prob(10))

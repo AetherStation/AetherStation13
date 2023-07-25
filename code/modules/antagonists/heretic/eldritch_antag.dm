@@ -54,7 +54,7 @@
 	current.log_message("has been made into a heretic!", LOG_ATTACK, color="#960000")
 	GLOB.reality_smash_track.AddMind(owner)
 	START_PROCESSING(SSprocessing, src)
-	RegisterSignal(owner.current, COMSIG_LIVING_DEATH, .proc/on_death)
+	RegisterSignal(owner.current, COMSIG_LIVING_DEATH, PROC_REF(on_death))
 	if(give_equipment)
 		equip_cultist()
 	return ..()
@@ -281,9 +281,9 @@
 
 /datum/antagonist/heretic/get_admin_commands()
 	. = ..()
-	.["Equip Cultist"] = CALLBACK(src, .proc/equip_cultist)
-	.["Add Heart Target (Marked Mob)"] = CALLBACK(src, .proc/equip_target_as_sacrifice)
-	.["Give Knowledge Points"] = CALLBACK(src, .proc/add_points)
+	.["Equip Cultist"] = CALLBACK(src, PROC_REF(equip_cultist))
+	.["Add Heart Target (Marked Mob)"] = CALLBACK(src, PROC_REF(equip_target_as_sacrifice))
+	.["Give Knowledge Points"] = CALLBACK(src, PROC_REF(add_points))
 
 
 /*

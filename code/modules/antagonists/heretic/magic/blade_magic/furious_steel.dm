@@ -33,7 +33,7 @@
 
 	. = ..()
 	blade_effect = living_user.apply_status_effect(/datum/status_effect/protective_blades, null, 3, 25, 0.66 SECONDS)
-	RegisterSignal(blade_effect, COMSIG_PARENT_QDELETING, .proc/on_status_effect_deleted)
+	RegisterSignal(blade_effect, COMSIG_PARENT_QDELETING, PROC_REF(on_status_effect_deleted))
 
 /obj/effect/proc_holder/spell/aimed/furious_steel/on_deactivation(mob/user)
 	. = ..()

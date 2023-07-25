@@ -35,7 +35,7 @@
 /datum/greyscale_modify_menu/New(atom/target, client/user, list/allowed_configs, datum/callback/apply_callback, starting_icon_state="", starting_config, starting_colors)
 	src.target = target
 	src.user = user
-	src.apply_callback = apply_callback || CALLBACK(src, .proc/DefaultApply)
+	src.apply_callback = apply_callback || CALLBACK(src, PROC_REF(DefaultApply))
 	icon_state = starting_icon_state
 
 	var/current_config = "[starting_config]" || "[target?.greyscale_config]"
@@ -52,7 +52,7 @@
 	ReadColorsFromString(starting_colors || target?.greyscale_colors)
 
 	if(target)
-		RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/ui_close)
+		RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(ui_close))
 
 	refresh_preview()
 
@@ -205,7 +205,7 @@ This is highly likely to cause a lag spike for a few seconds."},
 
 /datum/greyscale_modify_menu/proc/queue_refresh()
 	refreshing = TRUE
-	addtimer(CALLBACK(src, .proc/refresh_preview), 1 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
+	addtimer(CALLBACK(src, PROC_REF(refresh_preview)), 1 SECONDS, TIMER_UNIQUE | TIMER_OVERRIDE)
 
 /datum/greyscale_modify_menu/proc/refresh_preview()
 	for(var/i in length(split_colors) + 1 to config.expected_colors)

@@ -14,7 +14,7 @@
 
 	src.connections = connections
 
-	RegisterSignal(listener, COMSIG_MOVABLE_MOVED, .proc/on_moved, override = TRUE)
+	RegisterSignal(listener, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved), override = TRUE)
 	update_signals(listener)
 
 /datum/element/connect_loc/Detach(atom/movable/listener)
@@ -64,7 +64,7 @@
 
 	src.connections = connections
 
-	RegisterSignal(tracked, COMSIG_MOVABLE_MOVED, .proc/on_moved, override = TRUE)
+	RegisterSignal(tracked, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved), override = TRUE)
 	update_signals(listener, tracked)
 
 /datum/element/connect_loc_behalf/Detach(datum/listener, atom/movable/tracked, list/connections)

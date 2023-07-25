@@ -27,8 +27,8 @@
 	// peripherals
 	peripheral_memory_page = new(1)
 	processor.add_memory_map(peripheral_memory_page, 32)
-	RegisterSignal(peripheral_memory_page, COMSIG_MOS6502_MEMORY_WRITE, .proc/peripheral_write)
-	RegisterSignal(peripheral_memory_page, COMSIG_MOS6502_MEMORY_READ, .proc/peripheral_read)
+	RegisterSignal(peripheral_memory_page, COMSIG_MOS6502_MEMORY_WRITE, PROC_REF(peripheral_write))
+	RegisterSignal(peripheral_memory_page, COMSIG_MOS6502_MEMORY_READ, PROC_REF(peripheral_read))
 
 /obj/machinery/mainframe/main_unit/attackby(obj/item/O, mob/living/user, params)
 	if(is_wire_tool(O))

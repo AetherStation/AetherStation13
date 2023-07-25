@@ -133,7 +133,7 @@
 ///Proc that sets the owner
 /obj/structure/trap/eldritch/proc/set_owner(mob/new_owner)
 	owner = new_owner
-	RegisterSignal(owner, COMSIG_PARENT_QDELETING, .proc/unset_owner)
+	RegisterSignal(owner, COMSIG_PARENT_QDELETING, PROC_REF(unset_owner))
 
 ///Unsets the owner in case of deletion
 /obj/structure/trap/eldritch/proc/unset_owner()

@@ -44,7 +44,7 @@
 	to_chat(user, span_warning("[gain_text]"))
 
 	if(sharpen_off && route == PATH_BLADE)
-		RegisterSignal(user, COMSIG_HERETIC_BLADE_MANIPULATION, .proc/allow_to_sharp)
+		RegisterSignal(user, COMSIG_HERETIC_BLADE_MANIPULATION, PROC_REF(allow_to_sharp))
 		sharpen_off = FALSE
 
 	if(!mutually_exclusive)
@@ -237,8 +237,8 @@
 	var/datum/status_effect/eldritch/mark_type
 
 /datum/eldritch_knowledge/mark/on_gain(mob/user)
-	RegisterSignal(user, COMSIG_HERETIC_MANSUS_GRASP_ATTACK, .proc/on_mansus_grasp)
-	RegisterSignal(user, COMSIG_HERETIC_BLADE_ATTACK, .proc/on_eldritch_blade)
+	RegisterSignal(user, COMSIG_HERETIC_MANSUS_GRASP_ATTACK, PROC_REF(on_mansus_grasp))
+	RegisterSignal(user, COMSIG_HERETIC_BLADE_ATTACK, PROC_REF(on_eldritch_blade))
 
 /datum/eldritch_knowledge/mark/on_lose(mob/user)
 	UnregisterSignal(user, list(COMSIG_HERETIC_MANSUS_GRASP_ATTACK, COMSIG_HERETIC_BLADE_ATTACK))
@@ -298,8 +298,8 @@
 	cost = 2
 
 /datum/eldritch_knowledge/blade_upgrade/on_gain(mob/user)
-	RegisterSignal(user, COMSIG_HERETIC_BLADE_ATTACK, .proc/on_eldritch_blade)
-	RegisterSignal(user, COMSIG_HERETIC_RANGED_BLADE_ATTACK, .proc/on_ranged_eldritch_blade)
+	RegisterSignal(user, COMSIG_HERETIC_BLADE_ATTACK, PROC_REF(on_eldritch_blade))
+	RegisterSignal(user, COMSIG_HERETIC_RANGED_BLADE_ATTACK, PROC_REF(on_ranged_eldritch_blade))
 
 /datum/eldritch_knowledge/blade_upgrade/on_lose(mob/user)
 	UnregisterSignal(user, list(COMSIG_HERETIC_BLADE_ATTACK, COMSIG_HERETIC_RANGED_BLADE_ATTACK))
@@ -374,7 +374,7 @@
 	if(!chosen_mob)
 		return FALSE
 	curse(compiled_list[chosen_mob])
-	addtimer(CALLBACK(src, .proc/uncurse, compiled_list[chosen_mob]),timer)
+	addtimer(CALLBACK(src, PROC_REF(uncurse), compiled_list[chosen_mob]),timer)
 	return TRUE
 
 /datum/eldritch_knowledge/curse/proc/curse(mob/living/chosen_mob)

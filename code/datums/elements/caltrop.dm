@@ -24,7 +24,7 @@
 
 	///given to connect_loc to listen for something moving over target
 	var/static/list/crossed_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 
 /datum/element/caltrop/Attach(datum/target, min_damage = 0, max_damage = 0, probability = 100, flags = NONE, soundfile = null)
@@ -41,7 +41,7 @@
 	if(ismovable(target))
 		AddElement(/datum/element/connect_loc_behalf, target, crossed_connections)
 	else
-		RegisterSignal(get_turf(target), COMSIG_ATOM_ENTERED, .proc/on_entered)
+		RegisterSignal(get_turf(target), COMSIG_ATOM_ENTERED, PROC_REF(on_entered))
 
 /datum/element/caltrop/proc/on_entered(datum/source, atom/movable/arrived, atom/old_loc, list/atom/old_locs)
 	SIGNAL_HANDLER

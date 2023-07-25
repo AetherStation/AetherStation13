@@ -176,7 +176,7 @@
 /obj/machinery/bluespace_vendor/proc/register_machine(machine)
 	connected_machine = machine
 	LAZYADD(connected_machine.vendors, src)
-	RegisterSignal(connected_machine, COMSIG_PARENT_QDELETING, .proc/unregister_machine)
+	RegisterSignal(connected_machine, COMSIG_PARENT_QDELETING, PROC_REF(unregister_machine))
 	mode = BS_MODE_IDLE
 	update_appearance()
 

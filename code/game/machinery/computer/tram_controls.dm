@@ -131,8 +131,8 @@
 	. = ..()
 	if (istype(parent, /obj/machinery/computer/tram_controls))
 		computer = parent
-		RegisterSignal(computer.tram_part, COMSIG_TRAM_SET_TRAVELLING, .proc/on_tram_set_travelling)
-		RegisterSignal(computer.tram_part, COMSIG_TRAM_TRAVEL, .proc/on_tram_travel)
+		RegisterSignal(computer.tram_part, COMSIG_TRAM_SET_TRAVELLING, PROC_REF(on_tram_set_travelling))
+		RegisterSignal(computer.tram_part, COMSIG_TRAM_TRAVEL, PROC_REF(on_tram_travel))
 
 /obj/item/circuit_component/tram_controls/unregister_usb_parent(atom/movable/parent)
 	computer = null

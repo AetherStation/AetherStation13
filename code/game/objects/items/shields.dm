@@ -259,7 +259,7 @@
 	flashing = flash
 	. = ..()
 	if(flash)
-		addtimer(CALLBACK(src, /atom/.proc/update_appearance), 5)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_appearance)), 5)
 
 /obj/item/shield/riot/strobe
 	flashmount_installed = TRUE

@@ -30,10 +30,10 @@
 	parent_atom.update_icon(UPDATE_OVERLAYS)
 
 /datum/component/rust/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, .proc/apply_rust_overlay)
-	RegisterSignal(parent, list(COMSIG_ATOM_SECONDARY_TOOL_ACT(TOOL_WELDER), COMSIG_ATOM_SECONDARY_TOOL_ACT(TOOL_RUSTSCRAPER)), .proc/secondary_tool_act)
-	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED, .proc/parent_del)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/handle_examine)
+	RegisterSignal(parent, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(apply_rust_overlay))
+	RegisterSignal(parent, list(COMSIG_ATOM_SECONDARY_TOOL_ACT(TOOL_WELDER), COMSIG_ATOM_SECONDARY_TOOL_ACT(TOOL_RUSTSCRAPER)), PROC_REF(secondary_tool_act))
+	RegisterSignal(parent, COMSIG_PARENT_PREQDELETED, PROC_REF(parent_del))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(handle_examine))
 
 /datum/component/rust/UnregisterFromParent()
 	UnregisterSignal(parent,\
@@ -80,5 +80,5 @@
 /// Because do_after sleeps we register the signal here and defer via an async call
 /datum/component/rust/proc/secondary_tool_act(atom/source, mob/user, obj/item/item)
 	SIGNAL_HANDLER
-	INVOKE_ASYNC(src, .proc/handle_tool_use, source, user, item)
+	INVOKE_ASYNC(src, PROC_REF(handle_tool_use), source, user, item)
 	return COMPONENT_BLOCK_TOOL_ATTACK

@@ -213,8 +213,8 @@
 	old_hair = human_holder.hairstyle
 	human_holder.hairstyle = "Bald"
 	human_holder.update_hair()
-	RegisterSignal(human_holder, COMSIG_CARBON_EQUIP_HAT, .proc/equip_hat)
-	RegisterSignal(human_holder, COMSIG_CARBON_UNEQUIP_HAT, .proc/unequip_hat)
+	RegisterSignal(human_holder, COMSIG_CARBON_EQUIP_HAT, PROC_REF(equip_hat))
+	RegisterSignal(human_holder, COMSIG_CARBON_UNEQUIP_HAT, PROC_REF(unequip_hat))
 
 /datum/quirk/item_quirk/bald/add_unique()
 	var/obj/item/clothing/head/wig/natural/baldie_wig = new(get_turf(quirk_holder))

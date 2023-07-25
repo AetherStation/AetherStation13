@@ -60,7 +60,7 @@
 	if(merge)
 		for(var/obj/item/stack/S in loc)
 			if(can_merge(S))
-				INVOKE_ASYNC(src, .proc/merge, S)
+				INVOKE_ASYNC(src, PROC_REF(merge), S)
 				//Merge can call qdel on us, so let's be safe yeah?
 				if(QDELETED(src))
 					return
@@ -79,7 +79,7 @@
 	update_weight()
 	update_appearance()
 	var/static/list/loc_connections = list(
-		COMSIG_ATOM_ENTERED = .proc/on_entered,
+		COMSIG_ATOM_ENTERED = PROC_REF(on_entered),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
 
@@ -445,7 +445,7 @@
 /obj/item/stack/proc/on_entered(datum/source, atom/movable/crossing)
 	SIGNAL_HANDLER
 	if(!crossing.throwing && can_merge(crossing))
-		INVOKE_ASYNC(src, .proc/merge, crossing)
+		INVOKE_ASYNC(src, PROC_REF(merge), crossing)
 
 /obj/item/stack/hitby(atom/movable/hitting, skipcatch, hitpush, blocked, datum/thrownthing/throwingdatum)
 	if(can_merge(hitting))

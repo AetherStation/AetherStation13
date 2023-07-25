@@ -35,7 +35,7 @@
 				qdel(PA)
 			else
 				PA = new(src)
-				INVOKE_ASYNC(user, /mob.proc/put_in_hands, PA)
+				INVOKE_ASYNC(user, TYPE_PROC_REF(/mob, put_in_hands), PA)
 
 /obj/item/chrono_eraser/item_action_slot_check(slot, mob/user)
 	if(slot == ITEM_SLOT_BACK)

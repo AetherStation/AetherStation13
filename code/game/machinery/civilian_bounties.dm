@@ -358,7 +358,7 @@
 
 /obj/item/civ_bounty_beacon/attack_self()
 	loc.visible_message(span_warning("\The [src] begins to beep loudly!"))
-	addtimer(CALLBACK(src, .proc/launch_payload), 1 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(launch_payload)), 1 SECONDS)
 
 /obj/item/civ_bounty_beacon/proc/launch_payload()
 	playsound(src, "sparks", 80, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)

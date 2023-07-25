@@ -50,7 +50,7 @@
 		notify_ghosts("IT'S LOOSE", source = src, action = NOTIFY_ORBIT, flashwindow = FALSE, ghost_sound = 'sound/machines/warning-buzzer.ogg', header = "IT'S LOOSE", notify_volume = 75)
 
 	AddElement(/datum/element/bsa_blocker)
-	RegisterSignal(src, COMSIG_ATOM_BSA_BEAM, .proc/bluespace_reaction)
+	RegisterSignal(src, COMSIG_ATOM_BSA_BEAM, PROC_REF(bluespace_reaction))
 
 /obj/singularity/Destroy()
 	STOP_PROCESSING(SSobj, src)
@@ -121,7 +121,7 @@
 		rip_u.dismember(BURN) //nice try jedi
 		qdel(rip_u)
 		return
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/carbon_tk_part_two, jedi), 0.1 SECONDS)
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(carbon_tk_part_two), jedi), 0.1 SECONDS)
 
 
 /obj/singularity/proc/carbon_tk_part_two(mob/living/carbon/jedi)
@@ -138,7 +138,7 @@
 			rip_u.dismember(BURN)
 			qdel(rip_u)
 		return
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/carbon_tk_part_three, jedi), 0.1 SECONDS)
+	addtimer(CALLBACK(GLOBAL_PROC, PROC_REF(carbon_tk_part_three), jedi), 0.1 SECONDS)
 
 
 /obj/singularity/proc/carbon_tk_part_three(mob/living/carbon/jedi)
@@ -503,7 +503,7 @@
 	return gain
 
 /obj/singularity/deadchat_plays(mode = DEMOCRACY_MODE, cooldown = 12 SECONDS)
-	. = AddComponent(/datum/component/deadchat_control/cardinal_movement, mode, list(), cooldown, CALLBACK(src, .proc/stop_deadchat_plays))
+	. = AddComponent(/datum/component/deadchat_control/cardinal_movement, mode, list(), cooldown, CALLBACK(src, PROC_REF(stop_deadchat_plays)))
 
 	if(. == COMPONENT_INCOMPATIBLE)
 		return

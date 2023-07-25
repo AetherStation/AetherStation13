@@ -22,7 +22,7 @@
 		return
 	new_lift_platform.lift_master_datum = src
 	LAZYADD(lift_platforms, new_lift_platform)
-	RegisterSignal(new_lift_platform, COMSIG_PARENT_QDELETING, .proc/remove_lift_platforms)
+	RegisterSignal(new_lift_platform, COMSIG_PARENT_QDELETING, PROC_REF(remove_lift_platforms))
 
 /datum/lift_master/proc/remove_lift_platforms(obj/structure/industrial_lift/old_lift_platform)
 	SIGNAL_HANDLER
@@ -165,11 +165,11 @@ GLOBAL_LIST_EMPTY(lifts)
 	. = ..()
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_EXITED =.proc/UncrossedRemoveItemFromLift,
-		COMSIG_ATOM_ENTERED = .proc/AddItemOnLift,
-		COMSIG_ATOM_CREATED = .proc/AddItemOnLift,
+		COMSIG_ATOM_ENTERED = PROC_REF(AddItemOnLift),
+		COMSIG_ATOM_CREATED = PROC_REF(AddItemOnLift),
 	)
 	AddElement(/datum/element/connect_loc, loc_connections)
-	RegisterSignal(src, COMSIG_MOVABLE_BUMP, .proc/GracefullyBreak)
+	RegisterSignal(src, COMSIG_MOVABLE_BUMP, PROC_REF(GracefullyBreak))
 
 	if(!lift_master_datum)
 		lift_master_datum = new(src)
@@ -193,7 +193,7 @@ GLOBAL_LIST_EMPTY(lifts)
 	if(AM in lift_load)
 		return
 	LAZYADD(lift_load, AM)
-	RegisterSignal(AM, COMSIG_PARENT_QDELETING, .proc/RemoveItemFromLift)
+	RegisterSignal(AM, COMSIG_PARENT_QDELETING, PROC_REF(RemoveItemFromLift))
 
 /**
  * Signal for when the tram runs into a field of which it cannot go through.
@@ -308,7 +308,7 @@ GLOBAL_LIST_EMPTY(lifts)
 		to_chat(user, span_warning("[src] has its controls locked! It must already be trying to do something!"))
 		add_fingerprint(user)
 		return
-	var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+	var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 	if(!isliving(user) || !in_range(src, user) || user.istate.harm)
 		return //nice try
 	switch(result)
@@ -388,7 +388,7 @@ GLOBAL_LIST_EMPTY(lifts)
 		"NORTHWEST" = image(icon = 'icons/testing/turf_analysis.dmi', icon_state = "red_arrow", dir = WEST)
 		)
 
-	var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = FALSE)
+	var/result = show_radial_menu(user, src, tool_list, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = FALSE)
 	if (!in_range(src, user))
 		return  // nice try
 
@@ -490,7 +490,7 @@ GLOBAL_DATUM(central_tram, /obj/structure/industrial_lift/tram/central)
 
 /obj/structure/industrial_lift/tram/process(delta_time)
 	if(!travel_distance)
-		addtimer(CALLBACK(src, .proc/unlock_controls), 3 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(unlock_controls)), 3 SECONDS)
 		return PROCESS_KILL
 	else
 		travel_distance--
