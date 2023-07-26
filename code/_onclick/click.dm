@@ -222,8 +222,12 @@
 			if (!target.loc)
 				continue
 
+			var/data = SEND_SIGNAL(target.loc, COMSIG_ATOM_CANREACH, next)
+			if(data & COMPONENT_FORCE_REACH)
+				return TRUE
+
 			//Storage and things with reachable internal atoms need add to next here. Or return COMPONENT_ALLOW_REACH.
-			if(SEND_SIGNAL(target.loc, COMSIG_ATOM_CANREACH, next) & COMPONENT_ALLOW_REACH)
+			if(data & COMPONENT_ALLOW_REACH)
 				next += target.loc
 
 		checking = next

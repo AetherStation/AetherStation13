@@ -8,6 +8,7 @@
 #define SCHOOL_HOLY "holy"
 #define SCHOOL_MIME "mime"
 #define SCHOOL_RESTORATION "restoration" //heal shit
+#define SCHOOL_CYBERWARE "cyberware" // cyberware abilities
 
 //NEUTRAL SPELLS (punished by honorbound gods if you get caught using it)
 #define SCHOOL_EVOCATION "evocation" //kill or destroy shit, usually out of thin air

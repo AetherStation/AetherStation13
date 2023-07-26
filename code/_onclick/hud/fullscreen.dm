@@ -11,8 +11,6 @@
 	screen.icon_state = "[initial(screen.icon_state)][severity]"
 	screen.severity = severity
 	if (client && screen.should_show_to(src))
-		var/list/screen_size = getviewsize(client.view)
-		message_admins("[screen_size[1]]  -  [screen_size[2]]")
 		screen.update_for_view(client.view)
 		client.screen += screen
 

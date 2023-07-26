@@ -10,7 +10,6 @@
 
 	var/implant_class = CYBER_CLASS_DEFAULT
 
-
 /obj/item/organ/cyberimp/examine(mob/user)
 	. = ..()
 	if(hacked)
@@ -63,8 +62,29 @@
 	slot = ORGAN_SLOT_LINK
 	zone = BODY_ZONE_HEAD
 	w_class = WEIGHT_CLASS_TINY
+	actions_types = list(/datum/action/item_action/organ_action/cyberlink_program)
 
 	var/implant_stress_reduction = 0
+	var/cyberlink_attack = 0
+	var/cyberlink_defense = 0
+
+
+	var/list/programs = list()
+	var/programs_max_size = 1
+
+/obj/item/organ/cyberimp/cyberlink/Initialize()
+	. = ..()
+	AddComponent(/datum/component/storage/concrete/cyberlink,null,programs_max_size)
+
+/obj/item/organ/cyberimp/cyberlink/ui_action_click(mob/user, actiontype)
+	SEND_SIGNAL(src, COMSIG_TRY_STORAGE_SHOW, user, TRUE)
+
+/obj/item/organ/cyberimp/cyberlink/proc/can_overpower(obj/item/organ/cyberimp/cyberlink/other)
+	if(!other)
+		return TRUE
+	if(cyberlink_attack == other.cyberlink_defense)
+		return prob(50)
+	return cyberlink_attack > other.cyberlink_defense
 
 /obj/item/organ/cyberimp/cyberlink/proc/throw_error(err_code)
 	switch(err_code)
@@ -82,6 +102,50 @@
 			to_chat(owner,"<span class = 'danger'>Cyberlink beeps: CODE06 - HEAVY ELECTROMAGNETIC MALFUNCTION DETECTED. DAMAGE TO THE IMPLANTS MAY HAVE OCCURED. </span>")
 		if(7)
 			to_chat(owner,"<span class='warning'>Cyberlink beeps: CODE07 - UNAUTHORIZED ACCESS DETECTED.</span>")
+		if(8)
+			to_chat(owner,"<span class='warning'>Cyberlink beeps: CODE08 - UNAUTHORIZED ACCESS DENIED.</span>")
+
+/obj/item/organ/cyberimp/cyberlink/proc/insert_program(obj/item/cyberlink_program/program)
+	programs += program
+	program.added_to_link(src)
+	program.added_to_mob(owner)
+	return
+
+/obj/item/organ/cyberimp/cyberlink/proc/eject_program(obj/item/cyberlink_program/program)
+	program.removed_from_mob(owner)
+	program.removed_from_link(src)
+	programs -= program
+	return
+
+/obj/item/organ/cyberimp/cyberlink/proc/add_programs_to(mob/user)
+	for(var/obj/item/cyberlink_program/program as anything in programs)
+		program.added_to_mob(user)
+	return
+
+/obj/item/organ/cyberimp/cyberlink/proc/remove_programs_from(mob/user)
+	for(var/obj/item/cyberlink_program/program as anything in programs)
+		program.removed_from_mob(user)
+	return
+
+/obj/item/organ/cyberimp/cyberlink/proc/update_programs()
+	return
+
+//Happens in Life() so about every 2 seconds
+/obj/item/organ/cyberimp/cyberlink/proc/programs_tick()
+	for(var/obj/item/cyberlink_program/program as anything in programs)
+		program.program_tick(owner)
+/*
+	1 - caster can overpower
+	0 - victim is stronger
+	-1 - either the caster or the victim doesnt have a cyberlink
+
+*/
+/proc/cyberlink_overpower_check(mob/living/carbon/human/caster, mob/living/carbon/human/victim)
+	var/obj/item/organ/cyberimp/cyberlink/attacker = caster.getorganslot(ORGAN_SLOT_LINK)
+	var/obj/item/organ/cyberimp/cyberlink/defender = victim.getorganslot(ORGAN_SLOT_LINK)
+	if(!attacker || !defender)
+		return -1
+	return attacker.can_overpower(defender)
 
 /obj/item/organ/cyberimp/cyberlink/nt_low
 	name = "NT Cyberlink 1.0"

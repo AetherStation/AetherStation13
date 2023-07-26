@@ -184,7 +184,7 @@
  */
 /datum/mutation/human/honorbound/proc/punishment(mob/living/carbon/human/user, school)
 	switch(school)
-		if(SCHOOL_HOLY, SCHOOL_MIME, SCHOOL_RESTORATION)
+		if(SCHOOL_HOLY, SCHOOL_MIME, SCHOOL_RESTORATION, SCHOOL_CYBERWARE)
 			return
 		if(SCHOOL_NECROMANCY, SCHOOL_FORBIDDEN)
 			to_chat(user, span_userdanger("[GLOB.deity] is enraged by your use of forbidden magic!"))
