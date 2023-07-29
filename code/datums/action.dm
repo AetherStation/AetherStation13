@@ -451,7 +451,7 @@
 	name = "Use [target.name]"
 	button.name = name
 
-/datum/action/item_action/organ_action/cyberlink_program
+/datum/action/item_action/organ_action/cyberware
 	name = "Open cyberlink program cache"
 	desc = "Allows you to insert and eject programs from cyberlink"
 /datum/action/item_action/organ_action/cyberlink

@@ -6,7 +6,7 @@
 	slot = ORGAN_SLOT_LINK
 	zone = BODY_ZONE_HEAD
 	w_class = WEIGHT_CLASS_TINY
-	actions_types = list(/datum/action/item_action/organ_action/cyberlink_program)
+	actions_types = list(/datum/action/item_action/organ_action/cyberware)
 
 	var/implant_stress_reduction = 0
 	var/cyberlink_attack = 0
@@ -51,25 +51,25 @@
 		if(9)
 			to_chat(owner,span_danger("Cyberlink beeps: CODE09 - UNHANDLED EXCEPTION OCCURED, CYBERNETIC SENSORY DATA OVERFLOW."))
 
-/obj/item/organ/cyberimp/cyberlink/proc/insert_program(obj/item/cyberlink_program/program)
+/obj/item/organ/cyberimp/cyberlink/proc/insert_program(obj/item/cyberware/program)
 	programs += program
 	program.added_to_link(src)
 	program.added_to_mob(owner)
 	return
 
-/obj/item/organ/cyberimp/cyberlink/proc/eject_program(obj/item/cyberlink_program/program)
+/obj/item/organ/cyberimp/cyberlink/proc/eject_program(obj/item/cyberware/program)
 	program.removed_from_mob(owner)
 	program.removed_from_link(src)
 	programs -= program
 	return
 
 /obj/item/organ/cyberimp/cyberlink/proc/add_programs_to(mob/user)
-	for(var/obj/item/cyberlink_program/program as anything in programs)
+	for(var/obj/item/cyberware/program as anything in programs)
 		program.added_to_mob(user)
 	return
 
 /obj/item/organ/cyberimp/cyberlink/proc/remove_programs_from(mob/user)
-	for(var/obj/item/cyberlink_program/program as anything in programs)
+	for(var/obj/item/cyberware/program as anything in programs)
 		program.removed_from_mob(user)
 	return
 
@@ -78,7 +78,7 @@
 
 //Happens in Life() so about every 2 seconds
 /obj/item/organ/cyberimp/cyberlink/proc/programs_tick()
-	for(var/obj/item/cyberlink_program/program as anything in programs)
+	for(var/obj/item/cyberware/program as anything in programs)
 		program.program_tick(owner)
 /*
 	1 - caster can overpower

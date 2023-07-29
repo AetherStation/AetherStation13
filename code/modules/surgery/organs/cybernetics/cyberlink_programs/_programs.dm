@@ -1,4 +1,10 @@
-/obj/item/cyberlink_program
+/**
+ * Programs - passive abilities
+ * Protocols - active abilities
+ * Is it clear?
+ */
+
+/obj/item/cyberware
 	name = "generic cyberlink program"
 	desc = "you should never see this."
 	icon = 'icons/obj/cyberlink_programs.dmi'
@@ -7,7 +13,7 @@
 	var/hidden = FALSE
 	var/cost = 0
 
-/obj/item/cyberlink_program/examine(mob/user)
+/obj/item/cyberware/examine(mob/user)
 	. = ..()
 	if(HAS_TRAIT(user,TRAIT_DIAGNOSTIC_HUD))
 		switch(tier)
@@ -26,7 +32,7 @@
 			if(CYBER_CLASS_ADMIN)
 				. += "This program was made by beings that have capabilities far beyond our current technological progress."
 
-/obj/item/cyberlink_program/Initialize()
+/obj/item/cyberware/Initialize()
 	. = ..()
 	switch(tier)
 		if(CYBER_CLASS_NT_LOW)
@@ -40,50 +46,50 @@
 		if(CYBER_CLASS_CRACKED, CYBER_CLASS_CRACKED_BAD, CYBER_CLASS_DEFAULT)
 			icon_state = "makeshift"
 
-/obj/item/cyberlink_program/proc/added_to_link(obj/item/organ/cyberimp/cyberlink/link)
+/obj/item/cyberware/proc/added_to_link(obj/item/organ/cyberimp/cyberlink/link)
 	return
 
-/obj/item/cyberlink_program/proc/removed_from_link(obj/item/organ/cyberimp/cyberlink/link)
+/obj/item/cyberware/proc/removed_from_link(obj/item/organ/cyberimp/cyberlink/link)
 	return
 
-/obj/item/cyberlink_program/proc/removed_from_mob(mob/living/carbon/user)
+/obj/item/cyberware/proc/removed_from_mob(mob/living/carbon/user)
 	return
 
-/obj/item/cyberlink_program/proc/added_to_mob(mob/living/carbon/user)
+/obj/item/cyberware/proc/added_to_mob(mob/living/carbon/user)
 	return
 
-/obj/item/cyberlink_program/proc/program_tick(mob/living/carbon/user)
+/obj/item/cyberware/proc/program_tick(mob/living/carbon/user)
 	return
 
-/obj/item/cyberlink_program/proc/get_stress(obj/item/organ/cyberimp/cyberlink/link)
+/obj/item/cyberware/proc/get_stress(obj/item/organ/cyberimp/cyberlink/link)
 	if(link && link.implant_class == tier)
 		return cost - 1
 	return cost
 
-/obj/item/cyberlink_program/action
+/obj/item/cyberware/action
 	var/action_type
 	var/datum/action/action
 
-/obj/item/cyberlink_program/action/Initialize()
+/obj/item/cyberware/action/Initialize()
 	. = ..()
 	action = new action_type(src)
 
-/obj/item/cyberlink_program/action/added_to_mob(mob/living/carbon/user)
+/obj/item/cyberware/action/added_to_mob(mob/living/carbon/user)
 	action.Grant(user)
 
-/obj/item/cyberlink_program/action/removed_from_mob(mob/living/carbon/user)
+/obj/item/cyberware/action/removed_from_mob(mob/living/carbon/user)
 	action.Remove(user)
 
-/obj/item/cyberlink_program/proc_holder
+/obj/item/cyberware/proc_holder
 	var/ability_type
 	var/obj/effect/proc_holder/ability
 
-/obj/item/cyberlink_program/proc_holder/Initialize()
+/obj/item/cyberware/proc_holder/Initialize()
 	. = ..()
 	ability = new ability_type(src)
 
-/obj/item/cyberlink_program/proc_holder/added_to_mob(mob/living/carbon/user)
+/obj/item/cyberware/proc_holder/added_to_mob(mob/living/carbon/user)
 	user.mind.AddSpell(ability)
 
-/obj/item/cyberlink_program/proc_holder/removed_from_mob(mob/living/carbon/user)
+/obj/item/cyberware/proc_holder/removed_from_mob(mob/living/carbon/user)
 	user.mind.RemoveSpell(ability)

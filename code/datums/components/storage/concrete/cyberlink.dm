@@ -11,7 +11,7 @@
 	max_items = amt
 	max_combined_w_class = amt
 	link = parent
-	set_holdable(subtypesof(/obj/item/cyberlink_program),null)
+	set_holdable(subtypesof(/obj/item/cyberware),null)
 
 /datum/component/storage/concrete/cyberlink/handle_item_insertion(obj/item/I, prevent_warning, mob/M, datum/component/storage/remote)
 	. = ..()

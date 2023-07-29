@@ -880,7 +880,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		total += C.get_stress(link)
 	if(link)
 		if(length(link.programs))
-			for(var/obj/item/cyberlink_program/program as anything in link.programs)
+			for(var/obj/item/cyberware/program as anything in link.programs)
 				total += program.get_stress(link)
 		total = max(0, total - link.implant_stress_reduction + (!isnull(cached_mood) ? (cached_mood.sanity_level - 3) : 0) )
 	return total
