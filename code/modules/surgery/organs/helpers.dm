@@ -44,3 +44,7 @@
 
 /mob/living/carbon/getorganslot(slot)
 	return internal_organs_slot[slot]
+
+/mob/living/carbon/proc/getlink()
+	RETURN_TYPE(/obj/item/organ/cyberimp/cyberlink)
+	return getlink()

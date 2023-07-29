@@ -28,7 +28,7 @@
 			handle_implant_stress(delta_time)
 
 		if(stat != DEAD)
-			var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+			var/obj/item/organ/cyberimp/cyberlink/link = getlink()
 			if(link)
 				link.programs_tick()
 
@@ -874,7 +874,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 		return 0
 
 	var/total = 0
-	var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+	var/obj/item/organ/cyberimp/cyberlink/link = getlink()
 	for(var/implant in implant_stress)
 		var/obj/item/organ/cyberimp/C = implant
 		total += C.get_stress(link)
@@ -884,6 +884,25 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				total += program.get_stress(link)
 		total = max(0, total - link.implant_stress_reduction + (!isnull(cached_mood) ? (cached_mood.sanity_level - 3) : 0) )
 	return total
+
+/mob/living/carbon/proc/cybernetic_malfunction(severity, amount)
+	var/list/L = list()
+	for(var/O in internal_organs)
+		if(istype(O,/obj/item/organ/cyberimp))
+			L += O
+	if(length(L) == 0)
+		return
+
+	getlink()?.throw_error(9)
+	for(var/i in 1 to amount)
+		var/obj/item/organ/cyberimp/C = pick(L)
+		L -= C
+
+		C.emp_act(severity)
+
+		if(length(L) == 0)
+			return
+
 
 /mob/living/carbon/proc/handle_implant_stress(delta_time)
 	current_implant_stress = max(0, current_implant_stress + get_total_implant_stress() - implant_stress_natural_decay )
@@ -896,7 +915,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 			if(cached_implant_stress < 160)
 				to_chat(src,span_warning("You feel unlike yourself..."))
-				var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+				var/obj/item/organ/cyberimp/cyberlink/link = getlink()
 				link?.throw_error(1)
 
 			if(prob(12.5))
@@ -912,7 +931,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(cached_implant_stress < 320)
 				overlay_fullscreen("implant_noise", /atom/movable/screen/fullscreen/noise_low,0)
 				to_chat(src,span_warning("You can feel your body trembling..."))
-				var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+				var/obj/item/organ/cyberimp/cyberlink/link = getlink()
 				link?.throw_error(2)
 
 			if(prob(20))
@@ -922,6 +941,9 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 			if(prob(25))
 				hallucination += 5
+
+			if(prob(1))
+				cybernetic_malfunction(1,1)
 
 		if(640 to 1280)
 			if(cached_implant_stress > 1280)
@@ -942,7 +964,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 			if(cached_implant_stress < 640)
 				overlay_fullscreen("implant_noise", /atom/movable/screen/fullscreen/noise_mid,0)
 				to_chat(src,span_warning("You feel as if your body doesn't belong to you..."))
-				var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+				var/obj/item/organ/cyberimp/cyberlink/link = getlink()
 				link?.throw_error(3)
 
 				var/atom/movable/screen/plane_master/floor/game_plane  = hud_used.plane_masters["[GAME_PLANE]"]
@@ -973,13 +995,15 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				to_chat(src, span_warning("You cough up nodules of coagulated blood..."))
 				blood_volume -= 5
 
+			if(prob(4.5))
+				cybernetic_malfunction(rand(1,2),rand(1,2))
 
 		if(1280 to INFINITY)
 			if(cached_implant_stress < 1280)
 				gain_trauma_type(/datum/brain_trauma/special/psychotic_brawling,TRAUMA_RESILIENCE_ABSOLUTE)
 				overlay_fullscreen("implant_noise", /atom/movable/screen/fullscreen/noise_high,0)
 				to_chat(src,span_warning("You're completely loosing your grasp on reality..."))
-				var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+				var/obj/item/organ/cyberimp/cyberlink/link = getlink()
 				link?.throw_error(4)
 
 				var/atom/movable/screen/plane_master/floor/game_plane  = hud_used.plane_masters["[GAME_PLANE]"]
@@ -1011,7 +1035,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				adjust_disgust(15)
 
 			if(prob(10))
-				var/obj/item/organ/cyberimp/cyberlink/link = getorganslot(ORGAN_SLOT_LINK)
+				var/obj/item/organ/cyberimp/cyberlink/link = getlink()
 				emote("scream")
 				if(!link)
 					to_chat(src,span_warning("Sensory data from all your implants completely overwhelms you, a red streak runs down your nose."))
@@ -1035,5 +1059,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 						if(CYBER_CLASS_CRACKED)
 							to_chat(src, span_warning("Your cyberlink can barely keep up with all of the sensory information from your implants"))
 							adjustOrganLoss(ORGAN_SLOT_BRAIN,(7 - link.implant_stress_reduction)/2)
+			else if(prob(10))
+				cybernetic_malfunction(rand(1,3),rand(2,4))
 
 	cached_implant_stress = current_implant_stress

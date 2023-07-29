@@ -22,14 +22,14 @@
 		if(0)
 			var/mob/living/carbon/human/victim = targets[1]
 			victim.adjustStaminaLoss(35)
-			var/obj/item/organ/cyberimp/cyberlink/link = victim.getorganslot(ORGAN_SLOT_LINK)
+			var/obj/item/organ/cyberimp/cyberlink/link = victim.getlink()
 			link.throw_error(8)
 			var/mob/living/carbon/human/caster = user
 			caster.implant_stress += 160
 		if(1)
 			var/mob/living/carbon/human/victim = targets[1]
 			victim.Stun(1 SECONDS)
-			var/obj/item/organ/cyberimp/cyberlink/link = victim.getorganslot(ORGAN_SLOT_LINK)
+			var/obj/item/organ/cyberimp/cyberlink/link = victim.getlink()
 			victim.visible_message("Sparks fly off of [victim] as internal circuitry shortcuts!")
 			link.throw_error(7)
 			var/mob/living/carbon/human/caster = user
@@ -40,7 +40,7 @@
 		return FALSE
 
 	var/mob/living/carbon/human/victim = target
-	var/obj/item/organ/cyberimp/cyberlink/link = victim.getorganslot(ORGAN_SLOT_LINK)
+	var/obj/item/organ/cyberimp/cyberlink/link = victim.getlink()
 	if(!link)
 		return FALSE
 

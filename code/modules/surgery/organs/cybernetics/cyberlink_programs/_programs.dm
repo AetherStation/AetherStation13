@@ -56,7 +56,7 @@
 	return
 
 /obj/item/cyberlink_program/proc/get_stress(obj/item/organ/cyberimp/cyberlink/link)
-	if(link.implant_class == tier)
+	if(link && link.implant_class == tier)
 		return cost - 1
 	return cost
 
