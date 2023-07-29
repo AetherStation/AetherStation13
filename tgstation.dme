@@ -3525,6 +3525,8 @@
 #include "code\modules\spells\spell_types\pointed\mind_transfer.dm"
 #include "code\modules\spells\spell_types\pointed\pointed.dm"
 #include "code\modules\spells\spell_types\pointed\cyber\analyze.dm"
+#include "code\modules\spells\spell_types\pointed\cyber\feel_my_pain.dm"
+#include "code\modules\spells\spell_types\pointed\cyber\neural_destabilizer.dm"
 #include "code\modules\spells\spell_types\pointed\cyber\zap.dm"
 #include "code\modules\station_goals\bsa.dm"
 #include "code\modules\station_goals\dna_vault.dm"
