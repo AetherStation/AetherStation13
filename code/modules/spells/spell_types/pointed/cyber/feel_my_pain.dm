@@ -1,4 +1,4 @@
-/obj/effect/proc_holder/spell/pointed/feel_my_pain
+/obj/effect/proc_holder/spell/pointed/cyber/feel_my_pain
 	name = "FEEL MY PAIN"
 	desc = "This abilty transfers the bulk of your implant stress to a target over 10 seconds. Causes a big spike in neural stress to the user."
 	school = SCHOOL_CYBERWARE
@@ -11,7 +11,7 @@
 	active_msg = "You prepare to torture a target..."
 	var/total_percentage = 0.75
 
-/obj/effect/proc_holder/spell/pointed/feel_my_pain/cast(list/targets, mob/user)
+/obj/effect/proc_holder/spell/pointed/cyber/feel_my_pain/cast(list/targets, mob/user)
 	. = ..()
 	if(length(targets) != 1)
 		return
@@ -31,21 +31,13 @@
 			var/mob/living/carbon/human/caster = user
 			caster.implant_stress += 640
 			caster.emote("scream")
-			caster.visible_message("[caster] scream at the top of his lungs!")
+			caster.visible_message(span_danger("[caster] screams at the top of his lungs!"))
+			if(prob(10))
+				to_chat(caster, span_notice("a red streak runs down your nose..."))
+				caster.blood_volume -= 5
 			INVOKE_ASYNC(src, PROC_REF(feel_my_pain),victim)
 
-/obj/effect/proc_holder/spell/pointed/feel_my_pain/can_target(atom/target, mob/user, silent)
-	if(!ishuman(target))
-		return FALSE
-
-	var/mob/living/carbon/human/victim = target
-	if(!victim.getlink())
-		return FALSE
-
-	return TRUE
-
-
-/obj/effect/proc_holder/spell/pointed/feel_my_pain/proc/feel_my_pain(mob/living/carbon/human/victim, mob/living/carbon/human/user)
+/obj/effect/proc_holder/spell/pointed/cyber/feel_my_pain/proc/feel_my_pain(mob/living/carbon/human/victim, mob/living/carbon/human/user)
 	for(var/i in 1 to 10)
 		var/stress = user.implant_stress * total_percentage * 0.1
 		user.implant_stress -= stress

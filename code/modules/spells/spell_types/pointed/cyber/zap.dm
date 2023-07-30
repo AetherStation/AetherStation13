@@ -1,4 +1,4 @@
-/obj/effect/proc_holder/spell/pointed/zap
+/obj/effect/proc_holder/spell/pointed/cyber/zap
 	name = "Induce cybernetic malfunction"
 	desc = "This ability causes a minor shortcut in cyberware of a victim with a less powerful cyberlink. If the victim's cyberlink is stronger than the attacker's it causes minor stamina damage. Does nothing on people without a cyberlink. Using this ability causes a spike in neural stress."
 	school = SCHOOL_CYBERWARE
@@ -10,7 +10,7 @@
 	action_background_icon_state = "cyber"
 	active_msg = "You prepare to zap a target..."
 
-/obj/effect/proc_holder/spell/pointed/zap/cast(list/targets, mob/user)
+/obj/effect/proc_holder/spell/pointed/cyber/zap/cast(list/targets, mob/user)
 	. = ..()
 	if(length(targets) != 1)
 		return
@@ -34,14 +34,3 @@
 			link.throw_error(7)
 			var/mob/living/carbon/human/caster = user
 			caster.implant_stress += 160
-
-/obj/effect/proc_holder/spell/pointed/zap/can_target(atom/target, mob/user, silent)
-	if(!ishuman(target))
-		return FALSE
-
-	var/mob/living/carbon/human/victim = target
-	var/obj/item/organ/cyberimp/cyberlink/link = victim.getlink()
-	if(!link)
-		return FALSE
-
-	return TRUE
