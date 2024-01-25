@@ -78,7 +78,7 @@
 		var/obj/item/grenade/P = new type(loc)
 		if(istype(P))
 			P.active = TRUE
-			addtimer(CALLBACK(P, /obj/item/grenade/proc/detonate), rand(15,60))
+			addtimer(CALLBACK(P, TYPE_PROC_REF(/obj/item/grenade, detonate)), rand(15,60))
 		var/steps = rand(1,4)
 		for(var/i in 1 to steps)
 			step_away(src,loc)
