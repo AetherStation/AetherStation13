@@ -1,4 +1,3 @@
-import { multiline } from 'common/string';
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Dimmer, Divider, Icon, NumberInput, Section, Stack } from '../components';
 import { Window } from '../layouts';
@@ -168,7 +167,7 @@ const CheckoutTab = (props, context) => {
                 fluid
                 icon="plane-departure"
                 content="Purchase"
-                tooltip={multiline`
+                tooltip={`
                 Your groceries will arrive at cargo,
                 and hopefully get delivered by them.
                 `}
@@ -181,7 +180,7 @@ const CheckoutTab = (props, context) => {
                 icon="parachute-box"
                 color="yellow"
                 content="Express"
-                tooltip={multiline`
+                tooltip={`
                 Sends the ingredients instantly,
                 and locks the console longer. Doubles the price!
                 `}

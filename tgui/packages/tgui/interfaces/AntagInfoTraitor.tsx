@@ -1,5 +1,4 @@
-import { useBackend, useLocalState } from '../backend';
-import { multiline } from 'common/string';
+import { useBackend } from '../backend';
 import { BlockQuote, Button, Dimmer, Section, Stack } from '../components';
 import { BooleanLike } from 'common/react';
 import { Window } from '../layouts';
@@ -94,7 +93,7 @@ const EmployerSection = (props, context) => {
       buttons={
         <Button
           icon="hammer"
-          tooltip={multiline`
+          tooltip={`
             This is a gameplay suggestion for bored traitors.
             You don't have to follow it... kinda like spacelaw!`}
           tooltipPosition="bottom-start">

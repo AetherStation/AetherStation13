@@ -1,7 +1,6 @@
 import { filter, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
-import { multiline } from 'common/string';
 import { useBackend } from '../backend';
 import { Button, Divider, LabeledList, NumberInput, ProgressBar, Section, Stack, Box } from '../components';
 import { getGasColor, getGasLabel } from '../constants';
@@ -88,7 +87,7 @@ export const BluespaceVendor = (props, context) => {
                   color="transparent"
                   icon="info"
                   tooltipPosition="bottom-start"
-                  tooltip={multiline`
+                  tooltip={`
                   Quick guide for machine use: prepare a tank to create a
                   new one in the machine, pick how much you want it filled,
                   and finally press start on the gas of your choice!

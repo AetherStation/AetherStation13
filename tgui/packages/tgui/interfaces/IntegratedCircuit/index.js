@@ -10,7 +10,7 @@ import {
   Dropdown,
   InfinitePlane,
 } from '../../components';
-import { Component, createRef } from 'inferno';
+import { Component, createRef } from 'react';
 import { Window } from '../../layouts';
 import { CSS_COLORS } from '../../constants';
 import { classes, shallowDiffers } from '../../../common/react';
