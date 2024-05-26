@@ -137,7 +137,10 @@ export const TgFontTarget = new Juke.Target({
     'tgui/packages/tgfont/dist/tgfont.woff2',
   ],
   executes: async () => {
-    await yarn('workspace', 'tgfont', 'build');
+    await yarn('tgfont:build');
+    fs.copyFileSync('tgui/packages/tgfont/dist/tgfont.css', 'tgui/packages/tgfont/static/tgfont.css');
+    fs.copyFileSync('tgui/packages/tgfont/dist/tgfont.eot', 'tgui/packages/tgfont/static/tgfont.eot');
+    fs.copyFileSync('tgui/packages/tgfont/dist/tgfont.woff2', 'tgui/packages/tgfont/static/tgfont.woff2');
   },
 });
 
@@ -156,9 +159,7 @@ export const TguiTarget = new Juke.Target({
     'tgui/public/tgui-panel.bundle.css',
     'tgui/public/tgui-panel.bundle.js',
   ],
-  executes: async () => {
-    await yarn('webpack-cli', '--mode=production');
-  },
+  executes: () => yarn('tgui:build'),
 });
 
 export const TguiEslintTarget = new Juke.Target({

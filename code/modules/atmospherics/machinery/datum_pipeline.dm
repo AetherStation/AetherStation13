@@ -141,6 +141,14 @@
 			if(adjacent_pipe.parent == src)
 				continue
 			var/datum/pipeline/parent_pipeline = adjacent_pipe.parent
+			// HACK: for some reason with shuttle loading pipes don't seem to get pipelines
+			// related to mapping pipe?
+			/*if (!parent_pipeline)
+				members += adjacent_pipe
+				air.volume += adjacent_pipe.volume
+				adjacent_pipe.parent = src
+			else
+				merge(parent_pipeline)*/
 			merge(parent_pipeline)
 		if(!members.Find(reference_pipe))
 			members += reference_pipe
