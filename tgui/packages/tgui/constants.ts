@@ -163,7 +163,7 @@ const GASES = [
     path: '/datum/gas/nitrogen',
     name: 'Nitrogen',
     label: 'N₂',
-    color: 'yellow',
+    color: 'red',
   },
   {
     id: 'co2',
@@ -292,10 +292,10 @@ const GASES = [
     color: 'maroon',
   },
   {
-    id: 'nitrium',
-    path: '/datum/gas/nitrium',
-    name: 'Nitrium',
-    label: 'Nitrium',
+    id: 'nitryl',
+    path: '/datum/gas/nitryl',
+    name: 'Nitryl',
+    label: 'Nitryl',
     color: 'brown',
   },
 ] as const;
@@ -304,10 +304,10 @@ const GASES = [
 export const getGasLabel = (gasId: string, fallbackValue?: string) => {
   if (!gasId) return fallbackValue || 'None';
 
-  const gasSearchString = gasId.toLowerCase();
+  const gasSearchString = gasId;
 
   for (let idx = 0; idx < GASES.length; idx++) {
-    if (GASES[idx].id === gasSearchString) {
+    if (GASES[idx].name === gasSearchString) {
       return GASES[idx].label;
     }
   }
@@ -319,10 +319,10 @@ export const getGasLabel = (gasId: string, fallbackValue?: string) => {
 export const getGasColor = (gasId: string) => {
   if (!gasId) return 'black';
 
-  const gasSearchString = gasId.toLowerCase();
+  const gasSearchString = gasId;
 
   for (let idx = 0; idx < GASES.length; idx++) {
-    if (GASES[idx].id === gasSearchString) {
+    if (GASES[idx].name === gasSearchString) {
       return GASES[idx].color;
     }
   }

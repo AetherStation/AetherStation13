@@ -32,12 +32,12 @@ export const NtosNetDownloader = (props) => {
   const items = flow([
     // This filters the list to only contain programs with category
     selectedCategory !== all_categories[0]
-    && filter(program => program.category === selectedCategory),
+    && ((programs) => filter(programs, program => program.category === selectedCategory)),
     // This filters the list to only contain verified programs
     (!emagged && PC_device_theme === "ntos")
-    && filter(program => program.verifiedsource === 1),
+    && ((programs) => filter(programs, program => program.verifiedsource === 1)),
     // This sorts all programs in the lists by name and compatibility
-    sortBy(
+    programs => sortBy(programs,
       program => -program.compatible,
       program => program.filedesc),
   ])(programs);

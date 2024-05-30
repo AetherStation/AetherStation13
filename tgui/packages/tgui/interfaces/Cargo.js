@@ -134,7 +134,7 @@ export const CargoCatalog = (props) => {
     self_paid,
     app_cost,
   } = data;
-  const supplies = toArray(data.supplies);
+  const supplies = Object.values(data.supplies);
   const [
     activeSupplyName,
     setActiveSupplyName,

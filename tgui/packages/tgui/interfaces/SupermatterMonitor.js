@@ -38,7 +38,7 @@ export const SupermatterMonitorContent = (props) => {
   }
   const gases = flow([
     (gases) => gases.filter((gas) => gas.amount >= 0.01),
-    sortBy((gas) => -gas.amount),
+    (gases) => sortBy(gases, (gas) => -gas.amount),
   ])(data.gases || []);
   const gasMaxAmount = Math.max(1, ...gases.map((gas) => gas.amount));
   return (

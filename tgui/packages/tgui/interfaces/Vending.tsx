@@ -64,7 +64,7 @@ type CustomInput = {
 }
 
 const VendingRow = (props) => {
-  const { act, data } = useBackend<VendingData>(context);
+  const { act, data } = useBackend<VendingData>();
   const {
     product,
     productStock,
@@ -178,7 +178,7 @@ const VendingRow = (props) => {
 };
 
 export const Vending = (props) => {
-  const { act, data } = useBackend<VendingData>(context);
+  const { act, data } = useBackend<VendingData>();
   const {
     user,
     onstation,

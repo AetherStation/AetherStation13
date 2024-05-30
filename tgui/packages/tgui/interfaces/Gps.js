@@ -7,7 +7,7 @@ import { useBackend } from '../backend';
 import { Box, Button, Icon, LabeledList, Section, Table } from '../components';
 import { Window } from '../layouts';
 
-const coordsToVec = coords => map(parseFloat)(coords.split(', '));
+const coordsToVec = coords => map(coords.split(', '), parseFloat);
 
 export const Gps = (props) => {
   const { act, data } = useBackend();
