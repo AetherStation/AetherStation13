@@ -2,8 +2,8 @@ import { useBackend, useLocalState } from '../backend';
 import { Button, Dimmer, Flex, Icon, LabeledList, Section, Tabs } from '../components';
 import { Window } from '../layouts';
 
-export const PersonalCrafting = (props, context) => {
-  const { act, data } = useBackend(context);
+export const PersonalCrafting = (props) => {
+  const { act, data } = useBackend();
   const {
     busy,
     display_craftable_only,
@@ -111,11 +111,11 @@ export const PersonalCrafting = (props, context) => {
   );
 };
 
-const CraftingList = (props, context) => {
+const CraftingList = (props) => {
   const {
     craftables = [],
   } = props;
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
   const {
     craftability = {},
     display_compact,

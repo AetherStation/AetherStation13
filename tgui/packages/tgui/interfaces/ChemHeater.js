@@ -1,11 +1,12 @@
 import { round, toFixed } from 'common/math';
+
 import { useBackend } from '../backend';
 import { AnimatedNumber, Box, Button, LabeledList, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 import { BeakerContents } from './common/BeakerContents';
 
-export const ChemHeater = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemHeater = (props) => {
+  const { act, data } = useBackend();
   const {
     targetTemp,
     isActive,

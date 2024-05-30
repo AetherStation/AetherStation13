@@ -3,9 +3,9 @@ import { Box, Button, Collapsible, Dimmer, Divider, Icon, LabeledList, NumberInp
 import { GeneticMakeupInfo } from './GeneticMakeupInfo';
 import { RADIATION_DURATION_MAX, RADIATION_STRENGTH_MAX } from './constants';
 
-const GeneticMakeupBufferInfo = (props, context) => {
+const GeneticMakeupBufferInfo = (props) => {
   const { index, makeup } = props;
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
   const {
     isViableSubject,
     hasDisk,
@@ -121,8 +121,8 @@ const GeneticMakeupBufferInfo = (props, context) => {
   );
 };
 
-const GeneticMakeupBuffers = (props, context) => {
-  const { data, act } = useBackend(context);
+const GeneticMakeupBuffers = (props) => {
+  const { data, act } = useBackend();
   const {
     diskHasMakeup,
     geneticMakeupCooldown,
@@ -193,8 +193,8 @@ const GeneticMakeupBuffers = (props, context) => {
   );
 };
 
-const RadiationEmitterProbs = (props, context) => {
-  const { data } = useBackend(context);
+const RadiationEmitterProbs = (props) => {
+  const { data } = useBackend();
   const {
     stdDevAcc,
     stdDevStr,
@@ -224,8 +224,8 @@ const RadiationEmitterProbs = (props, context) => {
   );
 };
 
-const RadiationEmitterPulseBoard = (props, context) => {
-  const { act } = useBackend(context);
+const RadiationEmitterPulseBoard = (props) => {
+  const { act } = useBackend();
   const {
     subjectBlock = [],
     type,
@@ -273,8 +273,8 @@ const RadiationEmitterPulseBoard = (props, context) => {
   );
 };
 
-const RadiationEmitterSettings = (props, context) => {
-  const { data, act } = useBackend(context);
+const RadiationEmitterSettings = (props) => {
+  const { data, act } = useBackend();
   const {
     radStrength,
     radDuration,
@@ -313,8 +313,8 @@ const RadiationEmitterSettings = (props, context) => {
   );
 };
 
-export const DnaConsoleEnzymes = (props, context) => {
-  const { data, act } = useBackend(context);
+export const DnaConsoleEnzymes = (props) => {
+  const { data, act } = useBackend();
   const {
     isScannerConnected,
   } = data;

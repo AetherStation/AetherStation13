@@ -1,4 +1,3 @@
-import { classes } from 'common/react';
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Dimmer, Icon, Section, Stack } from '../components';
 import { Window } from '../layouts';
@@ -49,8 +48,8 @@ const BrokenTramDimmer = () => {
   );
 };
 
-export const TramControl = (props, context) => {
-  const { act, data } = useBackend(context);
+export const TramControl = (props) => {
+  const { act, data } = useBackend();
   const {
     broken,
     moving,
@@ -61,7 +60,7 @@ export const TramControl = (props, context) => {
   const [
     transitIndex,
     setTransitIndex,
-  ] = useLocalState(context, 'transit-index', 1);
+  ] = useLocalState('transit-index', 1);
   const MovingTramDimmer = () => {
     return (
       <Dimmer>

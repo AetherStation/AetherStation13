@@ -1,12 +1,13 @@
-import { scale, toFixed } from 'common/math';
-import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Stack, Icon, LabeledList, NoticeBox, ProgressBar, Section, Tabs } from '../components';
-import { flow } from 'common/fp';
 import { filter, sortBy } from 'common/collections';
+import { flow } from 'common/fp';
+import { scale, toFixed } from 'common/math';
+
+import { useBackend, useLocalState } from '../backend';
+import { Box, Button, Icon, LabeledList, NoticeBox, ProgressBar, Section, Stack, Tabs } from '../components';
 import { NtosWindow } from '../layouts';
 
-export const NtosNetDownloader = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosNetDownloader = (props) => {
+  const { act, data } = useBackend();
   const {
     PC_device_theme,
     disk_size,
@@ -27,7 +28,7 @@ export const NtosNetDownloader = (props, context) => {
   const [
     selectedCategory,
     setSelectedCategory,
-  ] = useLocalState(context, 'category', all_categories[0]);
+  ] = useLocalState('category', all_categories[0]);
   const items = flow([
     // This filters the list to only contain programs with category
     selectedCategory !== all_categories[0]
@@ -115,9 +116,9 @@ export const NtosNetDownloader = (props, context) => {
   );
 };
 
-const Program = (props, context) => {
+const Program = (props) => {
   const { program } = props;
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
   const {
     PC_device_theme,
     disk_size,

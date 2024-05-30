@@ -1,13 +1,14 @@
 import { filter, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
+
 import { useBackend } from '../backend';
 import { LabeledList, ProgressBar, Section } from '../components';
 import { getGasColor, getGasLabel } from '../constants';
 import { NtosWindow } from '../layouts';
 
-export const NtosAtmos = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosAtmos = (props) => {
+  const { act, data } = useBackend();
   const {
     AirTemp,
     AirPressure,

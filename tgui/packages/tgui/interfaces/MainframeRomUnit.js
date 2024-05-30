@@ -1,10 +1,9 @@
-import { classes } from '../../common/react';
 import { useBackend } from '../backend';
-import { Flex, Button, NoticeBox, Section } from '../components';
+import { Button, Flex, Section } from '../components';
 import { Window } from '../layouts';
 
-export const MainframeRomUnit = (props, context) => {
-  const { act, data } = useBackend(context);
+export const MainframeRomUnit = (props) => {
+  const { act, data } = useBackend();
   const {
     banks = [],
   } = data;

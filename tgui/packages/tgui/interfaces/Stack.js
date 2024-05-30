@@ -1,11 +1,12 @@
-import { createSearch } from 'common/string';
 import { sortBy } from 'common/collections';
+import { createSearch } from 'common/string';
+
 import { useBackend, useLocalState } from "../backend";
-import { Box, Button, Input, NoticeBox, Section, Collapsible, Table } from "../components";
+import { Box, Button, Collapsible, Input, NoticeBox, Section, Table } from "../components";
 import { Window } from "../layouts";
 
-export const Stack = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Stack = (props) => {
+  const { act, data } = useBackend();
 
   const {
     amount,
@@ -15,7 +16,7 @@ export const Stack = (props, context) => {
   const [
     searchText,
     setSearchText,
-  ] = useLocalState(context, 'searchText', '');
+  ] = useLocalState('searchText', '');
 
   const testSearch = createSearch(searchText, item => {
     return item;
@@ -62,8 +63,8 @@ export const Stack = (props, context) => {
   );
 };
 
-const RecipeList = (props, context) => {
-  const { act, data } = useBackend(context);
+const RecipeList = (props) => {
+  const { act, data } = useBackend();
 
   const {
     recipes,
@@ -102,8 +103,8 @@ const buildMultiplier = (recipe, amount) => {
   return Math.floor(amount / recipe.req_amount);
 };
 
-const Multipliers = (props, context) => {
-  const { act, data } = useBackend(context);
+const Multipliers = (props) => {
+  const { act, data } = useBackend();
 
   const {
     recipe,
@@ -144,8 +145,8 @@ const Multipliers = (props, context) => {
   return finalResult;
 };
 
-const Recipe = (props, context) => {
-  const { act, data } = useBackend(context);
+const Recipe = (props) => {
+  const { act, data } = useBackend();
 
   const {
     amount,

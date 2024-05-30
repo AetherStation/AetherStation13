@@ -1,10 +1,11 @@
 import { classes } from 'common/react';
+
 import { useBackend } from '../backend';
 import { Box, Button, Section, Table } from '../components';
 import { Window } from '../layouts';
 
-export const MiningVendor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const MiningVendor = (props) => {
+  const { act, data } = useBackend();
   let inventory = [
     ...data.product_records,
   ];

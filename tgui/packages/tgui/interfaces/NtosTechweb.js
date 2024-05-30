@@ -1,11 +1,11 @@
-import { AppTechweb } from './Techweb.js';
-import { useBackend, useLocalState } from '../backend';
+import { useBackend } from '../backend';
 import { createLogger } from '../logging';
+import { AppTechweb } from './Techweb.js';
 
 const logger = createLogger('backend');
 
-export const NtosTechweb = (props, context) => {
-  const { config, data, act } = useBackend(context);
+export const NtosTechweb = (props) => {
+  const { config, data, act } = useBackend();
   logger.log(config.AppTechweb);
   return (
     <AppTechweb />

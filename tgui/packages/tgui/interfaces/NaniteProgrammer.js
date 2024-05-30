@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Button, Dropdown, Grid, Input, LabeledList, NoticeBox, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const NaniteCodes = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteCodes = (props) => {
+  const { act, data } = useBackend();
   return (
     <Section
       title="Codes"
@@ -61,8 +61,8 @@ export const NaniteCodes = (props, context) => {
   );
 };
 
-export const NaniteDelays = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteDelays = (props) => {
+  const { act, data } = useBackend();
 
   return (
     <Section
@@ -123,7 +123,7 @@ export const NaniteDelays = (props, context) => {
   );
 };
 
-export const NaniteExtraEntry = (props, context) => {
+export const NaniteExtraEntry = (props) => {
   const { extra_setting } = props;
   const {
     name,
@@ -142,9 +142,9 @@ export const NaniteExtraEntry = (props, context) => {
   );
 };
 
-export const NaniteExtraNumber = (props, context) => {
+export const NaniteExtraNumber = (props) => {
   const { extra_setting } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   const {
     name,
     value,
@@ -166,9 +166,9 @@ export const NaniteExtraNumber = (props, context) => {
   );
 };
 
-export const NaniteExtraText = (props, context) => {
+export const NaniteExtraText = (props) => {
   const { extra_setting } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   const {
     name,
     value,
@@ -184,9 +184,9 @@ export const NaniteExtraText = (props, context) => {
   );
 };
 
-export const NaniteExtraType = (props, context) => {
+export const NaniteExtraType = (props) => {
   const { extra_setting } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   const {
     name,
     value,
@@ -205,9 +205,9 @@ export const NaniteExtraType = (props, context) => {
   );
 };
 
-export const NaniteExtraBoolean = (props, context) => {
+export const NaniteExtraBoolean = (props) => {
   const { extra_setting } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   const {
     name,
     value,
@@ -224,7 +224,7 @@ export const NaniteExtraBoolean = (props, context) => {
   );
 };
 
-export const NaniteProgrammer = (props, context) => {
+export const NaniteProgrammer = (props) => {
   return (
     <Window
       width={420}
@@ -236,8 +236,8 @@ export const NaniteProgrammer = (props, context) => {
   );
 };
 
-export const NaniteProgrammerContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteProgrammerContent = (props) => {
+  const { act, data } = useBackend();
   const {
     has_disk,
     has_program,

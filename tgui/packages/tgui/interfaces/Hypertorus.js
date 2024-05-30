@@ -1,14 +1,15 @@
 import { filter, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
+
 import { useBackend } from '../backend';
-import { Button, LabeledList, NumberInput, ProgressBar, Section, Stack, Box } from '../components';
+import { Box, Button, LabeledList, NumberInput, ProgressBar, Section, Stack } from '../components';
 import { getGasColor, getGasLabel } from '../constants';
 import { formatSiBaseTenUnit, formatSiUnit } from '../format';
 import { Window } from '../layouts';
 
-export const Hypertorus = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Hypertorus = (props) => {
+  const { act, data } = useBackend();
   const filterTypes = data.filter_types || [];
   const selectedFuels = data.selected_fuel || [];
   const {

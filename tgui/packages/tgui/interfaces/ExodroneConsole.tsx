@@ -1,11 +1,12 @@
+import { capitalize } from 'common/string';
+import { Fragment } from 'react';
+
+import { resolveAsset } from '../assets';
+import nt_logo from '../assets/bg-nanotrasen.svg';
 import { useBackend, useLocalState } from '../backend';
 import { BlockQuote, Box, Button, Dimmer, Icon, LabeledList, Modal, ProgressBar, Section, Stack } from '../components';
-import { Window } from '../layouts';
-import { resolveAsset } from '../assets';
 import { formatTime } from '../format';
-import { capitalize } from 'common/string';
-import nt_logo from '../assets/bg-nanotrasen.svg';
-import { Fragment } from 'react';
+import { Window } from '../layouts';
 
 type ExplorationEventData = {
   name: string,
@@ -110,7 +111,7 @@ type ToolData = {
   icon: string
 }
 
-export const ExodroneConsole = (props, context) => {
+export const ExodroneConsole = (props) => {
   const { data } = useBackend<ExodroneConsoleData>(context);
   const {
     signal_lost,
@@ -119,7 +120,7 @@ export const ExodroneConsole = (props, context) => {
   const [
     choosingTools,
     setChoosingTools,
-  ] = useLocalState(context, 'choosingTools', false);
+  ] = useLocalState('choosingTools', false);
 
   return (
     <Window width={650} height={500}>
@@ -132,8 +133,8 @@ export const ExodroneConsole = (props, context) => {
   );
 };
 
-const SignalLostModal = (props, context) => {
-  const { act } = useBackend(context);
+const SignalLostModal = (props) => {
+  const { act } = useBackend();
   return (
     <Modal
       backgroundColor="red"
@@ -170,7 +171,7 @@ const SignalLostModal = (props, context) => {
   );
 };
 
-const DroneSelectionSection = (props, context) => {
+const DroneSelectionSection = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
     all_drones,
@@ -213,7 +214,7 @@ const DroneSelectionSection = (props, context) => {
 };
 
 
-const ToolSelectionModal = (props, context) => {
+const ToolSelectionModal = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
     all_tools = {},
@@ -222,7 +223,7 @@ const ToolSelectionModal = (props, context) => {
   const [
     choosingTools,
     setChoosingTools,
-  ] = useLocalState(context, 'choosingTools', false);
+  ] = useLocalState('choosingTools', false);
 
   const toolData = Object.keys(all_tools);
   return (
@@ -266,7 +267,7 @@ const ToolSelectionModal = (props, context) => {
   );
 };
 
-const EquipmentBox = (props, context) => {
+const EquipmentBox = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
     configurable,
@@ -349,7 +350,7 @@ const EquipmentBox = (props, context) => {
   );
 };
 
-const EquipmentGrid = (props, context) => {
+const EquipmentGrid = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
     cargo,
@@ -358,7 +359,7 @@ const EquipmentGrid = (props, context) => {
   const [
     choosingTools,
     setChoosingTools,
-  ] = useLocalState(context, 'choosingTools', false);
+  ] = useLocalState('choosingTools', false);
   return (
     <Stack vertical fill>
       <Stack.Item grow>
@@ -410,7 +411,7 @@ const EquipmentGrid = (props, context) => {
   );
 };
 
-const DroneStatus = (props, context) => {
+const DroneStatus = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
     drone_integrity,
@@ -459,7 +460,7 @@ const NoSiteDimmer = () => {
   );
 };
 
-const TravelTargetSelectionScreen = (props, context) => {
+const TravelTargetSelectionScreen = (props) => {
   // List of sites and eta travel times to each
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
@@ -484,11 +485,11 @@ const TravelTargetSelectionScreen = (props, context) => {
   const [
     choosingTools,
     setChoosingTools,
-  ] = useLocalState(context, 'choosingTools', false);
+  ] = useLocalState('choosingTools', false);
   const [
     TravelDimmerShown,
     setTravelDimmerShown,
-  ] = useLocalState(context, 'TravelDimmerShown', false);
+  ] = useLocalState('TravelDimmerShown', false);
 
   const travel_to = ref => {
     setTravelDimmerShown(false);
@@ -581,7 +582,7 @@ const TravelTargetSelectionScreen = (props, context) => {
   );
 };
 
-const TravelDimmer = (props, context) => {
+const TravelDimmer = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
     travel_time,
@@ -607,7 +608,7 @@ const TravelDimmer = (props, context) => {
   );
 };
 
-const TimeoutScreen = (props, context) => {
+const TimeoutScreen = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
     wait_time_left,
@@ -633,7 +634,7 @@ const TimeoutScreen = (props, context) => {
   );
 };
 
-const ExplorationScreen = (props, context) => {
+const ExplorationScreen = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
     site,
@@ -644,7 +645,7 @@ const ExplorationScreen = (props, context) => {
   const [
     TravelDimmerShown,
     setTravelDimmerShown,
-  ] = useLocalState(context, 'TravelDimmerShown', false);
+  ] = useLocalState('TravelDimmerShown', false);
 
   if (TravelDimmerShown) {
     return (<TravelTargetSelectionScreen showCancelButton />);
@@ -688,7 +689,7 @@ const ExplorationScreen = (props, context) => {
   );
 };
 
-const EventScreen = (props, context) => {
+const EventScreen = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
     drone_status,
@@ -799,7 +800,7 @@ export const AdventureScreen = (props: AdventureScreenProps, context) => {
   );
 };
 
-const DroneScreen = (props, context) => {
+const DroneScreen = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
     drone_status,
@@ -823,7 +824,7 @@ const DroneScreen = (props, context) => {
   }
 };
 
-const ExodroneConsoleContent = (props, context) => {
+const ExodroneConsoleContent = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>(context);
   const {
     drone,

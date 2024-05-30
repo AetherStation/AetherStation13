@@ -4,16 +4,17 @@
  * @license MIT
  */
 
+import { KEY_DOWN, KEY_ENTER, KEY_SPACE, KEY_UP } from 'common/keycodes';
 import { clamp01 } from 'common/math';
+
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Section, Input, Stack } from '../components';
-import { KEY_DOWN, KEY_UP, KEY_ENTER, KEY_SPACE } from 'common/keycodes';
+import { Box, Button, Input, Section, Stack } from '../components';
 import { Window } from '../layouts';
 
 let lastScrollTime = 0;
 
-export const ListInput = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ListInput = (props) => {
+  const { act, data } = useBackend();
   const {
     title,
     message,

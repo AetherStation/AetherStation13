@@ -1,9 +1,9 @@
 import { useBackend } from '../backend';
-import { Section, Input } from '../components';
+import { Input, Section } from '../components';
 import { Window } from '../layouts';
 
-export const MainframeTerminal = (props, context) => {
-  const { act, data } = useBackend(context);
+export const MainframeTerminal = (props) => {
+  const { act, data } = useBackend();
   const {
     text = [],
     queue_length = 0,

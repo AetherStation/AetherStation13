@@ -4,11 +4,6 @@
  * @license MIT
  */
 
-import { clamp01 } from 'common/math';
-import { useBackend } from '../backend';
-import { Component, createRef } from 'react';
-import { Box, Flex, Section } from '../components';
-import { Window } from '../layouts';
 import {
   KEY_ENTER,
   KEY_LEFT,
@@ -16,6 +11,12 @@ import {
   KEY_SPACE,
   KEY_TAB,
 } from 'common/keycodes';
+import { clamp01 } from 'common/math';
+import { Component, createRef } from 'react';
+
+import { useBackend } from '../backend';
+import { Box, Flex, Section } from '../components';
+import { Window } from '../layouts';
 
 export class AlertModal extends Component {
   constructor() {
@@ -26,7 +27,7 @@ export class AlertModal extends Component {
   }
 
   componentDidMount() {
-    const { data } = useBackend(this.context);
+    const { data } = useBackend();
     const { buttons, autofocus } = data;
     const { current } = this.state;
     const button = this.buttonRefs[current].current;
@@ -42,7 +43,7 @@ export class AlertModal extends Component {
   }
 
   setCurrent(current, isArrowKey) {
-    const { data } = useBackend(this.context);
+    const { data } = useBackend();
     const { buttons } = data;
 
     // Mimic alert() behavior for tabs and arrow keys
@@ -62,7 +63,7 @@ export class AlertModal extends Component {
   }
 
   render() {
-    const { act, data } = useBackend(this.context);
+    const { act, data } = useBackend();
     const { title, message, buttons, timeout } = data;
     const { current } = this.state;
     const focusCurrentButton = () => this.setCurrent(current, false);

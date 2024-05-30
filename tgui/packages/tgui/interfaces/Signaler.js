@@ -1,10 +1,11 @@
 import { toFixed } from 'common/math';
+
 import { useBackend } from '../backend';
 import { Button, Grid, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const Signaler = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Signaler = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window
       width={280}
@@ -16,8 +17,8 @@ export const Signaler = (props, context) => {
   );
 };
 
-export const SignalerContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SignalerContent = (props) => {
+  const { act, data } = useBackend();
   const {
     code,
     frequency,

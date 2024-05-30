@@ -5,7 +5,7 @@ import { Box, Button, Icon, Section } from '../components';
 import { Window } from "../layouts";
 
 export const Safe = (properties, context) => {
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
   const {
     dial,
     open,
@@ -53,7 +53,7 @@ export const Safe = (properties, context) => {
 };
 
 const Dialer = (properties, context) => {
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
   const {
     dial,
     open,
@@ -98,7 +98,7 @@ const Dialer = (properties, context) => {
 };
 
 const Contents = (properties, context) => {
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
   const {
     contents,
   } = data;

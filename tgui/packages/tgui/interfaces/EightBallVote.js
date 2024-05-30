@@ -1,10 +1,11 @@
-import { useBackend } from '../backend';
-import { Box, Button, Grid, Section, NoticeBox } from '../components';
 import { toTitleCase } from 'common/string';
+
+import { useBackend } from '../backend';
+import { Box, Button, Grid, NoticeBox, Section } from '../components';
 import { Window } from '../layouts';
 
-export const EightBallVote = (props, context) => {
-  const { act, data } = useBackend(context);
+export const EightBallVote = (props) => {
+  const { act, data } = useBackend();
   const {
     shaking,
   } = data;
@@ -25,8 +26,8 @@ export const EightBallVote = (props, context) => {
   );
 };
 
-const EightBallVoteQuestion = (props, context) => {
-  const { act, data } = useBackend(context);
+const EightBallVoteQuestion = (props) => {
+  const { act, data } = useBackend();
   const {
     question,
     answers = [],

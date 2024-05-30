@@ -111,6 +111,7 @@ export const DmTestTarget = new Juke.Target({
 });
 
 export const YarnTarget = new Juke.Target({
+  parameters: [CiParameter],
   inputs: [
     'tgui/.yarn/+(cache|releases|plugins|sdks)/**/*',
     'tgui/**/package.json',
@@ -119,9 +120,7 @@ export const YarnTarget = new Juke.Target({
   outputs: [
     'tgui/.yarn/install-target',
   ],
-  executes: async () => {
-    await yarn('install');
-  },
+  executes: ({ get }) => yarn('install', get(CiParameter) && '--immutable'),
 });
 
 export const TgFontTarget = new Juke.Target({
@@ -163,28 +162,20 @@ export const TguiTarget = new Juke.Target({
 });
 
 export const TguiEslintTarget = new Juke.Target({
+  parameters: [CiParameter],
   dependsOn: [YarnTarget],
-  executes: async ({ args }) => {
-    await yarn(
-      'eslint', 'packages',
-      '--fix', '--ext', '.js,.cjs,.ts,.tsx',
-      ...args
-    );
-  },
+  executes: ({ get }) => yarn('tgui:lint', !get(CiParameter) && '--fix'),
 });
 
 export const TguiTscTarget = new Juke.Target({
   dependsOn: [YarnTarget],
-  executes: async () => {
-    await yarn('tsc');
-  },
+  executes: () => yarn('tgui:tsc'),
 });
 
 export const TguiTestTarget = new Juke.Target({
+  parameters: [CiParameter],
   dependsOn: [YarnTarget],
-  executes: async ({ args }) => {
-    await yarn('jest', ...args);
-  },
+  executes: ({ get }) => yarn(`tgui:test-${get(CiParameter) ? 'ci' : 'simple'}`),
 });
 
 export const TguiLintTarget = new Juke.Target({
@@ -193,16 +184,12 @@ export const TguiLintTarget = new Juke.Target({
 
 export const TguiDevTarget = new Juke.Target({
   dependsOn: [YarnTarget],
-  executes: async ({ args }) => {
-    await yarn('node', 'packages/tgui-dev-server/index.esm.js', ...args);
-  },
+  executes: ({ args }) => yarn('tgui:dev', ...args),
 });
 
 export const TguiAnalyzeTarget = new Juke.Target({
   dependsOn: [YarnTarget],
-  executes: async () => {
-    await yarn('webpack-cli', '--mode=production', '--analyze');
-  },
+  executes: () => yarn('tgui:analyze'),
 });
 
 export const TestTarget = new Juke.Target({

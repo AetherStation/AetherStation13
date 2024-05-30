@@ -1,4 +1,5 @@
 import { sortBy } from 'common/collections';
+
 import { useBackend } from '../backend';
 import { Box, Button, ColorBox, Section, Table } from '../components';
 import { COLORS } from '../constants';
@@ -74,11 +75,12 @@ export const CrewConsole = () => {
   );
 };
 
-const CrewTable = (props, context) => {
-  const { act, data } = useBackend(context);
+const CrewTable = (props) => {
+  const { act, data } = useBackend();
   const sensors = sortBy(
+    data.sensors ?? [],
     s => s.ijob
-  )(data.sensors ?? []);
+  );
   return (
     <Table>
       <Table.Row>
@@ -105,8 +107,8 @@ const CrewTable = (props, context) => {
   );
 };
 
-const CrewTableEntry = (props, context) => {
-  const { act, data } = useBackend(context);
+const CrewTableEntry = (props) => {
+  const { act, data } = useBackend();
   const { link_allowed } = data;
   const { sensor_data } = props;
   const {

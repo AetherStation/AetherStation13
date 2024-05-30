@@ -1,9 +1,9 @@
 import { useBackend } from '../backend';
-import { Table, Button, Section, Flex, NoticeBox, Dropdown } from '../components';
+import { Button, Dropdown, Flex, NoticeBox, Section, Table } from '../components';
 import { Window } from '../layouts';
 
-export const DeathmatchPanel = (props, context) => {
-  const { act, data } = useBackend(context);
+export const DeathmatchPanel = (props) => {
+  const { act, data } = useBackend();
   const playing = data.playing || "";
   return (
     <Window

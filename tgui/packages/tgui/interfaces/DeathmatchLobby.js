@@ -1,11 +1,12 @@
-import { useBackend } from '../backend';
 import { map } from 'common/collections';
-import { Table, Icon, Button, Section, Flex, Box, Dropdown } from '../components';
-import { Window } from '../layouts';
-import { ButtonCheckbox } from '../components/Button';
 
-export const DeathmatchLobby = (props, context) => {
-  const { act, data } = useBackend(context);
+import { useBackend } from '../backend';
+import { Box, Button, Dropdown, Flex, Icon, Section, Table } from '../components';
+import { ButtonCheckbox } from '../components/Button';
+import { Window } from '../layouts';
+
+export const DeathmatchLobby = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window
       title="Deathmatch Lobby"
@@ -28,7 +29,7 @@ export const DeathmatchLobby = (props, context) => {
                     Ready
                   </Table.Cell>
                 </Table.Row>
-                {map((pdata, player) => (
+                {map(data.players, (pdata, player) => (
                   <Table.Row className="candystripe">
                     <Table.Cell collapsing>
                       {!!pdata.host
@@ -68,8 +69,8 @@ export const DeathmatchLobby = (props, context) => {
                         onClick={() => act('ready')} />
                     </Table.Cell>
                   </Table.Row>
-                ))(data.players)}
-                {map((odata, observer) => (
+                ))}
+                {map(data.observer, (odata, observer) => (
                   <Table.Row>
                     <Table.Cell collapsing>
                       {!!odata.host
@@ -95,7 +96,7 @@ export const DeathmatchLobby = (props, context) => {
                       Observing
                     </Table.Cell>
                   </Table.Row>
-                ))(data.observers)}
+                ))}
               </Table>
             </Section>
           </Flex.Item>

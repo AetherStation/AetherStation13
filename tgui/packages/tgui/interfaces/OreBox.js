@@ -1,10 +1,11 @@
 import { toTitleCase } from 'common/string';
-import { Box, Button, Section, Table } from '../components';
+
 import { useBackend } from '../backend';
+import { Box, Button, Section, Table } from '../components';
 import { Window } from '../layouts';
 
-export const OreBox = (props, context) => {
-  const { act, data } = useBackend(context);
+export const OreBox = (props) => {
+  const { act, data } = useBackend();
   const { materials } = data;
   return (
     <Window

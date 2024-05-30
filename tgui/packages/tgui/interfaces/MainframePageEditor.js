@@ -2,19 +2,19 @@ import { useBackend, useLocalState } from '../backend';
 import { Box, Button, NoticeBox } from '../components';
 import { Window } from '../layouts';
 
-export const MainframePageEditor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const MainframePageEditor = (props) => {
+  const { act, data } = useBackend();
   const {
     memory,
   } = data;
   const [
     editedMemory,
     setEditedMemory,
-  ] = useLocalState(context, 'editedMemory', memory);
+  ] = useLocalState('editedMemory', memory);
   const [
     currentNibble,
     setCurrentNibble,
-  ] = useLocalState(context, 'currentNibble', 0);
+  ] = useLocalState('currentNibble', 0);
 
   const listmemory = () => {
     const elements = [];

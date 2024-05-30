@@ -1,8 +1,9 @@
 import { createSearch } from 'common/string';
+
 import { useBackend, useLocalState } from '../backend';
-import { Material, MaterialAmount, MaterialFormatting, Materials, MATERIAL_KEYS } from './common/Materials';
-import { Window } from '../layouts';
 import { Box, Button, Input, Section, Stack, Tabs } from '../components';
+import { Window } from '../layouts';
+import { Material, MATERIAL_KEYS, MaterialAmount, MaterialFormatting, Materials } from './common/Materials';
 
 const CATEGORY_ALL = "All";
 
@@ -66,11 +67,11 @@ const MaterialCost = (props: {
   );
 };
 
-export const ComponentPrinter = (props, context) => {
+export const ComponentPrinter = (props) => {
   const { act, data } = useBackend<ComponentPrinterData>(context);
 
-  const [currentCategory, setCurrentCategory] = useLocalState(context, "category", CATEGORY_ALL);
-  const [searchText, setSearchText] = useLocalState(context, "searchText", "");
+  const [currentCategory, setCurrentCategory] = useLocalState("category", CATEGORY_ALL);
+  const [searchText, setSearchText] = useLocalState("searchText", "");
 
   return (
     <Window title="Component Printer" width={900} height={700}>

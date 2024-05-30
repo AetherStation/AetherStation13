@@ -1,9 +1,9 @@
 import { useBackend } from '../backend';
-import { Box, Button, Flex, Stack, Icon, LabeledControls, Section, NumberInput, Table } from '../components';
+import { Box, Button, Flex, Icon, LabeledControls, NumberInput, Section, Table } from '../components';
 import { Window } from '../layouts';
 
-export const Reflector = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Reflector = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window
       title={data.reflector_name}

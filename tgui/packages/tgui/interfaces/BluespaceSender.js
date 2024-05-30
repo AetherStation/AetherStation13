@@ -1,15 +1,16 @@
 import { filter, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
+
 import { useBackend } from '../backend';
-import { Button, Divider, LabeledList, NumberInput, ProgressBar, Section, Stack, Box, AnimatedNumber } from '../components';
+import { Box, Button, Divider, LabeledList, NumberInput, ProgressBar, Section, Stack } from '../components';
 import { getGasColor, getGasLabel } from '../constants';
 import { Window } from '../layouts';
 
 const mappedTopMargin = "2%";
 
-export const BluespaceSender = (props, context) => {
-  const { act, data } = useBackend(context);
+export const BluespaceSender = (props) => {
+  const { act, data } = useBackend();
   const {
     on,
     gas_transfer_rate,

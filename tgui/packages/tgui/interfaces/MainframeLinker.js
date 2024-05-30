@@ -1,9 +1,9 @@
 import { useBackend } from '../backend';
-import { Section, Button, NoticeBox, Box, Flex, LabeledList, NumberInput } from '../components';
+import { Button, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 
-export const MainframeLinker = (props, context) => {
-  const { act, data } = useBackend(context);
+export const MainframeLinker = (props) => {
+  const { act, data } = useBackend();
   const {
     peripherals = [],
   } = data;

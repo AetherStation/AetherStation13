@@ -20,7 +20,7 @@ type Info = {
   objectives: Objective[];
 };
 
-const ObjectivePrintout = (props, context) => {
+const ObjectivePrintout = (props) => {
   const { data } = useBackend<Info>(context);
   const {
     objectives,
@@ -42,7 +42,7 @@ const ObjectivePrintout = (props, context) => {
   );
 };
 
-const InformationSection = (props, context) => {
+const InformationSection = (props) => {
   const { data } = useBackend<Info>(context);
   const {
     total_sacrifices,
@@ -69,7 +69,7 @@ const InformationSection = (props, context) => {
   );
 };
 
-const IntroductionSection = (props, context) => {
+const IntroductionSection = (props) => {
   return (
     <Stack
       align="center"
@@ -102,7 +102,7 @@ const IntroductionSection = (props, context) => {
   );
 };
 
-export const AntagInfoHeretic = (props, context) => {
+export const AntagInfoHeretic = (props) => {
   const { data } = useBackend<Info>(context);
   const {
     ascended,

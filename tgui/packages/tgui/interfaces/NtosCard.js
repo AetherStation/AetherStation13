@@ -1,7 +1,7 @@
 import { useBackend, useSharedState } from '../backend';
-import { Box, Button, Input, NoticeBox, NumberInput, Section, Stack, Tabs, Dropdown } from '../components';
+import { Box, Button, Dropdown, Input, NoticeBox, NumberInput, Section, Stack, Tabs } from '../components';
 import { NtosWindow } from '../layouts';
-export const NtosCard = (props, context) => {
+export const NtosCard = (props) => {
   return (
     <NtosWindow
       width={500}
@@ -13,8 +13,8 @@ export const NtosCard = (props, context) => {
   );
 };
 
-export const NtosCardContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NtosCardContent = (props) => {
+  const { act, data } = useBackend();
   const {
     authenticatedUser,
     access_on_card = [],
@@ -157,7 +157,7 @@ export const NtosCardContent = (props, context) => {
   );
 };
 
-const IDCardTabs = (props, context) => {
+const IDCardTabs = (props) => {
   const [
     selectedTab,
     setSelectedTab,
@@ -185,8 +185,8 @@ const IDCardTabs = (props, context) => {
   );
 };
 
-export const IDCardLogin = (props, context) => {
-  const { act, data } = useBackend(context);
+export const IDCardLogin = (props) => {
+  const { act, data } = useBackend();
   const {
     authenticatedUser,
     has_id,
@@ -230,8 +230,8 @@ export const IDCardLogin = (props, context) => {
   );
 };
 
-const IDCardTarget = (props, context) => {
-  const { act, data } = useBackend(context);
+const IDCardTarget = (props) => {
+  const { act, data } = useBackend();
   const {
     authenticatedUser,
     id_rank,

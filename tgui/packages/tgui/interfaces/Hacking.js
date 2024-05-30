@@ -1,10 +1,10 @@
-import { useBackend } from '../backend';
-import { Section, Box, TimeDisplay } from '../components';
 import { resolveAsset } from '../assets';
+import { useBackend } from '../backend';
+import { Box, Section, TimeDisplay } from '../components';
 import { Window } from '../layouts';
 
-export const Hacking = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Hacking = (props) => {
+  const { act, data } = useBackend();
   const {
     timeleft,
     games = [[[]]],
@@ -37,8 +37,8 @@ export const Hacking = (props, context) => {
   );
 };
 
-const Minigame = (props, context) => {
-  const { act, data } = useBackend(context);
+const Minigame = (props) => {
+  const { act, data } = useBackend();
   const {
     array = [[]],
     minigame_id = 0,

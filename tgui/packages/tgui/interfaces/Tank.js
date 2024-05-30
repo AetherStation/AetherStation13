@@ -1,4 +1,5 @@
 import { toFixed } from 'common/math';
+
 import { useBackend } from '../backend';
 import { Button, LabeledControls, NumberInput, RoundGauge, Section } from '../components';
 import { formatSiUnit } from '../format';
@@ -11,8 +12,8 @@ const formatPressure = value => {
   return formatSiUnit(value * 1000, 1, 'Pa');
 };
 
-export const Tank = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Tank = (props) => {
+  const { act, data } = useBackend();
   const {
     defaultReleasePressure,
     minReleasePressure,

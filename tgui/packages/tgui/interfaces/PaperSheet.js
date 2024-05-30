@@ -7,13 +7,14 @@
  * @license MIT
  */
 
+import { clamp } from 'common/math';
 import { classes } from 'common/react';
-import { Component } from 'react';
 import { marked } from 'marked';
+import { Component } from 'react';
+
 import { useBackend } from '../backend';
 import { Box, Flex, Tabs, TextArea } from '../components';
 import { Window } from '../layouts';
-import { clamp } from 'common/math';
 import { sanitizeText } from '../sanitize';
 const MAX_PAPER_LENGTH = 5000; // Question, should we send this with ui_data?
 
@@ -183,7 +184,7 @@ const pauseEvent = e => {
   return false;
 };
 
-const Stamp = (props, context) => {
+const Stamp = (props) => {
   const {
     image,
     opacity,
@@ -214,7 +215,7 @@ const setInputReadonly = (text, readonly) => {
 
 // got to make this a full component if we
 // want to control updates
-const PaperSheetView = (props, context) => {
+const PaperSheetView = (props) => {
   const {
     value = "",
     stamps = [],
@@ -251,8 +252,8 @@ const PaperSheetView = (props, context) => {
 
 // again, need the states for dragging and such
 class PaperSheetStamper extends Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.state = {
       x: 0,
       y: 0,
@@ -361,8 +362,8 @@ class PaperSheetStamper extends Component {
 // component too if I want to keep updates
 // low and keep the weird flashing down
 class PaperSheetEdit extends Component {
-  constructor(props, context) {
-    super(props, context);
+  constructor(props) {
+    super(props);
     this.state = {
       previewSelected: "Preview",
       old_text: props.value || "",
@@ -553,8 +554,8 @@ class PaperSheetEdit extends Component {
   }
 }
 
-export const PaperSheet = (props, context) => {
-  const { data } = useBackend(context);
+export const PaperSheet = (props) => {
+  const { data } = useBackend();
   const {
     edit_mode,
     text,
