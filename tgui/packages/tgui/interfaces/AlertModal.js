@@ -28,7 +28,7 @@ export class AlertModal extends Component {
 
   componentDidMount() {
     const { data } = useBackend(this.context);
-    const { buttons, autofocus } = data;
+    const { buttons = [], autofocus } = data;
     const { current } = this.state;
     const button = this.buttonRefs[current].current;
 
@@ -44,7 +44,7 @@ export class AlertModal extends Component {
 
   setCurrent(current, isArrowKey) {
     const { data } = useBackend(this.context);
-    const { buttons } = data;
+    const { buttons = [] } = data;
 
     // Mimic alert() behavior for tabs and arrow keys
     if (current >= buttons.length) {
@@ -64,7 +64,7 @@ export class AlertModal extends Component {
 
   render() {
     const { act, data } = useBackend(this.context);
-    const { title, message, buttons, timeout } = data;
+    const { title, message = "", buttons = [], timeout } = data;
     const { current } = this.state;
     const focusCurrentButton = () => this.setCurrent(current, false);
 
