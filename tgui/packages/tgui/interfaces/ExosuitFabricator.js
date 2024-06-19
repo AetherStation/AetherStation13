@@ -191,7 +191,7 @@ const PartSets = (props) => {
   const partSets = data.partSets || [];
   const buildableParts = data.buildableParts || {};
   const [selectedPartTab, setSelectedPartTab] = useSharedState(
-    context, 'part_tab', partSets.length ? buildableParts[0] : '');
+    'part_tab', partSets.length ? buildableParts[0] : '');
   return partSets
     .filter(set => buildableParts[set])
     .map(set => (
@@ -230,7 +230,6 @@ const PartLists = (props) => {
     selectedPartTab,
     setSelectedPartTab,
   ] = useSharedState(
-    context,
     "part_tab",
     getFirstValidPartSet(partSets)
   );
@@ -238,7 +237,7 @@ const PartLists = (props) => {
   const [
     searchText,
     setSearchText,
-  ] = useSharedState(context, "search_text", "");
+  ] = useSharedState("search_text", "");
 
   if (!selectedPartTab || !buildableParts[selectedPartTab]) {
     const validSet = getFirstValidPartSet(partSets);
@@ -326,7 +325,7 @@ const PartCategory = (props) => {
   } = props;
   const [
     displayMatCost,
-  ] = useSharedState(context, 'display_mats', false);
+  ] = useSharedState('display_mats', false);
   if (!forceShow && parts.length === 0) {
     return null;
   }
