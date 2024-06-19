@@ -532,7 +532,7 @@ const SDQLSpellInput = (props) => {
       return (
         <NumberInput
           value={saved_vars[name] ?? default_value}
-          onChange={(e, value) => act('variable', { name, value })}
+          onChange={(value) => act('variable', { name, value })}
         />
       );
     case 'bool':
@@ -648,7 +648,7 @@ const SDQLSpellListVarInput = (props) => {
       return (
         <NumberInput
           value={value}
-          onChange={(e, value) =>
+          onChange={(value) =>
             act('list_variable_change_value', { list, name, value })}
         />
       );

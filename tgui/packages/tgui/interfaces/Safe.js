@@ -4,7 +4,7 @@ import { useBackend } from '../backend';
 import { Box, Button, Icon, Section } from '../components';
 import { Window } from "../layouts";
 
-export const Safe = (properties, context) => {
+export const Safe = (properties) => {
   const { act, data } = useBackend();
   const {
     dial,
@@ -52,7 +52,7 @@ export const Safe = (properties, context) => {
   );
 };
 
-const Dialer = (properties, context) => {
+const Dialer = (properties) => {
   const { act, data } = useBackend();
   const {
     dial,
@@ -97,7 +97,7 @@ const Dialer = (properties, context) => {
   );
 };
 
-const Contents = (properties, context) => {
+const Contents = (properties) => {
   const { act, data } = useBackend();
   const {
     contents,
@@ -129,7 +129,7 @@ const Contents = (properties, context) => {
   );
 };
 
-const Help = (properties, context) => {
+const Help = (properties) => {
   return (
     <Section
       className="Safe__help"

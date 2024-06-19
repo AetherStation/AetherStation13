@@ -140,7 +140,7 @@ export const LaunchpadControl = (props) => {
                   width="90px"
                   height="30px"
                   stepPixelSize={10}
-                  onChange={(e, value) => act('set_pos', {
+                  onChange={(value) => act('set_pos', {
                     x: value,
                   })} />
               </Box>
@@ -160,7 +160,7 @@ export const LaunchpadControl = (props) => {
                   fontSize="26px"
                   width="90px"
                   height="30px"
-                  onChange={(e, value) => act('set_pos', {
+                  onChange={(value) => act('set_pos', {
                     y: value,
                   })} />
               </Box>

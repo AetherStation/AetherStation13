@@ -32,7 +32,7 @@ export const ChemDebugSynthesizer = (props) => {
                 maxValue={beakerMaxVolume}
                 step={1}
                 stepPixelSize={2}
-                onChange={(e, value) => act('amount', {
+                onChange={(value) => act('amount', {
                   amount: value,
                 })} />
               <NumberInput
@@ -42,7 +42,7 @@ export const ChemDebugSynthesizer = (props) => {
                 maxValue={120}
                 step={1}
                 stepPixelSize={2}
-                onChange={(e, value) => act('purity', {
+                onChange={(value) => act('purity', {
                   amount: value,
                 })} />
               <Button

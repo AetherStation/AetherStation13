@@ -27,7 +27,7 @@ export const AtmosMixer = (props) => {
                 minValue={0}
                 maxValue={data.max_pressure}
                 step={10}
-                onChange={(e, value) => act('pressure', {
+                onChange={(value) => act('pressure', {
                   pressure: value,
                 })} />
               <Button
@@ -48,7 +48,7 @@ export const AtmosMixer = (props) => {
                 minValue={0}
                 maxValue={100}
                 stepPixelSize={2}
-                onDrag={(e, value) => act('node1', {
+                onDrag={(value) => act('node1', {
                   concentration: value,
                 })} />
             </LabeledList.Item>
@@ -61,7 +61,7 @@ export const AtmosMixer = (props) => {
                 minValue={0}
                 maxValue={100}
                 stepPixelSize={2}
-                onDrag={(e, value) => act('node2', {
+                onDrag={(value) => act('node2', {
                   concentration: value,
                 })} />
             </LabeledList.Item>

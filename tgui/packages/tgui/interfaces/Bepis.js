@@ -65,7 +65,7 @@ export const Bepis = (props) => {
                       maxValue={30000}
                       step={100}
                       stepPixelSize={2}
-                      onChange={(e, value) => act('amount', {
+                      onChange={(value) => act('amount', {
                         amount: value,
                       })} />
                   </LabeledList.Item>

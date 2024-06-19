@@ -21,7 +21,7 @@ type Info = {
 };
 
 const ObjectivePrintout = (props) => {
-  const { data } = useBackend<Info>(context);
+  const { data } = useBackend<Info>();
   const {
     objectives,
   } = data;
@@ -43,7 +43,7 @@ const ObjectivePrintout = (props) => {
 };
 
 const InformationSection = (props) => {
-  const { data } = useBackend<Info>(context);
+  const { data } = useBackend<Info>();
   const {
     total_sacrifices,
     ascended,
@@ -103,7 +103,7 @@ const IntroductionSection = (props) => {
 };
 
 export const AntagInfoHeretic = (props) => {
-  const { data } = useBackend<Info>(context);
+  const { data } = useBackend<Info>();
   const {
     ascended,
   } = data;

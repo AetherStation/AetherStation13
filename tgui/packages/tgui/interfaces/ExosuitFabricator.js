@@ -119,7 +119,7 @@ export const ExosuitFabricator = (props) => {
     textColors,
   } = queueCondFormat(materialAsObj, queue);
   const [displayMatCost, setDisplayMatCost] = useSharedState(
-    context, 'display_mats', false);
+    'display_mats', false);
   return (
     <Window
       title="Exosuit Fabricator"

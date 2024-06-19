@@ -16,7 +16,7 @@ const FilterIntegerEntry = (props) => {
       maxValue={500}
       stepPixelSize={5}
       width="39px"
-      onDrag={(e, value) => act('modify_filter_value', {
+      onDrag={(value) => act('modify_filter_value', {
         name: filterName,
         new_data: {
           [name]: value,
@@ -39,7 +39,7 @@ const FilterFloatEntry = (props) => {
         step={step}
         format={value => toFixed(value, numberOfDecimalDigits(step))}
         width="80px"
-        onDrag={(e, value) => act('transition_filter_value', {
+        onDrag={(value) => act('transition_filter_value', {
           name: filterName,
           new_data: {
             [name]: value,
@@ -56,7 +56,7 @@ const FilterFloatEntry = (props) => {
         step={0.001}
         format={value => toFixed(value, 4)}
         width="70px"
-        onChange={(e, value) => setStep(value)} />
+        onChange={(value) => setStep(value)} />
     </>
   );
 };
@@ -198,7 +198,7 @@ const FilterEntry = (props) => {
             value={priority}
             stepPixelSize={10}
             width="60px"
-            onChange={(e, value) => act('change_priority', {
+            onChange={(value) => act('change_priority', {
               name: name,
               new_priority: value,
             })}

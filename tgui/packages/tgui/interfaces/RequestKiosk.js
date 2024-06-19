@@ -136,7 +136,7 @@ export const RequestKioskContent = (props) => {
                   maxValue={1000}
                   value={bountyValue}
                   width="80px"
-                  onChange={(e, value) => act('bountyVal', {
+                  onChange={(value) => act('bountyVal', {
                     bountyval: value,
                   })} />
               </Box>

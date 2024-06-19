@@ -12,7 +12,7 @@ export const Limbgrower = (props) => {
     busy,
   } = data;
   const [tab, setTab] = useSharedState(
-    context, 'category', categories[0]?.name);
+    'category', categories[0]?.name);
   const designList = categories
     .find(category => category.name === tab)
     ?.designs;

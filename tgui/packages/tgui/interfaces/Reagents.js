@@ -354,9 +354,9 @@ const RecipeLibrary = (props) => {
   } = data;
 
   const [reagentFilter, setReagentFilter] = useLocalState(
-    context, 'reagentFilter', true);
+    'reagentFilter', true);
   const [bookmarkMode, setBookmarkMode] = useLocalState(
-    context, 'bookmarkMode', false);
+    'bookmarkMode', false);
 
   const matchReagents = reaction => {
     if (!reagentFilter || currentReagents === null) {
@@ -429,7 +429,7 @@ const RecipeLibrary = (props) => {
             value={page}
             minValue={1}
             maxValue={pageIndexMax}
-            onDrag={(e, value) => setPage(value)} />
+            onDrag={(value) => setPage(value)} />
           <Button
             icon="plus"
             disabled={page === pageIndexMax}

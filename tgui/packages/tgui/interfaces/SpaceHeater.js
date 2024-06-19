@@ -73,7 +73,7 @@ export const SpaceHeater = (props) => {
                   unit="°C"
                   minValue={data.minTemp}
                   maxValue={data.maxTemp}
-                  onChange={(e, value) => act('target', {
+                  onChange={(value) => act('target', {
                     target: value,
                   })} />
               ) || (

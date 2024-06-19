@@ -45,14 +45,14 @@ export const MaterialIcon = (props: MaterialIconProps) => {
 const EjectMaterial = (props: {
   material: Material,
   onEject: (amount: number) => void,
-}, context) => {
+}) => {
   const {
     name,
     removable,
     sheets,
   } = props.material;
   const [removeMaterials, setRemoveMaterials] = useSharedState(
-    context, 'remove_mats_' + name, 1);
+    'remove_mats_' + name, 1);
   if (removeMaterials > 1 && sheets < removeMaterials) {
     setRemoveMaterials(sheets || 1);
   }

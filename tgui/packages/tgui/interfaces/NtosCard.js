@@ -269,7 +269,7 @@ const IDCardTarget = (props) => {
                 unit="Years"
                 minValue={17}
                 maxValue={85}
-                onChange={(e, value) => { act('PRG_age', {
+                onChange={(value) => { act('PRG_age', {
                   id_age: value,
                 });
                 }} />

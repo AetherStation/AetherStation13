@@ -12,14 +12,14 @@ const pod_grey = {
   color: 'grey',
 };
 
-const useCompact = context => {
+const useCompact = () => {
   const [compact, setCompact] = useLocalState('compact', false);
   const toggleCompact = () => setCompact(!compact);
   return [compact, toggleCompact];
 };
 
 export const CentcomPodLauncher = (props) => {
-  const [compact] = useCompact(context);
+  const [compact] = useCompact();
   return (
     <Window
       title="Supply Pod Menu (Use against Helen Weinstein)"
@@ -31,7 +31,7 @@ export const CentcomPodLauncher = (props) => {
 };
 
 const CentcomPodLauncherContent = (props) => {
-  const [compact] = useCompact(context);
+  const [compact] = useCompact();
   return (
     <Window.Content>
       <Stack fill vertical>
@@ -543,7 +543,7 @@ const TabDrop = (props) => {
 
 const PodStatusPage = (props) => {
   const { act, data } = useBackend();
-  const [compact, toggleCompact] = useCompact(context);
+  const [compact, toggleCompact] = useCompact();
   return (
     <Section fill width="100%">
       <Stack>
@@ -755,7 +755,7 @@ class PresetsPage extends Component {
     storage.set("podlauncher_preset_" + id, data);
   }
 
-  async loadDataFromPreset(id, context) {
+  async loadDataFromPreset(id) {
     const { act } = useBackend(this.context);
     act("loadDataFromPreset", {
       payload: await storage.get("podlauncher_preset_" + id),
@@ -873,7 +873,7 @@ class PresetsPage extends Component {
               value={hue}
               minValue={0}
               maxValue={360}
-              onChange={(e, value) => setHue(value)} />
+              onChange={(value) => setHue(value)} />
             <Input
               inline
               autofocus
@@ -913,7 +913,7 @@ class PresetsPage extends Component {
 }
 
 const LaunchPage = (props) => {
-  const [compact] = useCompact(context);
+  const [compact] = useCompact();
   const { act, data } = useBackend();
   return (
     <Button
@@ -987,7 +987,7 @@ const StylePage = (props) => {
 
 const Bays = (props) => {
   const { act, data } = useBackend();
-  const [compact] = useCompact(context);
+  const [compact] = useCompact();
   return (
     <Section
       fill

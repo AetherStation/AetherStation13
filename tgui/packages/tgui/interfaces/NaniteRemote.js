@@ -75,7 +75,7 @@ export const NaniteRemoteContent = (props) => {
               width="47px"
               step={1}
               stepPixelSize={2}
-              onChange={(e, value) => act('set_code', {
+              onChange={(value) => act('set_code', {
                 code: value,
               })} />
           </LabeledList.Item>
@@ -98,7 +98,7 @@ export const NaniteRemoteContent = (props) => {
                 width="47px"
                 step={1}
                 stepPixelSize={2}
-                onChange={(e, value) => act('set_relay_code', {
+                onChange={(value) => act('set_relay_code', {
                   code: value,
                 })} />
             </LabeledList.Item>
