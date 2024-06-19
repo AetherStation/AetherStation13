@@ -120,7 +120,7 @@ export const YarnTarget = new Juke.Target({
   outputs: [
     'tgui/.yarn/install-target',
   ],
-  executes: ({ get }) => yarn('install', get(CiParameter) && '--immutable'),
+  executes: ({ get }) => yarn('install'),
 });
 
 export const TgFontTarget = new Juke.Target({

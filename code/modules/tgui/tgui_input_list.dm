@@ -20,6 +20,8 @@
 			user = client.mob
 		else
 			return
+	if(!user?.client?.prefs.tgui_input)
+		return input(user, message, title) as null|anything in buttons
 	var/datum/tgui_list_input/input = new(user, message, title, buttons, timeout)
 	input.ui_interact(user)
 	input.wait()

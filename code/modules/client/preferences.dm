@@ -45,6 +45,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/tgui_fancy = TRUE
 	var/tgui_lock = FALSE
+	var/tgui_input = TRUE
 	var/windowflashing = TRUE
 	var/toggles = TOGGLES_DEFAULT
 	var/db_flags
@@ -586,6 +587,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<b>Interaction Mode:</b> <a href='?_src_=prefs;task=input;preference=imode'>[interaction_mode]</a><br>"
 			dat += "<b>tgui Window Mode:</b> <a href='?_src_=prefs;preference=tgui_fancy'>[(tgui_fancy) ? "Fancy (default)" : "Compatible (slower)"]</a><br>"
 			dat += "<b>tgui Window Placement:</b> <a href='?_src_=prefs;preference=tgui_lock'>[(tgui_lock) ? "Primary monitor" : "Free (default)"]</a><br>"
+			dat += "<b>tgui Inputs:</b> <a href='?_src_=prefs;preference=tgui_input'>[(tgui_input) ? "Enabled (default)" : "Disabled"]</a><br>"
 			dat += "<b>Show Runechat Chat Bubbles:</b> <a href='?_src_=prefs;preference=chat_on_map'>[chat_on_map ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Runechat message char limit:</b> <a href='?_src_=prefs;preference=max_chat_length;task=input'>[max_chat_length]</a><br>"
 			dat += "<b>See Runechat for non-mobs:</b> <a href='?_src_=prefs;preference=see_chat_non_mob'>[see_chat_non_mob ? "Enabled" : "Disabled"]</a><br>"
@@ -1698,6 +1700,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					tgui_fancy = !tgui_fancy
 				if("tgui_lock")
 					tgui_lock = !tgui_lock
+				if("tgui_input")
+					tgui_input = !tgui_input
 				if("winflash")
 					windowflashing = !windowflashing
 
