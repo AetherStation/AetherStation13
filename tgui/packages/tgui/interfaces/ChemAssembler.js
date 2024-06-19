@@ -4,7 +4,7 @@ import { Window } from '../layouts';
 
 export const ChemAssembler = (props) => {
   const { act, data } = useBackend();
-  const [tab, setTab] = useSharedState(context, 'tab', 1);
+  const [tab, setTab] = useSharedState('tab', 1);
   const slots = data.slots || [];
   const program_text = data.program || "";
   return (

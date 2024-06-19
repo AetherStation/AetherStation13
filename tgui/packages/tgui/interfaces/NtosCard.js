@@ -37,12 +37,12 @@ export const NtosCardContent = (props) => {
 
   const [
     selectedTab,
-  ] = useSharedState(context, "selectedTab", "login");
+  ] = useSharedState("selectedTab", "login");
 
   const [
     selectedRegion,
     setSelectedRegion,
-  ] = useSharedState(context, "selectedRegion", regions["General"] ? "General" : Object.keys(regions)[0]);
+  ] = useSharedState("selectedRegion", regions["General"] ? "General" : Object.keys(regions)[0]);
 
   const button_tooltip = (access) => {
     let ret = [];
@@ -161,7 +161,7 @@ const IDCardTabs = (props) => {
   const [
     selectedTab,
     setSelectedTab,
-  ] = useSharedState(context, "selectedTab", "login");
+  ] = useSharedState("selectedTab", "login");
 
   return (
     <Tabs vertical fill>
