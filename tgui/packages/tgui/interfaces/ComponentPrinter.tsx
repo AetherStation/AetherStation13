@@ -94,7 +94,7 @@ export const ComponentPrinter = (props) => {
             <Stack>
               <Stack.Item>
                 <Section title="Categories" fill>
-                  <Tabs vertical fill>
+                  <Tabs vertical fill fluid>
                     {Object.values(data.designs)
                       .reduce<string[]>((categories, design) => {
                         const category = getCategory(design.categories);
@@ -108,7 +108,6 @@ export const ComponentPrinter = (props) => {
                           <Tabs.Tab
                             onClick={() => setCurrentCategory(category)}
                             selected={category === currentCategory}
-                            fluid
                           >
                             {category}
                           </Tabs.Tab>
