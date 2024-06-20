@@ -28,9 +28,9 @@ const selectRemappedStaticData = data => {
       ...node,
       id: remapId(id),
       costs,
-      prereq_ids: map(remapId)(node.prereq_ids || []),
-      design_ids: map(remapId)(node.design_ids || []),
-      unlock_ids: map(remapId)(node.unlock_ids || []),
+      prereq_ids: map(node.prereq_ids || [], remapId),
+      design_ids: map(node.design_ids || [], remapId),
+      unlock_ids: map(node.unlock_ids || [], remapId),
       required_experiments: node.required_experiments || [],
       discount_experiments: node.discount_experiments || [],
     };
@@ -256,9 +256,11 @@ const TechwebOverview = (props) => {
           design_cache[e].name.toLowerCase().includes(searchText));
     });
   } else {
-    displayedNodes = sortBy(x => node_cache[x.id].name)(tabIndex < 2
+    displayedNodes = sortBy(
+      tabIndex < 2
       ? nodes.filter(x => x.tier === tabIndex)
-      : nodes.filter(x => x.tier >= tabIndex));
+      : nodes.filter(x => x.tier >= tabIndex),
+      x => node_cache[x.id].name);
   }
 
   const switchTab = tab => {
@@ -419,9 +421,9 @@ const TechwebDesignDisk = (props) => {
 
   const designIdByIdx = Object.keys(researched_designs);
   const designOptions = flow([
-    filter(x => x.toLowerCase() !== "error"),
-    map((id, idx) => `${design_cache[id].name} [${idx}]`),
-    sortBy(x => x),
+    (designs) => filter(designs, x => x.toLowerCase() !== "error"),
+    (designs) => map(designs, (id, idx) => `${design_cache[id].name} [${idx}]`),
+    (designs) => sortBy(designs, x => x),
   ])(designIdByIdx);
 
   return (

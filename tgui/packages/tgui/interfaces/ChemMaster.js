@@ -331,7 +331,7 @@ const PackagingControls = (props) => {
           amount={bottleAmount}
           amountUnit="bottles"
           sideNote="max 50u"
-          onChangeAmount={(e, value) => setBottleAmount(value)}
+          onChangeAmount={(value) => setBottleAmount(value)}
           onCreate={() => act('create', {
             type: 'condimentBottle',
             amount: bottleAmount,
@@ -344,7 +344,7 @@ const PackagingControls = (props) => {
           amount={packAmount}
           amountUnit="packs"
           sideNote="max 10u"
-          onChangeAmount={(e, value) => setPackAmount(value)}
+          onChangeAmount={(value) => setPackAmount(value)}
           onCreate={() => act('create', {
             type: 'condimentPack',
             amount: packAmount,

@@ -39,7 +39,7 @@ const createSeeds = seedStrings => {
     return obj;
   });
   return flow([
-    sortBy(item => item.name),
+    (items) => sortBy(items, item => item.name),
   ])(objs);
 };
 
