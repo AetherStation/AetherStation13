@@ -1,5 +1,5 @@
 import { useBackend } from '../backend';
-import { Box, Button, ColorBox, Divider, Flex, Icon, Input, LabeledList, Section, Stack, Table, Image } from '../components';
+import { Box, Button, ColorBox, Divider, Flex, Icon, Image, Input, LabeledList, Section, Stack, Table } from '../components';
 import { Window } from '../layouts';
 
 type ColorEntry = {
@@ -241,7 +241,7 @@ const PreviewDisplay = (props) => {
               {
                 !!data.generate_full_preview && data.sprites.steps !== null
                   && data.sprites.steps.map(item => (
-                    <Table.Row>
+                    <Table.Row key={`${item.result}|${item.layer}`}>
                       <Table.Cell verticalAlign="middle">{item.config_name}</Table.Cell>
                       <Table.Cell>
                         <SingleSprite source={item.layer} />

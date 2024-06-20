@@ -77,6 +77,7 @@ const RecipeList = (props) => {
     if (recipe.ref === undefined) {
       return (
         <Collapsible
+          key={title}
           ml={1}
           color="label"
           title={title}>
@@ -88,6 +89,7 @@ const RecipeList = (props) => {
     } else {
       return (
         <Recipe
+          key={title}
           title={title}
           recipe={recipe} />
       );

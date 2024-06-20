@@ -1,9 +1,10 @@
 import { classes } from 'common/react';
+
 import { resolveAsset } from '../../assets';
 import { useBackend } from '../../backend';
 import { Box, Button, Section, Stack } from '../../components';
+import { GENE_COLORS, GENES, MUT_NORMAL, SUBJECT_DEAD, SUBJECT_TRANSFORMING } from './constants';
 import { MutationInfo } from './MutationInfo';
-import { GENES, GENE_COLORS, MUT_NORMAL, SUBJECT_DEAD, SUBJECT_TRANSFORMING } from './constants';
 
 const GenomeImage = (props) => {
   const { url, selected, onClick } = props;

@@ -1,7 +1,7 @@
 import { useBackend } from '../../backend';
 import { Box, Button, Collapsible, Dimmer, Divider, Icon, LabeledList, NumberInput, Section, Stack } from '../../components';
-import { GeneticMakeupInfo } from './GeneticMakeupInfo';
 import { RADIATION_DURATION_MAX, RADIATION_STRENGTH_MAX } from './constants';
+import { GeneticMakeupInfo } from './GeneticMakeupInfo';
 
 const GeneticMakeupBufferInfo = (props) => {
   const { index, makeup } = props;

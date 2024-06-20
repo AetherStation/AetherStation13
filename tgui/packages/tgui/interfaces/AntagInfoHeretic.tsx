@@ -1,7 +1,8 @@
-import { useBackend } from '../backend';
-import { Section, Stack, Box } from '../components';
-import { Window } from '../layouts';
 import { BooleanLike } from 'common/react';
+
+import { useBackend } from '../backend';
+import { Box, Section, Stack } from '../components';
+import { Window } from '../layouts';
 
 const hereticstyle = {
   fontWeight: 'bold',

@@ -79,7 +79,7 @@ const AdventureList = (props) => {
             <Table.Cell color="label">Edit</Table.Cell>
           </Table.Row>
           {data.adventures.map(p => (
-            <Table.Row
+            <Table.Row key={p.ref}
               className="candystripe">
               <Table.Cell>{p.id}</Table.Cell>
               <Table.Cell>{p.name}</Table.Cell>

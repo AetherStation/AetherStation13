@@ -1,20 +1,21 @@
+import { Component, createRef } from 'react';
+
+import { classes, shallowDiffers } from '../../../common/react';
+import { resolveAsset } from '../../assets';
 import { useBackend, useLocalState } from '../../backend';
 import {
   Box,
-  Stack,
-  Icon,
   Button,
-  Input,
-  Flex,
-  NumberInput,
   Dropdown,
+  Flex,
+  Icon,
   InfinitePlane,
+  Input,
+  NumberInput,
+  Stack,
 } from '../../components';
-import { Component, createRef } from 'react';
-import { Window } from '../../layouts';
 import { CSS_COLORS } from '../../constants';
-import { classes, shallowDiffers } from '../../../common/react';
-import { resolveAsset } from '../../assets';
+import { Window } from '../../layouts';
 import { CircuitInfo } from './CircuitInfo';
 
 const NULL_REF = '[0x0]';

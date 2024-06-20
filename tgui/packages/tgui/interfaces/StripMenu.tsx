@@ -3,7 +3,7 @@ import { BooleanLike } from "common/react";
 
 import { resolveAsset } from "../assets";
 import { useBackend } from "../backend";
-import { Box, Button, Icon, Stack, Image } from "../components";
+import { Box, Button, Icon, Image, Stack } from "../components";
 import { Window } from "../layouts";
 
 const ROWS = 5;
@@ -262,7 +262,7 @@ export const StripMenu = (props) => {
       <Window.Content>
         <Stack fill vertical>
           {range(0, ROWS).map(row => (
-            <Stack.Item>
+            <Stack.Item key={row}>
               <Stack fill>
                 {range(0, COLUMNS).map(column => {
                   const key = getGridSpotKey([row, column]);
@@ -271,6 +271,7 @@ export const StripMenu = (props) => {
                   if (!keyAtSpot) {
                     return (
                       <Stack.Item
+                        key={key}
                         style={{
                           width: BUTTON_DIMENSIONS,
                           height: BUTTON_DIMENSIONS,
@@ -328,6 +329,7 @@ export const StripMenu = (props) => {
 
                   return (
                     <Stack.Item
+                      key={key}
                       style={{
                         width: BUTTON_DIMENSIONS,
                         height: BUTTON_DIMENSIONS,

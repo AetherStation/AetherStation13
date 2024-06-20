@@ -737,7 +737,7 @@ const TechNode = (props) => {
             const thisExp = experiments[k];
             if (thisExp === null || thisExp === undefined) {
               return (
-                <LockedExperiment />
+                <LockedExperiment key={index} />
               );
             }
             return (
@@ -754,7 +754,7 @@ const TechNode = (props) => {
             const thisExp = experiments[k];
             if (thisExp === null || thisExp === undefined) {
               return (
-                <LockedExperiment />
+                <LockedExperiment key={index} />
               );
             }
             return (

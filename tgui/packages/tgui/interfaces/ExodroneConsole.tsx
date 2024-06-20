@@ -4,7 +4,7 @@ import { Fragment } from 'react';
 import { resolveAsset } from '../assets';
 import nt_logo from '../assets/bg-nanotrasen.svg';
 import { useBackend, useLocalState } from '../backend';
-import { BlockQuote, Box, Button, Dimmer, Icon, LabeledList, Modal, ProgressBar, Section, Stack, Image } from '../components';
+import { BlockQuote, Box, Button, Dimmer, Icon, Image, LabeledList, Modal, ProgressBar, Section, Stack } from '../components';
 import { formatTime } from '../format';
 import { Window } from '../layouts';
 
@@ -235,7 +235,7 @@ const ToolSelectionModal = (props) => {
         <Stack.Item>
           <Stack textAlign="center">
             {!!toolData && toolData.map(tool_name => (
-              <Stack.Item>
+              <Stack.Item key={tool_name}>
                 <Button
                   onClick={() => {
                     setChoosingTools(false);
@@ -673,6 +673,7 @@ const ExplorationScreen = (props) => {
         {site.events.map(e => (
           <Stack.Item
             align="center"
+            key={site.ref}
             grow>
             <Button
               content={capitalize(e.name)}
@@ -777,7 +778,7 @@ export const AdventureScreen = (props: AdventureScreenProps) => {
             <Stack.Divider />
             <Stack.Item grow />
             {!!adventure_data.choices && adventure_data.choices.map(choice => (
-              <Stack.Item>
+              <Stack.Item key={choice.key}>
                 <Button
                   fluid
                   content={choice.text}

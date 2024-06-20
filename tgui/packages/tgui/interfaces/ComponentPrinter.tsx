@@ -51,7 +51,7 @@ const MaterialCost = (props: {
       {Object.entries(props.materials)
         .map(([material, amount]) => {
           return (
-            <Stack.Item mr={1}>
+            <Stack.Item key={material} mr={1}>
               <MaterialAmount
                 name={material as keyof typeof MATERIAL_KEYS}
                 amount={amount}
@@ -105,7 +105,7 @@ export const ComponentPrinter = (props) => {
                         }
                       }, [CATEGORY_ALL]).sort().map(category => {
                         return (
-                          <Tabs.Tab
+                          <Tabs.Tab key={category}
                             onClick={() => setCurrentCategory(category)}
                             selected={category === currentCategory}
                           >
@@ -135,7 +135,7 @@ export const ComponentPrinter = (props) => {
                       .filter(searchFor(searchText))
                       .map(([designId, design]) => {
                         return (
-                          <Stack.Item>
+                          <Stack.Item key={designId}>
                             <Section title={design.name} buttons={(
                               <Button
                                 onClick={() => {
