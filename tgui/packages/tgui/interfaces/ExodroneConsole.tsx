@@ -142,13 +142,13 @@ const SignalLostModal = (props) => {
       width={30}
       height={22}
       p={0}
-      style={{ "border-radius": "5%" }}>
+      style={{ "borderRadius": "5%" }}>
       <img src={nt_logo} width={64} height={64} />
       <Box
         backgroundColor="black"
         textColor="red"
         fontSize={2}
-        style={{ "border-radius": "-10%" }}>
+        style={{ "borderRadius": "-10%" }}>
         CONNECTION LOST
       </Box>
       <Box p={2} italic>
@@ -180,7 +180,7 @@ const DroneSelectionSection = (props) => {
   return (
     <Section scrollable fill title="Exploration Drone Listing">
       <Stack vertical>
-        {all_drones.map(drone => (
+        {all_drones?.map(drone => (
           <Fragment key={drone.ref}>
             <Stack.Item grow>
               <Stack fill>
@@ -398,7 +398,7 @@ const EquipmentGrid = (props) => {
           </Stack.Item>
           <Stack.Item>
             <Stack wrap="wrap" width={10}>
-              {cargo.map(cargo_element => (
+              {cargo?.map(cargo_element => (
                 <EquipmentBox
                   key={cargo_element.name}
                   cargo={cargo_element} />
@@ -414,8 +414,8 @@ const EquipmentGrid = (props) => {
 const DroneStatus = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>();
   const {
-    drone_integrity,
-    drone_max_integrity,
+    drone_integrity = 0,
+    drone_max_integrity = 0,
   } = data;
 
   return (
@@ -468,7 +468,7 @@ const TravelTargetSelectionScreen = (props) => {
     site,
     can_travel,
     travel_error,
-    drone_travel_coefficent,
+    drone_travel_coefficent = 0,
     all_bands,
     drone_status,
   } = data;
@@ -501,9 +501,9 @@ const TravelTargetSelectionScreen = (props) => {
       && dest.band_info[s] !== 0;
     return Object.keys(all_bands).filter(band_check);
   };
-  const valid_destinations = !!sites && sites.filter(destination => (
+  const valid_destinations = sites?.filter(destination => (
     !site || destination.ref !== site.ref
-  ));
+  )) || [];
   return (
     drone_status === "travel" && (
       <TravelDimmer />
@@ -586,7 +586,7 @@ const TravelDimmer = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>();
   const {
     travel_time,
-    travel_time_left,
+    travel_time_left = 0,
   } = data;
   return (
     <Section fill>
@@ -611,7 +611,7 @@ const TravelDimmer = (props) => {
 const TimeoutScreen = (props) => {
   const { act, data } = useBackend<ExodroneConsoleData>();
   const {
-    wait_time_left,
+    wait_time_left = 0,
     wait_message,
   } = data;
   return (
@@ -650,7 +650,7 @@ const ExplorationScreen = (props) => {
   if (TravelDimmerShown) {
     return (<TravelTargetSelectionScreen showCancelButton />);
   }
-  return (
+  return site && (
     <Section
       fill
       title="Exploration"
@@ -673,7 +673,6 @@ const ExplorationScreen = (props) => {
         {site.events.map(e => (
           <Stack.Item
             align="center"
-            key={site.ref}
             grow>
             <Button
               content={capitalize(e.name)}
@@ -695,7 +694,7 @@ const EventScreen = (props) => {
     drone_status,
     event,
   } = data;
-  return (
+  return event && (
     <Section
       fill
       title="Exploration"
@@ -758,9 +757,9 @@ export const AdventureScreen = (props: AdventureScreenProps) => {
   const {
     adventure_data,
   } = data;
-  const rawData = adventure_data.raw_image;
-  const imgSource = rawData ? rawData : resolveAsset(adventure_data.image);
-  return (
+  const rawData = adventure_data?.raw_image;
+  const imgSource = rawData ? rawData : resolveAsset(adventure_data?.image ?? '');
+  return adventure_data && (
     <Section
       fill
       title="Exploration"
@@ -784,7 +783,7 @@ export const AdventureScreen = (props: AdventureScreenProps) => {
             <Stack.Divider />
             <Stack.Item grow />
             {!!adventure_data.choices && adventure_data.choices.map(choice => (
-              <Stack.Item key={choice.key}>
+              <Stack.Item>
                 <Button
                   fluid
                   content={choice.text}
@@ -855,7 +854,7 @@ const ExodroneConsoleContent = (props) => {
       <Stack.Item height={10}>
         <Section title="Drone Log" fill scrollable>
           <LabeledList>
-            {drone_log.map((log_line, ix) => (
+            {drone_log?.map((log_line, ix) => (
               <LabeledList.Item key={log_line} label={`Entry ${ix + 1}`}>
                 {log_line}
               </LabeledList.Item>

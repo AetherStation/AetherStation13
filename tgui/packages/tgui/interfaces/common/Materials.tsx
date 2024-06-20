@@ -64,12 +64,8 @@ const EjectMaterial = (props: {
         value={removeMaterials}
         minValue={1}
         maxValue={sheets || 1}
-        initial={1}
-        onDrag={(e, val) => {
-          const newVal = parseInt(val, 10);
-          if (Number.isInteger(newVal)) {
-            setRemoveMaterials(newVal);
-          }
+        onDrag={(val) => {
+          setRemoveMaterials(val);
         }} />
       <Button
         icon="eject"

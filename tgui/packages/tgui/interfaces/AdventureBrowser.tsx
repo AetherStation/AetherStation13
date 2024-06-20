@@ -28,7 +28,7 @@ const AdventureEntry = (props) => {
   const { data, act } = useBackend<AdventureBrowserData>();
   const { entry_ref, close }: { entry_ref: string, close: () => void } = props;
   const entry = data.adventures.find(x => x.ref === entry_ref);
-  return (
+  return entry && (
     <Section>
       <LabeledList>
         <LabeledList.Item label="ID">{entry.id}</LabeledList.Item>
@@ -62,14 +62,14 @@ const AdventureList = (props) => {
   const [
     openAdventure,
     setOpenAdventure,
-  ] = useLocalState('openAdventure', null);
+  ] = useLocalState('openAdventure', "");
 
   return (
     <>
       {openAdventure && (
         <AdventureEntry
           entry_ref={openAdventure}
-          close={() => setOpenAdventure(null)} />
+          close={() => setOpenAdventure("")} />
       )}
       {!openAdventure && (
         <Table>
@@ -80,7 +80,6 @@ const AdventureList = (props) => {
           </Table.Row>
           {data.adventures.map(p => (
             <Table.Row
-              key={p.ref}
               className="candystripe">
               <Table.Cell>{p.id}</Table.Cell>
               <Table.Cell>{p.name}</Table.Cell>

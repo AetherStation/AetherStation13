@@ -51,7 +51,7 @@ const MaterialCost = (props: {
       {Object.entries(props.materials)
         .map(([material, amount]) => {
           return (
-            <Stack.Item key={material} mr={1}>
+            <Stack.Item mr={1}>
               <MaterialAmount
                 name={material as keyof typeof MATERIAL_KEYS}
                 amount={amount}
@@ -136,7 +136,7 @@ export const ComponentPrinter = (props) => {
                       .filter(searchFor(searchText))
                       .map(([designId, design]) => {
                         return (
-                          <Stack.Item key={designId}>
+                          <Stack.Item>
                             <Section title={design.name} buttons={(
                               <Button
                                 onClick={() => {

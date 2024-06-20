@@ -11,7 +11,7 @@ import { Box, BoxProps } from './Box';
 type Props = ExclusiveProps & BoxProps;
 
 /** You MUST use only one or none */
-type NoticeType = 'info' | 'success' | 'danger';
+type NoticeType = 'info' | 'success' | 'danger' | 'warning';
 
 type None = {
   [K in NoticeType]?: undefined;
@@ -27,10 +27,13 @@ type ExclusiveProps =
     })
   | (Omit<None, 'danger'> & {
       danger: boolean;
+    })
+  | (Omit<None, 'warning'> & {
+    warning: boolean;
     });
 
 export function NoticeBox(props: Props) {
-  const { className, color, info, success, danger, ...rest } = props;
+  const { className, color, info, success, danger, warning, ...rest } = props;
 
   return (
     <Box
@@ -40,6 +43,7 @@ export function NoticeBox(props: Props) {
         info && 'NoticeBox--type--info',
         success && 'NoticeBox--type--success',
         danger && 'NoticeBox--type--danger',
+        warning && 'NoticeBox--type--warning',
         className,
       ])}
       {...rest}

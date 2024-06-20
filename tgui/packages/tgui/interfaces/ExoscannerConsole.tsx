@@ -229,9 +229,7 @@ export const ExoscannerConsole = (props) => {
               </Stack>
               <Section title="Special Scan Condtions">
                 {scan_conditions && scan_conditions.map(condition => (
-                  <NoticeBox
-                    key={condition}
-                    warning>
+                  <NoticeBox warning>
                     {condition}
                   </NoticeBox>
                 ))}
@@ -280,7 +278,7 @@ export const ExoscannerConsole = (props) => {
                   }>
                   <Stack vertical>
                     {possible_sites.map(site => (
-                      <Stack.Item key={site.ref}>
+                      <Stack.Item>
                         <Button
                           content={site.name}
                           onClick={() => act("select_site", { "site_ref": site.ref })} />
