@@ -93,7 +93,6 @@ const VendingRow = (props) => {
             src={`data:image/jpeg;base64,${product.img}`}
             style={{
               'verticalAlign': 'middle',
-              'horizontalAlign': 'middle',
             }} />
         ) || (
           <span
@@ -103,7 +102,6 @@ const VendingRow = (props) => {
             ])}
             style={{
               'verticalAlign': 'middle',
-              'horizontalAlign': 'middle',
             }} />
         )}
       </Table.Cell>

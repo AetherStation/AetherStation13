@@ -63,6 +63,7 @@ const EjectMaterial = (props: {
         animated
         value={removeMaterials}
         minValue={1}
+        step={1}
         maxValue={sheets || 1}
         onDrag={(val) => {
           setRemoveMaterials(val);

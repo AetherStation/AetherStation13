@@ -105,7 +105,7 @@ export const ComponentPrinter = (props) => {
                         }
                       }, [CATEGORY_ALL]).sort().map(category => {
                         return (
-                          <Tabs.Tab key={category}
+                          <Tabs.Tab
                             onClick={() => setCurrentCategory(category)}
                             selected={category === currentCategory}
                             fluid
