@@ -105,7 +105,7 @@ const searchFilter = (search, allparts) => {
         searchResults.push(e);
       });
   });
-  searchResults = uniqBy(part => part.name)(searchResults);
+  searchResults = uniqBy(searchResults, part => part.name);
   return searchResults;
 };
 

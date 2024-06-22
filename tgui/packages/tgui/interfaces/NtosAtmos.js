@@ -14,8 +14,8 @@ export const NtosAtmos = (props) => {
     AirPressure,
   } = data;
   const gases = flow([
-    filter(gas => gas.percentage >= 0.01),
-    sortBy(gas => -gas.percentage),
+    (gases) => filter(gases, gas => gas.percentage >= 0.01),
+    (gases) => sortBy(gases, gas => -gas.percentage),
   ])(data.AirData || []);
   const gasMaxPercentage = Math.max(1, ...gases.map(gas => gas.percentage));
   return (
