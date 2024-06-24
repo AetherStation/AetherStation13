@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { AnimatedNumber, Box, Button, LabeledList, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const ChemDebugSynthesizer = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemDebugSynthesizer = (props) => {
+  const { act, data } = useBackend();
   const {
     amount,
     purity,
@@ -32,7 +32,7 @@ export const ChemDebugSynthesizer = (props, context) => {
                 maxValue={beakerMaxVolume}
                 step={1}
                 stepPixelSize={2}
-                onChange={(e, value) => act('amount', {
+                onChange={(value) => act('amount', {
                   amount: value,
                 })} />
               <NumberInput
@@ -42,7 +42,7 @@ export const ChemDebugSynthesizer = (props, context) => {
                 maxValue={120}
                 step={1}
                 stepPixelSize={2}
-                onChange={(e, value) => act('purity', {
+                onChange={(value) => act('purity', {
                   amount: value,
                 })} />
               <Button

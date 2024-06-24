@@ -4,11 +4,6 @@
  * @license MIT
  */
 
-import { clamp01 } from 'common/math';
-import { useBackend } from '../backend';
-import { Component, createRef } from 'inferno';
-import { Box, Flex, Section } from '../components';
-import { Window } from '../layouts';
 import {
   KEY_ENTER,
   KEY_LEFT,
@@ -16,6 +11,12 @@ import {
   KEY_SPACE,
   KEY_TAB,
 } from 'common/keycodes';
+import { clamp01 } from 'common/math';
+import { Component, createRef } from 'react';
+
+import { useBackend } from '../backend';
+import { Box, Flex, Section } from '../components';
+import { Window } from '../layouts';
 
 export class AlertModal extends Component {
   constructor() {
@@ -27,7 +28,7 @@ export class AlertModal extends Component {
 
   componentDidMount() {
     const { data } = useBackend(this.context);
-    const { buttons, autofocus } = data;
+    const { buttons = [], autofocus } = data;
     const { current } = this.state;
     const button = this.buttonRefs[current].current;
 
@@ -43,7 +44,7 @@ export class AlertModal extends Component {
 
   setCurrent(current, isArrowKey) {
     const { data } = useBackend(this.context);
-    const { buttons } = data;
+    const { buttons = [] } = data;
 
     // Mimic alert() behavior for tabs and arrow keys
     if (current >= buttons.length) {
@@ -63,7 +64,7 @@ export class AlertModal extends Component {
 
   render() {
     const { act, data } = useBackend(this.context);
-    const { title, message, buttons, timeout } = data;
+    const { title, message = "", buttons = [], timeout } = data;
     const { current } = this.state;
     const focusCurrentButton = () => this.setCurrent(current, false);
 

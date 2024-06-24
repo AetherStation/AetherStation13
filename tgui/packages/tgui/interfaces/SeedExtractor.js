@@ -1,6 +1,7 @@
 import { sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toTitleCase } from 'common/string';
+
 import { useBackend } from '../backend';
 import { Button, Section, Table } from '../components';
 import { Window } from '../layouts';
@@ -38,12 +39,12 @@ const createSeeds = seedStrings => {
     return obj;
   });
   return flow([
-    sortBy(item => item.name),
+    (items) => sortBy(items, item => item.name),
   ])(objs);
 };
 
-export const SeedExtractor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SeedExtractor = (props) => {
+  const { act, data } = useBackend();
   const seeds = createSeeds(data.seeds);
   return (
     <Window

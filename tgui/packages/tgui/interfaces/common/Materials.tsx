@@ -1,9 +1,10 @@
 import { BooleanLike } from 'common/react';
-import { Box, Button, NumberInput, Flex } from '../../components';
 import { classes } from 'common/react';
-import { formatMoney, formatSiUnit } from '../../format';
+
 import { useSharedState } from '../../backend';
+import { Box, Button, Flex, NumberInput } from '../../components';
 import { BoxProps } from '../../components/Box';
+import { formatMoney, formatSiUnit } from '../../format';
 
 export const MATERIAL_KEYS = {
   "iron": "sheet-metal_3",
@@ -45,14 +46,14 @@ export const MaterialIcon = (props: MaterialIconProps) => {
 const EjectMaterial = (props: {
   material: Material,
   onEject: (amount: number) => void,
-}, context) => {
+}) => {
   const {
     name,
     removable,
     sheets,
   } = props.material;
   const [removeMaterials, setRemoveMaterials] = useSharedState(
-    context, 'remove_mats_' + name, 1);
+    'remove_mats_' + name, 1);
   if (removeMaterials > 1 && sheets < removeMaterials) {
     setRemoveMaterials(sheets || 1);
   }
@@ -63,13 +64,10 @@ const EjectMaterial = (props: {
         animated
         value={removeMaterials}
         minValue={1}
+        step={1}
         maxValue={sheets || 1}
-        initial={1}
-        onDrag={(e, val) => {
-          const newVal = parseInt(val, 10);
-          if (Number.isInteger(newVal)) {
-            setRemoveMaterials(newVal);
-          }
+        onDrag={(val) => {
+          setRemoveMaterials(val);
         }} />
       <Button
         icon="eject"

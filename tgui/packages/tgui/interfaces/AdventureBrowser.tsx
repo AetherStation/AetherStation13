@@ -1,8 +1,8 @@
 import { useBackend, useLocalState } from '../backend';
-import { Button, LabeledList, Section, Box, NoticeBox, Table } from '../components';
+import { Box, Button, LabeledList, NoticeBox, Section, Table } from '../components';
+import { formatTime } from '../format';
 import { Window } from '../layouts';
 import { AdventureDataProvider, AdventureScreen } from './ExodroneConsole';
-import { formatTime } from '../format';
 
 type Adventure = {
   ref: string;
@@ -24,11 +24,11 @@ type AdventureBrowserData = AdventureDataProvider & {
   delay_message: string;
 };
 
-const AdventureEntry = (props, context) => {
-  const { data, act } = useBackend<AdventureBrowserData>(context);
+const AdventureEntry = (props) => {
+  const { data, act } = useBackend<AdventureBrowserData>();
   const { entry_ref, close }: { entry_ref: string, close: () => void } = props;
   const entry = data.adventures.find(x => x.ref === entry_ref);
-  return (
+  return entry && (
     <Section>
       <LabeledList>
         <LabeledList.Item label="ID">{entry.id}</LabeledList.Item>
@@ -57,19 +57,19 @@ const AdventureEntry = (props, context) => {
   );
 };
 
-const AdventureList = (props, context) => {
-  const { data, act } = useBackend<AdventureBrowserData>(context);
+const AdventureList = (props) => {
+  const { data, act } = useBackend<AdventureBrowserData>();
   const [
     openAdventure,
     setOpenAdventure,
-  ] = useLocalState(context, 'openAdventure', null);
+  ] = useLocalState('openAdventure', "");
 
   return (
     <>
       {openAdventure && (
         <AdventureEntry
           entry_ref={openAdventure}
-          close={() => setOpenAdventure(null)} />
+          close={() => setOpenAdventure("")} />
       )}
       {!openAdventure && (
         <Table>
@@ -79,8 +79,7 @@ const AdventureList = (props, context) => {
             <Table.Cell color="label">Edit</Table.Cell>
           </Table.Row>
           {data.adventures.map(p => (
-            <Table.Row
-              key={p.ref}
+            <Table.Row key={p.ref}
               className="candystripe">
               <Table.Cell>{p.id}</Table.Cell>
               <Table.Cell>{p.name}</Table.Cell>
@@ -96,8 +95,8 @@ const AdventureList = (props, context) => {
   );
 };
 
-const DebugPlayer = (props, context) => {
-  const { data, act } = useBackend<AdventureBrowserData>(context);
+const DebugPlayer = (props) => {
+  const { data, act } = useBackend<AdventureBrowserData>();
   return (
     <Section
       title="Playtest"
@@ -108,8 +107,8 @@ const DebugPlayer = (props, context) => {
     </Section>);
 };
 
-export const AdventureBrowser = (props, context) => {
-  const { data } = useBackend<AdventureBrowserData>(context);
+export const AdventureBrowser = (props) => {
+  const { data } = useBackend<AdventureBrowserData>();
 
   return (
     <Window width={650} height={500} title="Adventure Manager">

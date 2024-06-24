@@ -1,9 +1,9 @@
-import { ProgressBar, NumberInput, Button, Section, Box, Flex } from '../components';
 import { useBackend } from '../backend';
+import { Box, Button, Flex, NumberInput, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
 
-export const Photocopier = (props, context) => {
-  const { data } = useBackend(context);
+export const Photocopier = (props) => {
+  const { data } = useBackend();
   const {
     isAI,
     has_toner,
@@ -42,8 +42,8 @@ export const Photocopier = (props, context) => {
   );
 };
 
-const Toner = (props, context) => {
-  const { act, data } = useBackend(context);
+const Toner = (props) => {
+  const { act, data } = useBackend();
   const {
     has_toner,
     max_toner,
@@ -77,8 +77,8 @@ const Toner = (props, context) => {
   );
 };
 
-const Options = (props, context) => {
-  const { act, data } = useBackend(context);
+const Options = (props) => {
+  const { act, data } = useBackend();
   const {
     color_mode,
     is_photo,
@@ -105,7 +105,7 @@ const Options = (props, context) => {
             minValue={1}
             maxValue={10}
             value={num_copies}
-            onDrag={(e, value) => act('set_copies', {
+            onDrag={(value) => act('set_copies', {
               num_copies: value,
             })} />
         </Flex.Item>
@@ -162,8 +162,8 @@ const Options = (props, context) => {
   );
 };
 
-const AIOptions = (props, context) => {
-  const { act, data } = useBackend(context);
+const AIOptions = (props) => {
+  const { act, data } = useBackend();
   const { can_AI_print } = data;
 
   return (

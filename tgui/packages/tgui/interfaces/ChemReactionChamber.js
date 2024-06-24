@@ -1,20 +1,21 @@
 import { map } from 'common/collections';
 import { toFixed } from 'common/math';
 import { classes } from 'common/react';
+
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Input, LabeledList, NumberInput, Section, Stack, AnimatedNumber } from '../components';
+import { AnimatedNumber, Box, Button, Input, LabeledList, NumberInput, Section, Stack } from '../components';
 import { Window } from '../layouts';
 
-export const ChemReactionChamber = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemReactionChamber = (props) => {
+  const { act, data } = useBackend();
   const [
     reagentName,
     setReagentName,
-  ] = useLocalState(context, 'reagentName', '');
+  ] = useLocalState('reagentName', '');
   const [
     reagentQuantity,
     setReagentQuantity,
-  ] = useLocalState(context, 'reagentQuantity', 1);
+  ] = useLocalState('reagentQuantity', 1);
   const reagents = data.reagents || [];
   return (
     <Window
@@ -32,7 +33,7 @@ export const ChemReactionChamber = (props, context) => {
               value={data.target_temperature}
               minValue={0}
               maxValue={1000}
-              onDrag={(e, value) =>
+              onDrag={(value) =>
                 act('temperature', {
                   target: value,
                 })}
@@ -83,7 +84,7 @@ export const ChemReactionChamber = (props, context) => {
                   step={1}
                   stepPixelSize={3}
                   width="39px"
-                  onDrag={(e, value) => setReagentQuantity(value)} />
+                  onDrag={(value) => setReagentQuantity(value)} />
                 <Box inline mr={1} />
                 <Button
                   icon="plus"
@@ -93,7 +94,7 @@ export const ChemReactionChamber = (props, context) => {
                   })} />
               </td>
             </tr>
-            {map((reagent) => (
+            {map(reagents, (reagent) => (
               <LabeledList.Item
                 key={reagent.name}
                 label={reagent.name}
@@ -107,7 +108,7 @@ export const ChemReactionChamber = (props, context) => {
                 )}>
                 {reagent.amount}
               </LabeledList.Item>
-            ))(reagents)}
+            ))}
           </LabeledList>
         </Section>
       </Window.Content>

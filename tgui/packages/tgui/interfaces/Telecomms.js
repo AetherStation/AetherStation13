@@ -1,12 +1,11 @@
-import { map, sortBy } from 'common/collections';
-import { flow } from 'common/fp';
+
 import { useBackend } from '../backend';
-import { Button, Input, LabeledList, Section, Table, NoticeBox, NumberInput, LabeledControls, Box } from '../components';
+import { Box, Button, Input, LabeledControls, LabeledList, NoticeBox, NumberInput, Section, Table } from '../components';
 import { RADIO_CHANNELS } from '../constants';
 import { Window } from '../layouts';
 
-export const Telecomms = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Telecomms = (props) => {
+  const { act, data } = useBackend();
   const {
     type,
     minfreq,
@@ -105,7 +104,7 @@ export const Telecomms = (props, context) => {
                       minValue={minfreq / 10}
                       maxValue={maxfreq / 10}
                       value={changefrequency / 10}
-                      onChange={(e, value) => act(
+                      onChange={(value) => act(
                         'change_freq', { value })}
                     />
                     <Button
@@ -208,7 +207,7 @@ export const Telecomms = (props, context) => {
                         minValue={minfreq / 10}
                         maxValue={maxfreq / 10}
                         value={frequency / 10}
-                        onChange={(e, value) => act(
+                        onChange={(value) => act(
                           "tempfreq", { value })}
                       />
                     </Table.Cell>

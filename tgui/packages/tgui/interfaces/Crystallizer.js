@@ -1,13 +1,14 @@
-import { useBackend } from '../backend';
-import { AnimatedNumber, Button, Flex, Input, LabeledList, ProgressBar, Section, Table, NumberInput, Box } from '../components';
-import { getGasColor, getGasLabel } from '../constants';
 import { toFixed } from 'common/math';
+
+import { useBackend } from '../backend';
+import { Box, Button, LabeledList, NumberInput, ProgressBar, Section } from '../components';
+import { getGasColor, getGasLabel } from '../constants';
 import { Window } from '../layouts';
 
 const logScale = value => Math.log2(16 + Math.max(0, value)) - 4;
 
-export const Crystallizer = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Crystallizer = (props) => {
+  const { act, data } = useBackend();
   const selectedRecipes = data.selected_recipes || [];
   const gasTypes = data.internal_gas_data || [];
   const {
@@ -50,7 +51,7 @@ export const Crystallizer = (props, context) => {
                 unit="moles/s"
                 minValue={0}
                 maxValue={250}
-                onDrag={(e, value) => act('gas_input', {
+                onDrag={(value) => act('gas_input', {
                   gas_input: value,
                 })} />
             </LabeledList.Item>

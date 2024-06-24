@@ -1,6 +1,7 @@
 import { sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
+
 import { useBackend } from '../backend';
 import { Button, LabeledList, ProgressBar, Section, Stack, Table } from '../components';
 import { getGasColor, getGasLabel } from '../constants';
@@ -18,8 +19,8 @@ export const SupermatterMonitor = () => {
   );
 };
 
-export const SupermatterMonitorContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SupermatterMonitorContent = (props) => {
+  const { act, data } = useBackend();
   const {
     active,
     singlecrystal,
@@ -37,7 +38,7 @@ export const SupermatterMonitorContent = (props, context) => {
   }
   const gases = flow([
     (gases) => gases.filter((gas) => gas.amount >= 0.01),
-    sortBy((gas) => -gas.amount),
+    (gases) => sortBy(gases, (gas) => -gas.amount),
   ])(data.gases || []);
   const gasMaxAmount = Math.max(1, ...gases.map((gas) => gas.amount));
   return (
@@ -145,8 +146,8 @@ export const SupermatterMonitorContent = (props, context) => {
   );
 };
 
-const SupermatterList = (props, context) => {
-  const { act, data } = useBackend(context);
+const SupermatterList = (props) => {
+  const { act, data } = useBackend();
   const { supermatters = [] } = data;
   return (
     <Section

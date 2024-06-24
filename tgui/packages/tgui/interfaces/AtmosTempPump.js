@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Button, LabeledList, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const AtmosTempPump = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AtmosTempPump = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window
       width={335}
@@ -27,7 +27,7 @@ export const AtmosTempPump = (props, context) => {
                 minValue={0}
                 maxValue={data.max_heat_transfer_rate}
                 step={1}
-                onChange={(e, value) => act('rate', {
+                onChange={(value) => act('rate', {
                   rate: value,
                 })} />
               <Button

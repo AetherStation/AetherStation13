@@ -3,7 +3,7 @@ import { Box, Button, Collapsible, Flex, LabeledList, NumberInput, Section, Stac
 import { formatMoney } from '../format';
 import { Window } from '../layouts';
 
-export const RequestKiosk = (props, context) => {
+export const RequestKiosk = (props) => {
   return (
     <Window
       width={550}
@@ -15,8 +15,8 @@ export const RequestKiosk = (props, context) => {
   );
 };
 
-export const RequestKioskContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const RequestKioskContent = (props) => {
+  const { act, data } = useBackend();
   const {
     accountName,
     requests = [],
@@ -84,7 +84,7 @@ export const RequestKioskContent = (props, context) => {
                   title="Request Applicants">
                   {applicants?.map(applicant => (
                     applicant.request_id === request.acc_number && (
-                      <Flex>
+                      <Flex key={applicant.request_id}>
                         <Flex.Item
                           grow={1}
                           p={0.5}
@@ -136,7 +136,7 @@ export const RequestKioskContent = (props, context) => {
                   maxValue={1000}
                   value={bountyValue}
                   width="80px"
-                  onChange={(e, value) => act('bountyVal', {
+                  onChange={(value) => act('bountyVal', {
                     bountyval: value,
                   })} />
               </Box>

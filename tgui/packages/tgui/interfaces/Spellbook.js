@@ -1,6 +1,5 @@
-import { multiline } from 'common/string';
 import { useBackend, useLocalState } from '../backend';
-import { Blink, Box, Button, Dimmer, Divider, Icon, Modal, NoticeBox, ProgressBar, Section, Stack } from '../components';
+import { Box, Button, Dimmer, Divider, Icon, NoticeBox, ProgressBar, Section, Stack } from '../components';
 import { Window } from '../layouts';
 
 const TAB2NAME = [
@@ -60,8 +59,8 @@ const BUYWORD2ICON = {
   Cast: 'meteor',
 };
 
-const EnscribedName = (props, context) => {
-  const { act, data } = useBackend(context);
+const EnscribedName = (props) => {
+  const { act, data } = useBackend();
   const { owner } = data;
   return (
     <>
@@ -81,12 +80,12 @@ const EnscribedName = (props, context) => {
 
 const lineHeightToc = "34.6px";
 
-const TableOfContents = (props, context) => {
-  const { act, data } = useBackend(context);
+const TableOfContents = (props) => {
+  const { act, data } = useBackend();
   const [
     tabIndex,
     setTabIndex,
-  ] = useLocalState(context, 'tab-index', 1);
+  ] = useLocalState('tab-index', 1);
   return (
     <Box textAlign="center">
       <Button
@@ -157,8 +156,8 @@ const TableOfContents = (props, context) => {
   );
 };
 
-const LockedPage = (props, context) => {
-  const { act, data } = useBackend(context);
+const LockedPage = (props) => {
+  const { act, data } = useBackend();
   const { owner } = data;
   return (
     <Dimmer>
@@ -178,8 +177,8 @@ const LockedPage = (props, context) => {
   );
 };
 
-const PointLocked = (props, context) => {
-  const { act, data } = useBackend(context);
+const PointLocked = (props) => {
+  const { act, data } = useBackend();
   const { owner } = data;
   return (
     <Dimmer>
@@ -210,8 +209,8 @@ const PointLocked = (props, context) => {
   );
 };
 
-const SingleLoadout = (props, context) => {
-  const { act } = useBackend(context);
+const SingleLoadout = (props) => {
+  const { act } = useBackend();
   const { author, name, blurb, icon, loadoutId, loadoutColor } = props;
   return (
     <Stack.Item grow>
@@ -237,8 +236,8 @@ const SingleLoadout = (props, context) => {
 
 const LoadoutWidth = 19.17;
 
-const Loadouts = (props, context) => {
-  const { act, data } = useBackend(context);
+const Loadouts = (props) => {
+  const { act, data } = useBackend();
   const { points } = data;
   return (
     <Stack ml={0.5} mt={-0.5} vertical fill>
@@ -253,7 +252,7 @@ const Loadouts = (props, context) => {
             name="The Classic Wizard"
             icon="fire"
             author="Archchancellor Gray"
-            blurb={multiline`
+            blurb={`
                 This is the classic wizard, crazy popular in
                 the 2550's. Comes with Fireball, Magic Missile,
                 Ei Nath, and Ethereal Jaunt. The key here is that
@@ -265,7 +264,7 @@ const Loadouts = (props, context) => {
             loadoutId="loadout_hammer"
             loadoutColor="green"
             author="Jegudiel Worldshaker"
-            blurb={multiline`
+            blurb={`
                 The power of the mighty Mjolnir! Best not to lose it.
                 This loadout has Summon Item, Mutate, Blink, and
                 Force Wall. Mutate is your utility in this case:
@@ -281,7 +280,7 @@ const Loadouts = (props, context) => {
             loadoutId="loadout_army"
             loadoutColor="yellow"
             author="Prospero Spellstone"
-            blurb={multiline`
+            blurb={`
                 Why kill when others will gladly do it for you?
                 Embrace chaos with your kit: Soulshards, Staff of Change,
                 Necro Stone, Teleport, and Jaunt! Remember, no offense spells!
@@ -292,7 +291,7 @@ const Loadouts = (props, context) => {
             loadoutId="loadout_tap"
             loadoutColor="white"
             author="Tom the Empty"
-            blurb={multiline`
+            blurb={`
                 Embrace the dark, and tap into your soul.
                 You can recharge very long recharge spells
                 like Ei Nath by jumping into new bodies with
@@ -307,8 +306,8 @@ const Loadouts = (props, context) => {
 
 const lineHeightRandomize = 6;
 
-const Randomize = (props, context) => {
-  const { act, data } = useBackend(context);
+const Randomize = (props) => {
+  const { act, data } = useBackend();
   const { points, semi_random_bonus, full_random_bonus } = data;
   return (
     <Stack fill vertical>
@@ -354,8 +353,8 @@ const Randomize = (props, context) => {
 const widthSection = "466px";
 const heightSection = "456px";
 
-export const Spellbook = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Spellbook = (props) => {
+  const { act, data } = useBackend();
   const {
     entries,
     points,
@@ -363,7 +362,7 @@ export const Spellbook = (props, context) => {
   const [
     tabIndex,
     setTabIndex,
-  ] = useLocalState(context, 'tab-index', 1);
+  ] = useLocalState('tab-index', 1);
   const ScrollableCheck = TAB2NAME[tabIndex-1].noScrollable ? false : true;
   const ScrollableNextCheck = TAB2NAME[tabIndex-1].noScrollable !== 2;
   const TabComponent = TAB2NAME[tabIndex-1].component

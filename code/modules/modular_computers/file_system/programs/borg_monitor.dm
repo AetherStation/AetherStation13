@@ -69,8 +69,7 @@
 			loglist.Insert(1,"System log of unit [DL_source.name]")
 		DL_progress = -1
 		DL_source = null
-		for(var/datum/tgui/window in SStgui.open_uis_by_src[REF(src)])
-			window.send_full_update()
+		update_static_data_for_all_viewers()
 		return
 
 	DL_progress += 25

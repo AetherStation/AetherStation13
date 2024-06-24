@@ -43,7 +43,7 @@ jobs:
           tools/bootstrap/python -m mapmerge2.dmm_test
           ~/dreamchecker > ${GITHUB_WORKSPACE}/output-annotations.txt 2>&1
       - name: Annotate Lints
-        uses: yogstation13/DreamAnnotate@v1
+        uses: yogstation13/DreamAnnotate@v2
         if: always()
         with:
           outputFile: output-annotations.txt
@@ -79,10 +79,10 @@ jobs:
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 20.13.1
         uses: actions/setup-node@v3
         with:
-          node-version: 14.16.1
+          node-version: 20.13.1
       - name: Restore BYOND cache
         uses: actions/cache@v3
         with:
@@ -122,10 +122,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js 14.16.1
+      - name: Use Node.js 20.13.1
         uses: actions/setup-node@v3
         with:
-          node-version: 14.16.1
+          node-version: 20.13.1
       - name: Restore Yarn cache
         uses: actions/cache@v3
         with:

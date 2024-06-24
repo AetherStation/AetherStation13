@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Box, Button, LabeledList, NumberInput, ProgressBar, Section } from '../components';
 import { Window } from '../layouts';
 
-export const SpaceHeater = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SpaceHeater = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window
       width={400}
@@ -73,7 +73,7 @@ export const SpaceHeater = (props, context) => {
                   unit="°C"
                   minValue={data.minTemp}
                   maxValue={data.maxTemp}
-                  onChange={(e, value) => act('target', {
+                  onChange={(value) => act('target', {
                     target: value,
                   })} />
               ) || (

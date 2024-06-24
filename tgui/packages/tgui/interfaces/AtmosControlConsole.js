@@ -1,11 +1,12 @@
 import { map } from 'common/collections';
 import { toFixed } from 'common/math';
+
 import { useBackend } from '../backend';
 import { Button, LabeledList, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const AtmosControlConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AtmosControlConsole = (props) => {
+  const { act, data } = useBackend();
   const sensors = data.sensors || [];
   return (
     <Window
@@ -30,11 +31,11 @@ export const AtmosControlConsole = (props, context) => {
                       {toFixed(sensor.temperature, 2) + ' K'}
                     </LabeledList.Item>
                   )}
-                  {map((gasPercent, gasId) => (
+                  {map(gases, (gasPercent, gasId) => (
                     <LabeledList.Item label={gasId}>
                       {toFixed(gasPercent, 2) + '%'}
                     </LabeledList.Item>
-                  ))(gases)}
+                  ))}
                 </LabeledList>
               </Section>
             );
@@ -67,7 +68,7 @@ export const AtmosControlConsole = (props, context) => {
                   // This takes an exceptionally long time to update
                   // due to being an async signal
                   suppressFlicker={2000}
-                  onChange={(e, value) => act('rate', {
+                  onChange={(value) => act('rate', {
                     rate: value,
                   })} />
               </LabeledList.Item>
@@ -89,7 +90,7 @@ export const AtmosControlConsole = (props, context) => {
                   // This takes an exceptionally long time to update
                   // due to being an async signal
                   suppressFlicker={2000}
-                  onChange={(e, value) => act('pressure', {
+                  onChange={(value) => act('pressure', {
                     pressure: value,
                   })} />
               </LabeledList.Item>

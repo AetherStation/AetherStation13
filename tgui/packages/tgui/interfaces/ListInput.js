@@ -4,16 +4,17 @@
  * @license MIT
  */
 
+import { KEY_DOWN, KEY_ENTER, KEY_SPACE, KEY_UP } from 'common/keycodes';
 import { clamp01 } from 'common/math';
+
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Section, Input, Stack } from '../components';
-import { KEY_DOWN, KEY_UP, KEY_ENTER, KEY_SPACE } from 'common/keycodes';
+import { Box, Button, Input, Section, Stack } from '../components';
 import { Window } from '../layouts';
 
 let lastScrollTime = 0;
 
-export const ListInput = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ListInput = (props) => {
+  const { act, data } = useBackend();
   const {
     title,
     message,
@@ -23,21 +24,21 @@ export const ListInput = (props, context) => {
 
   // Search
   const [showSearchBar, setShowSearchBar] = useLocalState(
-    context, 'search_bar', false);
+    'search_bar', false);
   const [displayedArray, setDisplayedArray] = useLocalState(
-    context, 'displayed_array', buttons);
+    'displayed_array', buttons);
 
   // KeyPress
   const [searchArray, setSearchArray] = useLocalState(
-    context, 'search_array', []);
+    'search_array', []);
   const [searchIndex, setSearchIndex] = useLocalState(
-    context, 'search_index', 0);
+    'search_index', 0);
   const [lastCharCode, setLastCharCode] = useLocalState(
-    context, 'last_char_code', null);
+    'last_char_code', null);
 
   // Selected Button
   const [selectedButton, setSelectedButton] = useLocalState(
-    context, 'selected_button', buttons[0]);
+    'selected_button', buttons[0]);
 
   const handleKeyDown = e => {
     e.preventDefault();

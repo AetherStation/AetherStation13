@@ -1,4 +1,5 @@
 import { classes } from 'common/react';
+
 import { useBackend } from "../backend";
 import { Icon, Section, Table, Tooltip } from "../components";
 import { Window } from "../layouts";
@@ -11,8 +12,8 @@ const commandJobs = [
   "Chief Medical Officer",
 ];
 
-export const CrewManifest = (props, context) => {
-  const { data: { manifest, positions } } = useBackend(context);
+export const CrewManifest = (props) => {
+  const { data: { manifest, positions } } = useBackend();
 
   return (
     <Window title="Crew Manifest" width={350} height={500}>

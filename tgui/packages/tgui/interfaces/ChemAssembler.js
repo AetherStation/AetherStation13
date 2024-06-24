@@ -1,10 +1,10 @@
 import { useBackend, useSharedState } from '../backend';
-import { Tabs, ProgressBar, Flex, TextArea, NoticeBox, Section, Button } from '../components';
+import { Button, Flex, NoticeBox, ProgressBar, Section, Tabs, TextArea } from '../components';
 import { Window } from '../layouts';
 
-export const ChemAssembler = (props, context) => {
-  const { act, data } = useBackend(context);
-  const [tab, setTab] = useSharedState(context, 'tab', 1);
+export const ChemAssembler = (props) => {
+  const { act, data } = useBackend();
+  const [tab, setTab] = useSharedState('tab', 1);
   const slots = data.slots || [];
   const program_text = data.program || "";
   return (

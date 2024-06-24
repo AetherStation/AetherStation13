@@ -1,5 +1,6 @@
 import { classes } from 'common/react';
 import { createSearch } from 'common/string';
+
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Dimmer, Flex, Icon, Input, NoticeBox, NumberInput, Section, Table, Tabs } from '../components';
 import { formatMoney } from '../format';
@@ -7,8 +8,8 @@ import { Window } from '../layouts';
 
 const MAX_SEARCH_RESULTS = 25;
 
-export const Biogenerator = (props, context) => {
-  const { data } = useBackend(context);
+export const Biogenerator = (props) => {
+  const { data } = useBackend();
   const {
     beaker,
     processing,
@@ -35,8 +36,8 @@ export const Biogenerator = (props, context) => {
   );
 };
 
-export const BiogeneratorContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const BiogeneratorContent = (props) => {
+  const { act, data } = useBackend();
   const {
     biomass,
     can_process,
@@ -45,11 +46,11 @@ export const BiogeneratorContent = (props, context) => {
   const [
     searchText,
     setSearchText,
-  ] = useLocalState(context, 'searchText', '');
+  ] = useLocalState('searchText', '');
   const [
     selectedCategory,
     setSelectedCategory,
-  ] = useLocalState(context, 'category', categories[0]?.name);
+  ] = useLocalState('category', categories[0]?.name);
   const testSearch = createSearch(searchText, item => {
     return item.name;
   });
@@ -127,19 +128,19 @@ export const BiogeneratorContent = (props, context) => {
   );
 };
 
-const ItemList = (props, context) => {
-  const { act } = useBackend(context);
+const ItemList = (props) => {
+  const { act } = useBackend();
   const [
     hoveredItem,
     setHoveredItem,
-  ] = useLocalState(context, 'hoveredItem', {});
+  ] = useLocalState('hoveredItem', {});
   const hoveredCost = hoveredItem.cost || 0;
   // Append extra hover data to items
   const items = props.items.map(item => {
     const [
       amount,
       setAmount,
-    ] = useLocalState(context, "amount" + item.name, 1);
+    ] = useLocalState("amount" + item.name, 1);
     const notSameItem = hoveredItem.name !== item.name;
     const notEnoughHovered = props.biomass - hoveredCost
       * hoveredItem.amount < item.cost * amount;
@@ -168,7 +169,7 @@ const ItemList = (props, context) => {
           width="35px"
           minValue={1}
           maxValue={10}
-          onChange={(e, value) => item.setAmount(value)} />
+          onChange={(value) => item.setAmount(value)} />
       </Table.Cell>
       <Table.Cell collapsing>
         <Button

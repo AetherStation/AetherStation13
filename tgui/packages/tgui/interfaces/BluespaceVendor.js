@@ -1,14 +1,14 @@
 import { filter, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
-import { multiline } from 'common/string';
+
 import { useBackend } from '../backend';
-import { Button, Divider, LabeledList, NumberInput, ProgressBar, Section, Stack, Box } from '../components';
+import { Button, Divider, LabeledList, NumberInput, ProgressBar, Section, Stack } from '../components';
 import { getGasColor, getGasLabel } from '../constants';
 import { Window } from '../layouts';
 
-export const BluespaceVendor = (props, context) => {
-  const { act, data } = useBackend(context);
+export const BluespaceVendor = (props) => {
+  const { act, data } = useBackend();
   const {
     on,
     tank_filling_amount,
@@ -58,7 +58,7 @@ export const BluespaceVendor = (props, context) => {
                     unit="% tank filling goal"
                     minValue={0}
                     maxValue={100}
-                    onDrag={(e, value) => act('pumping_rate', {
+                    onDrag={(value) => act('pumping_rate', {
                       rate: value,
                     })} />
                 </Stack.Item>
@@ -88,7 +88,7 @@ export const BluespaceVendor = (props, context) => {
                   color="transparent"
                   icon="info"
                   tooltipPosition="bottom-start"
-                  tooltip={multiline`
+                  tooltip={`
                   Quick guide for machine use: prepare a tank to create a
                   new one in the machine, pick how much you want it filled,
                   and finally press start on the gas of your choice!

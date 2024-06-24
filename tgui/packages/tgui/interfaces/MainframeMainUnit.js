@@ -1,9 +1,9 @@
 import { useBackend } from '../backend';
-import { Section, Button, NoticeBox, Box, Flex } from '../components';
+import { Box, Button, Flex, NoticeBox, Section } from '../components';
 import { Window } from '../layouts';
 
-export const MainframeMainUnit = (props, context) => {
-  const { act, data } = useBackend(context);
+export const MainframeMainUnit = (props) => {
+  const { act, data } = useBackend();
   const {
     on, pause, A, X, Y, SP, PC, status, opcode,
   } = data;

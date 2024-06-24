@@ -1,4 +1,3 @@
-import { multiline } from 'common/string';
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Dimmer, Divider, Icon, NumberInput, Section, Stack } from '../components';
 import { Window } from '../layouts';
@@ -14,15 +13,15 @@ const TAB2NAME = [
   },
 ];
 
-const ShoppingTab = (props, context) => {
-  const { data, act } = useBackend(context);
+const ShoppingTab = (props) => {
+  const { data, act } = useBackend();
   const {
     order_datums,
   } = data;
   const [
     shopIndex,
     setShopIndex,
-  ] = useLocalState(context, 'shop-index', 1);
+  ] = useLocalState('shop-index', 1);
   const mapped_food = order_datums.filter(food => (
     food && food.cat === shopIndex
   ));
@@ -79,7 +78,7 @@ const ShoppingTab = (props, context) => {
                       width="41px"
                       minValue={0}
                       maxValue={20}
-                      onChange={(e, value) => act('cart_set', {
+                      onChange={(value) => act('cart_set', {
                         target: item.ref,
                         amt: value,
                       })} />
@@ -95,8 +94,8 @@ const ShoppingTab = (props, context) => {
   );
 };
 
-const CheckoutTab = (props, context) => {
-  const { data, act } = useBackend(context);
+const CheckoutTab = (props) => {
+  const { data, act } = useBackend();
   const {
     order_datums,
     total_cost,
@@ -144,7 +143,7 @@ const CheckoutTab = (props, context) => {
                         width="41px"
                         minValue={0}
                         maxValue={item.cost > 10 && 50 || 10}
-                        onChange={(e, value) => act('cart_set', {
+                        onChange={(value) => act('cart_set', {
                           target: item.ref,
                           amt: value,
                         })} />
@@ -168,7 +167,7 @@ const CheckoutTab = (props, context) => {
                 fluid
                 icon="plane-departure"
                 content="Purchase"
-                tooltip={multiline`
+                tooltip={`
                 Your groceries will arrive at cargo,
                 and hopefully get delivered by them.
                 `}
@@ -181,7 +180,7 @@ const CheckoutTab = (props, context) => {
                 icon="parachute-box"
                 color="yellow"
                 content="Express"
-                tooltip={multiline`
+                tooltip={`
                 Sends the ingredients instantly,
                 and locks the console longer. Doubles the price!
                 `}
@@ -195,8 +194,8 @@ const CheckoutTab = (props, context) => {
   );
 };
 
-const OrderSent = (props, context) => {
-  const { act, data } = useBackend(context);
+const OrderSent = (props) => {
+  const { act, data } = useBackend();
   return (
     <Dimmer>
       <Stack vertical>
@@ -216,15 +215,15 @@ const OrderSent = (props, context) => {
   );
 };
 
-export const ProduceConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ProduceConsole = (props) => {
+  const { act, data } = useBackend();
   const {
     off_cooldown,
   } = data;
   const [
     tabIndex,
     setTabIndex,
-  ] = useLocalState(context, 'tab-index', 1);
+  ] = useLocalState('tab-index', 1);
   const TabComponent = TAB2NAME[tabIndex-1].component();
   return (
     <Window

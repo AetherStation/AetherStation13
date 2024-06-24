@@ -1,11 +1,12 @@
 import { classes } from 'common/react';
+
 import { resolveAsset } from '../../assets';
 import { useBackend } from '../../backend';
 import { Box, Button, Section, Stack } from '../../components';
+import { GENE_COLORS, GENES, MUT_NORMAL, SUBJECT_DEAD, SUBJECT_TRANSFORMING } from './constants';
 import { MutationInfo } from './MutationInfo';
-import { GENES, GENE_COLORS, MUT_NORMAL, SUBJECT_DEAD, SUBJECT_TRANSFORMING } from './constants';
 
-const GenomeImage = (props, context) => {
+const GenomeImage = (props) => {
   const { url, selected, onClick } = props;
   let outline;
   if (selected) {
@@ -25,7 +26,7 @@ const GenomeImage = (props, context) => {
   );
 };
 
-const GeneCycler = (props, context) => {
+const GeneCycler = (props) => {
   const { gene, onChange, disabled, ...rest } = props;
   const length = GENES.length;
   const index = GENES.indexOf(gene);
@@ -63,9 +64,9 @@ const GeneCycler = (props, context) => {
   );
 };
 
-const GenomeSequencer = (props, context) => {
+const GenomeSequencer = (props) => {
   const { mutation } = props;
-  const { data, act } = useBackend(context);
+  const { data, act } = useBackend();
   const { jokerActive } = data.view;
   if (!mutation) {
     return (
@@ -178,8 +179,8 @@ const GenomeSequencer = (props, context) => {
   );
 };
 
-export const DnaConsoleSequencer = (props, context) => {
-  const { data, act } = useBackend(context);
+export const DnaConsoleSequencer = (props) => {
+  const { data, act } = useBackend();
   const mutations = data.storage?.occupant ?? [];
   const {
     isJokerReady,

@@ -1,4 +1,5 @@
 import { classes } from 'common/react';
+
 import { useBackend } from '../backend';
 import { Box, Button, Section, Table } from '../components';
 import { Window } from '../layouts';
@@ -62,8 +63,8 @@ type CustomInput = {
   img: string;
 }
 
-const VendingRow = (props, context) => {
-  const { act, data } = useBackend<VendingData>(context);
+const VendingRow = (props) => {
+  const { act, data } = useBackend<VendingData>();
   const {
     product,
     productStock,
@@ -91,8 +92,7 @@ const VendingRow = (props, context) => {
           <img
             src={`data:image/jpeg;base64,${product.img}`}
             style={{
-              'vertical-align': 'middle',
-              'horizontal-align': 'middle',
+              'verticalAlign': 'middle',
             }} />
         ) || (
           <span
@@ -101,8 +101,7 @@ const VendingRow = (props, context) => {
               product.path,
             ])}
             style={{
-              'vertical-align': 'middle',
-              'horizontal-align': 'middle',
+              'verticalAlign': 'middle',
             }} />
         )}
       </Table.Cell>
@@ -176,8 +175,8 @@ const VendingRow = (props, context) => {
   );
 };
 
-export const Vending = (props, context) => {
-  const { act, data } = useBackend<VendingData>(context);
+export const Vending = (props) => {
+  const { act, data } = useBackend<VendingData>();
   const {
     user,
     onstation,

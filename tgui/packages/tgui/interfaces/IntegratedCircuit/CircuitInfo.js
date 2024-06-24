@@ -1,6 +1,6 @@
-import { Button, Section, Stack, Box } from '../../components';
+import { Box, Button, Stack } from '../../components';
 
-export const CircuitInfo = (props, context) => {
+export const CircuitInfo = (props) => {
   const {
     name,
     desc,

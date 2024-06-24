@@ -1,27 +1,28 @@
+import { Component, createRef } from 'react';
+
+import { classes, shallowDiffers } from '../../../common/react';
+import { resolveAsset } from '../../assets';
 import { useBackend, useLocalState } from '../../backend';
 import {
   Box,
-  Stack,
-  Icon,
   Button,
-  Input,
-  Flex,
-  NumberInput,
   Dropdown,
+  Flex,
+  Icon,
   InfinitePlane,
+  Input,
+  NumberInput,
+  Stack,
 } from '../../components';
-import { Component, createRef } from 'inferno';
-import { Window } from '../../layouts';
 import { CSS_COLORS } from '../../constants';
-import { classes, shallowDiffers } from '../../../common/react';
-import { resolveAsset } from '../../assets';
+import { Window } from '../../layouts';
 import { CircuitInfo } from './CircuitInfo';
 
 const NULL_REF = '[0x0]';
 const ABSOLUTE_Y_OFFSET = -32;
 const SVG_CURVE_INTENSITY = 64;
 
-const BasicInput = (props, context) => {
+const BasicInput = (props) => {
   const { children, name, setValue, defaultValue, value } = props;
   return (
     (value !== null && (
@@ -48,7 +49,7 @@ const BasicInput = (props, context) => {
 };
 
 const FUNDAMENTAL_DATA_TYPES = {
-  'string': (props, context) => {
+  'string': (props) => {
     const { name, value, setValue, color } = props;
     return (
       <BasicInput name={name} setValue={setValue} value={value} defaultValue="">
@@ -60,7 +61,7 @@ const FUNDAMENTAL_DATA_TYPES = {
       </BasicInput>
     );
   },
-  'number': (props, context) => {
+  'number': (props) => {
     const { name, value, setValue, color } = props;
     return (
       <BasicInput
@@ -71,13 +72,13 @@ const FUNDAMENTAL_DATA_TYPES = {
         <NumberInput
           value={value}
           color={color}
-          onChange={(e, val) => setValue(val)}
+          onChange={(val) => setValue(val)}
           unit={name}
         />
       </BasicInput>
     );
   },
-  'entity': (props, context) => {
+  'entity': (props) => {
     const { name, setValue, color } = props;
     return (
       <Button
@@ -89,7 +90,7 @@ const FUNDAMENTAL_DATA_TYPES = {
       />
     );
   },
-  'signal': (props, context) => {
+  'signal': (props) => {
     const { name, setValue } = props;
     return (
       <Button
@@ -100,7 +101,7 @@ const FUNDAMENTAL_DATA_TYPES = {
       />
     );
   },
-  'any': (props, context) => {
+  'any': (props) => {
     const { name, value, setValue, color } = props;
     return (
       <BasicInput
@@ -279,8 +280,8 @@ export class IntegratedCircuit extends Component {
   }
 }
 
-const Connections = (props, context) => {
-  const { data } = useBackend(context);
+const Connections = (props) => {
+  const { data } = useBackend();
   const { locations } = props;
   const { components } = data;
   const connections = [];
@@ -688,8 +689,8 @@ export class Port extends Component {
   }
 }
 
-const DisplayName = (props, context) => {
-  const { act } = useBackend(context);
+const DisplayName = (props) => {
+  const { act } = useBackend();
   const { port, isOutput, componentId, portIndex, ...rest } = props;
 
   const InputComponent = FUNDAMENTAL_DATA_TYPES[port.type || 'any'];

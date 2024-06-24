@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Box, Button, Divider, Flex, Grid, Input, NoticeBox, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-const LaunchpadButtonPad = (props, context) => {
-  const { act } = useBackend(context);
+const LaunchpadButtonPad = (props) => {
+  const { act } = useBackend();
   return (
     <Grid width="1px">
       <Grid.Column>
@@ -88,9 +88,9 @@ const LaunchpadButtonPad = (props, context) => {
   );
 };
 
-export const LaunchpadControl = (props, context) => {
+export const LaunchpadControl = (props) => {
   const { topLevel } = props;
-  const { act, data } = useBackend(context);
+  const { act, data } = useBackend();
   const {
     x,
     y,
@@ -140,7 +140,7 @@ export const LaunchpadControl = (props, context) => {
                   width="90px"
                   height="30px"
                   stepPixelSize={10}
-                  onChange={(e, value) => act('set_pos', {
+                  onChange={(value) => act('set_pos', {
                     x: value,
                   })} />
               </Box>
@@ -160,7 +160,7 @@ export const LaunchpadControl = (props, context) => {
                   fontSize="26px"
                   width="90px"
                   height="30px"
-                  onChange={(e, value) => act('set_pos', {
+                  onChange={(value) => act('set_pos', {
                     y: value,
                   })} />
               </Box>
@@ -190,8 +190,8 @@ export const LaunchpadControl = (props, context) => {
   );
 };
 
-export const LaunchpadConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const LaunchpadConsole = (props) => {
+  const { act, data } = useBackend();
   const {
     launchpads = [],
     selected_id,

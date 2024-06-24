@@ -1,15 +1,16 @@
 import { filter, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
+
 import { useBackend } from '../backend';
-import { Button, Divider, LabeledList, NumberInput, ProgressBar, Section, Stack, Box, AnimatedNumber } from '../components';
+import { Box, Button, Divider, LabeledList, NumberInput, ProgressBar, Section, Stack } from '../components';
 import { getGasColor, getGasLabel } from '../constants';
 import { Window } from '../layouts';
 
 const mappedTopMargin = "2%";
 
-export const BluespaceSender = (props, context) => {
-  const { act, data } = useBackend(context);
+export const BluespaceSender = (props) => {
+  const { act, data } = useBackend();
   const {
     on,
     gas_transfer_rate,
@@ -37,7 +38,7 @@ export const BluespaceSender = (props, context) => {
                 color="transparent"
                 icon="info"
                 tooltipPosition="bottom-start"
-                tooltip={multiline`
+                tooltip={`
                 Any gas you pipe into here will be added to the Bluespace
                 Network! That means any connected Bluespace Vendor (multitool)
                 will hook up to all the gas stored in this, and charge
@@ -51,7 +52,7 @@ export const BluespaceSender = (props, context) => {
                 unit="moles/S"
                 minValue={0}
                 maxValue={1}
-                onDrag={(e, value) => act('rate', {
+                onDrag={(value) => act('rate', {
                   rate: value,
                 })} />
               <Button
@@ -89,7 +90,7 @@ export const BluespaceSender = (props, context) => {
                         unit="per mole"
                         minValue={0}
                         maxValue={100}
-                        onDrag={(e, value) => act('price', {
+                        onDrag={(value) => act('price', {
                           gas_price: value,
                           gas_type: gas.id,
                         })} />

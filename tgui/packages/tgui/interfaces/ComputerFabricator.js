@@ -1,10 +1,9 @@
-import { multiline } from 'common/string';
 import { useBackend } from '../backend';
 import { Box, Button, Grid, Section, Table, Tooltip } from '../components';
 import { Window } from '../layouts';
 
-export const ComputerFabricator = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ComputerFabricator = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window
       title="Personal Computer Vendor"
@@ -41,8 +40,8 @@ export const ComputerFabricator = (props, context) => {
 
 // This had a pretty gross backend so this was unfortunately one of the
 // best ways of doing it.
-const CfStep1 = (props, context) => {
-  const { act, data } = useBackend(context);
+const CfStep1 = (props) => {
+  const { act, data } = useBackend();
   return (
     <Section
       title="Step 1"
@@ -86,8 +85,8 @@ const CfStep1 = (props, context) => {
   );
 };
 
-const CfStep2 = (props, context) => {
-  const { act, data } = useBackend(context);
+const CfStep2 = (props) => {
+  const { act, data } = useBackend();
   return (
     <Section
       title="Step 2: Customize your device"
@@ -103,7 +102,7 @@ const CfStep2 = (props, context) => {
             bold
             position="relative">
             <Tooltip
-              content={multiline`
+              content={`
                 Allows your device to operate without external utility power
                 source. Advanced batteries increase battery life.
               `}
@@ -141,7 +140,7 @@ const CfStep2 = (props, context) => {
             bold
             position="relative">
             <Tooltip
-              content={multiline`
+              content={`
                 Stores file on your device. Advanced drives can store more
                 files, but use more power, shortening battery life.
               `}
@@ -177,7 +176,7 @@ const CfStep2 = (props, context) => {
         <Table.Row>
           <Table.Cell bold position="relative">
             <Tooltip
-              content={multiline`
+              content={`
                 Allows your device to wirelessly connect to stationwide NTNet
                 network. Basic cards are limited to on-station use, while
                 advanced cards can operate anywhere near the station, which
@@ -215,7 +214,7 @@ const CfStep2 = (props, context) => {
         <Table.Row>
           <Table.Cell bold position="relative">
             <Tooltip
-              content={multiline`
+              content={`
                 A device that allows for various paperwork manipulations,
                 such as, scanning of documents or printing new ones.
                 This device was certified EcoFriendlyPlus and is capable of
@@ -245,7 +244,7 @@ const CfStep2 = (props, context) => {
         <Table.Row>
           <Table.Cell bold position="relative">
             <Tooltip
-              content={multiline`
+              content={`
                 Adds a secondary RFID card reader, for manipulating or
                 reading from a second standard RFID card.
                 Please note that a primary card reader is necessary to
@@ -278,7 +277,7 @@ const CfStep2 = (props, context) => {
             <Table.Row>
               <Table.Cell bold position="relative">
                 <Tooltip
-                  content={multiline`
+                  content={`
                     A component critical for your device's functionality.
                     It allows you to run programs from your hard drive.
                     Advanced CPUs use more power, but allow you to run
@@ -308,7 +307,7 @@ const CfStep2 = (props, context) => {
             <Table.Row>
               <Table.Cell bold position="relative">
                 <Tooltip
-                  content={multiline`
+                  content={`
                     An advanced wireless power relay that allows your device
                     to connect to nearby area power controller to provide
                     alternative power source. This component is currently
@@ -351,8 +350,8 @@ const CfStep2 = (props, context) => {
   );
 };
 
-const CfStep3 = (props, context) => {
-  const { act, data } = useBackend(context);
+const CfStep3 = (props) => {
+  const { act, data } = useBackend();
   return (
     <Section
       title="Step 3: Payment"
@@ -405,7 +404,7 @@ const CfStep3 = (props, context) => {
   );
 };
 
-const CfStep4 = (props, context) => {
+const CfStep4 = (props) => {
   return (
     <Section
       minHeight="282px">

@@ -2,7 +2,7 @@ import { useBackend } from '../backend';
 import { Box, Button, Collapsible, Grid, LabeledList, NoticeBox, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const NaniteChamberControl = (props, context) => {
+export const NaniteChamberControl = (props) => {
   return (
     <Window
       width={380}
@@ -14,8 +14,8 @@ export const NaniteChamberControl = (props, context) => {
   );
 };
 
-export const NaniteChamberControlContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteChamberControlContent = (props) => {
+  const { act, data } = useBackend();
   const {
     status_msg,
     locked,
@@ -100,7 +100,7 @@ export const NaniteChamberControlContent = (props, context) => {
                       minValue={0}
                       maxValue={500}
                       width="39px"
-                      onChange={(e, value) => act('set_safety', {
+                      onChange={(value) => act('set_safety', {
                         value: value,
                       })} />
                   </LabeledList.Item>
@@ -112,7 +112,7 @@ export const NaniteChamberControlContent = (props, context) => {
                       step={1}
                       stepPixelSize={3}
                       width="39px"
-                      onChange={(e, value) => act('set_cloud', {
+                      onChange={(value) => act('set_cloud', {
                         value: value,
                       })} />
                   </LabeledList.Item>

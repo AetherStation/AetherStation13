@@ -1,11 +1,12 @@
 import { decodeHtmlEntities } from 'common/string';
+
 import { useBackend } from '../../backend';
 import { Button, LabeledList, NumberInput, Section } from '../../components';
 import { getGasLabel } from '../../constants';
 
-export const Vent = (props, context) => {
+export const Vent = (props) => {
   const { vent } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   const {
     id_tag,
     long_name,
@@ -71,7 +72,7 @@ export const Vent = (props, context) => {
               minValue={0}
               step={10}
               maxValue={5066}
-              onChange={(e, value) => act('set_internal_pressure', {
+              onChange={(value) => act('set_internal_pressure', {
                 id_tag,
                 value,
               })} />
@@ -93,7 +94,7 @@ export const Vent = (props, context) => {
               minValue={0}
               step={10}
               maxValue={5066}
-              onChange={(e, value) => act('set_external_pressure', {
+              onChange={(value) => act('set_external_pressure', {
                 id_tag,
                 value,
               })} />
@@ -112,9 +113,9 @@ export const Vent = (props, context) => {
 };
 
 
-export const Scrubber = (props, context) => {
+export const Scrubber = (props) => {
   const { scrubber } = props;
-  const { act } = useBackend(context);
+  const { act } = useBackend();
   const {
     long_name,
     power,

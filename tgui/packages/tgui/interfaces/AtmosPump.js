@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Button, LabeledList, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const AtmosPump = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AtmosPump = (props) => {
+  const { act, data } = useBackend();
   return (
     <Window
       width={335}
@@ -27,7 +27,7 @@ export const AtmosPump = (props, context) => {
                   unit="L/s"
                   minValue={0}
                   maxValue={data.max_rate}
-                  onChange={(e, value) => act('rate', {
+                  onChange={(value) => act('rate', {
                     rate: value,
                   })} />
                 <Button
@@ -49,7 +49,7 @@ export const AtmosPump = (props, context) => {
                   minValue={0}
                   maxValue={data.max_pressure}
                   step={10}
-                  onChange={(e, value) => act('pressure', {
+                  onChange={(value) => act('pressure', {
                     pressure: value,
                   })} />
                 <Button

@@ -356,6 +356,7 @@
 	var/obj/item/computer_hardware/recharger/recharger = all_components[MC_CHARGE]
 
 	if(battery_module && battery_module.battery)
+		data["PC_lowpower_mode"] = !battery_module.battery.charge
 		switch(battery_module.battery.percent())
 			if(80 to 200) // 100 should be maximal but just in case..
 				data["PC_batteryicon"] = "batt_100.gif"
@@ -370,11 +371,10 @@
 			else
 				data["PC_batteryicon"] = "batt_5.gif"
 		data["PC_batterypercent"] = "[round(battery_module.battery.percent())]%"
-		data["PC_showbatteryicon"] = 1
 	else
-		data["PC_batteryicon"] = "batt_5.gif"
-		data["PC_batterypercent"] = "N/C"
-		data["PC_showbatteryicon"] = battery_module ? 1 : 0
+		data["PC_lowpower_mode"] = FALSE
+		data["PC_batteryicon"] = null
+		data["PC_batterypercent"] = null
 
 	if(recharger && recharger.enabled && recharger.check_functionality() && recharger.use_power(0))
 		data["PC_apclinkicon"] = "charging.gif"

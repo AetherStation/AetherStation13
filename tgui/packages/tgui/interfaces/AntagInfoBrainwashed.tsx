@@ -1,6 +1,7 @@
-import { useBackend, useLocalState } from '../backend';
-import { Blink, BlockQuote, Box, Dimmer, Icon, Section, Stack } from '../components';
 import { BooleanLike } from 'common/react';
+
+import { useBackend } from '../backend';
+import { Icon, Section, Stack } from '../components';
 import { Window } from '../layouts';
 
 type Objective = {
@@ -16,7 +17,7 @@ type Info = {
   objectives: Objective[];
 };
 
-export const AntagInfoBrainwashed = (props, context) => {
+export const AntagInfoBrainwashed = (props) => {
   return (
     <Window
       width={400}
@@ -58,8 +59,8 @@ export const AntagInfoBrainwashed = (props, context) => {
   );
 };
 
-const ObjectivePrintout = (props, context) => {
-  const { data } = useBackend<Info>(context);
+const ObjectivePrintout = (props) => {
+  const { data } = useBackend<Info>();
   const {
     objectives,
   } = data;

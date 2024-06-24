@@ -1,9 +1,9 @@
 import { useBackend, useLocalState } from '../backend';
-import { Button, LabeledList, Section, Flex, Tabs, Grid } from '../components';
+import { Button, Flex, Grid, LabeledList, Section, Tabs } from '../components';
 import { Window } from '../layouts';
 
-export const AirlockElectronics = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AirlockElectronics = (props) => {
+  const { act, data } = useBackend();
   const {
     oneAccess,
     unres_direction,
@@ -90,7 +90,7 @@ const diffMap = {
   },
 };
 
-export const AirlockAccessList = (props, context) => {
+export const AirlockAccessList = (props) => {
   const {
     regions = [],
     selectedList = [],
@@ -102,7 +102,7 @@ export const AirlockAccessList = (props, context) => {
   const [
     selectedRegion,
     setSelectedRegion,
-  ] = useLocalState(context, 'region', Object.keys(regions)[0]);
+  ] = useLocalState('region', Object.keys(regions)[0]);
 
   return (
     <Section

@@ -1,6 +1,6 @@
 import { filter, map, sortBy, uniq } from 'common/collections';
-import { flow } from 'common/fp';
 import { createSearch } from 'common/string';
+
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Icon, Input, Section, Stack, Tabs } from '../components';
 import { Window } from '../layouts';
@@ -9,12 +9,12 @@ import { Window } from '../layouts';
 // custom outfits give a ref keyword instead of path
 const getOutfitKey = outfit => outfit.path || outfit.ref;
 
-const useOutfitTabs = (context, categories) => {
-  return useLocalState(context, 'selected-tab', categories[0]);
+const useOutfitTabs = (categories) => {
+  return useLocalState('selected-tab', categories[0]);
 };
 
-export const SelectEquipment = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SelectEquipment = (props) => {
+  const { act, data } = useBackend();
   const {
     name,
     icon64,
@@ -24,13 +24,13 @@ export const SelectEquipment = (props, context) => {
 
   const isFavorited = entry => favorites?.includes(entry.path);
 
-  const outfits = map(entry => ({
-    ...entry,
-    favorite: isFavorited(entry),
-  }))([
+  const outfits = map(([
     ...data.outfits,
     ...data.custom_outfits,
-  ]);
+  ]), entry => ({
+    ...entry,
+    favorite: isFavorited(entry),
+  }));
 
   // even if no custom outfits were sent, we still want to make sure there's
   // at least a 'Custom' tab so the button to create a new one pops up
@@ -38,23 +38,23 @@ export const SelectEquipment = (props, context) => {
     ...outfits.map(entry => entry.category),
     'Custom',
   ]);
-  const [tab] = useOutfitTabs(context, categories);
+  const [tab] = useOutfitTabs(categories);
 
   const [searchText, setSearchText] = useLocalState(
-    context, 'searchText', '');
+    'searchText', '');
   const searchFilter = createSearch(searchText, entry => (
     entry.name + entry.path
   ));
 
-  const visibleOutfits = flow([
-    filter(entry => entry.category === tab),
-    filter(searchFilter),
-    sortBy(
-      entry => !entry.favorite,
-      entry => !entry.priority,
-      entry => entry.name
+  const visibleOutfits = sortBy(
+    filter(
+      filter(outfits, (entry) => entry.category === tab),
+      searchFilter,
     ),
-  ])(outfits);
+    (entry) => !entry.favorite,
+    (entry) => !entry.priority,
+    (entry) => entry.name,
+  );
 
   const getOutfitEntry = current_outfit => outfits.find(outfit => (
     getOutfitKey(outfit) === current_outfit
@@ -118,9 +118,9 @@ export const SelectEquipment = (props, context) => {
   );
 };
 
-const DisplayTabs = (props, context) => {
+const DisplayTabs = (props) => {
   const { categories } = props;
-  const [tab, setTab] = useOutfitTabs(context, categories);
+  const [tab, setTab] = useOutfitTabs(categories);
   return (
     <Tabs textAlign="center">
       {categories.map(category => (
@@ -135,8 +135,8 @@ const DisplayTabs = (props, context) => {
   );
 };
 
-const OutfitDisplay = (props, context) => {
-  const { act, data } = useBackend(context);
+const OutfitDisplay = (props) => {
+  const { act, data } = useBackend();
   const { current_outfit } = data;
   const { entries, currentTab } = props;
   return (
@@ -171,8 +171,8 @@ const OutfitDisplay = (props, context) => {
   );
 };
 
-const CurrentlySelectedDisplay = (props, context) => {
-  const { act, data } = useBackend(context);
+const CurrentlySelectedDisplay = (props) => {
+  const { act, data } = useBackend();
   const { current_outfit } = data;
   const { entry } = props;
   return (

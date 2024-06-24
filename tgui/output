@@ -1,0 +1,397 @@
+assets by status 2.66 MiB [1m[32m[cached][39m[22m 6 assets
+Entrypoint [1mtgui[39m[22m = [1m[32mtgui.bundle.css[39m[22m [1m[32mtgui.bundle.js[39m[22m
+Entrypoint [1mtgui-panel[39m[22m = [1m[32mtgui-panel.bundle.css[39m[22m [1m[32mtgui-panel.bundle.js[39m[22m
+Entrypoint [1mtgui-say[39m[22m = [1m[32mtgui-say.bundle.css[39m[22m [1m[32mtgui-say.bundle.js[39m[22m
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/AntagInfoTraitor.tsx[39m[22m [1m[32m91:21-30[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./AntagInfoTraitor.tsx ./AntagInfoTraitor
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/ApcControl.js[39m[22m [1m[32m355:37-55[39m[22m
+[1mexport 'pureComponentHooks' (imported as 'pureComponentHooks') was [1m[31mnot found[39m[22m[1m in 'common/react' (possible exports: [1m[32mcanRender, classes, normalizeChildren, shallowDiffers[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ApcControl.js ./ApcControl
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/AutomatedAnnouncement.js[39m[22m [1m[32m22:19-28[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./AutomatedAnnouncement.js ./AutomatedAnnouncement
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/BluespaceVendor.js[39m[22m [1m[32m128:41-50[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./BluespaceVendor.js ./BluespaceVendor
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/Cargo.js[39m[22m [1m[32m131:19-26[39m[22m
+[1mexport 'toArray' (imported as 'toArray') was [1m[31mnot found[39m[22m[1m in 'common/collections' (possible exports: [1m[32mbinaryInsertWith, deepMerge, filter, map, paginate, range, reduce, sort, sortBy, uniq, uniqBy, zip[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Cargo.js ./Cargo
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CentcomPodLauncher.js[39m[22m [1m[32m986:21-30[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CentcomPodLauncher.js[39m[22m [1m[32m1009:37-46[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CentcomPodLauncher.js[39m[22m [1m[32m1019:37-46[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CentcomPodLauncher.js[39m[22m [1m[32m1319:17-26[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CentcomPodLauncher.js[39m[22m [1m[32m1344:21-30[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CentcomPodLauncher.js[39m[22m [1m[32m1392:29-38[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CentcomPodLauncher.js[39m[22m [1m[32m1401:29-38[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CentcomPodLauncher.js[39m[22m [1m[32m1430:29-38[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CentcomPodLauncher.js[39m[22m [1m[32m1441:29-38[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CentcomPodLauncher.js[39m[22m [1m[32m1509:21-30[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/ComputerFabricator.js[39m[22m [1m[32m184:45-54[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ComputerFabricator.js ./ComputerFabricator
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/ComputerFabricator.js[39m[22m [1m[32m230:45-54[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ComputerFabricator.js ./ComputerFabricator
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/ComputerFabricator.js[39m[22m [1m[32m276:45-54[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ComputerFabricator.js ./ComputerFabricator
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/ComputerFabricator.js[39m[22m [1m[32m322:45-54[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ComputerFabricator.js ./ComputerFabricator
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/ComputerFabricator.js[39m[22m [1m[32m357:45-54[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ComputerFabricator.js ./ComputerFabricator
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/ComputerFabricator.js[39m[22m [1m[32m394:53-62[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ComputerFabricator.js ./ComputerFabricator
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/ComputerFabricator.js[39m[22m [1m[32m429:53-62[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ComputerFabricator.js ./ComputerFabricator
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CyborgBootDebug.js[39m[22m [1m[32m67:19-28[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./CyborgBootDebug.js ./CyborgBootDebug
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CyborgBootDebug.js[39m[22m [1m[32m68:25-34[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./CyborgBootDebug.js ./CyborgBootDebug
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CyborgBootDebug.js[39m[22m [1m[32m69:20-29[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./CyborgBootDebug.js ./CyborgBootDebug
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CyborgBootDebug.js[39m[22m [1m[32m70:21-30[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./CyborgBootDebug.js ./CyborgBootDebug
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CyborgBootDebug.js[39m[22m [1m[32m71:17-26[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./CyborgBootDebug.js ./CyborgBootDebug
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/CyborgBootDebug.js[39m[22m [1m[32m72:22-31[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./CyborgBootDebug.js ./CyborgBootDebug
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/Hacking.js[39m[22m [1m[32m23:26-33[39m[22m
+[1mexport 'toArray' (imported as 'toArray') was [1m[31mnot found[39m[22m[1m in 'common/collections' (possible exports: [1m[32mbinaryInsertWith, deepMerge, filter, map, paginate, range, reduce, sort, sortBy, uniq, uniqBy, zip[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Hacking.js ./Hacking
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/Hacking.js[39m[22m [1m[32m50:11-18[39m[22m
+[1mexport 'toArray' (imported as 'toArray') was [1m[31mnot found[39m[22m[1m in 'common/collections' (possible exports: [1m[32mbinaryInsertWith, deepMerge, filter, map, paginate, range, reduce, sort, sortBy, uniq, uniqBy, zip[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Hacking.js ./Hacking
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/Hacking.js[39m[22m [1m[32m52:22-29[39m[22m
+[1mexport 'toArray' (imported as 'toArray') was [1m[31mnot found[39m[22m[1m in 'common/collections' (possible exports: [1m[32mbinaryInsertWith, deepMerge, filter, map, paginate, range, reduce, sort, sortBy, uniq, uniqBy, zip[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Hacking.js ./Hacking
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/MafiaPanel.js[39m[22m [1m[32m165:29-38[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./MafiaPanel.js ./MafiaPanel
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/MafiaPanel.js[39m[22m [1m[32m174:29-38[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./MafiaPanel.js ./MafiaPanel
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/MafiaPanel.js[39m[22m [1m[32m298:29-38[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./MafiaPanel.js ./MafiaPanel
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/MafiaPanel.js[39m[22m [1m[32m304:29-38[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./MafiaPanel.js ./MafiaPanel
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/MafiaPanel.js[39m[22m [1m[32m350:21-30[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./MafiaPanel.js ./MafiaPanel
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/MedicalKiosk.js[39m[22m [1m[32m80:53-62[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./MedicalKiosk.js ./MedicalKiosk
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/MedicalKiosk.js[39m[22m [1m[32m86:53-62[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./MedicalKiosk.js ./MedicalKiosk
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/MedicalKiosk.js[39m[22m [1m[32m92:53-62[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./MedicalKiosk.js ./MedicalKiosk
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/MedicalKiosk.js[39m[22m [1m[32m98:53-62[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./MedicalKiosk.js ./MedicalKiosk
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/MedicalKiosk.js[39m[22m [1m[32m186:25-34[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./MedicalKiosk.js ./MedicalKiosk
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/Orbit.js[39m[22m [1m[32m208:49-58[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Orbit.js ./Orbit
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/PaperSheet.js[39m[22m [1m[32m129:11-17[39m[22m
+[1mexport 'default' (imported as 'marked') was [1m[31mnot found[39m[22m[1m in 'marked' (possible exports: [1m[32mHooks, Lexer, Parser, Renderer, Slugger, TextRenderer, Tokenizer, defaults, getDefaults, lexer, marked, options, parse, parseInline, parser, setOptions, use, walkTokens[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/PowerMonitor.js[39m[22m [1m[32m293:26-44[39m[22m
+[1mexport 'pureComponentHooks' (imported as 'pureComponentHooks') was [1m[31mnot found[39m[22m[1m in 'common/react' (possible exports: [1m[32mcanRender, classes, normalizeChildren, shallowDiffers[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./PowerMonitor.js ./PowerMonitor
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/PowerMonitor.js[39m[22m [1m[32m305:34-52[39m[22m
+[1mexport 'pureComponentHooks' (imported as 'pureComponentHooks') was [1m[31mnot found[39m[22m[1m in 'common/react' (possible exports: [1m[32mcanRender, classes, normalizeChildren, shallowDiffers[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./PowerMonitor.js ./PowerMonitor
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/ProduceConsole.js[39m[22m [1m[32m269:45-54[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ProduceConsole.js ./ProduceConsole
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/ProduceConsole.js[39m[22m [1m[32m284:45-54[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ProduceConsole.js ./ProduceConsole
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/Spellbook.js[39m[22m [1m[32m345:35-44[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Spellbook.js ./Spellbook
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/Spellbook.js[39m[22m [1m[32m353:35-44[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Spellbook.js ./Spellbook
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/Spellbook.js[39m[22m [1m[32m368:35-44[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Spellbook.js ./Spellbook
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33mWARNING[39m[22m in [1m./packages/tgui/interfaces/Spellbook.js[39m[22m [1m[32m376:35-44[39m[22m
+[1mexport 'multiline' (imported as 'multiline') was [1m[31mnot found[39m[22m[1m in 'common/string' (possible exports: [1m[32mcapitalize, capitalizeAll, capitalizeFirst, createSearch, decodeHtmlEntities, toTitleCase[39m[22m[1m)[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Spellbook.js ./Spellbook
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/AirAlarm.js[39m[22m [1m[32m3:0-35[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./AirAlarm.js ./AirAlarm
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/AlertModal.js[39m[22m [1m[32m28:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./AlertModal.js ./AlertModal
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/Canvas.js[39m[22m [1m[32m48:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Canvas.js ./Canvas
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/CentcomPodLauncher.js[39m[22m [1m[32m248:0-46[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/Changelog.js[39m[22m [1m[32m154:0-46[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/ChemFilter.js[39m[22m [1m[32m2:0-35[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ChemFilter.js ./ChemFilter
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/ExodroneConsole.tsx[39m[22m [1m[32m9:0-35[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ExodroneConsole.tsx ./ExodroneConsole
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/ExosuitFabricator.js[39m[22m [1m[32m37:0-35[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./ExosuitFabricator.js ./ExosuitFabricator
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/IntegratedCircuit/index.js[39m[22m [1m[32m89:0-47[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces/IntegratedCircuit'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./IntegratedCircuit/index.js ./IntegratedCircuit/ ./IntegratedCircuit/index ./IntegratedCircuit
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/PaperSheet.js[39m[22m [1m[32m63:0-36[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/Safe.js[39m[22m [1m[32m2:0-35[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Safe.js ./Safe
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/SyndContractor.js[39m[22m [1m[32m22:0-46[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./SyndContractor.js ./SyndContractor
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/interfaces/Thermometer.js[39m[22m [1m[32m22:0-36[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'inferno' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui/interfaces'[39m[22m
+ @ ./packages/tgui/interfaces/ sync ^\.\/.*$ ./Thermometer.js ./Thermometer
+ @ ./packages/tgui/routes.tsx 10:23-54
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[31mERROR[39m[22m in [1m./packages/tgui/routes.tsx[39m[22m [1m[32m8:0-67[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './interfaces/common/LoadingToolbox' in '/home/tceo/Desktop/Dev/Aether515/tgui/packages/tgui'[39m[22m
+ @ ./packages/tgui/index.tsx 41:29-67
+
+[1m[33m14 errors have detailed information that is not shown.
+Use 'stats.errorDetails: true' resp. '--stats-error-details' to show it.[39m[22m
+
+2024-05-26 [1m11:10:02[39m[22m: webpack 5.91.0 compiled with [1m[31m14 errors[39m[22m and [1m[33m51 warnings[39m[22m in 1092 ms

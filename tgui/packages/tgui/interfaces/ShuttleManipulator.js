@@ -1,10 +1,11 @@
 import { map } from 'common/collections';
+
 import { useBackend, useLocalState } from '../backend';
 import { Button, Flex, LabeledList, Section, Table, Tabs } from '../components';
 import { Window } from '../layouts';
 
-export const ShuttleManipulator = (props, context) => {
-  const [tab, setTab] = useLocalState(context, 'tab', 1);
+export const ShuttleManipulator = (props) => {
+  const [tab, setTab] = useLocalState('tab', 1);
   return (
     <Window
       title="Shuttle Manipulator"
@@ -42,8 +43,8 @@ export const ShuttleManipulator = (props, context) => {
   );
 };
 
-export const ShuttleManipulatorStatus = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ShuttleManipulatorStatus = (props) => {
+  const { act, data } = useBackend();
   const shuttles = data.shuttles || [];
   return (
     <Section>
@@ -99,28 +100,28 @@ export const ShuttleManipulatorStatus = (props, context) => {
   );
 };
 
-export const ShuttleManipulatorTemplates = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ShuttleManipulatorTemplates = (props) => {
+  const { act, data } = useBackend();
   const templateObject = data.templates || {};
   const selected = data.selected || {};
   const [
     selectedTemplateId,
     setSelectedTemplateId,
-  ] = useLocalState(context, 'templateId', Object.keys(templateObject)[0]);
+  ] = useLocalState('templateId', Object.keys(templateObject)[0]);
   const actualTemplates = templateObject[selectedTemplateId]?.templates || [];
   return (
     <Section>
       <Flex>
         <Flex.Item>
           <Tabs vertical>
-            {map((template, templateId) => (
+            {map(templateObject, (template, templateId) => (
               <Tabs.Tab
                 key={templateId}
                 selected={selectedTemplateId === templateId}
                 onClick={() => setSelectedTemplateId(templateId)}>
                 {template.port_id}
               </Tabs.Tab>
-            ))(templateObject)}
+            ))}
           </Tabs>
         </Flex.Item>
         <Flex.Item grow={1} basis={0}>
@@ -167,8 +168,8 @@ export const ShuttleManipulatorTemplates = (props, context) => {
   );
 };
 
-export const ShuttleManipulatorModification = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ShuttleManipulatorModification = (props) => {
+  const { act, data } = useBackend();
   const selected = data.selected || {};
   const existingShuttle = data.existing_shuttle || {};
   return (

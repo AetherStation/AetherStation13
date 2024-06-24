@@ -1,8 +1,8 @@
 import { useBackend } from '../backend';
-import { Button, LabeledList, NumberInput, Section, NoticeBox, Input, Table } from '../components';
+import { Button, Input, LabeledList, NoticeBox, NumberInput, Section, Table } from '../components';
 import { Window } from '../layouts';
 
-export const NaniteRemote = (props, context) => {
+export const NaniteRemote = (props) => {
   return (
     <Window
       width={420}
@@ -14,8 +14,8 @@ export const NaniteRemote = (props, context) => {
   );
 };
 
-export const NaniteRemoteContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const NaniteRemoteContent = (props) => {
+  const { act, data } = useBackend();
   const {
     code,
     locked,
@@ -75,7 +75,7 @@ export const NaniteRemoteContent = (props, context) => {
               width="47px"
               step={1}
               stepPixelSize={2}
-              onChange={(e, value) => act('set_code', {
+              onChange={(value) => act('set_code', {
                 code: value,
               })} />
           </LabeledList.Item>
@@ -98,7 +98,7 @@ export const NaniteRemoteContent = (props, context) => {
                 width="47px"
                 step={1}
                 stepPixelSize={2}
-                onChange={(e, value) => act('set_relay_code', {
+                onChange={(value) => act('set_relay_code', {
                   code: value,
                 })} />
             </LabeledList.Item>

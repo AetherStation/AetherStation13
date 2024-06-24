@@ -2,6 +2,7 @@ import { filter, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { classes } from 'common/react';
 import { createSearch } from 'common/string';
+
 import { useBackend, useLocalState } from '../backend';
 import { Button, ByondUi, Flex, Input, Section } from '../components';
 import { Window } from '../layouts';
@@ -32,16 +33,16 @@ export const selectCameras = (cameras, searchText = '') => {
   const testSearch = createSearch(searchText, camera => camera.name);
   return flow([
     // Null camera filter
-    filter(camera => camera?.name),
+    (cmrs) => filter(cmrs, camera => camera?.name),
     // Optional search term
-    searchText && filter(testSearch),
+    searchText && ((cmrs) => filter(cmrs, testSearch)),
     // Slightly expensive, but way better than sorting in BYOND
-    sortBy(camera => camera.name),
+    (cmrs) => sortBy(cmrs, camera => camera.name),
   ])(cameras);
 };
 
-export const CameraConsole = (props, context) => {
-  const { act, data } = useBackend(context);
+export const CameraConsole = (props) => {
+  const { act, data } = useBackend();
   const { mapRef, activeCamera } = data;
   const cameras = selectCameras(data.cameras);
   const [
@@ -89,12 +90,12 @@ export const CameraConsole = (props, context) => {
   );
 };
 
-export const CameraConsoleContent = (props, context) => {
-  const { act, data } = useBackend(context);
+export const CameraConsoleContent = (props) => {
+  const { act, data } = useBackend();
   const [
     searchText,
     setSearchText,
-  ] = useLocalState(context, 'searchText', '');
+  ] = useLocalState('searchText', '');
   const { activeCamera } = data;
   const cameras = selectCameras(data.cameras, searchText);
   return (

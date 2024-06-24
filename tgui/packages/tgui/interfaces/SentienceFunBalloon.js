@@ -1,9 +1,9 @@
 import { useBackend } from "../backend";
-import { Button, NumberInput, Section, Stack, Input, LabeledList } from '../components';
+import { Button, Input, LabeledList, NumberInput, Section, Stack } from '../components';
 import { Window } from "../layouts";
 
-export const SentienceFunBalloon = (props, context) => {
-  const { act, data } = useBackend(context);
+export const SentienceFunBalloon = (props) => {
+  const { act, data } = useBackend();
   const { group_name, range } = data;
   return (
     <Window
@@ -30,7 +30,7 @@ export const SentienceFunBalloon = (props, context) => {
                   minValue={1}
                   maxValue={100}
                   stepPixelSize={15}
-                  onDrag={(e, value) => act('effect_range', {
+                  onDrag={(value) => act('effect_range', {
                     updated_range: value,
                   })} />
               </LabeledList.Item>

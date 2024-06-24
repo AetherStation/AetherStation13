@@ -1,7 +1,8 @@
-import { useBackend } from '../backend';
-import { Section, Stack, Box } from '../components';
-import { Window } from '../layouts';
 import { BooleanLike } from 'common/react';
+
+import { useBackend } from '../backend';
+import { Box, Section, Stack } from '../components';
+import { Window } from '../layouts';
 
 const hereticstyle = {
   fontWeight: 'bold',
@@ -20,8 +21,8 @@ type Info = {
   objectives: Objective[];
 };
 
-const ObjectivePrintout = (props, context) => {
-  const { data } = useBackend<Info>(context);
+const ObjectivePrintout = (props) => {
+  const { data } = useBackend<Info>();
   const {
     objectives,
   } = data;
@@ -42,8 +43,8 @@ const ObjectivePrintout = (props, context) => {
   );
 };
 
-const InformationSection = (props, context) => {
-  const { data } = useBackend<Info>(context);
+const InformationSection = (props) => {
+  const { data } = useBackend<Info>();
   const {
     total_sacrifices,
     ascended,
@@ -69,7 +70,7 @@ const InformationSection = (props, context) => {
   );
 };
 
-const IntroductionSection = (props, context) => {
+const IntroductionSection = (props) => {
   return (
     <Stack
       align="center"
@@ -102,8 +103,8 @@ const IntroductionSection = (props, context) => {
   );
 };
 
-export const AntagInfoHeretic = (props, context) => {
-  const { data } = useBackend<Info>(context);
+export const AntagInfoHeretic = (props) => {
+  const { data } = useBackend<Info>();
   const {
     ascended,
   } = data;
@@ -114,7 +115,7 @@ export const AntagInfoHeretic = (props, context) => {
     >
       <Window.Content
         style={{
-          "background-image": "none",
+          "backgroundImage": "none",
           "background": ascended
             ? "radial-gradient(circle, rgba(24,9,9,1) 54%, rgba(31,10,10,1) 60%, rgba(46,11,11,1) 80%, rgba(47,14,14,1) 100%);"
             : "radial-gradient(circle, rgba(9,9,24,1) 54%, rgba(10,10,31,1) 60%, rgba(21,11,46,1) 80%, rgba(24,14,47,1) 100%);",

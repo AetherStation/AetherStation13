@@ -1,7 +1,8 @@
-import { Window } from '../layouts';
-import { useBackend } from '../backend';
-import { Section, Box, Button, Flex, Icon, LabeledList, Table, Tooltip } from '../components';
 import { sortBy } from 'common/collections';
+
+import { useBackend } from '../backend';
+import { Box, Button, Flex, Icon, LabeledList, Section, Table, Tooltip } from '../components';
+import { Window } from '../layouts';
 
 const ExperimentStages = props => {
   return (
@@ -50,8 +51,8 @@ const ExperimentStageRow = props => {
   );
 };
 
-export const TechwebServer = (props, context) => {
-  const { act, data } = useBackend(context);
+export const TechwebServer = (props) => {
+  const { act, data } = useBackend();
   const { servers } = props;
 
   return (
@@ -91,14 +92,15 @@ export const TechwebServer = (props, context) => {
   );
 };
 
-export const ExperimentConfigure = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ExperimentConfigure = (props) => {
+  const { act, data } = useBackend();
   const { always_active, has_start_callback } = data;
   let servers = data.servers ?? [];
 
   const experiments = sortBy(
+    data.experiments ?? [],
     exp => exp.name
-  )(data.experiments ?? []);
+  );
 
   // Group servers together by web
   let webs = new Map();
@@ -171,8 +173,8 @@ export const ExperimentConfigure = (props, context) => {
   );
 };
 
-export const Experiment = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Experiment = (props) => {
+  const { act, data } = useBackend();
   const {
     exp,
     controllable,

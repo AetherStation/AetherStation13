@@ -1,8 +1,9 @@
 import { createSearch } from 'common/string';
+
 import { useBackend, useLocalState } from '../backend';
-import { Material, MaterialAmount, MaterialFormatting, Materials, MATERIAL_KEYS } from './common/Materials';
-import { Window } from '../layouts';
 import { Box, Button, Input, Section, Stack, Tabs } from '../components';
+import { Window } from '../layouts';
+import { Material, MATERIAL_KEYS, MaterialAmount, MaterialFormatting, Materials } from './common/Materials';
 
 const CATEGORY_ALL = "All";
 
@@ -66,11 +67,11 @@ const MaterialCost = (props: {
   );
 };
 
-export const ComponentPrinter = (props, context) => {
-  const { act, data } = useBackend<ComponentPrinterData>(context);
+export const ComponentPrinter = (props) => {
+  const { act, data } = useBackend<ComponentPrinterData>();
 
-  const [currentCategory, setCurrentCategory] = useLocalState(context, "category", CATEGORY_ALL);
-  const [searchText, setSearchText] = useLocalState(context, "searchText", "");
+  const [currentCategory, setCurrentCategory] = useLocalState("category", CATEGORY_ALL);
+  const [searchText, setSearchText] = useLocalState("searchText", "");
 
   return (
     <Window title="Component Printer" width={900} height={700}>
@@ -93,7 +94,7 @@ export const ComponentPrinter = (props, context) => {
             <Stack>
               <Stack.Item>
                 <Section title="Categories" fill>
-                  <Tabs vertical fill>
+                  <Tabs vertical fill fluid>
                     {Object.values(data.designs)
                       .reduce<string[]>((categories, design) => {
                         const category = getCategory(design.categories);
@@ -107,7 +108,6 @@ export const ComponentPrinter = (props, context) => {
                           <Tabs.Tab key={category}
                             onClick={() => setCurrentCategory(category)}
                             selected={category === currentCategory}
-                            fluid
                           >
                             {category}
                           </Tabs.Tab>

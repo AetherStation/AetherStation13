@@ -1,11 +1,12 @@
 import { round } from 'common/math';
+
 import { useBackend } from '../backend';
 import { AnimatedNumber, Box, Button, Flex, LabeledList, NumberInput, ProgressBar, RoundGauge, Section, Table } from '../components';
 import { Window } from '../layouts';
 import { BeakerContents } from './common/BeakerContents';
 
-export const ChemRecipeDebug = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemRecipeDebug = (props) => {
+  const { act, data } = useBackend();
   const {
     targetTemp,
     isActive,
@@ -79,7 +80,7 @@ export const ChemRecipeDebug = (props, context) => {
                 value={round(targetTemp)}
                 minValue={0}
                 maxValue={1000}
-                onDrag={(e, value) => act('temperature', {
+                onDrag={(value) => act('temperature', {
                   target: value,
                 })} />
               <Button
@@ -102,7 +103,7 @@ export const ChemRecipeDebug = (props, context) => {
                 value={round(targetVol)}
                 minValue={1}
                 maxValue={200}
-                onDrag={(e, value) => act('vol', {
+                onDrag={(value) => act('vol', {
                   target: value,
                 })} />
             </LabeledList.Item>
@@ -115,7 +116,7 @@ export const ChemRecipeDebug = (props, context) => {
                 value={targatpH}
                 minValue={0}
                 maxValue={14}
-                onDrag={(e, value) => act('pH', {
+                onDrag={(value) => act('pH', {
                   target: value,
                 })} />
               <Button
@@ -172,7 +173,7 @@ export const ChemRecipeDebug = (props, context) => {
                       value={entry.var}
                       minValue={-9999}
                       maxValue={9999}
-                      onDrag={(e, value) => act("updateVar", {
+                      onDrag={(value) => act("updateVar", {
                         type: entry.name,
                         target: value,
                       })} />

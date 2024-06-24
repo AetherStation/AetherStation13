@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Box, Button, Input, LabeledList, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const ChemPress = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ChemPress = (props) => {
+  const { act, data } = useBackend();
   const {
     current_volume,
     product_name,
@@ -52,7 +52,7 @@ export const ChemPress = (props, context) => {
                 maxValue={max_volume}
                 step={1}
                 stepPixelSize={2}
-                onChange={(e, value) => act('change_current_volume', {
+                onChange={(value) => act('change_current_volume', {
                   volume: value,
                 })} />
             </LabeledList.Item>
@@ -60,7 +60,7 @@ export const ChemPress = (props, context) => {
               <Input
                 value={product_name}
                 placeholder={product_name}
-                onChange={(e, value) => act('change_product_name', {
+                onChange={(value) => act('change_product_name', {
                   name: value,
                 })} />
               <Box as="span">

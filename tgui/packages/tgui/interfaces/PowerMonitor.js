@@ -1,7 +1,7 @@
 import { map, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
-import { pureComponentHooks } from 'common/react';
+
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Chart, ColorBox, Flex, Icon, LabeledList, ProgressBar, Section, Table } from '../components';
 import { Window } from '../layouts';
@@ -25,13 +25,13 @@ export const PowerMonitor = () => {
   );
 };
 
-export const PowerMonitorContent = (props, context) => {
-  const { data } = useBackend(context);
+export const PowerMonitorContent = (props) => {
+  const { data } = useBackend();
   const { history } = data;
   const [
     sortByField,
     setSortByField,
-  ] = useLocalState(context, 'sortByField', null);
+  ] = useLocalState('sortByField', null);
   const supply = history.supply[history.supply.length - 1] || 0;
   const demand = history.demand[history.demand.length - 1] || 0;
   const supplyData = history.supply.map((value, i) => [i, value]);
@@ -42,16 +42,22 @@ export const PowerMonitorContent = (props, context) => {
     ...history.demand);
     // Process area data
   const areas = flow([
-    map((area, i) => ({
-      ...area,
-      // Generate a unique id
-      id: area.name + i,
-    })),
-    sortByField === 'name' && sortBy(area => area.name),
-    sortByField === 'charge' && sortBy(area => -area.charge),
-    sortByField === 'draw' && sortBy(
-      area => -powerRank(area.load),
-      area => -parseFloat(area.load)),
+    (areas) =>
+      map(areas, (area, i) => ({
+        ...area,
+        // Generate a unique id
+        id: area.name + i,
+      })),
+    sortByField === 'name' && ((areas) => sortBy(areas, (area) => area.name)),
+    sortByField === 'charge' &&
+      ((areas) => sortBy(areas, (area) => -area.charge)),
+    sortByField === 'draw' &&
+      ((areas) =>
+        sortBy(
+          areas,
+          (area) => -powerRank(area.load),
+          (area) => -parseFloat(area.load),
+        )),
   ])(data.areas);
   return (
     <>
@@ -211,8 +217,6 @@ export const AreaCharge = props => {
   );
 };
 
-AreaCharge.defaultHooks = pureComponentHooks;
-
 const AreaStatusColorBox = props => {
   const { status } = props;
   const power = Boolean(status & 2);
@@ -226,5 +230,3 @@ const AreaStatusColorBox = props => {
       title={tooltipText} />
   );
 };
-
-AreaStatusColorBox.defaultHooks = pureComponentHooks;

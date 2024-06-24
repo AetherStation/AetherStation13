@@ -1,6 +1,10 @@
 import { classes } from 'common/react';
+import dateformat from 'dateformat';
+import yaml from 'js-yaml';
+import { Component, Fragment } from 'react';
+
+import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';
-import { Component, Fragment } from 'inferno';
 import {
   Box,
   Button,
@@ -11,9 +15,6 @@ import {
   Table,
 } from '../components';
 import { Window } from '../layouts';
-import { resolveAsset } from '../assets';
-import dateformat from 'dateformat';
-import yaml from 'js-yaml';
 
 const icons = {
   bugfix: { icon: 'bug', color: 'green' },
@@ -92,7 +93,7 @@ export class Changelog extends Component {
           self.setData(yaml.load(result, { schema: yaml.CORE_SCHEMA }));
         }
       });
-  }
+  };
 
   componentDidMount() {
     const { data: { dates = [] } } = useBackend(this.context);

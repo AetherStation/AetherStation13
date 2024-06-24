@@ -2,8 +2,8 @@ import { useBackend } from '../backend';
 import { Box, Button, Grid, LabeledList, NumberInput, Section } from '../components';
 import { Window } from '../layouts';
 
-export const Bepis = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Bepis = (props) => {
+  const { act, data } = useBackend();
   const {
     amount,
   } = data;
@@ -65,7 +65,7 @@ export const Bepis = (props, context) => {
                       maxValue={30000}
                       step={100}
                       stepPixelSize={2}
-                      onChange={(e, value) => act('amount', {
+                      onChange={(value) => act('amount', {
                         amount: value,
                       })} />
                   </LabeledList.Item>

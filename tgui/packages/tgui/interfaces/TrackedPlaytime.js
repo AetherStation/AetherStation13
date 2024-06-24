@@ -1,4 +1,5 @@
 import { sortBy } from "common/collections";
+
 import { useBackend } from "../backend";
 import { Box, Button, Flex, ProgressBar, Section, Table } from "../components";
 import { Window } from "../layouts";
@@ -6,7 +7,7 @@ import { Window } from "../layouts";
 const JOB_REPORT_MENU_FAIL_REASON_TRACKING_DISABLED = 1;
 const JOB_REPORT_MENU_FAIL_REASON_NO_RECORDS = 2;
 
-const sortByPlaytime = sortBy(([_, playtime]) => -playtime);
+const sortByPlaytime = (playtimes) => sortBy(playtimes, ([_, playtime]) => -playtime);
 
 const PlaytimeSection = props => {
   const { playtimes } = props;
@@ -52,8 +53,8 @@ const PlaytimeSection = props => {
   );
 };
 
-export const TrackedPlaytime = (props, context) => {
-  const { act, data } = useBackend(context);
+export const TrackedPlaytime = (props) => {
+  const { act, data } = useBackend();
   const {
     failReason,
     jobPlaytimes,

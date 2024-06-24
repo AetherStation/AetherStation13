@@ -1,10 +1,9 @@
-import { Fragment } from 'inferno';
 import { useBackend } from '../backend';
 import { Box, Button, LabeledList, Section } from '../components';
 import { Window } from '../layouts';
 
-export const ParticleAccelerator = (props, context) => {
-  const { act, data } = useBackend(context);
+export const ParticleAccelerator = (props) => {
+  const { act, data } = useBackend();
   const {
     assembled,
     power,
@@ -61,4 +60,4 @@ export const ParticleAccelerator = (props, context) => {
       </Window.Content>
     </Window>
   );
-}; 
+};

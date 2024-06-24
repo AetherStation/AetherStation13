@@ -1,6 +1,7 @@
-import { useBackend, useLocalState } from '../backend';
-import { Blink, BlockQuote, Box, Dimmer, Icon, Section, Stack } from '../components';
 import { BooleanLike } from 'common/react';
+
+import { useBackend } from '../backend';
+import { Section, Stack } from '../components';
 import { Window } from '../layouts';
 
 const teleportstyle = {
@@ -44,7 +45,7 @@ type Info = {
   objectives: Objective[];
 };
 
-export const AntagInfoWizard = (props, context) => {
+export const AntagInfoWizard = (props) => {
   return (
     <Window
       width={620}
@@ -129,8 +130,8 @@ export const AntagInfoWizard = (props, context) => {
   );
 };
 
-const ObjectivePrintout = (props, context) => {
-  const { data } = useBackend<Info>(context);
+const ObjectivePrintout = (props) => {
+  const { data } = useBackend<Info>();
   const {
     objectives,
   } = data;

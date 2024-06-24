@@ -1,14 +1,15 @@
 import { filter, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
 import { toFixed } from 'common/math';
+
 import { useBackend } from '../backend';
-import { Button, LabeledList, NumberInput, ProgressBar, Section, Stack, Box } from '../components';
+import { Box, Button, LabeledList, NumberInput, ProgressBar, Section, Stack } from '../components';
 import { getGasColor, getGasLabel } from '../constants';
 import { formatSiBaseTenUnit, formatSiUnit } from '../format';
 import { Window } from '../layouts';
 
-export const Hypertorus = (props, context) => {
-  const { act, data } = useBackend(context);
+export const Hypertorus = (props) => {
+  const { act, data } = useBackend();
   const filterTypes = data.filter_types || [];
   const selectedFuels = data.selected_fuel || [];
   const {
@@ -251,7 +252,7 @@ export const Hypertorus = (props, context) => {
                 unit="J/cm"
                 minValue={50}
                 maxValue={500}
-                onDrag={(e, value) => act('heating_conductor', {
+                onDrag={(value) => act('heating_conductor', {
                   heating_conductor: value,
                 })} />
             </LabeledList.Item>
@@ -263,7 +264,7 @@ export const Hypertorus = (props, context) => {
                 unit="L"
                 minValue={50}
                 maxValue={2000}
-                onDrag={(e, value) => act('cooling_volume', {
+                onDrag={(value) => act('cooling_volume', {
                   cooling_volume: value,
                 })} />
             </LabeledList.Item>
@@ -275,7 +276,7 @@ export const Hypertorus = (props, context) => {
                 unit="m^3/B"
                 minValue={50}
                 maxValue={1000}
-                onDrag={(e, value) => act('magnetic_constrictor', {
+                onDrag={(value) => act('magnetic_constrictor', {
                   magnetic_constrictor: value,
                 })} />
             </LabeledList.Item>
@@ -287,7 +288,7 @@ export const Hypertorus = (props, context) => {
                 unit="g/s"
                 minValue={5}
                 maxValue={1500}
-                onDrag={(e, value) => act('fuel_injection_rate', {
+                onDrag={(value) => act('fuel_injection_rate', {
                   fuel_injection_rate: value,
                 })} />
             </LabeledList.Item>
@@ -299,7 +300,7 @@ export const Hypertorus = (props, context) => {
                 unit="g/s"
                 minValue={5}
                 maxValue={1500}
-                onDrag={(e, value) => act('moderator_injection_rate', {
+                onDrag={(value) => act('moderator_injection_rate', {
                   moderator_injection_rate: value,
                 })} />
             </LabeledList.Item>
@@ -311,7 +312,7 @@ export const Hypertorus = (props, context) => {
                 unit="W"
                 minValue={0}
                 maxValue={1000}
-                onDrag={(e, value) => act('current_damper', {
+                onDrag={(value) => act('current_damper', {
                   current_damper: value,
                 })} />
             </LabeledList.Item>

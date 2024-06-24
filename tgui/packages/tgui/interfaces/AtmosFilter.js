@@ -3,8 +3,8 @@ import { Button, LabeledList, NumberInput, Section } from '../components';
 import { getGasLabel } from '../constants';
 import { Window } from '../layouts';
 
-export const AtmosFilter = (props, context) => {
-  const { act, data } = useBackend(context);
+export const AtmosFilter = (props) => {
+  const { act, data } = useBackend();
   const filterTypes = data.filter_types || [];
   return (
     <Window
@@ -28,7 +28,7 @@ export const AtmosFilter = (props, context) => {
                 unit="L/s"
                 minValue={0}
                 maxValue={data.max_rate}
-                onDrag={(e, value) => act('rate', {
+                onDrag={(value) => act('rate', {
                   rate: value,
                 })} />
               <Button
