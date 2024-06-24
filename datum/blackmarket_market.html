@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;blackmarket_market - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/blackmarket_market.html#var">Var Details</a> - <a href="datum/blackmarket_market.html#proc">Proc Details</a></header>
+<main>
+<h1>blackmarket_market <aside>/<a href="datum.html">datum</a>/<a href="datum/blackmarket_market.html">blackmarket_market</a></aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/cargo/blackmarket/blackmarket_market.dm#L1">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;cargo&#x2F;blackmarket&#x2F;blackmarket_market.dm 1"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/blackmarket_market.html#var/available_items">available_items</a></th><td>Items available from this market, populated by SSblackmarket on initialization.</td></tr>
+            <tr><th><a href="datum/blackmarket_market.html#var/categories">categories</a></th><td>Item categories available from this market, only items which are in these categories can be gotten from this market.</td></tr>
+            <tr><th><a href="datum/blackmarket_market.html#var/max_time_left">max_time_left</a></th><td>Amount of time that time_left is set to after market is repopulated</td></tr>
+            <tr><th><a href="datum/blackmarket_market.html#var/name">name</a></th><td>Name for the market.</td></tr>
+            <tr><th><a href="datum/blackmarket_market.html#var/shipping">shipping</a></th><td>Available shipping methods and prices, just leave the shipping method out that you don't want to have.</td></tr>
+            <tr><th><a href="datum/blackmarket_market.html#var/time_left">time_left</a></th><td>Amount of time before the market is repopulated</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/blackmarket_market.html#proc/add_item">add_item</a></th><td>Adds item to the available items and add it's category if it is not in categories yet.</td></tr>
+            <tr><th><a href="datum/blackmarket_market.html#proc/purchase">purchase</a></th><td>Handles buying the item, this is mainly for future use and moving the code away from the uplink.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/available_items"><aside class="declaration">var </aside>available_items
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/cargo/blackmarket/blackmarket_market.dm#L16">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;cargo&#x2F;blackmarket&#x2F;blackmarket_market.dm 16"/></a></h3>
+        <p>Items available from this market, populated by SSblackmarket on initialization.</p><h3 id="var/categories"><aside class="declaration">var </aside>categories
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/cargo/blackmarket/blackmarket_market.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;cargo&#x2F;blackmarket&#x2F;blackmarket_market.dm 18"/></a></h3>
+        <p>Item categories available from this market, only items which are in these categories can be gotten from this market.</p><h3 id="var/max_time_left"><aside class="declaration">var </aside>max_time_left
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/cargo/blackmarket/blackmarket_market.dm#L12">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;cargo&#x2F;blackmarket&#x2F;blackmarket_market.dm 12"/></a></h3>
+        <p>Amount of time that time_left is set to after market is repopulated</p><h3 id="var/name"><aside class="declaration">var </aside>name
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/cargo/blackmarket/blackmarket_market.dm#L3">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;cargo&#x2F;blackmarket&#x2F;blackmarket_market.dm 3"/></a></h3>
+        <p>Name for the market.</p><h3 id="var/shipping"><aside class="declaration">var </aside>shipping
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/cargo/blackmarket/blackmarket_market.dm#L6">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;cargo&#x2F;blackmarket&#x2F;blackmarket_market.dm 6"/></a></h3>
+        <p>Available shipping methods and prices, just leave the shipping method out that you don't want to have.</p><h3 id="var/time_left"><aside class="declaration">var </aside>time_left
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/cargo/blackmarket/blackmarket_market.dm#L9">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;cargo&#x2F;blackmarket&#x2F;blackmarket_market.dm 9"/></a></h3>
+        <p>Amount of time before the market is repopulated</p><h2 id="proc">Proc Details</h2><h3 id="proc/add_item"><aside class="declaration">proc </aside>add_item<aside>(/<a href="datum.html">datum</a>/<a href="datum/blackmarket_item.html">blackmarket_item</a>/item) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/cargo/blackmarket/blackmarket_market.dm#L37">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;cargo&#x2F;blackmarket&#x2F;blackmarket_market.dm 37"/></a></aside>
+        </h3>
+        <p>Adds item to the available items and add it's category if it is not in categories yet.</p><h3 id="proc/purchase"><aside class="declaration">proc </aside>purchase<aside>(item, category, method, /<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/blackmarket_uplink.html">blackmarket_uplink</a>/uplink, user) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/cargo/blackmarket/blackmarket_market.dm#L52">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;cargo&#x2F;blackmarket&#x2F;blackmarket_market.dm 52"/></a></aside>
+        </h3>
+        <p>Handles buying the item, this is mainly for future use and moving the code away from the uplink.</p></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/AetherStation/AetherStation13/tree/73b528b6815442f9d462741b5a955404a2d019c0">73b528b</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

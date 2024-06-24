@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;controller&#x2F;subsystem&#x2F;id_access - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/controller/subsystem/id_access.html#var">Var Details</a> - <a href="datum/controller/subsystem/id_access.html#proc">Proc Details</a></header>
+<main>
+<h1>id_access <aside>/<a href="datum.html">datum</a>/<a href="datum/controller/subsystem.html">controller/subsystem</a>/<a href="datum/controller/subsystem/id_access.html">id_access</a></aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/id_access.dm#L4">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;id_access.dm 4"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/controller/subsystem/id_access.html#var/access_to_department_map">access_to_department_map</a></th><td>Maps head access to their respective department, used in the ID console.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/id_access.html#var/accesses_by_tier">accesses_by_tier</a></th><td>Dictionary of access lists.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/id_access.html#var/name_by_access">name_by_access</a></th><td>Dictionary of access names. Keys are access levels. Values are their associated names.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/id_access.html#var/tiers_by_access">tiers_by_access</a></th><td>Dictionary of access tiers.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/controller/subsystem/id_access.html#proc/get_access_name">get_access_name</a></th><td>Returns the access description associated with any given access level.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/id_access.html#proc/get_access_tier">get_access_tier</a></th><td>Returns the access tier associated with any given access level.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/id_access.html#proc/get_tier_access_list">get_tier_access_list</a></th><td>Returns the list of all accesses associated with any given access tier.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/id_access.html#proc/setup_access_names">setup_access_names</a></th><td>Setup dictionary that converts access levels to text names.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/id_access.html#proc/setup_access_tiers">setup_access_tiers</a></th><td>Build access flag lists.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/id_access.html#proc/tally_access">tally_access</a></th><td>Tallies up all accesses the card has that have flags greater than or equal to the tier supplied.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/access_to_department_map"><aside class="declaration">var </aside>access_to_department_map
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/id_access.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;id_access.dm 18"/></a></h3>
+        <p>Maps head access to their respective department, used in the ID console.</p><h3 id="var/accesses_by_tier"><aside class="declaration">var </aside>accesses_by_tier
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/id_access.dm#L12">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;id_access.dm 12"/></a></h3>
+        <p>Dictionary of access lists.</p><h3 id="var/name_by_access"><aside class="declaration">var </aside>name_by_access
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/id_access.dm#L14">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;id_access.dm 14"/></a></h3>
+        <p>Dictionary of access names. Keys are access levels. Values are their associated names.</p><h3 id="var/tiers_by_access"><aside class="declaration">var </aside>tiers_by_access
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/id_access.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;id_access.dm 10"/></a></h3>
+        <p>Dictionary of access tiers.</p><h2 id="proc">Proc Details</h2><h3 id="proc/get_access_name"><aside class="declaration">proc </aside>get_access_name<aside>(access) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/id_access.dm#L186">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;id_access.dm 186"/></a></aside>
+        </h3>
+        <p>Returns the access description associated with any given access level.</p>
+<p>In proc form due to accesses being stored in the list as text instead of numbers.
+Arguments:</p>
+<ul>
+<li>access - Access as either pure number or as a string representation of the number.</li>
+</ul><h3 id="proc/get_access_tier"><aside class="declaration">proc </aside>get_access_tier<aside>(access) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/id_access.dm#L176">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;id_access.dm 176"/></a></aside>
+        </h3>
+        <p>Returns the access tier associated with any given access level.</p>
+<p>Arguments:</p>
+<ul>
+<li>access - Access as either pure number or as a string representation of the number.</li>
+</ul><h3 id="proc/get_tier_access_list"><aside class="declaration">proc </aside>get_tier_access_list<aside>(tier) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/id_access.dm#L196">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;id_access.dm 196"/></a></aside>
+        </h3>
+        <p>Returns the list of all accesses associated with any given access tier.</p>
+<p>In proc form due to accesses being stored in the list as text instead of numbers.
+Arguments:</p>
+<ul>
+<li>tier - The tier to get access for as either a pure number of string representation of the tier.</li>
+</ul><h3 id="proc/setup_access_names"><aside class="declaration">proc </aside>setup_access_names<aside>() 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/id_access.dm#L79">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;id_access.dm 79"/></a></aside>
+        </h3>
+        <p>Setup dictionary that converts access levels to text names.</p><h3 id="proc/setup_access_tiers"><aside class="declaration">proc </aside>setup_access_tiers<aside>() 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/id_access.dm#L66">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;id_access.dm 66"/></a></aside>
+        </h3>
+        <p>Build access flag lists.</p><h3 id="proc/tally_access"><aside class="declaration">proc </aside>tally_access<aside>(/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/card/id.html">card/id</a>/id_card, tier) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/id_access.dm#L207">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;id_access.dm 207"/></a></aside>
+        </h3>
+        <p>Tallies up all accesses the card has that have flags greater than or equal to the tier supplied.</p>
+<p>Returns the number of accesses that have flags matching tier or a higher tier access.
+Arguments:</p>
+<ul>
+<li>id_card - The ID card to tally up access for.</li>
+<li>tier - The minimum access tier required for an access to be tallied up.</li>
+</ul></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/AetherStation/AetherStation13/tree/73b528b6815442f9d462741b5a955404a2d019c0">73b528b</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

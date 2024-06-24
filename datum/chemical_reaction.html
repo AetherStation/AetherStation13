@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;chemical_reaction - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/chemical_reaction.html#var">Var Details</a> - <a href="datum/chemical_reaction.html#proc">Proc Details</a></header>
+<main>
+<h1>chemical_reaction <aside>/<a href="datum.html">datum</a>/<a href="datum/chemical_reaction.html">chemical_reaction</a></aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L8">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 8"/></a></h1>
+
+<p>#Chemical Reaction</p>
+<p>Datum that makes the magic between reagents happen.</p>
+<p>Chemical reactions is a class that is instantiated and stored in a global list 'chemical_reactions_list'</p><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#var/is_cold_recipe">is_cold_recipe</a></th><td>Set to TRUE if you want the recipe to only react when it's BELOW the required temp.</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#var/mix_message">mix_message</a></th><td>The message shown to nearby people upon mixing, if applicable</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#var/mix_sound">mix_sound</a></th><td>The sound played upon mixing, if applicable</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#var/mob_react">mob_react</a></th><td>Determines if a chemical reaction can occur inside a mob</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#var/required_catalysts">required_catalysts</a></th><td>Required chemicals that must be present in the container but are not USED.</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#var/required_container">required_container</a></th><td>the exact container path required for the reaction to happen</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#var/required_other">required_other</a></th><td>an integer required for the reaction to happen</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#var/required_reagents">required_reagents</a></th><td>Required chemicals that are USED in the reaction</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#var/required_temp">required_temp</a></th><td>Required temperature for the reaction to begin, for fermimechanics it defines the lower area of bell curve for determining heat based rate reactions, aka the minimum</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#var/results">results</a></th><td>Results of the chemical reactions</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#proc/chemical_mob_spawn">chemical_mob_spawn</a></th><td>Magical mob spawning when chemicals react</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#proc/clear_products">clear_products</a></th><td>Clears the beaker of the product only</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#proc/clear_reactants">clear_reactants</a></th><td>Clears the beaker of the reagents only
+if volume is not set, it will remove all of the reactant</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#proc/clear_reagents">clear_reagents</a></th><td>Clears the beaker of ALL reagents inside</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#proc/default_explode">default_explode</a></th><td>Generic explosions/failures</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#proc/explode_fire">explode_fire</a></th><td>BEGIN FIRE BASED EXPLOSIONS</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#proc/freeze_radius">freeze_radius</a></th><td>END FIRE BASED EXPLOSIONS</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#proc/on_reaction">on_reaction</a></th><td>REACTION PROCS
+Shit that happens on reaction
+Only procs at the START of a reaction
+use reaction_step() for each step of a reaction
+or reaction_end() when the reaction stops
+If reaction_flags &amp; REACTION_INSTANT then this is the only proc that is called.</td></tr>
+            <tr><th><a href="datum/chemical_reaction.html#proc/update_info">update_info</a></th><td>Updates information during the roundstart</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/is_cold_recipe"><aside class="declaration">var </aside>is_cold_recipe
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L30">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 30"/></a></h3>
+        <p>Set to TRUE if you want the recipe to only react when it's BELOW the required temp.</p><h3 id="var/mix_message"><aside class="declaration">var </aside>mix_message
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L25">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 25"/></a></h3>
+        <p>The message shown to nearby people upon mixing, if applicable</p><h3 id="var/mix_sound"><aside class="declaration">var </aside>mix_sound
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L27">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 27"/></a></h3>
+        <p>The sound played upon mixing, if applicable</p><h3 id="var/mob_react"><aside class="declaration">var </aside>mob_react
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L23">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 23"/></a></h3>
+        <p>Determines if a chemical reaction can occur inside a mob</p><h3 id="var/required_catalysts"><aside class="declaration">var </aside>required_catalysts
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L14">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 14"/></a></h3>
+        <p>Required chemicals that must be present in the container but are not USED.</p><h3 id="var/required_container"><aside class="declaration">var </aside>required_container
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L18">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 18"/></a></h3>
+        <p>the exact container path required for the reaction to happen</p><h3 id="var/required_other"><aside class="declaration">var </aside>required_other
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L20">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 20"/></a></h3>
+        <p>an integer required for the reaction to happen</p><h3 id="var/required_reagents"><aside class="declaration">var </aside>required_reagents
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L12">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 12"/></a></h3>
+        <p>Required chemicals that are USED in the reaction</p><h3 id="var/required_temp"><aside class="declaration">var </aside>required_temp
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L32">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 32"/></a></h3>
+        <p>Required temperature for the reaction to begin, for fermimechanics it defines the lower area of bell curve for determining heat based rate reactions, aka the minimum</p><h3 id="var/results"><aside class="declaration">var </aside>results
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L10">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 10"/></a></h3>
+        <p>Results of the chemical reactions</p><h2 id="proc">Proc Details</h2><h3 id="proc/chemical_mob_spawn"><aside class="declaration">proc </aside>chemical_mob_spawn<aside>(/<a href="datum.html">datum</a>/<a href="datum/reagents.html">reagents</a>/holder, amount_to_spawn, reaction_name, mob_class, mob_faction, random) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L79">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 79"/></a></aside>
+        </h3>
+        <p>Magical mob spawning when chemicals react</p>
+<p>Your go to proc when you want to create new mobs from chemicals. please dont use on_reaction.
+Arguments:</p>
+<ul>
+<li>holder - the datum that holds this reagent, be it a beaker or anything else</li>
+<li>amount_to_spawn - how much /mob to spawn</li>
+<li>reaction_name - what is the name of this reaction. be creative, the world is your oyster after all!</li>
+<li>mob_class - determines if the mob will be friendly, neutral or hostile</li>
+<li>mob_faction - used in determining targets, mobs from the same faction won't harm eachother.</li>
+<li>random - creates random mobs. self explanatory.</li>
+</ul><h3 id="proc/clear_products"><aside class="declaration">proc </aside>clear_products<aside>(/<a href="datum.html">datum</a>/<a href="datum/reagents.html">reagents</a>/holder, volume) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L305">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 305"/></a></aside>
+        </h3>
+        <p>Clears the beaker of the product only</p><h3 id="proc/clear_reactants"><aside class="declaration">proc </aside>clear_reactants<aside>(/<a href="datum.html">datum</a>/<a href="datum/reagents.html">reagents</a>/holder, volume) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L298">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 298"/></a></aside>
+        </h3>
+        <p>Clears the beaker of the reagents only
+if volume is not set, it will remove all of the reactant</p><h3 id="proc/clear_reagents"><aside class="declaration">proc </aside>clear_reagents<aside>(/<a href="datum.html">datum</a>/<a href="datum/reagents.html">reagents</a>/holder, volume) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L313">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 313"/></a></aside>
+        </h3>
+        <p>Clears the beaker of ALL reagents inside</p><h3 id="proc/default_explode"><aside class="declaration">proc </aside>default_explode<aside>(/<a href="datum.html">datum</a>/<a href="datum/reagents.html">reagents</a>/holder, created_volume, modifier, strengthdiv) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L158">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 158"/></a></aside>
+        </h3>
+        <p>Generic explosions/failures</p><h3 id="proc/explode_fire"><aside class="declaration">proc </aside>explode_fire<aside>(/<a href="datum.html">datum</a>/<a href="datum/reagents.html">reagents</a>/holder, range) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L258">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 258"/></a></aside>
+        </h3>
+        <p>BEGIN FIRE BASED EXPLOSIONS</p><h3 id="proc/freeze_radius"><aside class="declaration">proc </aside>freeze_radius<aside>(/<a href="datum.html">datum</a>/<a href="datum/reagents.html">reagents</a>/holder, temp, radius, freeze_duration, snowball_chance) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L286">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 286"/></a></aside>
+        </h3>
+        <p>END FIRE BASED EXPLOSIONS</p><h3 id="proc/on_reaction"><aside class="declaration">proc </aside>on_reaction<aside>(/<a href="datum.html">datum</a>/<a href="datum/reagents.html">reagents</a>/holder, created_volume) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L63">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 63"/></a></aside>
+        </h3>
+        <p>REACTION PROCS
+Shit that happens on reaction
+Only procs at the START of a reaction
+use reaction_step() for each step of a reaction
+or reaction_end() when the reaction stops
+If reaction_flags &amp; REACTION_INSTANT then this is the only proc that is called.</p>
+<p>Proc where the additional magic happens.
+You dont want to handle mob spawning in this since there is a dedicated proc for that.client
+Arguments:</p>
+<ul>
+<li>holder - the datum that holds this reagent, be it a beaker or anything else</li>
+<li>created_volume - volume created when this is mixed. look at 'var/list/results'.</li>
+</ul><h3 id="proc/update_info"><aside class="declaration">proc </aside>update_info<aside>() 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/reagents/chemistry/recipes.dm#L45">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;reagents&#x2F;chemistry&#x2F;recipes.dm 45"/></a></aside>
+        </h3>
+        <p>Updates information during the roundstart</p>
+<p>This proc is mainly used by explosives but can be used anywhere else
+You should generally use the special reactions in <a href="datum/chemical_reaction.html" title="/datum/chemical_reaction">/datum/chemical_reaction/randomized</a>
+But for simple variable edits, like changing the temperature or adding/subtracting required reagents it is better to use this.</p></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/AetherStation/AetherStation13/tree/73b528b6815442f9d462741b5a955404a2d019c0">73b528b</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

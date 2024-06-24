@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;controller&#x2F;subsystem&#x2F;economy - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/controller/subsystem/economy.html#var">Var Details</a> - <a href="datum/controller/subsystem/economy.html#proc">Proc Details</a></header>
+<main>
+<h1>economy <aside>/<a href="datum.html">datum</a>/<a href="datum/controller/subsystem.html">controller/subsystem</a>/<a href="datum/controller/subsystem/economy.html">economy</a></aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/economy.dm#L1">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;economy.dm 1"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/controller/subsystem/economy.html#var/bank_accounts_by_id">bank_accounts_by_id</a></th><td>List of normal (no department ones) accounts' identifiers with associated datum accounts, for big O performance.
+A list of sole account datums can be obtained with flatten_list(), another variable would be redundant rn.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/economy.html#var/bounty_modifier">bounty_modifier</a></th><td>The modifier multiplied to the value of bounties paid out.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/economy.html#var/civ_bounty_tracker">civ_bounty_tracker</a></th><td>How many civilain bounties have been completed so far this shift? Affects civilian budget payout values.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/economy.html#var/export_total">export_total</a></th><td>Total value of exported materials.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/economy.html#var/import_total">import_total</a></th><td>Total value of imported goods.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/economy.html#var/mail_waiting">mail_waiting</a></th><td>Number of mail items generated.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/economy.html#var/pack_price_modifier">pack_price_modifier</a></th><td>The modifier multiplied to the value of cargo pack prices.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/economy.html#var/techweb_bounty">techweb_bounty</a></th><td>Departmental cash provided to science when a node is researched in specific configs.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/controller/subsystem/economy.html#proc/departmental_payouts">departmental_payouts</a></th><td>Departmental income payments are kept static and linear for every department, and paid out once every 5 minutes, as determined by MAX_GRANT_DPT.
+Iterates over every department account for the same payment.</td></tr>
+            <tr><th><a href="datum/controller/subsystem/economy.html#proc/get_dep_account">get_dep_account</a></th><td>Handy proc for obtaining a department's bank account, given the department ID, AKA the define assigned for what department they're under.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/bank_accounts_by_id"><aside class="declaration">var </aside>bank_accounts_by_id
+            <aside>&ndash; /list</aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/economy.dm#L24">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;economy.dm 24"/></a></h3>
+        <p>List of normal (no department ones) accounts' identifiers with associated datum accounts, for big O performance.
+A list of sole account datums can be obtained with flatten_list(), another variable would be redundant rn.</p><h3 id="var/bounty_modifier"><aside class="declaration">var </aside>bounty_modifier
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/economy.dm#L29">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;economy.dm 29"/></a></h3>
+        <p>The modifier multiplied to the value of bounties paid out.</p><h3 id="var/civ_bounty_tracker"><aside class="declaration">var </aside>civ_bounty_tracker
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/economy.dm#L27">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;economy.dm 27"/></a></h3>
+        <p>How many civilain bounties have been completed so far this shift? Affects civilian budget payout values.</p><h3 id="var/export_total"><aside class="declaration">var </aside>export_total
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/economy.dm#L35">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;economy.dm 35"/></a></h3>
+        <p>Total value of exported materials.</p><h3 id="var/import_total"><aside class="declaration">var </aside>import_total
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/economy.dm#L37">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;economy.dm 37"/></a></h3>
+        <p>Total value of imported goods.</p><h3 id="var/mail_waiting"><aside class="declaration">var </aside>mail_waiting
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/economy.dm#L39">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;economy.dm 39"/></a></h3>
+        <p>Number of mail items generated.</p><h3 id="var/pack_price_modifier"><aside class="declaration">var </aside>pack_price_modifier
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/economy.dm#L31">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;economy.dm 31"/></a></h3>
+        <p>The modifier multiplied to the value of cargo pack prices.</p><h3 id="var/techweb_bounty"><aside class="declaration">var </aside>techweb_bounty
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/economy.dm#L19">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;economy.dm 19"/></a></h3>
+        <p>Departmental cash provided to science when a node is researched in specific configs.</p><h2 id="proc">Proc Details</h2><h3 id="proc/departmental_payouts"><aside class="declaration">proc </aside>departmental_payouts<aside>() 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/economy.dm#L69">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;economy.dm 69"/></a></aside>
+        </h3>
+        <p>Departmental income payments are kept static and linear for every department, and paid out once every 5 minutes, as determined by MAX_GRANT_DPT.
+Iterates over every department account for the same payment.</p><h3 id="proc/get_dep_account"><aside class="declaration">proc </aside>get_dep_account<aside>(dep_id) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/controllers/subsystem/economy.dm#L60">
+        <img src="git.png" width="16" height="16" title="code&#x2F;controllers&#x2F;subsystem&#x2F;economy.dm 60"/></a></aside>
+        </h3>
+        <p>Handy proc for obtaining a department's bank account, given the department ID, AKA the define assigned for what department they're under.</p></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/AetherStation/AetherStation13/tree/73b528b6815442f9d462741b5a955404a2d019c0">73b528b</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>

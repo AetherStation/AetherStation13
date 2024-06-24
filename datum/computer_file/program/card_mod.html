@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <base href="../../../" />
+    <link rel="stylesheet" href="dmdoc.css" />
+    <title>&#x2F;datum&#x2F;computer_file&#x2F;program&#x2F;card_mod - &#x2F;tg&#x2F; Station 13</title>
+</head>
+<body>
+<header>
+    <a href="index.html">&#x2F;tg&#x2F; Station 13</a> -
+    <a href="index.html#modules">Modules</a> -
+    <a href="index.html#types">Types</a>
+ &mdash; <a href="datum/computer_file/program/card_mod.html#var">Var Details</a> - <a href="datum/computer_file/program/card_mod.html#proc">Proc Details</a></header>
+<main>
+<h1>card_mod <aside>/<a href="datum.html">datum</a>/<a href="datum/computer_file/program.html">computer_file/program</a>/<a href="datum/computer_file/program/card_mod.html">card_mod</a></aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/modular_computers/file_system/programs/card.dm#L1">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;modular_computers&#x2F;file_system&#x2F;programs&#x2F;card.dm 1"/></a></h1>
+
+<table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr>
+            <tr><th><a href="datum/computer_file/program/card_mod.html#var/authenticated_user">authenticated_user</a></th><td>The name/assignment combo of the ID card used to authenticate.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr>
+            <tr><th><a href="datum/computer_file/program/card_mod.html#proc/authenticate">authenticate</a></th><td>Authenticates the program based on the specific ID card.</td></tr></table>
+    <h2 id="var">Var Details</h2><h3 id="var/authenticated_user"><aside class="declaration">var </aside>authenticated_user
+            <aside>&ndash; </aside>
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/modular_computers/file_system/programs/card.dm#L17">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;modular_computers&#x2F;file_system&#x2F;programs&#x2F;card.dm 17"/></a></h3>
+        <p>The name/assignment combo of the ID card used to authenticate.</p><h2 id="proc">Proc Details</h2><h3 id="proc/authenticate"><aside class="declaration">proc </aside>authenticate<aside>(/<a href="mob.html">mob</a>/user, /<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/card/id.html">card/id</a>/id_card) 
+        
+    
+            <a href="https://github.com/AetherStation/AetherStation13/blob/73b528b6815442f9d462741b5a955404a2d019c0/code/modules/modular_computers/file_system/programs/card.dm#L27">
+        <img src="git.png" width="16" height="16" title="code&#x2F;modules&#x2F;modular_computers&#x2F;file_system&#x2F;programs&#x2F;card.dm 27"/></a></aside>
+        </h3>
+        <p>Authenticates the program based on the specific ID card.</p>
+<p>If the card has ACCESS_CHANGE_IDs, it authenticates with all options.
+Otherwise, it authenticates depending on SSid_access.sub_department_managers_tgui
+compared to the access on the supplied ID card.
+Arguments:</p>
+<ul>
+<li>user - Program's user.</li>
+<li>id_card - The ID card to attempt to authenticate under.</li>
+</ul></main>
+<footer>
+    tgstation.dme
+    <a href="https://github.com/AetherStation/AetherStation13/tree/73b528b6815442f9d462741b5a955404a2d019c0">73b528b</a>
+        (master) &mdash; <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.8.0</a></footer>
+</body>
+</html>
